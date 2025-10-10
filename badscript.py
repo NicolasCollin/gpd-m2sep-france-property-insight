@@ -1,0 +1,2 @@
+def badfunction():
+    print("nothing")

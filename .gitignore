@@ -6,6 +6,7 @@ dist/
 wheels/
 *.egg-info
 .ruff_cache
+.uv/
 
 #MacOS
 .DS_Store

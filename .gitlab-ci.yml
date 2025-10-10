@@ -1,0 +1,24 @@
+# ==========================================================
+#  GitLab CI
+# ==========================================================
+
+stages: [lint]
+
+lint:
+  stage: lint
+  image: python:3.11-slim
+  # keeps the UV cache between jobs
+  cache:
+    key: "uv-cache"
+    paths:
+      - .uv-cache
+  variables:
+    UV_CACHE_DIR: .uv-cache
+  before_script:
+    - pip install --upgrade pip
+    - pip install uv               # installs uv
+    - uv tool install pre-commit   # installs pre-commit
+  script:
+    - pre-commit run --all-files --show-diff-on-failure  # runs Ruff checks
+  rules:
+    - if: '$CI_COMMIT_BRANCH'      # runs on all branches

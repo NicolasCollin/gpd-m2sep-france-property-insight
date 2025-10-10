@@ -1,5 +1,3 @@
-import pandas as pd
-
 def main():
     print("Hello from gpd-fpi!")
 
