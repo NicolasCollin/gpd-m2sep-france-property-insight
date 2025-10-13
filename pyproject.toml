@@ -5,14 +5,16 @@ description = "France Property Insight: Uni project for Master 2 SEP"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "pandas>=2.3.3",
+    "pandas==2.3.3",
 ]
 
 [dependency-groups]
 dev = [
-    "pre-commit>=4.3.0",
-    "pytest>=8.4.2",
-    "ruff>=0.14.0",
+    "mypy==1.18.2",
+    "pip-audit==2.9.0",
+    "pre-commit==4.3.0",
+    "pytest==8.4.2",
+    "ruff==0.14.0",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -22,57 +24,10 @@ packages = ["src"]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+# default linting rules + isort
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
 [project.scripts]
 main = "src.main:main"
-
-
-# ======================================================
-# Ruff Configuration
-# ======================================================
-
-[tool.ruff]
-# Maximum number of characters per line
-line-length = 100
-
-# Target Python version for linting (here 3.11)
-target-version = "py311"
-
-# Automatically applies simple fixes
-fix = true
-
-# Folders to ignore during linting (to avoid analyzing data or virtual environments)
-exclude = [
-  "data/",
-  "datasets/",
-  "notebooks/",
-  "build/",
-  "dist/",
-  ".venv/",
-  ".uv/"
-]
-
-# ------------------------------------------------------
-# Linting rules
-# ------------------------------------------------------
-[tool.ruff.lint]
-# Selection of rule families to check (E,F,W = basic errors/warnings, etc.)
-select = ["E", "F", "W", "I", "N", "B", "UP", "S", "C4", "RET", "SIM", "PL", "RUF"]
-
-# List of rules to ignore (empty for now)
-ignore = []
-
-# ------------------------------------------------------
-# Automatic code formatting
-# ------------------------------------------------------
-[tool.ruff.format]
-# Indentation style (2 or 4 spaces – here spaces)
-indent-style = "space"
-
-# Unix line ending (lf) – consistent across systems
-line-ending = "lf"
-
-# Use double quotes throughout the code
-quote-style = "double"
-
-# Allows trailing comma (useful for multi-line lists)
-skip-magic-trailing-comma = false
+precommit = "src.utils.aliases:precommit"

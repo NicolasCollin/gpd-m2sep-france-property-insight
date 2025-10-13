@@ -7,6 +7,8 @@ wheels/
 *.egg-info
 .ruff_cache
 .uv/
+.mypy_cache/
+.pytest_cache/
 
 #MacOS
 .DS_Store
