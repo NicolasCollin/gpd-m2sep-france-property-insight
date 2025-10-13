@@ -1,10 +1,11 @@
 stages:
   - lint
+  - typecheck
+  - audit
+  - test
 
-lint:
-  stage: lint
+.lint-template:
   image: python:3.13-slim
-  # keeps the UV cache between jobs
   cache:
     key: "uv-cache"
     paths:
@@ -14,9 +15,28 @@ lint:
   before_script:
     - pip install --upgrade pip
     - pip install uv
-    - uv tool install pre-commit ruff mypy pip-audit pytest
+    - uv sync --frozen --group dev
+
+lint:
+  stage: lint
+  extends: .lint-template
   script:
     - uv run pre-commit run --all-files --show-diff-on-failure
-    - uv run mypy . #typecheck
-    - uv run pip-audit . #scan for vulnerable dependencies
-    - uv run python -m pytest --doctest-modules --maxfail=3 --disable-warnings -q
+
+typecheck:
+  stage: typecheck
+  extends: .lint-template
+  script:
+    - uv run mypy src
+
+audit:
+  stage: audit
+  extends: .lint-template
+  script:
+    - uv run pip-audit .
+
+test:
+  stage: test
+  extends: .lint-template
+  script:
+    - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q

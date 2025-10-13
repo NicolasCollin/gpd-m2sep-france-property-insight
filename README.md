@@ -1,7 +1,5 @@
 # France Property Insight: Analysis and Predictions
 
-TODO: database presentation and data dictionary  
-
 Academic project in Master 2 Statistique pour l'Evaluation et la Prevision 2025-2026.
 
 This is a predictive analysis application developped fully in Python to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
@@ -139,7 +137,7 @@ uv run python -m pytest --doctest-modules
 
 ## Current state & Potential improvements
 
-CURRENT STATE: Sprint 1  
+CURRENT STATE: Sprint 1
 This project will go through 5 sprints with reviews and demonstration.
 
 ## Contributors
