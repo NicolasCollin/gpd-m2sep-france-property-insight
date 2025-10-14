@@ -1,0 +1,16 @@
+repos:
+  # Ruff: checks + fixes
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff           # checks the code
+        args: ["--fix"]
+      - id: ruff-format    # reformats the code
+
+  # General hooks: quick cleanup
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-toml            # checks pyproject.toml
+      - id: end-of-file-fixer     # adds empty line at end of file
+      - id: trailing-whitespace   # removes unnecessary spaces

@@ -1,13 +1,11 @@
 # France Property Insight: Analysis and Predictions
 
-TODO: database presentation and data dictionary  
-
 Academic project in Master 2 Statistique pour l'Evaluation et la Prevision 2025-2026.
 
 This is a predictive analysis application developped fully in Python to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
-The predictive models will use Machine Learning and the dataset is from the French Ministere de l'Economie, des Finances et de l'Industrie.
-Dataset used: [Demandes de valeurs foncieres](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
+The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Economie, des Finances et de l'Industrie".
+Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
 
 ## Table of Contents
 
@@ -18,7 +16,8 @@ Dataset used: [Demandes de valeurs foncieres](https://www.data.gouv.fr/datasets/
   - [Repository Structure](#repository-structure)
   - [Installation and Usage](#installation-and-usage)
   - [Testing](#testing)
-  - [Current state \& Potential improvements](#current-state--potential-improvements)
+  - [Current state](#current-state)
+  - [Git Workflow](#git-workflow)
   - [Contributors](#contributors)
   - [License](#license)
 
@@ -38,7 +37,7 @@ config:
   theme: base
   layout: dagre
 ---
-flowchart TB
+flowchart BT
  subgraph Frontend["Frontend — User Interaction (Streamlit)"]
         A["User (inputs via Streamlit)"]
         B["Validation Layer (Pydantic)"]
@@ -48,7 +47,7 @@ flowchart TB
         D["Database Access Layer (SQLAlchemy)"]
   end
  subgraph DataPipeline["Data Preparation Pipeline"]
-        E["Raw Data (DVF — Demandes de Valeurs Foncières)"]
+        E["Raw Data (Demandes de Valeurs Foncières)"]
         F["Validation & Cleaning (Pydantic + Scripts)"]
         G["Filtered Dataset (Analysis-Ready)"]
   end
@@ -137,16 +136,72 @@ To run our doctests as well:
 uv run python -m pytest --doctest-modules
 ```
 
-## Current state & Potential improvements
+## Current state
 
-CURRENT STATE: Sprint 1  
+CURRENT STATE: Sprint 1
 This project will go through 5 sprints with reviews and demonstration.
+
+## Git Workflow
+
+Noone is allowed to push on main, any development has to be done on a separate branch.
+When ready, the features are merged on staging, a clone branch of main used a safety layer, before being merged to main.
+
+```mermaid
+
+---
+config:
+  layout: elk
+  theme: default
+title: Merge Request Workflow (feature -> staging -> main)
+---
+flowchart TD
+ subgraph Merge["When feature is ready"]
+        D["Clean feature history"]
+        E["Rebase staging onto feature"]
+        F["Resolve conflicts if any"]
+        G["Test staging build"]
+        H["Push (--force) staging"]
+        I["Open MR: staging → main"]
+  end
+ subgraph CI["CI pipeline on push / MR"]
+    direction TB
+        CI1["pre-commit hooks (server-side) ruff lint & format"]
+        CI2["mypy type checks"]
+        CI3["pip-audit dependency checks"]
+        CI4["pytest unit & doctests"]
+  end
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    CI1 --> CI2
+    CI2 --> CI3
+    CI3 --> CI4
+    Note["staging is a branch clone of main <br>It's a safety layer before merging into main"]
+     D:::local
+     E:::local
+     F:::local
+     G:::local
+     H:::remote
+     I:::remote
+     CI1:::ci
+     CI2:::ci
+     CI3:::ci
+     CI4:::ci
+     Note:::note
+    classDef local fill:#86c0ff,stroke:#004085,color:#004085
+    classDef remote fill:#afdeba,stroke:#155724,color:#155724
+    classDef ci fill:#fff2cc,stroke:#b58900,color:#8a5d00,font-weight:bold
+    classDef note fill:#bdbdbd,stroke:#6c757d,color:#212529,font-weight:bold
+
+```
 
 ## Contributors
 
 - Daniel PHAN: Product Owner/Scrum Master
-- Perle NDAYIZEYE: Data Analyst/Data Viz
-- Kim Ngan THAI: Front End/Data Viz
+- Perle NDAYIZEYE: Data Analyst
+- Kim Ngan THAI: Front End
 - Nicolas COLLIN: Data Engineer
 - Claudy LINCY: Data Scientist
 

@@ -1,0 +1,43 @@
+stages:
+  - lint
+  - typecheck
+  - audit
+  - test
+
+# template for uv installation
+.lint-template:
+  image: python:3.13-slim
+  cache:
+    key: "uv-cache"
+    paths:
+      - .uv-cache
+  variables:
+    UV_CACHE_DIR: .uv-cache
+  before_script:
+    - pip install --upgrade pip
+    - pip install uv
+    - uv sync --frozen --group dev
+
+lint:
+  stage: lint
+  extends: .lint-template
+  script:
+    - uv run pre-commit run --all-files --show-diff-on-failure
+
+typecheck:
+  stage: typecheck
+  extends: .lint-template
+  script:
+    - uv run mypy src
+
+audit:
+  stage: audit
+  extends: .lint-template
+  script:
+    - uv run pip-audit .
+
+test:
+  stage: test
+  extends: .lint-template
+  script:
+    - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q

@@ -2,16 +2,19 @@
 name = "gpd-fpi"
 version = "0.1.0"
 description = "France Property Insight: Uni project for Master 2 SEP"
-readme = "README.md"
+# readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "pandas>=2.3.3",
+    "pandas==2.3.3",
 ]
 
 [dependency-groups]
 dev = [
-    "pytest>=8.4.2",
-    "ruff>=0.14.0",
+    "mypy==1.18.2",
+    "pip-audit==2.9.0",
+    "pre-commit==4.3.0",
+    "pytest==8.4.2",
+    "ruff==0.14.0",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -21,6 +24,11 @@ packages = ["src"]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+# default linting rules + isort
+[tool.ruff.lint]
+select = ["E", "F", "I"]
 
+# uv run shortcuts
 [project.scripts]
 main = "src.main:main"
+precommit = "src.utils.aliases:precommit"
