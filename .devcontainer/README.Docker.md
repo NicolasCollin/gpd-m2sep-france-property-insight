@@ -3,7 +3,10 @@
 ## Building and running your docker application
 
 When you're ready, start your application by running:
-`docker compose up --build`.
+
+```bash
+docker compose -f .devcontainer/compose.yaml run --rm -it server
+```
 
 Your application will be available at <http://localhost:8000>.
 
