@@ -1,8 +1,7 @@
 [project]
 name = "gpd-fpi"
 version = "0.1.0"
-description = "France Property Insight: Uni project for Master 2 SEP"
-# readme = "README.md"
+description = "France Property Insight: Uni project app for Master 2 SEP"
 requires-python = ">=3.13"
 dependencies = [
     "pandas==2.3.3",
@@ -32,3 +31,4 @@ select = ["E", "F", "I"]
 [project.scripts]
 main = "src.main:main"
 precommit = "src.utils.aliases:precommit"
+fpibuild = "src.utils.aliases:fpibuild"
