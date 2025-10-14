@@ -15,9 +15,10 @@ Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/dataset
   - [Data Flow Diagram (DFD)](#data-flow-diagram-dfd)
   - [Repository Structure](#repository-structure)
   - [Installation and Usage](#installation-and-usage)
-  - [Testing](#testing)
+    - [Method 1: with Docker Desktop](#method-1-with-docker-desktop)
+    - [Method 2: by installing Python and uv first](#method-2-by-installing-python-and-uv-first)
   - [Current state](#current-state)
-  - [Git Workflow](#git-workflow)
+  - [Git Workflow Diagram](#git-workflow-diagram)
   - [Contributors](#contributors)
   - [License](#license)
 
@@ -97,43 +98,57 @@ flowchart BT
 
 ## Installation and Usage
 
-**Requirements**
+### Method 1: with Docker Desktop
 
-- **Python 3.13**: From [Python.org](https://www.python.org/).
-- **Python project manager uv**: From [docs.astral.sh/uv/getting-started/installation/](https://docs.astral.sh/uv/getting-started/installation/).
+1. Install **Docker Desktop**: From [www.docker.com](https://www.docker.com/products/docker-desktop/)
+Make sure Docker Desktop is **running** before continuing.
 
-**Installation**
-
-1. Clone the Git repository to your local machine:
+2. Clone the Git repository to your local machine:
 
 ```bash
 git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git
 ```
 
-2. Navigate to the cloned directory:
+3. Navigate to the cloned directory:
 
 ```bash
 cd gpd-m2sep-france-property-insight
 ```
 
-3. Run our app
+4. Build and run our app (Docker Desktop has to be on):
+
+```bash
+docker compose -f .devcontainer/compose.yaml run --rm -it server
+```
+
+5. (Optional) To remove all stopped container created by this project:
+
+```bash
+docker compose -f .devcontainer/compose.yaml down
+```
+
+### Method 2: by installing Python and uv first
+
+1. Install **Python 3.13**: From [Python.org](https://www.python.org/).
+
+2. Install **uv**: From [https://docs.astral.sh/uv](https://docs.astral.sh/uv/getting-started/installation/).
+
+3. Clone the Git repository to your local machine:
+
+```bash
+git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git
+```
+
+4. Navigate to the cloned directory:
+
+```bash
+cd gpd-m2sep-france-property-insight
+```
+
+5. Run our app
 
 ```bash
 uv run main
-```
-
-## Testing
-
-To run our unit tests:
-
-```bash
-uv run python -m pytest
-```
-
-To run our doctests as well:
-
-```bash
-uv run python -m pytest --doctest-modules
 ```
 
 ## Current state
@@ -141,7 +156,7 @@ uv run python -m pytest --doctest-modules
 CURRENT STATE: Sprint 1
 This project will go through 5 sprints with reviews and demonstration.
 
-## Git Workflow
+## Git Workflow Diagram
 
 Noone is allowed to push on main, any development has to be done on a separate branch.
 When ready, the features are merged on staging, a clone branch of main used a safety layer, before being merged to main.
@@ -165,10 +180,10 @@ flowchart TD
   end
  subgraph CI["CI pipeline on push / MR"]
     direction TB
-        CI1["pre-commit hooks (server-side) ruff lint & format"]
-        CI2["mypy type checks"]
+        CI1["pre-commit hooks<br>ruff lint & format"]
+        CI2["mypy typecheck"]
         CI3["pip-audit dependency checks"]
-        CI4["pytest unit & doctests"]
+        CI4["pytest unit & doctests<br>+ behave tests"]
   end
     D --> E
     E --> F
