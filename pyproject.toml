@@ -28,6 +28,7 @@ build-backend = "hatchling.build"
 [tool.ruff.lint]
 select = ["E", "F", "I"]
 
+# uv run shortcuts
 [project.scripts]
 main = "src.main:main"
 precommit = "src.utils.aliases:precommit"

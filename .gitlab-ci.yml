@@ -4,6 +4,7 @@ stages:
   - audit
   - test
 
+# template for uv installation
 .lint-template:
   image: python:3.13-slim
   cache:
