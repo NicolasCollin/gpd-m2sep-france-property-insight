@@ -8,26 +8,6 @@ When you're ready, start your application by running:
 docker compose -f .devcontainer/compose.yaml run --rm -it server
 ```
 
-Your application will be available at <http://localhost:8000>.
-
-### Other useful commands (temporary)
-
-```bash
-docker compose -f .devcontainer/compose.yaml up --build --force-recreate
-```
-
-```bash
-docker compose -f .devcontainer/compose.yaml run --rm -it server
-```
-
-```bash
-docker compose down
-```
-
-```bash
-docker ps -a
-```
-
 ## Deploying your application to the cloud
 
 First, build your image, e.g.: `docker build -t myapp .`.
