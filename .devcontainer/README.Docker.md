@@ -10,11 +10,11 @@ Your application will be available at <http://localhost:8000>.
 ### Other useful commands (temporary)
 
 ```bash
-docker compose up --build --force-recreate
+docker compose -f .devcontainer/compose.yaml up --build --force-recreate
 ```
 
 ```bash
-docker compose run --m -it server
+docker compose -f .devcontainer/compose.yaml run --rm -it server
 ```
 
 ```bash
