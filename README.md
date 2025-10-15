@@ -4,7 +4,7 @@ Academic project in Master 2 Statistique pour l'Evaluation et la Prevision 2025-
 
 This is a predictive analysis application developped fully in Python to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
-The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Economie, des Finances et de l'Industrie".
+The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Economie, des Finances et de l'Industrie".  
 Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
 
 ## Table of Contents
@@ -28,7 +28,7 @@ Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/dataset
 
 Dataset used: [Demandes de valeurs foncieres](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
 
-Public official dataset from the French government. Tracks real estate transactions over the French territory from 2020 to 2024.
+Public official dataset from the French government. Tracks real estate transactions over the French territory from 2020 to 2024.  
 More infos (origin, localization, methods, variable glossary...) in docs/metadata-fr.pdf
 
 ## Data Flow Diagram (DFD)
@@ -112,7 +112,7 @@ flowchart BT
 
 ### Method 1: with Docker Desktop
 
-1. Install **Docker Desktop**: From [www.docker.com](https://www.docker.com/products/docker-desktop/)
+1. Install **Docker Desktop**: From [www.docker.com](https://www.docker.com/products/docker-desktop/)  
 Make sure Docker Desktop is **running** before continuing.
 
 2. Clone the Git repository to your local machine:
@@ -165,7 +165,7 @@ uv run main
 
 ## Current state
 
-CURRENT STATE: Sprint 1
+CURRENT STATE: Sprint 1  
 This project will go through 5 sprints with reviews and demonstration.
 
 ### Changelog
@@ -196,7 +196,7 @@ Minor changes:
 
 ## Git Workflow Diagram
 
-Noone is allowed to push on main, any development has to be done on a separate branch.
+Noone is allowed to push on main, any development has to be done on a separate branch.  
 When ready, the features are merged on staging, a clone branch of main used a safety layer, before being merged to main.
 
 ```mermaid
@@ -257,10 +257,6 @@ flowchart TD
 - Kim Ngan THAI: Front End
 - Nicolas COLLIN: Data Engineer
 - Claudy LINCY: Data Scientist
-
-**HONORABLE MENTIONS**
-
-- Hideo Kojima
 
 ## License
 
