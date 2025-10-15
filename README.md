@@ -18,6 +18,8 @@ Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/dataset
     - [Method 1: with Docker Desktop](#method-1-with-docker-desktop)
     - [Method 2: by installing Python and uv first](#method-2-by-installing-python-and-uv-first)
   - [Current state](#current-state)
+    - [Changelog](#changelog)
+    - [Changelog README](#changelog-readme)
   - [Git Workflow Diagram](#git-workflow-diagram)
   - [Contributors](#contributors)
   - [License](#license)
@@ -39,37 +41,41 @@ config:
   layout: dagre
 ---
 flowchart BT
- subgraph Frontend["Frontend — User Interaction (Streamlit)"]
-        A["User (inputs via Streamlit)"]
-        B["Validation Layer (Pydantic)"]
+ subgraph Frontend["Frontend"]
+        A["Web Client App"]
   end
- subgraph Backend["Backend — Core Application Logic"]
-        C["Processing Layer (Analysis / Prediction / Visualization)"]
-        D["Database Access Layer (SQLAlchemy)"]
+ subgraph Backend["Backend"]
+        B["FastAPI Endpoint"]
+        D["Processing Layer<br>(Analysis / Prediction)"]
+        E["Database Access Layer (SQLAlchemy)"]
   end
  subgraph DataPipeline["Data Preparation Pipeline"]
-        E["Raw Data (Demandes de Valeurs Foncières)"]
-        F["Validation & Cleaning (Pydantic + Scripts)"]
-        G["Filtered Dataset (Analysis-Ready)"]
+        F["Raw Data"]
+        G["Validated & Cleaned Data"]
+        H["Filtered Data<br>(Analysis-Ready)"]
   end
- subgraph Database["Local Database"]
-        H["SQLite Database"]
+ subgraph Database["Database"]
+        I["SQLite Local Database"]
   end
-    E --> F
+
+    A -- API request --> B
+    B -- Validated Request<br>(Pydantic)--> D
+    D -- Query Operations --> E
+    E -- Interacts with --> I
+    I -- Query Results --> E
+    E -- Returns Data --> D
+    D -- Validated Results<br>(Pydantic) --> B
+    B -- Displayed Results --> A
     F --> G
     G --> H
-    A -- User Input (parameters, filters) --> B
-    B -- Validated Request --> C
-    C -- CRUD / Query Operations --> D
-    D -- Interacts with --> H
-    H -- Query Results --> D
-    D -- Returns Data --> C
-    C -- Validated Response --> B
-    B -- Displayed Results --> A
+    H --> I
+
 
 ```
 
 ## Repository Structure
+
+- **.devcontainer/** contains Docker setup files
 
 - **data/**
   - **raw/** raw data
@@ -79,6 +85,10 @@ flowchart BT
 
 - **docs/**
   - **references/** references from teacher and past projects
+  - data-flow.png: data flow diagram
+  - fpi-logo.png: our app logo
+  - git-mr-workflow: git Merge Request workflow diagram
+  - metadata-fr.pdf: detailed informations about our dataset
 
 - **src/** contains the python functions and scripts to run our app, analysis and models
   - **analysis/**
@@ -88,7 +98,9 @@ flowchart BT
   - **utils/**
   - main.py
 
-- **tests/** contains our unit tests made with pytest
+- **tests/**
+  - **behave/** behave tests
+  - **unit/** unit tests made with pytest
 
 - .gitignore: Prevents unwanted files from being tracked by git.
 - .python-version
@@ -155,6 +167,32 @@ uv run main
 
 CURRENT STATE: Sprint 1
 This project will go through 5 sprints with reviews and demonstration.
+
+### Changelog
+
+**Sprint 1**
+
+Major changes:
+
+- Docker setup - **Nicolas**
+- mypy, pip-audit, pytest added to CI - **Daniel**
+- gitlab CI setup + runners - **Nicolas**
+- pre-commit setup + ruff - **Nicolas**
+
+Minor changes:
+
+- uv run shortcuts in .toml scripts - **Daniel**
+- .devcontainer folder to store Docker setup files - **Daniel**
+
+### Changelog README
+
+**Sprint 1**
+
+- added Changelog and Changelog README sections
+- added Docker instructions
+- updated Data Flow Diagram orientation
+- added Git MR workflow diagram
+- added README 1.0
 
 ## Git Workflow Diagram
 
