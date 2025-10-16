@@ -15,3 +15,5 @@ wheels/
 
 # Virtual environments
 .venv
+
+raw2024.txt

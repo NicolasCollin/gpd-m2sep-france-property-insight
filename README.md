@@ -16,7 +16,7 @@ Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/dataset
   - [Repository Structure](#repository-structure)
   - [Installation and Usage](#installation-and-usage)
     - [Method 1: with Docker Desktop](#method-1-with-docker-desktop)
-    - [Method 2: by installing Python and uv first](#method-2-by-installing-python-and-uv-first)
+    - [Method 2: by installing Python and uv manually](#method-2-by-installing-python-and-uv-manually)
   - [Current state](#current-state)
     - [Changelog](#changelog)
     - [Changelog README](#changelog-readme)
@@ -42,7 +42,7 @@ config:
 ---
 flowchart BT
  subgraph Frontend["Frontend"]
-        A["Web Client App"]
+        A["Web Client Interface"]
   end
  subgraph Backend["Backend"]
         B["FastAPI Endpoint"]
@@ -129,19 +129,19 @@ git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-ins
 cd gpd-m2sep-france-property-insight
 ```
 
-4. Build and run our app (Docker Desktop has to be on):
+4. Build and run our app (Docker Desktop has to be running):
 
 ```bash
 docker compose -f .devcontainer/compose.yaml run --rm -it server
 ```
 
-5. (Optional) To remove all stopped container created by this project:
+5. (Optional) To remove all stopped containers created by this project:
 
 ```bash
 docker compose -f .devcontainer/compose.yaml down
 ```
 
-### Method 2: by installing Python and uv first
+### Method 2: by installing Python and uv manually
 
 1. Install **Python 3.13**: From [Python.org](https://www.python.org/).
 
