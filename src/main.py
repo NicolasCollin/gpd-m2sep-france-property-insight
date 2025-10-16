@@ -1,5 +1,5 @@
-import gradio as gr
-from interface.menu import app_menu
+from src.interface.menu import app_menu
+
 
 def get_welcome_message() -> str:
     return "Welcome to FPI app!"
@@ -12,8 +12,6 @@ def main() -> None:
     print(f"Nice, my favourite colours is also {colour}.")
 
 
-
 if __name__ == "__main__":
     app = app_menu()
     app.launch()
-

@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "France Property Insight: Uni project app for Master 2 SEP"
 requires-python = ">=3.13"
 dependencies = [
+    "gradio>=5.49.1",
     "pandas==2.3.3",
 ]
 
@@ -22,6 +23,10 @@ packages = ["src"]
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+# change line length tolerance
+[tool.ruff]
+line-length = 120
 
 # default linting rules + isort
 [tool.ruff.lint]
