@@ -103,6 +103,8 @@ flowchart BT
   - **unit/** unit tests made with pytest
 
 - .gitignore: Prevents unwanted files from being tracked by git.
+- .gitlab-ci.yml
+- .pre-commit-config.yaml
 - .python-version
 - pyproject.toml: Project metadata, dependency ranges, and command lines shortcuts (project.scripts).
 - README.md: This very same file.
