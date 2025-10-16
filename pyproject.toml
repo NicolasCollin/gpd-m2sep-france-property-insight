@@ -32,6 +32,9 @@ line-length = 120
 [tool.ruff.lint]
 select = ["E", "F", "I"]
 
+[tool.mypy]
+mypy_path = ["src"]
+
 # uv run shortcuts
 [project.scripts]
 main = "src.main:main"
