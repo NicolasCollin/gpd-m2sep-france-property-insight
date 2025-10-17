@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "France Property Insight: Uni project app for Master 2 SEP"
 requires-python = ">=3.13"
 dependencies = [
-    "gradio>=5.49.1",
+    "gradio==5.49.1",
     "pandas==2.3.3",
 ]
 
@@ -39,4 +39,7 @@ mypy_path = ["src"]
 [project.scripts]
 main = "src.main:main"
 precommit = "src.utils.aliases:precommit"
-fpibuild = "src.utils.aliases:fpibuild"
+fpi = "src.utils.aliases:fpi"
+typecheck = "src.utils.aliases:typecheck"
+audit = "src.utils.aliases:audit"
+test = "src.utils.aliases:test"
