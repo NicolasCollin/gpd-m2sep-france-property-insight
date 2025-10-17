@@ -1,8 +1,10 @@
+from typing import Tuple
+
 import gradio as gr  # Import Gradio for building the interface
 
 
 # --- Prediction Page Layout ---
-def prediction_page():
+def prediction_page() -> Tuple[gr.Blocks, gr.Button]:
     """
     Create and return the layout for the Prediction Page.
 
@@ -12,8 +14,8 @@ def prediction_page():
 
     Returns:
         tuple: A tuple containing:
-            - gr.Blocks: The Gradio layout object representing the page
-            - gr.Button: The navigation button to go back to the home page
+            - prediction_page (gr.Blocks): The Gradio layout object representing the page
+            - return_home_button (gr.Button): The navigation button to go back to the home page
     """
     # Define the overall layout and style for the prediction page
     with gr.Blocks(
