@@ -1,3 +1,14 @@
+---
+title: France Property Insight (Online)
+emoji: 🏠
+colorFrom: indigo
+colorTo: gray
+sdk: gradio
+sdk_version: 4.0
+app_file: src/main.py
+pinned: false
+---
+
 # France Property Insight: Analysis and Predictions
 
 Academic project in Master 2 Statistique pour l'Evaluation et la Prevision 2025-2026.
