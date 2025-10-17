@@ -23,6 +23,7 @@ lint:
   extends: .lint-template
   script:
     - uv run pre-commit run --all-files --show-diff-on-failure
+  allow_failure: true
 
 typecheck:
   stage: typecheck

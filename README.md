@@ -1,11 +1,13 @@
 # France Property Insight: Analysis and Predictions
 
+Website link to our app: <https://gpd-m2sep-france-property-insight.onrender.com/>
+
 Academic project in Master 2 Statistique pour l'Evaluation et la Prevision 2025-2026.
 
-This is a predictive analysis application developped fully in Python to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
+This is a predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
-The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Economie, des Finances et de l'Industrie".  
-Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
+The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Économie, des Finances et de l'Industrie".  
+Dataset used: ["Demandes de valeurs foncières"](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
 
 ## Table of Contents
 
@@ -26,26 +28,28 @@ Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/dataset
 
 ## Database
 
-Dataset used: [Demandes de valeurs foncieres](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
+Dataset used: [Demandes de valeurs foncières](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
 
 Public official dataset from the French government. Tracks real estate transactions over the French territory from 2020 to 2024.  
 More infos (origin, localization, methods, variable glossary...) in docs/metadata-fr.pdf
 
 ## Data Flow Diagram (DFD)
 
+PNG version in docs/data-flow.png
+
 ```mermaid
 
 ---
 config:
-  theme: base
+  theme: redux-dark
   layout: dagre
 ---
 flowchart BT
  subgraph Frontend["Frontend"]
-        A["Web Client Interface"]
+        A["Web Client Interface (Gradio)"]
   end
  subgraph Backend["Backend"]
-        B["FastAPI Endpoint"]
+        B["FastAPI Layer"]
         D["Processing Layer<br>(Analysis / Prediction)"]
         E["Database Access Layer (SQLAlchemy)"]
   end
@@ -79,8 +83,7 @@ flowchart BT
 
 - **data/**
   - **raw/** raw data
-  - **validated/** validated by pydantic schemas
-  - **cleaned/** cleaned (duplicates, missing values, renaming...)
+  - **cleaned/** validated by Pydantic schemas & cleaned (duplicates, missing values, renaming...)
   - **filtered/** ready for analysis, visualization, modeling
 
 - **docs/**
@@ -111,6 +114,8 @@ flowchart BT
 - uv.lock: Lockfile with exact dependency versions for reproducibility.
 
 ## Installation and Usage
+
+Website link to our app: <https://gpd-m2sep-france-property-insight.onrender.com/>
 
 ### Method 1: with Docker Desktop
 
@@ -176,6 +181,8 @@ This project will go through 5 sprints with reviews and demonstration.
 
 Major changes:
 
+- Hosting the app online - **Nicolas**
+- Web client interface with Gradio - **Kim**
 - Docker setup - **Nicolas**
 - mypy, pip-audit, pytest added to CI - **Daniel**
 - gitlab CI setup + runners - **Nicolas**
@@ -185,11 +192,13 @@ Minor changes:
 
 - uv run shortcuts in .toml scripts - **Daniel**
 - .devcontainer folder to store Docker setup files - **Daniel**
+- function to sample original data - **Daniel**
 
 ### Changelog README
 
 **Sprint 1**
 
+- updated Changelog: interface and online hosting
 - added Changelog and Changelog README sections
 - added Docker instructions
 - updated Data Flow Diagram orientation
@@ -198,6 +207,8 @@ Minor changes:
 
 ## Git Workflow Diagram
 
+PNG version in docs/git-mr-workflow.png
+
 Noone is allowed to push on main, any development has to be done on a separate branch.  
 When ready, the features are merged on staging, a clone branch of main used a safety layer, before being merged to main.
 
@@ -205,50 +216,25 @@ When ready, the features are merged on staging, a clone branch of main used a sa
 
 ---
 config:
-  layout: elk
   theme: default
-title: Merge Request Workflow (feature -> staging -> main)
 ---
-flowchart TD
- subgraph Merge["When feature is ready"]
-        D["Clean feature history"]
-        E["Rebase staging onto feature"]
-        F["Resolve conflicts if any"]
-        G["Test staging build"]
-        H["Push (--force) staging"]
-        I["Open MR: staging → main"]
-  end
- subgraph CI["CI pipeline on push / MR"]
-    direction TB
-        CI1["pre-commit hooks<br>ruff lint & format"]
-        CI2["mypy typecheck"]
-        CI3["pip-audit dependency checks"]
-        CI4["pytest unit & doctests<br>+ behave tests"]
-  end
-    D --> E
-    E --> F
-    F --> G
-    G --> H
-    H --> I
-    CI1 --> CI2
-    CI2 --> CI3
-    CI3 --> CI4
-    Note["staging is a branch clone of main <br>It's a safety layer before merging into main"]
-     D:::local
-     E:::local
-     F:::local
-     G:::local
-     H:::remote
-     I:::remote
-     CI1:::ci
-     CI2:::ci
-     CI3:::ci
-     CI4:::ci
-     Note:::note
-    classDef local fill:#86c0ff,stroke:#004085,color:#004085
-    classDef remote fill:#afdeba,stroke:#155724,color:#155724
-    classDef ci fill:#fff2cc,stroke:#b58900,color:#8a5d00,font-weight:bold
-    classDef note fill:#bdbdbd,stroke:#6c757d,color:#212529,font-weight:bold
+gitGraph
+    commit id: "Feature 1"
+    branch feature
+    commit id: "New feature"
+    commit id: "More commits..."
+    commit id: " " type: HIGHLIGHT tag: "FEATURE READY"
+    commit id: "Review + Tests"
+    checkout main
+    commit id: "Feature 2"
+    commit id: "Feature 3"
+    branch staging
+    checkout staging
+    merge feature id: "Merge feature to staging" type: HIGHLIGHT
+    commit id: "Resolve conflicts"
+    commit id: "Clean history"
+    checkout main
+    merge staging id: "Merge Request to main" tag: "NEW FEATURE"
 
 ```
 
