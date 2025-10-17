@@ -4,7 +4,7 @@ Academic project in Master 2 Statistique pour l'Evaluation et la Prevision 2025-
 
 This is a predictive analysis application developped fully in Python to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
-The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Economie, des Finances et de l'Industrie".
+The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Economie, des Finances et de l'Industrie".  
 Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
 
 ## Table of Contents
@@ -16,8 +16,10 @@ Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/dataset
   - [Repository Structure](#repository-structure)
   - [Installation and Usage](#installation-and-usage)
     - [Method 1: with Docker Desktop](#method-1-with-docker-desktop)
-    - [Method 2: by installing Python and uv first](#method-2-by-installing-python-and-uv-first)
+    - [Method 2: by installing Python and uv manually](#method-2-by-installing-python-and-uv-manually)
   - [Current state](#current-state)
+    - [Changelog](#changelog)
+    - [Changelog README](#changelog-readme)
   - [Git Workflow Diagram](#git-workflow-diagram)
   - [Contributors](#contributors)
   - [License](#license)
@@ -26,7 +28,7 @@ Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/dataset
 
 Dataset used: [Demandes de valeurs foncieres](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
 
-Public official dataset from the French government. Tracks real estate transactions over the French territory from 2020 to 2024.
+Public official dataset from the French government. Tracks real estate transactions over the French territory from 2020 to 2024.  
 More infos (origin, localization, methods, variable glossary...) in docs/metadata-fr.pdf
 
 ## Data Flow Diagram (DFD)
@@ -39,37 +41,41 @@ config:
   layout: dagre
 ---
 flowchart BT
- subgraph Frontend["Frontend — User Interaction (Streamlit)"]
-        A["User (inputs via Streamlit)"]
-        B["Validation Layer (Pydantic)"]
+ subgraph Frontend["Frontend"]
+        A["Web Client Interface"]
   end
- subgraph Backend["Backend — Core Application Logic"]
-        C["Processing Layer (Analysis / Prediction / Visualization)"]
-        D["Database Access Layer (SQLAlchemy)"]
+ subgraph Backend["Backend"]
+        B["FastAPI Endpoint"]
+        D["Processing Layer<br>(Analysis / Prediction)"]
+        E["Database Access Layer (SQLAlchemy)"]
   end
  subgraph DataPipeline["Data Preparation Pipeline"]
-        E["Raw Data (Demandes de Valeurs Foncières)"]
-        F["Validation & Cleaning (Pydantic + Scripts)"]
-        G["Filtered Dataset (Analysis-Ready)"]
+        F["Raw Data"]
+        G["Validated & Cleaned Data"]
+        H["Filtered Data<br>(Analysis-Ready)"]
   end
- subgraph Database["Local Database"]
-        H["SQLite Database"]
+ subgraph Database["Database"]
+        I["SQLite Local Database"]
   end
-    E --> F
+
+    A -- API request --> B
+    B -- Validated Request<br>(Pydantic)--> D
+    D -- Query Operations --> E
+    E -- Interacts with --> I
+    I -- Query Results --> E
+    E -- Returns Data --> D
+    D -- Validated Results<br>(Pydantic) --> B
+    B -- Displayed Results --> A
     F --> G
     G --> H
-    A -- User Input (parameters, filters) --> B
-    B -- Validated Request --> C
-    C -- CRUD / Query Operations --> D
-    D -- Interacts with --> H
-    H -- Query Results --> D
-    D -- Returns Data --> C
-    C -- Validated Response --> B
-    B -- Displayed Results --> A
+    H --> I
+
 
 ```
 
 ## Repository Structure
+
+- **.devcontainer/** contains Docker setup files
 
 - **data/**
   - **raw/** raw data
@@ -79,6 +85,10 @@ flowchart BT
 
 - **docs/**
   - **references/** references from teacher and past projects
+  - data-flow.png: data flow diagram
+  - fpi-logo.png: our app logo
+  - git-mr-workflow: git Merge Request workflow diagram
+  - metadata-fr.pdf: detailed informations about our dataset
 
 - **src/** contains the python functions and scripts to run our app, analysis and models
   - **analysis/**
@@ -88,9 +98,13 @@ flowchart BT
   - **utils/**
   - main.py
 
-- **tests/** contains our unit tests made with pytest
+- **tests/**
+  - **behave/** behave tests
+  - **unit/** unit tests made with pytest
 
 - .gitignore: Prevents unwanted files from being tracked by git.
+- .gitlab-ci.yml
+- .pre-commit-config.yaml
 - .python-version
 - pyproject.toml: Project metadata, dependency ranges, and command lines shortcuts (project.scripts).
 - README.md: This very same file.
@@ -100,7 +114,7 @@ flowchart BT
 
 ### Method 1: with Docker Desktop
 
-1. Install **Docker Desktop**: From [www.docker.com](https://www.docker.com/products/docker-desktop/)
+1. Install **Docker Desktop**: From [www.docker.com](https://www.docker.com/products/docker-desktop/)  
 Make sure Docker Desktop is **running** before continuing.
 
 2. Clone the Git repository to your local machine:
@@ -115,19 +129,19 @@ git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-ins
 cd gpd-m2sep-france-property-insight
 ```
 
-4. Build and run our app (Docker Desktop has to be on):
+4. Build and run our app (Docker Desktop has to be running):
 
 ```bash
 docker compose -f .devcontainer/compose.yaml run --rm -it server
 ```
 
-5. (Optional) To remove all stopped container created by this project:
+5. (Optional) To remove all stopped containers created by this project:
 
 ```bash
 docker compose -f .devcontainer/compose.yaml down
 ```
 
-### Method 2: by installing Python and uv first
+### Method 2: by installing Python and uv manually
 
 1. Install **Python 3.13**: From [Python.org](https://www.python.org/).
 
@@ -153,12 +167,38 @@ uv run main
 
 ## Current state
 
-CURRENT STATE: Sprint 1
+CURRENT STATE: Sprint 1  
 This project will go through 5 sprints with reviews and demonstration.
+
+### Changelog
+
+**Sprint 1**
+
+Major changes:
+
+- Docker setup - **Nicolas**
+- mypy, pip-audit, pytest added to CI - **Daniel**
+- gitlab CI setup + runners - **Nicolas**
+- pre-commit setup + ruff - **Nicolas**
+
+Minor changes:
+
+- uv run shortcuts in .toml scripts - **Daniel**
+- .devcontainer folder to store Docker setup files - **Daniel**
+
+### Changelog README
+
+**Sprint 1**
+
+- added Changelog and Changelog README sections
+- added Docker instructions
+- updated Data Flow Diagram orientation
+- added Git MR workflow diagram
+- added README 1.0
 
 ## Git Workflow Diagram
 
-Noone is allowed to push on main, any development has to be done on a separate branch.
+Noone is allowed to push on main, any development has to be done on a separate branch.  
 When ready, the features are merged on staging, a clone branch of main used a safety layer, before being merged to main.
 
 ```mermaid
@@ -219,10 +259,6 @@ flowchart TD
 - Kim Ngan THAI: Front End
 - Nicolas COLLIN: Data Engineer
 - Claudy LINCY: Data Scientist
-
-**HONORABLE MENTIONS**
-
-- Hideo Kojima
 
 ## License
 
