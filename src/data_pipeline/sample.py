@@ -15,4 +15,3 @@ def sample_data() -> None:
         for line in infile:
             if random.random() < keep_prob:
                 outfile.write(line)
-    return line
