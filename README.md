@@ -127,13 +127,17 @@ Make sure Docker Desktop is **running** before continuing.
 ```bash
 git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git
 ```
-
+dekdede
 3. Navigate to the cloned directory:
 
 ```bash
 cd gpd-m2sep-france-property-insight
 ```
-
+oooo
+dc,cd
+cdcdcdc
+dedeede
+bhjku
 4. Build and run our app (Docker Desktop has to be running):
 
 ```bash
