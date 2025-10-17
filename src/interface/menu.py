@@ -1,23 +1,28 @@
-import gradio as gr  # Import Gradio
+import gradio as gr  # Import Gradio library for building the interface
 
-from src.interface.dashboard_page import dashboard_page  # Import dashboard page
-from src.interface.home_page import home_page  # Import home page
-from src.interface.prediction_page import prediction_page  # Import prediction page
+from src.interface.dashboard_page import dashboard_page
+from src.interface.home_page import home_page
+from src.interface.prediction_page import prediction_page
 
-
-def app_menu():  # Define app menu
-    with gr.Blocks() as menu:  # Main app layout
-        with gr.Column(visible=True) as home:  # Home page section
+# --- Application Menu Layout ---
+def app_menu():
+    # Define the global structure of the app with multiple pages (Home, Dashboard, Prediction)
+    with gr.Blocks() as menu:
+        # --- Section: Home Page ---
+        with gr.Column(visible=True) as home:
             home_ui, go_dashboard, go_prediction = home_page()
 
-        with gr.Column(visible=False) as dashboard:  # Dashboard section
+        # --- Section: Dashboard Page ---
+        with gr.Column(visible=False) as dashboard:
             dashboard_ui, back_home_1 = dashboard_page()
 
-        with gr.Column(visible=False) as prediction:  # Prediction section
+        # --- Section: Prediction Page ---
+        with gr.Column(visible=False) as prediction:
             prediction_ui, back_home_2 = prediction_page()
 
-        # --- Navigation logic ---
-        go_dashboard.click(  # Switch to dashboard
+        # --- Navigation Logic ---
+        # Controls visibility between Home, Dashboard, and Prediction sections
+        go_dashboard.click(
             lambda: (
                 gr.update(visible=False),
                 gr.update(visible=True),
@@ -27,7 +32,7 @@ def app_menu():  # Define app menu
             [home, dashboard, prediction],
         )
 
-        go_prediction.click(  # Switch to prediction page
+        go_prediction.click(
             lambda: (
                 gr.update(visible=False),
                 gr.update(visible=False),
@@ -37,7 +42,7 @@ def app_menu():  # Define app menu
             [home, dashboard, prediction],
         )
 
-        for back_btn in [back_home_1, back_home_2]:  # Return to home
+        for back_btn in [back_home_1, back_home_2]:
             back_btn.click(
                 lambda: (
                     gr.update(visible=True),
@@ -48,4 +53,5 @@ def app_menu():  # Define app menu
                 [home, dashboard, prediction],
             )
 
-    return menu  # Return complete menu
+    # Return the complete app structure
+    return menu
