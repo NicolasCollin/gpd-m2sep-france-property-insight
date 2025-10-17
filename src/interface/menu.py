@@ -6,7 +6,7 @@ from src.interface.prediction_page import prediction_page
 
 
 # --- Application Menu Layout ---
-def app_menu() -> gr.Blocks():
+def app_menu() -> gr.Blocks:
     """
     Create and return the main menu interface for the application.
 
