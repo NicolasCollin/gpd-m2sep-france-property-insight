@@ -14,3 +14,4 @@ repos:
       - id: check-toml            # checks pyproject.toml
       - id: end-of-file-fixer     # adds empty line at end of file
       - id: trailing-whitespace   # removes unnecessary spaces
+        exclude: '\.md$'  # don't remove the double spaces (newline) in README.md

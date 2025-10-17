@@ -13,10 +13,10 @@ RUN pip install --no-cache-dir uv
 RUN uv sync --frozen --no-dev
 
 # Copy source code
-COPY src/ ./src/
+COPY . .
 
 # Expose port if needed (for Streamlit later)
 EXPOSE 8000
 
 # Run interactive terminal app directly
-CMD ["/app/.venv/bin/python", "src/main.py"]
+CMD ["uv", "run", "main"]
