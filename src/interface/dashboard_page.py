@@ -3,6 +3,18 @@ import gradio as gr  # Import Gradio for building the interface
 
 # --- Dashboard Page Layout ---
 def dashboard_page():
+    """
+    Create and return the layout for the Dashboard Page.
+
+    The Dashboard Page includes:
+    - A title and short description of its purpose
+    - A navigation button to return to the home page
+
+    Returns:
+        tuple: A tuple containing:
+            - gr.Blocks: The Gradio layout object representing the dashboard
+            - gr.Button: The navigation button to go back to the home page
+    """
     # Define the overall structure and style of the dashboard page
     with gr.Blocks(
         css="""

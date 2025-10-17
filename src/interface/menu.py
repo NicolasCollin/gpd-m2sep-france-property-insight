@@ -7,6 +7,19 @@ from src.interface.prediction_page import prediction_page
 
 # --- Application Menu Layout ---
 def app_menu():
+    """
+    Create and return the main menu interface for the application.
+
+    This function defines the global layout of the app, organizing three main pages:
+    - Home Page: Introduces the platform and provides navigation buttons.
+    - Dashboard Page: Displays property data visualizations.
+    - Prediction Page: Allows users to estimate property values.
+
+    The function also handles navigation between these sections using Gradio event triggers.
+
+    Returns:
+        gr.Blocks: The complete Gradio layout for the app, including navigation logic.
+    """
     # Define the global structure of the app with multiple pages (Home, Dashboard, Prediction)
     with gr.Blocks() as menu:
         # --- Section: Home Page ---

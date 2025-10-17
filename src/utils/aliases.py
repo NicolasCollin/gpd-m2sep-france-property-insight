@@ -1,3 +1,12 @@
+"""
+aliases.py
+-----------
+Provides command-line shortcut functions for common development tasks
+in the France Property Insight project. These commands automate routine
+operations such as running pre-commit checks, building the Docker container,
+type checking, auditing dependencies, and executing tests.
+"""
+
 import subprocess  # For running shell commands
 
 
