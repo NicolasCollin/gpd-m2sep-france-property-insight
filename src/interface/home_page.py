@@ -3,6 +3,19 @@ import gradio as gr  # Import Gradio for building the interface
 
 # --- Home Page Layout ---
 def home_page():
+    """
+    Create and return the layout for the Home Page.
+
+    The Home Page includes:
+    - A title and short description of the application
+    - Two navigation buttons: one for accessing the Dashboard, another for the Prediction module
+
+    Returns:
+        tuple: A tuple containing:
+            - gr.Blocks: The Gradio layout object representing the page
+            - gr.Button: The Dashboard navigation button
+            - gr.Button: The Prediction navigation button
+    """
     # Define the layout and style for the home page
     with gr.Blocks(
         css="""
