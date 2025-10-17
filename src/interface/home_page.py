@@ -1,5 +1,6 @@
 import gradio as gr  # Import Gradio for building the interface
 
+
 # --- Home Page Layout ---
 def home_page():
     # Define the layout and style for the home page

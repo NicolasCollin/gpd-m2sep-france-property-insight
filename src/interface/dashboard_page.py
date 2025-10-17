@@ -1,5 +1,6 @@
 import gradio as gr  # Import Gradio for building the interface
 
+
 # --- Dashboard Page Layout ---
 def dashboard_page():
     # Define the overall structure and style of the dashboard page

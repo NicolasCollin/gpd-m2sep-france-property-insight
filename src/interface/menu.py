@@ -4,6 +4,7 @@ from src.interface.dashboard_page import dashboard_page
 from src.interface.home_page import home_page
 from src.interface.prediction_page import prediction_page
 
+
 # --- Application Menu Layout ---
 def app_menu():
     # Define the global structure of the app with multiple pages (Home, Dashboard, Prediction)
