@@ -9,9 +9,12 @@ wheels/
 .uv/
 .mypy_cache/
 .pytest_cache/
+raw2024.txt
 
 #MacOS
 .DS_Store
 
 # Virtual environments
 .venv
+
+raw2024.txt

@@ -1,12 +1,13 @@
+from src.interface.menu import app_menu
+
+
 def get_welcome_message() -> str:
     return "Welcome to FPI app!"
 
 
-def main() -> None:
-    welcome: str = get_welcome_message()
-    print(welcome)
-    colour: str = input("what is your favourite colour ?\n")
-    print(f"Nice, my favourite colours is also {colour}.")
+def main():
+    app = app_menu()
+    app.launch()
 
 
 if __name__ == "__main__":
