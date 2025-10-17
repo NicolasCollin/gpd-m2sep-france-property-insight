@@ -1,11 +1,13 @@
 # France Property Insight: Analysis and Predictions
 
+Website link to our app: <https://gpd-m2sep-france-property-insight.onrender.com/>
+
 Academic project in Master 2 Statistique pour l'Evaluation et la Prevision 2025-2026.
 
-This is a predictive analysis application developped fully in Python to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
+This is a predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
-The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Economie, des Finances et de l'Industrie".  
-Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
+The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Économie, des Finances et de l'Industrie".  
+Dataset used: ["Demandes de valeurs foncières"](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
 
 ## Table of Contents
 
@@ -26,7 +28,7 @@ Dataset used: ["Demandes de valeurs foncieres"](https://www.data.gouv.fr/dataset
 
 ## Database
 
-Dataset used: [Demandes de valeurs foncieres](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
+Dataset used: [Demandes de valeurs foncières](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
 
 Public official dataset from the French government. Tracks real estate transactions over the French territory from 2020 to 2024.  
 More infos (origin, localization, methods, variable glossary...) in docs/metadata-fr.pdf
@@ -42,7 +44,7 @@ config:
 ---
 flowchart BT
  subgraph Frontend["Frontend"]
-        A["Web Client Interface"]
+        A["Web Client Interface (Gradio)"]
   end
  subgraph Backend["Backend"]
         B["FastAPI Endpoint"]
@@ -79,8 +81,7 @@ flowchart BT
 
 - **data/**
   - **raw/** raw data
-  - **validated/** validated by pydantic schemas
-  - **cleaned/** cleaned (duplicates, missing values, renaming...)
+  - **cleaned/** validated by Pydantic schemas & cleaned (duplicates, missing values, renaming...)
   - **filtered/** ready for analysis, visualization, modeling
 
 - **docs/**
@@ -111,6 +112,8 @@ flowchart BT
 - uv.lock: Lockfile with exact dependency versions for reproducibility.
 
 ## Installation and Usage
+
+Website link to our app: <https://gpd-m2sep-france-property-insight.onrender.com/>
 
 ### Method 1: with Docker Desktop
 
@@ -176,6 +179,8 @@ This project will go through 5 sprints with reviews and demonstration.
 
 Major changes:
 
+- Hosting the app online - **Nicolas**
+- Web client interface with Gradio - **Kim**
 - Docker setup - **Nicolas**
 - mypy, pip-audit, pytest added to CI - **Daniel**
 - gitlab CI setup + runners - **Nicolas**
@@ -185,11 +190,13 @@ Minor changes:
 
 - uv run shortcuts in .toml scripts - **Daniel**
 - .devcontainer folder to store Docker setup files - **Daniel**
+- function to sample original data - **Daniel**
 
 ### Changelog README
 
 **Sprint 1**
 
+- updated Changelog: interface and online hosting
 - added Changelog and Changelog README sections
 - added Docker instructions
 - updated Data Flow Diagram orientation
@@ -211,11 +218,11 @@ title: Merge Request Workflow (feature -> staging -> main)
 ---
 flowchart TD
  subgraph Merge["When feature is ready"]
-        D["Clean feature history"]
-        E["Rebase staging onto feature"]
+        D["Review and clean commit history"]
+        E["Merge changes to staging"]
         F["Resolve conflicts if any"]
         G["Test staging build"]
-        H["Push (--force) staging"]
+        H["Push staging"]
         I["Open MR: staging → main"]
   end
  subgraph CI["CI pipeline on push / MR"]
