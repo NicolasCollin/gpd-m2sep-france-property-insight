@@ -140,7 +140,7 @@ cd gpd-m2sep-france-property-insight
 docker compose -f .devcontainer/compose.yaml run --rm -it server
 ```
 
-5. (Optional) To remove all stopped containers created by this project:
+5. (Optional) To remove all stopped containers created by this project :
 
 ```bash
 docker compose -f .devcontainer/compose.yaml down
