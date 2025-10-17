@@ -21,7 +21,6 @@ Dataset used: ["Demandes de valeurs foncières"](https://www.data.gouv.fr/datase
     - [Method 2: by installing Python and uv manually](#method-2-by-installing-python-and-uv-manually)
   - [Current state](#current-state)
     - [Changelog](#changelog)
-    - [Changelog README](#changelog-readme)
   - [Git Workflow Diagram](#git-workflow-diagram)
   - [Contributors](#contributors)
   - [License](#license)
@@ -35,7 +34,7 @@ More infos (origin, localization, methods, variable glossary...) in docs/metadat
 
 ## Data Flow Diagram (DFD)
 
-PNG version in docs/data-flow.png
+There is a (prettier) PNG version in docs/data-flow.png
 
 ```mermaid
 
@@ -115,7 +114,10 @@ flowchart BT
 
 ## Installation and Usage
 
-Website link to our app: <https://gpd-m2sep-france-property-insight.onrender.com/>
+Website link to our app for immediate use: <https://gpd-m2sep-france-property-insight.onrender.com/>
+
+2 ways to install: with or without Docker.  
+The second method, while less reliable because of manual installation of python and uv, is much faster.
 
 ### Method 1: with Docker Desktop
 
@@ -194,47 +196,40 @@ Minor changes:
 - .devcontainer folder to store Docker setup files - **Daniel**
 - function to sample original data - **Daniel**
 
-### Changelog README
-
-**Sprint 1**
-
-- updated Changelog: interface and online hosting
-- added Changelog and Changelog README sections
-- added Docker instructions
-- updated Data Flow Diagram orientation
-- added Git MR workflow diagram
-- added README 1.0
-
 ## Git Workflow Diagram
 
-PNG version in docs/git-mr-workflow.png
+There is a (prettier) PNG version in docs/git-mr-workflow.png
 
 Noone is allowed to push on main, any development has to be done on a separate branch.  
-When ready, the features are merged on staging, a clone branch of main used a safety layer, before being merged to main.
+When ready, the features are merged on staging, a branch used as a safety layer, before being merged to main.
 
 ```mermaid
 
 ---
 config:
-  theme: default
+  theme: 'default'
+  themeVariables:
+    commitLabelFontSize: '12px'
 ---
 gitGraph
-    commit id: "Feature 1"
+    commit id: "Feature 3"
     branch feature
-    commit id: "New feature"
+    checkout feature
+    commit id: "First commit"
     commit id: "More commits..."
     commit id: " " type: HIGHLIGHT tag: "FEATURE READY"
     commit id: "Review + Tests"
     checkout main
-    commit id: "Feature 2"
-    commit id: "Feature 3"
+    commit id: "Feature 4"
+    commit id: "Bug fix 2"
+    checkout feature
     branch staging
-    checkout staging
-    merge feature id: "Merge feature to staging" type: HIGHLIGHT
+    merge main id: "Merge changes" type: HIGHLIGHT
     commit id: "Resolve conflicts"
     commit id: "Clean history"
+    commit id: "Ready for deployment" type: HIGHLIGHT
     checkout main
-    merge staging id: "Merge Request to main" tag: "NEW FEATURE"
+    merge staging id: "Open MR: Merge Request" tag: "NEW RELEASE"
 
 ```
 

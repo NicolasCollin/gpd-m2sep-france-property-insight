@@ -9,6 +9,7 @@ dependencies = [
     "pandas==2.3.3",
 ]
 
+# depedencies not needed for users
 [dependency-groups]
 dev = [
     "mypy==1.18.2",
@@ -32,9 +33,6 @@ line-length = 120
 # default linting rules + isort
 [tool.ruff.lint]
 select = ["E", "F", "I"]
-
-[tool.mypy]
-mypy_path = ["src"]
 
 # uv run shortcuts
 [project.scripts]
