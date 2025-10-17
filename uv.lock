@@ -300,7 +300,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "gradio", specifier = ">=5.49.1" },
+    { name = "gradio", specifier = "==5.49.1" },
     { name = "pandas", specifier = "==2.3.3" },
 ]
 
