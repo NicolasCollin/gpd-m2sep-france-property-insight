@@ -1,16 +1,28 @@
 import random
+from pathlib import Path
 
 
 def sample_data() -> None:
-    input_path = "data/raw/raw2024.txt"
-    output_path = "data/raw/sample2024.txt"
+    """
+    Sample a large text file by selecting random lines.
 
-    sample_size = 10000  # number of lines you want
-    total_lines = 3458645  # total lines including header
+    This temporary utility reduces file size for faster development while a
+    full data storage solution is being prepared.
+
+    - Always preserves the header line.
+    - Writes the sampled lines to a new file called "sample20XX.txt" in data/raw/ folder.
+
+    Meant to run only once per raw data file.
+    """
+    input_path = Path("data/raw/raw2024.txt")
+    output_path = Path("data/raw/sample2024.txt")
+
+    sample_size = 10_000  # desired number of lines (excluding header)
+    total_lines = 3_458_645  # total number of lines including header
 
     keep_prob = sample_size / total_lines
 
-    with open(input_path, "r", encoding="utf-8") as infile, open(output_path, "w", encoding="utf-8") as outfile:
+    with input_path.open("r", encoding="utf-8") as infile, output_path.open("w", encoding="utf-8") as outfile:
         # Always write the header
         header = infile.readline()
         outfile.write(header)
