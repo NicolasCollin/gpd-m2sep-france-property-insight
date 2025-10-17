@@ -9,6 +9,7 @@ dependencies = [
     "pandas==2.3.3",
 ]
 
+# depedencies not needed for users
 [dependency-groups]
 dev = [
     "mypy==1.18.2",
@@ -33,14 +34,13 @@ line-length = 120
 [tool.ruff.lint]
 select = ["E", "F", "I"]
 
-[tool.mypy]
-mypy_path = ["src"]
-
 # uv run shortcuts
 [project.scripts]
 main = "src.main:main"
 precommit = "src.utils.aliases:precommit"
-fpi = "src.utils.aliases:fpi"
+lint = "src.utils.aliases:precommit"
+fpibuild = "src.utils.aliases:fpibuild"
+fpirun = "src.utils.aliases:fpirun"
 typecheck = "src.utils.aliases:typecheck"
 audit = "src.utils.aliases:audit"
 test = "src.utils.aliases:test"
