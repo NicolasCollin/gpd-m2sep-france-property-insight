@@ -1,23 +1,23 @@
-import gradio as gr
+import gradio as gr  # Import Gradio
 
-from src.interface.dashboard_page import dashboard_page
-from src.interface.home_page import home_page
-from src.interface.prediction_page import prediction_page
+from src.interface.dashboard_page import dashboard_page  # Import dashboard page
+from src.interface.home_page import home_page  # Import home page
+from src.interface.prediction_page import prediction_page  # Import prediction page
 
 
-def app_menu():
-    with gr.Blocks() as menu:
-        with gr.Column(visible=True) as home:
+def app_menu():  # Define app menu
+    with gr.Blocks() as menu:  # Main app layout
+        with gr.Column(visible=True) as home:  # Home page section
             home_ui, go_dashboard, go_prediction = home_page()
 
-        with gr.Column(visible=False) as dashboard:
+        with gr.Column(visible=False) as dashboard:  # Dashboard section
             dashboard_ui, back_home_1 = dashboard_page()
 
-        with gr.Column(visible=False) as prediction:
+        with gr.Column(visible=False) as prediction:  # Prediction section
             prediction_ui, back_home_2 = prediction_page()
 
-        # Dashboard
-        go_dashboard.click(
+        # --- Navigation logic ---
+        go_dashboard.click(  # Switch to dashboard
             lambda: (
                 gr.update(visible=False),
                 gr.update(visible=True),
@@ -27,8 +27,7 @@ def app_menu():
             [home, dashboard, prediction],
         )
 
-        # Prediction
-        go_prediction.click(
+        go_prediction.click(  # Switch to prediction page
             lambda: (
                 gr.update(visible=False),
                 gr.update(visible=False),
@@ -38,8 +37,7 @@ def app_menu():
             [home, dashboard, prediction],
         )
 
-        # Return
-        for back_btn in [back_home_1, back_home_2]:
+        for back_btn in [back_home_1, back_home_2]:  # Return to home
             back_btn.click(
                 lambda: (
                     gr.update(visible=True),
@@ -50,4 +48,4 @@ def app_menu():
                 [home, dashboard, prediction],
             )
 
-    return menu
+    return menu  # Return complete menu
