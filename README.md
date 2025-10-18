@@ -185,18 +185,16 @@ This project will go through 5 sprints with reviews and demonstration.
 
 Major changes:
 
-- Hosting the app online - **Nicolas**
-- Web client interface with Gradio - **Kim**
-- Docker setup - **Nicolas**
-- mypy, pip-audit, pytest added to CI - **Daniel**
-- gitlab CI setup + runners - **Nicolas**
-- pre-commit setup + ruff - **Nicolas**
+- Hosting the app online
+- Web client interface with Gradio
+- Deployment via Docker
+- gitlab CI setup + runners (lint, format, mypy, pip-audit, pytest)
+- pre-commit setup + ruff
 
 Minor changes:
 
-- uv run shortcuts in .toml scripts - **Daniel**
-- .devcontainer folder to store Docker setup files - **Daniel**
-- function to sample original data - **Daniel**
+- uv run shortcuts in .toml scripts
+- function to sample original data
 
 ## Git Workflow Diagram
 
