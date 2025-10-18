@@ -39,6 +39,7 @@ select = ["E", "F", "I"]
 main = "src.main:main"
 precommit = "src.utils.aliases:precommit"
 lint = "src.utils.aliases:precommit"
+fpi = "src.main:main"
 fpibuild = "src.utils.aliases:fpibuild"
 fpirun = "src.utils.aliases:fpirun"
 typecheck = "src.utils.aliases:typecheck"
