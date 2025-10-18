@@ -40,8 +40,9 @@ There is a (prettier) PNG version in docs/data-flow.png
 
 ---
 config:
-  theme: redux-dark
+  theme: mc
   layout: dagre
+  look: neo
 ---
 flowchart BT
  subgraph Frontend["Frontend"]
@@ -53,16 +54,15 @@ flowchart BT
         E["Database Access Layer (SQLAlchemy)"]
   end
  subgraph DataPipeline["Data Preparation Pipeline"]
-        F["Raw Data"]
-        G["Validated & Cleaned Data"]
-        H["Filtered Data<br>(Analysis-Ready)"]
+        F["Raw Data<br>(.txt files)"]
+        G["Validated &amp; Cleaned<br>(NA, duplicates, errors...)"]
+        H["Processed<br>(Analysis-Ready)"]
   end
  subgraph Database["Database"]
-        I["SQLite Local Database"]
+        I["Local SQLite or MySQL server"]
   end
-
     A -- API request --> B
-    B -- Validated Request<br>(Pydantic)--> D
+    B -- Validated Request<br>(Pydantic) --> D
     D -- Query Operations --> E
     E -- Interacts with --> I
     I -- Query Results --> E
@@ -237,7 +237,7 @@ gitGraph
 
 - Daniel PHAN: Product Owner/Scrum Master
 - Perle NDAYIZEYE: Data Analyst
-- Kim Ngan THAI: Front End
+- Kim Ngan THAI: Frontend/UI
 - Nicolas COLLIN: Data Engineer
 - Claudy LINCY: Data Scientist
 
