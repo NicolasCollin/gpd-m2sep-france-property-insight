@@ -14,9 +14,13 @@ services:
       context: ..
       dockerfile: .devcontainer/Dockerfile
     ports:
-      - "8000:8000"
-    tty: true       # keeps container running so you can exec into it
+      - "7860:7860"
+    tty: true
     stdin_open: true
+    command: tail -f /dev/null   # keeps container alive for manual commands
+    environment:
+      - RUNNING_IN_DOCKER=1
+
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to

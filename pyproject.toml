@@ -38,7 +38,9 @@ select = ["E", "F", "I"]
 [project.scripts]
 main = "src.main:main"
 precommit = "src.utils.aliases:precommit"
-fpi = "src.utils.aliases:fpi"
+lint = "src.utils.aliases:precommit"
+fpibuild = "src.utils.aliases:fpibuild"
+fpirun = "src.utils.aliases:fpirun"
 typecheck = "src.utils.aliases:typecheck"
 audit = "src.utils.aliases:audit"
 test = "src.utils.aliases:test"

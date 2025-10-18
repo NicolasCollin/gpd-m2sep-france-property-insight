@@ -14,11 +14,21 @@ def precommit() -> None:  # Run pre-commit on all files
     subprocess.run(["uv", "run", "pre-commit", "run", "--all-files"], check=False)  # Execute pre-commit
 
 
-def fpi() -> None:  # Build and run FPI app with Docker
+def fpibuild() -> None:  # Build FPI app with Docker
     subprocess.run(
-        ["uv", "run", "docker", "compose", "-f", ".devcontainer/compose.yaml", "up", "--build"],  # Docker compose up
+        ["uv", "run", "docker-compose", "-f", ".devcontainer/compose.yaml", "up", "-d", "--build"],  # Docker compose up
         check=False,
     )
+
+
+# docker-compose -f .devcontainer/compose.yaml up -d --build
+
+
+def fpirun() -> None:
+    subprocess.run(["uv", "run", "docker", "exec", "-it", "fpi-devcontainer", "uv", "run", "main"])
+
+
+# docker exec -it fpi-devcontainer uv run main
 
 
 def typecheck() -> None:  # Run type checking with mypy
