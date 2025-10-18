@@ -25,6 +25,7 @@ def exp():
         "Valeur fonciere",
         "Code postal",
         "Surface reelle bati",
+        "Date mutation",
         "Surface terrain",
         "Nombre pieces principales",
     ]
@@ -34,13 +35,18 @@ def exp():
     print("Statistiques descriptives :")
     print(df.describe(include="all").transpose(), "\n")
 
-    #  Visualisation : histogrammes
-    numeric_cols = ["Valeur fonciere", "Surface reelle bati", "Surface terrain", "Nombre pieces principales"]
-    df_numeric = df[numeric_cols]
+    # Histogrammes échelle log
+    numeric_cols = ["Surface reelle bati", "Surface terrain", "Nombre pieces principales"]
 
-    df_numeric.hist(figsize=(12, 8), bins=30)
-    plt.tight_layout()
-    plt.show()
+    for col in numeric_cols:
+        plt.figure(figsize=(8, 5))
+        plt.hist(df[col].dropna(), bins=30, color="lightblue")
+        plt.yscale("log")
+        plt.title(f"Distribution de {col} (log scale)")
+        plt.xlabel(col)
+        plt.ylabel("Nombre (log)")
+        plt.tight_layout()
+        plt.show()
 
 
 if __name__ == "__main__":
