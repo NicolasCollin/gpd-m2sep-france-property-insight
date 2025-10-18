@@ -40,8 +40,9 @@ There is a (prettier) PNG version in docs/data-flow.png
 
 ---
 config:
-  theme: redux-dark
+  theme: mc
   layout: dagre
+  look: neo
 ---
 flowchart BT
  subgraph Frontend["Frontend"]
@@ -53,16 +54,15 @@ flowchart BT
         E["Database Access Layer (SQLAlchemy)"]
   end
  subgraph DataPipeline["Data Preparation Pipeline"]
-        F["Raw Data"]
-        G["Validated & Cleaned Data"]
-        H["Filtered Data<br>(Analysis-Ready)"]
+        F["Raw Data<br>(.txt files)"]
+        G["Validated &amp; Cleaned<br>(NA, duplicates, errors...)"]
+        H["Processed<br>(Analysis-Ready)"]
   end
  subgraph Database["Database"]
-        I["SQLite Local Database"]
+        I["Local SQLite or MySQL server"]
   end
-
     A -- API request --> B
-    B -- Validated Request<br>(Pydantic)--> D
+    B -- Validated Request<br>(Pydantic) --> D
     D -- Query Operations --> E
     E -- Interacts with --> I
     I -- Query Results --> E
@@ -136,16 +136,16 @@ git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-ins
 cd gpd-m2sep-france-property-insight
 ```
 
-4. Build and run our app (Docker Desktop has to be running):
+4. Build our app (Docker Desktop has to be running):
 
 ```bash
-docker compose -f .devcontainer/compose.yaml run --rm -it server
+docker-compose -f .devcontainer/compose.yaml up -d --build
 ```
 
-5. (Optional) To remove all stopped containers created by this project:
+5. Run our app:
 
 ```bash
-docker compose -f .devcontainer/compose.yaml down
+docker exec -it fpi-devcontainer uv run main
 ```
 
 ### Method 2: by installing Python and uv manually
@@ -166,11 +166,13 @@ git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-ins
 cd gpd-m2sep-france-property-insight
 ```
 
-5. Run our app
+5. Run our app (first launch always takes more time because of building time)
 
 ```bash
 uv run main
 ```
+
+6. The app will run on local URL: `http://127.0.0.1:7860`
 
 ## Current state
 
@@ -183,12 +185,11 @@ This project will go through 5 sprints with reviews and demonstration.
 
 Major changes:
 
-- Hosting the app online - **Nicolas**
-- Web client interface with Gradio - **Kim**
-- Docker setup - **Nicolas**
-- mypy, pip-audit, pytest added to CI - **Daniel**
-- gitlab CI setup + runners - **Nicolas**
-- pre-commit setup + ruff - **Nicolas**
+- Hosting the app online
+- Web client interface with Gradio
+- Deployment via Docker
+- gitlab CI setup + runners (lint, format, mypy, pip-audit, pytest)
+- pre-commit setup + ruff
 
 Minor changes:
 
@@ -237,7 +238,7 @@ gitGraph
 
 - Daniel PHAN: Product Owner/Scrum Master
 - Perle NDAYIZEYE: Data Analyst
-- Kim Ngan THAI: Front End
+- Kim Ngan THAI: Frontend/UI
 - Nicolas COLLIN: Data Engineer
 - Claudy LINCY: Data Scientist
 

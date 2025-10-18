@@ -15,8 +15,8 @@ RUN uv sync --frozen --no-dev
 # Copy source code
 COPY . .
 
-# Expose port if needed (for Streamlit later)
-EXPOSE 8000
+# Expose port if needed (for Gradio)
+EXPOSE 7860
 
-# Run interactive terminal app directly
-CMD ["uv", "run", "main"]
+# Run the app
+# CMD ["uv", "run", "main"]
