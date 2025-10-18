@@ -136,16 +136,16 @@ git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-ins
 cd gpd-m2sep-france-property-insight
 ```
 
-4. Build and run our app (Docker Desktop has to be running):
+4. Build our app (Docker Desktop has to be running):
 
 ```bash
-docker compose -f .devcontainer/compose.yaml run --rm -it server
+docker-compose -f .devcontainer/compose.yaml up -d --build
 ```
 
-5. (Optional) To remove all stopped containers created by this project:
+5. Run our app:
 
 ```bash
-docker compose -f .devcontainer/compose.yaml down
+docker exec -it fpi-devcontainer uv run main
 ```
 
 ### Method 2: by installing Python and uv manually
@@ -166,11 +166,13 @@ git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-ins
 cd gpd-m2sep-france-property-insight
 ```
 
-5. Run our app
+5. Run our app (first launch always takes more time because of building time)
 
 ```bash
 uv run main
 ```
+
+6. The app will run on local URL: `http://127.0.0.1:7860`
 
 ## Current state
 

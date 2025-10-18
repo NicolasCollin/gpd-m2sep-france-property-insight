@@ -5,7 +5,8 @@
 When you're ready, start your application by running:
 
 ```bash
-docker compose -f .devcontainer/compose.yaml up --build
+docker-compose -f .devcontainer/compose.yaml up -d --build
+docker exec -it fpi-devcontainer uv run main
 ```
 
 ## Deploying your application to the cloud
