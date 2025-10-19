@@ -2,7 +2,7 @@ import os
 
 import gradio as gr
 
-from src.interface.menu import app_menu
+from fpi.interface.menu import app_menu
 
 
 def get_welcome_message() -> str:

@@ -33,7 +33,7 @@ def fpirun() -> None:
 
 def typecheck(extra_args: Optional[str] = None) -> None:
     """Run static type checking with mypy."""
-    cmd: str = "uv run mypy src"
+    cmd: str = "uv run mypy fpi"
     if extra_args:
         cmd += f" {extra_args}"
     run_command(cmd)
@@ -69,7 +69,7 @@ def apidoc() -> None:
             "https://static.vecteezy.com/system/resources/previews/020/148/953/large_2x/fpi-letter-logo-design-on-white-background-fpi-creative-circle-letter-logo-concept-fpi-letter-design-vector.jpg",
             "-t",
             "./docs/pdoc_template",
-            "src",
+            "fpi",
         ],
         check=True,
     )

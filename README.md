@@ -12,7 +12,7 @@ Dataset used: ["Demandes de valeurs foncières"](https://www.data.gouv.fr/datase
 - [France Property Insight: Analysis and Predictions](#france-property-insight-analysis-and-predictions)
   - [Table of Contents](#table-of-contents)
   - [Database](#database)
-  - [Data Flow Diagram (DFD)](#data-flow-diagram-dfd)
+    - [Data Flow Diagram (DFD)](#data-flow-diagram-dfd)
   - [Repository Structure](#repository-structure)
   - [Installation and Usage](#installation-and-usage)
     - [No installation: website link](#no-installation-website-link)
@@ -20,7 +20,8 @@ Dataset used: ["Demandes de valeurs foncières"](https://www.data.gouv.fr/datase
     - [Method 2: by installing Python and uv manually](#method-2-by-installing-python-and-uv-manually)
   - [Current state](#current-state)
     - [Changelog](#changelog)
-  - [Git Workflow Diagram](#git-workflow-diagram)
+  - [Workflow](#workflow)
+    - [Git Workflow Diagram](#git-workflow-diagram)
   - [Contributors](#contributors)
   - [License](#license)
 
@@ -31,7 +32,7 @@ Dataset used: [Demandes de valeurs foncières](https://www.data.gouv.fr/datasets
 Public official dataset from the French government. Tracks real estate transactions over the French territory from 2020 to 2024.  
 More infos (origin, localization, methods, variable glossary...) in docs/metadata-fr.pdf
 
-## Data Flow Diagram (DFD)
+### Data Flow Diagram (DFD)
 
 Prettier PNG version available at docs/data-flow.png
 
@@ -87,7 +88,7 @@ flowchart BT
 - **docs/**
   - **references/** references from teacher and past projects
 
-- **src/** contains the python functions and scripts to run our app, analysis and models
+- **fpi/** contains the python functions and scripts to run our app, analysis and models
   - **analysis/**
   - **data_pipelines/** data import, format conversion, validation, cleaning, filtering
   - **interface/**
@@ -124,13 +125,13 @@ Make sure Docker Desktop is **running** before continuing.
 2. Clone the Git repository to your local machine:
 
 ```bash
-git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git fpi
+git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git france-property-insight
 ```
 
 3. Navigate to the cloned directory:
 
 ```bash
-cd fpi
+cd france-property-insight
 ```
 
 4. Build our app (Docker Desktop has to be running):
@@ -154,16 +155,16 @@ docker exec -it fpi-devcontainer uv run fpi
 3. Clone the Git repository to your local machine:
 
 ```bash
-git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git fpi
+git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git france-property-insight
 ```
 
 4. Navigate to the cloned directory:
 
 ```bash
-cd fpi
+cd france-property-insight
 ```
 
-5. Run our app (first launch always takes more time because of building time)
+5. Run our app
 
 ```bash
 uv run fpi
@@ -184,7 +185,7 @@ Major changes:
 
 - Hosting the app online
 - Web client interface with Gradio
-- Deployment via Docker
+- Deployment with Docker
 - gitlab CI setup + runners (mypy, pip-audit, pytest, behave)
 - pre-commit setup + ruff (lint and format)
 
@@ -193,12 +194,14 @@ Minor changes:
 - uv run shortcuts in .toml scripts
 - function to sample original data
 
-## Git Workflow Diagram
-
-Prettier PNG version available at docs/git-mr-workflow.png
+## Workflow
 
 Noone is allowed to push on main, any development has to be done on a separate branch.  
 When ready, the features are merged on staging, a branch used as a safety layer, before being merged to main.
+
+### Git Workflow Diagram
+
+Prettier PNG version available at docs/git-mr-workflow.png
 
 ```mermaid
 

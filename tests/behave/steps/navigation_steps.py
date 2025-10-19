@@ -1,7 +1,7 @@
 from behave import given, then, when
 from behave.runner import Context
 
-from src.interface.menu import app_menu
+from fpi.interface.menu import app_menu
 
 
 def set_visibility(context: Context, home: bool, dashboard: bool, prediction: bool) -> None:

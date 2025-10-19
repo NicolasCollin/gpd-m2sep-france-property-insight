@@ -21,7 +21,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src"]
+packages = ["fpi"]
 
 [build-system]
 requires = ["hatchling"]
@@ -38,19 +38,19 @@ select = ["E", "F", "I"]
 # uv run shortcuts
 [project.scripts]
 # app
-main = "src.main:main"
-fpi = "src.main:main"
+main = "fpi.main:main"
+fpi = "fpi.main:main"
 # docker
-fpibuild = "src.utils.aliases:fpibuild"
-fpirun = "src.utils.aliases:fpirun"
+fpibuild = "fpi.utils.aliases:fpibuild"
+fpirun = "fpi.utils.aliases:fpirun"
 # code quality
-precommit = "src.utils.aliases:precommit"
-lint = "src.utils.aliases:precommit"
-typecheck = "src.utils.aliases:typecheck"
-audit = "src.utils.aliases:audit"
+precommit = "fpi.utils.aliases:precommit"
+lint = "fpi.utils.aliases:precommit"
+typecheck = "fpi.utils.aliases:typecheck"
+audit = "fpi.utils.aliases:audit"
 # test
-test = "src.utils.aliases:test"
-behav = "src.utils.aliases:run_behave"
-ci = "src.utils.aliases:ci"
+test = "fpi.utils.aliases:test"
+behav = "fpi.utils.aliases:run_behave"
+ci = "fpi.utils.aliases:ci"
 # api doc
-apidoc = "src.utils.aliases:apidoc"
+apidoc = "fpi.utils.aliases:apidoc"

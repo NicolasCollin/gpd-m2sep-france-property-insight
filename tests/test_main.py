@@ -1,4 +1,4 @@
-from src import main  # Import the main application module
+from fpi import main  # Import the main application module
 
 
 # --- Unit Test for Welcome Message ---
