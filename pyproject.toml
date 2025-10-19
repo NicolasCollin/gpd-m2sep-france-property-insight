@@ -36,11 +36,18 @@ select = ["E", "F", "I"]
 
 # uv run shortcuts
 [project.scripts]
+# app
 main = "src.main:main"
-precommit = "src.utils.aliases:precommit"
-lint = "src.utils.aliases:precommit"
+fpi = "src.main:main"
+# docker
 fpibuild = "src.utils.aliases:fpibuild"
 fpirun = "src.utils.aliases:fpirun"
+# code quality
+precommit = "src.utils.aliases:precommit"
+lint = "src.utils.aliases:precommit"
 typecheck = "src.utils.aliases:typecheck"
 audit = "src.utils.aliases:audit"
+# test
 test = "src.utils.aliases:test"
+behav = "src.utils.aliases:run_behave"
+ci = "src.utils.aliases:ci"
