@@ -45,7 +45,7 @@ def audit() -> None:
 
 
 def test(extra_args: Optional[str] = None) -> None:
-    """Run all tests with pytest, including doctests."""
+    """Run our unit tests and doctests with pytest."""
     cmd: str = "uv run pytest --doctest-modules"
     if extra_args:
         cmd += f" {extra_args}"
@@ -53,7 +53,26 @@ def test(extra_args: Optional[str] = None) -> None:
 
 
 def run_behave() -> None:
+    """Run our behave tests"""
     subprocess.run(["behave", "tests/behave/features"], check=True)
+
+
+def apidoc() -> None:
+    """Run API documentation with pdoc."""
+    subprocess.run(
+        [
+            "uv",
+            "run",
+            "pdoc",
+            "--mermaid",
+            "--logo",
+            "https://static.vecteezy.com/system/resources/previews/020/148/953/large_2x/fpi-letter-logo-design-on-white-background-fpi-creative-circle-letter-logo-concept-fpi-letter-design-vector.jpg",
+            "-t",
+            "./docs/pdoc_template",
+            "src",
+        ],
+        check=True,
+    )
 
 
 def ci() -> None:

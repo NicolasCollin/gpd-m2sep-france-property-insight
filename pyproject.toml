@@ -13,6 +13,7 @@ dependencies = [
 dev = [
     "behave==1.3.3",
     "mypy==1.18.2",
+    "pdoc>=15.0.4",
     "pip-audit==2.9.0",
     "pre-commit==4.3.0",
     "pytest==8.4.2",
@@ -51,3 +52,5 @@ audit = "src.utils.aliases:audit"
 test = "src.utils.aliases:test"
 behav = "src.utils.aliases:run_behave"
 ci = "src.utils.aliases:ci"
+# api doc
+apidoc = "src.utils.aliases:apidoc"
