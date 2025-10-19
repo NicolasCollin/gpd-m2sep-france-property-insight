@@ -2,9 +2,7 @@
 
 Website link to our app: <https://gpd-m2sep-france-property-insight.onrender.com/>
 
-Academic project in Master 2 Statistique pour l'Evaluation et la Prevision 2025-2026.
-
-This is a predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
+Predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
 The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Économie, des Finances et de l'Industrie".  
 Dataset used: ["Demandes de valeurs foncières"](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
@@ -34,7 +32,7 @@ More infos (origin, localization, methods, variable glossary...) in docs/metadat
 
 ## Data Flow Diagram (DFD)
 
-There is a (prettier) PNG version in docs/data-flow.png
+Prettier PNG version available at docs/data-flow.png
 
 ```mermaid
 
@@ -83,14 +81,10 @@ flowchart BT
 - **data/**
   - **raw/** raw data
   - **cleaned/** validated by Pydantic schemas & cleaned (duplicates, missing values, renaming...)
-  - **filtered/** ready for analysis, visualization, modeling
+  - **processed/** ready for analysis, visualization, modeling
 
 - **docs/**
   - **references/** references from teacher and past projects
-  - data-flow.png: data flow diagram
-  - fpi-logo.png: our app logo
-  - git-mr-workflow: git Merge Request workflow diagram
-  - metadata-fr.pdf: detailed informations about our dataset
 
 - **src/** contains the python functions and scripts to run our app, analysis and models
   - **analysis/**
@@ -102,7 +96,7 @@ flowchart BT
 
 - **tests/**
   - **behave/** behave tests
-  - **unit/** unit tests made with pytest
+  - **unit/** unit tests
 
 - .gitignore: Prevents unwanted files from being tracked by git.
 - .gitlab-ci.yml
@@ -127,13 +121,13 @@ Make sure Docker Desktop is **running** before continuing.
 2. Clone the Git repository to your local machine:
 
 ```bash
-git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git
+git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git fpi
 ```
 
 3. Navigate to the cloned directory:
 
 ```bash
-cd gpd-m2sep-france-property-insight
+cd fpi
 ```
 
 4. Build our app (Docker Desktop has to be running):
@@ -145,7 +139,7 @@ docker-compose -f .devcontainer/compose.yaml up -d --build
 5. Run our app:
 
 ```bash
-docker exec -it fpi-devcontainer uv run main
+docker exec -it fpi-devcontainer uv run fpi
 ```
 
 ### Method 2: by installing Python and uv manually
@@ -157,19 +151,19 @@ docker exec -it fpi-devcontainer uv run main
 3. Clone the Git repository to your local machine:
 
 ```bash
-git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git
+git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git fpi
 ```
 
 4. Navigate to the cloned directory:
 
 ```bash
-cd gpd-m2sep-france-property-insight
+cd fpi
 ```
 
 5. Run our app (first launch always takes more time because of building time)
 
 ```bash
-uv run main
+uv run fpi
 ```
 
 6. The app will run on local URL: `http://127.0.0.1:7860`
@@ -188,18 +182,18 @@ Major changes:
 - Hosting the app online
 - Web client interface with Gradio
 - Deployment via Docker
-- gitlab CI setup + runners (lint, format, mypy, pip-audit, pytest)
-- pre-commit setup + ruff
+- gitlab CI setup + runners (mypy, pip-audit, pytest, behave)
+- pre-commit setup + ruff (lint and format)
 
 Minor changes:
 
-- uv run shortcuts in .toml scripts - **Daniel**
-- .devcontainer folder to store Docker setup files - **Daniel**
-- function to sample original data - **Daniel**
+- uv run shortcuts in .toml scripts
+- .devcontainer folder to store Docker setup files
+- function to sample original data
 
 ## Git Workflow Diagram
 
-There is a (prettier) PNG version in docs/git-mr-workflow.png
+Prettier PNG version available at docs/git-mr-workflow.png
 
 Noone is allowed to push on main, any development has to be done on a separate branch.  
 When ready, the features are merged on staging, a branch used as a safety layer, before being merged to main.
@@ -241,6 +235,8 @@ gitGraph
 - Kim Ngan THAI: Frontend/UI
 - Nicolas COLLIN: Data Engineer
 - Claudy LINCY: Data Scientist
+
+This is an academic project for our Master 2 Statistique pour l'Évaluation et la Prévision 2025-2026 at the University of Reims Champagne-Ardenne.
 
 ## License
 
