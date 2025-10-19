@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "France Property Insight: Uni project app for Master 2 SEP"
 requires-python = ">=3.13"
 dependencies = [
-    "fastapi[standard]>=0.119.0",
     "gradio==5.49.1",
     "pandas==2.3.3",
 ]
@@ -12,6 +11,7 @@ dependencies = [
 # depedencies not needed for users
 [dependency-groups]
 dev = [
+    "behave==1.3.3",
     "mypy==1.18.2",
     "pip-audit==2.9.0",
     "pre-commit==4.3.0",
@@ -36,12 +36,18 @@ select = ["E", "F", "I"]
 
 # uv run shortcuts
 [project.scripts]
+# app
 main = "src.main:main"
-precommit = "src.utils.aliases:precommit"
-lint = "src.utils.aliases:precommit"
 fpi = "src.main:main"
+# docker
 fpibuild = "src.utils.aliases:fpibuild"
 fpirun = "src.utils.aliases:fpirun"
+# code quality
+precommit = "src.utils.aliases:precommit"
+lint = "src.utils.aliases:precommit"
 typecheck = "src.utils.aliases:typecheck"
 audit = "src.utils.aliases:audit"
+# test
 test = "src.utils.aliases:test"
+behav = "src.utils.aliases:run_behave"
+ci = "src.utils.aliases:ci"

@@ -5,7 +5,7 @@ from src.interface.menu import app_menu
 
 def get_welcome_message() -> str:
     """
-    Return the welcome message displayed when the application starts.
+    Get the welcome message displayed when the application starts.
 
     Returns:
         str: A welcome message for the FPI app.
@@ -13,27 +13,13 @@ def get_welcome_message() -> str:
     return "Welcome to FPI app!"
 
 
-def amain():
-    """
-    Welcome user, initialize and launch the main application.
-
-    This function creates the Gradio app menu and starts the interface.
-    """
-    welcome_message: str = get_welcome_message()
-    print(welcome_message)
-
-    app = app_menu()
-    app.launch()
-    # app.launch(share=True, server_name="0.0.0.0", server_port=7860)
-
-
-def main():
+def main() -> None:
     """
     Welcome user, initialize and launch the main application.
 
     Detects if running inside Docker to adjust Gradio launch parameters.
     """
-    welcome_message = get_welcome_message()
+    welcome_message: str = get_welcome_message()
     print(welcome_message)
 
     app = app_menu()
