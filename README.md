@@ -2,9 +2,7 @@
 
 Website link to our app: <https://gpd-m2sep-france-property-insight.onrender.com/>
 
-Academic project in Master 2 Statistique pour l'Evaluation et la Prevision 2025-2026.
-
-This is a predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
+Predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
 The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Économie, des Finances et de l'Industrie".  
 Dataset used: ["Demandes de valeurs foncières"](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
@@ -17,6 +15,7 @@ Dataset used: ["Demandes de valeurs foncières"](https://www.data.gouv.fr/datase
   - [Data Flow Diagram (DFD)](#data-flow-diagram-dfd)
   - [Repository Structure](#repository-structure)
   - [Installation and Usage](#installation-and-usage)
+    - [No installation: website link](#no-installation-website-link)
     - [Method 1: with Docker Desktop](#method-1-with-docker-desktop)
     - [Method 2: by installing Python and uv manually](#method-2-by-installing-python-and-uv-manually)
   - [Current state](#current-state)
@@ -114,6 +113,8 @@ flowchart BT
 
 ## Installation and Usage
 
+### No installation: website link
+
 Website link to our app for immediate use: <https://gpd-m2sep-france-property-insight.onrender.com/>
 
 2 ways to install: with or without Docker.  
@@ -127,13 +128,13 @@ Make sure Docker Desktop is **running** before continuing.
 2. Clone the Git repository to your local machine:
 
 ```bash
-git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git
+git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git fpi
 ```
 
 3. Navigate to the cloned directory:
 
 ```bash
-cd gpd-m2sep-france-property-insight
+cd fpi
 ```
 
 4. Build our app (Docker Desktop has to be running):
@@ -145,7 +146,7 @@ docker-compose -f .devcontainer/compose.yaml up -d --build
 5. Run our app:
 
 ```bash
-docker exec -it fpi-devcontainer uv run main
+docker exec -it fpi-devcontainer uv run fpi
 ```
 
 ### Method 2: by installing Python and uv manually
@@ -157,19 +158,19 @@ docker exec -it fpi-devcontainer uv run main
 3. Clone the Git repository to your local machine:
 
 ```bash
-git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git
+git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git fpi
 ```
 
 4. Navigate to the cloned directory:
 
 ```bash
-cd gpd-m2sep-france-property-insight
+cd fpi
 ```
 
 5. Run our app (first launch always takes more time because of building time)
 
 ```bash
-uv run main
+uv run fpi
 ```
 
 6. The app will run on local URL: `http://127.0.0.1:7860`
@@ -240,6 +241,8 @@ gitGraph
 - Kim Ngan THAI: Frontend/UI
 - Nicolas COLLIN: Data Engineer
 - Claudy LINCY: Data Scientist
+
+Team of 5 students in their last year of Master SEP: Statistique pour l'Évaluation et la Prévision from the University of Reims Champagne-Ardenne, France.
 
 ## License
 
