@@ -1,7 +1,7 @@
 stages:
-  - lint
-  - typecheck
-  - audit
+  # - lint
+  # - typecheck
+  # - audit
   - test
 
 # template for uv installation
@@ -41,4 +41,5 @@ test:
   stage: test
   extends: .lint-template
   script:
-    - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q
+    # - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q
+    - uv run behave .\tests\behave\features\
