@@ -1,8 +1,8 @@
 stages:
-  # - lint
-  # - typecheck
-  # - audit
   - test
+  - lint
+  - typecheck
+  - audit
 
 # template for uv installation
 .lint-template:
