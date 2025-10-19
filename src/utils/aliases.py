@@ -33,7 +33,7 @@ def fpirun() -> None:
 
 def typecheck(extra_args: Optional[str] = None) -> None:
     """Run static type checking with mypy."""
-    cmd = "uv run mypy src"
+    cmd: str = "uv run mypy src"
     if extra_args:
         cmd += f" {extra_args}"
     run_command(cmd)
@@ -46,7 +46,7 @@ def audit() -> None:
 
 def test(extra_args: Optional[str] = None) -> None:
     """Run all tests with pytest, including doctests."""
-    cmd = "uv run pytest --doctest-modules"
+    cmd: str = "uv run pytest --doctest-modules"
     if extra_args:
         cmd += f" {extra_args}"
     run_command(cmd)

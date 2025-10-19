@@ -1,5 +1,7 @@
 import os
 
+import gradio as gr
+
 from src.interface.menu import app_menu
 
 
@@ -22,7 +24,7 @@ def main() -> None:
     welcome_message: str = get_welcome_message()
     print(welcome_message)
 
-    app = app_menu()
+    app: gr.Blocks = app_menu()
 
     # Detect Docker environment via env variable
     if os.getenv("RUNNING_IN_DOCKER") == "1":

@@ -58,7 +58,7 @@ flowchart BT
         H["Processed<br>(Analysis-Ready)"]
   end
  subgraph Database["Database"]
-        I["Local SQLite or MySQL server"]
+        I["Local SQLite or<br>MySQL server"]
   end
     A -- API request --> B
     B -- Validated Request<br>(Pydantic) --> D
