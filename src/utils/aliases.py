@@ -1,43 +1,68 @@
 """
 aliases.py
 -----------
-Provides command-line shortcut functions for common development tasks in the France Property Insight project.
-
-These commands automate routine operations such as running pre-commit checks,
-building the Docker container, type checking, auditing dependencies, and executing tests.
+Command-line shortcut functions for France Property Insight (FPI) project.
+Designed to be used with `uv run <script>` defined in pyproject.toml.
 """
 
-import subprocess  # For running shell commands
+import shlex
+import subprocess
+from typing import Optional
 
 
-def precommit() -> None:  # Run pre-commit on all files
-    subprocess.run(["uv", "run", "pre-commit", "run", "--all-files"], check=False)  # Execute pre-commit
+def run_command(command: str, check: bool = False) -> None:
+    """Run a shell command given as a single string, splitting safely."""
+    print(f"Running: {command}")
+    subprocess.run(shlex.split(command), check=check)
 
 
-def fpibuild() -> None:  # Build FPI app with Docker
-    subprocess.run(
-        ["uv", "run", "docker-compose", "-f", ".devcontainer/compose.yaml", "up", "-d", "--build"],  # Docker compose up
-        check=False,
-    )
+def precommit() -> None:
+    """Run pre-commit hooks on all files."""
+    run_command("uv run pre-commit run --all-files")
 
 
-# docker-compose -f .devcontainer/compose.yaml up -d --build
+def fpibuild() -> None:
+    """Build and start the Docker container for FPI."""
+    run_command("uv run docker-compose -f .devcontainer/compose.yaml up -d --build")
 
 
 def fpirun() -> None:
-    subprocess.run(["uv", "run", "docker", "exec", "-it", "fpi-devcontainer", "uv", "run", "main"])
+    """Run the FPI app inside the Docker container."""
+    run_command("uv run docker exec -it fpi-devcontainer uv run main")
 
 
-# docker exec -it fpi-devcontainer uv run main
+def typecheck(extra_args: Optional[str] = None) -> None:
+    """Run static type checking with mypy."""
+    cmd = "uv run mypy src"
+    if extra_args:
+        cmd += f" {extra_args}"
+    run_command(cmd)
 
 
-def typecheck() -> None:  # Run type checking with mypy
-    subprocess.run(["uv", "run", "mypy", "src"])  # Execute mypy
+def audit() -> None:
+    """Run a security audit with pip-audit."""
+    run_command("uv run pip-audit .")
 
 
-def audit() -> None:  # Run security audit
-    subprocess.run(["uv", "run", "pip-audit", "."])  # Check vulnerabilities
+def test(extra_args: Optional[str] = None) -> None:
+    """Run all tests with pytest, including doctests."""
+    cmd = "uv run pytest --doctest-modules"
+    if extra_args:
+        cmd += f" {extra_args}"
+    run_command(cmd)
 
 
-def test() -> None:  # Run all tests
-    subprocess.run(["uv", "run", "pytest", "--doctest-modules"])  # Execute pytest
+def run_behave() -> None:
+    subprocess.run(["behave", "tests/behave/features"], check=True)
+
+
+def ci() -> None:
+    """
+    Run a sequence of project commands in order to simulate our GitLab CI pipeline:
+    precommit, typecheck, audit, test, run_behave.
+    """
+    precommit()
+    typecheck()
+    audit()
+    test()
+    run_behave()

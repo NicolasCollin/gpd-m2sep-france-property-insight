@@ -15,6 +15,7 @@ Dataset used: ["Demandes de valeurs foncières"](https://www.data.gouv.fr/datase
   - [Data Flow Diagram (DFD)](#data-flow-diagram-dfd)
   - [Repository Structure](#repository-structure)
   - [Installation and Usage](#installation-and-usage)
+    - [No installation: website link](#no-installation-website-link)
     - [Method 1: with Docker Desktop](#method-1-with-docker-desktop)
     - [Method 2: by installing Python and uv manually](#method-2-by-installing-python-and-uv-manually)
   - [Current state](#current-state)
@@ -108,6 +109,8 @@ flowchart BT
 
 ## Installation and Usage
 
+### No installation: website link
+
 Website link to our app for immediate use: <https://gpd-m2sep-france-property-insight.onrender.com/>
 
 2 ways to install: with or without Docker.  
@@ -188,7 +191,6 @@ Major changes:
 Minor changes:
 
 - uv run shortcuts in .toml scripts
-- .devcontainer folder to store Docker setup files
 - function to sample original data
 
 ## Git Workflow Diagram
