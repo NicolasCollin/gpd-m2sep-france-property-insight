@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = ">=3.13"
 
 [[package]]
@@ -322,6 +322,7 @@ source = { editable = "." }
 dependencies = [
     { name = "gradio" },
     { name = "pandas" },
+    { name = "pdoc" },
 ]
 
 [package.dev-dependencies]
@@ -339,6 +340,7 @@ dev = [
 requires-dist = [
     { name = "gradio", specifier = "==5.49.1" },
     { name = "pandas", specifier = "==2.3.3" },
+    { name = "pdoc", specifier = ">=15.0.4" },
 ]
 
 [package.metadata.requires-dev]
