@@ -56,3 +56,9 @@ def txt_to_sqlite(
 
     conn.close()
     print(f"Database saved at: {db_path.resolve()}")
+
+
+if __name__ == "__main__":
+    txt_to_sqlite(
+        txt_path="data/raw/raw_idf2023.csv", db_path="data/raw/raw_idf2023.db", table_name="raw_idf_2023", delimiter=","
+    )

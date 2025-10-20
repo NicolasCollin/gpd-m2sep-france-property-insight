@@ -49,3 +49,7 @@ def extract_idf(
     df.to_csv(csv_path, index=False)
     row_count: int = len(df)
     print(f"Exported {row_count} rows to {csv_path.resolve()}")
+
+
+if __name__ == "__main__":
+    extract_idf(db_path="data/raw/raw2023.db", table_name="raw_2023", csv_path="data/raw/raw_idf2023.csv")
