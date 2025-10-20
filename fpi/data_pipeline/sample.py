@@ -14,13 +14,13 @@ def sample_data() -> None:
 
     Meant to run only once per raw data file.
     """
-    input_path = Path("data/raw/raw2024.txt")
-    output_path = Path("data/raw/sample2024.txt")
+    input_path: Path = Path("data/raw/raw2024.txt")
+    output_path: Path = Path("data/raw/sample2024.txt")
 
-    sample_size = 10_000  # desired number of lines (excluding header)
-    total_lines = 3_458_645  # total number of lines including header
+    sample_size: int = 10_000  # desired number of lines (excluding header)
+    total_lines: int = 3_458_645  # total number of lines including header
 
-    keep_prob = sample_size / total_lines
+    keep_prob: float = sample_size / total_lines
 
     with input_path.open("r", encoding="utf-8") as infile, output_path.open("w", encoding="utf-8") as outfile:
         # Always write the header
