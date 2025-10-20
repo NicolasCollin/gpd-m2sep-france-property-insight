@@ -53,8 +53,8 @@ def txt_to_sqlite(
 
 if __name__ == "__main__":
     txt_to_sqlite(
-        txt_path="data/raw/raw2024.txt",
-        db_path="data/raw/raw2024.db",
-        table_name="raw_2024",
+        txt_path="data/raw/raw2021.txt",
+        db_path="data/raw/raw2021.db",
+        table_name="raw_2021",
         delimiter="|",
     )
