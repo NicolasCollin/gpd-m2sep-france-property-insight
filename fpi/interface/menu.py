@@ -1,8 +1,8 @@
 import gradio as gr  # Import Gradio library for building the interface
 
-from src.interface.dashboard_page import dashboard_page
-from src.interface.home_page import home_page
-from src.interface.prediction_page import prediction_page
+from fpi.interface.dashboard_page import dashboard_page
+from fpi.interface.home_page import home_page
+from fpi.interface.prediction_page import prediction_page
 
 
 # --- Application Menu Layout ---

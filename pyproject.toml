@@ -4,15 +4,17 @@ version = "0.1.0"
 description = "France Property Insight: Uni project app for Master 2 SEP"
 requires-python = ">=3.13"
 dependencies = [
-    "fastapi[standard]>=0.119.0",
     "gradio==5.49.1",
     "pandas==2.3.3",
+    "pdoc>=15.0.4",
 ]
 
 # depedencies not needed for users
 [dependency-groups]
 dev = [
+    "behave==1.3.3",
     "mypy==1.18.2",
+    "pdoc>=15.0.4",
     "pip-audit==2.9.0",
     "pre-commit==4.3.0",
     "pytest==8.4.2",
@@ -20,7 +22,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src"]
+packages = ["fpi"]
 
 [build-system]
 requires = ["hatchling"]
@@ -36,11 +38,20 @@ select = ["E", "F", "I"]
 
 # uv run shortcuts
 [project.scripts]
-main = "src.main:main"
-precommit = "src.utils.aliases:precommit"
-lint = "src.utils.aliases:precommit"
-fpibuild = "src.utils.aliases:fpibuild"
-fpirun = "src.utils.aliases:fpirun"
-typecheck = "src.utils.aliases:typecheck"
-audit = "src.utils.aliases:audit"
-test = "src.utils.aliases:test"
+# app
+main = "fpi.main:main"
+fpi = "fpi.main:main"
+# docker
+fpibuild = "fpi.utils.aliases:fpibuild"
+fpirun = "fpi.utils.aliases:fpirun"
+# code quality
+precommit = "fpi.utils.aliases:precommit"
+lint = "fpi.utils.aliases:precommit"
+typecheck = "fpi.utils.aliases:typecheck"
+audit = "fpi.utils.aliases:audit"
+# test
+test = "fpi.utils.aliases:test"
+behav = "fpi.utils.aliases:run_behave"
+ci = "fpi.utils.aliases:ci"
+# api doc
+apidoc = "fpi.utils.aliases:apidoc"
