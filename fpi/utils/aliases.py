@@ -75,6 +75,28 @@ def apidoc() -> None:
     )
 
 
+def apidocsave() -> None:
+    """Same as apidoc() but saves an html output in docs/site"""
+    subprocess.run(
+        [
+            "uv",
+            "run",
+            "pdoc",
+            "fpi",
+            "--mermaid",
+            "--logo",
+            "https://i.imgur.com/6SCfHEF.png",
+            "-t",
+            "docs/pdoc_config",
+            "-o",
+            "docs/site",
+            "--favicon",
+            "https://i.imgur.com/6SCfHEF.png",
+        ],
+        check=True,
+    )
+
+
 def ci() -> None:
     """
     Run a sequence of project commands in order to simulate our GitLab CI pipeline:
