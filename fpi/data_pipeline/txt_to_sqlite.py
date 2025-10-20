@@ -1,51 +1,53 @@
 import sqlite3
 from pathlib import Path
+from typing import List, Optional, Union
 
 import pandas as pd
 
 
 def txt_to_sqlite(
-    txt_path: Path | str,
-    db_path: Path | str,
+    txt_path: Union[Path, str],
+    db_path: Union[Path, str],
     table_name: str,
     delimiter: str = "|",
-    chunksize: int | None = None,
+    chunksize: Optional[int] = None,
 ) -> None:
     """
     Convert a text file (CSV-like) into a SQLite .db file.
 
     Args:
-        txt_path (Path | str): Path to the input text file.
-        db_path (Path | str): Path where the .db file will be saved.
-        table_name (str): Name of the SQL table to create.
-        delimiter (str): Column separator (default: '|').
-        chunksize (int | None): Number of rows per chunk to process (for large files).
+        txt_path: Path to the input text file.
+        db_path: Path where the .db file will be saved.
+        table_name: Name of the SQL table to create.
+        delimiter: Column separator (default: '|').
+        chunksize: Number of rows per chunk to process (for large files).
     """
 
     # Ensure paths are Path objects
-    txt_path: Path = Path(txt_path)
-    db_path: Path = Path(db_path)
+    txt_path_obj: Path = Path(txt_path)
+    db_path_obj: Path = Path(db_path)
 
     # Create parent folders if they do not exist
-    db_path.parent.mkdir(parents=True, exist_ok=True)
+    db_path_obj.parent.mkdir(parents=True, exist_ok=True)
 
     # Connect to SQLite database
-    conn: sqlite3.Connection = sqlite3.connect(db_path)
+    conn: sqlite3.Connection = sqlite3.connect(db_path_obj)
 
     # Helper function to clean column names
-    def clean_columns(columns: list[str]) -> list[str]:
-        cleaned: list[str] = [col.strip().replace(" ", "_").replace("’", "_").replace("'", "_") for col in columns]
-        return cleaned
+    def clean_columns(columns: List[str]) -> List[str]:
+        return [col.strip().replace(" ", "_").replace("’", "_").replace("'", "_") for col in columns]
 
     # Load and insert data
     if chunksize:
-        for i, chunk in enumerate(pd.read_csv(txt_path, delimiter=delimiter, chunksize=chunksize, low_memory=False)):
-            chunk: pd.DataFrame
-            chunk.columns = clean_columns(list(chunk.columns))
-            chunk.to_sql(table_name, conn, if_exists="append", index=False)
-            print(f"Chunk {i+1} inserted ({len(chunk)} rows)")
+        for idx, chunk_df in enumerate(
+            pd.read_csv(txt_path_obj, delimiter=delimiter, chunksize=chunksize, low_memory=False)
+        ):
+            # chunk_df is a pd.DataFrame
+            chunk_df.columns = clean_columns(list(chunk_df.columns))
+            chunk_df.to_sql(table_name, conn, if_exists="append", index=False)
+            print(f"Chunk {idx+1} inserted ({len(chunk_df)} rows)")
     else:
-        df: pd.DataFrame = pd.read_csv(txt_path, delimiter=delimiter, low_memory=False)
+        df: pd.DataFrame = pd.read_csv(txt_path_obj, delimiter=delimiter, low_memory=False)
         df.columns = clean_columns(list(df.columns))
         df.to_sql(table_name, conn, if_exists="replace", index=False)
         print(f"Inserted {len(df)} rows into table '{table_name}'")
@@ -55,10 +57,13 @@ def txt_to_sqlite(
     print(preview)
 
     conn.close()
-    print(f"Database saved at: {db_path.resolve()}")
+    print(f"Database saved at: {db_path_obj.resolve()}")
 
 
 if __name__ == "__main__":
     txt_to_sqlite(
-        txt_path="data/raw/raw_idf2023.csv", db_path="data/raw/raw_idf2023.db", table_name="raw_idf_2023", delimiter=","
+        txt_path="data/raw/raw_idf2023.csv",
+        db_path="data/raw/raw_idf2023.db",
+        table_name="raw_idf_2023",
+        delimiter=",",
     )

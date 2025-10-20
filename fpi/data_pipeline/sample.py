@@ -1,31 +1,38 @@
 import random
 from pathlib import Path
+from typing import List, Union
 
 
 def random_sample(
-    input_path: Path | str,
-    output_path: Path | str,
+    input_path: Union[Path, str],
+    output_path: Union[Path, str],
     sample_size: int,
 ) -> None:
     """
     Sample a large text file by selecting a random subset of lines.
 
     Args:
-        input_path (Path | str): Path to the input text file.
-        output_path (Path | str): Path where the sampled file will be saved.
-        sample_size (int): Number of lines to sample (excluding the header).
+        input_path: Path to the input text file.
+        output_path: Path where the sampled file will be saved.
+        sample_size: Number of lines to sample (excluding the header).
 
     Raises:
         ValueError: If the input file contains fewer lines than `sample_size`.
     """
-    input_path: Path = Path(input_path)
-    output_path: Path = Path(output_path)
 
-    reservoir: list[str] = []
+    # Ensure Path objects
+    input_path_obj: Path = Path(input_path)
+    output_path_obj: Path = Path(output_path)
+
+    # Create parent directories for output if they don't exist
+    output_path_obj.parent.mkdir(parents=True, exist_ok=True)
+
+    reservoir: List[str] = []
     line_count: int = 0
 
-    with input_path.open("r", encoding="utf-8") as infile:
-        # Always read header
+    # Read input file
+    with input_path_obj.open("r", encoding="utf-8") as infile:
+        # Read header
         header: str = infile.readline()
 
         # Reservoir sampling
@@ -42,8 +49,16 @@ def random_sample(
         raise ValueError(f"Cannot sample {sample_size} lines: input file has only {line_count} data lines.")
 
     # Write sampled lines with header
-    with output_path.open("w", encoding="utf-8") as outfile:
+    with output_path_obj.open("w", encoding="utf-8") as outfile:
         outfile.write(header)
         outfile.writelines(reservoir)
 
-    print(f"Sampled {len(reservoir)} lines to {output_path.resolve()}")
+    print(f"Sampled {len(reservoir)} lines to {output_path_obj.resolve()}")
+
+
+if __name__ == "__main__":
+    random_sample(
+        input_path="data/raw/raw_idf2023.csv",
+        output_path="data/raw/raw_idf2023_sample.csv",
+        sample_size=1000,
+    )
