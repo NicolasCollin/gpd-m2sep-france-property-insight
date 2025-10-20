@@ -33,7 +33,7 @@ def count_rows_per_department(
     query = text(query_str)  # no type hint here
 
     # Execute query
-    with engine.connect() as conn:  # type: Connection
+    with engine.connect() as conn:
         result: Result = conn.execute(query)
 
         # Print counts per department

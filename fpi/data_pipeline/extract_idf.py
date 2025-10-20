@@ -42,7 +42,7 @@ def extract_idf(
     """)
 
     # Execute query and load into DataFrame
-    with engine.connect() as conn:  # type: Connection
+    with engine.connect() as conn:
         df: pd.DataFrame = pd.read_sql(query, conn)
 
     # Save to CSV
