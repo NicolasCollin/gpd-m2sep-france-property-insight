@@ -6,6 +6,7 @@ requires-python = ">=3.13"
 dependencies = [
     "gradio==5.49.1",
     "pandas==2.3.3",
+    "pdoc>=15.0.4",
 ]
 
 # depedencies not needed for users
