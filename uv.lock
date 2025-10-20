@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.13"
 
 [[package]]
@@ -329,7 +329,6 @@ dependencies = [
 dev = [
     { name = "behave" },
     { name = "mypy" },
-    { name = "pdoc" },
     { name = "pip-audit" },
     { name = "pre-commit" },
     { name = "pytest" },
@@ -340,14 +339,13 @@ dev = [
 requires-dist = [
     { name = "gradio", specifier = "==5.49.1" },
     { name = "pandas", specifier = "==2.3.3" },
-    { name = "pdoc", specifier = ">=15.0.4" },
+    { name = "pdoc", specifier = "==15.0.4" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "behave", specifier = "==1.3.3" },
     { name = "mypy", specifier = "==1.18.2" },
-    { name = "pdoc", specifier = ">=15.0.4" },
     { name = "pip-audit", specifier = "==2.9.0" },
     { name = "pre-commit", specifier = "==4.3.0" },
     { name = "pytest", specifier = "==8.4.2" },
