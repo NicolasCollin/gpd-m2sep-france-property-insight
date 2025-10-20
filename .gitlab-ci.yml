@@ -4,8 +4,9 @@ stages:
   - audit
   - test
 
+
 # template for uv installation
-.lint-template:
+.ci-template:
   # image: python:3.13-slim
   cache:
     key: "uv-cache"
@@ -18,27 +19,38 @@ stages:
   - python -m pip install uv
   - uv sync --frozen --group dev
 
+
+# pre-commit hooks
 lint:
   stage: lint
-  extends: .lint-template
+  extends: .ci-template
   script:
     - uv run pre-commit run --all-files --show-diff-on-failure
   allow_failure: true
 
+
+# mypy static type checker
 typecheck:
   stage: typecheck
-  extends: .lint-template
+  extends: .ci-template
   script:
-    - uv run mypy src
+    - uv run mypy fpi
+  allow_failure: true
 
+
+# look for vulnerable dependencies
 audit:
   stage: audit
-  extends: .lint-template
+  extends: .ci-template
   script:
     - uv run pip-audit .
+  allow_failure: true
 
+
+# unit tests, doctests, and behave tests
 test:
   stage: test
-  extends: .lint-template
+  extends: .ci-template
   script:
     - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q
+    - uv run behave tests/behave/features

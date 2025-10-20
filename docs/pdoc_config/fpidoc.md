@@ -1,6 +1,6 @@
 # France Property Insight: Analysis and Predictions
 
-Permanent(hopefully) link to our app: <https://gpd-m2sep-france-property-insight.onrender.com/>
+Website link to our app: <https://gpd-m2sep-france-property-insight.onrender.com/>
 
 Predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
@@ -44,7 +44,7 @@ config:
   layout: dagre
   look: neo
 ---
-flowchart BT
+flowchart TB
  subgraph Frontend["Frontend"]
         A["Web Client Interface (Gradio)"]
   end
