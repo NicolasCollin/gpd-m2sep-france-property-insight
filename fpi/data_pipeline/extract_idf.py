@@ -54,5 +54,5 @@ if __name__ == "__main__":
     extract_idf(
         db_path="data/raw/raw2023.db",
         table_name="raw_2023",
-        csv_path="data/raw/raw_idf2023.csv",
+        csv_path="data/raw/raw2023/raw_idf2023.csv",
     )
