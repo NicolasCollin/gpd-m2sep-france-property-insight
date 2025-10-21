@@ -77,7 +77,7 @@ More infos (origin, localization, methods, variable glossary...) in docs/metadat
 
 ### Data Flow Diagram (DFD)
 
-![Data Flow Diagram](docs/data-flow.png)
+<img src="docs/data-flow.png" alt="Data Flow Diagram" width="800"/>
 
 ## Repository Structure
 
@@ -145,7 +145,7 @@ When ready, the features are merged on staging, a branch used as a safety layer,
 
 ### Git Workflow Diagram
 
-![Git Workflow Diagram](docs/git-mr-workflow.png)
+<img src="docs/git-mr-workflow.png" alt="Git Workflow Diagram" width="800"/>
 
 ## Contributors
 
@@ -155,7 +155,8 @@ When ready, the features are merged on staging, a branch used as a safety layer,
 - Nicolas COLLIN: Data Engineer
 - Claudy LINCY: Data Scientist
 
-This is an academic project for our Master 2 Statistique pour l'Évaluation et la Prévision 2025-2026 at the University of Reims Champagne-Ardenne.
+This is an academic project for our Master 2 Statistique pour l'Évaluation et la Prévision 2025-2026,  
+at the University of Reims Champagne-Ardenne.
 
 ## License
 
