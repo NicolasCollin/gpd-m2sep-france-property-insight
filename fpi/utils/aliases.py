@@ -51,10 +51,12 @@ def run_behave() -> None:
     """Run our behave tests"""
     subprocess.run(["behave", "tests/behave/features"], check=True)
 
+
 def test(extra_args: Optional[str] = None) -> None:
     """Run unit tests, doctests, and behave tests"""
     run_pytest(extra_args=extra_args)
     run_behave()
+
 
 def apidoc() -> None:
     """Run API documentation with pdoc."""
