@@ -77,48 +77,7 @@ More infos (origin, localization, methods, variable glossary...) in docs/metadat
 
 ### Data Flow Diagram (DFD)
 
-<!-- Prettier PNG version available at docs/data-flow.png -->
-![Git Workflow Diagram](docs/data-flow.png)
-
-```mermaid
-
----
-config:
-  theme: mc
-  layout: dagre
-  look: neo
----
-flowchart BT
- subgraph Frontend["Frontend"]
-        A["Web Client Interface (Gradio)"]
-  end
- subgraph Backend["Backend"]
-        B["FastAPI Layer"]
-        D["Processing Layer<br>(Analysis / Prediction)"]
-        E["Database Access Layer (SQLAlchemy)"]
-  end
- subgraph DataPipeline["Data Preparation Pipeline"]
-        F["Raw Data<br>(.txt files)"]
-        G["Validated &amp; Cleaned<br>(NA, duplicates, errors...)"]
-        H["Processed<br>(Analysis-Ready)"]
-  end
- subgraph Database["Database"]
-        I["Local SQLite or<br>MySQL server"]
-  end
-    A -- API request --> B
-    B -- Validated Request<br>(Pydantic) --> D
-    D -- Query Operations --> E
-    E -- Interacts with --> I
-    I -- Query Results --> E
-    E -- Returns Data --> D
-    D -- Validated Results<br>(Pydantic) --> B
-    B -- Displayed Results --> A
-    F --> G
-    G --> H
-    H --> I
-
-
-```
+![Data Flow Diagram](docs/data-flow.png)
 
 ## Repository Structure
 
@@ -186,38 +145,7 @@ When ready, the features are merged on staging, a branch used as a safety layer,
 
 ### Git Workflow Diagram
 
-<!-- Prettier PNG version available at docs/git-mr-workflow.png -->
 ![Git Workflow Diagram](docs/git-mr-workflow.png)
-
-```mermaid
-
----
-config:
-  theme: 'default'
-  themeVariables:
-    commitLabelFontSize: '12px'
----
-gitGraph
-    commit id: "Feature 3"
-    branch feature
-    checkout feature
-    commit id: "First commit"
-    commit id: "More commits..."
-    commit id: " " type: HIGHLIGHT tag: "FEATURE READY"
-    commit id: "Review + Tests"
-    checkout main
-    commit id: "Feature 4"
-    commit id: "Bug fix 2"
-    checkout feature
-    branch staging
-    merge main id: "Merge changes" type: HIGHLIGHT
-    commit id: "Resolve conflicts"
-    commit id: "Clean history"
-    commit id: "Ready for deployment" type: HIGHLIGHT
-    checkout main
-    merge staging id: "Open MR: Merge Request" tag: "NEW RELEASE"
-
-```
 
 ## Contributors
 
