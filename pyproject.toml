@@ -22,6 +22,11 @@ dev = [
     "ruff==0.14.0",
 ]
 
+[project.urls]
+Homepage = "https://gpd-m2sep-france-property-insight.onrender.com/"
+Documentation = "https://france-property-insight-docs.onrender.com/fpi.html"
+Source = "https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight"
+
 [tool.hatch.build.targets.wheel]
 packages = ["fpi"]
 
