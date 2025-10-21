@@ -78,6 +78,7 @@ More infos (origin, localization, methods, variable glossary...) in docs/metadat
 ### Data Flow Diagram (DFD)
 
 ![Data Flow Diagram](docs/data-flow.png)
+<img src="docs/data-flow.png" alt="Data Flow Diagram" width="400"/>
 
 ## Repository Structure
 
