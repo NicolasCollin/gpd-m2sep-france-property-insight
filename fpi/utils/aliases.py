@@ -21,14 +21,9 @@ def precommit() -> None:
     run_command("uv run pre-commit run --all-files")
 
 
-def fpibuild() -> None:
-    """Build and start the Docker container for FPI."""
-    run_command("uv run docker-compose -f .devcontainer/compose.yaml up -d --build")
-
-
-def fpirun() -> None:
+def fpidocker() -> None:
     """Run the FPI app inside the Docker container."""
-    run_command("uv run docker exec -it fpi-devcontainer uv run main")
+    run_command("docker compose -f .devcontainer/compose.yaml up --build fpi-server")
 
 
 def typecheck(extra_args: Optional[str] = None) -> None:
@@ -44,7 +39,7 @@ def audit() -> None:
     run_command("uv run pip-audit .")
 
 
-def test(extra_args: Optional[str] = None) -> None:
+def run_pytest(extra_args: Optional[str] = None) -> None:
     """Run our unit tests and doctests with pytest."""
     cmd: str = "uv run pytest --doctest-modules"
     if extra_args:
@@ -55,6 +50,12 @@ def test(extra_args: Optional[str] = None) -> None:
 def run_behave() -> None:
     """Run our behave tests"""
     subprocess.run(["behave", "tests/behave/features"], check=True)
+
+
+def test(extra_args: Optional[str] = None) -> None:
+    """Run unit tests, doctests, and behave tests"""
+    run_pytest(extra_args=extra_args)
+    run_behave()
 
 
 def apidoc() -> None:
@@ -106,4 +107,3 @@ def ci() -> None:
     typecheck()
     audit()
     test()
-    run_behave()

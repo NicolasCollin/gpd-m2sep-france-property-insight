@@ -23,6 +23,7 @@ def main() -> None:
     """
     welcome_message: str = get_welcome_message()
     print(welcome_message)
+    print("Press `Ctrl + C` in the terminal if you want to stop the app")
 
     app: gr.Blocks = app_menu()
 
