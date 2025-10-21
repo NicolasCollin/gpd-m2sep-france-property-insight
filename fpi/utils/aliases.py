@@ -21,16 +21,6 @@ def precommit() -> None:
     run_command("uv run pre-commit run --all-files")
 
 
-def fpibuild() -> None:
-    """Build and start the Docker container for FPI."""
-    run_command("uv run docker-compose -f .devcontainer/compose.yaml up -d --build")
-
-
-def fpirun() -> None:
-    """Run the FPI app inside the Docker container."""
-    run_command("uv run docker exec -it fpi-devcontainer uv run main")
-
-
 def fpidocker() -> None:
     """Run the FPI app inside the Docker container."""
     run_command("docker compose -f .devcontainer/compose.yaml up --build fpi-server")

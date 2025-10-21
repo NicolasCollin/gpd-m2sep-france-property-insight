@@ -42,9 +42,6 @@ select = ["E", "F", "I"]
 # run the app
 main = "fpi.main:main"
 fpi = "fpi.main:main"
-# docker
-fpibuild = "fpi.utils.aliases:fpibuild"
-fpirun = "fpi.utils.aliases:fpirun"
 fpidocker = "fpi.utils.aliases:fpidocker"
 # code quality
 precommit = "fpi.utils.aliases:precommit"
