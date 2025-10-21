@@ -1,5 +1,0 @@
-*.db filter=lfs diff=lfs merge=lfs -text
-data/raw/raw_idf2023.db filter=lfs diff=lfs merge=lfs -text
-data/raw/raw_idf2022.db filter=lfs diff=lfs merge=lfs -text
-data/raw/raw_idf2021.db filter=lfs diff=lfs merge=lfs -text
-data/raw/raw_idf2024.db filter=lfs diff=lfs merge=lfs -text
