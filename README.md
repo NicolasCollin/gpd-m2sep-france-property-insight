@@ -155,7 +155,8 @@ When ready, the features are merged on staging, a branch used as a safety layer,
 - Nicolas COLLIN: Data Engineer
 - Claudy LINCY: Data Scientist
 
-This is an academic project for our Master 2 Statistique pour l'Évaluation et la Prévision 2025-2026 at the University of Reims Champagne-Ardenne.
+This is an academic project for our Master 2 Statistique pour l'Évaluation et la Prévision 2025-2026,  
+at the University of Reims Champagne-Ardenne.
 
 ## License
 
