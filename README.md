@@ -1,23 +1,66 @@
 # France Property Insight: Analysis and Predictions
 
-Permanent(hopefully) link to our app: <https://gpd-m2sep-france-property-insight.onrender.com/>
+Online app: <https://gpd-m2sep-france-property-insight.onrender.com/>
+Online documentation: <https://france-property-insight-docs.onrender.com/fpi.html>
+GitLab: <https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight>
 
 Predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
-The predictive models will use Machine Learning and the dataset is from the French "Ministere de l'Économie, des Finances et de l'Industrie".  
+The models will use Machine Learning and data from the French "Ministere de l'Économie, des Finances et de l'Industrie".  
 Dataset used: ["Demandes de valeurs foncières"](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
+
+## Installation and Usage
+
+2 ways to install: with or without Docker.  
+The second method, while less reliable because of manual installation of python and uv, is much faster.
+
+### Method 1: with Docker Desktop
+
+1. Install **Docker Desktop**: From [www.docker.com](https://www.docker.com/products/docker-desktop/)  
+Make sure Docker Desktop is **running** before continuing.
+
+2. Clone the Git repository to your local machine and move there:
+
+```bash
+git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git france-property-insight
+cd france-property-insight
+```
+
+3. Run our app (caution: first run is slow due to building time):
+
+```bash
+docker compose -f .devcontainer/compose.yaml up --build fpi-server
+```
+
+### Method 2: by installing Python and uv manually
+
+1. Install **Python 3.13**: From [Python.org](https://www.python.org/).
+
+2. Install **uv**: From [https://docs.astral.sh/uv](https://docs.astral.sh/uv/getting-started/installation/).
+
+3. Clone the Git repository to your local machine and move there:
+
+```bash
+git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git france-property-insight
+cd france-property-insight
+```
+
+4. Run our app
+
+```bash
+uv run fpi
+```
 
 ## Table of Contents
 
 - [France Property Insight: Analysis and Predictions](#france-property-insight-analysis-and-predictions)
+  - [Installation and Usage](#installation-and-usage)
+    - [Method 1: with Docker Desktop](#method-1-with-docker-desktop)
+    - [Method 2: by installing Python and uv manually](#method-2-by-installing-python-and-uv-manually)
   - [Table of Contents](#table-of-contents)
   - [Database](#database)
     - [Data Flow Diagram (DFD)](#data-flow-diagram-dfd)
   - [Repository Structure](#repository-structure)
-  - [Installation and Usage](#installation-and-usage)
-    - [No installation: website link](#no-installation-website-link)
-    - [Method 1: with Docker Desktop](#method-1-with-docker-desktop)
-    - [Method 2: by installing Python and uv manually](#method-2-by-installing-python-and-uv-manually)
   - [Current state](#current-state)
     - [Changelog](#changelog)
   - [Workflow](#workflow)
@@ -107,70 +150,6 @@ flowchart BT
 - pyproject.toml: Project metadata, dependency ranges, and command lines shortcuts (project.scripts).
 - README.md: This very same file.
 - uv.lock: Lockfile with exact dependency versions for reproducibility.
-
-## Installation and Usage
-
-### No installation: website link
-
-Website link to our app for immediate use: <https://gpd-m2sep-france-property-insight.onrender.com/>
-
-2 ways to install: with or without Docker.  
-The second method, while less reliable because of manual installation of python and uv, is much faster.
-
-### Method 1: with Docker Desktop
-
-1. Install **Docker Desktop**: From [www.docker.com](https://www.docker.com/products/docker-desktop/)  
-Make sure Docker Desktop is **running** before continuing.
-
-2. Clone the Git repository to your local machine:
-
-```bash
-git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git france-property-insight
-```
-
-3. Navigate to the cloned directory:
-
-```bash
-cd france-property-insight
-```
-
-4. Build our app (Docker Desktop has to be running):
-
-```bash
-docker-compose -f .devcontainer/compose.yaml up -d --build
-```
-
-5. Run our app:
-
-```bash
-docker exec -it fpi-devcontainer uv run fpi
-```
-
-### Method 2: by installing Python and uv manually
-
-1. Install **Python 3.13**: From [Python.org](https://www.python.org/).
-
-2. Install **uv**: From [https://docs.astral.sh/uv](https://docs.astral.sh/uv/getting-started/installation/).
-
-3. Clone the Git repository to your local machine:
-
-```bash
-git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight.git france-property-insight
-```
-
-4. Navigate to the cloned directory:
-
-```bash
-cd france-property-insight
-```
-
-5. Run our app
-
-```bash
-uv run fpi
-```
-
-6. The app will run on local URL: `http://127.0.0.1:7860`
 
 ## Current state
 

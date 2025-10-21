@@ -8,8 +8,8 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
-  server:
-    container_name: fpi-devcontainer
+  fpi-server:
+    container_name: fpi-container
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
@@ -17,7 +17,8 @@ services:
       - "7860:7860"
     tty: true
     stdin_open: true
-    command: tail -f /dev/null   # keeps container alive for manual commands
+    # command: tail -f /dev/null   # keeps container alive for manual commands
+    command: uv run fpi
     environment:
       - RUNNING_IN_DOCKER=1
 
