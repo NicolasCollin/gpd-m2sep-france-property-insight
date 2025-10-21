@@ -5,6 +5,7 @@ description = "France Property Insight: Uni project app for Master 2 SEP"
 requires-python = ">=3.13"
 dependencies = [
     "gradio==5.49.1",
+    "matplotlib>=3.10.7",
     "pandas==2.3.3",
     "pdoc==15.0.4",
     "sqlalchemy==2.0.44",
@@ -21,6 +22,11 @@ dev = [
     "pytest==8.4.2",
     "ruff==0.14.0",
 ]
+
+[project.urls]
+Homepage = "https://gpd-m2sep-france-property-insight.onrender.com/"
+Documentation = "https://france-property-insight-docs.onrender.com/fpi.html"
+Source = "https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight"
 
 [tool.hatch.build.targets.wheel]
 packages = ["fpi"]

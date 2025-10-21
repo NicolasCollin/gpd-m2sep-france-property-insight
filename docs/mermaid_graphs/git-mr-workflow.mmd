@@ -1,0 +1,25 @@
+---
+config:
+  theme: 'default'
+  themeVariables:
+    commitLabelFontSize: '12px'
+---
+gitGraph
+    commit id: "Feature 3"
+    branch feature
+    checkout feature
+    commit id: "First commit"
+    commit id: "More commits..."
+    commit id: " " type: HIGHLIGHT tag: "FEATURE READY"
+    commit id: "Review + Tests"
+    checkout main
+    commit id: "Feature 4"
+    commit id: "Bug fix 2"
+    checkout feature
+    branch staging
+    merge main id: "Merge changes" type: HIGHLIGHT
+    commit id: "Resolve conflicts"
+    commit id: "Clean history"
+    commit id: "Ready for deployment" type: HIGHLIGHT
+    checkout main
+    merge staging id: "Open MR: Merge Request" tag: "NEW RELEASE"
