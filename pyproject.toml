@@ -5,6 +5,7 @@ description = "France Property Insight: Uni project app for Master 2 SEP"
 requires-python = ">=3.13"
 dependencies = [
     "gradio==5.49.1",
+    "matplotlib>=3.10.7",
     "pandas==2.3.3",
     "pdoc==15.0.4",
     "sqlalchemy==2.0.44",
