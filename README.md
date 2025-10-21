@@ -1,20 +1,37 @@
 # France Property Insight: Analysis and Predictions
 
-Online app: <https://gpd-m2sep-france-property-insight.onrender.com/>
-Online documentation: <https://france-property-insight-docs.onrender.com/fpi.html>
-GitLab: <https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight>
+Online app: <https://gpd-m2sep-france-property-insight.onrender.com/>  
+Online documentation: <https://france-property-insight-docs.onrender.com/fpi.html>  
+GitLab repository: <https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight>  
 
 Predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
 The models will use Machine Learning and data from the French "Ministere de l'Économie, des Finances et de l'Industrie".  
-Dataset used: ["Demandes de valeurs foncières"](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
+Dataset - Demandes de valeurs foncières: <https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/>
+
+## Table of Contents
+
+- [France Property Insight: Analysis and Predictions](#france-property-insight-analysis-and-predictions)
+  - [Table of Contents](#table-of-contents)
+  - [Installation and Usage](#installation-and-usage)
+    - [Method 1 (slower): with Docker Desktop](#method-1-slower-with-docker-desktop)
+    - [Method 2 (faster): by installing Python and uv manually](#method-2-faster-by-installing-python-and-uv-manually)
+  - [Database](#database)
+    - [Data Flow Diagram (DFD)](#data-flow-diagram-dfd)
+  - [Repository Structure](#repository-structure)
+  - [Current state](#current-state)
+    - [Changelog](#changelog)
+  - [Workflow](#workflow)
+    - [Git Workflow Diagram](#git-workflow-diagram)
+  - [Contributors](#contributors)
+  - [License](#license)
 
 ## Installation and Usage
 
 2 ways to install: with or without Docker.  
 The second method, while less reliable because of manual installation of python and uv, is much faster.
 
-### Method 1: with Docker Desktop
+### Method 1 (slower): with Docker Desktop
 
 1. Install **Docker Desktop**: From [www.docker.com](https://www.docker.com/products/docker-desktop/)  
 Make sure Docker Desktop is **running** before continuing.
@@ -32,7 +49,7 @@ cd france-property-insight
 docker compose -f .devcontainer/compose.yaml up --build fpi-server
 ```
 
-### Method 2: by installing Python and uv manually
+### Method 2 (faster): by installing Python and uv manually
 
 1. Install **Python 3.13**: From [Python.org](https://www.python.org/).
 
@@ -45,39 +62,23 @@ git clone https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-ins
 cd france-property-insight
 ```
 
-4. Run our app
+4. Run our app (caution: first run is slow due to building time):
 
 ```bash
 uv run fpi
 ```
 
-## Table of Contents
-
-- [France Property Insight: Analysis and Predictions](#france-property-insight-analysis-and-predictions)
-  - [Installation and Usage](#installation-and-usage)
-    - [Method 1: with Docker Desktop](#method-1-with-docker-desktop)
-    - [Method 2: by installing Python and uv manually](#method-2-by-installing-python-and-uv-manually)
-  - [Table of Contents](#table-of-contents)
-  - [Database](#database)
-    - [Data Flow Diagram (DFD)](#data-flow-diagram-dfd)
-  - [Repository Structure](#repository-structure)
-  - [Current state](#current-state)
-    - [Changelog](#changelog)
-  - [Workflow](#workflow)
-    - [Git Workflow Diagram](#git-workflow-diagram)
-  - [Contributors](#contributors)
-  - [License](#license)
-
 ## Database
 
-Dataset used: [Demandes de valeurs foncières](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/)
+Dataset - Demandes de valeurs foncières: <https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/>  
 
 Public official dataset from the French government. Tracks real estate transactions over the French territory from 2020 to 2024.  
 More infos (origin, localization, methods, variable glossary...) in docs/metadata-fr.pdf
 
 ### Data Flow Diagram (DFD)
 
-Prettier PNG version available at docs/data-flow.png
+<!-- Prettier PNG version available at docs/data-flow.png -->
+![Git Workflow Diagram](docs/data-flow.png)
 
 ```mermaid
 
@@ -162,7 +163,10 @@ This project will go through 5 sprints with reviews and demonstration.
 
 Major changes:
 
-- Hosting the app online
+- First explorative data analysis (univariate tests)
+- Online documentation
+- Store data subset as SQLite .db files (Ile-de-France only) with Git LFS
+- Online app
 - Web client interface with Gradio
 - Deployment with Docker
 - gitlab CI setup + runners (mypy, pip-audit, pytest, behave)
@@ -171,7 +175,9 @@ Major changes:
 Minor changes:
 
 - uv run shortcuts in .toml scripts
-- function to sample original data
+- devcontainers to reproduce dev environment
+- Data Flow Diagram
+- Git Workflow and branch rules
 
 ## Workflow
 
@@ -180,7 +186,8 @@ When ready, the features are merged on staging, a branch used as a safety layer,
 
 ### Git Workflow Diagram
 
-Prettier PNG version available at docs/git-mr-workflow.png
+<!-- Prettier PNG version available at docs/git-mr-workflow.png -->
+![Git Workflow Diagram](docs/git-mr-workflow.png)
 
 ```mermaid
 

@@ -31,6 +31,11 @@ def fpirun() -> None:
     run_command("uv run docker exec -it fpi-devcontainer uv run main")
 
 
+def fpidocker() -> None:
+    """Run the FPI app inside the Docker container."""
+    run_command("docker compose -f .devcontainer/compose.yaml up --build fpi-server")
+
+
 def typecheck(extra_args: Optional[str] = None) -> None:
     """Run static type checking with mypy."""
     cmd: str = "uv run mypy fpi"
