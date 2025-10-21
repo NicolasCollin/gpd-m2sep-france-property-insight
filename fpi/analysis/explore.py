@@ -1,8 +1,8 @@
 import pandas as pd
 
-from fpi.analysis.constants import NUMERIC_VARS, VARS_TO_KEEP
 from fpi.analysis.utils_io import print_info
 from fpi.analysis.utils_plot import save_hist
+from fpi.utils.constants import NUMERIC_VARS, VARS_TO_KEEP
 
 
 def load_data(file_path: str) -> pd.DataFrame:

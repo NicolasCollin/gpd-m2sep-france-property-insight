@@ -134,7 +134,7 @@ Major changes:
 Minor changes:
 
 - uv run shortcuts in .toml scripts
-- devcontainers to reproduce dev environment
+- devcontainer to reproduce dev environment
 - Data Flow Diagram
 - Git Workflow and branch rules
 
