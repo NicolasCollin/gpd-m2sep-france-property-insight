@@ -77,8 +77,7 @@ More infos (origin, localization, methods, variable glossary...) in docs/metadat
 
 ### Data Flow Diagram (DFD)
 
-![Data Flow Diagram](docs/data-flow.png)
-<img src="docs/data-flow.png" alt="Data Flow Diagram" width="400"/>
+<img src="docs/data-flow.png" alt="Data Flow Diagram" width="800"/>
 
 ## Repository Structure
 
@@ -146,7 +145,7 @@ When ready, the features are merged on staging, a branch used as a safety layer,
 
 ### Git Workflow Diagram
 
-![Git Workflow Diagram](docs/git-mr-workflow.png)
+<img src="docs/git-mr-workflow.png" alt="Git Workflow Diagram" width="800"/>
 
 ## Contributors
 
