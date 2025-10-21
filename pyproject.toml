@@ -48,9 +48,8 @@ precommit = "fpi.utils.aliases:precommit"
 lint = "fpi.utils.aliases:precommit"
 typecheck = "fpi.utils.aliases:typecheck"
 audit = "fpi.utils.aliases:audit"
-# unit tests, doctests, behave, local CI check
+# unit tests, doctests, behave tests, local CI check
 test = "fpi.utils.aliases:test"
-behav = "fpi.utils.aliases:run_behave"
 ci = "fpi.utils.aliases:ci"
 # API documentation
 apidoc = "fpi.utils.aliases:apidoc"

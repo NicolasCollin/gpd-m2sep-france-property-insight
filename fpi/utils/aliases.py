@@ -39,7 +39,7 @@ def audit() -> None:
     run_command("uv run pip-audit .")
 
 
-def test(extra_args: Optional[str] = None) -> None:
+def run_pytest(extra_args: Optional[str] = None) -> None:
     """Run our unit tests and doctests with pytest."""
     cmd: str = "uv run pytest --doctest-modules"
     if extra_args:
@@ -51,6 +51,10 @@ def run_behave() -> None:
     """Run our behave tests"""
     subprocess.run(["behave", "tests/behave/features"], check=True)
 
+def test(extra_args: Optional[str] = None) -> None:
+    """Run unit tests, doctests, and behave tests"""
+    run_pytest(extra_args=extra_args)
+    run_behave()
 
 def apidoc() -> None:
     """Run API documentation with pdoc."""
@@ -101,4 +105,3 @@ def ci() -> None:
     typecheck()
     audit()
     test()
-    run_behave()
