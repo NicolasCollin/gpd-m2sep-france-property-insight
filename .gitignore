@@ -9,7 +9,12 @@ wheels/
 .uv/
 .mypy_cache/
 .pytest_cache/
-raw2024.txt
+
+# Specific files
+raw2024*
+raw2023*
+raw2022*
+raw2021*
 .gradio/
 docs/site
 
@@ -18,5 +23,3 @@ docs/site
 
 # Virtual environments
 .venv
-
-raw2024.txt
