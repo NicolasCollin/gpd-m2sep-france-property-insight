@@ -29,7 +29,7 @@ def dashboard_page() -> Tuple[gr.Blocks, gr.Button]:
         gr.Markdown("Visualisez les tendances des valeurs foncières et explorez les données des propriétés françaises.")
 
         # Section: Navigation Button
-        back_home = gr.Button(" Retour à l'accueil")
+        back_home = gr.Button("Retour à l'accueil")
 
         # Return the layout and navigation control
         return dashboard, back_home
