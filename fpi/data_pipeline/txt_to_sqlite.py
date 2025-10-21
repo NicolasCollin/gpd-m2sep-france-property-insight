@@ -62,8 +62,8 @@ def txt_to_sqlite(
 
 if __name__ == "__main__":
     txt_to_sqlite(
-        txt_path="data/raw/raw_idf2023.csv",
-        db_path="data/raw/raw_idf2023.db",
-        table_name="raw_idf_2023",
-        delimiter=",",
+        txt_path="data/raw/raw2023.txt",
+        db_path="data/raw/raw2023.db",
+        table_name="raw_2023",
+        delimiter="|",
     )

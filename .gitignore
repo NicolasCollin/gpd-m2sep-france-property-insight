@@ -11,10 +11,6 @@ wheels/
 .pytest_cache/
 
 # Specific files
-raw2024*
-raw2023*
-raw2022*
-raw2021*
 .gradio/
 docs/site
 
