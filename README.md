@@ -47,7 +47,7 @@ cd france-property-insight
 3. Run our app (caution: first run is slow due to building time):
 
 ```bash
-docker compose -f .devcontainer/compose.yaml up --build fpi-server
+docker compose -f .devcontainer/compose.yaml up fpi-server
 ```
 
 ### Method 2 (faster): by installing Python and uv manually
