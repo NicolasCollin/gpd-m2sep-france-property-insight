@@ -23,7 +23,7 @@ def precommit() -> None:
 
 def fpidocker() -> None:
     """Run the FPI app inside the Docker container."""
-    run_command("docker compose -f .devcontainer/compose.yaml up --build fpi-server")
+    run_command("docker compose -f .devcontainer/compose.yaml up fpi-server")
 
 
 def typecheck(extra_args: Optional[str] = None) -> None:

@@ -7,7 +7,8 @@ GitLab repository: <https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-pr
 Predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
 The models will use Machine Learning and data from the French "Ministere de l'Économie, des Finances et de l'Industrie".  
-Dataset - Demandes de valeurs foncières: <https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/>
+Dataset - Demandes de valeurs foncières:  
+<https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/>
 
 ## Table of Contents
 
@@ -46,7 +47,7 @@ cd france-property-insight
 3. Run our app (caution: first run is slow due to building time):
 
 ```bash
-docker compose -f .devcontainer/compose.yaml up --build fpi-server
+docker compose -f .devcontainer/compose.yaml up fpi-server
 ```
 
 ### Method 2 (faster): by installing Python and uv manually
@@ -70,7 +71,8 @@ uv run fpi
 
 ## Database
 
-Dataset - Demandes de valeurs foncières: <https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/>  
+Dataset - Demandes de valeurs foncières:  
+<https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/>  
 
 Public official dataset from the French government. Tracks real estate transactions over the French territory from 2020 to 2024.  
 More infos (origin, localization, methods, variable glossary...) in docs/metadata-fr.pdf
@@ -124,7 +126,6 @@ Major changes:
 
 - First explorative data analysis (univariate tests)
 - Online documentation
-- Store data subset as SQLite .db files (Ile-de-France only) with Git LFS
 - Online app
 - Web client interface with Gradio
 - Deployment with Docker
@@ -140,12 +141,14 @@ Minor changes:
 
 ## Workflow
 
-Noone is allowed to push on main, any development has to be done on a separate branch.  
-When ready, the features are merged on staging, a branch used as a safety layer, before being merged to main.
+We protected the main branch, preventing pushing and force pushing.
+As such, any feature has to developped separately on its own branch before opening a merge request to the main branch.
 
 ### Git Workflow Diagram
 
 <img src="docs/git-mr-workflow.png" alt="Git Workflow Diagram" width="800"/>
+
+The branch staging is a safety layer to test deployment before officially releasing to the main branch.
 
 ## Contributors
 
