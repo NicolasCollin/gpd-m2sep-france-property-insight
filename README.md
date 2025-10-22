@@ -140,12 +140,14 @@ Minor changes:
 
 ## Workflow
 
-Noone is allowed to push on main, any development has to be done on a separate branch.  
-When ready, the features are merged on staging, a branch used as a safety layer, before being merged to main.
+We protected the main branch, preventing pushing and force pushing.
+As such, any feature has to developped separately on its own branch before opening a merge request to the main branch.
 
 ### Git Workflow Diagram
 
 <img src="docs/git-mr-workflow.png" alt="Git Workflow Diagram" width="800"/>
+
+The branch staging is a safety layer to test deployment before officially releasing to the main branch.
 
 ## Contributors
 
