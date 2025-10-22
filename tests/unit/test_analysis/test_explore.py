@@ -1,6 +1,7 @@
 import pandas as pd
 
 from fpi.analysis.explore import load_data, preprocess
+from fpi.analysis.utils_plot import save_hist
 
 
 # --- Test load_data ---
@@ -27,7 +28,6 @@ def test_preprocess():
 def test_save_hist(tmp_path):
     # tmp_path est un dossier temporaire fourni par pytest
     df = pd.DataFrame({"building_surface": [50, 100, 70], "land_surface": [200, 500, 300], "main_rooms": [2, 3, 4]})
-    from fpi.analysis.utils_plot import save_hist
 
     save_hist(df, ["building_surface", "land_surface", "main_rooms"], output_dir=tmp_path)
     # Check files exist

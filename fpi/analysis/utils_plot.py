@@ -1,5 +1,9 @@
 from pathlib import Path
 
+# import matplotlib.pyplot as plt
+import matplotlib
+
+matplotlib.use("Agg")  # backend non interactif, adapté aux tests/serveurs
 import matplotlib.pyplot as plt
 import pandas as pd
 
