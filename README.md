@@ -7,7 +7,8 @@ GitLab repository: <https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-pr
 Predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
 The models will use Machine Learning and data from the French "Ministere de l'Économie, des Finances et de l'Industrie".  
-Dataset - Demandes de valeurs foncières: <https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/>
+Dataset - Demandes de valeurs foncières:  
+<https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/>
 
 ## Table of Contents
 
@@ -70,7 +71,8 @@ uv run fpi
 
 ## Database
 
-Dataset - Demandes de valeurs foncières: <https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/>  
+Dataset - Demandes de valeurs foncières:  
+<https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/>  
 
 Public official dataset from the French government. Tracks real estate transactions over the French territory from 2020 to 2024.  
 More infos (origin, localization, methods, variable glossary...) in docs/metadata-fr.pdf
