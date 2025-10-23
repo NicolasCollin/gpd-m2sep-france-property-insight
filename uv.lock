@@ -414,7 +414,7 @@ wheels = [
 
 [[package]]
 name = "gpd-fpi"
-version = "0.1.0"
+version = "1.0"
 source = { editable = "." }
 dependencies = [
     { name = "gradio" },
@@ -438,7 +438,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "gradio", specifier = "==5.49.1" },
-    { name = "matplotlib", specifier = ">=3.10.7" },
+    { name = "matplotlib", specifier = "==3.10.7" },
     { name = "pandas", specifier = "==2.3.3" },
     { name = "pdoc", specifier = "==15.0.4" },
     { name = "sqlalchemy", specifier = "==2.0.44" },

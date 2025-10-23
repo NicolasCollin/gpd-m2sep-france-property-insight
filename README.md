@@ -6,7 +6,7 @@ GitLab repository: <https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-pr
 
 Predictive analysis application designed to help owners estimate their properties' values or future buyers to find and predict a property's value in the following years.
 
-The models will use Machine Learning and data from the French "Ministere de l'Économie, des Finances et de l'Industrie".  
+The models will use Machine Learning and data from the French "Ministère de l'Économie, des Finances et de l'Industrie".  
 Dataset - Demandes de valeurs foncières:  
 <https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/>
 
@@ -28,6 +28,8 @@ Dataset - Demandes de valeurs foncières:
   - [License](#license)
 
 ## Installation and Usage
+
+Immediate use without installation through our website: <https://gpd-m2sep-france-property-insight.onrender.com/>
 
 2 ways to install: with or without Docker.  
 The second method, while less reliable because of manual installation of python and uv, is much faster.
