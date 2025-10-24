@@ -1,3 +1,7 @@
+"""
+script we used to produce the smaller csv files with ile-de-france data only
+"""
+
 from pathlib import Path
 from typing import List, Union
 
@@ -15,9 +19,9 @@ def extract_idf(
     Export rows from a SQLite table corresponding to Ile-de-France departments to a CSV file.
 
     Args:
-        db_path: Path to the SQLite database.
-        table_name: Name of the table to query.
-        csv_path: Path where the CSV file will be saved.
+        db_path (Path | str): Path to the SQLite database.
+        table_name (str): Name of the table to query.
+        csv_path (Path | str): Path where the CSV file will be saved.
     """
 
     # Convert to Path objects
