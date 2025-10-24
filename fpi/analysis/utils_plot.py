@@ -35,11 +35,16 @@ def save_lv(df: pd.DataFrame, col: str, output_dir: str) -> None:
       # Work on a copy to avoid SettingWithCopyWarning 
     df_clean = df.copy() 
       # Clean the column: remove € symbol, spaces, commas, and convert to numeric
-    df_clean[col] = ( df_clean[col] .astype(str) .str.replace("€", "", regex=False) .str.replace(",", "", regex=False) .str.replace(" ", "", regex=False) ) df_clean[col] = pd.to_numeric(df_clean[col], errors="coerce")
+    df_clean[col] = ( df_clean[col] .astype(str) .str.replace("€", "", regex=False) .str.replace(",", "", regex=False) .str.replace(" ", "", regex=False) )
+    df_clean[col] = pd.to_numeric(df_clean[col], errors="coerce")
       # Filter out missing or non-positive values 
     df_filtered = df_clean[df_clean[col].notna() & (df_clean[col] > 0)] 
       # Plot the boxplot
-      plt.figure(figsize=(8, 6)) 
-      sns.boxplot(y=df_filtered[col], color="skyblue") 
-      plt.yscale("log") plt.ylabel(col) plt.title(f"Boxplot of {col}") 
-      plt.tight_layout() plt.savefig(f"{output_dir}/{col}_boxplot.png") plt.close()
+    plt.figure(figsize=(8, 6)) 
+    sns.boxplot(y=df_filtered[col], color="skyblue") 
+    plt.yscale("log")
+    plt.ylabel(col) 
+    plt.title(f"Boxplot of {col}") 
+    plt.tight_layout() 
+    plt.savefig(f"{output_dir}/{col}_boxplot.png") 
+    plt.close()
