@@ -75,7 +75,7 @@ class TestSaveHist:
     def test_histcol(self, tmp_path):
         """Test with empty columns"""
         empty_df = pd.DataFrame({"test_col": []})
-        # Should handle empty DataFrames without errors
+        # Should handle empty dataframes without errors
         save_hist(empty_df, ["test_col"], output_dir=tmp_path)
         assert (tmp_path / "test_col_hist.png").exists()
 
