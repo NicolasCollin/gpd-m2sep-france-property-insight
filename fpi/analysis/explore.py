@@ -1,7 +1,6 @@
 import pandas as pd
-
 from fpi.analysis.utils_io import print_info
-from fpi.analysis.utils_plot import save_hist
+from fpi.analysis.utils_plot import save_hist, save_lv
 from fpi.utils.constants import NUMERIC_VARS, VARS_TO_KEEP
 
 
@@ -49,7 +48,9 @@ def exp() -> None:
     save_hist(df_clean, NUMERIC_VARS, output_dir="docs/plots")
 
     print("Plots saved in docs/plots/")
+    save_lv(df_clean, "land_value", output_dir="docs/plots")
 
+    print("Plots saved in docs/plots/")
 
 if __name__ == "__main__":
     exp()

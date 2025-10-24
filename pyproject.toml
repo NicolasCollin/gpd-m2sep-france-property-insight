@@ -49,6 +49,7 @@ select = ["E", "F", "I"]
 main = "fpi.main:main"
 fpi = "fpi.main:main"
 fpidocker = "fpi.utils.aliases:fpidocker"
+exp= "fpi.analysis.explore:exp"
 # code quality
 precommit = "fpi.utils.aliases:precommit"
 lint = "fpi.utils.aliases:precommit"
