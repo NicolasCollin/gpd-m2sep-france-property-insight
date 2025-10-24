@@ -1,3 +1,8 @@
+"""
+script we used to produce sample2024.txt
+will likely not be used again as we will move on SQLAlchemy and .db files
+"""
+
 import random
 from pathlib import Path
 from typing import List, Union
