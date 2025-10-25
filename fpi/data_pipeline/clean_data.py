@@ -11,9 +11,10 @@ def clean_data(raw_path: str = "data", cleaned_path: str = "data/cleaned") -> No
     Steps:
     1. Traverse all CSV files under raw_path (including subfolders).
     2. Convert all column names to lowercase.
-    3. Keep only predefined columns.
-    4. Remove rows with missing values and duplicates.
-    5. Save cleaned files to cleaned_path with the same folder structure as raw_path.
+    3. Keep only predefined relevant columns.
+    4. Rename columns to English equivalents.
+    5. Remove rows with missing values and duplicates.
+    6. Save cleaned files to cleaned_path with the same structure as raw_path.
 
     Parameters
     ----------
@@ -29,22 +30,19 @@ def clean_data(raw_path: str = "data", cleaned_path: str = "data/cleaned") -> No
         Cleaned CSV files are saved to cleaned_path.
     """
 
-    # --- Columns to keep ---
-    keep_cols = [ "valeur_fonciere",
-                 "code_postal", 
-                 "code_departement",
-                 "code_commune",
-                 "code_type_local",
-                 "surface_reelle_bati",
-                 "nombre_pieces_principales",
-                 "surface_terrain"
-                 #  "nature_mutation",
-                 #  "type_local",
-                 #  "nombre_de_lots",
-                 #  "no_voie",
-                 #  "b/t/q",
-                 #  "type_de_voie",
-    ]
+
+    rename_dict = {
+        "valeur_fonciere": "property_value",
+        "code_postal": "postal_code",
+        "code_departement": "department_code",
+        "code_commune": "town_code",
+        "code_type_local": "property_type_code",
+        "surface_reelle_bati": "building_area",
+        "nombre_pieces_principales": "main_rooms",
+        "surface_terrain": "land_area"
+    }
+
+    keep_cols = list(rename_dict.keys())
 
     raw_path = Path(raw_path)
     cleaned_path = Path(cleaned_path)
@@ -64,9 +62,12 @@ def clean_data(raw_path: str = "data", cleaned_path: str = "data/cleaned") -> No
         # Rename columns to lowercase
         df.columns = df.columns.str.lower().str.strip()
 
-        # Keep only selected columns
-        cols_to_keep = [col for col in keep_cols if col in df.columns]
-        df = df[cols_to_keep]
+        # Rename columns to english 
+        df = df.rename(columns=rename_dict)
+
+       # Keep only translated columns
+        cols_to_keep = [rename_dict[c] for c in rename_dict if rename_dict[c] in df.columns]
+        df = df[[col for col in cols_to_keep if col in df.columns]]
 
         # Drop NA and duplicates
         df = df.dropna()

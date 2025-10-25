@@ -1,4 +1,4 @@
-valeur_fonciere,code_postal,code_departement,code_commune,code_type_local,surface_reelle_bati,nombre_pieces_principales,surface_terrain
+property_value,postal_code,department_code,town_code,property_type_code,building_area,main_rooms,land_area
 "352000,00",77115.0,77,453,1.0,120.0,3.0,331.0
 "352000,00",77115.0,77,453,1.0,120.0,3.0,45.0
 "235000,00",77330.0,77,350,1.0,41.0,2.0,175.0
