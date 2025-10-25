@@ -3,8 +3,7 @@ from typing import Optional
 import sqlite3
 import pandas as pd
 
-from fpi.utils.constants import VARS_TO_KEEP_SQL  # adjust the import path
-
+from fpi.utils.constants import VARS_TO_KEEP_SQL
 
 
 class PropertyData(BaseModel):
@@ -17,7 +16,6 @@ class PropertyData(BaseModel):
     Nombre_pieces_principales: Optional[int] = Field(None, ge=0, description="Nombre de pièces principales")
     Surface_terrain: Optional[float] = Field(None, ge=0, description="Surface du terrain en m²")
 
-    # Clean the numeric values with commas if necessary
     @field_validator("Valeur_fonciere", mode="before")
     def clean_valeur_fonciere(cls, v):
         if isinstance(v, str):
@@ -25,17 +23,13 @@ class PropertyData(BaseModel):
         return float(v)
 
 
-
-
 def load_from_db(db_path: str, table_name: str) -> pd.DataFrame:
-    """Load a table from SQLite DB into a pandas DataFrame."""
     with sqlite3.connect(db_path) as conn:
         df = pd.read_sql_query(f"SELECT {', '.join(VARS_TO_KEEP_SQL)} FROM {table_name}", conn)
     return df
 
 
 def validate_rows(df: pd.DataFrame):
-    """Validate each row using the Pydantic model."""
     valid_rows = []
     invalid_rows = []
 
@@ -44,17 +38,38 @@ def validate_rows(df: pd.DataFrame):
             item = PropertyData(**row.to_dict())
             valid_rows.append(item.model_dump())
         except ValidationError as e:
-            invalid_rows.append((idx, e))
+            invalid_rows.append((idx, row.to_dict(), e))
 
     print(f"✅ {len(valid_rows)} valid rows | ❌ {len(invalid_rows)} invalid rows")
     return pd.DataFrame(valid_rows), invalid_rows
 
 
 def save_to_db(df: pd.DataFrame, output_db: str, table_name: str):
-    """Save validated rows to a new SQLite DB."""
     with sqlite3.connect(output_db) as conn:
         df.to_sql(table_name, conn, if_exists="replace", index=False)
     print(f"💾 Saved {len(df)} validated rows to {output_db}")
+
+
+def save_invalid_rows(errors, output_db: str):
+    """Save invalid rows and error messages to a separate table."""
+    if not errors:
+        return
+
+    records = []
+    for idx, row, err in errors:
+        records.append({
+            **row,
+            "row_index": idx,
+            "validation_error": "; ".join(
+                f"{e['loc'][0]}: {e['msg']}" for e in err.errors()
+            ),
+        })
+
+    invalid_df = pd.DataFrame(records)
+    with sqlite3.connect(output_db) as conn:
+        invalid_df.to_sql("invalid_rows", conn, if_exists="replace", index=False)
+
+    print(f"⚠️ Saved {len(records)} invalid rows to 'invalid_rows' table in {output_db}")
 
 
 if __name__ == "__main__":
@@ -65,4 +80,4 @@ if __name__ == "__main__":
     df = load_from_db(input_db, table_name)
     valid_df, errors = validate_rows(df)
     save_to_db(valid_df, output_db, table_name)
-
+    save_invalid_rows(errors, output_db)
