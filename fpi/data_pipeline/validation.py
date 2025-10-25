@@ -1,7 +1,8 @@
-from pydantic import BaseModel, Field, field_validator, ValidationError
-from typing import Optional
 import sqlite3
+from typing import Optional
+
 import pandas as pd
+from pydantic import BaseModel, Field, ValidationError, field_validator
 
 from fpi.utils.constants import VARS_TO_KEEP_SQL
 
@@ -57,13 +58,13 @@ def save_invalid_rows(errors, output_db: str):
 
     records = []
     for idx, row, err in errors:
-        records.append({
-            **row,
-            "row_index": idx,
-            "validation_error": "; ".join(
-                f"{e['loc'][0]}: {e['msg']}" for e in err.errors()
-            ),
-        })
+        records.append(
+            {
+                **row,
+                "row_index": idx,
+                "validation_error": "; ".join(f"{e['loc'][0]}: {e['msg']}" for e in err.errors()),
+            }
+        )
 
     invalid_df = pd.DataFrame(records)
     with sqlite3.connect(output_db) as conn:
