@@ -78,15 +78,16 @@ def validate_csv(csv_path: str | Path, save_invalid: bool = True) -> List[Proper
         - Optionally creates an `invalid_rows.csv` in the same folder.
         - Displays validation summary with the number of valid rows.
     """
-    csv_path: Path = Path(csv_path)
-    print(f"\nValidating file: {csv_path.resolve()}")
+    csv_path_obj: Path = Path(csv_path)
+    print(f"\nValidating file: {csv_path_obj.resolve()}")
 
-    df: pd.DataFrame = pd.read_csv(csv_path, sep=",", low_memory=False)
+    df: pd.DataFrame = pd.read_csv(csv_path_obj, sep=",", low_memory=False)
     valid_rows: List[PropertyData] = []
     invalid_entries: List[Dict[str, Any]] = []
 
     for i, row in df.iterrows():
-        i: int
+        # i: int = row index
+        # row: pd.Series = row data
         row_dict: Dict[str, Any] = row.to_dict()
         try:
             record: PropertyData = PropertyData(**row_dict)
@@ -106,7 +107,7 @@ def validate_csv(csv_path: str | Path, save_invalid: bool = True) -> List[Proper
 
     if save_invalid and invalid_entries:
         invalid_df: pd.DataFrame = pd.DataFrame(invalid_entries)
-        out_path: Path = csv_path.parent / "invalid_rows.csv"
+        out_path: Path = csv_path_obj.parent / "invalid_rows.csv"
         invalid_df.to_csv(out_path, index=False)
         print(f"Invalid rows saved to: {out_path.resolve()}")
 
