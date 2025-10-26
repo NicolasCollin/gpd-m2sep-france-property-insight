@@ -21,10 +21,10 @@ def txt_to_sqlite(
         - table_name: Name of the SQL table to create.
         - delimiter: Column separator (default: '|').
         - chunksize: Number of rows per chunk to process (for large files).
-    
+
     Returns:
         - None
-    
+
     Output:
         - Save SQLite .db file to db_path.
     """

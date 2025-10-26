@@ -23,10 +23,10 @@ def random_sample(
 
     Raises:
         ValueError: If the input file contains fewer lines than `sample_size`.
-    
+
     Returns:
         - None
-    
+
     Output:
         - Save sample.txt file to output_path.
     """
