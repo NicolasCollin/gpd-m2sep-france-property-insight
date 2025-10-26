@@ -6,7 +6,7 @@ VARS_TO_KEEP = [
     "property_type_code",
     "building_area",
     "main_rooms",
-    "land_area"
+    "land_area",
 ]
 
 VARS_TO_KEEP_FR = [

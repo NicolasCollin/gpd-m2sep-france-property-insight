@@ -1,7 +1,8 @@
-import pandas as pd
-from pathlib import Path
 import re
+from pathlib import Path
 from typing import Dict, List
+
+import pandas as pd
 
 
 def clean_data(raw_path: str | Path = "data", cleaned_path: str | Path = "data/cleaned") -> None:
@@ -21,11 +22,11 @@ def clean_data(raw_path: str | Path = "data", cleaned_path: str | Path = "data/c
     6. Save cleaned files to cleaned_path with the same structure as raw_path.
 
     Args:
-        - raw_path (str | Path): 
+        - raw_path (str | Path):
             Path to the directory containing raw CSV files (default: `"data"`).
-        - cleaned_path (str | Path): 
+        - cleaned_path (str | Path):
             Path to the directory where cleaned CSV files will be saved (default: `"data/cleaned"`).
-    
+
     Returns:
         - None
 
@@ -44,45 +45,40 @@ def clean_data(raw_path: str | Path = "data", cleaned_path: str | Path = "data/c
         "surface_terrain": "land_area",
     }
 
-    keep_cols: List[str] = list(rename_dict.keys())
-
-    raw_path: Path = Path(raw_path)
-    cleaned_path: Path = Path(cleaned_path)
+    # Convert to Path objects (type narrowing for mypy)
+    raw_path_obj: Path = Path(raw_path)
+    cleaned_path_obj: Path = Path(cleaned_path)
 
     # Find all raw CSV files
-    all_files: List[Path] = list(raw_path.rglob("raw_*.csv"))
+    all_files: List[Path] = list(raw_path_obj.rglob("raw_*.csv"))
     if not all_files:
         print("No CSV files found in the raw folder.")
         return
-    
+
     for file_path in all_files:
         print(f"\nProcessing file: {file_path}")
 
         df: pd.DataFrame = pd.read_csv(file_path, sep=",", low_memory=False)
-        # Count number of rows in each file before cleaning
         n_before: int = df.shape[0]
 
-        # Rename columns to lowercase
+        # Normalize and rename columns
         df.columns = df.columns.str.lower().str.strip()
-
-        # Rename columns to English 
         df = df.rename(columns=rename_dict)
 
-        # Keep only translated columns
+        # Keep only relevant columns
         cols_to_keep: List[str] = [v for v in rename_dict.values() if v in df.columns]
-        df = df[[col for col in cols_to_keep if col in df.columns]]
+        df = df[cols_to_keep]
 
         # Drop NA and duplicates
-        df = df.dropna()
-        df = df.drop_duplicates()
-        # Count how many rows are kept after cleaning
+        df = df.dropna().drop_duplicates()
         n_after: int = df.shape[0]
 
-        # Extract year robustly
-        match: re.Match[str] | None = re.search(r'(\d{4})\.csv$', file_path.name)
+        # Extract year from filename (e.g., raw_2023.csv)
+        match: re.Match[str] | None = re.search(r"(\d{4})\.csv$", file_path.name)
         year: str = match.group(1) if match else "unknown_year"
 
-        save_dir: Path = cleaned_path / f"cleaned{year}"
+        # Create output directory
+        save_dir: Path = cleaned_path_obj / f"cleaned{year}"
         save_dir.mkdir(parents=True, exist_ok=True)
 
         # Save cleaned CSV
@@ -92,7 +88,7 @@ def clean_data(raw_path: str | Path = "data", cleaned_path: str | Path = "data/c
         print(f"Cleaned file saved: {output_file}")
         print(f"Rows before cleaning: {n_before}, after cleaning: {n_after}")
 
-    print(f"\nAll files have been cleaned and saved to {cleaned_path}")
+    print(f"\nAll files have been cleaned and saved to {cleaned_path_obj}")
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@ import pandas as pd
 
 from fpi.analysis.utils_io import print_info
 from fpi.analysis.utils_plot import save_hist
-from fpi.utils.constants import NUMERIC_VARS, VARS_TO_KEEP
+from fpi.utils.constants import NUMERIC_VARS, VARS_TO_KEEP_FR
 
 
 def load_data(file_path: str) -> pd.DataFrame:
@@ -22,7 +22,7 @@ def preprocess(df: pd.DataFrame) -> pd.DataFrame:
     :param df: Raw DataFrame
     :return: Cleaned DataFrame with English column names
     """
-    df = df[VARS_TO_KEEP]
+    df = df[VARS_TO_KEEP_FR]
     df.columns = [
         "land_value",
         "postal_code",
