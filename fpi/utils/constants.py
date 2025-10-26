@@ -19,7 +19,7 @@ VARS_TO_KEEP_FR = [
 ]
 
 NUMERIC_VARS = [
-    "building_surface",
-    "land_surface",
+    "building_area",
+    "land_area",
     "main_rooms",
 ]

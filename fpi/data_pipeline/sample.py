@@ -17,12 +17,18 @@ def random_sample(
     Sample a large text file by selecting a random subset of lines.
 
     Args:
-        input_path: Path to the input text file.
-        output_path: Path where the sampled file will be saved.
-        sample_size: Number of lines to sample (excluding the header).
+        - input_path: Path to the input text file.
+        - output_path: Path where the sampled file will be saved.
+        - sample_size: Number of lines to sample (excluding the header).
 
     Raises:
         ValueError: If the input file contains fewer lines than `sample_size`.
+    
+    Returns:
+        - None
+    
+    Output:
+        - Save sample.txt file to output_path.
     """
 
     # Ensure Path objects
@@ -63,7 +69,7 @@ def random_sample(
 
 if __name__ == "__main__":
     random_sample(
-        input_path="data/raw/raw_idf2023.csv",
-        output_path="data/raw/raw_idf2023_sample.csv",
+        input_path="data/raw/raw2024.txt",
+        output_path="data/raw/sample2024.txt",
         sample_size=1000,
     )
