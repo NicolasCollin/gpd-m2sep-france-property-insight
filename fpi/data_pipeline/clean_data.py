@@ -3,7 +3,6 @@ from pathlib import Path
 import re
 
 def clean_data(raw_path: str = "data", cleaned_path: str = "data/cleaned") -> None:
-    
     """
     Process all raw CSV files: clean and save them to the cleaned folder 
     while preserving the folder structure.
@@ -16,18 +15,12 @@ def clean_data(raw_path: str = "data", cleaned_path: str = "data/cleaned") -> No
     5. Remove rows with missing values and duplicates.
     6. Save cleaned files to cleaned_path with the same structure as raw_path.
 
-    Parameters
-    ----------
-    raw_path : str
-        Folder containing raw CSV files.
-    cleaned_path : str
-        Folder where cleaned CSV files will be saved.
-
+    Args:
+        - raw_path (str): Folder containing raw CSV files.
+        - cleaned_path (str): Folder where cleaned CSV files will be saved.
     
-    Returns
-    -------
-    None
-        Cleaned CSV files are saved to cleaned_path.
+    Returns:
+        - None: Cleaned CSV files are saved do cleaned_path.
     """
 
 
@@ -88,7 +81,7 @@ def clean_data(raw_path: str = "data", cleaned_path: str = "data/cleaned") -> No
         print(f"Cleaned file saved: {output_file}")
         print(f"Rows before cleaning: {n_before}, after cleaning: {n_after}")
 
-    print("\nAll files have been cleaned and saved to /data/cleaned/")
+    print(f"\nAll files have been cleaned and saved to {cleaned_path}")
 
 
 if __name__ == "__main__":
