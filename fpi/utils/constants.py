@@ -1,4 +1,15 @@
 VARS_TO_KEEP = [
+    "property_value",
+    "postal_code",
+    "department_code",
+    "town_code",
+    "property_type_code",
+    "building_area",
+    "main_rooms",
+    "land_area",
+]
+
+VARS_TO_KEEP_FR = [
     "Valeur fonciere",
     "Code postal",
     "Surface reelle bati",
@@ -8,7 +19,7 @@ VARS_TO_KEEP = [
 ]
 
 NUMERIC_VARS = [
-    "building_surface",
-    "land_surface",
+    "building_area",
+    "land_area",
     "main_rooms",
 ]
