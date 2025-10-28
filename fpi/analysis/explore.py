@@ -1,6 +1,7 @@
 import pandas as pd
 
 from fpi.analysis.utils_io import print_info
+from fpi.analysis.utils_stats import statdes
 from fpi.analysis.utils_plot import save_hist, save_lv
 from fpi.utils.constants import NUMERIC_VARS, VARS_TO_KEEP
 
@@ -40,12 +41,14 @@ def exp() -> None:
     - Load
     - Inspect
     - Preprocess
+    - print descriptive statistics
     - Save visualizations
     """
     df = load_data("data/raw/sample2024.txt")
     print_info(df)
 
     df_clean = preprocess(df)
+    statdes(df_clean)
     save_hist(df_clean, NUMERIC_VARS, output_dir="docs/plots")
 
     print("Plots saved in docs/plots/")

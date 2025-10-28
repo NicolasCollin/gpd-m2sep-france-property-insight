@@ -3,7 +3,7 @@ from __future__ import annotations
 import gradio as gr
 from typing import Dict, Any
 
-from src.analysis.predict import predict_from_inputs
+from fpi.models.predict import predict_from_inputs
 
 # Helper to build default empty inputs (you can adapt choices)
 DEFAULTS = {
@@ -47,7 +47,7 @@ def predict_ui(
 
 def launch_gradio():
     with gr.Blocks() as demo:
-        gr.Markdown("## Real estate price predictor — land value (DVF-style)")
+        gr.Markdown("## Real estate price predictor land value (DVF-style)")
         with gr.Row():
             with gr.Column():
                 type_de_voie = gr.Textbox(label="Type de voie (e.g. Rue, Avenue)", value=DEFAULTS["Type_de_voie"])
