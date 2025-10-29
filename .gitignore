@@ -13,6 +13,8 @@ wheels/
 # Specific files
 .gradio/
 docs/site
+dvf.db
+dvf.csv
 
 #MacOS
 .DS_Store
