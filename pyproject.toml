@@ -43,6 +43,10 @@ line-length = 120
 [tool.ruff.lint]
 select = ["E", "F", "I"]
 
+# ignore missing type imports
+[tool.mypy]
+ignore_missing_imports = true
+
 # uv run shortcuts
 [project.scripts]
 # run the app

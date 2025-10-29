@@ -1,4 +1,12 @@
-VARS_TO_KEEP = [
+"""
+Constants used across the property prediction pipeline.
+Includes variables to keep, numeric columns, and ML config.
+"""
+
+from typing import List
+
+# Columns to keep in cleaned CSV / processed data
+VARS_TO_KEEP: List[str] = [
     "property_value",
     "postal_code",
     "department_code",
@@ -9,7 +17,8 @@ VARS_TO_KEEP = [
     "land_area",
 ]
 
-VARS_TO_KEEP_FR = [
+# French column names from raw data (for initial cleaning / mapping)
+VARS_TO_KEEP_FR: List[str] = [
     "Valeur fonciere",
     "Code postal",
     "Surface reelle bati",
@@ -18,8 +27,16 @@ VARS_TO_KEEP_FR = [
     "Nombre pieces principales",
 ]
 
-NUMERIC_VARS = [
+# Numeric columns for preprocessing and modeling
+NUMERIC_VARS: List[str] = [
+    "property_value",
     "building_area",
-    "land_area",
     "main_rooms",
+    "land_area",
 ]
+
+# ML pipeline constants
+DEFAULT_TEST_SIZE: float = 0.2
+RANDOM_STATE: int = 42
+
+LM_PATH = "fpi/models/linear_model.pkl"
