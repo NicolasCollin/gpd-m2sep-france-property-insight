@@ -5,6 +5,7 @@ description = "France Property Insight: Predicitve and analytic app for Master 2
 requires-python = ">=3.13"
 dependencies = [
     "gradio==5.49.1",
+    "joblib==1.5.2",
     "matplotlib==3.10.7",
     "pandas==2.3.3",
     "pdoc==15.0.4",
