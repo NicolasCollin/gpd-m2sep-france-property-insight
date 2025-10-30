@@ -15,36 +15,53 @@ Functions:
 
 from __future__ import annotations
 
+import os
 from typing import List, Optional, Tuple
 
 import joblib
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from sklearn.base import BaseEstimator
+from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 
-from fpi.utils.constants import DEFAULT_TEST_SIZE, LM_PATH, RANDOM_STATE
+from fpi.utils.constants import DEFAULT_TEST_SIZE, RANDOM_STATE
 
 
-def prepare_data_for_lm(filepath: str) -> pd.DataFrame:
+def load_csv_folder(folderpath: str) -> pd.DataFrame:
     """
-    Prepare data from CSV for linear modeling.
+    Load and concatenate all CSV files from a given folder for training.
 
     Args:
-        - filepath(str): Path to the CSV file.
+        - folderpath (str): Path to folder containing CSV files.
 
     Returns:
-        - pd.DataFrame: Cleaned DataFrame with numeric columns for quantitative variables and a log-transformed price.
+        - pd.DataFrame: Combined DataFrame (raw, before preprocessing).
     """
-    df: pd.DataFrame = pd.read_csv(filepath, sep=",")
+    csv_files = [f for f in os.listdir(folderpath) if f.endswith(".csv")]
+    dfs = [pd.read_csv(os.path.join(folderpath, f), sep=",") for f in csv_files]
+    combined_df = pd.concat(dfs, ignore_index=True)
+    print(f"Loaded {len(csv_files)} files, total {len(combined_df)} rows.")
+    return combined_df
 
+
+def process_data_for_lm(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Process pd.DataFrame data for linear modeling.
+
+    Args:
+        - df (pd.DataFrame): Raw DataFrame.
+
+    Returns:
+        - pd.DataFrame: Cleaned DataFrame with numeric columns and log-transformed target.
+    """
     # Convert comma decimal to dot and cast to float
-    df["property_value"] = df["property_value"].str.replace(",", ".").astype(float)
+    df["property_value"] = df["property_value"].astype(str).str.replace(",", ".").astype(float)
 
     # Convert numeric columns
     num_cols: List[str] = ["building_area", "main_rooms", "land_area"]
-    df[num_cols] = df[num_cols].apply(pd.to_numeric)
+    df[num_cols] = df[num_cols].apply(pd.to_numeric, errors="coerce")
 
     # Add log of target for regression
     df["log_value"] = np.log(df["property_value"])
@@ -132,107 +149,109 @@ def display_top_coefficients(model: LinearRegression, X: pd.DataFrame, n: int = 
     print(coeffs.head(n))
 
 
-def save_model(model: LinearRegression, path: str) -> None:
+def save_model(model: BaseEstimator, path: str) -> None:
     """
-    Save the trained model to disk.
+    Save any scikit-learn model to disk.
 
     Args:
-        - model(LinearRegression): Fitted LinearRegression model.
-        - path(str): Destination file path (e.g. 'fpi/models/linear_model.pkl').
+        - model (BaseEstimator): Fitted scikit-learn model.
+        - path (str): Destination file path (e.g. 'fpi/models/model.pkl').
     """
     joblib.dump(model, path)
 
 
-def build_lm(filepath: str, model_path: str) -> LinearRegression:
+def build_ridge(folderpath: str, model_path: str, alpha: float = 1.0) -> Ridge:
     """
-    Train, evaluate, and save a linear regression model for property prices.
+    Train, evaluate, and save a Ridge regression model using specified numeric and categorical features.
 
     Args:
-        - filepath(str): Path to the cleaned CSV dataset.
-        - model_path(str): Destination file path where the trained model will be saved.
+        folderpath (str): Path to folder containing cleaned CSV files.
+        model_path (str): Destination file path where the trained model will be saved.
+        alpha (float): Regularization strength for Ridge (default=1.0).
+
+    Returns:
+        Ridge: Trained Ridge regression model.
+    """
+    # Load and prepare data
+    df_raw = load_csv_folder(folderpath)
+    df = process_data_for_lm(df_raw)
+
+    # Specify features (same as build_lm)
+    numeric_features = ["building_area", "main_rooms", "land_area"]
+    categorical_features = ["postal_code", "property_type_code", "town_code", "department_code"]
+
+    X, y = set_lm_variables(
+        df=df,
+        x_cols=numeric_features + categorical_features,
+        y_col="log_value",
+        cat_cols=categorical_features,
+    )
+
+    # Train/test split
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=DEFAULT_TEST_SIZE, random_state=RANDOM_STATE)
+
+    # Train Ridge regression
+    model = Ridge(alpha=alpha, random_state=RANDOM_STATE)
+    model.fit(X_train, y_train)
+
+    # Evaluate
+    evaluate_model(model, X_test, y_test)
+    display_top_coefficients(model, X, 500)
+
+    # Save model
+    save_model(model, model_path)
+    print(f"\nModel saved at: {model_path}")
+
+    return model
+
+
+def build_lm(folderpath: str, model_path: str) -> LinearRegression:
+    """
+    Train, evaluate, and save a linear regression model using all CSV files in a folder.
+
+    Args:
+        - folderpath (str): Path to folder containing cleaned CSV files.
+        - model_path (str): Destination file path where the trained model will be saved.
 
     Returns:
         LinearRegression: Trained LinearRegression model.
     """
-    df: pd.DataFrame = prepare_data_for_lm(filepath)
+    # Load and prepare data
+    df_raw = load_csv_folder(folderpath)
+    df = process_data_for_lm(df_raw)
+
+    # Specify features
+    numeric_features = ["building_area", "main_rooms", "land_area"]
+    categorical_features = ["postal_code", "property_type_code", "town_code", "department_code"]
+
     X, y = set_lm_variables(
         df=df,
-        x_cols=["building_area", "main_rooms", "land_area"],
+        x_cols=numeric_features + categorical_features,
         y_col="log_value",
+        cat_cols=categorical_features,
     )
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=DEFAULT_TEST_SIZE, random_state=RANDOM_STATE)
 
     model: LinearRegression = train_lm(X_train, y_train)
+
     evaluate_model(model, X_test, y_test)
-    display_top_coefficients(model, X)
+    display_top_coefficients(model, X, 500)
 
     save_model(model, model_path)
     print(f"\nModel saved at: {model_path}")
     return model
 
 
-def load_model(path: str) -> LinearRegression:
-    """
-    Load a trained model from disk.
-
-    Args:
-        - path(str): Path to the saved model file.
-
-    Returns:
-        LinearRegression: Loaded LinearRegression model.
-    """
-    return joblib.load(path)
-
-
-def predict_with_model(model: LinearRegression, X_new: pd.DataFrame) -> np.ndarray:
-    """
-    Predict property values (in original scale) for new data.
-
-    Args:
-        - model(LinearRegression): Trained LinearRegression model.
-        - X_new(pd.DataFrame): Input features (must match training columns).
-
-    Returns:
-        np.ndarray: Array of predicted property values (not log-transformed).
-    """
-    log_preds: np.ndarray = model.predict(X_new)
-    preds: np.ndarray = np.exp(log_preds)
-    return preds
-
-
-def predict_property(building_area: float, main_rooms: int, land_area: float) -> float:
-    """
-    Predict a property value from user-provided features.
-
-    Args:
-        - building_area(float): Size of the building in square meters.
-        - main_rooms(int): Number of main rooms.
-        - land_area(float): Size of the land in square meters.
-
-    Returns:
-        - float: Predicted property value in original scale.
-    """
-    # Load the model (or you could load once at module import)
-    model: LinearRegression = load_model(LM_PATH)
-
-    # Create DataFrame with single row for prediction
-    X_new = pd.DataFrame([{"building_area": building_area, "main_rooms": main_rooms, "land_area": land_area}])
-
-    # Make prediction
-    predicted_value: float = predict_with_model(model, X_new)[0]
-    return predicted_value
-
-
-# to predict
-if __name__ == "__main__":
-    # Example interactive prediction
-    val = predict_property(building_area=120.0, main_rooms=5, land_area=300.0)
-    print(f"Predicted property value: {val:.2f}€")
-
-# to build lm
 # if __name__ == "__main__":
 #     build_lm(
-#         filepath="data/cleaned/cleaned2024/cleaned_75_2024.csv",
+#         folderpath="data/cleaned/cleaned2024",
 #         model_path="fpi/models/linear_model.pkl",
 #     )
+
+if __name__ == "__main__":
+    build_ridge(
+        folderpath="data/cleaned/cleaned2024",
+        model_path="fpi/models/ridge_model.pkl",
+        alpha=10.0,  # adjust regularization strength if desired
+    )
