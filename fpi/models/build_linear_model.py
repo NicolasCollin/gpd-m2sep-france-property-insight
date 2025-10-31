@@ -243,13 +243,14 @@ def build_lm(folderpath: str, model_path: str) -> LinearRegression:
     return model
 
 
-# if __name__ == "__main__":
-#     build_lm(
-#         folderpath="data/cleaned/cleaned2024",
-#         model_path="fpi/models/linear_model.pkl",
-#     )
+def mock_build_lm() -> None:
+    build_lm(
+        folderpath="data/cleaned/cleaned2024",
+        model_path="fpi/models/linear_model.pkl",
+    )
 
-if __name__ == "__main__":
+
+def mock_build_ridge() -> None:
     build_ridge(
         folderpath="data/cleaned/cleaned2024",
         model_path="fpi/models/ridge_model.pkl",
