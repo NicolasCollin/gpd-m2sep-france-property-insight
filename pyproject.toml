@@ -72,3 +72,4 @@ apidocsave = "fpi.utils.aliases:apidocsave"
 # dev shortcuts
 mockridge = "fpi.models.build_linear_model:mock_build_ridge"
 mocklm = "fpi.models.build_linear_model:mock_build_lm"
+mockpredict = "fpi.models.build_linear_model:mock_predict_price"

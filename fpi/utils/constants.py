@@ -36,7 +36,5 @@ NUMERIC_VARS: List[str] = [
 ]
 
 # ML pipeline constants
-DEFAULT_TEST_SIZE: float = 0.2
+DEFAULT_TEST_SIZE: float = 0.3
 RANDOM_STATE: int = 42
-
-LM_PATH = "fpi/models/linear_model.pkl"
