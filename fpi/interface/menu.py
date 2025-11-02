@@ -46,7 +46,7 @@ def app_menu() -> gr.Blocks:
 
         # --- Section: Prediction Page ---
         with gr.Column(visible=False) as prediction:
-            prediction_ui, back_home_2 = prediction_page()
+            prediction_ui, predict_btn,back_home_2 = prediction_page()
 
         # --- Navigation Logic ---
         # Controls visibility between Home, Dashboard, and Prediction sections
