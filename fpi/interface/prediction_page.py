@@ -18,18 +18,41 @@ def prediction_page() -> Tuple[gr.Blocks, gr.Button]:
             - return_home_button (gr.Button): The navigation button to go back to the home page
     """
     # Define the overall layout and style for the prediction page
-    with gr.Blocks(
-        css="""
-        body {background-color: #f0f9f9;}
-        h1 {color: #006b6b;}
-    """
-    ) as prediction:
-        # Section: Title and Description
-        gr.Markdown("# Estimation de propriété")
-        gr.Markdown("Estimez la valeur actuelle ou future d’un bien immobilier à partir de ses caractéristiques.")
+    with gr.Blocks() as prediction:
+        gr.Markdown("## 🏠 Estimation de propriété")
+        gr.Markdown("Renseignez les caractéristiques du bien pour obtenir une estimation approximative de sa valeur.")
 
-        # Section: Navigation Button
-        back_home = gr.Button("Retour à l'accueil")
+        with gr.Row():
+            with gr.Column(scale=1):
+                postal_code = gr.Textbox(label="Postal code", placeholder="ex : 75015")
+                department_code = gr.Textbox(label="Department code", placeholder="ex : 75")
+                town_code = gr.Textbox(label="Town code", placeholder="ex : 123")
+                property_type_code = gr.Dropdown(
+                    ["House", "Apartment", "Dependency", "Industrial premises"],
+                    label="Property type",
+                    value="House"
+                )
+            with gr.Column(scale=1):
+                building_area = gr.Number(label="Building area (m²)", precision=0)
+                main_rooms = gr.Number(label="Main rooms", precision=0)
+                land_area = gr.Number(label="Land area (m²)", precision=0)
 
-        # Return the full layout and navigation control
+        with gr.Row():
+            predict_btn = gr.Button("Estimate", variant="primary")
+            back_home = gr.Button("Back to home")
+
+        # --- Result ---
+        result = gr.Textbox(label="Result", interactive=False)
+
+        # --- predict button ---
+        #predict_btn.click(
+            #fn=predict_value,
+            #inputs=[
+                #postal_code, department_code, town_code, property_type_code,
+                #building_area, main_rooms, land_area
+            #],
+            #outputs=result
+        #)
+
+
         return prediction, back_home

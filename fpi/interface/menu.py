@@ -1,9 +1,22 @@
 import gradio as gr  # Import Gradio library for building the interface
+import os
+import sys
 
-from fpi.interface.dashboard_page import dashboard_page
-from fpi.interface.home_page import home_page
-from fpi.interface.prediction_page import prediction_page
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+from interface.dashboard_page import dashboard_page
+from interface.home_page import home_page
+from interface.prediction_page import prediction_page
+
+
+
+GLOBAL_CSS = r"""
+.gradio-container {
+    background: radial-gradient(#004f99 5%, #ffffff 100%)
+    !important;
+}
+
+"""
 
 # --- Application Menu Layout ---
 def app_menu() -> gr.Blocks:
@@ -20,9 +33,10 @@ def app_menu() -> gr.Blocks:
     Returns:
         menu (gr.Blocks): The complete Gradio layout for the app, including navigation logic.
     """
+
     # Define the global structure of the app with multiple pages (Home, Dashboard, Prediction)
-    with gr.Blocks() as menu:
-        # --- Section: Home Page ---
+    with gr.Blocks(css=GLOBAL_CSS) as menu:
+    # --- Section: Home Page ---
         with gr.Column(visible=True) as home:
             home_ui, go_dashboard, go_prediction = home_page()
 
