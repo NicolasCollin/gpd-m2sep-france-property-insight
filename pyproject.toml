@@ -8,6 +8,8 @@ dependencies = [
     "matplotlib==3.10.7",
     "pandas==2.3.3",
     "pdoc==15.0.4",
+    "pyarrow>=22.0.0",
+    "pydantic>=2.11.10",
     "sqlalchemy==2.0.44",
 ]
 
@@ -60,3 +62,6 @@ ci = "fpi.utils.aliases:ci"
 # API documentation
 apidoc = "fpi.utils.aliases:apidoc"
 apidocsave = "fpi.utils.aliases:apidocsave"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
