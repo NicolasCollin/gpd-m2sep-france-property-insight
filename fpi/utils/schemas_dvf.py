@@ -1,12 +1,13 @@
 from __future__ import annotations
+
 from datetime import date, datetime
 from enum import Enum
 from typing import Optional
 
 from pydantic import BaseModel, Field, field_validator
 
-
 # --- Enums DVF courants (souples : on laisse None pour inconnus) ---
+
 
 class NatureMutation(str, Enum):
     VENTE = "Vente"
@@ -25,6 +26,7 @@ class TypeLocal(str, Enum):
 
 
 # --- Modèle principal ligne DVF (avec alias = noms de colonnes) ---
+
 
 class DVFRecord(BaseModel):
     # Identifiants
@@ -96,9 +98,14 @@ class DVFRecord(BaseModel):
 
     @field_validator(
         "valeur_fonciere",
-        "surface_carrez_lot1","surface_carrez_lot2","surface_carrez_lot3","surface_carrez_lot4","surface_carrez_lot5",
-        "surface_reelle_bati","surface_terrain",
-        mode="before"
+        "surface_carrez_lot1",
+        "surface_carrez_lot2",
+        "surface_carrez_lot3",
+        "surface_carrez_lot4",
+        "surface_carrez_lot5",
+        "surface_reelle_bati",
+        "surface_terrain",
+        mode="before",
     )
     @classmethod
     def _num_fr(cls, v):
