@@ -1,100 +1,95 @@
+"""Schema definitions for DVF (Demande de Valeur Foncière) data ingestion and initial validation.
+
+This module provides a permissive Pydantic model for DVF records to facilitate
+initial data ingestion without blocking on validation errors. Data cleaning and
+stricter validation are intended to be performed in subsequent transformation steps.
+"""
+
 from __future__ import annotations
 
 from datetime import date, datetime
-from enum import Enum
-from typing import Optional
+from typing import Any, Optional
 
 from pydantic import BaseModel, Field, field_validator
 
-# --- Enums DVF courants (souples : on laisse None pour inconnus) ---
-
-
-class NatureMutation(str, Enum):
-    VENTE = "Vente"
-    ECHANGE = "Echange"
-    EXPROPRIATION = "Expropriation"
-    ADJUDICATION = "Adjudication"
-    AUTRE = "Autre"
-
-
-class TypeLocal(str, Enum):
-    MAISON = "Maison"
-    APPARTEMENT = "Appartement"
-    DEPENDANCE = "Dépendance"
-    LOCAL_INDUSTRIEL = "Local industriel. commercial ou assimilé"
-    AUTRE = "Autre"
-
-
-# --- Modèle principal ligne DVF (avec alias = noms de colonnes) ---
+# --- Modèle principal DVF (version permissive pour ingestion initiale) ---
+# Objectif: ne JAMAIS bloquer l'ingestion; on nettoiera en étape "transform".
 
 
 class DVFRecord(BaseModel):
-    # Identifiants
-    identifiant_de_document: Optional[str] = Field(None, alias="Identifiant_de_document")
-    reference_document: Optional[str] = Field(None, alias="Reference_document")
+    """
+    Permissive Pydantic model for DVF records.
 
-    # Infos mutation
-    date_mutation: date = Field(..., alias="Date_mutation")
-    nature_mutation: Optional[NatureMutation] = Field(None, alias="Nature_mutation")
-    valeur_fonciere: Optional[int] = Field(None, alias="Valeur_fonciere", ge=1, le=50_000_000)
+    This model aims to never block data ingestion by accepting various data types
+    and performing soft normalization. More rigorous validation and cleaning should
+    be applied in later processing steps.
+    """
 
-    # Adresse / localisation
-    no_voie: Optional[str] = Field(None, alias="No_voie")
-    btq: Optional[str] = Field(None, alias="B/T/Q")
-    type_de_voie: Optional[str] = Field(None, alias="Type_de_voie")
-    code_voie: Optional[str] = Field(None, alias="Code_voie")
-    voie: Optional[str] = Field(None, alias="Voie")
-    code_postal: Optional[str] = Field(None, alias="Code_postal", pattern=r"^\d{5}$")
-    commune: Optional[str] = Field(None, alias="Commune")
-    code_departement: Optional[str] = Field(None, alias="Code_departement", pattern=r"^\d{2,3}$")
-    code_commune: Optional[str] = Field(None, alias="Code_commune")
+    # Identifiers
+    identifiant_de_document: Optional[Any] = Field(None, alias="Identifiant_de_document")
+    reference_document: Optional[Any] = Field(None, alias="Reference_document")
 
-    # Parcelle / lots
-    prefixe_de_section: Optional[str] = Field(None, alias="Prefixe_de_section")
-    section: Optional[str] = Field(None, alias="Section")
-    no_plan: Optional[str] = Field(None, alias="No_plan")
-    no_volume: Optional[str] = Field(None, alias="No_Volume")
+    # Mutation information
+    date_mutation: Optional[Any] = Field(None, alias="Date_mutation")
+    nature_mutation: Optional[Any] = Field(None, alias="Nature_mutation")
+    valeur_fonciere: Optional[Any] = Field(None, alias="Valeur_fonciere")
 
-    lot1: Optional[str] = Field(None, alias="1er_lot")
-    surface_carrez_lot1: Optional[float] = Field(None, alias="Surface_Carrez_du_1er_lot", ge=0)
-    lot2: Optional[str] = Field(None, alias="2eme_lot")
-    surface_carrez_lot2: Optional[float] = Field(None, alias="Surface_Carrez_du_2eme_lot", ge=0)
-    lot3: Optional[str] = Field(None, alias="3eme_lot")
-    surface_carrez_lot3: Optional[float] = Field(None, alias="Surface_Carrez_du_3eme_lot", ge=0)
-    lot4: Optional[str] = Field(None, alias="4eme_lot")
-    surface_carrez_lot4: Optional[float] = Field(None, alias="Surface_Carrez_du_4eme_lot", ge=0)
-    lot5: Optional[str] = Field(None, alias="5eme_lot")
-    surface_carrez_lot5: Optional[float] = Field(None, alias="Surface_Carrez_du_5eme_lot", ge=0)
+    # Address / location
+    no_voie: Optional[Any] = Field(None, alias="No_voie")
+    btq: Optional[Any] = Field(None, alias="B/T/Q")
+    type_de_voie: Optional[Any] = Field(None, alias="Type_de_voie")
+    code_voie: Optional[Any] = Field(None, alias="Code_voie")
+    voie: Optional[Any] = Field(None, alias="Voie")
+    code_postal: Optional[Any] = Field(None, alias="Code_postal")
+    commune: Optional[Any] = Field(None, alias="Commune")
+    code_departement: Optional[Any] = Field(None, alias="Code_departement")
+    code_commune: Optional[Any] = Field(None, alias="Code_commune")
 
-    nombre_de_lots: Optional[int] = Field(None, alias="Nombre_de_lots", ge=0, le=100)
+    # Parcel / lots
+    prefixe_de_section: Optional[Any] = Field(None, alias="Prefixe_de_section")
+    section: Optional[Any] = Field(None, alias="Section")
+    no_plan: Optional[Any] = Field(None, alias="No_plan")
+    no_volume: Optional[Any] = Field(None, alias="No_Volume")
 
-    # Local
-    code_type_local: Optional[int] = Field(None, alias="Code_type_local", ge=1, le=99)
-    type_local: Optional[TypeLocal] = Field(None, alias="Type_local")
-    identifiant_local: Optional[str] = Field(None, alias="Identifiant_local")
-    surface_reelle_bati: Optional[float] = Field(None, alias="Surface_reelle_bati", ge=0, le=5_000)
-    nombre_pieces_principales: Optional[int] = Field(None, alias="Nombre_pieces_principales", ge=0, le=30)
+    lot1: Optional[Any] = Field(None, alias="1er_lot")
+    surface_carrez_lot1: Optional[Any] = Field(None, alias="Surface_Carrez_du_1er_lot")
+    lot2: Optional[Any] = Field(None, alias="2eme_lot")
+    surface_carrez_lot2: Optional[Any] = Field(None, alias="Surface_Carrez_du_2eme_lot")
+    lot3: Optional[Any] = Field(None, alias="3eme_lot")
+    surface_carrez_lot3: Optional[Any] = Field(None, alias="Surface_Carrez_du_3eme_lot")
+    lot4: Optional[Any] = Field(None, alias="4eme_lot")
+    surface_carrez_lot4: Optional[Any] = Field(None, alias="Surface_Carrez_du_4eme_lot")
+    lot5: Optional[Any] = Field(None, alias="5eme_lot")
+    surface_carrez_lot5: Optional[Any] = Field(None, alias="Surface_Carrez_du_5eme_lot")
 
-    # Terrain / nature de culture
-    nature_culture: Optional[str] = Field(None, alias="Nature_culture")
-    nature_culture_speciale: Optional[str] = Field(None, alias="Nature_culture_speciale")
-    surface_terrain: Optional[float] = Field(None, alias="Surface_terrain", ge=0, le=100_000_000)
+    nombre_de_lots: Optional[Any] = Field(None, alias="Nombre_de_lots")
 
-    # --- Normalisations / coercitions -------------------------------------------------
+    # Local information
+    code_type_local: Optional[Any] = Field(None, alias="Code_type_local")
+    type_local: Optional[Any] = Field(None, alias="Type_local")
+    identifiant_local: Optional[Any] = Field(None, alias="Identifiant_local")
+    surface_reelle_bati: Optional[Any] = Field(None, alias="Surface_reelle_bati")
+    nombre_pieces_principales: Optional[Any] = Field(None, alias="Nombre_pieces_principales")
 
-    @field_validator("date_mutation", mode="before")
+    # Terrain / nature of cultivation
+    nature_culture: Optional[Any] = Field(None, alias="Nature_culture")
+    nature_culture_speciale: Optional[Any] = Field(None, alias="Nature_culture_speciale")
+    surface_terrain: Optional[Any] = Field(None, alias="Surface_terrain")
+
+    # --- Soft normalizations / DO NOT BLOCK -----------------------------
+    @field_validator("*", mode="before")
     @classmethod
-    def _parse_date(cls, v):
-        if isinstance(v, date):
-            return v
-        if v in (None, "", "NA"):
-            raise ValueError("Date_mutation manquante")
-        for fmt in ("%Y-%m-%d", "%d/%m/%Y", "%Y/%m/%d"):
-            try:
-                return datetime.strptime(str(v), fmt).date()
-            except ValueError:
-                pass
-        raise ValueError("Format de date invalide")
+    def _blank_to_none(cls, v):
+        """
+        Convert blank or common 'null' string representations to None before validation.
+
+        This helps unify missing or empty values across various fields.
+        """
+        if v is None:
+            return None
+        if isinstance(v, str) and v.strip().lower() in {"", "na", "nan", "none", "null"}:
+            return None
+        return v
 
     @field_validator(
         "valeur_fonciere",
@@ -105,26 +100,66 @@ class DVFRecord(BaseModel):
         "surface_carrez_lot5",
         "surface_reelle_bati",
         "surface_terrain",
+        "nombre_pieces_principales",
+        "nombre_de_lots",
         mode="before",
     )
     @classmethod
-    def _num_fr(cls, v):
-        # accepte "123 456,78" / "123456.78" / "" -> None
-        if v in (None, "", "NA"):
+    def _num_fr_soft(cls, v):
+        """
+        Softly parse French-style numeric values, returning float or None.
+
+        Handles spaces, non-breaking spaces, and commas as decimal separators.
+        Returns None if parsing fails or value is empty.
+        """
+        # Tente de parser, sinon renvoie None (on ne bloque pas)
+        if v is None:
             return None
         if isinstance(v, (int, float)):
             return v
-        s = str(v).replace(" ", "").replace("\u202f", "")  # espaces insécables
-        s = s.replace(",", ".")
+        s = str(v).replace("\u202f", "").replace(" ", "").replace(",", ".")
+        if s == "":
+            return None
         try:
-            return float(s) if (("." in s) or ("e" in s.lower())) else int(s)
+            # gardons float pour uniformiser
+            return float(s)
         except ValueError:
-            raise ValueError("Nombre invalide")
+            return None
+
+    @field_validator("date_mutation", mode="before")
+    @classmethod
+    def _parse_date_soft(cls, v):
+        """
+        Attempt to parse date strings in multiple formats; return original value if all fail.
+
+        Returns a date object if parsing succeeds, None if input is empty,
+        or the original string if no format matches.
+        """
+        # Essaie plusieurs formats; en cas d'échec, renvoie tel quel (ou None si vide)
+        if v is None:
+            return None
+        if isinstance(v, date):
+            return v
+        s = str(v).strip()
+        if not s:
+            return None
+        for fmt in ("%Y-%m-%d", "%d/%m/%Y", "%Y/%m/%d", "%Y-%m-%d %H:%M:%S"):
+            try:
+                return datetime.strptime(s, fmt).date()
+            except Exception:
+                continue
+        # ne pas lever d'erreur : on laisse la valeur brute (ingestion d'abord)
+        return s
 
     @field_validator("commune", mode="after")
     @classmethod
     def _normalize_city(cls, v):
-        return None if v in (None, "") else v.strip().title()
+        """
+        Normalize city names by stripping whitespace and applying title case.
+
+        Returns None if the input is None or empty string.
+        """
+        return None if v in (None, "") else str(v).strip().title()
 
     model_config = {
         "populate_by_name": True,
