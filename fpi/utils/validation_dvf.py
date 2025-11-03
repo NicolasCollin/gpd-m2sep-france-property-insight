@@ -97,6 +97,30 @@ def validate_dataframe(df: pd.DataFrame) -> Tuple[List[DVFRecord], pd.DataFrame]
     return validate_records(df.to_dict(orient="records"))
 
 
+# --- Small summary helper (exported) -----------------------------------------
+def summarize(models, errors_df):
+    """Return basic counts for validation results.
+
+    Parameters
+    ----------
+    models : Sequence | None
+        Collection of successfully validated records (Pydantic models) or None.
+    errors_df : pandas.DataFrame | None
+        DataFrame of validation errors, or None.
+
+    Returns
+    -------
+    dict
+        Dictionary with keys: 'valid', 'errors', 'total'.
+    """
+    valid_n = len(models) if models is not None else 0
+    try:
+        errors_n = int(getattr(errors_df, "shape", (0, 0))[0]) if errors_df is not None else 0
+    except Exception:
+        errors_n = 0
+    return {"valid": valid_n, "errors": errors_n, "total": valid_n + errors_n}
+
+
 # --- Core single-file validation ---------------------------------------------
 def validate_csv(
     path: str | Path, out_valid_path: Path | None = None, out_errors_path: Path | None = None
@@ -260,6 +284,17 @@ def validate_all(root: str | Path = "data", exclude_dir: str | Path = "data/proc
 
     return summary
 
+
+__all__ = [
+    "read_csv_any",
+    "read_any_csv",
+    "validate_records",
+    "validate_dataframe",
+    "validate_csv",
+    "find_csvs",
+    "validate_all",
+    "summarize",
+]
 
 # --- Main CLI ----------------------------------------------------------------
 if __name__ == "__main__":
