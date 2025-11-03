@@ -45,7 +45,8 @@ audit:
   stage: audit
   extends: .ci-template
   script:
-    - uv run pip-audit .
+    - '# Ignore known advisory GHSA-2qfp-q593-8484 (brotli<=1.1.0) until a fixed wheel is available in our env'
+    - uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484
   allow_failure: true
 
 

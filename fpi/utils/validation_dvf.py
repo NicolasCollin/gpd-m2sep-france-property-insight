@@ -299,19 +299,19 @@ if __name__ == "__main__":
         validate_all(root=args.root, exclude_dir=args.exclude_dir)
 
 # ---------------------------------------------------------------------------
-# 💡 TUTORIEL D’UTILISATION RAPIDE
+# 💡 QUICK USAGE GUIDE
 #
-# ▶ Valider un fichier :
+# ▶ Validate a single file:
 #     uv run python -m fpi.utils.validation_dvf --in data/raw/raw2021/raw_75_2021.csv
 #
-# ▶ Valider tout un dossier (récursif, en excluant data/processed) :
+# ▶ Validate an entire folder (recursive, excluding data/processed):
 #     uv run python -m fpi.utils.validation_dvf
-#     # Options : --root data  --exclude-dir data/processed
+#     # Options: --root data  --exclude-dir data/processed
 #
-# ▶ Sorties (par fichier) :
+# ▶ Outputs (per file):
 #     - data/processed/<same tree>/<name>.validated.parquet
 #     - data/processed/<same tree>/<name>.validation_errors.csv
 #
-# ▶ Logs détaillés :
+# ▶ Detailed logs:
 #     --log-level DEBUG
 # ---------------------------------------------------------------------------
