@@ -21,15 +21,15 @@ from __future__ import annotations
 import logging
 import time
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, Iterable, List, Tuple
 
 import pandas as pd
 from pydantic import ValidationError
 
 try:
-    from fpi.models.schemas_dvf import DVFRecord
+    from fpi.models.schemas_dvf import DVFRecord  # type: ignore[import-untyped]
 except Exception:
-    from fpi.utils.schemas_dvf import DVFRecord
+    from fpi.utils.schemas_dvf import DVFRecord  # type: ignore[import-untyped]
 
 
 # --- Read CSV robustly --------------------------------------------------------
@@ -50,21 +50,51 @@ def read_csv_any(path: str | Path) -> pd.DataFrame:
         RuntimeError: If the file cannot be read using any of the attempted combinations.
     """
     path = Path(path)
-    attempts = [
-        {"sep": ";", "encoding": "utf-8"},
-        {"sep": ",", "encoding": "utf-8"},
-        {"sep": ";", "encoding": "latin-1"},
-        {"sep": ",", "encoding": "latin-1"},
-    ]
+    attempts = [(";", "utf-8"), (",", "utf-8"), (";", "latin-1"), (",", "latin-1")]
     # Try each encoding and separator combination until one works
-    for kw in attempts:
+    for sep, enc in attempts:
         try:
-            return pd.read_csv(path, low_memory=False, **kw)
+            return pd.read_csv(path, sep=sep, encoding=enc, low_memory=False)
         except Exception:
             # Ignore and try next combination
             continue
     # If all attempts fail, raise an error indicating the file could not be read
     raise RuntimeError(f"Impossible de lire le fichier CSV : {path}")
+
+
+"""
+# Backward-compatibility shim for legacy imports
+"""
+
+
+def read_any_csv(path: str | Path) -> pd.DataFrame:
+    """Legacy alias: forwards to read_csv_any for older callers."""
+    return read_csv_any(path)
+
+
+def validate_records(records: Iterable[dict]) -> Tuple[List[DVFRecord], pd.DataFrame]:
+    """Validate an iterable of dict-like rows into DVFRecord models.
+    Returns a tuple (valid_models, errors_df) with columns [row, column, message]."""
+    valids: List[DVFRecord] = []
+    errors: List[Dict[str, Any]] = []
+    for i, rec in enumerate(records):
+        try:
+            valids.append(DVFRecord.model_validate(rec))
+        except ValidationError as e:
+            for err in e.errors():
+                errors.append(
+                    {
+                        "row": i,
+                        "column": ".".join(map(str, err.get("loc", []))),
+                        "message": err.get("msg", ""),
+                    }
+                )
+    return valids, pd.DataFrame(errors)
+
+
+def validate_dataframe(df: pd.DataFrame) -> Tuple[List[DVFRecord], pd.DataFrame]:
+    """Legacy convenience wrapper: DataFrame -> records -> validate_records."""
+    return validate_records(df.to_dict(orient="records"))
 
 
 # --- Core single-file validation ---------------------------------------------
@@ -96,20 +126,10 @@ def validate_csv(
     df = read_csv_any(path)
     records = df.to_dict(orient="records")
 
-    valids, errors = [], []
-    # Validate each record individually to capture detailed validation errors per row
-    for i, rec in enumerate(records):
-        try:
-            valids.append(DVFRecord.model_validate(rec))
-        except ValidationError as e:
-            # For each validation error, record the row number, column, and error message
-            for err in e.errors():
-                errors.append(
-                    {"row": i, "column": ".".join(map(str, err.get("loc", []))), "message": err.get("msg", "")}
-                )
+    valids, errors_df = validate_records(records)
 
     dur = time.perf_counter() - start
-    logger.info(f"Validated {len(df)} rows in {dur:.2f}s — ok={len(valids)} ko={len(errors)} — {path}")
+    logger.info(f"Validated {len(df)} rows in {dur:.2f}s — ok={len(valids)} ko={len(errors_df)} — {path}")
 
     # Determine output paths, defaulting to 'data/processed' if not specified
     if out_valid_path is None or out_errors_path is None:
@@ -125,16 +145,16 @@ def validate_csv(
     # Write validated records to parquet using alias names from the Pydantic model
     pd.DataFrame([m.model_dump(by_alias=True) for m in valids]).to_parquet(out_valid_path, index=False)
     # Write validation errors to CSV
-    pd.DataFrame(errors).to_csv(out_errors_path, index=False)
+    errors_df.to_csv(out_errors_path, index=False)
 
     # Print a summary of the validation results to the console
     print("\n" + "=" * 60)
-    print(f"✅ Validation terminée : {len(valids):,} valides | {len(errors):,} erreurs | total {len(df):,}")
+    print(f"✅ Validation terminée : {len(valids):,} valides | {len(errors_df):,} erreurs | total {len(df):,}")
     print(f"📁 Fichier valide : {out_valid_path}")
     print(f"📄 Rapport erreurs : {out_errors_path}")
     print("=" * 60 + "\n")
 
-    return len(valids), len(errors), len(df)
+    return len(valids), len(errors_df), len(df)
 
 
 # --- Discovery utilities ------------------------------------------------------
