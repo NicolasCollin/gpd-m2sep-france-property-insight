@@ -425,6 +425,8 @@ dependencies = [
     { name = "pdoc" },
     { name = "pyarrow" },
     { name = "pydantic" },
+    { name = "scikit-learn" },
+    { name = "seaborn" },
     { name = "sqlalchemy" },
 ]
 
@@ -447,8 +449,10 @@ requires-dist = [
     { name = "numpy", specifier = "==2.3.3" },
     { name = "pandas", specifier = "==2.3.3" },
     { name = "pdoc", specifier = "==15.0.4" },
-    { name = "pyarrow", specifier = ">=22.0.0" },
-    { name = "pydantic", specifier = ">=2.11.10" },
+    { name = "pyarrow", specifier = "==22.0.0" },
+    { name = "pydantic", specifier = "==2.11.10" },
+    { name = "scikit-learn", specifier = "==1.7.2" },
+    { name = "seaborn", specifier = "==0.13.2" },
     { name = "sqlalchemy", specifier = "==2.0.44" },
 ]
 

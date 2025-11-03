@@ -10,10 +10,10 @@ dependencies = [
     "numpy==2.3.3",
     "pandas==2.3.3",
     "pdoc==15.0.4",
-    "pyarrow>=22.0.0",
-    "pydantic>=2.11.10",
-    "scikit-learn>=1.7.2",
-    "seaborn>=0.13.2",
+    "pyarrow==22.0.0",
+    "pydantic==2.11.10",
+    "scikit-learn==1.7.2",
+    "seaborn==0.13.2",
     "sqlalchemy==2.0.44",
 ]
 

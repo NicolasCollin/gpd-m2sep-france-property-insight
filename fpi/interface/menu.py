@@ -1,60 +1,51 @@
 import gradio as gr
-import os
-import sys
-from typing import List, Any # Garder pour la fonction show_page
 
-os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
-
-from dashboard.dashboard_page import dashboard_page
-from home.home_page import home_page
-from prediction.prediction_page import prediction_page
-from prediction.form import form, reset_form
-
-
-
+from fpi.interface.dashboard.dashboard_page import dashboard_page
+from fpi.interface.home.home_page import home_page
+from fpi.interface.prediction.prediction_page import prediction_page
 
 # ===========================================
-#               CSS global 
+#               CSS global
 # ===========================================
 global_css = """
 /* --- Global --- */
 
-    
-.gradio-container { 
-    background: radial-gradient(#004f99 5%, #ffffff 100%); !important; 
+
+.gradio-container {
+    background: radial-gradient(#004f99 5%, #ffffff 100%); !important;
     max-width: 100% !important; /* Full width */
-    padding: 0 !important; 
-    position: relative; 
+    padding: 0 !important;
+    position: relative;
     min-height: 100vh;
 }
 
 
 /* --- HEADER --- */
 
-#navbar { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 1rem 2rem; 
-    background: #ffffff; 
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #ffffff;
     border-bottom: 1px solid #e0e0e0;
     border-radius: 15px;
-    gap: 0 !important; 
+    gap: 0 !important;
     margin: 0 !important;
-    width: 100%; 
+    width: 100%;
 }
 
 
-#logo { 
-    font-size: 1.8rem; 
-    font-weight: bold; 
-    color: #004f99; 
+#logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #004f99;
 }
 
 
-#nav-links { 
-    display: flex; 
-    gap: 1.5rem; 
+#nav-links {
+    display: flex;
+    gap: 1.5rem;
 }
 
 
@@ -78,10 +69,10 @@ global_css = """
 /* --- PAGE CONTENT --- */
 
 .page-content {
-    background: none; 
-    max-width: 1280px; 
-    margin: 0 auto !important; 
-    padding: 2rem !important; 
+    background: none;
+    max-width: 1280px;
+    margin: 0 auto !important;
+    padding: 2rem !important;
 }
 h2.page-title {
     font-size: 2.5rem;
@@ -107,39 +98,39 @@ h2.page-title {
     width: 100% !important;
     border-radius: 15px !important;
     transition: all 0.3s ease !important;
-    
+
     /* Base Glassmorphism */
     background: rgba(255, 255, 255, 0.2) !important;
     backdrop-filter: blur(15px) !important;
-    -webkit-backdrop-filter: blur(15px) !important; 
+    -webkit-backdrop-filter: blur(15px) !important;
     border: 1px solid rgba(255, 255, 255, 0.3);
 
     /* Text */
-    color: #ffffff !important; 
+    color: #ffffff !important;
     font-size: 2.2rem !important;
     font-weight: bold !important;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2) !important;
-    
+
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
 
     /* Effect */
-    box-shadow: 0 0 5px #fff, 0 0 10px #007bff; 
-    
+    box-shadow: 0 0 5px #fff, 0 0 10px #007bff;
+
 }
 
 /* Touch effect */
 .home-card:hover {
     transform: translateY(-3px) !important; /* movement */
-    
+
    /* Activate animation */
-    animation: neon-glitch 0.8s infinite alternate !important; 
+    animation: neon-glitch 0.8s infinite alternate !important;
     cursor: pointer !important;
 }
 
 #card-dashboard, #card-prediction {
-    background: rgba(255, 255, 255, 0.2) !important; 
+    background: rgba(255, 255, 255, 0.2) !important;
 }
 
 /* ---PREDICTION PAGE --- */
@@ -158,6 +149,7 @@ h2.page-title {
 }
 """
 
+
 # --- Pages navigation ---
 def show_page(page_id: str) -> list[gr.update]:
     """
@@ -172,23 +164,20 @@ def show_page(page_id: str) -> list[gr.update]:
         page_id: A string identifier for the page to show ("home", "dashboard", or "prediction").
 
     Returns:
-        A list of gr.update objects controlling the visibility for each of the 
+        A list of gr.update objects controlling the visibility for each of the
         three main pages in order: [home, dashboard, prediction].
     """
-    is_home: bool = (page_id == "home")
-    is_dashboard: bool = (page_id == "dashboard")
-    is_prediction: bool = (page_id == "prediction")
-    
-    return [
-        gr.update(visible=is_home),     
-        gr.update(visible=is_dashboard), 
-        gr.update(visible=is_prediction) 
-    ]
+    is_home: bool = page_id == "home"
+    is_dashboard: bool = page_id == "dashboard"
+    is_prediction: bool = page_id == "prediction"
+
+    return [gr.update(visible=is_home), gr.update(visible=is_dashboard), gr.update(visible=is_prediction)]
 
 
 # ==============================================================================
 # APPLICATION MENU LAYOUT
 # ==============================================================================
+
 
 def app_menu() -> gr.Blocks:
     """
@@ -206,7 +195,6 @@ def app_menu() -> gr.Blocks:
     """
 
     with gr.Blocks(css=global_css, title="France Property Insight", fill_width=True) as menu:
-        
         # Header / Navbar (applied for all pages)
         with gr.Row(elem_id="navbar"):
             gr.HTML('<div id="logo">FRANCE PROPERTY INSIGHT</div>')
@@ -215,22 +203,20 @@ def app_menu() -> gr.Blocks:
                 nav_dashboard = gr.Button("Dashboard")
                 nav_estimate = gr.Button("Estimate your property")
 
-        
         # Home page
         with gr.Column(visible=True, elem_classes="page-content") as home:
             gr.Markdown("## Bienvenue sur FPI Platform", elem_classes="page-title")
             gr.Markdown("Explorez, analysez et prédisez les valeurs immobilières grâce à nos outils interactifs.")
-            card_dashboard, card_estimate = home_page() 
+            card_dashboard, card_estimate = home_page()
 
         # Dashboard page
-        with gr.Column(visible=False, elem_classes="page-content") as dashboard :
-            dashboard_page() 
+        with gr.Column(visible=False, elem_classes="page-content") as dashboard:
+            dashboard_page()
 
         # Prediction page
         with gr.Column(visible=False, elem_classes="page-content") as prediction:
             predict_btn, reset_btn, result_output, inputs_list = prediction_page()
 
-        
         # Navigation logic
         all_pages = [home, dashboard, prediction]
 
@@ -238,10 +224,9 @@ def app_menu() -> gr.Blocks:
         nav_home.click(fn=show_page, inputs=gr.State("home"), outputs=all_pages)
         nav_dashboard.click(fn=show_page, inputs=gr.State("dashboard"), outputs=all_pages)
         nav_estimate.click(fn=show_page, inputs=gr.State("prediction"), outputs=all_pages)
-        
+
         # Card clicks on Home page
         card_dashboard.click(fn=show_page, inputs=gr.State("dashboard"), outputs=all_pages)
         card_estimate.click(fn=show_page, inputs=gr.State("prediction"), outputs=all_pages)
-        
 
     return menu
