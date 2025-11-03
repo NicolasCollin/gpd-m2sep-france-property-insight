@@ -5,11 +5,15 @@ description = "France Property Insight: Predicitve and analytic app for Master 2
 requires-python = ">=3.13"
 dependencies = [
     "gradio==5.49.1",
+    "joblib==1.5.2",
     "matplotlib==3.10.7",
+    "numpy==2.3.3",
     "pandas==2.3.3",
     "pdoc==15.0.4",
     "pyarrow>=22.0.0",
     "pydantic>=2.11.10",
+    "scikit-learn>=1.7.2",
+    "seaborn>=0.13.2",
     "sqlalchemy==2.0.44",
 ]
 
@@ -45,6 +49,13 @@ line-length = 120
 [tool.ruff.lint]
 select = ["E", "F", "I"]
 
+# ignore missing type imports
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 # uv run shortcuts
 [project.scripts]
 # run the app
@@ -62,6 +73,7 @@ ci = "fpi.utils.aliases:ci"
 # API documentation
 apidoc = "fpi.utils.aliases:apidoc"
 apidocsave = "fpi.utils.aliases:apidocsave"
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
+# dev shortcuts
+mockridge = "fpi.models.build_linear_model:mock_build_ridge"
+mocklm = "fpi.models.build_linear_model:mock_build_lm"
+mockpredict = "fpi.models.build_linear_model:mock_predict_price"
