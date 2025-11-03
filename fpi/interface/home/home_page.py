@@ -1,5 +1,4 @@
 from typing import Tuple
-import os
 
 import gradio as gr  # Import Gradio for building the interface
 
@@ -22,17 +21,7 @@ def home_page() -> Tuple[gr.HTML, gr.Button, gr.Button]:
 
     with gr.Row(elem_id="home-cards-container"):
         # Ces boutons sont stylisés par le CSS dans menu.py
-        card_dashboard = gr.Button(
-            "Dashboard", 
-            elem_id="card-dashboard", 
-            elem_classes="home-card"
-        )
-        card_estimate = gr.Button(
-            "Estimate your property", 
-            elem_id="card-prediction", 
-            elem_classes="home-card"
-        )
-            
+        card_dashboard = gr.Button("Dashboard", elem_id="card-dashboard", elem_classes="home-card")
+        card_estimate = gr.Button("Estimate your property", elem_id="card-prediction", elem_classes="home-card")
+
     return card_dashboard, card_estimate
-
-

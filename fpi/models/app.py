@@ -1,7 +1,9 @@
 # src/analysis/app.py
 from __future__ import annotations
+
+from typing import Any, Dict
+
 import gradio as gr
-from typing import Dict, Any
 
 from fpi.models.predict import predict_from_inputs
 
@@ -56,8 +58,12 @@ def launch_gradio():
                 code_type_local = gr.Textbox(label="Code type local", value=DEFAULTS["Code_type_local"])
             with gr.Column():
                 nombre_de_lots = gr.Number(label="Nombre de lots", value=DEFAULTS["Nombre_de_lots"])
-                surface_reelle_bati = gr.Number(label="Surface réelle bâtie (m²)", value=DEFAULTS["Surface_reelle_bati"])
-                nombre_pieces_principales = gr.Number(label="Nombre de pièces principales", value=DEFAULTS["Nombre_pieces_principales"])
+                surface_reelle_bati = gr.Number(
+                    label="Surface réelle bâtie (m²)", value=DEFAULTS["Surface_reelle_bati"]
+                )
+                nombre_pieces_principales = gr.Number(
+                    label="Nombre de pièces principales", value=DEFAULTS["Nombre_pieces_principales"]
+                )
                 surface_terrain = gr.Number(label="Surface terrain (m²)", value=DEFAULTS["Surface_terrain"])
         predict_btn = gr.Button("Predict")
         output = gr.Textbox(label="Prediction result")

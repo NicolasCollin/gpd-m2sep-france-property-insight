@@ -1,9 +1,10 @@
 # src/analysis/reg.py
 from __future__ import annotations
-import joblib
+
 from pathlib import Path
 from typing import List
 
+import joblib
 import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
@@ -145,9 +146,7 @@ def train_and_save(
     # log-transform target to stabilize variance
     y_trans = np.log1p(y)
 
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y_trans, test_size=test_size, random_state=RANDOM_STATE
-    )
+    X_train, X_test, y_train, y_test = train_test_split(X, y_trans, test_size=test_size, random_state=RANDOM_STATE)
 
     pipeline = build_pipeline(NUMERIC_FEATURES, CATEGORICAL_FEATURES)
     print("Training pipeline on", X_train.shape[0], "rows...")
