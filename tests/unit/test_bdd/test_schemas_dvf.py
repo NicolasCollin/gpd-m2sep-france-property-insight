@@ -8,11 +8,12 @@ These tests check:
 """
 
 import pytest
+
 from fpi.utils.schemas_dvf import DVFRecord  # import the Pydantic model
 
 
 def test_valid_record():
-    """Test that a valid DVF record can be created successfully."""     # simple creation test
+    """Test that a valid DVF record can be created successfully."""  # simple creation test
     record = DVFRecord(
         Identifiant_de_document="DOC123",
         Date_mutation="2021-06-15",
@@ -28,7 +29,7 @@ def test_valid_record():
 
 
 def test_invalid_date():
-    """Test that an invalid date format raises a validation error."""    # invalid date test
+    """Test that an invalid date format raises a validation error."""  # invalid date test
     with pytest.raises(ValueError):
         DVFRecord(
             Identifiant_de_document="DOC124",
