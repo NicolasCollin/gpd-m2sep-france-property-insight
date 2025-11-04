@@ -27,14 +27,14 @@ def load_data() -> pd.DataFrame:
     for file in all_files:
         try:
             # Specify decimal="," to handle French decimal format
-            df = pd.read_csv(file, decimal=",")
+            df_file = pd.read_csv(file, decimal=",")
             
             # Ensure numeric columns are numeric
             for col in numeric_cols:
-                if col in df.columns:
-                    df[col] = pd.to_numeric(df[col], errors="coerce")
-            
-            df_list.append(df)
+                if col in df_file.columns:
+                    df_file[col] = pd.to_numeric(df_file[col], errors="coerce")
+        
+            df_list.append(df_file)
         except Exception as e:
             print(f"Failed to read {file}: {e}")
 
@@ -42,4 +42,5 @@ def load_data() -> pd.DataFrame:
         raise ValueError("No CSV files could be loaded successfully.")
 
     df: pd.DataFrame = pd.concat(df_list, ignore_index=True)
+    
     return df
