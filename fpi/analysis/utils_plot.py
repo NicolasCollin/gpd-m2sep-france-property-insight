@@ -10,6 +10,7 @@ import seaborn as sns
 def save_hist(df: pd.DataFrame, cols: list[str], output_dir: str) -> None:
     """
     Save histogram plots with better scaling and outlier handling.
+    Automatically converts columns to numeric and skips non-numeric data.
     """
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
@@ -18,8 +19,19 @@ def save_hist(df: pd.DataFrame, cols: list[str], output_dir: str) -> None:
             print(f" Column {col} not found.")
             continue
 
-        # Clean and filter data
-        data = df[col].dropna()
+        # Clean and convert to numeric
+        data = (
+            df[col]
+            .astype(str)
+            .str.replace("€", "", regex=False)
+            .str.replace(",", "", regex=False)
+            .str.replace(" ", "", regex=False)
+        )
+        data = pd.to_numeric(data, errors="coerce").dropna()
+
+        if data.empty:
+            print(f" No valid numeric data for {col}. Skipping.")
+            continue
 
         # Remove outliers using IQR method
         Q1 = data.quantile(0.25)
@@ -33,13 +45,15 @@ def save_hist(df: pd.DataFrame, cols: list[str], output_dir: str) -> None:
         # Create subplots: original vs filtered
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
 
-        # Plot 1: Original data (with outliers)
-        counts_orig, bins_orig, _ = ax1.hist(data, bins=50, color="lightcoral", edgecolor="black", alpha=0.7)
-        ax1.set_title(f"{col} - Original (with outliers)\nN={len(data):,}", fontweight="bold")
+        # Plot 1: Original data
+        counts_orig, bins_orig, _ = ax1.hist(
+            data, bins=50, color='lightcoral', edgecolor='black', alpha=0.7
+        )
+        ax1.set_title(f'{col} - Original (with outliers)\nN={len(data):,}', fontweight='bold')
         ax1.set_xlabel(col)
-        ax1.set_ylabel("Count")
+        ax1.set_ylabel('Count')
         ax1.grid(True, alpha=0.3)
-        ax1.ticklabel_format(style="plain")
+        ax1.ticklabel_format(style='plain')
 
         # Add value labels on bars (top 5 only)
         max_counts = sorted(set(counts_orig), reverse=True)[:5]
@@ -48,37 +62,26 @@ def save_hist(df: pd.DataFrame, cols: list[str], output_dir: str) -> None:
                 ax1.text(
                     bin_val + (bins_orig[1] - bins_orig[0]) / 2,
                     count,
-                    f"{int(count):,}",
-                    ha="center",
-                    va="bottom",
+                    f'{int(count):,}',
+                    ha='center',
+                    va='bottom',
                     fontsize=8,
                 )
 
-        # Plot 2: Filtered data (without outliers)
+        # Plot 2: Filtered data
         if len(filtered_data) > 0:
-            counts_filt, bins_filt, _ = ax2.hist(filtered_data, bins=30, color="lightblue", edgecolor="black")
-            ax2.set_title(f"{col} - Without Outliers\nN={len(filtered_data):,}", fontweight="bold")
+            counts_filt, bins_filt, _ = ax2.hist(
+                filtered_data, bins=30, color='lightblue', edgecolor='black'
+            )
+            ax2.set_title(f'{col} - Without Outliers\nN={len(filtered_data):,}', fontweight='bold')
             ax2.set_xlabel(col)
-            ax2.set_ylabel("Count")
+            ax2.set_ylabel('Count')
             ax2.grid(True, alpha=0.3)
-
-            # Add value labels on bars (top 5 only)
-            max_counts_filt = sorted(set(counts_filt), reverse=True)[:5]
-            for count, bin_val in zip(counts_filt, bins_filt[:-1]):
-                if count in max_counts_filt and count > 0:
-                    ax2.text(
-                        bin_val + (bins_filt[1] - bins_filt[0]) / 2,
-                        count,
-                        f"{int(count):,}",
-                        ha="center",
-                        va="bottom",
-                        fontsize=8,
-                    )
         else:
-            ax2.text(0.5, 0.5, "No data after filtering", ha="center", va="center", transform=ax2.transAxes)
+            ax2.text(0.5, 0.5, 'No data after filtering', ha='center', va='center', transform=ax2.transAxes)
 
         plt.tight_layout()
-        plt.savefig(f"{output_dir}/{col}_hist_improved.png", dpi=300, bbox_inches="tight")
+        plt.savefig(f"{output_dir}/{col}_hist_improved.png", dpi=300, bbox_inches='tight')
         plt.close()
 
         print(f"Histogram for {col}: {len(filtered_data):,} records after filtering")

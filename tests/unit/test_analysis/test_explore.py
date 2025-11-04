@@ -1,7 +1,6 @@
 import pandas as pd
 
 from fpi.analysis.explore import load_data, preprocess
-from fpi.analysis.utils_plot import save_hist
 from fpi.utils.constants import VARS_TO_KEEP, NUMERIC_VARS
 
 
