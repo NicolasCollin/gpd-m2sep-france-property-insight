@@ -7,7 +7,6 @@ from typing import Any, Dict, Iterable, List, Tuple
 import pandas as pd
 from pydantic import BaseModel, Field, ValidationError, field_validator
 
-
 PROCESSED_DIR = Path("data/processed")
 CLEANED_ROOT = Path("data/cleaned")
 
