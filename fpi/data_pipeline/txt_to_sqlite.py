@@ -16,11 +16,17 @@ def txt_to_sqlite(
     Convert a text file (CSV-like) into a SQLite .db file.
 
     Args:
-        txt_path: Path to the input text file.
-        db_path: Path where the .db file will be saved.
-        table_name: Name of the SQL table to create.
-        delimiter: Column separator (default: '|').
-        chunksize: Number of rows per chunk to process (for large files).
+        - txt_path: Path to the input text file.
+        - db_path: Path where the .db file will be saved.
+        - table_name: Name of the SQL table to create.
+        - delimiter: Column separator (default: '|').
+        - chunksize: Number of rows per chunk to process (for large files).
+
+    Returns:
+        - None
+
+    Output:
+        - Save SQLite .db file to db_path.
     """
 
     # Ensure paths are Path objects
@@ -62,8 +68,8 @@ def txt_to_sqlite(
 
 if __name__ == "__main__":
     txt_to_sqlite(
-        txt_path="data/raw/raw2023.txt",
-        db_path="data/raw/raw2023.db",
-        table_name="raw_2023",
+        txt_path="data/raw/sample2024.txt",
+        db_path="data/raw/sample2024.db",
+        table_name="sample_2024",
         delimiter="|",
     )
