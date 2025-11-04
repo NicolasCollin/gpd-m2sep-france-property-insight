@@ -17,16 +17,6 @@ VARS_TO_KEEP: List[str] = [
     "land_area",
 ]
 
-# French column names from raw data (for initial cleaning / mapping)
-VARS_TO_KEEP_FR: List[str] = [
-    "Valeur fonciere",
-    "Code postal",
-    "Surface reelle bati",
-    "Date mutation",
-    "Surface terrain",
-    "Nombre pieces principales",
-]
-
 # Numeric columns for preprocessing and modeling
 NUMERIC_VARS: List[str] = [
     "property_value",
