@@ -5,7 +5,7 @@ from typing import Dict, List
 import pandas as pd
 
 
-def clean_data(raw_path: str | Path = "data", cleaned_path: str | Path = "data/cleaned") -> None:
+def clean_data(raw_path: str | Path = "data/raw", cleaned_path: str | Path = "data/cleaned") -> None:
     """
     Clean and standardize all CSV files found under a raw data directory.
 
@@ -35,11 +35,14 @@ def clean_data(raw_path: str | Path = "data", cleaned_path: str | Path = "data/c
     """
 
     rename_dict: Dict[str, str] = {
+        "date_mutation": "transaction_date",
         "valeur_fonciere": "property_value",
         "code_postal": "postal_code",
+        "commune": "town_name",
         "code_departement": "department_code",
         "code_commune": "town_code",
         "code_type_local": "property_type_code",
+        "type_local": "property_type",
         "surface_reelle_bati": "building_area",
         "nombre_pieces_principales": "main_rooms",
         "surface_terrain": "land_area",
