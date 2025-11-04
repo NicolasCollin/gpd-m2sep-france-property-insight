@@ -143,7 +143,7 @@ Minor changes:
 
 ## Workflow
 
-We protected the main branch, preventing pushing and force pushing.
+We protected the main branch, preventing pushing and force pushing.  
 As such, any feature has to developped separately on its own branch before opening a merge request to the main branch.
 
 ### Git Workflow Diagram
