@@ -1,21 +1,14 @@
-from typing import List, Any
-import gradio as gr
 import re  # For basic security/format validation
+from typing import Any, List
 
+import gradio as gr
 
 # ==============================================================================
-# VALIDATE INPUTS 
+# VALIDATE INPUTS
 # ==============================================================================
 
-def validate_inputs(
-    postal: str, 
-    dept: str, 
-    town: str, 
-    prop_type: str, 
-    area: float, 
-    rooms: int, 
-    land: float
-) -> str:
+
+def validate_inputs(postal: str, dept: str, town: str, prop_type: str, area: float, rooms: int, land: float) -> str:
     """
     This function performs basic security and validation checks on raw form inputs.
 
@@ -31,21 +24,21 @@ def validate_inputs(
     Returns:
         An error message string if validation fails, otherwise an empty string.
     """
-    
+
     # Check for required fields (mandatory fields)
     required_fields: dict = {
-        "Postal code": postal, 
-        "Department code": dept, 
-        "City": town, 
-        "Living area": area, 
-        "Number of rooms": rooms, 
-        "Land area": land
+        "Postal code": postal,
+        "Department code": dept,
+        "City": town,
+        "Living area": area,
+        "Number of rooms": rooms,
+        "Land area": land,
     }
-    
+
     for name, value in required_fields.items():
         if value is None or (isinstance(value, str) and not value.strip()):
             return f"Error : this field '{name}' is required."
-    
+
     # Basic numeric and range checks
     try:
         if area <= 0 or area > 1000:
@@ -61,12 +54,13 @@ def validate_inputs(
     if not (isinstance(postal, str) and re.fullmatch(r"^\d{5}$", postal.strip())):
         return "Error : postal code must be a 5-digit number."
 
-    return "" # Validation successful
+    return ""  # Validation successful
 
 
 # ==============================================================================
-# FORM 
+# FORM
 # ==============================================================================
+
 
 def form() -> tuple[List[gr.components.Component], gr.Dropdown]:
     """
@@ -86,48 +80,45 @@ def form() -> tuple[List[gr.components.Component], gr.Dropdown]:
 
     # --- CHARACTERISTICS ---
     with gr.Row():
-        prop_type_input = gr.Dropdown(
-            label="Property type",
-            choices=["House", "Apartment"],
-            value="House"
-        )
+        prop_type_input = gr.Dropdown(label="Property type", choices=["House", "Apartment"], value="House")
         area_input = gr.Number(label="Living area (m²)", minimum=1, step=1)
         rooms_input = gr.Number(label="Number of rooms", minimum=1, step=1)
         land_input = gr.Number(label="Land area (m²)", minimum=0, step=1)
 
     inputs_list: List[gr.components.Component] = [
-        postal_input, dept_code_input, town_code_input, prop_type_input, area_input, rooms_input, land_input
+        postal_input,
+        dept_code_input,
+        town_code_input,
+        prop_type_input,
+        area_input,
+        rooms_input,
+        land_input,
     ]
 
     return inputs_list, prop_type_input
 
 
-
-
 # ==============================================================================
-# RESET FORM 
+# RESET FORM
 # ==============================================================================
 
 
 def reset_form() -> List[Any]:
     """
     Resets all input fields and the result output component in the prediction form.
-    
+
     Returns:
-        A list of None or default values corresponding to the inputs and the 
+        A list of None or default values corresponding to the inputs and the
         result output, used by Gradio's update mechanism to clear the components.
     """
     # Order: [postal, dept, town, prop_type, area, rooms, land, result_output]
     return [
-        None,         # 1. postal
-        None,         # 2. dept
-        None,         # 3. town
-        "House",      # 4. prop_type (Dropdown default value)
-        None,         # 5. area
-        None,         # 6. rooms
-        None,         # 7. land
-        ""            # 8. result_output (empty string)
+        None,  # 1. postal
+        None,  # 2. dept
+        None,  # 3. town
+        "House",  # 4. prop_type (Dropdown default value)
+        None,  # 5. area
+        None,  # 6. rooms
+        None,  # 7. land
+        "",  # 8. result_output (empty string)
     ]
-
-
-    

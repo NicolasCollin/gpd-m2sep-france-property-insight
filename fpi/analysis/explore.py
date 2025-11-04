@@ -1,54 +1,80 @@
+from pathlib import Path
+
 import pandas as pd
 
 from fpi.analysis.utils_io import print_info
-from fpi.analysis.utils_plot import save_hist
+from fpi.analysis.utils_plot import property_trend, save_hist
+from fpi.analysis.utils_stats import statdes
 from fpi.utils.constants import NUMERIC_VARS, VARS_TO_KEEP
 
 
-def load_data(file_path: str) -> pd.DataFrame:
+def load_data(cleaned_path: str = "data/cleaned") -> pd.DataFrame:
     """
-    Load the dataset from a raw text file.
+    Automatically load the latest cleaned dataset from the given path.
 
-    :param file_path: Path to the raw dataset
-    :return: Pandas DataFrame
+    Args:
+        cleaned_path (str): Folder containing cleaned CSV files.
+    Returns:
+        pd.DataFrame: The most recent cleaned dataset.
     """
-    return pd.read_csv(file_path, sep="|", header=0)
+    cleaned_dir = Path(cleaned_path)
+    all_files = sorted(cleaned_dir.rglob("cleaned_*.csv"), reverse=True)
+    if not all_files:
+        raise FileNotFoundError(f"No cleaned CSV file found in {cleaned_path}")
+
+    latest_file = all_files[0]
+    print(f"Loaded latest file: {latest_file.name}")
+    return pd.read_csv(latest_file)
 
 
 def preprocess(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Select only the variables we want to keep and rename them in English.
+    Keep only relevant variables defined in constants.
 
-    :param df: Raw DataFrame
-    :return: Cleaned DataFrame with English column names
+    Args:
+        df (pd.DataFrame): Raw DataFrame.
+    Returns:
+        pd.DataFrame: Filtered DataFrame with relevant columns.
     """
-    df = df[VARS_TO_KEEP]
-    df.columns = [
-        "land_value",
-        "postal_code",
-        "building_surface",
-        "mutation_date",
-        "land_surface",
-        "main_rooms",
-    ]
+    df = df[[col for col in VARS_TO_KEEP if col in df.columns]]
     return df
 
 
 def exp() -> None:
     """
-    Main exploration pipeline:
-    - Load
-    - Inspect
-    - Preprocess
-    - Save visualizations
+    Full exploratory pipeline:
+    1️ Load latest cleaned data
+    2️ Display basic info
+    3️ Compute descriptive stats
+    4️ Generate plots (histograms, boxplots, curves)
     """
-    df = load_data("data/raw/sample2024.txt")
+    # --- Step 1: Load latest data ---
+    df = load_data()
+
+    # --- Step 2: Inspect basic info ---
     print_info(df)
 
+    # --- Step 3: Keep relevant columns ---
     df_clean = preprocess(df)
-    save_hist(df_clean, NUMERIC_VARS, output_dir="docs/plots")
+    statdes(df_clean)
 
-    print("Plots saved in docs/plots/")
+    # --- Step 4: Plots ---
+    output_dir = "docs/plots"
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+
+    print("\n Generating histograms...")
+    save_hist(df_clean, NUMERIC_VARS, output_dir=output_dir)
+
+    # print("\n Generating boxplot for property_value...")
+    # save_lv(df_clean, "property_value", output_dir=output_dir)
+
+    # print("\n Generating KDE curves (by year and department)...")
+    # save_curv(cleaned_path="data/cleaned", var="property_value", output_dir=output_dir)
+
+    print("\n Generating property value trend...")
+    property_trend(cleaned_path="data/cleaned", output_dir="docs/plots", agg="median")
+
+    print("\n All plots successfully saved in docs/plots/")
 
 
 if __name__ == "__main__":
