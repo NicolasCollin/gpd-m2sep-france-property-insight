@@ -8,6 +8,25 @@ import pandas as pd
 from pydantic import BaseModel, Field, ValidationError, field_validator
 
 
+PROCESSED_DIR = Path("data/processed")
+CLEANED_ROOT = Path("data/cleaned")
+
+
+# Helper: compute processed output directory mirroring the cleaned tree
+def _compute_output_dir(csv_path: Path, cleaned_root: Path = CLEANED_ROOT) -> Path:
+    """
+    Return the directory under PROCESSED_DIR that mirrors `csv_path` location
+    relative to `cleaned_root`. If `csv_path` is not inside `cleaned_root`,
+    fall back to writing directly under `PROCESSED_DIR`.
+    """
+    try:
+        rel = csv_path.resolve().relative_to(cleaned_root.resolve())
+        return (PROCESSED_DIR / rel.parent).resolve()
+    except Exception:
+        # Not under cleaned_root, flatten to PROCESSED_DIR
+        return PROCESSED_DIR.resolve()
+
+
 class PropertyData(BaseModel):
     """
     Structured record for a *cleaned* DVF row.
@@ -89,7 +108,11 @@ def _iter_csv_files(root: Path) -> Iterable[Path]:
     yield from root.rglob("*.csv")
 
 
-def validate_csv(csv_path: str | Path, save_invalid: bool = True) -> List[PropertyData]:
+def validate_csv(
+    csv_path: str | Path,
+    save_invalid: bool = True,
+    cleaned_root: Path = CLEANED_ROOT,
+) -> tuple[List[PropertyData], int, int]:
     """
     Validate all rows of a **single cleaned CSV** file using the PropertyData model.
 
@@ -106,14 +129,20 @@ def validate_csv(csv_path: str | Path, save_invalid: bool = True) -> List[Proper
 
     Returns
     -------
-    List[PropertyData]
-        All valid rows converted to `PropertyData` instances.
+    tuple[list[PropertyData], int, int]
+        (valid_models, total_rows, error_rows)
     """
     csv_path_obj: Path = Path(csv_path)
     print(f"\nValidating file: {csv_path_obj.resolve()}")
 
     df: pd.DataFrame = pd.read_csv(csv_path_obj, sep=",", low_memory=False)
+    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+
+    out_dir: Path = _compute_output_dir(Path(csv_path_obj), cleaned_root=cleaned_root)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
     valid_rows: List[PropertyData] = []
+    valid_payloads: List[Dict[str, Any]] = []
     invalid_entries: List[Dict[str, Any]] = []
 
     for i, row in df.iterrows():
@@ -121,22 +150,30 @@ def validate_csv(csv_path: str | Path, save_invalid: bool = True) -> List[Proper
         try:
             record: PropertyData = PropertyData(**row_dict)  # strict on *cleaned* column names
             valid_rows.append(record)
+            valid_payloads.append(row_dict)
         except ValidationError as e:
             # Gather which columns failed (helps users fix the source file)
             error_columns: List[str] = [str(err["loc"][0]) for err in e.errors()]
             invalid_entries.append({**row_dict, "error_columns": error_columns})
-            print(f"- Row {i} invalid: {', '.join(error_columns)}")
+            print(f"  • error at row {i}: {', '.join(error_columns)}")
 
     total_rows: int = len(df)
     valid_count: int = len(valid_rows)
-    print(f"→ {valid_count}/{total_rows} rows successfully validated.")
+    error_count: int = total_rows - valid_count
+    base = csv_path_obj.stem
+    print(f"⇒ {base}: {valid_count}/{total_rows} valid, {error_count} error(s)")
 
-    if save_invalid and invalid_entries:
-        out_path: Path = csv_path_obj.with_suffix(".invalid.csv")
-        pd.DataFrame(invalid_entries).to_csv(out_path, index=False)
-        print(f"✎ Invalid rows saved to: {out_path.resolve()}")
+    if save_invalid:
+        if valid_payloads:
+            valid_out: Path = out_dir / f"{base}.valid.csv"
+            pd.DataFrame(valid_payloads).to_csv(valid_out, index=False)
+            print(f"   ✓ valid rows  → {valid_out.resolve()}")
+        if invalid_entries:
+            invalid_out: Path = out_dir / f"{base}.invalid.csv"
+            pd.DataFrame(invalid_entries).to_csv(invalid_out, index=False)
+            print(f"   ✗ invalid rows → {invalid_out.resolve()}")
 
-    return valid_rows
+    return valid_rows, total_rows, error_count
 
 
 def validate_all_cleaned(
@@ -157,7 +194,7 @@ def validate_all_cleaned(
     Returns
     -------
     List[Tuple[Path, int, int]]
-        A list of `(file_path, valid_count, total_count)` tuples.
+        A list of `(file_path, valid_count, error_count)` tuples.
     """
     root = Path(root_dir)
     if not root.exists():
@@ -166,18 +203,13 @@ def validate_all_cleaned(
 
     summaries: List[Tuple[Path, int, int]] = []
     for csv_file in _iter_csv_files(root):
-        valid_rows = validate_csv(csv_file, save_invalid=save_invalid)
-        summaries.append(
-            (
-                csv_file,
-                len(valid_rows),
-                sum(1 for _ in pd.read_csv(csv_file, chunksize=10_000)) * 10_000 if csv_file.exists() else 0,
-            )
-        )
+        valid_rows, total_rows, error_count = validate_csv(csv_file, save_invalid=save_invalid, cleaned_root=root)
+        summaries.append((csv_file, len(valid_rows), error_count))
     # Pretty print short recap
     print("\nSummary:")
-    for path, valid_count, _ in summaries:
-        print(f"  - {path}: {valid_count} valid rows")
+    for path, valid_count, error_count in summaries:
+        total = valid_count + error_count
+        print(f"  - {path}: {valid_count}/{total} valid, {error_count} error(s)")
     return summaries
 
 
@@ -214,7 +246,12 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.input:
-        validate_csv(Path(args.input), save_invalid=not args.no_save_invalid)
+        valid_rows, total_rows, error_count = validate_csv(
+            Path(args.input),
+            save_invalid=not args.no_save_invalid,
+            cleaned_root=Path(args.root),
+        )
+        print(f"\nDone. File total: {total_rows}, valid: {len(valid_rows)}, errors: {error_count}")
     else:
         validate_all_cleaned(Path(args.root), save_invalid=not args.no_save_invalid)
 
