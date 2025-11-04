@@ -19,7 +19,6 @@ Main functionalities:
 from __future__ import annotations
 
 import csv
-
 import logging
 import time
 from pathlib import Path
@@ -38,6 +37,7 @@ except Exception:
 def _norm_key(s: str) -> str:
     """Normalize a column key for fuzzy matching (lower + remove spaces/underscores)."""
     return "".join(ch for ch in str(s).lower() if ch not in {" ", "_"})
+
 
 # Extra header aliases to tolerate alternative header names coming from cleaned exports
 _EXTRA_ALIASES: Dict[str, str] = {
@@ -92,6 +92,7 @@ def _coerce_scalar(v: Any) -> Any:
     # Handle pandas NA/NaN
     try:
         import math
+
         if v is None:
             return None
         # pandas NaN detection without importing numpy
@@ -455,7 +456,12 @@ if __name__ == "__main__":
     )
     parser.add_argument("--log-level", dest="log_level", default="INFO", choices=["DEBUG", "INFO", "WARNING", "ERROR"])
     parser.add_argument("--diagnose", dest="diagnose", action="store_true", help="Show a brief error breakdown")
-    parser.add_argument("--out-dir", dest="out_dir", default="data/processed", help="Directory where outputs are written (mirrors input tree)")
+    parser.add_argument(
+        "--out-dir",
+        dest="out_dir",
+        default="data/processed",
+        help="Directory where outputs are written (mirrors input tree)",
+    )
 
     args = parser.parse_args()
     # Configure logging level as requested by the user

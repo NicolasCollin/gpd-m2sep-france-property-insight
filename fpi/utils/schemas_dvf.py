@@ -16,8 +16,7 @@ from __future__ import annotations
 from datetime import date, datetime
 from typing import Any, Optional
 
-from pydantic import BaseModel, Field, field_validator, model_validator, AliasChoices
-from pydantic import ConfigDict
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field, field_validator
 
 __all__ = ["DVFRecord"]
 
@@ -65,6 +64,7 @@ ALLOWED_TYPE_LOCAL = {
 # Raw DVF (French headers) remain accepted through the KEY_TO_ATTR fallback, but
 # we do not guarantee full coverage for all raw edge-cases.
 
+
 class DVFRecord(BaseModel):
     """
     Permissive Pydantic model for DVF records.
@@ -106,39 +106,67 @@ class DVFRecord(BaseModel):
     voie: Optional[Any] = Field(None, validation_alias=AliasChoices("Voie", "voie"))
     code_postal: Optional[Any] = Field(None, validation_alias=AliasChoices("Code_postal", "postal_code", "code_postal"))
     commune: Optional[Any] = Field(None, validation_alias=AliasChoices("Commune", "city", "commune"))
-    code_departement: Optional[Any] = Field(None, validation_alias=AliasChoices("Code_departement", "department_code", "code_departement"))
-    code_commune: Optional[Any] = Field(None, validation_alias=AliasChoices("Code_commune", "town_code", "code_commune"))
+    code_departement: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Code_departement", "department_code", "code_departement")
+    )
+    code_commune: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Code_commune", "town_code", "code_commune")
+    )
 
     # Parcel / lots
-    prefixe_de_section: Optional[Any] = Field(None, validation_alias=AliasChoices("Prefixe_de_section", "prefixe_de_section"))
+    prefixe_de_section: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Prefixe_de_section", "prefixe_de_section")
+    )
     section: Optional[Any] = Field(None, validation_alias=AliasChoices("Section", "section"))
     no_plan: Optional[Any] = Field(None, validation_alias=AliasChoices("No_plan", "no_plan"))
     no_volume: Optional[Any] = Field(None, validation_alias=AliasChoices("No_Volume", "no_volume"))
 
     lot1: Optional[Any] = Field(None, validation_alias=AliasChoices("1er_lot", "lot1"))
-    surface_carrez_lot1: Optional[Any] = Field(None, validation_alias=AliasChoices("Surface_Carrez_du_1er_lot", "surface_carrez_lot1"))
+    surface_carrez_lot1: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Surface_Carrez_du_1er_lot", "surface_carrez_lot1")
+    )
     lot2: Optional[Any] = Field(None, validation_alias=AliasChoices("2eme_lot", "lot2"))
-    surface_carrez_lot2: Optional[Any] = Field(None, validation_alias=AliasChoices("Surface_Carrez_du_2eme_lot", "surface_carrez_lot2"))
+    surface_carrez_lot2: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Surface_Carrez_du_2eme_lot", "surface_carrez_lot2")
+    )
     lot3: Optional[Any] = Field(None, validation_alias=AliasChoices("3eme_lot", "lot3"))
-    surface_carrez_lot3: Optional[Any] = Field(None, validation_alias=AliasChoices("Surface_Carrez_du_3eme_lot", "surface_carrez_lot3"))
+    surface_carrez_lot3: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Surface_Carrez_du_3eme_lot", "surface_carrez_lot3")
+    )
     lot4: Optional[Any] = Field(None, validation_alias=AliasChoices("4eme_lot", "lot4"))
-    surface_carrez_lot4: Optional[Any] = Field(None, validation_alias=AliasChoices("Surface_Carrez_du_4eme_lot", "surface_carrez_lot4"))
+    surface_carrez_lot4: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Surface_Carrez_du_4eme_lot", "surface_carrez_lot4")
+    )
     lot5: Optional[Any] = Field(None, validation_alias=AliasChoices("5eme_lot", "lot5"))
-    surface_carrez_lot5: Optional[Any] = Field(None, validation_alias=AliasChoices("Surface_Carrez_du_5eme_lot", "surface_carrez_lot5"))
+    surface_carrez_lot5: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Surface_Carrez_du_5eme_lot", "surface_carrez_lot5")
+    )
 
     nombre_de_lots: Optional[Any] = Field(None, validation_alias=AliasChoices("Nombre_de_lots", "nombre_de_lots"))
 
     # Local information
-    code_type_local: Optional[Any] = Field(None, validation_alias=AliasChoices("Code_type_local", "property_type_code", "code_type_local"))
+    code_type_local: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Code_type_local", "property_type_code", "code_type_local")
+    )
     type_local: Optional[Any] = Field(None, validation_alias=AliasChoices("Type_local", "type_local"))
-    identifiant_local: Optional[Any] = Field(None, validation_alias=AliasChoices("Identifiant_local", "identifiant_local"))
-    surface_reelle_bati: Optional[Any] = Field(None, validation_alias=AliasChoices("Surface_reelle_bati", "building_area", "surface_reelle_bati"))
-    nombre_pieces_principales: Optional[Any] = Field(None, validation_alias=AliasChoices("Nombre_pieces_principales", "main_rooms", "nombre_pieces_principales"))
+    identifiant_local: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Identifiant_local", "identifiant_local")
+    )
+    surface_reelle_bati: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Surface_reelle_bati", "building_area", "surface_reelle_bati")
+    )
+    nombre_pieces_principales: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Nombre_pieces_principales", "main_rooms", "nombre_pieces_principales")
+    )
 
     # Terrain / nature of cultivation
     nature_culture: Optional[Any] = Field(None, validation_alias=AliasChoices("Nature_culture", "nature_culture"))
-    nature_culture_speciale: Optional[Any] = Field(None, validation_alias=AliasChoices("Nature_culture_speciale", "nature_culture_speciale"))
-    surface_terrain: Optional[Any] = Field(None, validation_alias=AliasChoices("Surface_terrain", "land_area", "surface_terrain"))
+    nature_culture_speciale: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Nature_culture_speciale", "nature_culture_speciale")
+    )
+    surface_terrain: Optional[Any] = Field(
+        None, validation_alias=AliasChoices("Surface_terrain", "land_area", "surface_terrain")
+    )
 
     # --- Soft normalizations --------------------------------------------------
     @field_validator("*", mode="before")
