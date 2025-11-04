@@ -1,6 +1,8 @@
 from typing import List, Any
 import gradio as gr
-from prediction.form import form 
+import os,sys
+os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
+from fpi.interface.prediction.form import form 
 
 
 # ==============================================================================
