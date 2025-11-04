@@ -1,10 +1,15 @@
 from typing import Any, List
 
 import gradio as gr
+from typing import Callable, Any, List
 
 from fpi.interface.dashboard.dashboard_page import dashboard_page
 from fpi.interface.home.home_page import home_page
 from fpi.interface.prediction.prediction_page import prediction_page
+from fpi.interface.prediction.form import form, reset_form
+
+# Correct type for Gradio update function
+update_fn: Callable[..., Any] = gr.update
 
 # ===========================================
 #               CSS global
@@ -217,7 +222,7 @@ def app_menu() -> gr.Blocks:
 
         # Prediction page
         with gr.Column(visible=False, elem_classes="page-content") as prediction:
-            predict_btn, reset_btn, inputs_list, result_output = prediction_page()
+            predict_btn, reset_btn, result_output, inputs_list = prediction_page()
 
         # Navigation logic
         all_pages = [home, dashboard, prediction]

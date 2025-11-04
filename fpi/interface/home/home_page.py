@@ -20,7 +20,6 @@ def home_page() -> Tuple[gr.Button, gr.Button]:
     """
 
     with gr.Row(elem_id="home-cards-container"):
-        # Ces boutons sont stylisés par le CSS dans menu.py
         card_dashboard = gr.Button("Dashboard", elem_id="card-dashboard", elem_classes="home-card")
         card_estimate = gr.Button("Estimate your property", elem_id="card-prediction", elem_classes="home-card")
 

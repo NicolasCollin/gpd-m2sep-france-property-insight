@@ -102,4 +102,4 @@ def prediction_page() -> (
         outputs=inputs_list + [result_output],
     )
 
-    return predict_btn, reset_btn, inputs_list, result_output
+    return predict_btn, reset_btn, result_output, inputs_list
