@@ -1,7 +1,7 @@
-import pandas as pd
+from typing import List
 
-from fpi.analysis.explore import load_data, preprocess
-from fpi.utils.constants import VARS_TO_KEEP, NUMERIC_VARS
+from fpi.analysis.explore import load_data
+from fpi.utils.constants import VARS_TO_KEEP
 
 
 class TestLoadData:

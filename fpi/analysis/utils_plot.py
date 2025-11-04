@@ -46,14 +46,12 @@ def save_hist(df: pd.DataFrame, cols: list[str], output_dir: str) -> None:
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
 
         # Plot 1: Original data
-        counts_orig, bins_orig, _ = ax1.hist(
-            data, bins=50, color='lightcoral', edgecolor='black', alpha=0.7
-        )
-        ax1.set_title(f'{col} - Original (with outliers)\nN={len(data):,}', fontweight='bold')
+        counts_orig, bins_orig, _ = ax1.hist(data, bins=50, color="lightcoral", edgecolor="black", alpha=0.7)
+        ax1.set_title(f"{col} - Original (with outliers)\nN={len(data):,}", fontweight="bold")
         ax1.set_xlabel(col)
-        ax1.set_ylabel('Count')
+        ax1.set_ylabel("Count")
         ax1.grid(True, alpha=0.3)
-        ax1.ticklabel_format(style='plain')
+        ax1.ticklabel_format(style="plain")
 
         # Add value labels on bars (top 5 only)
         max_counts = sorted(set(counts_orig), reverse=True)[:5]
@@ -62,26 +60,24 @@ def save_hist(df: pd.DataFrame, cols: list[str], output_dir: str) -> None:
                 ax1.text(
                     bin_val + (bins_orig[1] - bins_orig[0]) / 2,
                     count,
-                    f'{int(count):,}',
-                    ha='center',
-                    va='bottom',
+                    f"{int(count):,}",
+                    ha="center",
+                    va="bottom",
                     fontsize=8,
                 )
 
         # Plot 2: Filtered data
         if len(filtered_data) > 0:
-            counts_filt, bins_filt, _ = ax2.hist(
-                filtered_data, bins=30, color='lightblue', edgecolor='black'
-            )
-            ax2.set_title(f'{col} - Without Outliers\nN={len(filtered_data):,}', fontweight='bold')
+            counts_filt, bins_filt, _ = ax2.hist(filtered_data, bins=30, color="lightblue", edgecolor="black")
+            ax2.set_title(f"{col} - Without Outliers\nN={len(filtered_data):,}", fontweight="bold")
             ax2.set_xlabel(col)
-            ax2.set_ylabel('Count')
+            ax2.set_ylabel("Count")
             ax2.grid(True, alpha=0.3)
         else:
-            ax2.text(0.5, 0.5, 'No data after filtering', ha='center', va='center', transform=ax2.transAxes)
+            ax2.text(0.5, 0.5, "No data after filtering", ha="center", va="center", transform=ax2.transAxes)
 
         plt.tight_layout()
-        plt.savefig(f"{output_dir}/{col}_hist_improved.png", dpi=300, bbox_inches='tight')
+        plt.savefig(f"{output_dir}/{col}_hist_improved.png", dpi=300, bbox_inches="tight")
         plt.close()
 
         print(f"Histogram for {col}: {len(filtered_data):,} records after filtering")

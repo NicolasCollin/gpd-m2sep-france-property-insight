@@ -1,17 +1,8 @@
 import gradio as gr
-import os
-import sys
-from typing import List, Any # Garder pour la fonction show_page
-
-os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 
 from fpi.interface.dashboard.dashboard_page import dashboard_page
 from fpi.interface.home.home_page import home_page
 from fpi.interface.prediction.prediction_page import prediction_page
-from fpi.interface.prediction.form import form, reset_form
-
-
-
 
 # ===========================================
 #               CSS global
