@@ -1,3 +1,21 @@
+"""
+This script validates cleaned DVF (Demande de Valeur Foncière) CSV files for structural and value correctness.
+
+Usage:
+------
+- To validate all cleaned CSV files under the `data/cleaned/` directory, run:
+      uv run validation
+- To validate a specific cleaned CSV file, run:
+      uv run validation --input path/to/your_cleaned_file.csv
+
+Results:
+--------
+- Validation results are saved under `data/processed/`, mirroring the directory structure of `data/cleaned/`.
+- For each dataset, two files are generated:
+    - `<name>.valid.csv`   : All rows that pass validation.
+    - `<name>.invalid.csv` : Rows that fail validation, with columns indicating the errors.
+"""
+
 from __future__ import annotations
 
 import argparse
