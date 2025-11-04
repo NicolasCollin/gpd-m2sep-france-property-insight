@@ -5,7 +5,56 @@ import os,sys
 os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 from fpi.interface.prediction.form import form 
 
-from fpi.interface.prediction.form import form
+from fpi.interface.prediction.form import form, reset_form, validate_inputs
+from fpi.models.build_linear_model import predict_price
+
+# =====================================================================
+# CALLBACK : run prediction
+# =====================================================================
+def run_prediction(postal: str, 
+                   dept: str, 
+                   town: str, 
+                   prop_type: str, 
+                   area: float, 
+                   rooms: int, 
+                   land: float) -> str:
+    """
+    Call backs for the "Estimate" button. It prepares the data and calls the model prediction function.
+    Args:
+        postal: Postal code (string).
+        dept: Department code (string).
+        town: Town code (string).
+        prop_type: Property type ("House" / "Apartment").
+        area: Living area in square
+        rooms: Number of rooms (integer).
+        land: Land area (float).
+    Returns:
+        A string with the predicted price or an error message.
+    """
+
+
+    error_msg = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+    if error_msg:
+        return error_msg
+
+    property_type_code = 1 if prop_type.lower() == "house" else 2
+
+    input_data = {
+        "building_area": float(area),
+        "main_rooms": int(rooms),
+        "land_area": float(land),
+        "postal_code": int(postal),
+        "property_type_code": property_type_code,
+        "town_code": int(town),
+        "department_code": int(dept),
+    }
+
+    model_path = "fpi/models/linear_model.pkl"
+    try:
+        predicted_price = predict_price(model_path=model_path, input_data=input_data)
+        return f"Estimated property price: €{predicted_price:,.0f}"
+    except Exception as e:
+        return f"Prediction failed: {str(e)}"
 
 # ==============================================================================
 # PREDICTION PAGE LAYOUT
@@ -32,7 +81,7 @@ def prediction_page() -> (
 
         with gr.Column(elem_classes="glass-box"):
             # --- FORM ---
-            inputs_list: List[gr.components.Component] = form()
+            inputs_list, prop_type_input = form()
 
             # --- BUTTONS ---
             with gr.Row():
@@ -44,4 +93,17 @@ def prediction_page() -> (
                 value="Estimation : **--- €**", label="Price estimated", elem_classes="prediction-result"
             )
 
-    return predict_btn, reset_btn, result_output, inputs_list
+    # --- LINK CALLBACKS ---
+    predict_btn.click(
+        fn=run_prediction,
+        inputs=inputs_list,
+        outputs=result_output,
+    )
+
+    reset_btn.click(
+        fn=reset_form,
+        inputs=[],
+        outputs=inputs_list + [result_output],
+    )
+
+    return predict_btn, reset_btn, inputs_list, result_output

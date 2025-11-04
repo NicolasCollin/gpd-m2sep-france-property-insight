@@ -1,4 +1,4 @@
-import re  # For basic security/format validation
+import re  
 from typing import Any, List
 
 import gradio as gr
@@ -29,7 +29,7 @@ def validate_inputs(postal: str, dept: str, town: str, prop_type: str, area: flo
     required_fields: dict = {
         "Postal code": postal,
         "Department code": dept,
-        "City": town,
+        "Town code": town,
         "Living area": area,
         "Number of rooms": rooms,
         "Land area": land,
@@ -37,7 +37,7 @@ def validate_inputs(postal: str, dept: str, town: str, prop_type: str, area: flo
 
     for name, value in required_fields.items():
         if value is None or (isinstance(value, str) and not value.strip()):
-            return f"Error : this field '{name}' is required."
+            return f"Error : field '{name}' is required."
 
     # Basic numeric and range checks
     try:

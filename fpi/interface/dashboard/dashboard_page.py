@@ -1,23 +1,26 @@
-from typing import Tuple
+import gradio as gr
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+from analysis.utils_dashboard import display_dashboard
 
-import gradio as gr  # Import Gradio for building the interface
+# -------------------------------------------------------------------
+# DASHBOARD PAGE
+# -------------------------------------------------------------------
 
 
-# --- Dashboard Page Layout ---
-def dashboard_page() -> Tuple[gr.Blocks, gr.Button]:
+def dashboard_page() -> gr.Blocks :
     """
-    Create and return the layout for the Dashboard Page.
-
-    The Dashboard Page includes:
-    - A title and short description of its purpose
-    - A navigation button to return to the home page
+    Interactive dashboard for Ile-de-France real estate data.
 
     Returns:
-        tuple: A tuple containing:
-            - dashboard_page (gr.Blocks): The Gradio layout object representing the dashboard
-            - return_home_button (gr.Button): The navigation button to go back to the home page
+        Dashboard
     """
 
-    gr.Markdown("# Tableau de bord", elem_classes="page-title")
-    gr.Markdown("Visualisez les tendances des valeurs foncières et explorez les données des propriétés françaises.")
-    gr.Markdown("*(Le contenu du dashboard, comme les graphiques Plotly ou Matplotlib, ira ici...)*")
+    gr.Markdown("# Ile-de-France Real Estate Dashboard", elem_classes="page-title")
+    gr.Markdown("Explore property values interactively with filters for department and property type.")
+    
+    dashboard = display_dashboard()
+        
+
+    return dashboard

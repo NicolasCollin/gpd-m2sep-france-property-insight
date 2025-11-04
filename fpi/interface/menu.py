@@ -224,7 +224,7 @@ def app_menu() -> gr.Blocks:
 
         # Prediction page
         with gr.Column(visible=False, elem_classes="page-content") as prediction:
-            predict_btn, reset_btn, result_output, inputs_list = prediction_page()
+            predict_btn, reset_btn, inputs_list, result_output = prediction_page()
 
         # Navigation logic
         all_pages = [home, dashboard, prediction]

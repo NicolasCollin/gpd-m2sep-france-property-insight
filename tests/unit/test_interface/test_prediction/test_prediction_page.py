@@ -1,46 +1,91 @@
 import os
 import sys
 import unittest
-from typing import Tuple
+from unittest.mock import patch
 
 import gradio as gr
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
-from fpi.interface.prediction.prediction_page import prediction_page
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../..")))
 
+from fpi.interface.prediction.prediction_page import run_prediction, prediction_page
+from fpi.interface.prediction.form import validate_inputs, reset_form
 
 class TestPredictionPage(unittest.TestCase):
-    # Type hints for instance attributes
-    prediction: gr.Blocks
-    back_home: gr.Button
 
-    def setUp(self) -> None:
-        """Initialise the page before each test"""
-        self.prediction, self.back_home = prediction_page()
+    # -----------------------------
+    # Tests run_prediction()
+    # -----------------------------
+    def test_run_prediction_valid_inputs(self):
+        with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
+            mock_predict.return_value = 500000
+            result = run_prediction(
+                postal="75005",
+                dept="75",
+                town="75101",
+                prop_type="House",
+                area=100,
+                rooms=3,
+                land=50
+            )
+            self.assertIn("Estimated property price", result)
+            self.assertIn("500,000", result)
 
-    def test_returns_tuple(self) -> None:
-        """Check that the function returns a tuple with the expected element types"""
-        self.assertIsInstance(self.prediction, gr.Blocks)
-        self.assertIsInstance(self.back_home, gr.Button)
+    def test_run_prediction_invalid_inputs(self):
+        # Postal code invalid
+        result = run_prediction(
+            postal="7500",
+            dept="75",
+            town="75101",
+            prop_type="House",
+            area=100,
+            rooms=3,
+            land=50
+        )
+        self.assertIn("postal code", result)
 
-    def test_tuple_length(self) -> None:
-        """Check that the tuple has exactly 2 elements"""
-        result: Tuple[gr.Blocks, gr.Button] = prediction_page()
-        self.assertEqual(len(result), 2)
+    def test_run_prediction_model_exception(self):
+        with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
+            mock_predict.side_effect = Exception("Model file not found")
+            result = run_prediction(
+                postal="75001",
+                dept="75",
+                town="75101",
+                prop_type="Apartment",
+                area=80,
+                rooms=2,
+                land=20
+            )
+            self.assertIn("Prediction failed", result)
+            self.assertIn("Model file not found", result)
 
-    def test_button_labels(self) -> None:
-        """Verify that the buttons have the correct labels"""
-        self.assertEqual(self.back_home.value, "Retour à l'accueil")
+    # -----------------------------
+    # Tests prediction_page()
+    # -----------------------------
+    def test_prediction_page_components(self):
+         with gr.Blocks():
+            predict_btn, reset_btn, inputs_list, result_output = prediction_page()
+            self.assertIsInstance(predict_btn, gr.Button)
+            self.assertIsInstance(reset_btn, gr.Button)
+            self.assertIsInstance(result_output, gr.Markdown)
+            self.assertIsInstance(inputs_list, list)
+            self.assertTrue(all(isinstance(c, gr.components.Component) for c in inputs_list))
 
-    def test_blocks_structure(self) -> None:
-        """Ensure that the page contains Markdown components"""
-        children_types: list[type] = [type(child) for child in self.prediction.children]
-        self.assertIn(gr.Markdown, children_types, "The page should contain Markdown elements")
+    # -----------------------------
+    # Tests reset_form()
+    # -----------------------------
+    def test_reset_form_returns_list(self):
+        reset_values = reset_form()
+        self.assertIsInstance(reset_values, list)
+        self.assertEqual(len(reset_values), 8)
+        self.assertEqual(reset_values[3], "House")  # Dropdown default
+        self.assertEqual(reset_values[7], "")       # Result output
 
-    def test_css_applied(self) -> None:
-        """Check that custom CSS is defined"""
-        self.assertIn("background-color", self.prediction.css)
-        self.assertIn("#006b6b", self.prediction.css)
+    # -----------------------------
+    # Tests validate_inputs()
+    # -----------------------------
+    def test_validate_inputs_required_field(self):
+        error_msg = validate_inputs("", "75", "75101", "House", 100, 3, 50)
+        self.assertIn("Postal code", error_msg)
 
 
 if __name__ == "__main__":
