@@ -1,8 +1,10 @@
 import os
+import sys
 
 import gradio as gr
 
-os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
+
 from fpi.interface.prediction.form import form, reset_form, validate_inputs
 from fpi.models.build_linear_model import predict_price
 
