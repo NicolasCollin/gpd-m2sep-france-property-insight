@@ -10,7 +10,6 @@ dependencies = [
     "numpy==2.3.3",
     "pandas==2.3.3",
     "pdoc==15.0.4",
-    "plotly==6.4.0",
     "pyarrow==22.0.0",
     "pydantic==2.11.10",
     "scikit-learn==1.7.2",
@@ -57,6 +56,10 @@ ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+# ignore brotli 1.1.0 issue because necessary for curent gradio version
+[tool.pip_audit]
+ignore = ["GHSA-2qfp-q593-8484"]
 
 # uv run shortcuts
 [project.scripts]
