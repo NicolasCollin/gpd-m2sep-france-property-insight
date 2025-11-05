@@ -7,11 +7,11 @@ import gradio as gr
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../..")))
 
-from fpi.interface.prediction.prediction_page import run_prediction, prediction_page
-from fpi.interface.prediction.form import validate_inputs, reset_form
+from fpi.interface.prediction.form import reset_form, validate_inputs
+from fpi.interface.prediction.prediction_page import prediction_page, run_prediction
+
 
 class TestPredictionPage(unittest.TestCase):
-
     # -----------------------------
     # Tests run_prediction()
     # -----------------------------
@@ -19,41 +19,21 @@ class TestPredictionPage(unittest.TestCase):
         with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
             mock_predict.return_value = 500000
             result = run_prediction(
-                postal="75005",
-                dept="75",
-                town="75101",
-                prop_type="House",
-                area=100,
-                rooms=3,
-                land=50
+                postal="75005", dept="75", town="75101", prop_type="House", area=100, rooms=3, land=50
             )
             self.assertIn("Estimated property price", result)
             self.assertIn("500,000", result)
 
     def test_run_prediction_invalid_inputs(self):
         # Postal code invalid
-        result = run_prediction(
-            postal="7500",
-            dept="75",
-            town="75101",
-            prop_type="House",
-            area=100,
-            rooms=3,
-            land=50
-        )
+        result = run_prediction(postal="7500", dept="75", town="75101", prop_type="House", area=100, rooms=3, land=50)
         self.assertIn("postal code", result)
 
     def test_run_prediction_model_exception(self):
         with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
             mock_predict.side_effect = Exception("Model file not found")
             result = run_prediction(
-                postal="75001",
-                dept="75",
-                town="75101",
-                prop_type="Apartment",
-                area=80,
-                rooms=2,
-                land=20
+                postal="75001", dept="75", town="75101", prop_type="Apartment", area=80, rooms=2, land=20
             )
             self.assertIn("Prediction failed", result)
             self.assertIn("Model file not found", result)
@@ -62,7 +42,7 @@ class TestPredictionPage(unittest.TestCase):
     # Tests prediction_page()
     # -----------------------------
     def test_prediction_page_components(self):
-         with gr.Blocks():
+        with gr.Blocks():
             predict_btn, reset_btn, inputs_list, result_output = prediction_page()
             self.assertIsInstance(predict_btn, gr.Button)
             self.assertIsInstance(reset_btn, gr.Button)
@@ -78,7 +58,7 @@ class TestPredictionPage(unittest.TestCase):
         self.assertIsInstance(reset_values, list)
         self.assertEqual(len(reset_values), 8)
         self.assertEqual(reset_values[3], "House")  # Dropdown default
-        self.assertEqual(reset_values[7], "")       # Result output
+        self.assertEqual(reset_values[7], "")  # Result output
 
     # -----------------------------
     # Tests validate_inputs()
