@@ -20,10 +20,10 @@ Dataset - Demandes de valeurs foncières:
   - [Database](#database)
     - [Data Flow Diagram (DFD)](#data-flow-diagram-dfd)
   - [Repository Structure](#repository-structure)
-  - [Current state](#current-state)
-    - [Changelog](#changelog)
   - [Workflow](#workflow)
     - [Git Workflow Diagram](#git-workflow-diagram)
+  - [Current state](#current-state)
+    - [Changelog](#changelog)
   - [Contributors](#contributors)
   - [License](#license)
 
@@ -115,12 +115,33 @@ More infos (origin, localization, methods, variable glossary...) in docs/metadat
 - README.md: This very same file.
 - uv.lock: Lockfile with exact dependency versions for reproducibility.
 
+## Workflow
+
+We protected the main branch, preventing pushing and force pushing.  
+As such, any feature has to developped separately on its own branch before opening a merge request to the main branch.
+
+### Git Workflow Diagram
+
+<img src="docs/git-mr-workflow.png" alt="Git Workflow Diagram" width="800"/>
+
+The branch staging is a safety layer to test deployment before officially releasing to the main branch.
+
 ## Current state
 
-CURRENT STATE: Sprint 1  
-This project will go through 5 sprints with reviews and demonstration.
+CURRENT STATE: Sprint 2  
+This project will go through 5 sprints of 2 weeks.
 
 ### Changelog
+
+**Sprint 2**
+
+Major changes:
+
+- Prediction form for a property value
+- Dashboard: property value overview, direct access to datatable
+- Redesign of the app
+- Selection of variables and data cleaning
+- Data validation with Pydantic schemas
 
 **Sprint 1**
 
@@ -140,18 +161,7 @@ Minor changes:
 - devcontainer to reproduce dev environment
 - Data Flow Diagram
 - Git Workflow and branch rules
-
-## Workflow
-
-We protected the main branch, preventing pushing and force pushing.  
-As such, any feature has to developped separately on its own branch before opening a merge request to the main branch.
-
-### Git Workflow Diagram
-
-<img src="docs/git-mr-workflow.png" alt="Git Workflow Diagram" width="800"/>
-
-The branch staging is a safety layer to test deployment before officially releasing to the main branch.
-
+  
 ## Contributors
 
 - Daniel PHAN: Product Owner/Scrum Master
