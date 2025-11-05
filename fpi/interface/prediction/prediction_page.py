@@ -2,11 +2,8 @@ from typing import List, Tuple
 
 import gradio as gr
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
-
 from fpi.interface.prediction.form import form, reset_form, validate_inputs
 from fpi.models.build_linear_model import predict_price
-
 
 
 # =====================================================================
@@ -50,8 +47,6 @@ def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: floa
     except Exception as e:
         error_str: str = str(e)
         return f"Prediction failed: {error_str}"
-
-
 
 
 # ==============================================================================
