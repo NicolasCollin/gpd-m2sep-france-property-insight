@@ -21,6 +21,8 @@ def home_page() -> Tuple[gr.Button, gr.Button]:
 
     with gr.Row(elem_id="home-cards-container"):
         card_dashboard: gr.Button = gr.Button("Dashboard", elem_id="card-dashboard", elem_classes="home-card")
-        card_estimate: gr.Button = gr.Button("Estimate your property", elem_id="card-prediction", elem_classes="home-card")
+        card_estimate: gr.Button = gr.Button(
+            "Estimate your property", elem_id="card-prediction", elem_classes="home-card"
+        )
 
     return card_dashboard, card_estimate

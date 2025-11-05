@@ -2,7 +2,8 @@ import unittest
 
 import gradio as gr
 
-from fpi.interface.prediction.form import validate_inputs, form, reset_form
+from fpi.interface.prediction.form import form, reset_form, validate_inputs
+
 
 class TestFormModule(unittest.TestCase):
     # -----------------------------

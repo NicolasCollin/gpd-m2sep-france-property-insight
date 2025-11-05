@@ -1,4 +1,5 @@
 from typing import List, Tuple
+
 import gradio as gr
 
 from fpi.interface.prediction.form import form, reset_form, validate_inputs
@@ -8,15 +9,7 @@ from fpi.models.build_linear_model import predict_price
 # =====================================================================
 # CALLBACK : run prediction
 # =====================================================================
-def run_prediction(
-    postal: str, 
-    dept: str, 
-    town: str, 
-    prop_type: str, 
-    area: float, 
-    rooms: int, 
-    land: float
-) -> str:
+def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: float, rooms: int, land: float) -> str:
     """
     Call backs for the "Estimate" button. It prepares the data and calls the model prediction function.
     Args:
@@ -61,12 +54,10 @@ def run_prediction(
 # PREDICTION PAGE LAYOUT
 # ==============================================================================
 
-def prediction_page() -> Tuple[
-    gr.components.Button, 
-    gr.components.Button, 
-    gr.components.Markdown, 
-    List[gr.components.Component]
-]:
+
+def prediction_page() -> (
+    Tuple[gr.components.Button, gr.components.Button, gr.components.Markdown, List[gr.components.Component]]
+):
     """
     Creates and returns the layout for the Prediction Page
 
@@ -79,8 +70,8 @@ def prediction_page() -> Tuple[
     """
 
     with gr.Column():
-        gr_title: gr.components.Markdown = gr.Markdown("## Estimate the property value", elem_classes="page-title")
-        gr_desc: gr.components.Markdown = gr.Markdown("Enter the characteristics of the property to get an estimated price.")
+        gr.Markdown("## Estimate the property value", elem_classes="page-title")
+        gr.Markdown("Enter the characteristics of the property to get an estimated price.")
 
         with gr.Column(elem_classes="glass-box"):
             # --- FORM ---
@@ -95,9 +86,7 @@ def prediction_page() -> Tuple[
 
             # --- RESULT ---
             result_output: gr.components.Markdown = gr.Markdown(
-                value="Estimation : **--- €**", 
-                label="Price estimated", 
-                elem_classes="prediction-result"
+                value="Estimation : **--- €**", label="Price estimated", elem_classes="prediction-result"
             )
 
     # --- LINK CALLBACKS ---

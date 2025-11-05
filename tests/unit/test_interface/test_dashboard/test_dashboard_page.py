@@ -1,5 +1,7 @@
 import unittest
+
 import gradio as gr
+
 from fpi.interface.dashboard.dashboard_page import dashboard_page
 
 

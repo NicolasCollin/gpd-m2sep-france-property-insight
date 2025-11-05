@@ -202,7 +202,7 @@ def app_menu() -> gr.Blocks:
     with gr.Blocks(css=global_css, title="France Property Insight", fill_width=True) as menu:
         # Header / Navbar (applied for all pages)
         with gr.Row(elem_id="navbar"):
-            logo_html: gr.components.HTML = gr.HTML('<div id="logo">FRANCE PROPERTY INSIGHT</div>')
+            gr.HTML('<div id="logo">FRANCE PROPERTY INSIGHT</div>')
             with gr.Row(elem_id="nav-links"):
                 nav_home: gr.components.Button = gr.Button("Home")
                 nav_dashboard: gr.components.Button = gr.Button("Dashboard")
@@ -210,12 +210,8 @@ def app_menu() -> gr.Blocks:
 
         # Home page
         with gr.Column(visible=True, elem_classes="page-content") as home:
-            home_title_md: gr.components.Markdown = gr.Markdown(
-                "## Bienvenue sur FPI Platform", elem_classes="page-title"
-            )
-            home_desc_md: gr.components.Markdown = gr.Markdown(
-                "Explorez, analysez et prédisez les valeurs immobilières grâce à nos outils interactifs."
-            )
+            gr.Markdown("## Bienvenue sur FPI Platform", elem_classes="page-title")
+            gr.Markdown("Explorez, analysez et prédisez les valeurs immobilières grâce à nos outils interactifs.")
             card_dashboard: gr.components.Button
             card_estimate: gr.components.Button
             card_dashboard, card_estimate = home_page()
