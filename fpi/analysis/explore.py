@@ -1,54 +1,71 @@
+from pathlib import Path
+
 import pandas as pd
 
 from fpi.analysis.utils_io import print_info
-from fpi.analysis.utils_plot import save_hist
-from fpi.utils.constants import NUMERIC_VARS, VARS_TO_KEEP
+from fpi.analysis.utils_plot import display_trend
+from fpi.analysis.utils_stats import compute_descriptive_statistics
+from fpi.utils.constants import VARS_TO_KEEP
 
 
-def load_data(file_path: str) -> pd.DataFrame:
+def load_data(cleaned_path: str = "data/cleaned") -> pd.DataFrame:
     """
-    Load the dataset from a raw text file.
+    Automatically load the latest cleaned dataset from the given path.
 
-    :param file_path: Path to the raw dataset
-    :return: Pandas DataFrame
+    Args:
+        cleaned_path (str): Folder containing cleaned CSV files.
+    Returns:
+        pd.DataFrame: The most recent cleaned dataset.
     """
-    return pd.read_csv(file_path, sep="|", header=0)
+    cleaned_dir = Path(cleaned_path)
+    all_files = sorted(cleaned_dir.rglob("cleaned_*.csv"), reverse=True)
+    if not all_files:
+        raise FileNotFoundError(f"No cleaned CSV file found in {cleaned_path}")
+
+    latest_file = all_files[0]
+    print(f"Loaded latest file: {latest_file.name}")
+    return pd.read_csv(latest_file)
 
 
 def preprocess(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Select only the variables we want to keep and rename them in English.
+    Keep only relevant variables defined in constants.
 
-    :param df: Raw DataFrame
-    :return: Cleaned DataFrame with English column names
+    Args:
+        df (pd.DataFrame): Raw DataFrame.
+    Returns:
+        pd.DataFrame: Filtered DataFrame with relevant columns.
     """
-    df = df[VARS_TO_KEEP]
-    df.columns = [
-        "land_value",
-        "postal_code",
-        "building_surface",
-        "mutation_date",
-        "land_surface",
-        "main_rooms",
-    ]
+    df = df[[col for col in VARS_TO_KEEP if col in df.columns]]
     return df
 
 
 def exp() -> None:
     """
-    Main exploration pipeline:
-    - Load
-    - Inspect
-    - Preprocess
-    - Save visualizations
+    Full exploratory pipeline:
+    1️ Load latest cleaned data
+    2️ Display basic info
+    3️ Compute descriptive stats
+    4️ Generate plots (histograms, boxplots, curves)
     """
-    df = load_data("data/raw/sample2024.txt")
+    # --- Step 1: Load latest data ---
+    df = load_data()
+
+    # --- Step 2: Inspect basic info ---
     print_info(df)
 
+    # --- Step 3: Keep relevant columns ---
     df_clean = preprocess(df)
-    save_hist(df_clean, NUMERIC_VARS, output_dir="docs/plots")
+    compute_descriptive_statistics(df_clean)
 
-    print("Plots saved in docs/plots/")
+    # --- Step 4: Plots ---
+    output_dir = "docs/plots"
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+
+    print("\n Generating regional trends...")
+    display_trend("data/cleaned", dept_filter=None, agg="median")
+    for dept in ["75", "92", "93"]:
+        display_trend("data/cleaned", dept_filter=dept, agg="median")
 
 
 if __name__ == "__main__":

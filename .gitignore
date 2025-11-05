@@ -13,6 +13,9 @@ wheels/
 # Specific files
 .gradio/
 docs/site
+dvf.db
+dvf.csv
+.vscode/
 
 #MacOS
 .DS_Store

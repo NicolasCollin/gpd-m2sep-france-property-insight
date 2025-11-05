@@ -29,7 +29,7 @@ def main() -> None:
 
     # Detect Docker environment via env variable
     if os.getenv("RUNNING_IN_DOCKER") == "1":
-        app.launch(share=True, server_name="0.0.0.0", server_port=7860)
+        app.launch(share=True, server_name="0.0.0.0", server_port=7860, debug=True)
     else:
         app.launch()
 

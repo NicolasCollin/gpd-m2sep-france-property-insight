@@ -21,7 +21,7 @@ flowchart BT
  subgraph Database["Database"]
         I["Local SQLite or<br>MySQL server"]
   end
-    A -- API request --> B
+    A -- JSON payload --> B
     B -- Validated Request<br>(Pydantic) --> D
     D -- Query Operations --> E
     E -- Interacts with --> I
