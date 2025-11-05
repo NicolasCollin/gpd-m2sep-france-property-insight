@@ -1,12 +1,8 @@
-import os
-import sys
 import unittest
 
 import gradio as gr
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../..")))
-from fpi.interface.prediction.form import form, reset_form, validate_inputs
-
+from fpi.interface.prediction.form import validate_inputs, form, reset_form
 
 class TestFormModule(unittest.TestCase):
     # -----------------------------

@@ -17,7 +17,7 @@ def dashboard_page() -> gr.Blocks:
 
     gr.Markdown("# Ile-de-France Real Estate Dashboard", elem_classes="page-title")
     gr.Markdown("Explore property values interactively with filters for department and property type.")
-
-    dashboard = display_dashboard()
+    
+    dashboard: gr.Blocks = display_dashboard()
 
     return dashboard
