@@ -1,19 +1,13 @@
-from typing import List
-
 import gradio as gr
+
 from fpi.interface.prediction.form import form, reset_form, validate_inputs
 from fpi.models.build_linear_model import predict_price
+
 
 # =====================================================================
 # CALLBACK : run prediction
 # =====================================================================
-def run_prediction(postal: str, 
-                   dept: str, 
-                   town: str, 
-                   prop_type: str, 
-                   area: float, 
-                   rooms: int, 
-                   land: float) -> str:
+def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: float, rooms: int, land: float) -> str:
     """
     Call backs for the "Estimate" button. It prepares the data and calls the model prediction function.
     Args:
@@ -27,7 +21,6 @@ def run_prediction(postal: str,
     Returns:
         A string with the predicted price or an error message.
     """
-
 
     error_msg = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
     if error_msg:
@@ -51,6 +44,7 @@ def run_prediction(postal: str,
         return f"Estimated property price: €{predicted_price:,.0f}"
     except Exception as e:
         return f"Prediction failed: {str(e)}"
+
 
 # ==============================================================================
 # PREDICTION PAGE LAYOUT

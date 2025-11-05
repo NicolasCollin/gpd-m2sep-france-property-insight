@@ -1,4 +1,4 @@
-import re  
+import re
 from typing import Any, List
 
 import gradio as gr
