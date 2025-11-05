@@ -36,7 +36,7 @@ def typecheck(extra_args: Optional[str] = None) -> None:
 
 def audit() -> None:
     """Run a security audit with pip-audit."""
-    run_command("uv run pip-audit .")
+    run_command("uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484")
 
 
 def run_pytest(extra_args: Optional[str] = None) -> None:

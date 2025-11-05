@@ -1,4 +1,4 @@
-,Count,Mean,Std,Min,Q1,Median,Q3,Max,Missing,Missing%
+,Count,Mean,Std Dev,Minimum,Q1 (25th%),Median,Q3 (75th%),Maximum,Missing,Missing (%)
 postal_code,"8,021","95,380.00",210.53,"95,000.00","95,220.00","95,350.00","95,520.00","95,880.00",0,0.0%
 department_code,"8,021",95.00,0.00,95.00,95.00,95.00,95.00,95.00,0,0.0%
 town_code,"8,021",319.04,201.88,2.00,166.00,306.00,500.00,690.00,0,0.0%

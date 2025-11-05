@@ -1,8 +1,13 @@
+from typing import Any, Callable, List
+
 import gradio as gr
 
 from fpi.interface.dashboard.dashboard_page import dashboard_page
 from fpi.interface.home.home_page import home_page
 from fpi.interface.prediction.prediction_page import prediction_page
+
+# Correct type for Gradio update function
+update_fn: Callable[..., Any] = gr.update
 
 # ===========================================
 #               CSS global
@@ -151,7 +156,7 @@ h2.page-title {
 
 
 # --- Pages navigation ---
-def show_page(page_id: str) -> list[gr.update]:
+def show_page(page_id: str) -> List[Any]:
     """
     Updates the visibility of the main content columns to show only the selected page.
 
@@ -199,14 +204,16 @@ def app_menu() -> gr.Blocks:
         with gr.Row(elem_id="navbar"):
             gr.HTML('<div id="logo">FRANCE PROPERTY INSIGHT</div>')
             with gr.Row(elem_id="nav-links"):
-                nav_home = gr.Button("Home")
-                nav_dashboard = gr.Button("Dashboard")
-                nav_estimate = gr.Button("Estimate your property")
+                nav_home: gr.components.Button = gr.Button("Home")
+                nav_dashboard: gr.components.Button = gr.Button("Dashboard")
+                nav_estimate: gr.components.Button = gr.Button("Estimate your property")
 
         # Home page
         with gr.Column(visible=True, elem_classes="page-content") as home:
             gr.Markdown("## Bienvenue sur FPI Platform", elem_classes="page-title")
             gr.Markdown("Explorez, analysez et prédisez les valeurs immobilières grâce à nos outils interactifs.")
+            card_dashboard: gr.components.Button
+            card_estimate: gr.components.Button
             card_dashboard, card_estimate = home_page()
 
         # Dashboard page
@@ -215,10 +222,14 @@ def app_menu() -> gr.Blocks:
 
         # Prediction page
         with gr.Column(visible=False, elem_classes="page-content") as prediction:
+            predict_btn: gr.components.Button
+            reset_btn: gr.components.Button
+            result_output: gr.components.Markdown
+            inputs_list: List[gr.components.Component]
             predict_btn, reset_btn, result_output, inputs_list = prediction_page()
 
         # Navigation logic
-        all_pages = [home, dashboard, prediction]
+        all_pages: List[gr.components.Component] = [home, dashboard, prediction]
 
         # Navigation button clicks
         nav_home.click(fn=show_page, inputs=gr.State("home"), outputs=all_pages)
