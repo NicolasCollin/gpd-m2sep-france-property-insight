@@ -112,10 +112,10 @@ def display_dashboard() -> gr.Blocks:
     """
     with gr.Blocks() as dashboard:
         with gr.Tab("Overview"):
-            _: gr.Blocks = table(df)
+            _ = table(df)
 
         with gr.Tab("Data vizualisation"):
-            _: gr.BarPlot = nb_property_by_dept(df)
-            _: gr.Plot = evolution_price_by_dept(df)
+            _ = nb_property_by_dept(df)
+            _ = evolution_price_by_dept(df)
 
     return dashboard
