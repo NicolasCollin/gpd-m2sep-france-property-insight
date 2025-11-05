@@ -3,6 +3,10 @@ import unittest
 from pathlib import Path
 from typing import List
 
+import matplotlib
+
+matplotlib.use("Agg")
+
 from fpi.analysis.explore import display_trend, load_data
 from fpi.utils.constants import VARS_TO_KEEP
 
