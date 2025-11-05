@@ -1,6 +1,5 @@
 import gradio as gr
-import os
-import sys
+
 from fpi.analysis.utils_dashboard import display_dashboard
 
 # -------------------------------------------------------------------
@@ -8,7 +7,7 @@ from fpi.analysis.utils_dashboard import display_dashboard
 # -------------------------------------------------------------------
 
 
-def dashboard_page() -> gr.Blocks :
+def dashboard_page() -> gr.Blocks:
     """
     Interactive dashboard for Ile-de-France real estate data.
 
@@ -18,7 +17,7 @@ def dashboard_page() -> gr.Blocks :
 
     gr.Markdown("# Ile-de-France Real Estate Dashboard", elem_classes="page-title")
     gr.Markdown("Explore property values interactively with filters for department and property type.")
-    
+
     dashboard: gr.Blocks = display_dashboard()
 
     return dashboard

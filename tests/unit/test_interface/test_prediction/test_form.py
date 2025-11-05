@@ -1,12 +1,11 @@
-import sys
-import os
 import unittest
+
 import gradio as gr
 
-from fpi.interface.prediction.form import validate_inputs, form, reset_form
+from fpi.interface.prediction.form import form, reset_form, validate_inputs
+
 
 class TestFormModule(unittest.TestCase):
-
     # -----------------------------
     # Tests validate_inputs
     # -----------------------------
@@ -34,21 +33,17 @@ class TestFormModule(unittest.TestCase):
         msg = validate_inputs("7500", "75", "75101", "House", 100, 3, 50)
         self.assertIn("postal code", msg)
 
-
-
     # -----------------------------
     # Tests form()
     # -----------------------------
     def test_form_returns_components(self):
-        with gr.Blocks(): 
+        with gr.Blocks():
             inputs_list, prop_type_input = form()
             self.assertIsInstance(inputs_list, list)
             self.assertTrue(all(isinstance(c, gr.components.Component) for c in inputs_list))
             self.assertIsInstance(prop_type_input, gr.Dropdown)
             self.assertEqual([c[0] for c in prop_type_input.choices], ["House", "Apartment"])
             self.assertEqual(prop_type_input.value, "House")
-
-
 
     # -----------------------------
     # Tests reset_form()
@@ -65,8 +60,6 @@ class TestFormModule(unittest.TestCase):
         self.assertIsNone(reset_values[5])  # rooms
         self.assertIsNone(reset_values[6])  # land
         self.assertEqual(reset_values[7], "")  # result output
-
-
 
 
 if __name__ == "__main__":

@@ -1,4 +1,5 @@
 import os
+
 import gradio as gr
 
 from fpi.interface.menu import app_menu

@@ -1,6 +1,3 @@
-import os
-import sys
-
 import gradio as gr
 import pandas as pd
 import plotly.express as px
@@ -9,6 +6,7 @@ from fpi.data_pipeline.data_prep import load_data
 
 # Load dataset once to optimize performance
 df: pd.DataFrame = load_data()
+
 
 def table(df: pd.DataFrame) -> gr.Blocks:
     """
@@ -112,10 +110,10 @@ def display_dashboard() -> gr.Blocks:
     """
     with gr.Blocks() as dashboard:
         with gr.Tab("Overview"):
-            table_block: gr.Blocks = table(df)
+            _: gr.Blocks = table(df)
 
         with gr.Tab("Data vizualisation"):
-            bar_plot_block: gr.BarPlot = nb_property_by_dept(df)
-            line_plot_block: gr.Plot = evolution_price_by_dept(df)
+            _: gr.BarPlot = nb_property_by_dept(df)
+            _: gr.Plot = evolution_price_by_dept(df)
 
     return dashboard

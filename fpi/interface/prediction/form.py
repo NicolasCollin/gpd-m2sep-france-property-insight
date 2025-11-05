@@ -1,4 +1,4 @@
-import re  
+import re
 from typing import Any, List, Tuple
 
 import gradio as gr
@@ -8,15 +8,7 @@ import gradio as gr
 # ==============================================================================
 
 
-def validate_inputs(
-    postal: str,
-    dept: str,
-    town: str,
-    prop_type: str,
-    area: float,
-    rooms: int,
-    land: float
-) -> str:
+def validate_inputs(postal: str, dept: str, town: str, prop_type: str, area: float, rooms: int, land: float) -> str:
     """
     Performs basic security and validation checks on raw form inputs.
 
@@ -73,21 +65,15 @@ def form() -> Tuple[List[gr.components.Component], gr.Dropdown]:
 
     # --- LOCATION ---
     with gr.Row():
-        postal_input: gr.Textbox = gr.Textbox(
-            label="Postal code", placeholder="Ex: 75001", lines=1, interactive=True
-        )
+        postal_input: gr.Textbox = gr.Textbox(label="Postal code", placeholder="Ex: 75001", lines=1, interactive=True)
         dept_code_input: gr.Textbox = gr.Textbox(
             label="Department code", placeholder="Ex: 75 ou 974", lines=1, interactive=True
         )
-        town_code_input: gr.Textbox = gr.Textbox(
-            label="Town code", placeholder="Ex: 75101", lines=1, interactive=True
-        )
+        town_code_input: gr.Textbox = gr.Textbox(label="Town code", placeholder="Ex: 75101", lines=1, interactive=True)
 
     # --- CHARACTERISTICS ---
     with gr.Row():
-        prop_type_input: gr.Dropdown = gr.Dropdown(
-            label="Property type", choices=["House", "Apartment"], value="House"
-        )
+        prop_type_input: gr.Dropdown = gr.Dropdown(label="Property type", choices=["House", "Apartment"], value="House")
         area_input: gr.Number = gr.Number(label="Living area (m²)", minimum=1, step=1)
         rooms_input: gr.Number = gr.Number(label="Number of rooms", minimum=1, step=1)
         land_input: gr.Number = gr.Number(label="Land area (m²)", minimum=0, step=1)
