@@ -1,5 +1,6 @@
 import unittest
 from unittest.mock import patch
+
 import gradio as gr
 
 from fpi.interface.prediction.form import reset_form, validate_inputs
@@ -38,7 +39,7 @@ class TestPredictionPage(unittest.TestCase):
     # -----------------------------
     def test_prediction_page_components(self):
         with gr.Blocks():
-            predict_btn, reset_btn,  result_output, inputs_list = prediction_page()
+            predict_btn, reset_btn, result_output, inputs_list = prediction_page()
             self.assertIsInstance(predict_btn, gr.Button)
             self.assertIsInstance(reset_btn, gr.Button)
             self.assertIsInstance(result_output, gr.Markdown)
