@@ -9,17 +9,20 @@ VARS_TO_KEEP = [
     "land_area",
 ]
 
-VARS_TO_KEEP_FR = [
-    "Valeur fonciere",
-    "Code postal",
-    "Surface reelle bati",
-    "Date mutation",
-    "Surface terrain",
-    "Nombre pieces principales",
-]
-
 NUMERIC_VARS = [
     "building_area",
     "land_area",
     "main_rooms",
 ]
+
+
+DEPT_NAMES = {
+    "75": "Paris",
+    "77": "Seine-et-Marne",
+    "78": "Yvelines",
+    "91": "Essonne",
+    "92": "Hauts-de-Seine",
+    "93": "Seine-Saint-Denis",
+    "94": "Val-de-Marne",
+    "95": "Val-d’Oise",
+}

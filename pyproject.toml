@@ -5,15 +5,15 @@ description = "France Property Insight: Predicitve and analytic app for Master 2
 requires-python = ">=3.13"
 dependencies = [
     "gradio==5.49.1",
-    "joblib>=1.5.2",
+    "joblib==1.5.2",
     "matplotlib==3.10.7",
-    "numpy>=2.3.3",
+    "numpy==2.3.3",
     "pandas==2.3.3",
     "pdoc==15.0.4",
-    "scikit-learn>=1.7.2",
-    "seaborn>=0.13.2",
+    "scikit-learn==1.7.2",
+    "seaborn==0.13.2",
     "sqlalchemy==2.0.44",
-    "tabulate>=0.9.0",
+    "tabulate==0.9.0",
 ]
 
 # depedencies not needed for users
@@ -47,6 +47,17 @@ line-length = 120
 # default linting rules + isort
 [tool.ruff.lint]
 select = ["E", "F", "I"]
+
+# ignore missing type imports
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+# ignore brotli 1.1.0 issue because necessary for curent gradio version
+[tool.pip_audit]
+ignore = ["GHSA-2qfp-q593-8484"]
 
 # uv run shortcuts
 [project.scripts]
