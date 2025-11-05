@@ -1,3 +1,5 @@
+from typing import Any, List
+
 import gradio as gr
 
 from fpi.interface.dashboard.dashboard_page import dashboard_page
@@ -151,7 +153,7 @@ h2.page-title {
 
 
 # --- Pages navigation ---
-def show_page(page_id: str) -> list[gr.update]:
+def show_page(page_id: str) -> List[Any]:
     """
     Updates the visibility of the main content columns to show only the selected page.
 

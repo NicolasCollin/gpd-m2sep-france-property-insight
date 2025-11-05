@@ -29,7 +29,7 @@ def prediction_page() -> (
 
         with gr.Column(elem_classes="glass-box"):
             # --- FORM ---
-            inputs_list: List[gr.components.Component] = form()
+            inputs_list: List[gr.components.Component] = form()[0]
 
             # --- BUTTONS ---
             with gr.Row():

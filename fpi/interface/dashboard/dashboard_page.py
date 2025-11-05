@@ -1,10 +1,8 @@
-from typing import Tuple
-
 import gradio as gr  # Import Gradio for building the interface
 
 
 # --- Dashboard Page Layout ---
-def dashboard_page() -> Tuple[gr.Blocks, gr.Button]:
+def dashboard_page() -> None:
     """
     Create and return the layout for the Dashboard Page.
 
