@@ -1,5 +1,5 @@
 import re
-from typing import Any, List
+from typing import Any, List, Tuple
 
 import gradio as gr
 
@@ -10,23 +10,13 @@ import gradio as gr
 
 def validate_inputs(postal: str, dept: str, town: str, prop_type: str, area: float, rooms: int, land: float) -> str:
     """
-    This function performs basic security and validation checks on raw form inputs.
+    Performs basic security and validation checks on raw form inputs.
 
-    Args:
-        postal: Postal code (string).
-        dept: Department code (string).
-        town_code: Town code (string).
-        prop_type: Property type ("House" / "Apartment").
-        area: Living area in square meters (float).
-        rooms: Number of rooms (integer).
-        land: Land area in square meters (float).
-
-    Returns:
-        An error message string if validation fails, otherwise an empty string.
+    Returns an error message string if validation fails, otherwise an empty string.
     """
 
     # Check for required fields (mandatory fields)
-    required_fields: dict = {
+    required_fields: dict[str, Any] = {
         "Postal code": postal,
         "Department code": dept,
         "Town code": town,
@@ -51,7 +41,8 @@ def validate_inputs(postal: str, dept: str, town: str, prop_type: str, area: flo
         return "Error : Please enter valid numbers for areas and rooms."
 
     # Format check for Postal code (simple 5 digits check)
-    if not (isinstance(postal, str) and re.fullmatch(r"^\d{5}$", postal.strip())):
+    postal_clean: str = postal.strip()
+    if not re.fullmatch(r"^\d{5}$", postal_clean):
         return "Error : postal code must be a 5-digit number."
 
     return ""  # Validation successful
@@ -62,28 +53,30 @@ def validate_inputs(postal: str, dept: str, town: str, prop_type: str, area: flo
 # ==============================================================================
 
 
-def form() -> tuple[List[gr.components.Component], gr.Dropdown]:
+def form() -> Tuple[List[gr.components.Component], gr.Dropdown]:
     """
     Creates the Gradio input form structure for property estimation.
 
     Returns:
         A tuple containing:
-        1. inputs_list: An ordered list of all input components (excluding prop_type).
+        1. inputs_list: An ordered list of all input components (including prop_type).
         2. prop_type_input: The Dropdown component, returned separately for clarity.
     """
 
     # --- LOCATION ---
     with gr.Row():
-        postal_input = gr.Textbox(label="Postal code", placeholder="Ex: 75001", lines=1, interactive=True)
-        dept_code_input = gr.Textbox(label="Department code", placeholder="Ex: 75 ou 974", lines=1, interactive=True)
-        town_code_input = gr.Textbox(label="Town code", placeholder="Ex: 75101", lines=1, interactive=True)
+        postal_input: gr.Textbox = gr.Textbox(label="Postal code", placeholder="Ex: 75001", lines=1, interactive=True)
+        dept_code_input: gr.Textbox = gr.Textbox(
+            label="Department code", placeholder="Ex: 75 ou 974", lines=1, interactive=True
+        )
+        town_code_input: gr.Textbox = gr.Textbox(label="Town code", placeholder="Ex: 75101", lines=1, interactive=True)
 
     # --- CHARACTERISTICS ---
     with gr.Row():
-        prop_type_input = gr.Dropdown(label="Property type", choices=["House", "Apartment"], value="House")
-        area_input = gr.Number(label="Living area (m²)", minimum=1, step=1)
-        rooms_input = gr.Number(label="Number of rooms", minimum=1, step=1)
-        land_input = gr.Number(label="Land area (m²)", minimum=0, step=1)
+        prop_type_input: gr.Dropdown = gr.Dropdown(label="Property type", choices=["House", "Apartment"], value="House")
+        area_input: gr.Number = gr.Number(label="Living area (m²)", minimum=1, step=1)
+        rooms_input: gr.Number = gr.Number(label="Number of rooms", minimum=1, step=1)
+        land_input: gr.Number = gr.Number(label="Land area (m²)", minimum=0, step=1)
 
     inputs_list: List[gr.components.Component] = [
         postal_input,
@@ -112,13 +105,22 @@ def reset_form() -> List[Any]:
         result output, used by Gradio's update mechanism to clear the components.
     """
     # Order: [postal, dept, town, prop_type, area, rooms, land, result_output]
+    postal_default: None = None
+    dept_default: None = None
+    town_default: None = None
+    prop_type_default: str = "House"
+    area_default: None = None
+    rooms_default: None = None
+    land_default: None = None
+    result_output_default: str = ""
+
     return [
-        None,  # 1. postal
-        None,  # 2. dept
-        None,  # 3. town
-        "House",  # 4. prop_type (Dropdown default value)
-        None,  # 5. area
-        None,  # 6. rooms
-        None,  # 7. land
-        "",  # 8. result_output (empty string)
+        postal_default,
+        dept_default,
+        town_default,
+        prop_type_default,
+        area_default,
+        rooms_default,
+        land_default,
+        result_output_default,
     ]

@@ -1,11 +1,7 @@
-import os
-import sys
 import unittest
 from unittest.mock import patch
 
 import gradio as gr
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../..")))
 
 from fpi.interface.prediction.form import reset_form, validate_inputs
 from fpi.interface.prediction.prediction_page import prediction_page, run_prediction
@@ -17,7 +13,7 @@ class TestPredictionPage(unittest.TestCase):
     # -----------------------------
     def test_run_prediction_valid_inputs(self):
         with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
-            mock_predict.return_value = 500000
+            mock_predict.return_value: float = 500000
             result = run_prediction(
                 postal="75005", dept="75", town="75101", prop_type="House", area=100, rooms=3, land=50
             )

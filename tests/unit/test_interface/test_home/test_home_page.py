@@ -1,11 +1,7 @@
-import os
-import sys
 import unittest
 from typing import Tuple
 
 import gradio as gr
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../..")))
 
 from fpi.interface.home.home_page import home_page
 
