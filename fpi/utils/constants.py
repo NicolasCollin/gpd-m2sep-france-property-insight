@@ -28,3 +28,15 @@ NUMERIC_VARS: List[str] = [
 # ML pipeline constants
 DEFAULT_TEST_SIZE: float = 0.3
 RANDOM_STATE: int = 42
+
+
+DEPT_NAMES = {
+    "75": "Paris",
+    "77": "Seine-et-Marne",
+    "78": "Yvelines",
+    "91": "Essonne",
+    "92": "Hauts-de-Seine",
+    "93": "Seine-Saint-Denis",
+    "94": "Val-de-Marne",
+    "95": "Val-d’Oise",
+}

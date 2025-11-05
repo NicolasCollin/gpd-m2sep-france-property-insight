@@ -3,9 +3,9 @@ from pathlib import Path
 import pandas as pd
 
 from fpi.analysis.utils_io import print_info
-from fpi.analysis.utils_plot import property_trend, save_hist
-from fpi.analysis.utils_stats import statdes
-from fpi.utils.constants import NUMERIC_VARS, VARS_TO_KEEP
+from fpi.analysis.utils_plot import display_trend
+from fpi.analysis.utils_stats import compute_descriptive_statistics
+from fpi.utils.constants import VARS_TO_KEEP
 
 
 def load_data(cleaned_path: str = "data/cleaned") -> pd.DataFrame:
@@ -56,25 +56,16 @@ def exp() -> None:
 
     # --- Step 3: Keep relevant columns ---
     df_clean = preprocess(df)
-    statdes(df_clean)
+    compute_descriptive_statistics(df_clean)
 
     # --- Step 4: Plots ---
     output_dir = "docs/plots"
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
-    print("\n Generating histograms...")
-    save_hist(df_clean, NUMERIC_VARS, output_dir=output_dir)
-
-    # print("\n Generating boxplot for property_value...")
-    # save_lv(df_clean, "property_value", output_dir=output_dir)
-
-    # print("\n Generating KDE curves (by year and department)...")
-    # save_curv(cleaned_path="data/cleaned", var="property_value", output_dir=output_dir)
-
-    print("\n Generating property value trend...")
-    property_trend(cleaned_path="data/cleaned", output_dir="docs/plots", agg="median")
-
-    print("\n All plots successfully saved in docs/plots/")
+    print("\n Generating regional trends...")
+    display_trend("data/cleaned", dept_filter=None, agg="median")
+    for dept in ["75", "92", "93"]:
+        display_trend("data/cleaned", dept_filter=dept, agg="median")
 
 
 if __name__ == "__main__":
