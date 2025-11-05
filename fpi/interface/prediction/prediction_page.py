@@ -49,7 +49,6 @@ def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: floa
         return f"Prediction failed: {error_str}"
 
 
-
 # ==============================================================================
 # PREDICTION PAGE LAYOUT
 # ==============================================================================
