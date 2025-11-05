@@ -96,8 +96,6 @@ def evolution_price_by_dept(df: pd.DataFrame) -> gr.Plot:
         markers=True,
         labels={"year": "Year", "property_value": "Average Property Price (€)", "department_code": "Department"},
         title="Annual evolution of property prices by department",
-        labels={"year": "Year", "property_value": "Average Property Price (€)", "department_code": "Department"},
-        title="Annual evolution of property prices by department",
     )
 
     return gr.Plot(value=fig)
