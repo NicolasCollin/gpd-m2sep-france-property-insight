@@ -3,7 +3,9 @@ from typing import List, Tuple
 import gradio as gr
 
 from fpi.interface.prediction.form import form, reset_form, validate_inputs
-from fpi.models.build_linear_model import predict_price
+
+# from fpi.models.build_linear_model import predict_price
+from fpi.models.predict import predict_price
 
 
 # =====================================================================
@@ -40,7 +42,9 @@ def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: floa
         "department_code": int(dept),
     }
 
-    model_path: str = "fpi/models/linear_model.pkl"
+    # model_path: str = "fpi/models/linear_model.pkl"
+    model_path: str = "fpi/models/rf_model.joblib"
+
     try:
         predicted_price: float = predict_price(model_path=model_path, input_data=input_data)
         return f"Estimated property price: €{predicted_price:,.0f}"
