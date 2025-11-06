@@ -2,9 +2,9 @@ from pathlib import Path
 
 import pandas as pd
 
-from fpi.analysis.utils_io import print_info
-from fpi.analysis.utils_plot import display_trend
-from fpi.analysis.utils_stats import compute_descriptive_statistics
+from fpi.analysis.io import print_info
+from fpi.analysis.plot import display_trend
+from fpi.analysis.stats import compute_descriptive_statistics
 from fpi.utils.constants import VARS_TO_KEEP
 
 
