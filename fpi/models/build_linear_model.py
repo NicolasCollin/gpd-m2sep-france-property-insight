@@ -167,7 +167,7 @@ def save_model(model: BaseEstimator, path: str) -> None:
 
     Args:
         - model (BaseEstimator): Fitted scikit-learn model.
-        - path (str): Destination file path (e.g. 'fpi/models/model.pkl').
+        - path (str): Destination file path (e.g. 'fpi/models/model.joblib').
     """
     joblib.dump(model, path)
 
@@ -266,7 +266,7 @@ def mock_build_lm() -> None:
     Outputs: Saves the trained model to the specified path.
     """
     folder_path: str = "data/cleaned/cleaned2024"
-    model_path: str = "fpi/models/linear_model.pkl"
+    model_path: str = "fpi/models/linear_model.joblib"
     numeric_features: List[str] = ["building_area", "main_rooms", "land_area"]
     categorical_features: List[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
     target_col: str = "log_value"
@@ -287,7 +287,7 @@ def mock_build_ridge() -> None:
     Outputs: Saves the trained model to the specified path.
     """
     folder_path: str = "data/cleaned/cleaned2024"
-    model_path: str = "fpi/models/ridge_model.pkl"
+    model_path: str = "fpi/models/ridge_model.joblib"
     numeric_features: List[str] = ["building_area", "main_rooms", "land_area"]
     categorical_features: List[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
     target_col: str = "log_value"
@@ -309,7 +309,7 @@ def predict_price(model_path: str, input_data: Dict[str, float]) -> float:
     Handles one-hot encoding of categorical features and auto-aligns columns.
 
     Args:
-        - model_path (str): Path to the trained model (.pkl file).
+        - model_path (str): Path to the trained model (.joblib file).
         - input_data (Dict[str, float]): Dictionary of property features.
 
     Returns:
@@ -350,7 +350,7 @@ def mock_predict_price() -> None:
         "department_code": 75,
     }
 
-    model_path: str = "fpi/models/linear_model.pkl"
+    model_path: str = "fpi/models/linear_model.joblib"
 
     predicted_price: float = predict_price(model_path=model_path, input_data=example_input)
     print(f"Mock predicted price: €{predicted_price:,.0f}")
