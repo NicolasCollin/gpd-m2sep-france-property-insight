@@ -1,7 +1,7 @@
 import gradio as gr
 import pandas as pd
 
-from fpi.analysis.dashboard import evolution_price_by_dept, nb_property_by_dept
+from fpi.analysis.dashboard import evolution_price_by_dept, plot_sales_count_by_department
 from fpi.data_pipeline.data_prep import load_data
 
 
@@ -45,7 +45,7 @@ def display_dashboard() -> gr.Blocks:
             _ = table(df)
 
         with gr.Tab("Data vizualisation"):
-            _ = nb_property_by_dept(df)
+            _ = plot_sales_count_by_department(df)
             _ = evolution_price_by_dept(df)
 
     return dashboard

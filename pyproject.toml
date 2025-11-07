@@ -68,7 +68,6 @@ ignore = ["GHSA-2qfp-q593-8484"]
 main = "fpi.main:main"
 fpi = "fpi.main:main"
 fpidocker = "fpi.utils.aliases:fpidocker"
-exp= "fpi.analysis.explore:exp"
 # code quality
 precommit = "fpi.utils.aliases:precommit"
 lint = "fpi.utils.aliases:precommit"
@@ -81,6 +80,7 @@ ci = "fpi.utils.aliases:ci"
 apidoc = "fpi.utils.aliases:apidoc"
 apidocsave = "fpi.utils.aliases:apidocsave"
 # dev shortcuts
+exp = "fpi.analysis.explore:explore"
 mockridge = "fpi.models.build_linear_model:mock_build_ridge"
 mocklm = "fpi.models.build_linear_model:mock_build_lm"
 mockpredict = "fpi.models.build_linear_model:mock_predict_price"

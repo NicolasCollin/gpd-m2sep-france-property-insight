@@ -7,7 +7,7 @@ import pandas as pd
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
 
-from fpi.analysis.utils_dashboard import evolution_price_by_dept, nb_property_by_dept, table
+from fpi.analysis.utils_dashboard import evolution_price_by_dept, plot_sales_count_by_department, table
 
 
 class TestUtilsDashboard(unittest.TestCase):
@@ -26,8 +26,8 @@ class TestUtilsDashboard(unittest.TestCase):
         result = table(self.df)
         self.assertIsInstance(result, gr.Blocks)
 
-    def test_nb_property_by_dept_returns_barplot(self):
-        result = nb_property_by_dept(self.df)
+    def test_plot_sales_count_by_department_returns_barplot(self):
+        result = plot_sales_count_by_department(self.df)
         self.assertIsInstance(result, gr.BarPlot)
         # Verify department code
         df_grouped = self.df.groupby("department_code").size().reset_index(name="property_count")
