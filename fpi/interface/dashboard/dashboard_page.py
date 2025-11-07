@@ -1,19 +1,19 @@
 import gradio as gr
 import pandas as pd
 
-from fpi.analysis.dashboard import evolution_price_by_dept, plot_sales_count_by_department
+from fpi.analysis.dashboard import plot_price_evolution_by_department, plot_sales_count_by_department
 from fpi.data_pipeline.data_prep import load_data
 
 
-def table(df: pd.DataFrame) -> gr.Blocks:
+def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
     """
     Display key summary statistics and a preview of the dataset.
 
     Args:
-        df: pd.DataFrame
+        df (pd.DataFrame): a DataFrame that contains all the csv data from 2021 to 2024.
 
     Returns:
-        gr.Blocks: Gradio block containing summary statistics and data table.
+        table_block (gr.Blocks): Gradio block containing summary statistics and data table.
     """
     with gr.Blocks() as table_block:
         with gr.Row():
@@ -42,16 +42,16 @@ def display_dashboard() -> gr.Blocks:
     df: pd.DataFrame = load_data()
     with gr.Blocks() as dashboard:
         with gr.Tab("Overview"):
-            _ = table(df)
+            _ = get_dashboard_table(df)
 
         with gr.Tab("Data vizualisation"):
             _ = plot_sales_count_by_department(df)
-            _ = evolution_price_by_dept(df)
+            _ = plot_price_evolution_by_department(df)
 
     return dashboard
 
 
-def dashboard_page() -> gr.Blocks:
+def get_dashboard_page() -> gr.Blocks:
     """
     Interactive dashboard for Ile-de-France real estate data.
 

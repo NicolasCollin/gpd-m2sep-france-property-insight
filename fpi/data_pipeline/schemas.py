@@ -3,24 +3,47 @@ from pydantic import BaseModel, Field, field_validator
 
 
 class PredictionFormSchema(BaseModel):
-    postal: str | None = None
-    dept: str | None = None
-    town: str | None = None
+    """
+    Schema for storing user inputs from the property prediction form.
+
+    Attributes:
+        postal (str): Postal code (5-digit string).
+        dept (str): Department code.
+        town (str): Town code.
+        prop_type (str): Property type, default "House".
+        area (float): Living area in m².
+        rooms (int): Number of rooms.
+        land (float): Land area in m².
+        output (str): Prediction output, default empty string.
+    """
+
+    postal: str
+    dept: str
+    town: str
     prop_type: str = "House"
-    area: float | None = None
-    rooms: int | None = None
-    land: float | None = None
+    area: float
+    rooms: int
+    land: float
     output: str = ""
 
 
 class PropertyData(BaseModel):
     """
-    Structured record for a *cleaned* DVF row.
+    Structured representation of a single cleaned DVF row.
 
-    Each attribute maps 1-to-1 to a column name present in our **cleaned CSV**
-    files. Constraints are intentionally light but meaningful for a university
-    project: positivity/non-negativity, plausible code ranges, and robust
-    parsing of European number formats.
+    Attributes:
+        property_value (float): Sale price of the property (must be >0).
+        postal_code (int): Postal code (1000–99999).
+        department_code (int): Department code (1–976).
+        town_code (int): Town code (>0).
+        property_type_code (int): Numeric code for property type (1=House, 2=Apartment, 3=Other, 4=Land).
+        building_area (float): Living area in m² (>=0).
+        main_rooms (float): Number of main rooms (>=0).
+        land_area (float): Land area in m² (>=0).
+
+    Notes:
+        - Numeric fields can be provided as floats, ints, or strings with European decimal commas.
+        - Validators ensure type coercion before field constraints are applied.
     """
 
     property_value: float = Field(..., gt=0)
@@ -32,10 +55,23 @@ class PropertyData(BaseModel):
     main_rooms: float = Field(..., ge=0)
     land_area: float = Field(..., ge=0)
 
-    # helpers
     @staticmethod
     def _to_float_eu(v: float | int | str | None) -> float:
-        """Parse floats that may use European comma decimals or come as numbers/strings."""
+        """
+        Parse numeric values that may come as floats, ints, or strings
+        using a European decimal format (comma as decimal separator).
+
+        Args:
+            v (float | int | str | None): Input value to convert.
+
+        Returns:
+            v (float): Converted float value.
+
+        Raises:
+            ValueError:
+            - If the value is None or cannot be parsed as a valid float.
+        """
+
         if v is None or (isinstance(v, float) and pd.isna(v)):
             raise ValueError("Missing numeric value")
         if isinstance(v, str):
@@ -44,12 +80,12 @@ class PropertyData(BaseModel):
 
     @field_validator("property_value", "building_area", "main_rooms", "land_area", mode="before")
     def parse_float_fields(cls, v: float | int | str | None) -> float:
-        """Accept '200000,00' or '15,5' and coerce to float before constraints apply."""
+        """Coerce numeric fields to float before applying constraints."""
         return cls._to_float_eu(v)
 
     @field_validator("postal_code", "department_code", "town_code", "property_type_code", mode="before")
-    def parse_int_fields(cls, v: float | int) -> int:
-        """Coerce numeric codes that may arrive as floats or strings."""
+    def parse_int_fields(cls, v: float | int | str) -> int:
+        """Coerce numeric codes to int before applying constraints."""
         if isinstance(v, float) and not pd.isna(v):
             return int(v)
         if isinstance(v, str):
@@ -60,7 +96,7 @@ class PropertyData(BaseModel):
 
     @field_validator("property_type_code")
     def property_type_in_known_range(cls, v: int) -> int:
-        """Ensure property_type_code is within expected values."""
+        """Ensure property_type_code is one of the known valid values (1–4)."""
         if v not in {1, 2, 3, 4}:
             raise ValueError("property_type_code must be one of {1,2,3,4}")
         return v

@@ -26,9 +26,6 @@ def clean_data(raw_path: Path | str = "data/raw", cleaned_path: Path | str = "da
         - cleaned_path (Path | str):
             Path to the directory where cleaned CSV files will be saved (default: `"data/cleaned"`).
 
-    Returns:
-        - None
-
     Output:
         - Cleaned CSV files saved under `cleaned_path` in subfolders (e.g., `cleaned2021/cleaned_data_2021.csv`).
     """

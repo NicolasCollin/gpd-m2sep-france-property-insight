@@ -1,9 +1,9 @@
 import gradio as gr  # Import Gradio for building the interface
 
 
-def home_page() -> tuple[gr.Button, gr.Button]:
+def get_home_page() -> tuple[gr.Button, gr.Button]:
     """
-    Create and return the layout for the Home Page.
+    Get the layout for the Home Page.
 
     The Home Page includes:
     - A title and short description of the application

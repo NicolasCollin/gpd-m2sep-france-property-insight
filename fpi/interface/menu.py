@@ -3,9 +3,9 @@ from typing import Any
 
 import gradio as gr
 
-from fpi.interface.dashboard.dashboard_page import dashboard_page
-from fpi.interface.home.home_page import home_page
-from fpi.interface.prediction.prediction_page import prediction_page
+from fpi.interface.dashboard.dashboard_page import get_dashboard_page
+from fpi.interface.home.home_page import get_home_page
+from fpi.interface.prediction.prediction_page import get_prediction_page
 
 # Correct type for Gradio update function
 update_fn: Callable = gr.update
@@ -198,11 +198,11 @@ def app_menu() -> gr.Blocks:
             gr.Markdown("Explorez, analysez et prédisez les valeurs immobilières grâce à nos outils interactifs.")
             card_dashboard: gr.Button
             card_estimate: gr.Button
-            card_dashboard, card_estimate = home_page()
+            card_dashboard, card_estimate = get_home_page()
 
         # Dashboard page
         with gr.Column(visible=False, elem_classes="page-content") as dashboard:
-            dashboard_page()
+            get_dashboard_page()
 
         # Prediction page
         with gr.Column(visible=False, elem_classes="page-content") as prediction:
@@ -210,7 +210,7 @@ def app_menu() -> gr.Blocks:
             reset_btn: gr.Button
             result_output: gr.Markdown
             inputs_list: list[Any]
-            predict_btn, reset_btn, result_output, inputs_list = prediction_page()
+            predict_btn, reset_btn, result_output, inputs_list = get_prediction_page()
 
         # Navigation logic
         all_pages: list[gr.Component] = [home, dashboard, prediction]

@@ -6,7 +6,18 @@ from tabulate import tabulate  # type: ignore[import-untyped]
 
 
 def summary(df: pd.DataFrame) -> None:
-    """Print basic dataset information."""
+    """Print basic dataset information.
+
+    Args:
+        - df (pd.DataFrame): any pandas dataframe
+
+    Outputs:
+        - Prints the first 5 rows of the DataFrame
+        - Prints DataFrame info (column types and non-null counts)
+        - Prints the shape of the DataFrame (rows × columns)
+        - Prints columns with missing values and their counts (if any)
+    """
+
     print("\n===== HEAD =====")
     print(df.head(), "\n")
 
@@ -15,8 +26,10 @@ def summary(df: pd.DataFrame) -> None:
 
     print(f"\nShape: {df.shape[0]} rows × {df.shape[1]} columns\n")
 
-    missing = df.isnull().sum()
+    # Per-column missing values
+    missing: pd.Series = df.isnull().sum()
     missing = missing[missing > 0]
+
     if not missing.empty:
         print("Missing values:\n", missing, "\n")
 

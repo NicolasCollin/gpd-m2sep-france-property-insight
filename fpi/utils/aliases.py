@@ -1,6 +1,4 @@
 """
-aliases.py
------------
 Command-line shortcut functions for France Property Insight (FPI) project.
 Designed to be used with `uv run <script>` defined in pyproject.toml.
 """
