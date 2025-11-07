@@ -6,15 +6,15 @@ for predicting real estate prices based on numeric and categorical property feat
 
 Main functions:
 
-    - build_lm(folder_path: str, model_path: str, numeric_features: List[str],
-               categorical_features: List[str], target_col: str) -> LinearRegression
+    - build_lm(folder_path: str, model_path: str, numeric_features: list[str],
+               categorical_features: list[str], target_col: str) -> LinearRegression
         Train, evaluate, and save a LinearRegression model using specified numeric and categorical features.
 
-    - build_ridge(folder_path: str, model_path: str, numeric_features: List[str],
-                  categorical_features: List[str], target_col: str, alpha: float = 10.0) -> Ridge
+    - build_ridge(folder_path: str, model_path: str, numeric_features: list[str],
+                  categorical_features: list[str], target_col: str, alpha: float = 10.0) -> Ridge
         Train, evaluate, and save a Ridge regression model using specified features and regularization.
 
-    - predict_price(model_path: str, input_data: Dict[str, float]) -> float
+    - predict_price(model_path: str, input_data: dict[str, float]) -> float
         Predict property price in euros using a trained model, automatically handling one-hot encoding
         and feature alignment.
 
@@ -25,7 +25,6 @@ Notes:
 """
 
 import os
-from typing import Any, Dict, List, Optional, Tuple
 
 import joblib
 import numpy as np
@@ -65,11 +64,12 @@ def process_data_for_lm(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         - pd.DataFrame: Cleaned DataFrame with numeric columns and log-transformed target.
     """
+
     # Convert comma decimal to dot and cast to float
     df["property_value"] = df["property_value"].astype(str).str.replace(",", ".").astype(float)
 
     # Convert numeric columns
-    numeric_features: List[str] = ["building_area", "main_rooms", "land_area"]
+    numeric_features: list[str] = ["building_area", "main_rooms", "land_area"]
 
     df[numeric_features] = df[numeric_features].apply(pd.to_numeric, errors="coerce")
 
@@ -80,21 +80,21 @@ def process_data_for_lm(df: pd.DataFrame) -> pd.DataFrame:
 
 def set_lm_variables(
     df: pd.DataFrame,
-    x_cols: List[str],
+    x_cols: list[str],
     y_col: str,
-    cat_cols: Optional[List[str]] = None,
-) -> Tuple[pd.DataFrame, pd.Series]:
+    cat_cols: list[str] | None,
+) -> tuple[pd.DataFrame, pd.Series]:
     """
     Set feature matrix (X) and target vector (y) for regression.
 
     Args:
         - df(pd.DataFrame): Input DataFrame.
-        - x_cols(List[str]): List of column names to use as predictors.
+        - x_cols(list[str]): list of column names to use as predictors.
         - y_col(str): Name of the target column.
-        - cat_cols(Optional[List[str]]): Optional list of categorical columns to one-hot encode.
+        - cat_cols(list[str] | None): Optional list of categorical columns to one-hot encode.
 
     Returns:
-        Tuple[pd.DataFrame, pd.Series]:
+        tuple[pd.DataFrame, pd.Series]:
             - X: Processed feature matrix (numeric, after one-hot encoding if applicable).
             - y: Target vector (Series).
     """
@@ -124,7 +124,7 @@ def train_lm(X_train: pd.DataFrame, y_train: pd.Series) -> LinearRegression:
     return model
 
 
-def evaluate_lm(model: LinearRegression, X_test: pd.DataFrame, y_test: pd.Series) -> Tuple[float, float]:
+def evaluate_lm(model: LinearRegression, X_test: pd.DataFrame, y_test: pd.Series) -> tuple[float, float]:
     """
     Evaluate model performance using R² and RMSE.
 
@@ -134,7 +134,7 @@ def evaluate_lm(model: LinearRegression, X_test: pd.DataFrame, y_test: pd.Series
         - y_test(pd.Series): True test target values.
 
     Returns:
-        Tuple[float, float]: (r2, rmse) scores.
+        tuple[float, float]: (r2, rmse) scores.
     """
     y_pred: np.ndarray = model.predict(X_test)
     r2: float = r2_score(y_test, y_pred)
@@ -173,8 +173,8 @@ def save_model(model: BaseEstimator, path: str) -> None:
 def build_lm(
     folder_path: str,
     model_path: str,
-    numeric_features: List[str],
-    categorical_features: List[str],
+    numeric_features: list[str],
+    categorical_features: list[str],
     target_col: str,
 ) -> LinearRegression:
     """
@@ -183,8 +183,8 @@ def build_lm(
     Args:
         - folder_path (str): Path to folder containing cleaned CSV files.
         - model_path (str): Destination file path where the trained model will be saved.
-        - numeric_features (List[str]): List of numeric feature names.
-        - categorical_features (List[str]): List of categorical feature names.
+        - numeric_features (list[str]): list of numeric feature names.
+        - categorical_features (list[str]): list of categorical feature names.
         - target_col (str): Target column name (typically 'log_value').
 
     Returns:
@@ -215,8 +215,8 @@ def build_lm(
 def build_ridge(
     folder_path: str,
     model_path: str,
-    numeric_features: List[str],
-    categorical_features: List[str],
+    numeric_features: list[str],
+    categorical_features: list[str],
     target_col: str,
     alpha: float = 10.0,
 ) -> Ridge:
@@ -226,8 +226,8 @@ def build_ridge(
     Args:
         - folder_path (str): Path to folder containing cleaned CSV files.
         - model_path (str): Destination file path where the trained model will be saved.
-        - numeric_features (List[str]): List of numeric feature names.
-        - categorical_features (List[str]): List of categorical feature names.
+        - numeric_features (list[str]): list of numeric feature names.
+        - categorical_features (list[str]): list of categorical feature names.
         - target_col (str): Target column name (typically 'log_value').
         - alpha (float): Regularization strength for Ridge (default=1.0).
 
@@ -265,8 +265,8 @@ def mock_build_lm() -> None:
     """
     folder_path: str = "data/cleaned/cleaned2024"
     model_path: str = "fpi/models/linear_model.joblib"
-    numeric_features: List[str] = ["building_area", "main_rooms", "land_area"]
-    categorical_features: List[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
+    numeric_features: list[str] = ["building_area", "main_rooms", "land_area"]
+    categorical_features: list[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
     target_col: str = "log_value"
 
     build_lm(
@@ -286,8 +286,8 @@ def mock_build_ridge() -> None:
     """
     folder_path: str = "data/cleaned/cleaned2024"
     model_path: str = "fpi/models/ridge_model.joblib"
-    numeric_features: List[str] = ["building_area", "main_rooms", "land_area"]
-    categorical_features: List[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
+    numeric_features: list[str] = ["building_area", "main_rooms", "land_area"]
+    categorical_features: list[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
     target_col: str = "log_value"
     alpha: float = 10.0
 
@@ -301,14 +301,14 @@ def mock_build_ridge() -> None:
     )
 
 
-def predict_price(model_path: str, input_data: Dict[str, float]) -> float:
+def predict_price(model_path: str, input_data: dict[str, float]) -> float:
     """
     Predict property price in euros using a trained linear or ridge model.
     Handles one-hot encoding of categorical features and auto-aligns columns.
 
     Args:
         - model_path (str): Path to the trained model (.joblib file).
-        - input_data (Dict[str, float]): Dictionary of property features.
+        - input_data (dict[str, float]): dictionary of property features.
 
     Returns:
         float: Predicted property price in euros.
@@ -320,7 +320,7 @@ def predict_price(model_path: str, input_data: Dict[str, float]) -> float:
     df: pd.DataFrame = pd.DataFrame([input_data])
 
     # One-hot encode categorical columns
-    categorical_features: List[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
+    categorical_features: list[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
     df = pd.get_dummies(df, columns=categorical_features, drop_first=True)
 
     # Auto-align columns with the model
@@ -338,7 +338,7 @@ def mock_predict_price() -> None:
     Prints:
         The predicted property price in euros.
     """
-    example_input: Dict[str, Any] = {
+    example_input: dict[str, float | int] = {
         "building_area": 135.0,
         "main_rooms": 2,
         "land_area": 124.0,
