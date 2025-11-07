@@ -3,10 +3,13 @@ Constants used across the property prediction pipeline.
 Includes variables to keep, numeric columns, and ML config.
 """
 
-from typing import List
+from pathlib import Path
+
+PROCESSED_DATA: Path = Path("data/processed")
+CLEANED_DATA: Path = Path("data/cleaned")
 
 # Columns to keep in cleaned CSV / processed data
-VARS_TO_KEEP: List[str] = [
+VARS_TO_KEEP: list(str) = [
     "transaction_date",
     "property_value",
     "postal_code",
@@ -21,19 +24,14 @@ VARS_TO_KEEP: List[str] = [
 ]
 
 # Numeric columns for preprocessing and modeling
-NUMERIC_VARS: List[str] = [
+NUMERIC_VARS: list[str] = [
     "property_value",
     "building_area",
     "main_rooms",
     "land_area",
 ]
 
-# ML pipeline constants
-DEFAULT_TEST_SIZE: float = 0.3
-RANDOM_STATE: int = 42
-
-
-DEPT_NAMES = {
+DEPT_NAMES: dict[str, str] = {
     "75": "Paris",
     "77": "Seine-et-Marne",
     "78": "Yvelines",
@@ -43,3 +41,7 @@ DEPT_NAMES = {
     "94": "Val-de-Marne",
     "95": "Val-d’Oise",
 }
+
+# ML pipeline constants
+DEFAULT_TEST_SIZE: float = 0.3
+RANDOM_STATE: int = 42

@@ -1,16 +1,15 @@
 import sqlite3
 from pathlib import Path
-from typing import List, Optional, Union
 
 import pandas as pd
 
 
 def txt_to_sqlite(
-    txt_path: Union[Path, str],
-    db_path: Union[Path, str],
+    txt_path: Path | str,
+    db_path: Path | str,
     table_name: str,
     delimiter: str = "|",
-    chunksize: Optional[int] = None,
+    chunksize: int = 10,
 ) -> None:
     """
     Convert a text file (CSV-like) into a SQLite .db file.
@@ -40,7 +39,7 @@ def txt_to_sqlite(
     conn: sqlite3.Connection = sqlite3.connect(db_path_obj)
 
     # Helper function to clean column names
-    def clean_columns(columns: List[str]) -> List[str]:
+    def clean_columns(columns: list(str)) -> list(str):
         return [col.strip().replace(" ", "_").replace("’", "_").replace("'", "_") for col in columns]
 
     # Load and insert data
