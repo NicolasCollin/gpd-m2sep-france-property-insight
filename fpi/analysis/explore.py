@@ -66,7 +66,3 @@ def exp() -> None:
     display_trend("data/cleaned", dept_filter=None, agg="median")
     for dept in ["75", "92", "93"]:
         display_trend("data/cleaned", dept_filter=dept, agg="median")
-
-
-if __name__ == "__main__":
-    exp()

@@ -7,7 +7,6 @@ def print_info(df: pd.DataFrame) -> None:
     print(df.head(), "\n")
 
     print("===== INFO =====")
-    # print(df.info(), "\n")\
     df.info()
 
     print(f"\nShape: {df.shape[0]} rows × {df.shape[1]} columns\n")

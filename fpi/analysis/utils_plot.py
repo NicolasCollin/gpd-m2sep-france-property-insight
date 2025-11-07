@@ -1,6 +1,5 @@
 import re
 from pathlib import Path
-from typing import List, Optional, Union
 
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
@@ -31,7 +30,7 @@ def _clean_value_series(series: pd.Series) -> pd.Series:
     return numeric_series
 
 
-def _load_year_data(year_folder: Path, dept_filter: Optional[str] = None) -> List[pd.DataFrame]:
+def _load_year_data(year_folder: Path, dept_filter: str | None) -> list[pd.DataFrame]:
     """
     Load and clean all CSV files for a given year's folder.
 
@@ -41,19 +40,19 @@ def _load_year_data(year_folder: Path, dept_filter: Optional[str] = None) -> Lis
 
     Args:
         year_folder (Path): Path to the folder corresponding to a given year.
-        dept_filter (Optional[str]): Department code to include (e.g., "75" for Paris),
+        dept_filter (Str | None): Department code to include (e.g., "75" for Paris),
             or None to include all.
 
     Returns:
-        List[pd.DataFrame]: A list of cleaned DataFrames containing
+        list[pd.DataFrame]: A list of cleaned DataFrames containing
             columns: ["department_code", "department_name", "year", "property_value"].
     """
     year_str: str = "".join(filter(str.isdigit, year_folder.name))
     year: int = int(year_str) if year_str.isdigit() else 0
-    dataframes: List[pd.DataFrame] = []
+    dataframes: list[pd.DataFrame] = []
 
     for file in year_folder.glob("cleaned_*.csv"):
-        dept_match: Optional[re.Match[str]] = re.search(r"_(\d{2,3})_", file.name)
+        dept_match: re.Match[str] | None = re.search(r"_(\d{2,3})_", file.name)
         dept_code: str = dept_match.group(1) if dept_match else "unknown"
         if dept_filter is not None and dept_code != dept_filter:
             continue
@@ -81,10 +80,10 @@ def _load_year_data(year_folder: Path, dept_filter: Optional[str] = None) -> Lis
 
 
 def display_trend(
-    cleaned_path: Union[str, Path],
-    dept_filter: Optional[str] = None,
+    cleaned_path: Path | str,
+    dept_filter: str | None,
     agg: str = "median",
-    output_dir: Union[str, Path] = "docs/plots",
+    output_dir: Path | str = "docs/plots",
 ) -> None:
     """
     Display and save a trend plot of property values over time.
@@ -93,11 +92,11 @@ def display_trend(
     then generates a line plot for all departments or a selected one.
 
     Args:
-        cleaned_path (Union[str, Path]): Root path containing yearly folders with cleaned CSV files.
-        dept_filter (Optional[str]): Department code (e.g., "75" for Paris) to focus on,
+        cleaned_path (Path | str): Root path containing yearly folders with cleaned CSV files.
+        dept_filter (str | None): Department code (e.g., "75" for Paris) to focus on,
             or None to display all departments.
         agg (str): Aggregation method, either "median" or "mean". Defaults to "median".
-        output_dir (Union[str, Path]): Directory where the generated plot is saved. Defaults to "docs/plots".
+        output_dir (Path | str): Directory where the generated plot is saved. Defaults to "docs/plots".
 
     Outputs:
         The function saves a `.png` plot file in the specified output directory and prints its path.
@@ -106,8 +105,8 @@ def display_trend(
     output_dir_path: Path = Path(output_dir)
     output_dir_path.mkdir(parents=True, exist_ok=True)
 
-    # Load all yearly data
-    all_data: List[pd.DataFrame] = [
+    # Load data from every year
+    all_data: list[pd.DataFrame] = [
         df
         for year_folder in sorted(cleaned_root.iterdir())
         if year_folder.is_dir()
@@ -157,7 +156,7 @@ def display_trend(
 
     # Formatting
     plt.xlabel("Année")
-    plt.gca().yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: human_format(float(x))))
+    plt.gca().yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: convert_number_for_display(float(x))))
     plt.ylabel("Valeur médiane (€)")
     plt.legend(title="Département", bbox_to_anchor=(1.05, 1), loc="upper left")
     plt.tight_layout()
@@ -169,14 +168,14 @@ def display_trend(
     print(f" Graph saved in {output_file}")
 
 
-def human_format(num: float) -> str:
+def convert_number_for_display(num: float) -> str:
     """
     Convert a large number into a human-readable string with suffixes.
 
     Examples:
-        >>> human_format(1200)
+        >>> convert_number_for_display(1200)
         '1.2 K'
-        >>> human_format(2_500_000)
+        >>> convert_number_for_display(2_500_000)
         '2.5 M'
 
     Args:
