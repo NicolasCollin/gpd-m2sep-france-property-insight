@@ -24,8 +24,6 @@ Notes:
     - Default test/train split and random state are imported from `fpi.utils.constants`.
 """
 
-from __future__ import annotations
-
 import os
 from typing import Any, Dict, List, Optional, Tuple
 
