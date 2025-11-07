@@ -1,20 +1,19 @@
 import random
 from pathlib import Path
-from typing import List, Union
 
 
 def random_sample(
-    input_path: Union[Path, str],
-    output_path: Union[Path, str],
-    sample_size: int,
+    input_path: Path | str,
+    output_path: Path | str,
+    sample_size: int = 1000,
 ) -> None:
     """
     Sample a large text file by selecting a random subset of lines.
 
     Args:
-        - input_path: Path to the input text file.
-        - output_path: Path where the sampled file will be saved.
-        - sample_size: Number of lines to sample (excluding the header).
+        - input_path (Path | str): Path to the input text file.
+        - output_path (Path | str): Path where the sampled file will be saved.
+        - sample_size (int = 1000): Number of lines to sample (excluding the header).
 
     Raises:
         ValueError: If the input file contains fewer lines than `sample_size`.
@@ -33,7 +32,7 @@ def random_sample(
     # Create parent directories for output if they don't exist
     output_path_obj.parent.mkdir(parents=True, exist_ok=True)
 
-    reservoir: List[str] = []
+    reservoir: list[str] = []
     line_count: int = 0
 
     # Read input file

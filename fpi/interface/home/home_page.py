@@ -1,10 +1,7 @@
-from typing import Tuple
-
 import gradio as gr  # Import Gradio for building the interface
 
 
-# --- Home Page Layout ---
-def home_page() -> Tuple[gr.Button, gr.Button]:
+def home_page() -> tuple[gr.Button, gr.Button]:
     """
     Create and return the layout for the Home Page.
 
@@ -13,8 +10,7 @@ def home_page() -> Tuple[gr.Button, gr.Button]:
     - Two navigation buttons: one for accessing the Dashboard, another for the Prediction module
 
     Returns:
-        tuple: A tuple containing:
-            - home_page (gr.HTML): The Gradio layout object representing the page
+        tuple:
             - dashboard_button (gr.Button): The Dashboard navigation button
             - prediction_button (gr.Button): The Prediction navigation button
     """

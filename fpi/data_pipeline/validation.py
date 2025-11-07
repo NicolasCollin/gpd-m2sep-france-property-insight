@@ -16,161 +16,55 @@ Results:
     - `<name>.invalid.csv` : Rows that fail validation, with columns indicating the errors.
 """
 
-from __future__ import annotations
-
 import argparse
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Tuple
 
 import pandas as pd
-from pydantic import BaseModel, Field, ValidationError, field_validator
+from pydantic import ValidationError
 
-PROCESSED_DIR = Path("data/processed")
-CLEANED_ROOT = Path("data/cleaned")
+from fpi.data_pipeline.schemas import PropertyData
+from fpi.utils.constants import CLEANED_DATA, PROCESSED_DATA
 
 
-# Helper: compute processed output directory mirroring the cleaned tree
-def _compute_output_dir(csv_path: Path, cleaned_root: Path = CLEANED_ROOT) -> Path:
-    """
-    Return the directory under PROCESSED_DIR that mirrors `csv_path` location
-    relative to `cleaned_root`. If `csv_path` is not inside `cleaned_root`,
-    fall back to writing directly under `PROCESSED_DIR`.
-    """
+def _compute_output_dir(csv_path: Path, cleaned_data: Path = CLEANED_DATA) -> Path:
     try:
-        rel = csv_path.resolve().relative_to(cleaned_root.resolve())
-        return (PROCESSED_DIR / rel.parent).resolve()
+        rel = csv_path.resolve().relative_to(CLEANED_DATA.resolve())
+        return (PROCESSED_DATA / rel.parent).resolve()
     except Exception:
-        # Not under cleaned_root, flatten to PROCESSED_DIR
-        return PROCESSED_DIR.resolve()
-
-
-class PropertyData(BaseModel):
-    """
-    Structured record for a *cleaned* DVF row.
-
-    Each attribute maps 1‑to‑1 to a column name present in our **cleaned CSV**
-    files. Constraints are intentionally light but meaningful for a university
-    project: positivity/non‑negativity, plausible code ranges, and robust
-    parsing of European number formats.
-
-    Fields
-    ------
-    property_value : float
-        Property sale price (must be strictly positive).
-    postal_code : int
-        French postal code (kept as 5‑digit range; overseas allowed).
-    department_code : int
-        Department numeric code in [1, 976].
-    town_code : int
-        Positive municipality code.
-    property_type_code : int
-        DVF property type code, expected in [1, 4].
-    building_area : float
-        Built area in m², non‑negative.
-    main_rooms : float
-        Number of main rooms, non‑negative.
-    land_area : float
-        Land area in m², non‑negative.
-    """
-
-    # --- Core schema (column names follow the *cleaned* dataset) ---
-    property_value: float = Field(..., gt=0)
-    postal_code: int = Field(..., ge=1000, le=99999)
-    department_code: int = Field(..., ge=1, le=976)
-    town_code: int = Field(..., gt=0)
-    property_type_code: int = Field(..., ge=1, le=4)
-    building_area: float = Field(..., ge=0)
-    main_rooms: float = Field(..., ge=0)
-    land_area: float = Field(..., ge=0)
-
-    # ---------------------- Robust parsers (light “test” hardening) ----------------------
-    @staticmethod
-    def _to_float_eu(v: Any) -> float:
-        """Parse floats that may use European comma decimals or come as numbers/strings."""
-        if v is None or (isinstance(v, float) and pd.isna(v)):
-            raise ValueError("Missing numeric value")
-        if isinstance(v, str):
-            v = v.replace(",", ".").strip()
-        return float(v)
-
-    @field_validator("property_value", "building_area", "main_rooms", "land_area", mode="before")
-    def parse_float_fields(cls, v: Any) -> float:
-        """Accept '200000,00' or '15,5' and coerce to float before constraints apply."""
-        return cls._to_float_eu(v)
-
-    @field_validator("postal_code", "department_code", "town_code", "property_type_code", mode="before")
-    def parse_int_fields(cls, v: Any) -> int:
-        """
-        Coerce numeric codes that may arrive as floats (e.g., 75001.0) or strings.
-        Keeps semantics strict: empty values still fail validation upstream.
-        """
-        if isinstance(v, float) and not pd.isna(v):
-            return int(v)
-        if isinstance(v, str):
-            v = v.strip()
-            if v.endswith(".0"):
-                v = v[:-2]
-        return int(v)
-
-    @field_validator("property_type_code")
-    def property_type_in_known_range(cls, v: int) -> int:
-        """Tiny extra guard that also serves as a test target."""
-        if v not in {1, 2, 3, 4}:
-            raise ValueError("property_type_code must be one of {1,2,3,4}")
-        return v
+        return PROCESSED_DATA.resolve()
 
 
 def _iter_csv_files(root: Path) -> Iterable[Path]:
-    """Yield all `.csv` files under `root` recursively (depth‑first)."""
     yield from root.rglob("*.csv")
 
 
 def validate_csv(
     csv_path: str | Path,
     save_invalid: bool = True,
-    cleaned_root: Path = CLEANED_ROOT,
-) -> tuple[List[PropertyData], int, int]:
-    """
-    Validate all rows of a **single cleaned CSV** file using the PropertyData model.
-
-    - Parses European decimals in numeric fields.
-    - Coerces integer codes that may be stored as floats/strings.
-    - Collects invalid rows with offending columns for quick triage.
-
-    Parameters
-    ----------
-    csv_path : str | Path
-        Path to the input CSV file to validate.
-    save_invalid : bool, default True
-        If True, write invalid rows next to the CSV as `<name>.invalid.csv`.
-
-    Returns
-    -------
-    tuple[list[PropertyData], int, int]
-        (valid_models, total_rows, error_rows)
-    """
+    cleaned_data: Path = CLEANED_DATA,
+) -> tuple[list["PropertyData"], int, int]:
     csv_path_obj: Path = Path(csv_path)
     print(f"\nValidating file: {csv_path_obj.resolve()}")
 
     df: pd.DataFrame = pd.read_csv(csv_path_obj, sep=",", low_memory=False)
-    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    PROCESSED_DATA.mkdir(parents=True, exist_ok=True)
 
-    out_dir: Path = _compute_output_dir(Path(csv_path_obj), cleaned_root=cleaned_root)
+    out_dir: Path = _compute_output_dir(Path(csv_path_obj), cleaned_data=CLEANED_DATA)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    valid_rows: List[PropertyData] = []
-    valid_payloads: List[Dict[str, Any]] = []
-    invalid_entries: List[Dict[str, Any]] = []
+    valid_rows: list["PropertyData"] = []
+    valid_payloads: list[dict] = []
+    invalid_entries: list[dict] = []
 
     for i, row in df.iterrows():
-        row_dict: Dict[str, Any] = row.to_dict()
+        row_dict: dict = row.to_dict()
         try:
-            record: PropertyData = PropertyData(**row_dict)  # strict on *cleaned* column names
+            record: "PropertyData" = PropertyData(**row_dict)
             valid_rows.append(record)
             valid_payloads.append(row_dict)
         except ValidationError as e:
-            # Gather which columns failed (helps users fix the source file)
-            error_columns: List[str] = [str(err["loc"][0]) for err in e.errors()]
+            error_columns: list[str] = [str(err["loc"][0]) for err in e.errors()]
             invalid_entries.append({**row_dict, "error_columns": error_columns})
             print(f"  • error at row {i}: {', '.join(error_columns)}")
 
@@ -195,34 +89,17 @@ def validate_csv(
 
 def validate_all_cleaned(
     root_dir: str | Path = "data/cleaned", save_invalid: bool = True
-) -> List[Tuple[Path, int, int]]:
-    """
-    Validate **all CSV files** found recursively under `data/cleaned/`.
-
-    Returns a compact summary per file to keep CI logs readable.
-
-    Parameters
-    ----------
-    root_dir : str | Path
-        Root directory that contains cleaned CSVs (defaults to `data/cleaned`).
-    save_invalid : bool, default True
-        Whether to write `<name>.invalid.csv` alongside each file with errors.
-
-    Returns
-    -------
-    List[Tuple[Path, int, int]]
-        A list of `(file_path, valid_count, error_count)` tuples.
-    """
+) -> list[tuple[Path, int, int]]:
     root = Path(root_dir)
     if not root.exists():
         print(f"[warn] Cleaned root does not exist: {root.resolve()}")
         return []
 
-    summaries: List[Tuple[Path, int, int]] = []
+    summaries: list[tuple[Path, int, int]] = []
     for csv_file in _iter_csv_files(root):
-        valid_rows, total_rows, error_count = validate_csv(csv_file, save_invalid=save_invalid, cleaned_root=root)
+        valid_rows, total_rows, error_count = validate_csv(csv_file, save_invalid=save_invalid, cleaned_data=root)
         summaries.append((csv_file, len(valid_rows), error_count))
-    # Pretty print short recap
+
     print("\nSummary:")
     for path, valid_count, error_count in summaries:
         total = valid_count + error_count
@@ -266,12 +143,8 @@ def main() -> None:
         valid_rows, total_rows, error_count = validate_csv(
             Path(args.input),
             save_invalid=not args.no_save_invalid,
-            cleaned_root=Path(args.root),
+            cleaned_data=Path(args.root),
         )
         print(f"\nDone. File total: {total_rows}, valid: {len(valid_rows)}, errors: {error_count}")
     else:
         validate_all_cleaned(Path(args.root), save_invalid=not args.no_save_invalid)
-
-
-if __name__ == "__main__":
-    main()

@@ -30,7 +30,7 @@ def _clean_value_series(series: pd.Series) -> pd.Series:
     return numeric_series
 
 
-def _load_year_data(year_folder: Path, dept_filter: str | None) -> list[pd.DataFrame]:
+def _load_year_data(year_folder: Path | str, dept_filter: str | None) -> list[pd.DataFrame]:
     """
     Load and clean all CSV files for a given year's folder.
 
@@ -44,12 +44,12 @@ def _load_year_data(year_folder: Path, dept_filter: str | None) -> list[pd.DataF
             or None to include all.
 
     Returns:
-        list[pd.DataFrame]: A list of cleaned DataFrames containing
+        list(pd.DataFrame): A list of cleaned DataFrames containing
             columns: ["department_code", "department_name", "year", "property_value"].
     """
     year_str: str = "".join(filter(str.isdigit, year_folder.name))
     year: int = int(year_str) if year_str.isdigit() else 0
-    dataframes: list[pd.DataFrame] = []
+    dataframes: list(pd.DataFrame) = []
 
     for file in year_folder.glob("cleaned_*.csv"):
         dept_match: re.Match[str] | None = re.search(r"_(\d{2,3})_", file.name)
@@ -114,7 +114,7 @@ def display_trend(
     ]
 
     if not all_data:
-        print(" No data loaded.")
+        print("No data loaded.")
         return
 
     df_all: pd.DataFrame = pd.concat(all_data, ignore_index=True)
