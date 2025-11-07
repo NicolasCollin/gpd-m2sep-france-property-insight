@@ -72,5 +72,5 @@ def get_form() -> tuple[list[gr.components.FormComponent], gr.Dropdown]:
 
 
 def reset_form() -> PredictionFormSchema:
-    """Reset all input fields to their default values."""
-    return PredictionFormSchema()
+    """Return a new PredictionFormSchema with default values."""
+    return PredictionFormSchema(postal="", dept="", town="", area=0.0, rooms=0, land=0.0)

@@ -2,35 +2,6 @@ import gradio as gr
 import pandas as pd
 import plotly.express as px
 
-from fpi.data_pipeline.data_prep import load_data
-
-
-def compute_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
-    """
-    Compute key summary statistics and a preview of the dataset.
-
-    Args:
-        df: pd.DataFrame
-
-    Returns:
-        dashboard_table (gr.Blocks): Gradio block containing summary statistics and data table.
-    """
-    with gr.Blocks() as dashboard_table:
-        with gr.Row():
-            total_properties: int = len(df)
-            avg_price: str = f"{df['property_value'].mean():,.0f} €"
-            min_price: str = f"{df['property_value'].min():,.0f} €"
-            max_price: str = f"{df['property_value'].max():,.0f} €"
-
-            gr.Number(value=total_properties, label="Total properties in dataset", interactive=False)
-            gr.Textbox(value=avg_price, label="Average property price", interactive=False)
-            gr.Textbox(value=min_price, label="Minimum property price", interactive=False)
-            gr.Textbox(value=max_price, label="Maximum property price", interactive=False)
-
-        gr.DataFrame(value=df.head(50), label="Sample of dataset")
-
-    return dashboard_table
-
 
 def plot_sales_count_by_department(df: pd.DataFrame) -> gr.BarPlot:
     """
@@ -56,7 +27,7 @@ def plot_sales_count_by_department(df: pd.DataFrame) -> gr.BarPlot:
     return bar_plot
 
 
-def evolution_price_by_dept(df: pd.DataFrame) -> gr.Plot:
+def plot_price_evolution_by_department(df: pd.DataFrame) -> gr.Plot:
     """
     Creates an interactive line plot showing the evolution of average property prices
     per department on a yearly basis.
@@ -96,22 +67,3 @@ def evolution_price_by_dept(df: pd.DataFrame) -> gr.Plot:
     )
 
     return gr.Plot(value=fig)
-
-
-def display_dashboard() -> gr.Blocks:
-    """
-    Display all dashboard components (tables + graphs) in a single container.
-
-    Returns:
-        gr.Blocks: Complete Gradio dashboard layout ready to be rendered.
-    """
-    df: pd.DataFrame = load_data()
-    with gr.Blocks() as dashboard:
-        with gr.Tab("Overview"):
-            _ = compute_dashboard_table(df)
-
-        with gr.Tab("Data vizualisation"):
-            _ = plot_sales_count_by_department(df)
-            _ = evolution_price_by_dept(df)
-
-    return dashboard

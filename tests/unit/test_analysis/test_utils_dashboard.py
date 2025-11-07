@@ -7,7 +7,7 @@ import pandas as pd
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
 
-from fpi.analysis.utils_dashboard import evolution_price_by_dept, plot_sales_count_by_department, table
+from fpi.analysis.utils_dashboard import plot_price_evolution_by_department, plot_sales_count_by_department, table
 
 
 class TestUtilsDashboard(unittest.TestCase):
@@ -33,8 +33,8 @@ class TestUtilsDashboard(unittest.TestCase):
         df_grouped = self.df.groupby("department_code").size().reset_index(name="property_count")
         self.assertCountEqual(df_grouped["department_code"].astype(str).tolist(), ["75", "92"])
 
-    def test_evolution_price_by_dept_type(self):
-        result = evolution_price_by_dept(self.df)
+    def test_plot_price_evolution_by_department_type(self):
+        result = plot_price_evolution_by_department(self.df)
         self.assertIsInstance(result, gr.Plot)
 
 
