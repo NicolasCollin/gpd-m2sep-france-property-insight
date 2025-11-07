@@ -2,7 +2,7 @@ import unittest
 
 import gradio as gr
 
-from fpi.interface.prediction.form import form, reset_form, validate_inputs
+from fpi.interface.prediction.form import get_form, reset_form, validate_inputs
 
 
 class TestFormModule(unittest.TestCase):
@@ -34,11 +34,11 @@ class TestFormModule(unittest.TestCase):
         self.assertIn("postal code", msg)
 
     # -----------------------------
-    # Tests form()
+    # Tests get_form()
     # -----------------------------
     def test_form_returns_components(self):
         with gr.Blocks():
-            inputs_list, prop_type_input = form()
+            inputs_list, prop_type_input = get_form()
             self.assertIsInstance(inputs_list, list)
             self.assertTrue(all(isinstance(c, gr.components.Component) for c in inputs_list))
             self.assertIsInstance(prop_type_input, gr.Dropdown)

@@ -50,9 +50,10 @@ def _load_year_data(year_folder: Path | str, dept_filter: str | None) -> list[pd
         list(pd.DataFrame): A list of cleaned DataFrames containing
             columns: ["department_code", "department_name", "year", "property_value"].
     """
+    year_folder = Path(year_folder)
     year_str: str = "".join(filter(str.isdigit, year_folder.name))
     year: int = int(year_str) if year_str.isdigit() else 0
-    dataframes: list(pd.DataFrame) = []
+    dataframes: list[pd.DataFrame] = []
 
     for file in year_folder.glob("cleaned_*.csv"):
         dept_match: re.Match[str] | None = re.search(r"_(\d{2,3})_", file.name)

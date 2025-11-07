@@ -45,7 +45,7 @@ def validate_inputs(
     return ""
 
 
-def form() -> tuple[list[gr.components.Component], gr.Dropdown]:
+def get_form() -> tuple[list[gr.components.FormComponent], gr.Dropdown]:
     """Creates the Gradio input form structure for property estimation."""
     with gr.Row():
         postal_input = gr.Textbox(label="Postal code", placeholder="Ex: 75001", lines=1, interactive=True)
@@ -58,7 +58,7 @@ def form() -> tuple[list[gr.components.Component], gr.Dropdown]:
         rooms_input = gr.Number(label="Number of rooms", minimum=1, step=1)
         land_input = gr.Number(label="Land area (m²)", minimum=0, step=1)
 
-    inputs_list = [
+    inputs_list: list[gr.components.FormComponent] = [
         postal_input,
         dept_code_input,
         town_code_input,
