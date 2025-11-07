@@ -2,7 +2,23 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from tabulate import tabulate  # type: ignore[import]
+from tabulate import tabulate
+
+
+def summary(df: pd.DataFrame) -> None:
+    """Print basic dataset information."""
+    print("\n===== HEAD =====")
+    print(df.head(), "\n")
+
+    print("===== INFO =====")
+    df.info()
+
+    print(f"\nShape: {df.shape[0]} rows × {df.shape[1]} columns\n")
+
+    missing = df.isnull().sum()
+    missing = missing[missing > 0]
+    if not missing.empty:
+        print("Missing values:\n", missing, "\n")
 
 
 def compute_descriptive_statistics(df: pd.DataFrame, output_dir: str = "docs/stats") -> pd.DataFrame:

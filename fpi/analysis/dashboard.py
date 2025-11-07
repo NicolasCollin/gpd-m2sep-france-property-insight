@@ -5,17 +5,17 @@ import plotly.express as px
 from fpi.data_pipeline.data_prep import load_data
 
 
-def table(df: pd.DataFrame) -> gr.Blocks:
+def compute_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
     """
-    Display key summary statistics and a preview of the dataset.
+    Compute key summary statistics and a preview of the dataset.
 
     Args:
         df: pd.DataFrame
 
     Returns:
-        gr.Blocks: Gradio block containing summary statistics and data table.
+        dashboard_table (gr.Blocks): Gradio block containing summary statistics and data table.
     """
-    with gr.Blocks() as table_block:
+    with gr.Blocks() as dashboard_table:
         with gr.Row():
             total_properties: int = len(df)
             avg_price: str = f"{df['property_value'].mean():,.0f} €"
@@ -29,10 +29,10 @@ def table(df: pd.DataFrame) -> gr.Blocks:
 
         gr.DataFrame(value=df.head(50), label="Sample of dataset")
 
-    return table_block
+    return dashboard_table
 
 
-def nb_property_by_dept(df: pd.DataFrame) -> gr.BarPlot:
+def plot_sales_count_by_department(df: pd.DataFrame) -> gr.BarPlot:
     """
     Create a bar plot showing the number of property transactions by department.
 
@@ -108,10 +108,10 @@ def display_dashboard() -> gr.Blocks:
     df: pd.DataFrame = load_data()
     with gr.Blocks() as dashboard:
         with gr.Tab("Overview"):
-            _ = table(df)
+            _ = compute_dashboard_table(df)
 
         with gr.Tab("Data vizualisation"):
-            _ = nb_property_by_dept(df)
+            _ = plot_sales_count_by_department(df)
             _ = evolution_price_by_dept(df)
 
     return dashboard
