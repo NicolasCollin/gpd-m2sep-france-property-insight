@@ -7,9 +7,6 @@ from fpi.interface.prediction.prediction_page import prediction_page
 # Correct type for Gradio update function
 update_fn: callable = gr.update
 
-# ===========================================
-#               CSS global
-# ===========================================
 global_css = """
 /* --- Global --- */
 
