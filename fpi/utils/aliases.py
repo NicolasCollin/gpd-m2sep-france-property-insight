@@ -25,11 +25,9 @@ def fpidocker() -> None:
     run_command("docker compose -f .devcontainer/compose.yaml up fpi-server")
 
 
-def typecheck(extra_args: str | None) -> None:
+def typecheck() -> None:
     """Run static type checking with mypy."""
     cmd: str = "uv run mypy fpi"
-    if extra_args:
-        cmd += f" {extra_args}"
     run_command(cmd)
 
 
@@ -38,11 +36,9 @@ def audit() -> None:
     run_command("uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484")
 
 
-def run_pytest(extra_args: str | None) -> None:
+def run_pytest() -> None:
     """Run our unit tests and doctests with pytest."""
     cmd: str = "uv run pytest --doctest-modules"
-    if extra_args:
-        cmd += f" {extra_args}"
     run_command(cmd)
 
 
@@ -51,9 +47,9 @@ def run_behave() -> None:
     subprocess.run(["behave", "tests/behave/features"], check=True)
 
 
-def test(extra_args: str | None) -> None:
+def test() -> None:
     """Run unit tests, doctests, and behave tests"""
-    run_pytest(extra_args=extra_args)
+    run_pytest()
     run_behave()
 
 

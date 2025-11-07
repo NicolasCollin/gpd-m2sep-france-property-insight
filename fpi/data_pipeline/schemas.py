@@ -48,7 +48,7 @@ class PropertyData(BaseModel):
         return cls._to_float_eu(v)
 
     @field_validator("postal_code", "department_code", "town_code", "property_type_code", mode="before")
-    def parse_int_fields(cls, v: float | int | str | None) -> int:
+    def parse_int_fields(cls, v: float | int) -> int:
         """Coerce numeric codes that may arrive as floats or strings."""
         if isinstance(v, float) and not pd.isna(v):
             return int(v)

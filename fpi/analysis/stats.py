@@ -2,7 +2,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from tabulate import tabulate
+from tabulate import tabulate  # type: ignore[import-untyped]
 
 
 def summary(df: pd.DataFrame) -> None:

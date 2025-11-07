@@ -52,7 +52,7 @@ def clean_data(raw_path: Path | str = "data/raw", cleaned_path: Path | str = "da
     cleaned_path_obj: Path = Path(cleaned_path)
 
     # Find all raw CSV files
-    all_files: list[Path] = list[raw_path_obj.rglob("raw_*.csv")]
+    all_files: list[Path] = list(raw_path_obj.rglob("raw_*.csv"))
     if not all_files:
         print("No CSV files found in the raw folder.")
         return

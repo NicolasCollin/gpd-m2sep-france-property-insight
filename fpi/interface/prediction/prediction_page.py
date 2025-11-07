@@ -1,6 +1,6 @@
 import gradio as gr
 
-from fpi.interface.prediction.form import form, reset_form, validate_inputs
+from fpi.interface.prediction.form import get_form, reset_form, validate_inputs
 from fpi.models.predict import predict_price
 
 
@@ -47,7 +47,7 @@ def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: floa
 
 
 def prediction_page() -> (
-    tuple[gr.components.Button, gr.components.Button, gr.components.Markdown, list[gr.components.Component]]
+    tuple[gr.components.Button, gr.components.Button, gr.components.Markdown, list[gr.components.FormComponent]]
 ):
     """
     Creates and returns the layout for the Prediction Page
@@ -66,9 +66,9 @@ def prediction_page() -> (
 
         with gr.Column(elem_classes="glass-box"):
             # form inputs
-            inputs_list: list(gr.components.Component)
+            inputs_list: list[gr.components.FormComponent]
             prop_type_input: gr.components.Component
-            inputs_list, prop_type_input = form()
+            inputs_list, prop_type_input = get_form()
 
             # buttons predict and reset
             with gr.Row():

@@ -1,3 +1,6 @@
+from collections.abc import Callable
+from typing import Any
+
 import gradio as gr
 
 from fpi.interface.dashboard.dashboard_page import dashboard_page
@@ -5,7 +8,7 @@ from fpi.interface.home.home_page import home_page
 from fpi.interface.prediction.prediction_page import prediction_page
 
 # Correct type for Gradio update function
-update_fn: callable = gr.update
+update_fn: Callable = gr.update
 
 global_css = """
 /* --- Global --- */
@@ -150,22 +153,19 @@ h2.page-title {
 """
 
 
-def show_page(page_id: str) -> list[gr.update]:
+def show_page(page_id: str) -> list[Any]:
     """
     Updates the visibility of the main content columns to show only the selected page.
-
-    Args:
-        page_id (str): A string identifier for the page to show ("home", "dashboard", or "prediction").
-
-    Returns:
-        A list of gr.update objects controlling the visibility for each of the
-        three main pages in order: [home, dashboard, prediction].
     """
-    is_home: bool = page_id == "home"
-    is_dashboard: bool = page_id == "dashboard"
-    is_prediction: bool = page_id == "prediction"
+    is_home = page_id == "home"
+    is_dashboard = page_id == "dashboard"
+    is_prediction = page_id == "prediction"
 
-    return [gr.update(visible=is_home), gr.update(visible=is_dashboard), gr.update(visible=is_prediction)]
+    return [
+        gr.update(visible=is_home),
+        gr.update(visible=is_dashboard),
+        gr.update(visible=is_prediction),
+    ]
 
 
 def app_menu() -> gr.Blocks:
@@ -209,7 +209,7 @@ def app_menu() -> gr.Blocks:
             predict_btn: gr.Button
             reset_btn: gr.Button
             result_output: gr.Markdown
-            inputs_list: list[gr.Component]
+            inputs_list: list[Any]
             predict_btn, reset_btn, result_output, inputs_list = prediction_page()
 
         # Navigation logic

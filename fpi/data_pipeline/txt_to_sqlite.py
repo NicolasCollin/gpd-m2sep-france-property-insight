@@ -39,7 +39,7 @@ def txt_to_sqlite(
     conn: sqlite3.Connection = sqlite3.connect(db_path_obj)
 
     # Helper function to clean column names
-    def clean_columns(columns: list(str)) -> list(str):
+    def clean_columns(columns: list[str]) -> list[str]:
         return [col.strip().replace(" ", "_").replace("’", "_").replace("'", "_") for col in columns]
 
     # Load and insert data
