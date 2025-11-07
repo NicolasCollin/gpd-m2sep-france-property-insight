@@ -4,9 +4,6 @@ import plotly.express as px
 
 from fpi.data_pipeline.data_prep import load_data
 
-# Load dataset once to optimize performance
-df: pd.DataFrame = load_data()
-
 
 def table(df: pd.DataFrame) -> gr.Blocks:
     """
@@ -108,6 +105,7 @@ def display_dashboard() -> gr.Blocks:
     Returns:
         gr.Blocks: Complete Gradio dashboard layout ready to be rendered.
     """
+    df: pd.DataFrame = load_data()
     with gr.Blocks() as dashboard:
         with gr.Tab("Overview"):
             _ = table(df)
