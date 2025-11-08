@@ -27,9 +27,7 @@ def _clean_value_series(series: pd.Series) -> pd.Series:
         pd.Series: A numeric pandas Series with invalid values converted to NaN.
     """
     series_str: pd.Series = series.astype(str)
-    series_cleaned: pd.Series = (
-        series_str.str.replace("€", "", regex=False).str.replace(",", "", regex=False).str.replace(" ", "", regex=False)
-    )
+    series_cleaned: pd.Series = series_str.str.replace("€", "", regex=False).str.replace(",", "", regex=False).str.replace(" ", "", regex=False)
     numeric_series: pd.Series = pd.to_numeric(series_cleaned, errors="coerce")
     return numeric_series
 
@@ -113,10 +111,7 @@ def display_trend(
 
     # Load data from every year
     all_data: list[pd.DataFrame] = [
-        df
-        for year_folder in sorted(cleaned_root.iterdir())
-        if year_folder.is_dir()
-        for df in _load_year_data(year_folder, dept_filter)
+        df for year_folder in sorted(cleaned_root.iterdir()) if year_folder.is_dir() for df in _load_year_data(year_folder, dept_filter)
     ]
 
     if not all_data:

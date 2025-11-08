@@ -46,9 +46,7 @@ def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: floa
         return f"Prediction failed: {error_str}"
 
 
-def get_prediction_page() -> (
-    tuple[gr.components.Button, gr.components.Button, gr.components.Markdown, list[gr.components.FormComponent]]
-):
+def get_prediction_page() -> tuple[gr.components.Button, gr.components.Button, gr.components.Markdown, list[gr.components.FormComponent]]:
     """
     Get the layout for the Prediction Page
 

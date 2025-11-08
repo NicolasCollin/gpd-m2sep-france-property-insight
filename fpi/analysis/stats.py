@@ -122,9 +122,7 @@ def compute_descriptive_statistics(df: pd.DataFrame, output_dir: str = "docs/sta
         min_val: float = float(pd.to_numeric(col_data.min(), errors="coerce"))
         max_val: float = float(pd.to_numeric(col_data.max(), errors="coerce"))
         print(
-            f"• {col_name:20}: {len(col_data):>6,} values | "
-            f"CV: {coefficient_variation:>6.1f}% | "
-            f"Range: {min_val:>10,.1f} - {max_val:>10,.1f}"
+            f"• {col_name:20}: {len(col_data):>6,} values | " f"CV: {coefficient_variation:>6.1f}% | " f"Range: {min_val:>10,.1f} - {max_val:>10,.1f}"
         )
 
     # Correlation matrix
@@ -135,17 +133,7 @@ def compute_descriptive_statistics(df: pd.DataFrame, output_dir: str = "docs/sta
     formatted_corr: pd.DataFrame = corr_matrix.copy()
     for col_name in formatted_corr.columns:
         formatted_corr[col_name] = formatted_corr[col_name].apply(
-            lambda x: (
-                "1.000"
-                if x == 1
-                else "—"
-                if pd.isna(x)
-                else f"{x:.3f}"
-                if abs(x) >= 0.01
-                else f"{x:.1e}"
-                if x != 0
-                else "0.000"
-            )
+            lambda x: ("1.000" if x == 1 else "—" if pd.isna(x) else f"{x:.3f}" if abs(x) >= 0.01 else f"{x:.1e}" if x != 0 else "0.000")
         )
     print(tabulate(formatted_corr, headers="keys", tablefmt="grid", stralign="center"))
 

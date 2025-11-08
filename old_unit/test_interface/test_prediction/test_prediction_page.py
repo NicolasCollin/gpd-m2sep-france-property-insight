@@ -14,9 +14,7 @@ class TestPredictionPage(unittest.TestCase):
     def test_run_prediction_valid_inputs(self):
         with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
             mock_predict.return_value: float = 500000
-            result = run_prediction(
-                postal="75005", dept="75", town="75101", prop_type="House", area=100, rooms=3, land=50
-            )
+            result = run_prediction(postal="75005", dept="75", town="75101", prop_type="House", area=100, rooms=3, land=50)
             self.assertIn("Estimated property price", result)
             self.assertIn("500,000", result)
 
@@ -28,9 +26,7 @@ class TestPredictionPage(unittest.TestCase):
     def test_run_prediction_model_exception(self):
         with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
             mock_predict.side_effect = Exception("Model file not found")
-            result = run_prediction(
-                postal="75001", dept="75", town="75101", prop_type="Apartment", area=80, rooms=2, land=20
-            )
+            result = run_prediction(postal="75001", dept="75", town="75101", prop_type="Apartment", area=80, rooms=2, land=20)
             self.assertIn("Prediction failed", result)
             self.assertIn("Model file not found", result)
 

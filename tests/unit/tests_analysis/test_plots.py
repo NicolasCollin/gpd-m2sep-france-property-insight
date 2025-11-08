@@ -47,9 +47,7 @@ class TestDisplayTrendAggregation:
             )
         ]
         df_all: pd.DataFrame = pd.concat(dfs, ignore_index=True)
-        trend_df: pd.DataFrame = (
-            df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
-        )
+        trend_df: pd.DataFrame = df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
 
         expected_median: float = 1500000.0
         assert trend_df["property_value"].iloc[0] == pytest.approx(expected_median)
@@ -77,9 +75,7 @@ class TestDisplayTrendAggregation:
             )
         ]
         df_all: pd.DataFrame = pd.concat(dfs, ignore_index=True)
-        trend_df: pd.DataFrame = (
-            df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
-        )
+        trend_df: pd.DataFrame = df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
 
         medians = trend_df.set_index("year")["property_value"].to_dict()
         assert medians[2023] == pytest.approx(1000000.0)
@@ -108,9 +104,7 @@ class TestDisplayTrendAggregation:
             )
         ]
         df_all: pd.DataFrame = pd.concat(dfs, ignore_index=True)
-        trend_df: pd.DataFrame = (
-            df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
-        )
+        trend_df: pd.DataFrame = df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
 
         medians = trend_df.set_index(["year", "department_code"])["property_value"].to_dict()
         assert medians[(2023, "75")] == pytest.approx(1000000.0)

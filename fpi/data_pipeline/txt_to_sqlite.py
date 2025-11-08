@@ -44,9 +44,7 @@ def txt_to_sqlite(
 
     # Load and insert data
     if chunksize:
-        for idx, chunk_df in enumerate(
-            pd.read_csv(txt_path_obj, delimiter=delimiter, chunksize=chunksize, low_memory=False)
-        ):
+        for idx, chunk_df in enumerate(pd.read_csv(txt_path_obj, delimiter=delimiter, chunksize=chunksize, low_memory=False)):
             # chunk_df is a pd.DataFrame
             chunk_df.columns = clean_columns(list(chunk_df.columns))
             chunk_df.to_sql(table_name, conn, if_exists="append", index=False)

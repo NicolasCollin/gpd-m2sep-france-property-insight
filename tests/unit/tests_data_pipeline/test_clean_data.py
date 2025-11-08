@@ -65,9 +65,7 @@ class TestCleanData:
         """
         Scenario: Columns should be renamed according to the mapping and extra columns removed.
         """
-        df: pd.DataFrame = pd.DataFrame(
-            {"DATE_MUTATION": ["01/01/2024"], "valeur_fonciere": [1000000], "extra_col": ["to_remove"]}
-        )
+        df: pd.DataFrame = pd.DataFrame({"DATE_MUTATION": ["01/01/2024"], "valeur_fonciere": [1000000], "extra_col": ["to_remove"]})
         cleaned: pd.DataFrame = _clean_df(df)
 
         # Check renaming
@@ -92,9 +90,7 @@ class TestCleanData:
         """
         Scenario: Duplicate rows should be removed.
         """
-        df: pd.DataFrame = pd.DataFrame(
-            {"date_mutation": ["01/01/2024", "01/01/2024"], "valeur_fonciere": [1000000, 1000000]}
-        )
+        df: pd.DataFrame = pd.DataFrame({"date_mutation": ["01/01/2024", "01/01/2024"], "valeur_fonciere": [1000000, 1000000]})
         cleaned: pd.DataFrame = _clean_df(df)
 
         # Duplicate row removed
