@@ -423,19 +423,24 @@ def app_menu() -> gr.Blocks:
     with gr.Blocks(css=global_css, title="France Property Insight", fill_width=True) as menu:
         # Header / Navigation bar
         with gr.Row(elem_id="navbar"):
-            # Left section: logo + title
-            with gr.Column(scale=1, min_width=200):
-                gr.HTML("""
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <img src="/file=docs/fpi-logo.png" alt="Logo" style="height: 40px;">
-                        <div style="font-size: 20px; font-weight: bold; color: #0170bc;">
-                            France Property Insight
-                        </div>
-                    </div>
-                """)
+            # Left section: logo
+            with gr.Column(scale=1):
+                gr.Image(
+                    format="png",
+                    value="docs/fpi-logo.png",
+                    type="pil",
+                    show_label=False,
+                    elem_id="logo",
+                    container=False,
+                    interactive=False,
+                    show_download_button=False,
+                    show_fullscreen_button=False,
+                    show_share_button=False,
+                    height=100,
+                )
 
             # Right section: navigation links
-            with gr.Column(scale=2):
+            with gr.Column(scale=9):
                 with gr.Row(elem_id="nav-links"):
                     nav_home: gr.Button = gr.Button("Home", elem_id="nav-home")
                     nav_dashboard: gr.Button = gr.Button("Dashboard", elem_id="nav-dashboard")

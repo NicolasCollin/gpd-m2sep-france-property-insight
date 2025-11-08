@@ -16,7 +16,7 @@ def get_home_page() -> tuple[gr.Dropdown, gr.Button, gr.Button, gr.Button, gr.Bu
     with gr.Blocks():
         with gr.Column(elem_id="home-container"):
             # Hero Section
-            with gr.Row(elem_id="hero-section"):
+            with gr.Row(elem_id="hero-section", scale=1):
                 with gr.Column(elem_id="hero-content"):
                     _ = gr.HTML("""
                         <div class="hero-section">
@@ -53,7 +53,7 @@ def get_home_page() -> tuple[gr.Dropdown, gr.Button, gr.Button, gr.Button, gr.Bu
                         """)
 
             # Search section
-            with gr.Row(elem_id="search-section"):
+            with gr.Row(elem_id="search-section", scale=1):
                 with gr.Column(elem_id="search-container"):
                     _ = gr.HTML('<h2 class="search-title">All about a department</h2>')
 
