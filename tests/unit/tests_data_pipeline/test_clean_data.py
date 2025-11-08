@@ -1,3 +1,13 @@
+"""
+Unit tests for the internal cleaning logic of `clean_data` in fpi.data_pipeline.
+
+Covers:
+1. Column renaming and filtering according to the standard mapping.
+2. Dropping rows with missing values (NA).
+3. Removing duplicate rows.
+4. Preservation of relevant columns only.
+"""
+
 import pandas as pd
 
 
@@ -43,12 +53,12 @@ def _clean_df(df: pd.DataFrame) -> pd.DataFrame:
 
 class TestCleanData:
     """
-    Unit tests for the internal cleaning logic of `clean_data`.
+    Unit tests for the `_clean_df` function.
 
     Checks:
-    1. Column renaming and filtering
-    2. Dropping NA values
-    3. Dropping duplicate rows
+    1. Columns are renamed according to the mapping and extra columns are removed.
+    2. Rows containing NA values are dropped.
+    3. Duplicate rows are removed.
     """
 
     def test_column_rename_and_filter(self) -> None:
@@ -87,5 +97,6 @@ class TestCleanData:
         )
         cleaned: pd.DataFrame = _clean_df(df)
 
+        # Duplicate row removed
         n_rows: int = cleaned.shape[0]
         assert n_rows == 1

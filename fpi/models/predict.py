@@ -46,11 +46,7 @@ def mock_predict_price() -> None:
     }
 
     # Update to the Random Forest model path
-    model_path: str = "fpi/models/rf_model.joblib"
+    model_path: str = "fpi/models/random_forest.joblib"
 
     predicted_price: float = predict_price(model_path=model_path, input_data=example_input)
     print(f"Mock predicted price: €{predicted_price:,.0f}")
-
-
-if __name__ == "__main__":
-    mock_predict_price()

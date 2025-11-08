@@ -89,14 +89,14 @@ def mock_predict_price():
         "town_code": 120,
         "department_code": 75,
     }
-    model_path = "fpi/models/rf_model.joblib"
+    model_path = "fpi/models/random_forest.joblib"
     predicted_price = predict_price(model_path, example_input)
     print(f"Predicted price: €{predicted_price:,.0f}")
 
 
 def main():
     folder_path = "data/cleaned/cleaned2024"
-    model_path = "fpi/models/rf_model.joblib"
+    model_path = "fpi/models/random_forest.joblib"
     target_col = "property_value"
 
     cat_cols = ["postal_code", "department_code", "town_code", "property_type_code"]
