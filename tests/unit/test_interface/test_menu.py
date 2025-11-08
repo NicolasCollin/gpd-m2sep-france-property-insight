@@ -36,7 +36,7 @@ class TestAppMenu(unittest.TestCase):
         # Retrieve all buttons within the menu
         buttons: List[gr.Button] = [child for child in self.menu.children if isinstance(child, gr.Button)]
         # Expect at least navigation buttons to be present
-        self.assertTrue((len(buttons), 2), "Expected navigation buttons to be defined")
+        self.assertTrue((len(buttons), 5), "Expected navigation buttons to be defined")
 
     def test_blocks_not_empty(self) -> None:
         """Verify that the menu layout has at least one component"""
