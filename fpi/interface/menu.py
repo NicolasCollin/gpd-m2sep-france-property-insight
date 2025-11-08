@@ -7,7 +7,6 @@ from fpi.interface.dashboard.dashboard_page import get_dashboard_page
 from fpi.interface.home.home_page import get_home_page
 from fpi.interface.prediction.prediction_page import get_prediction_page
 
-# Correct type for Gradio update function
 update_fn: Callable = gr.update
 
 global_css = """
@@ -377,23 +376,25 @@ h2.page-title {
 
 def show_page(page_id: str) -> list[Any]:
     """
-    Updates the visibility of the main content columns to show only the selected page.
+    Control which main page is visible based on a page identifier.
 
     Args:
-        page_id (str): A string identifier for the page to show ("home", "dashboard", or "prediction").
+        page_id (str):
+            String identifier for the page to show.
+            Accepted values are:
+                - "home" → displays the homepage
+                - "dashboard" → displays the dashboard
+                - "prediction" → displays the property estimation page
 
     Returns:
-        A list of gr.update objects controlling the visibility for each of the
-        three main pages in order: [home, dashboard, prediction].
-        page_id: A string identifier for the page to show ("home", "dashboard", or "prediction").
-
-    Returns:
-        List[Any]: A list of Gradio update objects to set visibility for each page.
-
+        list[gr.Update]:
+            A list of `gr.update()` objects controlling the visibility
+            of each of the three main app sections, in the following order:
+            [home, dashboard, prediction].
     """
-    is_home = page_id == "home"
-    is_dashboard = page_id == "dashboard"
-    is_prediction = page_id == "prediction"
+    is_home: bool = page_id == "home"
+    is_dashboard: bool = page_id == "dashboard"
+    is_prediction: bool = page_id == "prediction"
 
     return [
         gr.update(visible=is_home),
@@ -404,50 +405,53 @@ def show_page(page_id: str) -> list[Any]:
 
 def app_menu() -> gr.Blocks:
     """
-    Create and return the main menu interface for the application.
+    Build and return the full Gradio interface for the application.
 
-    This function defines the global layout of the app, organizing three main pages:
-    - Home page: introduces the platform and provides navigation buttons and menu.
-    - Dashboard page: displays property data visualizations.
-    - Prediction page: allows users to estimate property values.
-
-    The function also handles navigation between these sections using Gradio event triggers.
+    This function defines:
+    - A fixed navigation bar with buttons (Home, Dashboard, Estimation, API Docs, GitLab)
+    - Three distinct pages:
+        1. Home page (overview, cards, department search)
+        2. Dashboard page (visual data analysis)
+        3. Prediction page (property price estimation form)
+    - Navigation logic between these pages through Gradio event triggers.
 
     Returns:
-        menu (gr.Blocks): The complete Gradio layout for the app, including navigation logic.
+        gr.Blocks:
+            The complete Gradio Blocks interface representing the full application.
     """
 
     with gr.Blocks(css=global_css, title="France Property Insight", fill_width=True) as menu:
-        # Header / Navbar
+        # Header / Navigation bar
         with gr.Row(elem_id="navbar"):
-            # Logo + title on the left
+            # Left section: logo + title
             with gr.Column(scale=1, min_width=200):
                 gr.HTML("""
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <img src="/file=docs/fpi-logo.png" alt="Logo" style="height: 40px;">
-                        <div style="font-size: 20px; font-weight: bold; color: #0170bc;">France Property Insight</div>
+                        <div style="font-size: 20px; font-weight: bold; color: #0170bc;">
+                            France Property Insight
+                        </div>
                     </div>
                 """)
 
-            # Navigation links on the right
+            # Right section: navigation links
             with gr.Column(scale=2):
                 with gr.Row(elem_id="nav-links"):
-                    nav_home: gr.components.Button = gr.Button("Home", elem_id="nav-home")
-                    nav_dashboard: gr.components.Button = gr.Button("Dashboard", elem_id="nav-dashboard")
-                    nav_estimate: gr.components.Button = gr.Button("Estimation", elem_id="nav-estimate")
-                    nav_api_docs: gr.components.Button = gr.Button("API Docs", elem_id="nav-api-docs")
-                    nav_gitlab: gr.components.Button = gr.Button("GitLab", elem_id="nav-gitlab")
+                    nav_home: gr.Button = gr.Button("Home", elem_id="nav-home")
+                    nav_dashboard: gr.Button = gr.Button("Dashboard", elem_id="nav-dashboard")
+                    nav_estimate: gr.Button = gr.Button("Estimation", elem_id="nav-estimate")
+                    nav_api_docs: gr.Button = gr.Button("API Docs", elem_id="nav-api-docs")
+                    nav_gitlab: gr.Button = gr.Button("GitLab", elem_id="nav-gitlab")
 
-        # ---------------------------- Home page -----------------------------
+        # Home page
         with gr.Column(visible=True, elem_classes="page-content") as home:
-            # Appeler la nouvelle homepage qui retourne department_dropdown et search_button
             department_dropdown, search_button, dashboard_card, estimation_card, about_card = get_home_page()
 
-        # ---------------------------- Dashboard page -----------------------------
+        # Dashboard page
         with gr.Column(visible=False, elem_classes="page-content") as dashboard:
             get_dashboard_page()
 
-        # --------------------------- Prediction page ---------------------------
+        # Prediction page
         with gr.Column(visible=False, elem_classes="page-content") as prediction:
             predict_btn: gr.Button
             reset_btn: gr.Button
@@ -458,30 +462,46 @@ def app_menu() -> gr.Blocks:
         # Navigation logic
         all_pages: list[gr.Component] = [home, dashboard, prediction]
 
-        # Navigation button clicks
+        # Main menu buttons
         nav_home.click(fn=show_page, inputs=gr.State("home"), outputs=all_pages)
         nav_dashboard.click(fn=show_page, inputs=gr.State("dashboard"), outputs=all_pages)
         nav_estimate.click(fn=show_page, inputs=gr.State("prediction"), outputs=all_pages)
 
-        # Navigation for API Docs and GitLab
+        # External links
         nav_api_docs.click(lambda: gr.HTML("<script>window.open('https://france-property-insight-docs.onrender.com/fpi.html', '_blank')</script>"))
         nav_gitlab.click(
             lambda: gr.HTML("<script>window.open('https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight', '_blank')</script>")
         )
 
-        # Navigation depuis les cartes
+        # Homepage cards navigation
         dashboard_card.click(fn=show_page, inputs=gr.State("dashboard"), outputs=all_pages)
         estimation_card.click(fn=show_page, inputs=gr.State("prediction"), outputs=all_pages)
         about_card.click(fn=lambda: gr.Info("Page À propos - En développement"), inputs=None, outputs=None)
 
-        def navigate_to_dashboard(department):
-            if department:
-                # Ici vous pouvez traiter le département sélectionné
-                print(f"Navigation vers dashboard avec: {department}")
-                return gr.update(visible=False), gr.update(visible=True), gr.update(visible=False)
-            return gr.update(visible=True), gr.update(visible=False), gr.update(visible=False)
+        # Search + Dashboard logic
+        def navigate_to_dashboard(department: str | None) -> list[Any]:
+            """
+            Redirect the user to the dashboard page after selecting a department.
 
-        # Connecter la recherche au dashboard
+            Args:
+                department (str | None): The selected department name or code.
+
+            Returns:
+                list[gr.Update]: Visibility updates for each page (home, dashboard, prediction).
+            """
+            if department:
+                print(f"Navigating to dashboard with: {department}")
+                return [
+                    gr.update(visible=False),
+                    gr.update(visible=True),
+                    gr.update(visible=False),
+                ]
+            return [
+                gr.update(visible=True),
+                gr.update(visible=False),
+                gr.update(visible=False),
+            ]
+
         search_button.click(fn=navigate_to_dashboard, inputs=department_dropdown, outputs=all_pages)
 
     return menu

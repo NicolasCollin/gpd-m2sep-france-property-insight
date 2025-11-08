@@ -1,15 +1,3 @@
-"""
-Unit tests for fpi.data_pipeline.loader
-Covers the CSV loading logic via `load_all_csv`.
-
-Checks:
-1. Multiple CSV files are loaded and concatenated
-2. Numeric columns are parsed correctly (handling French decimal format)
-3. All relevant columns are preserved
-4. No data is lost during concatenation
-5. Input directory structure is handled correctly
-"""
-
 from pathlib import Path
 
 import pandas as pd

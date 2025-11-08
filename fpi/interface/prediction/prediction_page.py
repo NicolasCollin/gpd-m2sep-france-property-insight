@@ -36,7 +36,7 @@ def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: floa
         "department_code": int(dept),
     }
 
-    model_path: str = "fpi/models/rf_model.joblib"
+    model_path: str = "fpi/models/random_forest.joblib"
 
     try:
         predicted_price: float = predict_price(model_path=model_path, input_data=input_data)

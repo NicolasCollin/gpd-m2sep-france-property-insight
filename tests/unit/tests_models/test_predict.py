@@ -1,15 +1,3 @@
-"""
-Unit tests for fpi.models.predict
-Uses a mock model to avoid loading real joblib files.
-
-Checks:
-1. predict_price returns expected value using a mocked model
-2. Input dictionary is correctly converted to a DataFrame
-3. Integer inputs are handled
-4. Multiple calls produce independent predictions
-5. Missing keys raise errors
-"""
-
 from unittest.mock import MagicMock, patch
 
 import pandas as pd

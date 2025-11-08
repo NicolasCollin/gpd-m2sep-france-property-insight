@@ -1,13 +1,3 @@
-"""
-Unit tests for the internal cleaning logic of `clean_data` in fpi.data_pipeline.
-
-Covers:
-1. Column renaming and filtering according to the standard mapping.
-2. Dropping rows with missing values (NA).
-3. Removing duplicate rows.
-4. Preservation of relevant columns only.
-"""
-
 import pandas as pd
 
 

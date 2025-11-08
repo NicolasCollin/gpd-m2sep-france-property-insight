@@ -1,17 +1,3 @@
-"""
-Unit tests for the aggregation logic inside `display_trend`.
-
-Covers:
-1. Single department with a single year
-2. Single department across multiple years
-3. Multiple departments across multiple years
-
-Checks:
-- Correct calculation of median property values after grouping.
-- Correct handling of department and year grouping.
-- Aggregation behaves as expected for different input scenarios.
-"""
-
 import pandas as pd
 import pytest
 

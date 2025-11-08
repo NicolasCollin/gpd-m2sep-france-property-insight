@@ -1,18 +1,3 @@
-"""
-Unit tests for plotting preparation logic in the analysis module.
-
-Covers:
-1. plot_sales_count_by_department (aggregation of property counts)
-2. plot_price_evolution_by_department (average property value per year/department)
-
-Checks:
-- Correct counting of properties per department
-- Correct handling of single/multiple departments and empty DataFrames
-- Correct average price calculation after grouping by year and department
-- Proper conversion from French decimal format to float
-- Proper extraction of year from transaction_date
-"""
-
 import pandas as pd
 import pandas.testing as pdt
 import pytest
