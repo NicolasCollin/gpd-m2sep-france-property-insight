@@ -7,7 +7,8 @@ import matplotlib
 
 matplotlib.use("Agg")
 
-from fpi.analysis.explore import display_trend, load_data
+from fpi.analysis.explore import display_trend
+from fpi.data_pipeline.loader import load_all_csv
 from fpi.utils.constants import VARS_TO_KEEP
 
 
@@ -16,7 +17,7 @@ class TestLoadData:
 
     def setup_method(self):
         """Common setup for all tests in this class"""
-        self.clean_df = load_data("data/cleaned/cleaned2024")
+        self.clean_df = load_all_csv("data/cleaned/cleaned2024")
         # self.clean_df = preprocess(self.raw_df)
 
     def test_translate(self):

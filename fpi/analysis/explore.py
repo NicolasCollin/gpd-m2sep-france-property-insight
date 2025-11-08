@@ -4,7 +4,7 @@ import pandas as pd
 
 from fpi.analysis.plots import display_trend
 from fpi.analysis.stats import compute_descriptive_statistics, summary
-from fpi.data_pipeline.data_prep import load_data
+from fpi.data_pipeline.loader import load_all_csv
 
 
 def explore() -> None:
@@ -15,7 +15,7 @@ def explore() -> None:
     3️ Compute descriptive stats
     4️ Generate plots (histograms, boxplots, curves)
     """
-    df: pd.DataFrame = load_data()
+    df: pd.DataFrame = load_all_csv()
     summary(df)
     compute_descriptive_statistics(df)
 

@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 
-def load_data() -> pd.DataFrame:
+def load_all_csv(data_root: str = "data/cleaned") -> pd.DataFrame:
     """
     Load all cleaned department CSV files for all available years
     and concatenate them into a single DataFrame.
@@ -15,9 +15,8 @@ def load_data() -> pd.DataFrame:
     Returns:
         pd.DataFrame: Combined data from all cleaned CSV files.
     """
-    data_root: str = "data/cleaned/"
-    all_files: list[str] = glob.glob(os.path.join(data_root, "cleaned*", "cleaned_*_*.csv"))
 
+    all_files: list[str] = glob.glob(os.path.join(data_root, "cleaned*", "cleaned_*_*.csv"))
     if not all_files:
         raise FileNotFoundError(f"No CSV files found in {data_root}")
 

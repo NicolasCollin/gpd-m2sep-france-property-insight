@@ -2,7 +2,7 @@ import gradio as gr
 import pandas as pd
 
 from fpi.analysis.dashboard import plot_price_evolution_by_department, plot_sales_count_by_department
-from fpi.data_pipeline.data_prep import load_data
+from fpi.data_pipeline.loader import load_all_csv
 
 
 def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
@@ -39,7 +39,7 @@ def display_dashboard() -> gr.Blocks:
     Returns:
         gr.Blocks: Complete Gradio dashboard layout ready to be rendered.
     """
-    df: pd.DataFrame = load_data()
+    df: pd.DataFrame = load_all_csv()
     with gr.Blocks() as dashboard:
         with gr.Tab("Overview"):
             _ = get_dashboard_table(df)
