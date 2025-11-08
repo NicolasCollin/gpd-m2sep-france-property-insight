@@ -12,6 +12,7 @@ import seaborn as sns
 from fpi.utils.constants import DEPT_NAMES
 
 
+# to be refactored in data_pipeline
 def _clean_value_series(series: pd.Series) -> pd.Series:
     """
     Clean and convert the `property_value` column to numeric.
@@ -33,6 +34,7 @@ def _clean_value_series(series: pd.Series) -> pd.Series:
     return numeric_series
 
 
+# to be refactored in data_pipeline
 def _load_year_data(year_folder: Path | str, dept_filter: str | None) -> list[pd.DataFrame]:
     """
     Load and clean all CSV files for a given year's folder.
