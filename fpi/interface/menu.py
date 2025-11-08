@@ -440,8 +440,12 @@ def app_menu() -> gr.Blocks:
                     nav_home: gr.Button = gr.Button("Home", elem_id="nav-home")
                     nav_dashboard: gr.Button = gr.Button("Dashboard", elem_id="nav-dashboard")
                     nav_estimate: gr.Button = gr.Button("Estimation", elem_id="nav-estimate")
-                    nav_api_docs: gr.Button = gr.Button("API Docs", elem_id="nav-api-docs")
-                    nav_gitlab: gr.Button = gr.Button("GitLab", elem_id="nav-gitlab")
+                    nav_api_docs: gr.Button = gr.Button(
+                        "API Docs", elem_id="nav-api-docs", link="https://france-property-insight-docs.onrender.com/fpi.html"
+                    )
+                    nav_gitlab: gr.Button = gr.Button(
+                        "GitLab", elem_id="nav-gitlab", link="https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight"
+                    )
 
         # Home page
         with gr.Column(visible=True, elem_classes="page-content") as home:
