@@ -10,7 +10,7 @@ dependencies = [
     "numpy==2.3.3",
     "pandas==2.3.3",
     "pdoc==15.0.4",
-    "plotly>=6.4.0",
+    "plotly==6.4.0",
     "pyarrow==22.0.0",
     "pydantic==2.11.10",
     "scikit-learn==1.7.2",
@@ -45,7 +45,7 @@ build-backend = "hatchling.build"
 
 # change line length tolerance
 [tool.ruff]
-line-length = 120
+line-length = 150
 
 # default linting rules + isort
 [tool.ruff.lint]
