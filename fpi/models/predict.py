@@ -1,10 +1,8 @@
-from typing import Any, Dict
-
 import joblib
 import pandas as pd
 
 
-def predict_price(model_path: str, input_data: Dict[str, float]) -> float:
+def predict_price(model_path: str, input_data: dict[str, float]) -> float:
     """
     Predict property price using a trained Random Forest pipeline.
 
@@ -37,7 +35,7 @@ def mock_predict_price() -> None:
     Prints:
         The predicted property price in euros.
     """
-    example_input: Dict[str, Any] = {
+    example_input: dict[str, float | int] = {
         "building_area": 13.0,
         "main_rooms": 1,
         "land_area": 20.0,
@@ -48,11 +46,7 @@ def mock_predict_price() -> None:
     }
 
     # Update to the Random Forest model path
-    model_path: str = "fpi/models/rf_model.joblib"
+    model_path: str = "fpi/models/random_forest.joblib"
 
     predicted_price: float = predict_price(model_path=model_path, input_data=example_input)
     print(f"Mock predicted price: €{predicted_price:,.0f}")
-
-
-if __name__ == "__main__":
-    mock_predict_price()

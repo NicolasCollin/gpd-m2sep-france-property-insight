@@ -5,35 +5,22 @@ import gradio as gr
 from fpi.interface.menu import app_menu
 
 
-def get_welcome_message() -> str:
-    """
-    Get the welcome message displayed when the application starts.
-
-    Returns:
-        str: A welcome message for the FPI app.
-    """
-    return "Welcome to FPI!"
-
-
 def main() -> None:
     """
     Welcome user, initialize and launch the main application.
 
     Detects if running inside Docker to adjust Gradio launch parameters.
     """
-    welcome_message: str = get_welcome_message()
-    print(welcome_message)
-    print("Press `Ctrl + C` in the terminal if you want to stop the app")
+    print("Welcome to FPI!\nPress `Ctrl + C` in the terminal if you want to stop the app")
 
     app: gr.Blocks = app_menu()
 
     # Detect Docker environment via env variable
     if os.getenv("RUNNING_IN_DOCKER") == "1":
-        app.launch(share=True, server_name="0.0.0.0", server_port=7860, debug=True)
+        app.launch(share=True, server_name="0.0.0.0", server_port=7860, debug=True, allowed_paths=["/docs"])
     else:
-        app.launch()
+        app.launch(allowed_paths=["/docs"])
 
 
-# Runs main function when this file is called directly.
 if __name__ == "__main__":
     main()

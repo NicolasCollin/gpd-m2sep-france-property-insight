@@ -1,16 +1,9 @@
-from typing import List, Tuple
-
 import gradio as gr
 
-from fpi.interface.prediction.form import form, reset_form, validate_inputs
-
-# from fpi.models.build_linear_model import predict_price
+from fpi.interface.prediction.form import get_form, reset_form, validate_inputs
 from fpi.models.predict import predict_price
 
 
-# =====================================================================
-# CALLBACK : run prediction
-# =====================================================================
 def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: float, rooms: int, land: float) -> str:
     """
     Call backs for the "Estimate" button. It prepares the data and calls the model prediction function.
@@ -30,6 +23,7 @@ def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: floa
     if error_msg:
         return error_msg
 
+    # house or apartment
     property_type_code: int = 1 if prop_type.lower() == "house" else 2
 
     input_data: dict[str, float | int] = {
@@ -42,8 +36,7 @@ def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: floa
         "department_code": int(dept),
     }
 
-    # model_path: str = "fpi/models/linear_model.pkl"
-    model_path: str = "fpi/models/rf_model.joblib"
+    model_path: str = "fpi/models/random_forest.joblib"
 
     try:
         predicted_price: float = predict_price(model_path=model_path, input_data=input_data)
@@ -53,23 +46,16 @@ def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: floa
         return f"Prediction failed: {error_str}"
 
 
-# ==============================================================================
-# PREDICTION PAGE LAYOUT
-# ==============================================================================
-
-
-def prediction_page() -> (
-    Tuple[gr.components.Button, gr.components.Button, gr.components.Markdown, List[gr.components.Component]]
-):
+def get_prediction_page() -> tuple[gr.components.Button, gr.components.Button, gr.components.Markdown, list[gr.components.FormComponent]]:
     """
-    Creates and returns the layout for the Prediction Page
+    Get the layout for the Prediction Page
 
     Returns:
-        tuple: A tuple containing:
+        tuple:
             - predict_btn (gr.Button): Button to trigger the estimation.
             - reset_btn (gr.Button): Button to clear the form.
             - result_output (gr.Markdown): Component to display the result/error.
-            - inputs_list (list[gr.Component]): Ordered list of all input fields.
+            - inputs_list (list(gr.Component)): Ordered list of all input fields.
     """
 
     with gr.Column():
@@ -77,22 +63,22 @@ def prediction_page() -> (
         gr.Markdown("Enter the characteristics of the property to get an estimated price.")
 
         with gr.Column(elem_classes="glass-box"):
-            # --- FORM ---
-            inputs_list: List[gr.components.Component]
+            # form inputs
+            inputs_list: list[gr.components.FormComponent]
             prop_type_input: gr.components.Component
-            inputs_list, prop_type_input = form()
+            inputs_list, prop_type_input = get_form()
 
-            # --- BUTTONS ---
+            # buttons predict and reset
             with gr.Row():
                 predict_btn: gr.components.Button = gr.Button("Estimate", variant="primary")
                 reset_btn: gr.components.Button = gr.Button("Reset")
 
-            # --- RESULT ---
+            # result
             result_output: gr.components.Markdown = gr.Markdown(
                 value="Estimation : **--- €**", label="Price estimated", elem_classes="prediction-result"
             )
 
-    # --- LINK CALLBACKS ---
+    # link callbacks
     predict_btn.click(
         fn=run_prediction,
         inputs=inputs_list,

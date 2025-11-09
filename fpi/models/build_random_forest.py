@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import Dict, List
 
 import joblib
 import pandas as pd
@@ -11,18 +10,12 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
 
 
-# =====================================================================
-# 1. Data Loading
-# =====================================================================
 def load_data_from_folder(folder_path: str, pattern: str = "*_2024.csv") -> pd.DataFrame:
     files = sorted(Path(folder_path).rglob(pattern))
     assert len(files) > 0, f"No files found in {folder_path}!"
     return pd.concat([pd.read_csv(f) for f in files], ignore_index=True)
 
 
-# =====================================================================
-# 2. Data Preparation
-# =====================================================================
 def prepare_target(df: pd.DataFrame, target_col: str) -> pd.DataFrame:
     df[target_col] = df[target_col].astype(str).str.strip().replace("", None).str.replace(",", ".", regex=False)
     df[target_col] = pd.to_numeric(df[target_col], errors="coerce")
@@ -35,10 +28,7 @@ def split_features_target(df: pd.DataFrame, target_col: str, feature_cols: list)
     return train_test_split(X, y, test_size=0.3, random_state=42)
 
 
-# =====================================================================
-# 3. Preprocessing Pipeline
-# =====================================================================
-def build_preprocessor(cat_cols: List[str], num_cols: List[str]) -> ColumnTransformer:
+def build_preprocessor(cat_cols: list[str], num_cols: list[str]) -> ColumnTransformer:
     return ColumnTransformer(
         transformers=[
             ("cat", OneHotEncoder(handle_unknown="ignore", sparse_output=False), cat_cols),
@@ -47,9 +37,6 @@ def build_preprocessor(cat_cols: List[str], num_cols: List[str]) -> ColumnTransf
     )
 
 
-# =====================================================================
-# 4. Model Definition
-# =====================================================================
 def build_random_forest(preprocessor: ColumnTransformer) -> Pipeline:
     return Pipeline(
         [
@@ -62,35 +49,23 @@ def build_random_forest(preprocessor: ColumnTransformer) -> Pipeline:
     )
 
 
-# =====================================================================
-# 5. Training
-# =====================================================================
 def train_model(model: Pipeline, X_train, y_train) -> Pipeline:
     model.fit(X_train, y_train)
     return model
 
 
-# =====================================================================
-# 6. Evaluation
-# =====================================================================
 def evaluate_model(model: Pipeline, X_test, y_test):
     preds = model.predict(X_test)
     print(f"MAE: {mean_absolute_error(y_test, preds):.2f}")
     print(f"R²: {r2_score(y_test, preds):.3f}")
 
 
-# =====================================================================
-# 7. Save Model
-# =====================================================================
 def save_model(model: Pipeline, path: str):
     joblib.dump(model, path, compress=("xz", 3))
     print(f"Model saved to {path}")
 
 
-# =====================================================================
-# 8. Predict function (numerical categorical input allowed)
-# =====================================================================
-def predict_price(model_path: str, input_data: Dict[str, float]) -> float:
+def predict_price(model_path: str, input_data: dict[str, float]) -> float:
     """
     Predict property price using a trained Random Forest pipeline.
     Accepts numeric codes for categorical features.
@@ -104,9 +79,6 @@ def predict_price(model_path: str, input_data: Dict[str, float]) -> float:
     return float(model.predict(df)[0])
 
 
-# =====================================================================
-# 9. Example usage
-# =====================================================================
 def mock_predict_price():
     example_input = {
         "building_area": 135.0,
@@ -117,17 +89,14 @@ def mock_predict_price():
         "town_code": 120,
         "department_code": 75,
     }
-    model_path = "fpi/models/rf_model.joblib"
+    model_path = "fpi/models/random_forest.joblib"
     predicted_price = predict_price(model_path, example_input)
     print(f"Predicted price: €{predicted_price:,.0f}")
 
 
-# =====================================================================
-# 10. Main execution
-# =====================================================================
 def main():
     folder_path = "data/cleaned/cleaned2024"
-    model_path = "fpi/models/rf_model.joblib"
+    model_path = "fpi/models/random_forest.joblib"
     target_col = "property_value"
 
     cat_cols = ["postal_code", "department_code", "town_code", "property_type_code"]

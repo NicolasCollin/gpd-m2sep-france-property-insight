@@ -1,11 +1,10 @@
 import re
 from pathlib import Path
-from typing import Dict, List
 
 import pandas as pd
 
 
-def clean_data(raw_path: str | Path = "data/raw", cleaned_path: str | Path = "data/cleaned") -> None:
+def clean_data(raw_path: Path | str = "data/raw", cleaned_path: Path | str = "data/cleaned") -> None:
     """
     Clean and standardize all CSV files found under a raw data directory.
 
@@ -22,19 +21,16 @@ def clean_data(raw_path: str | Path = "data/raw", cleaned_path: str | Path = "da
     6. Save cleaned files to cleaned_path with the same structure as raw_path.
 
     Args:
-        - raw_path (str | Path):
+        - raw_path (Path | str):
             Path to the directory containing raw CSV files (default: `"data"`).
-        - cleaned_path (str | Path):
+        - cleaned_path (Path | str):
             Path to the directory where cleaned CSV files will be saved (default: `"data/cleaned"`).
-
-    Returns:
-        - None
 
     Output:
         - Cleaned CSV files saved under `cleaned_path` in subfolders (e.g., `cleaned2021/cleaned_data_2021.csv`).
     """
 
-    rename_dict: Dict[str, str] = {
+    rename_dict: dict[str, str] = {
         "date_mutation": "transaction_date",
         "valeur_fonciere": "property_value",
         "code_postal": "postal_code",
@@ -53,7 +49,7 @@ def clean_data(raw_path: str | Path = "data/raw", cleaned_path: str | Path = "da
     cleaned_path_obj: Path = Path(cleaned_path)
 
     # Find all raw CSV files
-    all_files: List[Path] = list(raw_path_obj.rglob("raw_*.csv"))
+    all_files: list[Path] = list(raw_path_obj.rglob("raw_*.csv"))
     if not all_files:
         print("No CSV files found in the raw folder.")
         return
@@ -69,7 +65,7 @@ def clean_data(raw_path: str | Path = "data/raw", cleaned_path: str | Path = "da
         df = df.rename(columns=rename_dict)
 
         # Keep only relevant columns
-        cols_to_keep: List[str] = [v for v in rename_dict.values() if v in df.columns]
+        cols_to_keep: list[str] = [v for v in rename_dict.values() if v in df.columns]
         df = df[cols_to_keep]
 
         # Drop NA and duplicates
@@ -92,7 +88,3 @@ def clean_data(raw_path: str | Path = "data/raw", cleaned_path: str | Path = "da
         print(f"Rows before cleaning: {n_before}, after cleaning: {n_after}")
 
     print(f"\nAll files have been cleaned and saved to {cleaned_path_obj}")
-
-
-if __name__ == "__main__":
-    clean_data()

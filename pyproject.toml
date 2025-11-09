@@ -10,7 +10,7 @@ dependencies = [
     "numpy==2.3.3",
     "pandas==2.3.3",
     "pdoc==15.0.4",
-    "plotly>=6.4.0",
+    "plotly==6.4.0",
     "pyarrow==22.0.0",
     "pydantic==2.11.10",
     "scikit-learn==1.7.2",
@@ -45,7 +45,7 @@ build-backend = "hatchling.build"
 
 # change line length tolerance
 [tool.ruff]
-line-length = 120
+line-length = 150
 
 # default linting rules + isort
 [tool.ruff.lint]
@@ -68,7 +68,6 @@ ignore = ["GHSA-2qfp-q593-8484"]
 main = "fpi.main:main"
 fpi = "fpi.main:main"
 fpidocker = "fpi.utils.aliases:fpidocker"
-exp= "fpi.analysis.explore:exp"
 # code quality
 precommit = "fpi.utils.aliases:precommit"
 lint = "fpi.utils.aliases:precommit"
@@ -81,7 +80,8 @@ ci = "fpi.utils.aliases:ci"
 apidoc = "fpi.utils.aliases:apidoc"
 apidocsave = "fpi.utils.aliases:apidocsave"
 # dev shortcuts
-mockridge = "fpi.models.build_linear_model:mock_build_ridge"
-mocklm = "fpi.models.build_linear_model:mock_build_lm"
-mockpredict = "fpi.models.build_linear_model:mock_predict_price"
+exp = "fpi.analysis.explore:explore"
+buildridge = "fpi.models.build_linear_model:mock_build_ridge"
+buildlm = "fpi.models.build_linear_model:mock_build_lm"
+predictlm = "fpi.models.build_linear_model:mock_predict_price"
 validation = "fpi.data_pipeline.validation:main"

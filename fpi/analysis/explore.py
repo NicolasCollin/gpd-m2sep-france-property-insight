@@ -2,71 +2,27 @@ from pathlib import Path
 
 import pandas as pd
 
-from fpi.analysis.utils_io import print_info
-from fpi.analysis.utils_plot import display_trend
-from fpi.analysis.utils_stats import compute_descriptive_statistics
-from fpi.utils.constants import VARS_TO_KEEP
+from fpi.analysis.plots import display_trend
+from fpi.analysis.stats import compute_descriptive_statistics, summary
+from fpi.data_pipeline.loader import load_all_csv
 
 
-def load_data(cleaned_path: str = "data/cleaned") -> pd.DataFrame:
-    """
-    Automatically load the latest cleaned dataset from the given path.
-
-    Args:
-        cleaned_path (str): Folder containing cleaned CSV files.
-    Returns:
-        pd.DataFrame: The most recent cleaned dataset.
-    """
-    cleaned_dir = Path(cleaned_path)
-    all_files = sorted(cleaned_dir.rglob("cleaned_*.csv"), reverse=True)
-    if not all_files:
-        raise FileNotFoundError(f"No cleaned CSV file found in {cleaned_path}")
-
-    latest_file = all_files[0]
-    print(f"Loaded latest file: {latest_file.name}")
-    return pd.read_csv(latest_file)
-
-
-def preprocess(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Keep only relevant variables defined in constants.
-
-    Args:
-        df (pd.DataFrame): Raw DataFrame.
-    Returns:
-        pd.DataFrame: Filtered DataFrame with relevant columns.
-    """
-    df = df[[col for col in VARS_TO_KEEP if col in df.columns]]
-    return df
-
-
-def exp() -> None:
+def explore() -> None:
     """
     Full exploratory pipeline:
-    1️ Load latest cleaned data
-    2️ Display basic info
+    1️ Load every cleaned csv files from 2021 to 2024
+    2️ Display summary statistics
     3️ Compute descriptive stats
     4️ Generate plots (histograms, boxplots, curves)
     """
-    # --- Step 1: Load latest data ---
-    df = load_data()
+    df: pd.DataFrame = load_all_csv()
+    summary(df)
+    compute_descriptive_statistics(df)
 
-    # --- Step 2: Inspect basic info ---
-    print_info(df)
-
-    # --- Step 3: Keep relevant columns ---
-    df_clean = preprocess(df)
-    compute_descriptive_statistics(df_clean)
-
-    # --- Step 4: Plots ---
-    output_dir = "docs/plots"
-    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    output_dir: Path = Path("docs/plots")
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     print("\n Generating regional trends...")
     display_trend("data/cleaned", dept_filter=None, agg="median")
     for dept in ["75", "92", "93"]:
         display_trend("data/cleaned", dept_filter=dept, agg="median")
-
-
-if __name__ == "__main__":
-    exp()
