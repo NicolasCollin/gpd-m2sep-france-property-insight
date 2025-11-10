@@ -32,6 +32,7 @@ def clean_data(raw_path: Path | str = "data/raw", cleaned_path: Path | str = "da
 
     rename_dict: dict[str, str] = {
         "date_mutation": "transaction_date",
+        "nature_mutation": "transaction_type",
         "valeur_fonciere": "property_value",
         "code_postal": "postal_code",
         "commune": "town_name",

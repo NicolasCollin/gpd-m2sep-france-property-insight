@@ -1,8 +1,7 @@
 """
-This script validates cleaned DVF (Demande de Valeur Foncière) CSV files for structural and value correctness.
+WARNING: Might be deleted as the Pydantic validation is meant to be part of the cleaning process, not run on its own.
 
-WARNING:
-    Might be deleted as the Pydantic validation is meant to be part of the cleaning process, not run on its own.
+This script validates cleaned DVF (Demande de Valeur Foncière) CSV files for structural and value correctness.
 
 Usage:
 - To validate all cleaned CSV files under the `data/cleaned/` directory, run:

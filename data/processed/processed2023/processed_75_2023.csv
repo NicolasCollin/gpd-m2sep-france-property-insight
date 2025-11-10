@@ -1,0 +1,2451 @@
+property_value,postal_code,town_name,department_code,property_type,building_area,main_rooms,land_area,year
+"430000,00",75019.0,PARIS 19,75,Maison,18.0,1.0,28.0,2023
+"4560000,00",75010.0,PARIS 10,75,Appartement,40.0,2.0,96.0,2023
+"4560000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,98.0,0.0,96.0,2023
+"4560000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,8.0,0.0,96.0,2023
+"4560000,00",75010.0,PARIS 10,75,Dépendance,0.0,0.0,96.0,2023
+"4560000,00",75010.0,PARIS 10,75,Appartement,25.0,1.0,96.0,2023
+"4560000,00",75010.0,PARIS 10,75,Appartement,32.0,2.0,96.0,2023
+"4560000,00",75010.0,PARIS 10,75,Appartement,30.0,2.0,96.0,2023
+"4560000,00",75010.0,PARIS 10,75,Appartement,18.0,1.0,96.0,2023
+"4560000,00",75010.0,PARIS 10,75,Appartement,10.0,1.0,96.0,2023
+"4560000,00",75010.0,PARIS 10,75,Appartement,12.0,1.0,96.0,2023
+"27000000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,1281.0,0.0,466.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,42.0,2.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Dépendance,0.0,0.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,49.0,2.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,42.0,4.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,34.0,2.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,40.0,2.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,50.0,4.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,48.0,3.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,52.0,3.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,46.0,2.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,47.0,2.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,93.0,0.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,64.0,0.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,50.0,2.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,48.0,2.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,27.0,2.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,53.0,2.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,44.0,2.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Appartement,66.0,3.0,516.0,2023
+"1342222,20",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,72.0,0.0,516.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,1696.0,0.0,358.0,2023
+"32600000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,0.0,0.0,337.0,2023
+"32600000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,18.0,0.0,335.0,2023
+"32600000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,288.0,0.0,335.0,2023
+"32600000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,420.0,0.0,335.0,2023
+"32600000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,410.0,0.0,335.0,2023
+"32600000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,15.0,0.0,335.0,2023
+"32600000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,187.0,0.0,335.0,2023
+"32600000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,40.0,0.0,335.0,2023
+"32600000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,43.0,0.0,335.0,2023
+"22400000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,328.0,0.0,454.0,2023
+"22400000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,333.0,0.0,454.0,2023
+"22400000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,330.0,0.0,454.0,2023
+"22400000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,168.0,0.0,454.0,2023
+"22400000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,0.0,0.0,454.0,2023
+"22400000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,489.0,0.0,454.0,2023
+"211050,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,1719.0,2023
+"211050,00",75008.0,PARIS 08,75,Appartement,37.0,2.0,1719.0,2023
+"4315000,00",75019.0,PARIS 19,75,Appartement,43.0,2.0,416.0,2023
+"4315000,00",75019.0,PARIS 19,75,Dépendance,0.0,0.0,416.0,2023
+"4315000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,53.0,0.0,416.0,2023
+"4315000,00",75019.0,PARIS 19,75,Appartement,57.0,3.0,416.0,2023
+"4315000,00",75019.0,PARIS 19,75,Appartement,40.0,2.0,416.0,2023
+"4315000,00",75019.0,PARIS 19,75,Appartement,20.0,1.0,416.0,2023
+"4315000,00",75019.0,PARIS 19,75,Appartement,37.0,2.0,416.0,2023
+"4315000,00",75019.0,PARIS 19,75,Appartement,79.0,3.0,416.0,2023
+"4315000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,82.0,0.0,416.0,2023
+"4315000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,174.0,0.0,416.0,2023
+"1790000,00",75019.0,PARIS 19,75,Maison,127.0,7.0,139.0,2023
+"11600,00",75019.0,PARIS 19,75,Dépendance,0.0,0.0,144.0,2023
+"1300000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,25.0,0.0,117.0,2023
+"1300000,00",75020.0,PARIS 20,75,Dépendance,0.0,0.0,117.0,2023
+"1300000,00",75020.0,PARIS 20,75,Appartement,90.0,6.0,117.0,2023
+"1300000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,30.0,0.0,117.0,2023
+"2650000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,120.0,0.0,89.0,2023
+"2650000,00",75020.0,PARIS 20,75,Appartement,31.0,1.0,89.0,2023
+"2650000,00",75020.0,PARIS 20,75,Appartement,35.0,1.0,89.0,2023
+"2650000,00",75020.0,PARIS 20,75,Appartement,33.0,1.0,89.0,2023
+"10650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,519.0,0.0,199.0,2023
+"55000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,119.0,0.0,660.0,2023
+"55000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,193.0,0.0,660.0,2023
+"55000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,164.0,0.0,660.0,2023
+"55000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,238.0,0.0,660.0,2023
+"55000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,211.0,0.0,660.0,2023
+"55000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,226.0,0.0,660.0,2023
+"55000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,236.0,0.0,660.0,2023
+"55000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,146.0,0.0,660.0,2023
+"55000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,125.0,0.0,660.0,2023
+"55000000,00",75008.0,PARIS 08,75,Appartement,43.0,2.0,660.0,2023
+"2479000,00",75020.0,PARIS 20,75,Appartement,33.0,2.0,118.0,2023
+"2479000,00",75020.0,PARIS 20,75,Maison,186.0,5.0,118.0,2023
+"86000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,4755.0,0.0,393.0,2023
+"860000,00",75019.0,PARIS 19,75,Maison,70.0,3.0,92.0,2023
+"2850000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,54.0,0.0,65.0,2023
+"2850000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,9.0,0.0,65.0,2023
+"2850000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,87.0,0.0,65.0,2023
+"2850000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,50.0,0.0,65.0,2023
+"2850000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,40.0,0.0,65.0,2023
+"2850000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,53.0,0.0,65.0,2023
+"1900000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,3.0,0.0,87.0,2023
+"1900000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,454.0,0.0,87.0,2023
+"1900000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,58.0,0.0,87.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,63.0,3.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,29.0,1.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,60.0,3.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,52.0,2.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,19.0,1.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,17.0,1.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,14.0,1.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,80.0,4.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Dépendance,0.0,0.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,21.0,2.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,12.0,1.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,15.0,1.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,81.0,4.0,293.0,2023
+"2700000,00",75018.0,PARIS 18,75,Appartement,64.0,3.0,293.0,2023
+"4500000,00",75019.0,PARIS 19,75,Maison,298.0,6.0,611.0,2023
+"800000,00",75020.0,PARIS 20,75,Maison,40.0,2.0,70.0,2023
+"4800000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,462.0,0.0,162.0,2023
+"723615,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,685.0,0.0,174.0,2023
+"1900000,00",75020.0,PARIS 20,75,Maison,90.0,5.0,148.0,2023
+"5000000,00",75008.0,PARIS 08,75,Appartement,28.0,2.0,126.0,2023
+"5000000,00",75008.0,PARIS 08,75,Appartement,13.0,1.0,126.0,2023
+"5000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,93.0,0.0,126.0,2023
+"5000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,29.0,0.0,126.0,2023
+"5000000,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,126.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,8.0,0.0,167.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,120.0,0.0,167.0,2023
+"157200000,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,167.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,26.0,0.0,167.0,2023
+"157200000,00",75008.0,PARIS 08,75,Appartement,36.0,2.0,167.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,56.0,0.0,167.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,91.0,0.0,167.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,19.0,0.0,508.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,190.0,0.0,508.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,1054.0,0.0,508.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,548.0,0.0,508.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,20.0,0.0,508.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,8.0,0.0,324.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,155.0,0.0,324.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,125.0,0.0,324.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,106.0,0.0,324.0,2023
+"157200000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,225.0,0.0,324.0,2023
+"16900000,00",75017.0,PARIS 17,75,Dépendance,0.0,0.0,661.0,2023
+"16900000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,236.0,0.0,661.0,2023
+"16900000,00",75017.0,PARIS 17,75,Appartement,45.0,3.0,661.0,2023
+"16900000,00",75017.0,PARIS 17,75,Appartement,9.0,1.0,661.0,2023
+"16900000,00",75017.0,PARIS 17,75,Appartement,135.0,4.0,661.0,2023
+"16900000,00",75017.0,PARIS 17,75,Appartement,183.0,6.0,661.0,2023
+"16900000,00",75017.0,PARIS 17,75,Appartement,132.0,4.0,661.0,2023
+"16900000,00",75017.0,PARIS 17,75,Appartement,47.0,2.0,661.0,2023
+"16900000,00",75017.0,PARIS 17,75,Appartement,170.0,7.0,661.0,2023
+"16900000,00",75017.0,PARIS 17,75,Appartement,105.0,3.0,661.0,2023
+"16900000,00",75017.0,PARIS 17,75,Appartement,35.0,2.0,661.0,2023
+"8150000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,450.0,0.0,224.0,2023
+"8150000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,50.0,0.0,224.0,2023
+"1950000,00",75020.0,PARIS 20,75,Maison,127.0,5.0,134.0,2023
+"1950000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,50.0,0.0,134.0,2023
+"2171950,00",75018.0,PARIS 18,75,Maison,55.0,4.0,99.0,2023
+"2171950,00",75018.0,PARIS 18,75,Maison,73.0,4.0,148.0,2023
+"620000,00",75019.0,PARIS 19,75,Maison,90.0,4.0,69.0,2023
+"19109000,00",75001.0,PARIS 01,75,Dépendance,0.0,0.0,237.0,2023
+"19109000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,191.0,0.0,237.0,2023
+"19109000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,106.0,0.0,237.0,2023
+"19109000,00",75001.0,PARIS 01,75,Appartement,35.0,2.0,237.0,2023
+"19109000,00",75001.0,PARIS 01,75,Appartement,96.0,3.0,237.0,2023
+"19109000,00",75001.0,PARIS 01,75,Appartement,58.0,2.0,237.0,2023
+"19109000,00",75001.0,PARIS 01,75,Appartement,43.0,2.0,237.0,2023
+"19109000,00",75001.0,PARIS 01,75,Appartement,65.0,3.0,237.0,2023
+"19109000,00",75001.0,PARIS 01,75,Appartement,35.0,1.0,237.0,2023
+"19109000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,68.0,0.0,237.0,2023
+"19109000,00",75001.0,PARIS 01,75,Appartement,16.0,1.0,237.0,2023
+"6000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,762.0,0.0,129.0,2023
+"6000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,10.0,0.0,129.0,2023
+"6000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,15.0,0.0,129.0,2023
+"6000000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,1158.0,0.0,279.0,2023
+"150250000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,1788.0,0.0,895.0,2023
+"150250000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,952.0,0.0,895.0,2023
+"150250000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,58.0,0.0,895.0,2023
+"24437500,00",75002.0,PARIS 02,75,Appartement,152.0,5.0,499.0,2023
+"24437500,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,270.0,0.0,499.0,2023
+"24437500,00",75002.0,PARIS 02,75,Dépendance,0.0,0.0,499.0,2023
+"24437500,00",75002.0,PARIS 02,75,Appartement,187.0,6.0,499.0,2023
+"24437500,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,61.0,0.0,499.0,2023
+"24437500,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,331.0,0.0,499.0,2023
+"24437500,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,345.0,0.0,499.0,2023
+"24437500,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,164.0,0.0,499.0,2023
+"24437500,00",75002.0,PARIS 02,75,Appartement,125.0,5.0,499.0,2023
+"24437500,00",75002.0,PARIS 02,75,Appartement,117.0,6.0,499.0,2023
+"24437500,00",75002.0,PARIS 02,75,Appartement,25.0,2.0,499.0,2023
+"1462500,00",75002.0,PARIS 02,75,Appartement,25.0,2.0,499.0,2023
+"1462500,00",75002.0,PARIS 02,75,Dépendance,0.0,0.0,499.0,2023
+"1462500,00",75002.0,PARIS 02,75,Appartement,152.0,5.0,499.0,2023
+"1462500,00",75002.0,PARIS 02,75,Appartement,125.0,5.0,499.0,2023
+"1462500,00",75002.0,PARIS 02,75,Appartement,117.0,6.0,499.0,2023
+"1462500,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,331.0,0.0,499.0,2023
+"1462500,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,345.0,0.0,499.0,2023
+"1462500,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,164.0,0.0,499.0,2023
+"1462500,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,270.0,0.0,499.0,2023
+"1462500,00",75002.0,PARIS 02,75,Appartement,187.0,6.0,499.0,2023
+"1462500,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,61.0,0.0,499.0,2023
+"6410000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,15.0,0.0,184.0,2023
+"6410000,00",75009.0,PARIS 09,75,Appartement,116.0,4.0,184.0,2023
+"6410000,00",75009.0,PARIS 09,75,Appartement,109.0,4.0,184.0,2023
+"6410000,00",75009.0,PARIS 09,75,Appartement,25.0,2.0,184.0,2023
+"6410000,00",75009.0,PARIS 09,75,Dépendance,0.0,0.0,184.0,2023
+"6410000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,69.0,0.0,184.0,2023
+"6410000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,100.0,0.0,184.0,2023
+"6410000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,45.0,0.0,184.0,2023
+"15000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,46.0,0.0,345.0,2023
+"15000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,680.0,0.0,345.0,2023
+"7000000,00",75010.0,PARIS 10,75,Appartement,51.0,3.0,230.0,2023
+"7000000,00",75010.0,PARIS 10,75,Appartement,12.0,1.0,230.0,2023
+"7000000,00",75010.0,PARIS 10,75,Appartement,14.0,1.0,230.0,2023
+"7000000,00",75010.0,PARIS 10,75,Appartement,20.0,1.0,230.0,2023
+"7000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,150.0,0.0,230.0,2023
+"7000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,48.0,0.0,230.0,2023
+"7000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,159.0,0.0,230.0,2023
+"7000000,00",75010.0,PARIS 10,75,Appartement,52.0,3.0,230.0,2023
+"2840000,00",75018.0,PARIS 18,75,Maison,60.0,4.0,182.0,2023
+"14000000,00",75010.0,PARIS 10,75,Dépendance,0.0,0.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,73.0,2.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,94.0,0.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,190.0,0.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,88.0,3.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,73.0,3.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,74.0,3.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,71.0,3.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,10.0,1.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,93.0,4.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,66.0,3.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,93.0,5.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,94.0,5.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,90.0,5.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,65.0,3.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,21.0,1.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,44.0,2.0,577.0,2023
+"14000000,00",75010.0,PARIS 10,75,Appartement,147.0,5.0,577.0,2023
+"5000000,00",75009.0,PARIS 09,75,Dépendance,0.0,0.0,174.0,2023
+"5000000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,0.0,0.0,174.0,2023
+"5000000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,50.0,0.0,174.0,2023
+"5000000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,216.0,0.0,90.0,2023
+"5000000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,13.0,0.0,90.0,2023
+"9650000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,760.0,0.0,271.0,2023
+"9650000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,255.0,0.0,271.0,2023
+"4550000,00",75018.0,PARIS 18,75,Appartement,62.0,3.0,217.0,2023
+"4550000,00",75018.0,PARIS 18,75,Appartement,38.0,3.0,217.0,2023
+"4550000,00",75018.0,PARIS 18,75,Appartement,31.0,2.0,217.0,2023
+"4550000,00",75018.0,PARIS 18,75,Appartement,35.0,2.0,217.0,2023
+"4550000,00",75018.0,PARIS 18,75,Appartement,44.0,3.0,217.0,2023
+"4550000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,45.0,0.0,217.0,2023
+"4550000,00",75018.0,PARIS 18,75,Appartement,15.0,1.0,217.0,2023
+"900000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,200.0,0.0,146.0,2023
+"975000,00",75019.0,PARIS 19,75,Maison,75.0,5.0,79.0,2023
+"2850000,00",75002.0,PARIS 02,75,Appartement,45.0,2.0,78.0,2023
+"2850000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,50.0,0.0,78.0,2023
+"2850000,00",75002.0,PARIS 02,75,Appartement,43.0,1.0,78.0,2023
+"2850000,00",75002.0,PARIS 02,75,Appartement,39.0,2.0,78.0,2023
+"2850000,00",75002.0,PARIS 02,75,Appartement,37.0,2.0,78.0,2023
+"490550,00",75019.0,PARIS 19,75,Dépendance,0.0,0.0,188.0,2023
+"490550,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,870.0,0.0,188.0,2023
+"490550,00",75019.0,PARIS 19,75,Appartement,84.0,3.0,188.0,2023
+"3450000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,847.0,0.0,136.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,365.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,9.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,176.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,310.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,355.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,362.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,277.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,267.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,294.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,271.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,947.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,315.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,263.0,0.0,526.0,2023
+"68692400,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,157.0,0.0,526.0,2023
+"9460000,00",75003.0,PARIS 03,75,Dépendance,0.0,0.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,24.0,1.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,28.0,2.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,11.0,1.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,15.0,1.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,9.0,1.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,45.0,0.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,39.0,3.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,34.0,2.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,43.0,2.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,119.0,4.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,30.0,1.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,76.0,4.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,40.0,3.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,65.0,3.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,30.0,2.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Appartement,37.0,2.0,159.0,2023
+"9460000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,82.0,0.0,159.0,2023
+"2950000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,910.0,0.0,130.0,2023
+"890000,00",75020.0,PARIS 20,75,Dépendance,0.0,0.0,453.0,2023
+"890000,00",75020.0,PARIS 20,75,Maison,51.0,3.0,453.0,2023
+"45000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,1166.0,0.0,418.0,2023
+"45000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,284.0,0.0,418.0,2023
+"45000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,0.0,0.0,418.0,2023
+"45000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,761.0,0.0,418.0,2023
+"1043619,00",75019.0,PARIS 19,75,Maison,80.0,3.0,74.0,2023
+"3750000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,0.0,0.0,418.0,2023
+"3750000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,761.0,0.0,418.0,2023
+"3750000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,284.0,0.0,418.0,2023
+"3750000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,1166.0,0.0,418.0,2023
+"2207500,00",75020.0,PARIS 20,75,Maison,127.0,4.0,255.0,2023
+"86250000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,284.0,0.0,418.0,2023
+"86250000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,0.0,0.0,418.0,2023
+"86250000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,761.0,0.0,418.0,2023
+"86250000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,1166.0,0.0,418.0,2023
+"3800000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,299.0,0.0,58.0,2023
+"3800000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,50.0,0.0,58.0,2023
+"2550000,00",75020.0,PARIS 20,75,Dépendance,0.0,0.0,198.0,2023
+"2550000,00",75020.0,PARIS 20,75,Maison,186.0,6.0,198.0,2023
+"2371480,20",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,1249.0,0.0,215.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,449.0,0.0,1019.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,221.0,0.0,1019.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,89.0,0.0,1019.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,1248.0,0.0,1019.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,369.0,0.0,1019.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,365.0,0.0,1019.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,563.0,0.0,1019.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,302.0,0.0,1019.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,240.0,0.0,1019.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,1265.0,0.0,1019.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,680.0,0.0,1019.0,2023
+"84650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,284.0,0.0,1019.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,150.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,34.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,133.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,208.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,199.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,94.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Appartement,62.0,2.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Dépendance,0.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,52.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,14.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Appartement,47.0,3.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,120.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,129.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,92.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Appartement,32.0,3.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,89.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,60.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,25.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Appartement,24.0,1.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Appartement,82.0,3.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,95.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Appartement,70.0,2.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,124.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,160.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Appartement,21.0,1.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Appartement,54.0,2.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Appartement,46.0,3.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,415.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Appartement,55.0,2.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,18.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,105.0,0.0,1296.0,2023
+"36021632,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,580.0,0.0,1296.0,2023
+"146100,00",75003.0,PARIS 03,75,Dépendance,0.0,0.0,234.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,37.0,2.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,38.0,2.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,50.0,3.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Dépendance,0.0,0.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,36.0,2.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,53.0,3.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,52.0,3.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,51.0,3.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,39.0,2.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,26.0,1.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,29.0,2.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,40.0,2.0,326.0,2023
+"5600000,00",75019.0,PARIS 19,75,Appartement,33.0,2.0,326.0,2023
+"468050,00",75020.0,PARIS 20,75,Maison,128.0,5.0,111.0,2023
+"2170000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,8.0,0.0,90.0,2023
+"2170000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,325.0,0.0,90.0,2023
+"2170000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,36.0,0.0,90.0,2023
+"283182,00",75010.0,PARIS 10,75,Dépendance,0.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,99.0,4.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,26.0,2.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,14.0,1.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,83.0,4.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,87.0,3.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,49.0,3.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,38.0,3.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,13.0,1.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,53.0,3.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,131.0,5.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,167.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,95.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,121.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,112.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,330.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,180.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,35.0,2.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,61.0,3.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,58.0,3.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,27.0,2.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,101.0,4.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,48.0,2.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,6.0,1.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,81.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,38.0,2.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,389.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,188.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,74.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,97.0,4.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,33.0,2.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,136.0,5.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,10.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,107.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,132.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,50.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,265.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,16.0,1.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,74.0,5.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,55.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,163.0,3.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,116.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,130.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,17.0,2.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,539.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,665.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,38.0,1.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,598.0,0.0,1804.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,104.0,4.0,230.0,2023
+"283182,00",75010.0,PARIS 10,75,Dépendance,0.0,0.0,230.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,53.0,3.0,230.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,20.0,1.0,230.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,24.0,1.0,230.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,78.0,4.0,230.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,27.0,3.0,230.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,712.0,0.0,230.0,2023
+"283182,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,1007.0,0.0,230.0,2023
+"283182,00",75010.0,PARIS 10,75,Appartement,74.0,3.0,230.0,2023
+"1465200,00",75019.0,PARIS 19,75,Maison,61.0,3.0,183.0,2023
+"24000000,00",75010.0,PARIS 10,75,Appartement,88.0,4.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,140.0,0.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,47.0,0.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,65.0,0.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Appartement,37.0,1.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,285.0,0.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,100.0,0.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Appartement,55.0,3.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,95.0,0.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,193.0,0.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Appartement,60.0,3.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,158.0,0.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,66.0,0.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,55.0,0.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,373.0,0.0,909.0,2023
+"24000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,93.0,0.0,909.0,2023
+"1250000,00",75019.0,PARIS 19,75,Maison,104.0,5.0,88.0,2023
+"1250000,00",75019.0,PARIS 19,75,Dépendance,0.0,0.0,88.0,2023
+"13500000,00",75003.0,PARIS 03,75,Appartement,94.0,4.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Dépendance,0.0,0.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,98.0,0.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Appartement,132.0,5.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Appartement,63.0,2.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Appartement,45.0,2.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Appartement,54.0,2.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Appartement,55.0,2.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Appartement,135.0,4.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Appartement,53.0,3.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Appartement,92.0,3.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Appartement,47.0,1.0,766.0,2023
+"13500000,00",75003.0,PARIS 03,75,Appartement,85.0,4.0,766.0,2023
+"4000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,324.0,0.0,62.0,2023
+"4000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,400.0,0.0,62.0,2023
+"3000000,00",75017.0,PARIS 17,75,Appartement,25.0,2.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Appartement,35.0,3.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Appartement,21.0,2.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,99.0,0.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,100.0,0.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Appartement,12.0,1.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Appartement,31.0,2.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Appartement,18.0,1.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Appartement,14.0,1.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Appartement,29.0,2.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Appartement,22.0,1.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,63.0,0.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Appartement,24.0,1.0,194.0,2023
+"3000000,00",75017.0,PARIS 17,75,Dépendance,0.0,0.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Appartement,24.0,1.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Appartement,22.0,1.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Appartement,29.0,2.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Appartement,31.0,2.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Appartement,12.0,1.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,100.0,0.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,99.0,0.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Appartement,21.0,2.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Appartement,35.0,3.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Dépendance,0.0,0.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,63.0,0.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Appartement,18.0,1.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Appartement,14.0,1.0,194.0,2023
+"4650000,00",75017.0,PARIS 17,75,Appartement,25.0,2.0,194.0,2023
+"5300000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,164.0,0.0,164.0,2023
+"7289000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,2214.0,0.0,639.0,2023
+"1800,00",75003.0,PARIS 03,75,Dépendance,0.0,0.0,115.0,2023
+"21136768,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,185.0,0.0,426.0,2023
+"21136768,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,247.0,0.0,426.0,2023
+"21136768,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,51.0,0.0,426.0,2023
+"21136768,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,240.0,0.0,426.0,2023
+"21136768,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,97.0,0.0,426.0,2023
+"21136768,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,37.0,0.0,426.0,2023
+"21136768,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,158.0,0.0,426.0,2023
+"21136768,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,72.0,0.0,426.0,2023
+"21136768,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,215.0,0.0,426.0,2023
+"21136768,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,186.0,0.0,426.0,2023
+"21136768,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,61.0,0.0,426.0,2023
+"4800000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,187.0,0.0,312.0,2023
+"4800000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,24.0,0.0,312.0,2023
+"4800000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,112.0,0.0,312.0,2023
+"4800000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,170.0,0.0,312.0,2023
+"4800000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,166.0,0.0,312.0,2023
+"4800000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,175.0,0.0,312.0,2023
+"4800000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,178.0,0.0,312.0,2023
+"2100000,00",75020.0,PARIS 20,75,Maison,157.0,6.0,126.0,2023
+"106906224,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,71.0,0.0,1336.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,18.0,1.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,40.0,2.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,55.0,3.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,36.0,2.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,39.0,2.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,43.0,3.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,26.0,2.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,38.0,2.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,42.0,3.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,47.0,3.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,42.0,2.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,73.0,3.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,28.0,2.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,6.0,1.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,224.0,0.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,39.0,0.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,88.0,0.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Dépendance,0.0,0.0,410.0,2023
+"9850000,00",75003.0,PARIS 03,75,Appartement,49.0,2.0,410.0,2023
+"750000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,6823.0,0.0,1141.0,2023
+"750000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,567.0,0.0,1141.0,2023
+"750000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,3003.0,0.0,1141.0,2023
+"80000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,2232.0,0.0,551.0,2023
+"6660000,00",75002.0,PARIS 02,75,Appartement,34.0,2.0,131.0,2023
+"6660000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,119.0,0.0,131.0,2023
+"6660000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,83.0,0.0,131.0,2023
+"6660000,00",75002.0,PARIS 02,75,Appartement,55.0,2.0,131.0,2023
+"6660000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,44.0,0.0,131.0,2023
+"6660000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,79.0,0.0,131.0,2023
+"6660000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,84.0,0.0,131.0,2023
+"6660000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,85.0,0.0,131.0,2023
+"6660000,00",75002.0,PARIS 02,75,Appartement,43.0,2.0,131.0,2023
+"6660000,00",75002.0,PARIS 02,75,Appartement,37.0,2.0,131.0,2023
+"6660000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,16.0,0.0,131.0,2023
+"48200000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,3246.0,0.0,516.0,2023
+"4700000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,342.0,0.0,275.0,2023
+"4700000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,176.0,0.0,252.0,2023
+"4700000,00",75019.0,PARIS 19,75,Maison,98.0,4.0,252.0,2023
+"2119000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,40.0,0.0,136.0,2023
+"2119000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,41.0,0.0,136.0,2023
+"2119000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,20.0,0.0,136.0,2023
+"2119000,00",75002.0,PARIS 02,75,Appartement,15.0,1.0,136.0,2023
+"7200000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,882.0,0.0,158.0,2023
+"3300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,50.0,0.0,100.0,2023
+"3300000,00",75003.0,PARIS 03,75,Appartement,41.0,2.0,100.0,2023
+"3300000,00",75003.0,PARIS 03,75,Appartement,37.0,2.0,100.0,2023
+"3300000,00",75003.0,PARIS 03,75,Appartement,38.0,2.0,100.0,2023
+"3300000,00",75003.0,PARIS 03,75,Appartement,18.0,1.0,100.0,2023
+"3300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,120.0,0.0,100.0,2023
+"3300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,0.0,0.0,100.0,2023
+"3300000,00",75003.0,PARIS 03,75,Appartement,14.0,1.0,100.0,2023
+"3350000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,166.0,0.0,121.0,2023
+"3350000,00",75018.0,PARIS 18,75,Appartement,35.0,2.0,121.0,2023
+"10500000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,159.0,0.0,266.0,2023
+"10500000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,73.0,0.0,266.0,2023
+"10500000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,96.0,0.0,266.0,2023
+"10500000,00",75009.0,PARIS 09,75,Appartement,22.0,1.0,266.0,2023
+"10500000,00",75009.0,PARIS 09,75,Dépendance,0.0,0.0,266.0,2023
+"10500000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,150.0,0.0,266.0,2023
+"10500000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,153.0,0.0,266.0,2023
+"10500000,00",75009.0,PARIS 09,75,Appartement,151.0,5.0,266.0,2023
+"10500000,00",75009.0,PARIS 09,75,Appartement,120.0,5.0,266.0,2023
+"10500000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,140.0,0.0,266.0,2023
+"10500000,00",75009.0,PARIS 09,75,Appartement,30.0,2.0,266.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,36.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,40.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,35.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,29.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,37.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,34.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Dépendance,0.0,0.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,19.0,0.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,39.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,40.0,3.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,31.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,32.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,38.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,30.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,32.0,1.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,41.0,2.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,66.0,3.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,218.0,0.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,188.0,0.0,385.0,2023
+"1192750,00",75019.0,PARIS 19,75,Appartement,24.0,1.0,385.0,2023
+"12300000,00",75001.0,PARIS 01,75,Appartement,84.0,3.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Appartement,86.0,3.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,136.0,0.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Appartement,100.0,4.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Appartement,83.0,3.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Dépendance,0.0,0.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Appartement,66.0,2.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,49.0,0.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,180.0,0.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,51.0,0.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Appartement,50.0,2.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Appartement,110.0,3.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Appartement,32.0,1.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Appartement,34.0,2.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,156.0,0.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,313.0,0.0,545.0,2023
+"12300000,00",75001.0,PARIS 01,75,Appartement,24.0,1.0,545.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,101.0,4.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,35.0,2.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,37.0,2.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,95.0,4.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,116.0,4.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,26.0,2.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,96.0,4.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,100.0,4.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,34.0,2.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,41.0,2.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,20.0,1.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,16.0,1.0,243.0,2023
+"7300000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,676.0,0.0,257.0,2023
+"7300000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,24.0,0.0,257.0,2023
+"7300000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,107.0,0.0,257.0,2023
+"30000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,0.0,0.0,637.0,2023
+"2000000,00",75018.0,PARIS 18,75,Appartement,35.0,2.0,105.0,2023
+"2000000,00",75018.0,PARIS 18,75,Appartement,32.0,2.0,105.0,2023
+"2000000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,18.0,0.0,105.0,2023
+"2000000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,21.0,0.0,105.0,2023
+"2000000,00",75018.0,PARIS 18,75,Dépendance,0.0,0.0,105.0,2023
+"5175678,50",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,603.0,0.0,736.0,2023
+"7226000,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,101.0,4.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,26.0,2.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,116.0,4.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,35.0,2.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,96.0,4.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,37.0,2.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,95.0,4.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,100.0,4.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,34.0,2.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,41.0,2.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,20.0,1.0,243.0,2023
+"7226000,00",75008.0,PARIS 08,75,Appartement,16.0,1.0,243.0,2023
+"8800000,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,241.0,2023
+"8800000,00",75008.0,PARIS 08,75,Appartement,15.0,1.0,241.0,2023
+"8800000,00",75008.0,PARIS 08,75,Appartement,56.0,4.0,241.0,2023
+"8800000,00",75008.0,PARIS 08,75,Appartement,23.0,1.0,241.0,2023
+"8800000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,140.0,0.0,241.0,2023
+"8800000,00",75008.0,PARIS 08,75,Appartement,138.0,6.0,241.0,2023
+"8800000,00",75008.0,PARIS 08,75,Appartement,140.0,5.0,241.0,2023
+"8800000,00",75008.0,PARIS 08,75,Appartement,56.0,3.0,241.0,2023
+"8257002,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,64.0,0.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Dépendance,0.0,0.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,41.0,2.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,64.0,3.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,36.0,2.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,61.0,3.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,22.0,0.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,100.0,0.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,56.0,0.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,22.0,1.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,43.0,2.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,128.0,7.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,34.0,2.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,35.0,2.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,38.0,2.0,493.0,2023
+"8257002,00",75019.0,PARIS 19,75,Appartement,37.0,2.0,493.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,24.0,1.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,41.0,2.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,38.0,2.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,39.0,2.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,66.0,3.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Dépendance,0.0,0.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,32.0,1.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,218.0,0.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,188.0,0.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,36.0,2.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,30.0,2.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,40.0,2.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,35.0,2.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,29.0,2.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,37.0,2.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,34.0,2.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,32.0,2.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,40.0,3.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,19.0,0.0,385.0,2023
+"5734742,00",75019.0,PARIS 19,75,Appartement,31.0,2.0,385.0,2023
+"48420000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,269.0,0.0,388.0,2023
+"48420000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,1594.0,0.0,388.0,2023
+"2450000,00",75019.0,PARIS 19,75,Appartement,71.0,4.0,177.0,2023
+"2450000,00",75019.0,PARIS 19,75,Dépendance,0.0,0.0,177.0,2023
+"2450000,00",75019.0,PARIS 19,75,Appartement,133.0,6.0,177.0,2023
+"15000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,209.0,0.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,80.0,0.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Dépendance,0.0,0.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,30.0,0.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Appartement,50.0,2.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Appartement,41.0,1.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Appartement,145.0,5.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Appartement,129.0,4.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Appartement,45.0,2.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,130.0,0.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,50.0,0.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,41.0,0.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Appartement,150.0,4.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Appartement,36.0,1.0,367.0,2023
+"15000000,00",75002.0,PARIS 02,75,Appartement,39.0,2.0,367.0,2023
+"40189140,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,0.0,0.0,337.0,2023
+"40189140,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,18.0,0.0,335.0,2023
+"40189140,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,288.0,0.0,335.0,2023
+"40189140,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,420.0,0.0,335.0,2023
+"40189140,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,410.0,0.0,335.0,2023
+"40189140,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,15.0,0.0,335.0,2023
+"40189140,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,187.0,0.0,335.0,2023
+"40189140,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,43.0,0.0,335.0,2023
+"40189140,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,40.0,0.0,335.0,2023
+"1750000,00",75020.0,PARIS 20,75,Maison,154.0,4.0,113.0,2023
+"11000000,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,216.0,2023
+"11000000,00",75008.0,PARIS 08,75,Appartement,20.0,1.0,216.0,2023
+"11000000,00",75008.0,PARIS 08,75,Appartement,40.0,2.0,216.0,2023
+"11000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,420.0,0.0,216.0,2023
+"11000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,70.0,0.0,216.0,2023
+"11000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,37.0,0.0,216.0,2023
+"11000000,00",75008.0,PARIS 08,75,Appartement,38.0,2.0,216.0,2023
+"11000000,00",75008.0,PARIS 08,75,Appartement,39.0,2.0,216.0,2023
+"8950000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,1120.0,0.0,305.0,2023
+"1875000,00",75019.0,PARIS 19,75,Maison,140.0,5.0,164.0,2023
+"37329308,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,2045.0,0.0,684.0,2023
+"1320000,00",75019.0,PARIS 19,75,Maison,150.0,5.0,101.0,2023
+"546240,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,121.0,0.0,1050.0,2023
+"546240,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,113.0,0.0,1050.0,2023
+"546240,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,2562.0,0.0,1050.0,2023
+"860000,00",75019.0,PARIS 19,75,Maison,90.0,4.0,68.0,2023
+"20000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,145.0,0.0,223.0,2023
+"20000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,0.0,0.0,223.0,2023
+"20000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,155.0,0.0,223.0,2023
+"20000000,00",75002.0,PARIS 02,75,Appartement,20.0,1.0,223.0,2023
+"20000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,63.0,0.0,223.0,2023
+"20000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,327.0,0.0,223.0,2023
+"20000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,56.0,0.0,223.0,2023
+"20000000,00",75002.0,PARIS 02,75,Dépendance,0.0,0.0,223.0,2023
+"20000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,61.0,0.0,223.0,2023
+"20000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,150.0,0.0,223.0,2023
+"20000000,00",75002.0,PARIS 02,75,Appartement,30.0,2.0,223.0,2023
+"20000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,42.0,0.0,223.0,2023
+"7280000,00",75004.0,PARIS 04,75,Appartement,42.0,2.0,173.0,2023
+"7280000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,311.0,0.0,173.0,2023
+"7280000,00",75004.0,PARIS 04,75,Appartement,44.0,2.0,173.0,2023
+"7280000,00",75004.0,PARIS 04,75,Appartement,66.0,3.0,173.0,2023
+"7280000,00",75004.0,PARIS 04,75,Appartement,36.0,2.0,173.0,2023
+"7280000,00",75004.0,PARIS 04,75,Appartement,59.0,3.0,173.0,2023
+"7280000,00",75004.0,PARIS 04,75,Appartement,46.0,3.0,173.0,2023
+"7280000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,50.0,0.0,173.0,2023
+"7280000,00",75004.0,PARIS 04,75,Appartement,46.0,2.0,173.0,2023
+"6180000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,278.0,0.0,151.0,2023
+"31500000,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,627.0,2023
+"1770000,00",75018.0,PARIS 18,75,Maison,82.0,2.0,176.0,2023
+"590000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,70.0,0.0,121.0,2023
+"3800000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,40.0,0.0,104.0,2023
+"3800000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,60.0,0.0,104.0,2023
+"3800000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,45.0,0.0,104.0,2023
+"8500000,00",75017.0,PARIS 17,75,Dépendance,0.0,0.0,210.0,2023
+"8500000,00",75017.0,PARIS 17,75,Appartement,17.0,3.0,210.0,2023
+"8500000,00",75017.0,PARIS 17,75,Appartement,59.0,3.0,210.0,2023
+"8500000,00",75017.0,PARIS 17,75,Appartement,69.0,4.0,210.0,2023
+"8500000,00",75017.0,PARIS 17,75,Appartement,67.0,3.0,210.0,2023
+"8500000,00",75017.0,PARIS 17,75,Appartement,60.0,3.0,210.0,2023
+"8500000,00",75017.0,PARIS 17,75,Appartement,67.0,4.0,210.0,2023
+"8500000,00",75017.0,PARIS 17,75,Appartement,71.0,4.0,210.0,2023
+"8500000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,94.0,0.0,210.0,2023
+"8500000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,16.0,0.0,210.0,2023
+"8500000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,36.0,0.0,210.0,2023
+"1595950,00",75020.0,PARIS 20,75,Maison,100.0,4.0,116.0,2023
+"1741700,00",75019.0,PARIS 19,75,Maison,173.0,5.0,78.0,2023
+"11731253,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,0.0,0.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Dépendance,0.0,0.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,9.0,1.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,24.0,1.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,30.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,32.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,28.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,38.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,39.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,20.0,1.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,1090.0,0.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,64.0,0.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,57.0,0.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,16.0,1.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,34.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,49.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,48.0,3.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,27.0,1.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,41.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,50.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,33.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,25.0,1.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,23.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,25.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,110.0,4.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,19.0,1.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,45.0,3.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,13.0,1.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,35.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,73.0,4.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,29.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,24.0,2.0,900.0,2023
+"11731253,00",75010.0,PARIS 10,75,Appartement,46.0,2.0,900.0,2023
+"8120000,00",75017.0,PARIS 17,75,Appartement,52.0,3.0,178.0,2023
+"8120000,00",75017.0,PARIS 17,75,Appartement,54.0,3.0,178.0,2023
+"8120000,00",75017.0,PARIS 17,75,Appartement,56.0,3.0,178.0,2023
+"8120000,00",75017.0,PARIS 17,75,Appartement,55.0,3.0,178.0,2023
+"8120000,00",75017.0,PARIS 17,75,Appartement,35.0,2.0,178.0,2023
+"8120000,00",75017.0,PARIS 17,75,Appartement,29.0,2.0,178.0,2023
+"8120000,00",75017.0,PARIS 17,75,Appartement,14.0,1.0,178.0,2023
+"8120000,00",75017.0,PARIS 17,75,Dépendance,0.0,0.0,178.0,2023
+"8120000,00",75017.0,PARIS 17,75,Appartement,50.0,2.0,178.0,2023
+"8120000,00",75017.0,PARIS 17,75,Appartement,30.0,2.0,178.0,2023
+"8120000,00",75017.0,PARIS 17,75,Appartement,51.0,3.0,178.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,56.0,3.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,45.0,2.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,46.0,2.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,87.0,4.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,42.0,2.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,65.0,3.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,75.0,3.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,47.0,2.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,74.0,3.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,78.0,3.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,80.0,3.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,127.0,0.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,83.0,4.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,85.0,4.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,36.0,2.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,55.0,2.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,177.0,0.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,173.0,0.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,58.0,2.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,140.0,0.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,132.0,0.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,19.0,0.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,60.0,2.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,66.0,2.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,64.0,3.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,44.0,2.0,664.0,2023
+"20000000,00",75010.0,PARIS 10,75,Appartement,61.0,2.0,664.0,2023
+"962210,00",75020.0,PARIS 20,75,Maison,100.0,4.0,51.0,2023
+"1200000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,270.0,0.0,129.0,2023
+"1600000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,228.0,0.0,41.0,2023
+"6500000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,404.0,0.0,285.0,2023
+"78856,25",75001.0,PARIS 01,75,Appartement,34.0,2.0,208.0,2023
+"78856,25",75001.0,PARIS 01,75,Appartement,62.0,3.0,208.0,2023
+"78856,25",75001.0,PARIS 01,75,Appartement,20.0,1.0,208.0,2023
+"78856,25",75001.0,PARIS 01,75,Appartement,34.0,1.0,208.0,2023
+"78856,25",75001.0,PARIS 01,75,Appartement,49.0,2.0,208.0,2023
+"78856,25",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,72.0,0.0,208.0,2023
+"78856,25",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,160.0,0.0,208.0,2023
+"78856,25",75001.0,PARIS 01,75,Dépendance,0.0,0.0,208.0,2023
+"78856,25",75001.0,PARIS 01,75,Appartement,24.0,1.0,208.0,2023
+"78856,25",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,83.0,0.0,208.0,2023
+"78856,25",75001.0,PARIS 01,75,Appartement,96.0,4.0,208.0,2023
+"55962,50",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,79.0,0.0,140.0,2023
+"55962,50",75003.0,PARIS 03,75,Appartement,35.0,1.0,140.0,2023
+"55962,50",75003.0,PARIS 03,75,Appartement,39.0,2.0,140.0,2023
+"55962,50",75003.0,PARIS 03,75,Appartement,95.0,4.0,140.0,2023
+"55962,50",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,199.0,0.0,140.0,2023
+"38300000,00",75009.0,PARIS 09,75,Dépendance,0.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Dépendance,0.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,10.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,84.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,63.0,3.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,12.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,145.0,5.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,42.0,1.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,102.0,5.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,64.0,3.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,10.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,84.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,63.0,3.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,12.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,145.0,5.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,42.0,1.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,102.0,5.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,64.0,3.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,59.0,2.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,113.0,5.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,128.0,5.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,59.0,3.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,76.0,3.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,73.0,3.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,112.0,5.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,140.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,214.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,170.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,107.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,136.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,205.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,55.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,194.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,137.0,0.0,1933.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,137.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,194.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,55.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,205.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,136.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,107.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,170.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,214.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,140.0,0.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,112.0,5.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,73.0,3.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,76.0,3.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,59.0,3.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,128.0,5.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,113.0,5.0,0.0,2023
+"38300000,00",75009.0,PARIS 09,75,Appartement,59.0,2.0,0.0,2023
+"14000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,1268.0,0.0,231.0,2023
+"20300000,00",75003.0,PARIS 03,75,Appartement,21.0,1.0,331.0,2023
+"20300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,240.0,0.0,331.0,2023
+"20300000,00",75003.0,PARIS 03,75,Appartement,128.0,4.0,331.0,2023
+"20300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,1534.0,0.0,331.0,2023
+"20300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,168.0,0.0,331.0,2023
+"20300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,65.0,0.0,331.0,2023
+"20300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,147.0,0.0,331.0,2023
+"1732000,00",75018.0,PARIS 18,75,Maison,92.0,4.0,82.0,2023
+"140000,00",75020.0,PARIS 20,75,Maison,83.0,5.0,96.0,2023
+"6500000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,800.0,0.0,820.0,2023
+"3300000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,50.0,0.0,78.0,2023
+"3300000,00",75002.0,PARIS 02,75,Appartement,45.0,2.0,78.0,2023
+"3300000,00",75002.0,PARIS 02,75,Appartement,37.0,2.0,78.0,2023
+"3300000,00",75002.0,PARIS 02,75,Appartement,39.0,2.0,78.0,2023
+"3300000,00",75002.0,PARIS 02,75,Appartement,43.0,1.0,78.0,2023
+"8500000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,1050.0,0.0,151.0,2023
+"900000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,685.0,0.0,174.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,167.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,104.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,30.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Appartement,18.0,2.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Dépendance,0.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,50.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,71.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,61.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,109.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,124.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,108.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,39.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,138.0,0.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Appartement,82.0,4.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Appartement,17.0,1.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Appartement,19.0,2.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Appartement,28.0,2.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Appartement,13.0,1.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Appartement,7.0,1.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Appartement,30.0,3.0,429.0,2023
+"13300000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,0.0,0.0,429.0,2023
+"900000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,1174.0,0.0,271.0,2023
+"1057692,00",75020.0,PARIS 20,75,Maison,70.0,4.0,105.0,2023
+"6325000,00",75020.0,PARIS 20,75,Appartement,37.0,2.0,208.0,2023
+"6325000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,42.0,0.0,208.0,2023
+"6325000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,40.0,0.0,208.0,2023
+"6325000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,37.0,0.0,208.0,2023
+"6325000,00",75020.0,PARIS 20,75,Appartement,70.0,3.0,208.0,2023
+"6325000,00",75020.0,PARIS 20,75,Appartement,62.0,3.0,208.0,2023
+"6325000,00",75020.0,PARIS 20,75,Appartement,60.0,3.0,208.0,2023
+"6325000,00",75020.0,PARIS 20,75,Dépendance,0.0,0.0,208.0,2023
+"6325000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,12.0,0.0,208.0,2023
+"6325000,00",75020.0,PARIS 20,75,Appartement,20.0,2.0,208.0,2023
+"6325000,00",75020.0,PARIS 20,75,Appartement,13.0,1.0,208.0,2023
+"58500000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,105.0,0.0,501.0,2023
+"58500000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,1928.0,0.0,501.0,2023
+"3550000,00",75003.0,PARIS 03,75,Appartement,18.0,1.0,92.0,2023
+"3550000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,88.0,0.0,92.0,2023
+"3550000,00",75003.0,PARIS 03,75,Appartement,44.0,2.0,92.0,2023
+"3550000,00",75003.0,PARIS 03,75,Appartement,17.0,1.0,92.0,2023
+"3550000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,16.0,0.0,92.0,2023
+"3550000,00",75003.0,PARIS 03,75,Appartement,39.0,2.0,92.0,2023
+"3550000,00",75003.0,PARIS 03,75,Appartement,40.0,2.0,92.0,2023
+"1023697,00",75019.0,PARIS 19,75,Maison,78.0,4.0,58.0,2023
+"1600820,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,24.0,0.0,33.0,2023
+"1600820,00",75003.0,PARIS 03,75,Appartement,46.0,3.0,33.0,2023
+"16600000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,116.0,0.0,555.0,2023
+"16600000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,156.0,0.0,555.0,2023
+"16600000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,89.0,0.0,555.0,2023
+"16600000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,97.0,0.0,555.0,2023
+"16600000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,95.0,0.0,555.0,2023
+"16600000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,313.0,0.0,555.0,2023
+"16600000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,209.0,0.0,555.0,2023
+"2800000,00",75003.0,PARIS 03,75,Dépendance,0.0,0.0,47.0,2023
+"2800000,00",75003.0,PARIS 03,75,Appartement,32.0,2.0,47.0,2023
+"2800000,00",75003.0,PARIS 03,75,Appartement,33.0,2.0,47.0,2023
+"2800000,00",75003.0,PARIS 03,75,Appartement,31.0,2.0,47.0,2023
+"2800000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,50.0,0.0,47.0,2023
+"984000,00",75020.0,PARIS 20,75,Maison,80.0,4.0,69.0,2023
+"1100000,00",75019.0,PARIS 19,75,Maison,204.0,4.0,132.0,2023
+"1323000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,236.0,0.0,53.0,2023
+"14934786,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,112.0,0.0,6159.0,2023
+"900000,00",75020.0,PARIS 20,75,Appartement,29.0,3.0,114.0,2023
+"900000,00",75020.0,PARIS 20,75,Appartement,32.0,3.0,114.0,2023
+"900000,00",75020.0,PARIS 20,75,Appartement,26.0,2.0,114.0,2023
+"900000,00",75020.0,PARIS 20,75,Appartement,28.0,3.0,114.0,2023
+"800000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,624.0,0.0,111.0,2023
+"135000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,271.0,0.0,400.0,2023
+"135000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,93.0,0.0,400.0,2023
+"135000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,220.0,0.0,400.0,2023
+"135000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,30.0,0.0,400.0,2023
+"135000000,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,400.0,2023
+"135000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,280.0,0.0,400.0,2023
+"135000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,0.0,0.0,400.0,2023
+"135000000,00",75008.0,PARIS 08,75,Appartement,31.0,1.0,400.0,2023
+"135000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,853.0,0.0,400.0,2023
+"135000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,827.0,0.0,400.0,2023
+"7500000,00",75010.0,PARIS 10,75,Dépendance,0.0,0.0,246.0,2023
+"7500000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,89.0,0.0,246.0,2023
+"7500000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,19.0,0.0,246.0,2023
+"7500000,00",75010.0,PARIS 10,75,Appartement,49.0,3.0,246.0,2023
+"7500000,00",75010.0,PARIS 10,75,Appartement,67.0,3.0,246.0,2023
+"7500000,00",75010.0,PARIS 10,75,Appartement,65.0,3.0,246.0,2023
+"7500000,00",75010.0,PARIS 10,75,Appartement,68.0,3.0,246.0,2023
+"7500000,00",75010.0,PARIS 10,75,Appartement,66.0,3.0,246.0,2023
+"7500000,00",75010.0,PARIS 10,75,Appartement,61.0,3.0,246.0,2023
+"7500000,00",75010.0,PARIS 10,75,Appartement,63.0,3.0,246.0,2023
+"7500000,00",75010.0,PARIS 10,75,Appartement,41.0,2.0,246.0,2023
+"917000,00",75020.0,PARIS 20,75,Maison,92.0,4.0,116.0,2023
+"1822450,00",75019.0,PARIS 19,75,Maison,165.0,5.0,97.0,2023
+"2727500,00",75017.0,PARIS 17,75,Maison,202.0,9.0,175.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,53.0,3.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,40.0,2.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,41.0,2.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,39.0,2.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,120.0,0.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Dépendance,0.0,0.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,64.0,4.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,51.0,2.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,48.0,2.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,63.0,3.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,50.0,2.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,64.0,3.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,49.0,2.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,30.0,2.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,37.0,2.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,34.0,1.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,60.0,3.0,788.0,2023
+"10400000,00",75019.0,PARIS 19,75,Appartement,62.0,3.0,788.0,2023
+"15952501,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,221.0,0.0,286.0,2023
+"15952501,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,262.0,0.0,286.0,2023
+"15952501,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,174.0,0.0,286.0,2023
+"15952501,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,165.0,0.0,286.0,2023
+"15952501,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,161.0,0.0,286.0,2023
+"14000000,00",75017.0,PARIS 17,75,Appartement,24.0,1.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Appartement,76.0,4.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,59.0,0.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Appartement,140.0,4.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Dépendance,0.0,0.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Appartement,200.0,7.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Appartement,190.0,7.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Appartement,148.0,5.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Appartement,19.0,2.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,43.0,0.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,135.0,0.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Appartement,12.0,1.0,289.0,2023
+"14000000,00",75017.0,PARIS 17,75,Appartement,199.0,7.0,289.0,2023
+"1020000,00",75019.0,PARIS 19,75,Maison,92.0,4.0,79.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,54.0,2.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Dépendance,0.0,0.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,48.0,2.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,46.0,2.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,56.0,2.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,39.0,2.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,60.0,2.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,49.0,2.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,27.0,1.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,33.0,1.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,29.0,1.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,31.0,1.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,38.0,1.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,40.0,1.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,51.0,2.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,28.0,1.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,26.0,1.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,32.0,1.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,34.0,1.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,30.0,1.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,50.0,2.0,1224.0,2023
+"9000000,00",75018.0,PARIS 18,75,Appartement,42.0,2.0,1224.0,2023
+"158728992,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,8870.0,0.0,1316.0,2023
+"158728992,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,440.0,0.0,354.0,2023
+"1170000,00",75019.0,PARIS 19,75,Maison,78.0,3.0,65.0,2023
+"2402500,00",75019.0,PARIS 19,75,Maison,120.0,4.0,126.0,2023
+"4271500,00",75018.0,PARIS 18,75,Maison,200.0,6.0,145.0,2023
+"4100000,00",75017.0,PARIS 17,75,Appartement,39.0,2.0,146.0,2023
+"4100000,00",75017.0,PARIS 17,75,Appartement,41.0,3.0,146.0,2023
+"4100000,00",75017.0,PARIS 17,75,Appartement,35.0,2.0,146.0,2023
+"4100000,00",75017.0,PARIS 17,75,Appartement,14.0,1.0,146.0,2023
+"4100000,00",75017.0,PARIS 17,75,Appartement,69.0,3.0,146.0,2023
+"4100000,00",75017.0,PARIS 17,75,Dépendance,0.0,0.0,146.0,2023
+"4100000,00",75017.0,PARIS 17,75,Appartement,56.0,3.0,146.0,2023
+"4100000,00",75017.0,PARIS 17,75,Appartement,37.0,3.0,146.0,2023
+"2630676,00",75018.0,PARIS 18,75,Appartement,46.0,2.0,1360.0,2023
+"2630676,00",75018.0,PARIS 18,75,Appartement,30.0,1.0,1360.0,2023
+"2630676,00",75018.0,PARIS 18,75,Appartement,31.0,1.0,1360.0,2023
+"2630676,00",75018.0,PARIS 18,75,Dépendance,0.0,0.0,1360.0,2023
+"2630676,00",75018.0,PARIS 18,75,Appartement,32.0,1.0,1360.0,2023
+"2630676,00",75018.0,PARIS 18,75,Appartement,45.0,1.0,1360.0,2023
+"2630676,00",75018.0,PARIS 18,75,Appartement,96.0,3.0,1360.0,2023
+"2630676,00",75018.0,PARIS 18,75,Appartement,30.0,2.0,1360.0,2023
+"2630676,00",75018.0,PARIS 18,75,Appartement,22.0,1.0,1360.0,2023
+"198940,00",75018.0,PARIS 18,75,Appartement,30.0,1.0,407.0,2023
+"198940,00",75018.0,PARIS 18,75,Appartement,31.0,1.0,407.0,2023
+"198940,00",75018.0,PARIS 18,75,Appartement,22.0,1.0,407.0,2023
+"198940,00",75018.0,PARIS 18,75,Appartement,47.0,2.0,407.0,2023
+"198940,00",75018.0,PARIS 18,75,Dépendance,0.0,0.0,407.0,2023
+"198940,00",75018.0,PARIS 18,75,Appartement,69.0,4.0,407.0,2023
+"198940,00",75018.0,PARIS 18,75,Appartement,54.0,2.0,407.0,2023
+"198940,00",75018.0,PARIS 18,75,Appartement,68.0,3.0,407.0,2023
+"6146597,00",75018.0,PARIS 18,75,Dépendance,0.0,0.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,30.0,1.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,56.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,55.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,53.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,33.0,1.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,82.0,4.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,46.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,78.0,4.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,32.0,1.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,48.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,49.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,69.0,3.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,35.0,1.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,61.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,73.0,3.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,70.0,3.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,66.0,3.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,31.0,1.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,94.0,5.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,77.0,3.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,87.0,4.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,34.0,1.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,38.0,1.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,62.0,3.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,61.0,3.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,47.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,136.0,0.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,112.0,5.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,54.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,41.0,1.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,51.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,50.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,36.0,1.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,57.0,2.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,83.0,4.0,2760.0,2023
+"6146597,00",75018.0,PARIS 18,75,Appartement,80.0,4.0,2760.0,2023
+"7500000,00",75020.0,PARIS 20,75,Appartement,28.0,2.0,211.0,2023
+"7500000,00",75020.0,PARIS 20,75,Appartement,28.0,3.0,211.0,2023
+"7500000,00",75020.0,PARIS 20,75,Appartement,33.0,2.0,211.0,2023
+"7500000,00",75020.0,PARIS 20,75,Appartement,37.0,2.0,211.0,2023
+"7500000,00",75020.0,PARIS 20,75,Appartement,39.0,2.0,211.0,2023
+"7500000,00",75020.0,PARIS 20,75,Appartement,28.0,1.0,211.0,2023
+"7500000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,85.0,0.0,211.0,2023
+"7500000,00",75020.0,PARIS 20,75,Appartement,22.0,1.0,211.0,2023
+"7500000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,43.0,0.0,211.0,2023
+"7500000,00",75020.0,PARIS 20,75,Dépendance,0.0,0.0,211.0,2023
+"7500000,00",75020.0,PARIS 20,75,Appartement,21.0,1.0,211.0,2023
+"7500000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,35.0,0.0,211.0,2023
+"5000000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,740.0,0.0,197.0,2023
+"45500000,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,2162.0,0.0,355.0,2023
+"3100000,00",75020.0,PARIS 20,75,Dépendance,0.0,0.0,247.0,2023
+"3100000,00",75020.0,PARIS 20,75,Appartement,31.0,1.0,247.0,2023
+"3100000,00",75020.0,PARIS 20,75,Appartement,40.0,3.0,247.0,2023
+"3100000,00",75020.0,PARIS 20,75,Appartement,16.0,1.0,247.0,2023
+"3100000,00",75020.0,PARIS 20,75,Appartement,88.0,4.0,247.0,2023
+"3100000,00",75020.0,PARIS 20,75,Appartement,26.0,1.0,247.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,133.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,127.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,147.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,128.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,79.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,95.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,19.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,31.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Appartement,33.0,3.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,140.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,148.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,129.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,130.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,123.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,10.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,114.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,20.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,70.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,105.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,266.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,276.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,149.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,116.0,0.0,814.0,2023
+"53500000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,12.0,0.0,814.0,2023
+"5820000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,435.0,0.0,444.0,2023
+"5820000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,305.0,0.0,444.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,32.0,2.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,13.0,1.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,20.0,1.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,18.0,1.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,60.0,3.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,53.0,3.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,38.0,2.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,54.0,3.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Dépendance,0.0,0.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,10.0,1.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,24.0,1.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,37.0,2.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,45.0,3.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,33.0,2.0,288.0,2023
+"4300000,00",75017.0,PARIS 17,75,Appartement,34.0,2.0,288.0,2023
+"40000000,00",75008.0,PARIS 08,75,Appartement,390.0,9.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Appartement,158.0,8.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,452.0,0.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,488.0,0.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,441.0,0.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Appartement,46.0,2.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Appartement,32.0,1.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,80.0,0.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,220.0,0.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,30.0,0.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,41.0,0.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Appartement,39.0,1.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Appartement,90.0,5.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Appartement,13.0,1.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,295.0,0.0,668.0,2023
+"40000000,00",75008.0,PARIS 08,75,Appartement,100.0,2.0,668.0,2023
+"2418150,00",75019.0,PARIS 19,75,Maison,269.0,8.0,273.0,2023
+"4200000,00",75018.0,PARIS 18,75,Appartement,44.0,3.0,168.0,2023
+"4200000,00",75018.0,PARIS 18,75,Appartement,43.0,2.0,168.0,2023
+"4200000,00",75018.0,PARIS 18,75,Appartement,57.0,3.0,168.0,2023
+"4200000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,95.0,0.0,168.0,2023
+"4200000,00",75018.0,PARIS 18,75,Appartement,43.0,3.0,168.0,2023
+"4200000,00",75018.0,PARIS 18,75,Appartement,45.0,3.0,168.0,2023
+"4200000,00",75018.0,PARIS 18,75,Appartement,52.0,3.0,168.0,2023
+"4200000,00",75018.0,PARIS 18,75,Appartement,24.0,2.0,168.0,2023
+"4200000,00",75018.0,PARIS 18,75,Dépendance,0.0,0.0,168.0,2023
+"900000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,298.0,0.0,126.0,2023
+"2600000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,923.0,0.0,151.0,2023
+"2600000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,72.0,0.0,151.0,2023
+"3375000,00",75017.0,PARIS 17,75,Dépendance,0.0,0.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Appartement,54.0,2.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,54.0,0.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,79.0,0.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Appartement,56.0,3.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Appartement,74.0,4.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Appartement,77.0,4.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Appartement,54.0,3.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Appartement,77.0,3.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Appartement,25.0,1.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,62.0,0.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Appartement,52.0,3.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Appartement,35.0,3.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Appartement,7.0,1.0,191.0,2023
+"3375000,00",75017.0,PARIS 17,75,Local industriel. commercial ou assimilé,88.0,0.0,191.0,2023
+"22000000,00",75003.0,PARIS 03,75,Dépendance,0.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,169.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,41.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Appartement,38.0,2.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,70.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,20.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Appartement,73.0,4.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Appartement,50.0,3.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,208.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,220.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,435.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,23.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,24.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,36.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,47.0,0.0,647.0,2023
+"22000000,00",75003.0,PARIS 03,75,Appartement,18.0,1.0,201.0,2023
+"22000000,00",75003.0,PARIS 03,75,Appartement,80.0,3.0,201.0,2023
+"22000000,00",75003.0,PARIS 03,75,Appartement,40.0,2.0,201.0,2023
+"22000000,00",75003.0,PARIS 03,75,Appartement,88.0,3.0,201.0,2023
+"22000000,00",75003.0,PARIS 03,75,Appartement,20.0,1.0,201.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,115.0,0.0,201.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,41.0,0.0,201.0,2023
+"22000000,00",75003.0,PARIS 03,75,Appartement,21.0,1.0,201.0,2023
+"22000000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,23.0,0.0,201.0,2023
+"5400000,00",75003.0,PARIS 03,75,Appartement,16.0,1.0,216.0,2023
+"5400000,00",75003.0,PARIS 03,75,Appartement,59.0,3.0,216.0,2023
+"5400000,00",75003.0,PARIS 03,75,Appartement,46.0,2.0,216.0,2023
+"5400000,00",75003.0,PARIS 03,75,Appartement,77.0,3.0,216.0,2023
+"5400000,00",75003.0,PARIS 03,75,Appartement,27.0,2.0,216.0,2023
+"5400000,00",75003.0,PARIS 03,75,Appartement,26.0,2.0,216.0,2023
+"5400000,00",75003.0,PARIS 03,75,Dépendance,0.0,0.0,216.0,2023
+"5400000,00",75003.0,PARIS 03,75,Appartement,49.0,3.0,216.0,2023
+"5400000,00",75003.0,PARIS 03,75,Local industriel. commercial ou assimilé,394.0,0.0,216.0,2023
+"43000000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,4000.0,0.0,1003.0,2023
+"43000000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,605.0,0.0,1003.0,2023
+"43000000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,45.0,0.0,1003.0,2023
+"43000000,00",75009.0,PARIS 09,75,Local industriel. commercial ou assimilé,40.0,0.0,1003.0,2023
+"1200000,00",75010.0,PARIS 10,75,Local industriel. commercial ou assimilé,624.0,0.0,111.0,2023
+"800000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,105.0,0.0,106.0,2023
+"3375000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,1064.0,0.0,187.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,15.0,1.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,17.0,1.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,21.0,2.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,30.0,1.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,22.0,1.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,63.0,3.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,51.0,2.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,36.0,2.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,19.0,1.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,39.0,2.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,53.0,2.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,25.0,1.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,23.0,2.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,38.0,2.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,75.0,2.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,17.0,0.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,164.0,0.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,350.0,0.0,214.0,2023
+"10600000,00",75004.0,PARIS 04,75,Appartement,18.0,1.0,214.0,2023
+"92596160,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,591.0,0.0,527.0,2023
+"92596160,00",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,1926.0,0.0,527.0,2023
+"9000000,00",75017.0,PARIS 17,75,Dépendance,0.0,0.0,561.0,2023
+"9000000,00",75017.0,PARIS 17,75,Appartement,35.0,2.0,561.0,2023
+"9000000,00",75017.0,PARIS 17,75,Appartement,378.0,5.0,561.0,2023
+"9000000,00",75017.0,PARIS 17,75,Appartement,67.0,2.0,561.0,2023
+"9000000,00",75017.0,PARIS 17,75,Appartement,277.0,3.0,561.0,2023
+"538480,00",75018.0,PARIS 18,75,Maison,69.0,4.0,49.0,2023
+"1571438,00",75018.0,PARIS 18,75,Maison,115.0,5.0,80.0,2023
+"7000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,160.0,0.0,281.0,2023
+"7000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,341.0,0.0,281.0,2023
+"7000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,148.0,0.0,281.0,2023
+"7000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,8.0,0.0,281.0,2023
+"7000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,106.0,0.0,281.0,2023
+"7000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,7.0,0.0,281.0,2023
+"4950000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,40.0,0.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,29.0,1.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,18.0,2.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,12.0,1.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,21.0,1.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,21.0,2.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,22.0,1.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,24.0,1.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,17.0,1.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,15.0,1.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,192.0,0.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,104.0,6.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,25.0,2.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,24.0,2.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,32.0,2.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,29.0,2.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,19.0,1.0,642.0,2023
+"4950000,00",75020.0,PARIS 20,75,Appartement,42.0,2.0,642.0,2023
+"16000000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,550.0,0.0,930.0,2023
+"16000000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,638.0,0.0,930.0,2023
+"16000000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,579.0,0.0,930.0,2023
+"16000000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,110.0,0.0,930.0,2023
+"16000000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,392.0,0.0,930.0,2023
+"16000000,00",75019.0,PARIS 19,75,Local industriel. commercial ou assimilé,113.0,0.0,930.0,2023
+"1818886,60",75001.0,PARIS 01,75,Local industriel. commercial ou assimilé,401.0,0.0,117.0,2023
+"2000000,00",75020.0,PARIS 20,75,Local industriel. commercial ou assimilé,540.0,0.0,573.0,2023
+"43000,00",75008.0,PARIS 08,75,Dépendance,0.0,0.0,248.0,2023
+"43000,00",75008.0,PARIS 08,75,Local industriel. commercial ou assimilé,567.0,0.0,248.0,2023
+"21000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,214.0,0.0,256.0,2023
+"21000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,161.0,0.0,256.0,2023
+"21000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,164.0,0.0,256.0,2023
+"21000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,68.0,0.0,256.0,2023
+"21000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,59.0,0.0,256.0,2023
+"21000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,148.0,0.0,256.0,2023
+"21000000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,296.0,0.0,256.0,2023
+"2350000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,521.0,0.0,142.0,2023
+"2350000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,24.0,0.0,142.0,2023
+"1373870,00",75020.0,PARIS 20,75,Maison,85.0,3.0,89.0,2023
+"10750000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,441.0,0.0,268.0,2023
+"29000000,00",75004.0,PARIS 04,75,Dépendance,0.0,0.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,32.0,0.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,45.0,2.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,36.0,2.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,42.0,2.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,18.0,2.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,30.0,1.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,24.0,1.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,25.0,0.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,75.0,0.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,45.0,0.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,26.0,0.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,12.0,1.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,58.0,3.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,150.0,4.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,35.0,2.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,26.0,3.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,27.0,2.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,32.0,2.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,63.0,2.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,68.0,3.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,64.0,2.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,63.0,3.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,44.0,2.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,64.0,3.0,611.0,2023
+"29000000,00",75004.0,PARIS 04,75,Appartement,85.0,3.0,611.0,2023
+"375000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,1019.0,0.0,179.0,2023
+"3100000,00",75018.0,PARIS 18,75,Local industriel. commercial ou assimilé,76.0,0.0,121.0,2023
+"3100000,00",75018.0,PARIS 18,75,Appartement,30.0,1.0,121.0,2023
+"3100000,00",75018.0,PARIS 18,75,Appartement,26.0,1.0,121.0,2023
+"3100000,00",75018.0,PARIS 18,75,Appartement,27.0,1.0,121.0,2023
+"3100000,00",75018.0,PARIS 18,75,Appartement,23.0,1.0,121.0,2023
+"3100000,00",75018.0,PARIS 18,75,Appartement,45.0,3.0,121.0,2023
+"3463000,00",75004.0,PARIS 04,75,Appartement,30.0,2.0,102.0,2023
+"3463000,00",75004.0,PARIS 04,75,Appartement,40.0,3.0,102.0,2023
+"3463000,00",75004.0,PARIS 04,75,Appartement,25.0,2.0,102.0,2023
+"3463000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,71.0,0.0,102.0,2023
+"3463000,00",75004.0,PARIS 04,75,Appartement,24.0,2.0,102.0,2023
+"3463000,00",75004.0,PARIS 04,75,Appartement,32.0,2.0,102.0,2023
+"3463000,00",75004.0,PARIS 04,75,Appartement,22.0,2.0,102.0,2023
+"3463000,00",75004.0,PARIS 04,75,Local industriel. commercial ou assimilé,75.0,0.0,102.0,2023
+"1419300,00",75018.0,PARIS 18,75,Maison,260.0,6.0,120.0,2023
+"1300000,00",75020.0,PARIS 20,75,Dépendance,0.0,0.0,263.0,2023
+"6750000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,205.0,0.0,166.0,2023
+"6750000,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,653.0,0.0,166.0,2023
+"2064600,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,85.0,0.0,131.0,2023
+"2064600,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,44.0,0.0,131.0,2023
+"2064600,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,119.0,0.0,131.0,2023
+"2064600,00",75002.0,PARIS 02,75,Appartement,43.0,2.0,131.0,2023
+"2064600,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,16.0,0.0,131.0,2023
+"2064600,00",75002.0,PARIS 02,75,Appartement,34.0,2.0,131.0,2023
+"2064600,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,83.0,0.0,131.0,2023
+"2064600,00",75002.0,PARIS 02,75,Appartement,37.0,2.0,131.0,2023
+"2064600,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,79.0,0.0,131.0,2023
+"2064600,00",75002.0,PARIS 02,75,Appartement,55.0,2.0,131.0,2023
+"2064600,00",75002.0,PARIS 02,75,Local industriel. commercial ou assimilé,84.0,0.0,131.0,2023
+"5300000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,700.0,0.0,257.0,2023
+"2988200,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,50.0,0.0,137.0,2023
+"2988200,00",75013.0,PARIS 13,75,Dépendance,0.0,0.0,137.0,2023
+"2988200,00",75013.0,PARIS 13,75,Appartement,32.0,2.0,137.0,2023
+"2988200,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,245.0,0.0,137.0,2023
+"4100000,00",75016.0,PARIS 16,75,Maison,283.0,11.0,197.0,2023
+"21300000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,1087.0,0.0,382.0,2023
+"2200000,00",75011.0,PARIS 11,75,Appartement,30.0,2.0,109.0,2023
+"2200000,00",75011.0,PARIS 11,75,Appartement,65.0,2.0,109.0,2023
+"2200000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,81.0,0.0,109.0,2023
+"2200000,00",75011.0,PARIS 11,75,Appartement,35.0,2.0,109.0,2023
+"2280000,00",75014.0,PARIS 14,75,Maison,200.0,4.0,275.0,2023
+"7000000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,34.0,0.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,33.0,0.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Appartement,41.0,2.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Appartement,46.0,3.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Appartement,52.0,3.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Appartement,47.0,3.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Appartement,42.0,2.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Dépendance,0.0,0.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Appartement,40.0,2.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Appartement,34.0,2.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Appartement,32.0,2.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Appartement,30.0,2.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Appartement,15.0,1.0,236.0,2023
+"7000000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,26.0,0.0,236.0,2023
+"22765000,00",75016.0,PARIS 16,75,Maison,985.0,11.0,1394.0,2023
+"2016000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,600.0,0.0,107.0,2023
+"2016000,00",75011.0,PARIS 11,75,Appartement,25.0,2.0,107.0,2023
+"2100000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,423.0,0.0,263.0,2023
+"1171200,00",75016.0,PARIS 16,75,Maison,68.0,3.0,93.0,2023
+"2900000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,301.0,0.0,124.0,2023
+"2900000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,0.0,0.0,124.0,2023
+"1000000,00",75015.0,PARIS 15,75,Maison,65.0,4.0,102.0,2023
+"1380000,00",75013.0,PARIS 13,75,Maison,72.0,5.0,77.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,159.0,3.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,72.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,56.0,1.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,71.0,1.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,75.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,64.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,64.0,0.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,61.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,284.0,6.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,146.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,66.0,0.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,80.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,87.0,3.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,126.0,3.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,273.0,3.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,108.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,68.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,104.0,4.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,115.0,4.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,103.0,3.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,219.0,0.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,116.0,3.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,57.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,152.0,4.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,67.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,123.0,3.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,125.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,222.0,6.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,74.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,76.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,62.0,2.0,1530.0,2023
+"70000000,00",75016.0,PARIS 16,75,Appartement,284.0,5.0,1530.0,2023
+"14785000,00",75015.0,PARIS 15,75,Dépendance,0.0,0.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,45.0,3.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,139.0,0.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,219.0,0.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,47.0,2.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,33.0,2.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,0.0,0.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,50.0,3.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,30.0,1.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,47.0,3.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,43.0,3.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,72.0,4.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,48.0,3.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,38.0,3.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,41.0,2.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,39.0,3.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,36.0,2.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,39.0,2.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,35.0,2.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,46.0,3.0,670.0,2023
+"14785000,00",75015.0,PARIS 15,75,Appartement,48.0,1.0,670.0,2023
+"2110000,00",75012.0,PARIS 12,75,Maison,180.0,7.0,160.0,2023
+"3600,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,1980.0,2023
+"3600,00",75014.0,PARIS 14,75,Appartement,20.0,1.0,1980.0,2023
+"6500000,00",75016.0,PARIS 16,75,Maison,350.0,6.0,176.0,2023
+"1511100,00",75013.0,PARIS 13,75,Maison,104.0,5.0,107.0,2023
+"1511100,00",75013.0,PARIS 13,75,Dépendance,0.0,0.0,107.0,2023
+"20000000,00",75006.0,PARIS 06,75,Appartement,82.0,2.0,197.0,2023
+"20000000,00",75006.0,PARIS 06,75,Appartement,50.0,3.0,197.0,2023
+"20000000,00",75006.0,PARIS 06,75,Appartement,32.0,2.0,197.0,2023
+"20000000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,38.0,0.0,197.0,2023
+"20000000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,176.0,0.0,197.0,2023
+"20000000,00",75006.0,PARIS 06,75,Appartement,49.0,3.0,197.0,2023
+"20000000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,197.0,2023
+"20000000,00",75006.0,PARIS 06,75,Appartement,34.0,2.0,197.0,2023
+"8300000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,409.0,0.0,174.0,2023
+"1848648,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,9.0,0.0,86.0,2023
+"1848648,00",75016.0,PARIS 16,75,Maison,161.0,5.0,86.0,2023
+"1846000,00",75013.0,PARIS 13,75,Maison,145.0,6.0,97.0,2023
+"1535000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,32.0,0.0,107.0,2023
+"1535000,00",75014.0,PARIS 14,75,Maison,70.0,4.0,107.0,2023
+"9100000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,719.0,0.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,26.0,2.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,38.0,2.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,29.0,1.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,20.0,2.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,123.0,5.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Dépendance,0.0,0.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,21.0,1.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,18.0,1.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,85.0,3.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,17.0,1.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,28.0,1.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,16.0,1.0,491.0,2023
+"9100000,00",75011.0,PARIS 11,75,Appartement,32.0,2.0,491.0,2023
+"3300000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,250.0,0.0,223.0,2023
+"1160000,00",75016.0,PARIS 16,75,Maison,78.0,3.0,81.0,2023
+"6200000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,553.0,0.0,146.0,2023
+"6200000,00",75011.0,PARIS 11,75,Appartement,30.0,2.0,146.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,71.0,3.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Dépendance,0.0,0.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,46.0,3.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,24.0,2.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,29.0,2.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,31.0,2.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,35.0,2.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,71.0,4.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,35.0,3.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,70.0,4.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,73.0,4.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,50.0,0.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,43.0,0.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,15.0,1.0,369.0,2023
+"45098848,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,2543.0,0.0,359.0,2023
+"6650000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,210.0,0.0,98.0,2023
+"6950000,00",75015.0,PARIS 15,75,Dépendance,0.0,0.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,15.0,1.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,43.0,0.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,50.0,0.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,35.0,2.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,73.0,4.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,35.0,3.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,46.0,3.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,29.0,2.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,24.0,2.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,70.0,4.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,71.0,4.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,71.0,3.0,369.0,2023
+"6950000,00",75015.0,PARIS 15,75,Appartement,31.0,2.0,369.0,2023
+"1600000,00",75015.0,PARIS 15,75,Appartement,23.0,1.0,134.0,2023
+"1600000,00",75015.0,PARIS 15,75,Dépendance,0.0,0.0,134.0,2023
+"1600000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,84.0,0.0,134.0,2023
+"1600000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,25.0,0.0,134.0,2023
+"1600000,00",75015.0,PARIS 15,75,Appartement,24.0,2.0,134.0,2023
+"1600000,00",75015.0,PARIS 15,75,Appartement,75.0,3.0,134.0,2023
+"10500000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,5560.0,0.0,1667.0,2023
+"1290000,00",75012.0,PARIS 12,75,Maison,98.0,6.0,120.0,2023
+"1390000,00",75013.0,PARIS 13,75,Appartement,42.0,2.0,210.0,2023
+"1390000,00",75013.0,PARIS 13,75,Dépendance,0.0,0.0,210.0,2023
+"1390000,00",75013.0,PARIS 13,75,Appartement,34.0,2.0,210.0,2023
+"1390000,00",75013.0,PARIS 13,75,Appartement,40.0,2.0,210.0,2023
+"1390000,00",75013.0,PARIS 13,75,Appartement,42.0,3.0,210.0,2023
+"1390000,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,171.0,0.0,210.0,2023
+"1390000,00",75013.0,PARIS 13,75,Appartement,32.0,2.0,210.0,2023
+"36100000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,5460.0,0.0,1301.0,2023
+"2075000,00",75014.0,PARIS 14,75,Maison,165.0,7.0,160.0,2023
+"2075000,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,160.0,2023
+"2075000,00",75014.0,PARIS 14,75,Maison,9.0,1.0,160.0,2023
+"1270000,00",75011.0,PARIS 11,75,Appartement,32.0,2.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Appartement,25.0,1.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Appartement,82.0,4.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Appartement,33.0,2.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Appartement,36.0,2.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Dépendance,0.0,0.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,48.0,0.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,27.0,0.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Appartement,46.0,2.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,33.0,0.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Appartement,46.0,3.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Appartement,47.0,3.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Appartement,25.0,2.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Appartement,27.0,2.0,277.0,2023
+"1270000,00",75011.0,PARIS 11,75,Appartement,34.0,2.0,277.0,2023
+"2713550,00",75014.0,PARIS 14,75,Maison,168.0,5.0,59.0,2023
+"7991512,00",75016.0,PARIS 16,75,Maison,380.0,9.0,429.0,2023
+"475000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,37.0,0.0,58.0,2023
+"475000,00",75012.0,PARIS 12,75,Appartement,50.0,4.0,58.0,2023
+"1000000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,243.0,0.0,121.0,2023
+"1865800,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,198.0,0.0,180.0,2023
+"18790000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,2029.0,0.0,620.0,2023
+"4850000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,60.0,0.0,178.0,2023
+"3450000,00",75006.0,PARIS 06,75,Appartement,8.0,1.0,90.0,2023
+"3450000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,90.0,2023
+"3450000,00",75006.0,PARIS 06,75,Appartement,34.0,2.0,90.0,2023
+"3450000,00",75006.0,PARIS 06,75,Appartement,42.0,3.0,90.0,2023
+"3450000,00",75006.0,PARIS 06,75,Appartement,19.0,2.0,90.0,2023
+"3450000,00",75006.0,PARIS 06,75,Appartement,9.0,1.0,90.0,2023
+"3450000,00",75006.0,PARIS 06,75,Appartement,43.0,1.0,90.0,2023
+"3450000,00",75006.0,PARIS 06,75,Appartement,10.0,1.0,90.0,2023
+"3450000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,95.0,0.0,90.0,2023
+"38467200,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,1241.0,0.0,321.0,2023
+"970000,00",75015.0,PARIS 15,75,Dépendance,0.0,0.0,8644.0,2023
+"970000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,70.0,0.0,8644.0,2023
+"4900000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,17.0,0.0,389.0,2023
+"4900000,00",75016.0,PARIS 16,75,Maison,263.0,9.0,389.0,2023
+"6855000,00",75005.0,PARIS 05,75,Dépendance,0.0,0.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,28.0,2.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,10.0,1.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,30.0,2.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,18.0,1.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,35.0,3.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,30.0,3.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,46.0,2.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,32.0,2.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,36.0,2.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,12.0,1.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,15.0,1.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,23.0,1.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Local industriel. commercial ou assimilé,31.0,0.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Local industriel. commercial ou assimilé,57.0,0.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Local industriel. commercial ou assimilé,22.0,0.0,334.0,2023
+"6855000,00",75005.0,PARIS 05,75,Appartement,23.0,2.0,334.0,2023
+"6900000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,751.0,0.0,1167.0,2023
+"6900000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,90.0,0.0,1167.0,2023
+"6900000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,41.0,0.0,1167.0,2023
+"6900000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,99.0,0.0,1167.0,2023
+"6900000,00",75011.0,PARIS 11,75,Maison,150.0,6.0,1167.0,2023
+"69228856,00",75016.0,PARIS 16,75,Maison,1237.0,17.0,446.0,2023
+"119661248,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,5459.0,0.0,1104.0,2023
+"1045725,00",75013.0,PARIS 13,75,Maison,54.0,4.0,32.0,2023
+"23500000,00",75007.0,PARIS 07,75,Appartement,62.0,3.0,416.0,2023
+"23500000,00",75007.0,PARIS 07,75,Maison,465.0,11.0,416.0,2023
+"23500000,00",75007.0,PARIS 07,75,Dépendance,0.0,0.0,416.0,2023
+"550000,00",75012.0,PARIS 12,75,Dépendance,0.0,0.0,134.0,2023
+"550000,00",75012.0,PARIS 12,75,Appartement,40.0,2.0,134.0,2023
+"550000,00",75012.0,PARIS 12,75,Appartement,31.0,2.0,134.0,2023
+"550000,00",75012.0,PARIS 12,75,Appartement,34.0,2.0,134.0,2023
+"550000,00",75012.0,PARIS 12,75,Appartement,34.0,3.0,134.0,2023
+"550000,00",75012.0,PARIS 12,75,Appartement,45.0,3.0,134.0,2023
+"550000,00",75012.0,PARIS 12,75,Appartement,78.0,3.0,134.0,2023
+"550000,00",75012.0,PARIS 12,75,Appartement,55.0,3.0,134.0,2023
+"550000,00",75012.0,PARIS 12,75,Appartement,50.0,3.0,134.0,2023
+"550000,00",75012.0,PARIS 12,75,Appartement,54.0,2.0,134.0,2023
+"550000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,93.0,0.0,134.0,2023
+"4150000,00",75016.0,PARIS 16,75,Maison,250.0,8.0,268.0,2023
+"25750000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,275.0,2023
+"25750000,00",75006.0,PARIS 06,75,Appartement,14.0,1.0,275.0,2023
+"25750000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,29.0,0.0,275.0,2023
+"25750000,00",75006.0,PARIS 06,75,Appartement,110.0,4.0,275.0,2023
+"25750000,00",75006.0,PARIS 06,75,Appartement,9.0,1.0,275.0,2023
+"25750000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,28.0,0.0,275.0,2023
+"25750000,00",75006.0,PARIS 06,75,Appartement,49.0,2.0,275.0,2023
+"25750000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,50.0,0.0,275.0,2023
+"25750000,00",75006.0,PARIS 06,75,Appartement,115.0,5.0,275.0,2023
+"25750000,00",75006.0,PARIS 06,75,Appartement,42.0,2.0,275.0,2023
+"25750000,00",75006.0,PARIS 06,75,Appartement,49.0,3.0,275.0,2023
+"1270000,00",75014.0,PARIS 14,75,Maison,62.0,3.0,87.0,2023
+"1230000,00",75013.0,PARIS 13,75,Appartement,15.0,1.0,57.0,2023
+"1230000,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,80.0,0.0,57.0,2023
+"18100000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,1168.0,0.0,747.0,2023
+"7140000,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,75.0,2023
+"7140000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,167.0,0.0,75.0,2023
+"7140000,00",75014.0,PARIS 14,75,Appartement,24.0,1.0,75.0,2023
+"7140000,00",75014.0,PARIS 14,75,Appartement,84.0,3.0,173.0,2023
+"7140000,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,173.0,2023
+"7140000,00",75014.0,PARIS 14,75,Appartement,34.0,1.0,173.0,2023
+"7140000,00",75014.0,PARIS 14,75,Appartement,43.0,2.0,173.0,2023
+"7140000,00",75014.0,PARIS 14,75,Appartement,34.0,2.0,173.0,2023
+"7140000,00",75014.0,PARIS 14,75,Appartement,39.0,2.0,173.0,2023
+"7140000,00",75014.0,PARIS 14,75,Appartement,48.0,2.0,173.0,2023
+"7140000,00",75014.0,PARIS 14,75,Appartement,14.0,1.0,173.0,2023
+"7140000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,95.0,0.0,173.0,2023
+"1195458,90",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,963.0,0.0,264.0,2023
+"1195458,90",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,625.0,0.0,264.0,2023
+"28200000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,1111.0,0.0,309.0,2023
+"620000,00",75012.0,PARIS 12,75,Maison,54.0,3.0,32.0,2023
+"6721000,00",75016.0,PARIS 16,75,Maison,180.0,6.0,153.0,2023
+"9690680,00",75016.0,PARIS 16,75,Maison,300.0,14.0,226.0,2023
+"19500000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,12.0,0.0,254.0,2023
+"19500000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,31.0,0.0,254.0,2023
+"19500000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,258.0,0.0,254.0,2023
+"19500000,00",75006.0,PARIS 06,75,Appartement,18.0,1.0,254.0,2023
+"19500000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,254.0,2023
+"19500000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,174.0,0.0,254.0,2023
+"19500000,00",75006.0,PARIS 06,75,Appartement,8.0,1.0,254.0,2023
+"19500000,00",75006.0,PARIS 06,75,Appartement,142.0,6.0,254.0,2023
+"19500000,00",75006.0,PARIS 06,75,Appartement,70.0,4.0,254.0,2023
+"19500000,00",75006.0,PARIS 06,75,Appartement,102.0,5.0,254.0,2023
+"19500000,00",75006.0,PARIS 06,75,Appartement,72.0,4.0,254.0,2023
+"1330000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,640.0,0.0,82.0,2023
+"1330000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,7.0,0.0,82.0,2023
+"2400000,00",75013.0,PARIS 13,75,Appartement,24.0,1.0,103.0,2023
+"2400000,00",75013.0,PARIS 13,75,Appartement,16.0,1.0,103.0,2023
+"2400000,00",75013.0,PARIS 13,75,Appartement,14.0,1.0,103.0,2023
+"2400000,00",75013.0,PARIS 13,75,Appartement,15.0,1.0,103.0,2023
+"2400000,00",75013.0,PARIS 13,75,Appartement,21.0,1.0,103.0,2023
+"8200000,00",75013.0,PARIS 13,75,Dépendance,0.0,0.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,37.0,2.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,40.0,1.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,33.0,2.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,32.0,2.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,102.0,5.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,49.0,3.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,75.0,0.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,63.0,3.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,29.0,2.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,45.0,2.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,55.0,3.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,50.0,3.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,64.0,3.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,68.0,4.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,22.0,1.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Appartement,12.0,1.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,38.0,0.0,480.0,2023
+"8200000,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,44.0,0.0,480.0,2023
+"2675000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,147.0,2023
+"2675000,00",75016.0,PARIS 16,75,Appartement,129.0,5.0,147.0,2023
+"2675000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,50.0,0.0,147.0,2023
+"2675000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,18.0,0.0,147.0,2023
+"17500000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,347.0,2023
+"15000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,478.0,2023
+"15000,00",75006.0,PARIS 06,75,Appartement,31.0,2.0,478.0,2023
+"10500000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,200.0,0.0,414.0,2023
+"10500000,00",75016.0,PARIS 16,75,Maison,300.0,4.0,414.0,2023
+"1800000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,18.0,0.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Appartement,14.0,1.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,15.0,0.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Appartement,65.0,3.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Appartement,35.0,2.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Appartement,23.0,1.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Appartement,62.0,3.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Appartement,54.0,3.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,139.0,0.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Appartement,45.0,2.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Appartement,66.0,3.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Appartement,40.0,2.0,271.0,2023
+"1800000,00",75014.0,PARIS 14,75,Appartement,52.0,3.0,271.0,2023
+"7700000,00",75015.0,PARIS 15,75,Dépendance,0.0,0.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,46.0,3.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,30.0,0.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,45.0,2.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,39.0,2.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,29.0,2.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,51.0,3.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,42.0,2.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,36.0,3.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,53.0,3.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,41.0,3.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,44.0,3.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,34.0,2.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,37.0,0.0,250.0,2023
+"7700000,00",75015.0,PARIS 15,75,Appartement,15.0,1.0,250.0,2023
+"5876000,00",75016.0,PARIS 16,75,Maison,250.0,8.0,264.0,2023
+"3600000,00",75016.0,PARIS 16,75,Appartement,39.0,2.0,188.0,2023
+"3600000,00",75016.0,PARIS 16,75,Appartement,156.0,6.0,188.0,2023
+"3600000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,188.0,2023
+"5120000,00",75013.0,PARIS 13,75,Appartement,33.0,2.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,26.0,0.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,53.0,0.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Appartement,55.0,3.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Appartement,15.0,1.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Dépendance,0.0,0.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Appartement,48.0,3.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Appartement,53.0,3.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Appartement,51.0,3.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Appartement,56.0,3.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Appartement,60.0,3.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Appartement,47.0,3.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Appartement,31.0,2.0,159.0,2023
+"5120000,00",75013.0,PARIS 13,75,Appartement,30.0,2.0,159.0,2023
+"10226000,00",75011.0,PARIS 11,75,Dépendance,0.0,0.0,359.0,2023
+"10226000,00",75011.0,PARIS 11,75,Appartement,49.0,3.0,359.0,2023
+"10226000,00",75011.0,PARIS 11,75,Appartement,39.0,2.0,359.0,2023
+"10226000,00",75011.0,PARIS 11,75,Appartement,36.0,2.0,359.0,2023
+"10226000,00",75011.0,PARIS 11,75,Appartement,54.0,3.0,359.0,2023
+"10226000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,82.0,0.0,359.0,2023
+"10226000,00",75011.0,PARIS 11,75,Appartement,11.0,1.0,359.0,2023
+"10226000,00",75011.0,PARIS 11,75,Appartement,59.0,3.0,359.0,2023
+"10226000,00",75011.0,PARIS 11,75,Appartement,36.0,3.0,359.0,2023
+"10226000,00",75011.0,PARIS 11,75,Appartement,45.0,3.0,359.0,2023
+"2150000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,74.0,2023
+"8650000,00",75016.0,PARIS 16,75,Maison,293.0,10.0,285.0,2023
+"14750000,00",75006.0,PARIS 06,75,Appartement,40.0,2.0,275.0,2023
+"14750000,00",75006.0,PARIS 06,75,Appartement,75.0,4.0,275.0,2023
+"14750000,00",75006.0,PARIS 06,75,Appartement,48.0,4.0,275.0,2023
+"14750000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,35.0,0.0,275.0,2023
+"14750000,00",75006.0,PARIS 06,75,Appartement,10.0,1.0,275.0,2023
+"14750000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,43.0,0.0,275.0,2023
+"14750000,00",75006.0,PARIS 06,75,Appartement,48.0,3.0,275.0,2023
+"14750000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,275.0,2023
+"14750000,00",75006.0,PARIS 06,75,Appartement,8.0,1.0,275.0,2023
+"1300000,00",75016.0,PARIS 16,75,Maison,67.0,3.0,67.0,2023
+"1305500,00",75013.0,PARIS 13,75,Maison,65.0,5.0,50.0,2023
+"3850000,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,224.0,2023
+"3850000,00",75014.0,PARIS 14,75,Appartement,252.0,9.0,224.0,2023
+"3850000,00",75014.0,PARIS 14,75,Appartement,35.0,1.0,224.0,2023
+"3720000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,115.0,2023
+"3720000,00",75016.0,PARIS 16,75,Appartement,30.0,3.0,115.0,2023
+"3720000,00",75016.0,PARIS 16,75,Appartement,11.0,1.0,115.0,2023
+"3720000,00",75016.0,PARIS 16,75,Appartement,10.0,1.0,115.0,2023
+"3720000,00",75016.0,PARIS 16,75,Appartement,49.0,4.0,115.0,2023
+"3720000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,10.0,0.0,115.0,2023
+"3720000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,14.0,0.0,115.0,2023
+"3720000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,30.0,0.0,115.0,2023
+"3720000,00",75016.0,PARIS 16,75,Appartement,31.0,2.0,115.0,2023
+"3720000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,90.0,0.0,115.0,2023
+"3720000,00",75016.0,PARIS 16,75,Appartement,38.0,3.0,115.0,2023
+"3720000,00",75016.0,PARIS 16,75,Appartement,49.0,3.0,115.0,2023
+"1987900,00",75015.0,PARIS 15,75,Maison,175.0,6.0,81.0,2023
+"1710000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,52.0,0.0,34.0,2023
+"3300000,00",75016.0,PARIS 16,75,Maison,284.0,9.0,252.0,2023
+"23350000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,1072.0,0.0,272.0,2023
+"1977000,00",75016.0,PARIS 16,75,Maison,138.0,5.0,94.0,2023
+"14700000,00",75016.0,PARIS 16,75,Appartement,99.0,4.0,369.0,2023
+"14700000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,182.0,0.0,369.0,2023
+"14700000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,74.0,0.0,369.0,2023
+"14700000,00",75016.0,PARIS 16,75,Appartement,30.0,1.0,369.0,2023
+"14700000,00",75016.0,PARIS 16,75,Appartement,115.0,3.0,369.0,2023
+"14700000,00",75016.0,PARIS 16,75,Appartement,115.0,4.0,369.0,2023
+"14700000,00",75016.0,PARIS 16,75,Appartement,103.0,4.0,369.0,2023
+"14700000,00",75016.0,PARIS 16,75,Appartement,22.0,1.0,369.0,2023
+"14700000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,55.0,0.0,369.0,2023
+"1660500,00",75013.0,PARIS 13,75,Maison,152.0,6.0,87.0,2023
+"2680000,00",75013.0,PARIS 13,75,Dépendance,0.0,0.0,194.0,2023
+"2680000,00",75013.0,PARIS 13,75,Appartement,59.0,3.0,194.0,2023
+"2680000,00",75013.0,PARIS 13,75,Appartement,57.0,3.0,194.0,2023
+"2680000,00",75013.0,PARIS 13,75,Appartement,71.0,3.0,194.0,2023
+"2680000,00",75013.0,PARIS 13,75,Appartement,86.0,3.0,194.0,2023
+"7820204,00",75016.0,PARIS 16,75,Maison,240.0,6.0,270.0,2023
+"1290000,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,104.0,2023
+"1290000,00",75014.0,PARIS 14,75,Appartement,7.0,1.0,104.0,2023
+"1290000,00",75014.0,PARIS 14,75,Appartement,34.0,3.0,104.0,2023
+"1290000,00",75014.0,PARIS 14,75,Appartement,23.0,2.0,104.0,2023
+"1290000,00",75014.0,PARIS 14,75,Appartement,19.0,1.0,104.0,2023
+"1441300,00",75013.0,PARIS 13,75,Maison,119.0,5.0,137.0,2023
+"1441300,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,21.0,0.0,137.0,2023
+"1570000,00",75015.0,PARIS 15,75,Maison,75.0,3.0,132.0,2023
+"1570000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,83.0,0.0,132.0,2023
+"1050000,00",75014.0,PARIS 14,75,Maison,52.0,2.0,56.0,2023
+"1790000,00",75014.0,PARIS 14,75,Appartement,25.0,2.0,146.0,2023
+"1790000,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,146.0,2023
+"1790000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,57.0,0.0,146.0,2023
+"1790000,00",75014.0,PARIS 14,75,Appartement,29.0,2.0,146.0,2023
+"1790000,00",75014.0,PARIS 14,75,Appartement,21.0,1.0,146.0,2023
+"1790000,00",75014.0,PARIS 14,75,Appartement,50.0,3.0,146.0,2023
+"1790000,00",75014.0,PARIS 14,75,Appartement,30.0,2.0,146.0,2023
+"1790000,00",75014.0,PARIS 14,75,Appartement,22.0,1.0,146.0,2023
+"28400000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,164.0,0.0,1745.0,2023
+"28400000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,9095.0,0.0,1745.0,2023
+"6500000,00",75006.0,PARIS 06,75,Appartement,243.0,7.0,89.0,2023
+"1407500,00",75014.0,PARIS 14,75,Maison,130.0,7.0,67.0,2023
+"5000000,00",75005.0,PARIS 05,75,Dépendance,0.0,0.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Local industriel. commercial ou assimilé,50.0,0.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Local industriel. commercial ou assimilé,48.0,0.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Appartement,48.0,3.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Appartement,64.0,3.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Appartement,34.0,2.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Appartement,49.0,3.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Appartement,47.0,3.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Appartement,46.0,3.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Appartement,12.0,1.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Appartement,11.0,1.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Appartement,8.0,1.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Appartement,19.0,1.0,162.0,2023
+"5000000,00",75005.0,PARIS 05,75,Appartement,10.0,1.0,162.0,2023
+"8250,00",75016.0,PARIS 16,75,Appartement,25.0,1.0,345.0,2023
+"1839420,00",75013.0,PARIS 13,75,Maison,69.0,4.0,51.0,2023
+"9000000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,625.0,0.0,264.0,2023
+"9000000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,963.0,0.0,264.0,2023
+"1000000,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,210.0,0.0,86.0,2023
+"785000,00",75015.0,PARIS 15,75,Maison,39.0,2.0,108.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,50.0,3.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,9.0,1.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,83.0,4.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,48.0,3.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,71.0,0.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,50.0,0.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,12.0,1.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,25.0,2.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,68.0,4.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,51.0,3.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,51.0,1.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,51.0,2.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,67.0,4.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,15.0,1.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,26.0,1.0,195.0,2023
+"5507000,00",75014.0,PARIS 14,75,Appartement,27.0,2.0,195.0,2023
+"4696500,00",75014.0,PARIS 14,75,Appartement,50.0,1.0,136.0,2023
+"4696500,00",75014.0,PARIS 14,75,Appartement,41.0,2.0,136.0,2023
+"4696500,00",75014.0,PARIS 14,75,Appartement,41.0,1.0,136.0,2023
+"4696500,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,136.0,2023
+"4696500,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,85.0,0.0,136.0,2023
+"4696500,00",75014.0,PARIS 14,75,Appartement,35.0,2.0,136.0,2023
+"4696500,00",75014.0,PARIS 14,75,Appartement,13.0,1.0,136.0,2023
+"4696500,00",75014.0,PARIS 14,75,Appartement,39.0,2.0,136.0,2023
+"4696500,00",75014.0,PARIS 14,75,Appartement,50.0,3.0,136.0,2023
+"4696500,00",75014.0,PARIS 14,75,Appartement,28.0,2.0,136.0,2023
+"60000000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,2579.0,0.0,774.0,2023
+"7610400,00",75016.0,PARIS 16,75,Maison,255.0,8.0,467.0,2023
+"11775189,00",75014.0,PARIS 14,75,Maison,496.0,6.0,239.0,2023
+"1101000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,115.0,0.0,115.0,2023
+"55412172,00",75014.0,PARIS 14,75,Appartement,63.0,3.0,1063.0,2023
+"55412172,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,4565.0,0.0,1063.0,2023
+"40000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,1790.0,0.0,850.0,2023
+"40000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,1790.0,0.0,716.0,2023
+"433605,00",75013.0,PARIS 13,75,Maison,86.0,6.0,278.0,2023
+"18680000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,1000.0,0.0,2702.0,2023
+"18680000,00",75012.0,PARIS 12,75,Maison,75.0,2.0,2702.0,2023
+"18680000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,800.0,0.0,2702.0,2023
+"18680000,00",75012.0,PARIS 12,75,Appartement,18.0,1.0,2702.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,90.0,0.0,514.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,302.0,0.0,514.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,93.0,0.0,514.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,52.0,0.0,514.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,16.0,0.0,514.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,125.0,0.0,514.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,129.0,0.0,514.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,120.0,0.0,514.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,304.0,0.0,514.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,131.0,0.0,514.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,80.0,0.0,514.0,2023
+"21665360,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,242.0,0.0,514.0,2023
+"15174950,00",75007.0,PARIS 07,75,Maison,430.0,13.0,181.0,2023
+"784088,00",75012.0,PARIS 12,75,Appartement,52.0,2.0,458.0,2023
+"784088,00",75012.0,PARIS 12,75,Appartement,177.0,6.0,458.0,2023
+"784088,00",75012.0,PARIS 12,75,Dépendance,0.0,0.0,458.0,2023
+"784088,00",75012.0,PARIS 12,75,Appartement,90.0,3.0,458.0,2023
+"784088,00",75012.0,PARIS 12,75,Appartement,15.0,1.0,458.0,2023
+"784088,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,83.0,0.0,458.0,2023
+"784088,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,106.0,0.0,458.0,2023
+"784088,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,48.0,0.0,458.0,2023
+"784088,00",75012.0,PARIS 12,75,Appartement,20.0,1.0,458.0,2023
+"784088,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,410.0,0.0,458.0,2023
+"3478400,00",75016.0,PARIS 16,75,Maison,274.0,7.0,182.0,2023
+"1300000,00",75012.0,PARIS 12,75,Appartement,31.0,2.0,26.0,2023
+"1300000,00",75012.0,PARIS 12,75,Appartement,28.0,2.0,26.0,2023
+"1300000,00",75012.0,PARIS 12,75,Appartement,30.0,2.0,26.0,2023
+"16800000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,1610.0,0.0,381.0,2023
+"5950000,00",75006.0,PARIS 06,75,Maison,195.0,7.0,104.0,2023
+"3500000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,841.0,0.0,272.0,2023
+"2200000,00",75014.0,PARIS 14,75,Maison,225.0,7.0,116.0,2023
+"9500000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,960.0,0.0,1758.0,2023
+"16000000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,29.0,2.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,282.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,37.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,14.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,123.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,42.0,3.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,60.0,4.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,34.0,2.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,33.0,2.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,37.0,2.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,38.0,2.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,28.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,19.0,1.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,9.0,1.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,62.0,3.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,26.0,1.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,35.0,1.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,72.0,3.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,56.0,3.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,66.0,3.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,70.0,3.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,25.0,1.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,13.0,1.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,6.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,57.0,2.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,63.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,25.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,7.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,30.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,18.0,1.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,48.0,0.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,63.0,4.0,750.0,2023
+"16000000,00",75016.0,PARIS 16,75,Appartement,12.0,2.0,750.0,2023
+"2175000,00",75015.0,PARIS 15,75,Maison,157.0,5.0,98.0,2023
+"1000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,339.0,2023
+"16250000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,69.0,0.0,300.0,2023
+"16250000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,184.0,0.0,300.0,2023
+"16250000,00",75006.0,PARIS 06,75,Appartement,190.0,6.0,300.0,2023
+"16250000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,64.0,0.0,300.0,2023
+"16250000,00",75006.0,PARIS 06,75,Appartement,8.0,1.0,300.0,2023
+"16250000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,198.0,0.0,300.0,2023
+"16250000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,300.0,2023
+"16250000,00",75006.0,PARIS 06,75,Appartement,10.0,1.0,300.0,2023
+"16250000,00",75006.0,PARIS 06,75,Appartement,11.0,1.0,300.0,2023
+"16250000,00",75006.0,PARIS 06,75,Appartement,50.0,3.0,300.0,2023
+"16250000,00",75006.0,PARIS 06,75,Appartement,77.0,2.0,300.0,2023
+"1750000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,40.0,0.0,64.0,2023
+"1750000,00",75014.0,PARIS 14,75,Appartement,40.0,3.0,64.0,2023
+"1750000,00",75014.0,PARIS 14,75,Appartement,50.0,2.0,64.0,2023
+"1750000,00",75014.0,PARIS 14,75,Appartement,40.0,2.0,64.0,2023
+"915000,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,113.0,2023
+"915000,00",75014.0,PARIS 14,75,Maison,79.0,4.0,113.0,2023
+"25000000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,1727.0,0.0,389.0,2023
+"1650000,00",75012.0,PARIS 12,75,Appartement,30.0,2.0,128.0,2023
+"1650000,00",75012.0,PARIS 12,75,Appartement,20.0,1.0,128.0,2023
+"1650000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,100.0,0.0,128.0,2023
+"1650000,00",75012.0,PARIS 12,75,Appartement,33.0,2.0,128.0,2023
+"1120000,00",75013.0,PARIS 13,75,Maison,49.0,3.0,126.0,2023
+"18600000,00",75006.0,PARIS 06,75,Appartement,128.0,5.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Appartement,98.0,5.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,32.0,0.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,36.0,0.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,28.0,0.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Appartement,98.0,4.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Appartement,60.0,2.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,103.0,0.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Appartement,28.0,1.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,136.0,0.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,95.0,0.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Appartement,26.0,1.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Appartement,28.0,2.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Appartement,45.0,2.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Appartement,61.0,3.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,75.0,0.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,24.0,0.0,353.0,2023
+"18600000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,145.0,0.0,353.0,2023
+"9493250,00",75006.0,PARIS 06,75,Maison,369.0,8.0,226.0,2023
+"9493250,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,9.0,0.0,226.0,2023
+"2680000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,195.0,0.0,82.0,2023
+"26260000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,1377.0,0.0,1968.0,2023
+"26260000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,129.0,0.0,1968.0,2023
+"26260000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,76.0,0.0,1968.0,2023
+"26260000,00",75015.0,PARIS 15,75,Dépendance,0.0,0.0,1968.0,2023
+"26260000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,71.0,0.0,1968.0,2023
+"26260000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,93.0,0.0,1968.0,2023
+"26260000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,374.0,0.0,1968.0,2023
+"26260000,00",75015.0,PARIS 15,75,Appartement,50.0,3.0,1968.0,2023
+"26260000,00",75015.0,PARIS 15,75,Appartement,60.0,3.0,1968.0,2023
+"26260000,00",75015.0,PARIS 15,75,Appartement,92.0,5.0,1968.0,2023
+"26260000,00",75015.0,PARIS 15,75,Appartement,62.0,3.0,1968.0,2023
+"26260000,00",75015.0,PARIS 15,75,Appartement,70.0,4.0,1968.0,2023
+"18000,00",75016.0,PARIS 16,75,Appartement,10.0,1.0,1160.0,2023
+"18000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,1160.0,2023
+"1819000,00",75013.0,PARIS 13,75,Maison,120.0,4.0,98.0,2023
+"3150000,00",75014.0,PARIS 14,75,Maison,180.0,6.0,204.0,2023
+"18000000,00",75007.0,PARIS 07,75,Dépendance,0.0,0.0,322.0,2023
+"18000000,00",75007.0,PARIS 07,75,Appartement,38.0,2.0,322.0,2023
+"18000000,00",75007.0,PARIS 07,75,Appartement,112.0,5.0,322.0,2023
+"18000000,00",75007.0,PARIS 07,75,Appartement,118.0,5.0,322.0,2023
+"18000000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,183.0,0.0,322.0,2023
+"18000000,00",75007.0,PARIS 07,75,Appartement,14.0,1.0,322.0,2023
+"18000000,00",75007.0,PARIS 07,75,Appartement,101.0,4.0,322.0,2023
+"18000000,00",75007.0,PARIS 07,75,Appartement,118.0,6.0,322.0,2023
+"18000000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,200.0,0.0,322.0,2023
+"18000000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,168.0,0.0,322.0,2023
+"18000000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,142.0,0.0,322.0,2023
+"385000,00",75013.0,PARIS 13,75,Maison,89.0,4.0,78.0,2023
+"2713300,00",75015.0,PARIS 15,75,Maison,180.0,6.0,90.0,2023
+"1,00",75013.0,PARIS 13,75,Appartement,62.0,3.0,78.0,2023
+"1,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,1101.0,2023
+"1,00",75016.0,PARIS 16,75,Appartement,45.0,2.0,1101.0,2023
+"3120000,00",75006.0,PARIS 06,75,Appartement,25.0,1.0,78.0,2023
+"3120000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,116.0,0.0,78.0,2023
+"3120000,00",75006.0,PARIS 06,75,Appartement,45.0,3.0,78.0,2023
+"3120000,00",75006.0,PARIS 06,75,Appartement,42.0,3.0,78.0,2023
+"3120000,00",75006.0,PARIS 06,75,Appartement,50.0,2.0,78.0,2023
+"3120000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,78.0,2023
+"3120000,00",75006.0,PARIS 06,75,Appartement,45.0,2.0,78.0,2023
+"3120000,00",75006.0,PARIS 06,75,Appartement,65.0,3.0,78.0,2023
+"3120000,00",75006.0,PARIS 06,75,Appartement,21.0,2.0,78.0,2023
+"3000000,00",75015.0,PARIS 15,75,Maison,100.0,4.0,462.0,2023
+"3000000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,28.0,0.0,462.0,2023
+"3000000,00",75015.0,PARIS 15,75,Appartement,20.0,1.0,462.0,2023
+"3000000,00",75015.0,PARIS 15,75,Appartement,22.0,1.0,462.0,2023
+"3000000,00",75015.0,PARIS 15,75,Appartement,68.0,4.0,462.0,2023
+"3000000,00",75015.0,PARIS 15,75,Appartement,67.0,4.0,462.0,2023
+"3000000,00",75015.0,PARIS 15,75,Dépendance,0.0,0.0,462.0,2023
+"8972,00",75013.0,PARIS 13,75,Dépendance,0.0,0.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,45.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,36.0,1.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,44.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,51.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,31.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,25.0,0.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,21.0,1.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,33.0,1.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,27.0,1.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,42.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,26.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,26.0,1.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,46.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,25.0,1.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,41.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,40.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,43.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,35.0,1.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,112.0,0.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,52.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,31.0,1.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,34.0,1.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,14.0,1.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,48.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,49.0,2.0,1151.0,2023
+"8972,00",75013.0,PARIS 13,75,Appartement,50.0,2.0,1151.0,2023
+"120000000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,4494.0,0.0,1624.0,2023
+"1310000,00",75014.0,PARIS 14,75,Maison,76.0,5.0,123.0,2023
+"1706800,00",75013.0,PARIS 13,75,Maison,122.0,6.0,152.0,2023
+"6098000,00",75016.0,PARIS 16,75,Maison,147.0,7.0,296.0,2023
+"750000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,338.0,0.0,128.0,2023
+"750000,00",75014.0,PARIS 14,75,Appartement,22.0,1.0,128.0,2023
+"10120000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,17.0,0.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Dépendance,0.0,0.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Appartement,25.0,2.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Appartement,24.0,1.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Appartement,43.0,2.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Appartement,57.0,3.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,23.0,0.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,321.0,0.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,39.0,0.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,26.0,0.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,209.0,0.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,18.0,0.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Appartement,50.0,3.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,330.0,0.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Appartement,29.0,2.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Appartement,21.0,2.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Appartement,22.0,1.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Appartement,28.0,1.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Appartement,42.0,2.0,737.0,2023
+"10120000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,53.0,0.0,737.0,2023
+"1915000,00",75011.0,PARIS 11,75,Maison,139.0,7.0,69.0,2023
+"44000000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,2564.0,0.0,496.0,2023
+"4759500,00",75016.0,PARIS 16,75,Appartement,32.0,1.0,272.0,2023
+"4759500,00",75016.0,PARIS 16,75,Appartement,225.0,7.0,272.0,2023
+"5100000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,275.0,2023
+"5100000,00",75016.0,PARIS 16,75,Appartement,205.0,5.0,275.0,2023
+"5100000,00",75016.0,PARIS 16,75,Appartement,56.0,3.0,275.0,2023
+"1059900,00",75013.0,PARIS 13,75,Dépendance,0.0,0.0,68.0,2023
+"1059900,00",75013.0,PARIS 13,75,Maison,52.0,4.0,68.0,2023
+"14250000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,143.0,0.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,35.0,0.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,18.0,1.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,96.0,5.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,90.0,4.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,91.0,3.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,90.0,3.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,32.0,2.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,15.0,1.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,12.0,1.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,6.0,1.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,33.0,2.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,13.0,1.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,37.0,2.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,55.0,3.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,56.0,3.0,317.0,2023
+"14250000,00",75006.0,PARIS 06,75,Appartement,47.0,2.0,317.0,2023
+"2473500,00",75012.0,PARIS 12,75,Dépendance,0.0,0.0,269.0,2023
+"2473500,00",75012.0,PARIS 12,75,Maison,140.0,6.0,269.0,2023
+"2473500,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,72.0,0.0,269.0,2023
+"12000000,00",75016.0,PARIS 16,75,Appartement,29.0,1.0,346.0,2023
+"12000000,00",75016.0,PARIS 16,75,Appartement,45.0,1.0,346.0,2023
+"12000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,83.0,0.0,346.0,2023
+"12000000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,346.0,2023
+"12000000,00",75016.0,PARIS 16,75,Appartement,108.0,2.0,346.0,2023
+"12000000,00",75016.0,PARIS 16,75,Appartement,102.0,3.0,346.0,2023
+"12000000,00",75016.0,PARIS 16,75,Appartement,54.0,1.0,346.0,2023
+"12000000,00",75016.0,PARIS 16,75,Appartement,125.0,5.0,346.0,2023
+"12000000,00",75016.0,PARIS 16,75,Appartement,103.0,4.0,346.0,2023
+"12000000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,40.0,0.0,346.0,2023
+"12000000,00",75016.0,PARIS 16,75,Appartement,146.0,4.0,346.0,2023
+"12000000,00",75016.0,PARIS 16,75,Appartement,145.0,4.0,346.0,2023
+"1750000,00",75015.0,PARIS 15,75,Local industriel. commercial ou assimilé,912.0,0.0,300.0,2023
+"2400000,00",75011.0,PARIS 11,75,Appartement,19.0,1.0,57.0,2023
+"2400000,00",75011.0,PARIS 11,75,Dépendance,0.0,0.0,57.0,2023
+"2400000,00",75011.0,PARIS 11,75,Appartement,21.0,1.0,57.0,2023
+"2400000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,15.0,0.0,57.0,2023
+"3100000,00",75014.0,PARIS 14,75,Appartement,47.0,3.0,167.0,2023
+"3100000,00",75014.0,PARIS 14,75,Appartement,49.0,3.0,167.0,2023
+"3100000,00",75014.0,PARIS 14,75,Appartement,34.0,2.0,167.0,2023
+"3100000,00",75014.0,PARIS 14,75,Appartement,16.0,1.0,167.0,2023
+"3100000,00",75014.0,PARIS 14,75,Appartement,42.0,2.0,167.0,2023
+"3100000,00",75014.0,PARIS 14,75,Appartement,29.0,1.0,167.0,2023
+"3100000,00",75014.0,PARIS 14,75,Appartement,18.0,1.0,167.0,2023
+"3100000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,60.0,0.0,167.0,2023
+"8000000,00",75012.0,PARIS 12,75,Dépendance,0.0,0.0,619.0,2023
+"62600000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,4040.0,0.0,781.0,2023
+"62600000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,1627.0,0.0,781.0,2023
+"62600000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,0.0,0.0,781.0,2023
+"2200000,00",75014.0,PARIS 14,75,Maison,95.0,6.0,281.0,2023
+"2075645,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,201.0,2023
+"2075645,00",75014.0,PARIS 14,75,Maison,180.0,4.0,201.0,2023
+"19000000,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,56.0,3.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,41.0,2.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,76.0,4.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,59.0,3.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,72.0,4.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,71.0,4.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,62.0,3.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,56.0,2.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,46.0,2.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,66.0,3.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,79.0,3.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,74.0,3.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,60.0,3.0,1246.0,2023
+"19000000,00",75014.0,PARIS 14,75,Appartement,29.0,1.0,1246.0,2023
+"5630000,00",75011.0,PARIS 11,75,Appartement,31.0,1.0,484.0,2023
+"5630000,00",75011.0,PARIS 11,75,Appartement,45.0,2.0,484.0,2023
+"5630000,00",75011.0,PARIS 11,75,Appartement,47.0,2.0,484.0,2023
+"5630000,00",75011.0,PARIS 11,75,Appartement,88.0,3.0,484.0,2023
+"5630000,00",75011.0,PARIS 11,75,Appartement,43.0,2.0,484.0,2023
+"5630000,00",75011.0,PARIS 11,75,Appartement,30.0,1.0,484.0,2023
+"5630000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,134.0,0.0,484.0,2023
+"15200000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,1108.0,0.0,205.0,2023
+"3050000,00",75011.0,PARIS 11,75,Appartement,75.0,3.0,196.0,2023
+"3050000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,350.0,0.0,196.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,218.0,6.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,231.0,6.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,134.0,3.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,186.0,5.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,145.0,5.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,151.0,5.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,157.0,4.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,265.0,5.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,156.0,5.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,136.0,3.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,228.0,6.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,278.0,5.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,147.0,6.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,50.0,2.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,17.0,2.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,138.0,4.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,157.0,5.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,134.0,5.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,137.0,4.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,78.0,4.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,11.0,0.0,919.0,2023
+"36500000,00",75016.0,PARIS 16,75,Appartement,107.0,4.0,919.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,14.0,1.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,16.0,1.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,24.0,0.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,19.0,1.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,33.0,2.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,29.0,2.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,48.0,3.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,83.0,4.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,67.0,4.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Dépendance,0.0,0.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,34.0,2.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,7.0,1.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,9.0,1.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,11.0,1.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,15.0,1.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,30.0,2.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,35.0,0.0,217.0,2023
+"6850000,00",75011.0,PARIS 11,75,Appartement,20.0,1.0,217.0,2023
+"9426000,00",75011.0,PARIS 11,75,Dépendance,0.0,0.0,610.0,2023
+"9426000,00",75011.0,PARIS 11,75,Appartement,113.0,5.0,610.0,2023
+"9426000,00",75011.0,PARIS 11,75,Appartement,80.0,3.0,610.0,2023
+"9426000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,24.0,0.0,610.0,2023
+"9426000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,73.0,0.0,610.0,2023
+"9426000,00",75011.0,PARIS 11,75,Appartement,36.0,2.0,610.0,2023
+"9426000,00",75011.0,PARIS 11,75,Appartement,70.0,3.0,610.0,2023
+"9426000,00",75011.0,PARIS 11,75,Appartement,101.0,5.0,610.0,2023
+"4500000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,166.0,2023
+"4500000,00",75016.0,PARIS 16,75,Maison,265.0,9.0,166.0,2023
+"13000000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,10.0,0.0,303.0,2023
+"13000000,00",75006.0,PARIS 06,75,Appartement,8.0,1.0,303.0,2023
+"7000000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,1327.0,0.0,349.0,2023
+"4800000,00",75015.0,PARIS 15,75,Appartement,33.0,2.0,164.0,2023
+"4800000,00",75015.0,PARIS 15,75,Appartement,29.0,2.0,164.0,2023
+"4800000,00",75015.0,PARIS 15,75,Appartement,43.0,3.0,164.0,2023
+"4800000,00",75015.0,PARIS 15,75,Appartement,30.0,2.0,164.0,2023
+"4800000,00",75015.0,PARIS 15,75,Appartement,34.0,2.0,164.0,2023
+"4800000,00",75015.0,PARIS 15,75,Appartement,16.0,1.0,164.0,2023
+"4800000,00",75015.0,PARIS 15,75,Appartement,17.0,2.0,164.0,2023
+"4800000,00",75015.0,PARIS 15,75,Appartement,21.0,2.0,164.0,2023
+"4800000,00",75015.0,PARIS 15,75,Appartement,11.0,1.0,164.0,2023
+"4800000,00",75015.0,PARIS 15,75,Dépendance,0.0,0.0,164.0,2023
+"4800000,00",75015.0,PARIS 15,75,Appartement,54.0,3.0,164.0,2023
+"4800000,00",75015.0,PARIS 15,75,Appartement,39.0,3.0,164.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,80.0,4.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,37.0,1.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,58.0,2.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Dépendance,0.0,0.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,35.0,1.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,85.0,4.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,120.0,6.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,23.0,1.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,68.0,3.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,15.0,1.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,25.0,1.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,63.0,3.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,22.0,1.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,93.0,4.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,17.0,0.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Appartement,48.0,2.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,58.0,0.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,275.0,0.0,3604.0,2023
+"63000000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,744.0,0.0,3604.0,2023
+"10350000,00",75011.0,PARIS 11,75,Appartement,106.0,4.0,523.0,2023
+"10350000,00",75011.0,PARIS 11,75,Local industriel. commercial ou assimilé,530.0,0.0,523.0,2023
+"4618000,00",75012.0,PARIS 12,75,Local industriel. commercial ou assimilé,400.0,0.0,83.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,70.0,3.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Dépendance,0.0,0.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,57.0,2.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,116.0,5.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,100.0,4.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,85.0,4.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,14.0,1.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,50.0,2.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,86.0,4.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,52.0,2.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,17.0,1.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,13.0,1.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,49.0,2.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,13.0,2.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,574.0,0.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,75.0,3.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,138.0,0.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,116.0,4.0,5508.0,2023
+"91000000,00",75013.0,PARIS 13,75,Appartement,58.0,2.0,5508.0,2023
+"8450000,00",75007.0,PARIS 07,75,Dépendance,0.0,0.0,172.0,2023
+"8450000,00",75007.0,PARIS 07,75,Appartement,101.0,5.0,172.0,2023
+"8450000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,0.0,0.0,172.0,2023
+"8450000,00",75007.0,PARIS 07,75,Appartement,27.0,1.0,172.0,2023
+"8450000,00",75007.0,PARIS 07,75,Appartement,17.0,1.0,172.0,2023
+"8450000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,60.0,0.0,172.0,2023
+"8450000,00",75007.0,PARIS 07,75,Local industriel. commercial ou assimilé,39.0,0.0,172.0,2023
+"4080000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,43.0,0.0,91.0,2023
+"4080000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,42.0,0.0,91.0,2023
+"4080000,00",75006.0,PARIS 06,75,Appartement,70.0,4.0,91.0,2023
+"4080000,00",75006.0,PARIS 06,75,Appartement,40.0,2.0,91.0,2023
+"4080000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,91.0,2023
+"46500000,00",75016.0,PARIS 16,75,Maison,3160.0,20.0,1475.0,2023
+"46500000,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,0.0,0.0,1475.0,2023
+"4379000,00",75016.0,PARIS 16,75,Maison,280.0,6.0,106.0,2023
+"3403100,00",75011.0,PARIS 11,75,Appartement,126.0,4.0,65.0,2023
+"3403100,00",75011.0,PARIS 11,75,Dépendance,0.0,0.0,65.0,2023
+"3403100,00",75011.0,PARIS 11,75,Appartement,142.0,6.0,65.0,2023
+"2670000,00",75013.0,PARIS 13,75,Appartement,180.0,5.0,223.0,2023
+"2670000,00",75013.0,PARIS 13,75,Local industriel. commercial ou assimilé,47.0,0.0,223.0,2023
+"2670000,00",75013.0,PARIS 13,75,Dépendance,0.0,0.0,223.0,2023
+"1763000,00",75012.0,PARIS 12,75,Appartement,30.0,2.0,26.0,2023
+"1763000,00",75012.0,PARIS 12,75,Appartement,28.0,2.0,26.0,2023
+"1763000,00",75012.0,PARIS 12,75,Appartement,31.0,2.0,26.0,2023
+"24000000,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,802.0,2023
+"24000000,00",75016.0,PARIS 16,75,Appartement,237.0,7.0,802.0,2023
+"24000000,00",75016.0,PARIS 16,75,Appartement,349.0,8.0,802.0,2023
+"24000000,00",75016.0,PARIS 16,75,Appartement,236.0,8.0,802.0,2023
+"24000000,00",75016.0,PARIS 16,75,Appartement,236.0,3.0,802.0,2023
+"24000000,00",75016.0,PARIS 16,75,Appartement,130.0,3.0,802.0,2023
+"24000000,00",75016.0,PARIS 16,75,Appartement,242.0,5.0,802.0,2023
+"24000000,00",75016.0,PARIS 16,75,Appartement,129.0,3.0,802.0,2023
+"24000000,00",75016.0,PARIS 16,75,Appartement,360.0,7.0,802.0,2023
+"24000000,00",75016.0,PARIS 16,75,Appartement,124.0,3.0,802.0,2023
+"5400000,00",75014.0,PARIS 14,75,Appartement,45.0,2.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Appartement,36.0,2.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Appartement,43.0,2.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,40.0,0.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Local industriel. commercial ou assimilé,77.0,0.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Appartement,20.0,1.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Dépendance,0.0,0.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Appartement,35.0,2.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Appartement,65.0,3.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Appartement,65.0,2.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Appartement,102.0,4.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Appartement,23.0,2.0,191.0,2023
+"5400000,00",75014.0,PARIS 14,75,Appartement,21.0,1.0,191.0,2023
+"1153200,00",75016.0,PARIS 16,75,Dépendance,0.0,0.0,115.0,2023
+"1153200,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,10.0,0.0,115.0,2023
+"1153200,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,14.0,0.0,115.0,2023
+"1153200,00",75016.0,PARIS 16,75,Appartement,11.0,1.0,115.0,2023
+"1153200,00",75016.0,PARIS 16,75,Appartement,30.0,3.0,115.0,2023
+"1153200,00",75016.0,PARIS 16,75,Appartement,49.0,4.0,115.0,2023
+"1153200,00",75016.0,PARIS 16,75,Appartement,49.0,3.0,115.0,2023
+"1153200,00",75016.0,PARIS 16,75,Appartement,10.0,1.0,115.0,2023
+"1153200,00",75016.0,PARIS 16,75,Appartement,38.0,3.0,115.0,2023
+"1153200,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,90.0,0.0,115.0,2023
+"1153200,00",75016.0,PARIS 16,75,Appartement,31.0,2.0,115.0,2023
+"1153200,00",75016.0,PARIS 16,75,Local industriel. commercial ou assimilé,30.0,0.0,115.0,2023
+"47000000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,92.0,4.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,47.0,2.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,375.0,0.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,37.0,2.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,72.0,3.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,8.0,1.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,91.0,4.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,20.0,2.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,36.0,3.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,610.0,0.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,85.0,4.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,82.0,3.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,65.0,4.0,747.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,39.0,3.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,154.0,5.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,239.0,6.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,571.0,0.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,25.0,2.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,299.0,0.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,37.0,2.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,37.0,1.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,78.0,3.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,24.0,2.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,220.0,8.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Local industriel. commercial ou assimilé,239.0,0.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,239.0,8.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Dépendance,0.0,0.0,625.0,2023
+"47000000,00",75006.0,PARIS 06,75,Appartement,51.0,3.0,625.0,2023
