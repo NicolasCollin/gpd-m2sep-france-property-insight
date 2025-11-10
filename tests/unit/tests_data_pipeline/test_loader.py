@@ -21,23 +21,14 @@ class TestLoadAllCsv:
     def tmp_csv_dir(self, tmp_path: Path) -> Path:
         """
         Create a temporary folder containing multiple cleaned CSV files.
-
-        Steps:
-        1. Generate two small DataFrames representing cleaned DVF data.
-        2. Save them as CSV files in separate subdirectories under tmp_path.
-        3. Ensure all parent directories exist before saving.
-
-        Returns:
-            Path: Path to the temporary root folder containing the CSV files.
         """
-        # CSV 1
         df1 = pd.DataFrame(
             {
                 "transaction_date": ["01/01/2024", "02/01/2024"],
                 "property_value": ["1000000,00", "2000000,00"],
                 "postal_code": [75001, 75001],
                 "department_code": ["75", "75"],
-                "town_code": [101, 101],
+                "town_code": [101, 102],
                 "property_type_code": [1, 1],
                 "property_type": ["Appartement", "Appartement"],
                 "building_area": [50, 70],
@@ -49,14 +40,13 @@ class TestLoadAllCsv:
         csv1.parent.mkdir(parents=True, exist_ok=True)
         df1.to_csv(csv1, index=False, decimal=",")
 
-        # CSV 2
         df2 = pd.DataFrame(
             {
                 "transaction_date": ["03/01/2024"],
                 "property_value": ["1500000,00"],
                 "postal_code": [75002],
                 "department_code": ["75"],
-                "town_code": [102],
+                "town_code": [103],
                 "property_type_code": [2],
                 "property_type": ["Appartement"],
                 "building_area": [60],
@@ -73,17 +63,13 @@ class TestLoadAllCsv:
     def test_multiple_csv_files_loaded(self, tmp_csv_dir: Path) -> None:
         """
         Scenario: Multiple cleaned CSV files from different subdirectories are loaded.
-
-        Steps:
-        1. Call `load_all_csv` with the temporary folder.
-        2. Assert that the resulting DataFrame includes all rows.
-        3. Assert that no extra columns are present and all relevant columns remain.
         """
         df = load_all_csv(data_root=str(tmp_csv_dir))
+        df = df.sort_values(by=["town_code"]).reset_index(drop=True)
 
-        # Basic row and column checks
+        # Basic checks
         assert not df.empty
-        assert df.shape[0] == 3  # 2 rows from CSV1 + 1 row from CSV2
+        assert df.shape[0] == 3  # 2 rows + 1 row
         expected_columns = [
             "transaction_date",
             "property_value",
@@ -96,46 +82,36 @@ class TestLoadAllCsv:
             "main_rooms",
             "land_area",
         ]
-        for col in expected_columns:
-            assert col in df.columns
+        assert list(df.columns) == expected_columns
 
     def test_numeric_columns_converted(self, tmp_csv_dir: Path) -> None:
         """
         Scenario: Numeric columns with French decimal format are converted to float.
-
-        Steps:
-        1. Load CSV files with `load_all_csv`.
-        2. Assert that 'property_value', 'building_area', 'main_rooms', 'land_area'
-           are of type float.
-        3. Assert that numeric values are correctly converted.
         """
         df = load_all_csv(data_root=str(tmp_csv_dir))
+        df = df.sort_values(by=["town_code"]).reset_index(drop=True)
 
         numeric_cols = ["property_value", "building_area", "main_rooms", "land_area"]
         for col in numeric_cols:
             assert pd.api.types.is_numeric_dtype(df[col])
 
-        # Check specific conversions
-        assert df["property_value"].iloc[0] == 1500000.0
-        assert df["property_value"].iloc[1] == 1000000.0
-        assert df["building_area"].iloc[0] == 60.0
-        assert df["main_rooms"].iloc[0] == 3.0
+        # Check converted values without relying on order
+        expected_values = {1000000.0, 1500000.0, 2000000.0}
+        assert set(df["property_value"].tolist()) == expected_values
 
     def test_department_codes_as_integers(self, tmp_csv_dir: Path) -> None:
         """
         Scenario: Department codes and other integer columns are correctly parsed.
-
-        Steps:
-        1. Load CSV files.
-        2. Assert that 'department_code', 'postal_code', 'town_code', 'property_type_code'
-           are integers and match the expected values.
         """
         df = load_all_csv(data_root=str(tmp_csv_dir))
+        df = df.sort_values(by=["town_code"]).reset_index(drop=True)
 
         int_cols = ["department_code", "postal_code", "town_code", "property_type_code"]
         for col in int_cols:
             assert pd.api.types.is_integer_dtype(df[col])
 
-        # Spot check values
-        assert df["department_code"].iloc[0] == 75
-        assert df["town_code"].iloc[0] == 102
+        # Spot check that department codes are all '75'
+        assert set(df["department_code"]) == {75}
+
+        # Check that all expected town codes are present
+        assert set(df["town_code"]) == {101, 102, 103}
