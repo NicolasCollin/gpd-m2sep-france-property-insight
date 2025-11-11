@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import pandas as pd
 
 from fpi.analysis.plots import display_trend
@@ -21,7 +22,7 @@ def explore() -> None:
     output_dir = Path("docs/plots")
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    print("\n📈 Generating regional trend plots...")
+    print("\nGenerating regional trend plots...")
     display_trend("data/cleaned", dept_filter=None, agg="median")
 
     for dept in ["75", "92", "93"]:
