@@ -6,7 +6,7 @@ stages:
   - test
   - deploy
 
-# Install dependencies once and cache
+# setup dependencies once
 setup:
   stage: setup
   image: python:3.13-slim
@@ -18,12 +18,7 @@ setup:
     - python -m pip install --upgrade pip
     - python -m pip install uv
     - uv sync --frozen --group dev
-  artifacts:
-    paths:
-      - .uv-cache
-    expire_in: 1h
 
-# pre-commit hooks
 lint:
   stage: lint
   image: python:3.13-slim
@@ -37,7 +32,6 @@ lint:
     - uv run pre-commit run --all-files --show-diff-on-failure
   allow_failure: true
 
-# mypy static type checker
 typecheck:
   stage: typecheck
   image: python:3.13-slim
@@ -51,7 +45,6 @@ typecheck:
     - uv run mypy fpi
   allow_failure: true
 
-# audit dependencies
 audit:
   stage: audit
   image: python:3.13-slim
@@ -65,7 +58,6 @@ audit:
     - uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484
   allow_failure: true
 
-# unit tests, doctests, behave tests
 test:
   stage: test
   image: python:3.13-slim
@@ -79,7 +71,6 @@ test:
     - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q
     - uv run behave tests/behave/features
 
-# check main doesn't crash
 deploy:
   stage: deploy
   image: python:3.13-slim
