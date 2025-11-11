@@ -1,12 +1,16 @@
-from typing import Dict, List
-import pandas as pd
 from fpi.data_pipeline.loader import load_all_csv
 from fpi.utils.constants import DEPT_NAMES
 
 
-def suggest_department(value: str) -> List[str]:
+def suggest_department(value: str) -> list[str]:
     """
     Suggest department codes or names based on partial user input.
+
+    Args:
+        value (str): Partial input entered by the user (code or name).
+
+    Returns:
+        list[str]: A list of matching suggestions formatted as 'code - name'.
 
     Examples:
         >>> suggest_department("75")
@@ -14,13 +18,7 @@ def suggest_department(value: str) -> List[str]:
         >>> suggest_department("par")
         ['75 - Paris']
         >>> suggest_department("9")
-        ['92 - Hauts-de-Seine', '93 - Seine-Saint-Denis', '94 - Val-de-Marne', "95 - Val-d'Oise"]
-
-    Args:
-        value (str): Partial input entered by the user (code or name).
-
-    Returns:
-        List[str]: A list of matching suggestions formatted as 'code - name'.
+        ['91 - Essonne', '92 - Hauts-de-Seine', '93 - Seine-Saint-Denis', '94 - Val-de-Marne', '95 - Val-d’Oise']
     """
     value = value.strip().lower()
     suggestions = []
@@ -32,7 +30,7 @@ def suggest_department(value: str) -> List[str]:
     return suggestions
 
 
-def get_dept_town_mapping(df_root: str = "data/cleaned") -> Dict[str, List[str]]:
+def get_dept_town_mapping(df_root: str = "data/cleaned") -> dict[str, list[str]]:
     """
     Build a mapping between department codes and the list of towns within each department.
 
@@ -55,17 +53,14 @@ def get_dept_town_mapping(df_root: str = "data/cleaned") -> Dict[str, List[str]]
     df = df.dropna(subset=["department_code", "town_name"])
     df["department_code"] = df["department_code"].astype(str).str.zfill(2)
 
-    dept_town_map: Dict[str, List[str]] = (
-        df.groupby("department_code")["town_name"]
-        .unique()
-        .apply(lambda towns: sorted(towns.tolist()))
-        .to_dict()
+    dept_town_map: dict[str, list[str]] = (
+        df.groupby("department_code")["town_name"].unique().apply(lambda towns: sorted(towns.tolist())).to_dict()
     )
 
     return dept_town_map
 
 
-def suggest_town(department_code: str, value: str, mapping: Dict[str, List[str]]) -> List[str]:
+def suggest_town(department_code: str, value: str, mapping: dict[str, list[str]]) -> list[str]:
     """
     Suggest towns based on partial input and a selected department.
 

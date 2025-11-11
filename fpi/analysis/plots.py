@@ -21,7 +21,7 @@ def convert_value_for_display(value: float) -> str:
     Returns:
         str: Formatted string with suffix (K, M, Md) and comma as decimal separator.
     """
-    thresholds = [
+    thresholds: list[tuple[int, str]] = [
         (1_000_000_000, " Md"),
         (1_000_000, " M"),
         (1_000, " K"),
