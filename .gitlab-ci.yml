@@ -4,7 +4,7 @@ stages:
   - typecheck
   - audit
   - test
-  - deploy
+
 
 # setup dependencies once
 setup:
@@ -70,15 +70,3 @@ test:
   script:
     - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q
     - uv run behave tests/behave/features
-
-deploy:
-  stage: deploy
-  image: python:3.13-slim
-  dependencies:
-    - setup
-  cache:
-    key: "uv-cache"
-    paths:
-      - .uv-cache
-  script:
-    - uv run python -m fpi.main --help
