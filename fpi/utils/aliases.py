@@ -42,7 +42,9 @@ def run_pytest() -> None:
 
 def run_behave() -> None:
     """Run our behave tests"""
-    subprocess.run(["behave", "tests/behave/features"], check=True)
+    # subprocess.run(["python", "-m", "behave", "tests/behave/features"], check=True)
+    cmd: str = "uv run python -m behave tests/behave/features"
+    run_command(cmd)
 
 
 def test() -> None:

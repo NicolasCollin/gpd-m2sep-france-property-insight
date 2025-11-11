@@ -63,6 +63,12 @@ def process_data_for_lm(df: pd.DataFrame) -> pd.DataFrame:
 
     Returns:
         - pd.DataFrame: Cleaned DataFrame with numeric columns and log-transformed target.
+
+    Example:
+    >>> df = pd.DataFrame({'property_value': ['100,0','200,0'], 'building_area':[50, 60], 'main_rooms':[2,3], 'land_area':[10,20]})
+    >>> df_processed = process_data_for_lm(df)
+    >>> df_processed['log_value'].round(2).tolist()
+    [4.61, 5.3]
     """
 
     # Convert comma decimal to dot and cast to float

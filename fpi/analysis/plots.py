@@ -173,17 +173,17 @@ def convert_number_for_display(num: float) -> str:
     """
     Convert a large number into a human-readable string with suffixes.
 
-    Examples:
-        >>> convert_number_for_display(1200)
-        '1.2 K'
-        >>> convert_number_for_display(2_500_000)
-        '2.5 M'
-
     Args:
         num (float): The numeric value to format.
 
     Returns:
         str: Formatted string with a scale suffix (K, M, Md).
+
+    Examples:
+        >>> convert_number_for_display(1200)
+        '1.2 K'
+        >>> convert_number_for_display(2_500_000)
+        '2.5 M'
     """
     num_float: float = float(num)
     for unit in ["", " K", " M", " Md"]:
