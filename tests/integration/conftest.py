@@ -1,6 +1,9 @@
 """Shared fixtures for integration tests."""
 
+import shutil
+import sys
 import tempfile
+import time
 from pathlib import Path
 
 import pandas as pd
@@ -9,9 +12,20 @@ import pytest
 
 @pytest.fixture
 def temp_data_dir():
-    """Create a temporary directory for test data files."""
-    with tempfile.TemporaryDirectory() as tmpdir:
-        yield Path(tmpdir)
+    """Create a temporary directory for test data files (Windows-safe, cross-platform)."""
+    tmpdir = tempfile.mkdtemp()
+    path = Path(tmpdir)
+    try:
+        yield path
+    finally:
+        # On Windows, files like SQLite DBs may still be locked, so retry deletion
+        max_attempts = 5 if sys.platform.startswith("win") else 1
+        for _ in range(max_attempts):
+            try:
+                shutil.rmtree(path)
+                break
+            except PermissionError:
+                time.sleep(0.1)
 
 
 @pytest.fixture
