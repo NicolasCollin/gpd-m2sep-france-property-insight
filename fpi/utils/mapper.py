@@ -1,83 +1,61 @@
+import pandas as pd
 from fpi.data_pipeline.loader import load_all_csv
-from fpi.utils.constants import DEPT_NAMES
 
-
-def suggest_department(value: str) -> list[str]:
+def build_postal_town_mapping(df_root: str = "data/cleaned") -> dict[str, str]:
     """
-    Suggest department codes or names based on partial user input.
+    Build a mapping from postal codes to town names.
 
     Args:
-        value (str): Partial input entered by the user (code or name).
+        df_root (str): Path to the cleaned data directory.
 
     Returns:
-        list[str]: A list of matching suggestions formatted as 'code - name'.
-
-    Examples:
-        >>> suggest_department("75")
-        ['75 - Paris']
-        >>> suggest_department("par")
-        ['75 - Paris']
-        >>> suggest_department("9")
-        ['91 - Essonne', '92 - Hauts-de-Seine', '93 - Seine-Saint-Denis', '94 - Val-de-Marne', '95 - Val-d’Oise']
-    """
-    value = value.strip().lower()
-    suggestions = []
-
-    for code, name in DEPT_NAMES.items():
-        if value in code or value in name.lower():
-            suggestions.append(f"{code} - {name}")
-
-    return suggestions
-
-
-def get_dept_town_mapping(df_root: str = "data/cleaned") -> dict[str, list[str]]:
-    """
-    Build a mapping between department codes and the list of towns within each department.
-
-    The function loads all cleaned CSV files using `load_all_csv`, extracts
-    the relevant columns (`department_code`, `town_name`), and constructs a
-    dictionary mapping each department code to a sorted list of unique town names.
-
-    Args:
-        data_root (str): Root directory containing yearly cleaned data folders.
-
-    Returns:
-        Dict[str, List[str]]: A dictionary mapping department codes (as strings)
-        to sorted lists of corresponding town names.
+        dict[str, str]: Mapping from postal code to town name.
     """
     df = load_all_csv(df_root)
 
-    if "department_code" not in df.columns or "town_name" not in df.columns:
-        raise KeyError("Columns 'department_code' and 'town_name' must exist in the dataset.")
+    if "postal_code" not in df.columns or "town_name" not in df.columns:
+        raise KeyError("Columns 'postal_code' and 'town_name' must exist in the dataset.")
 
-    df = df.dropna(subset=["department_code", "town_name"])
-    df["department_code"] = df["department_code"].astype(str).str.zfill(2)
+    df = df.dropna(subset=["postal_code", "town_name"])
+    df["postal_code"] = df["postal_code"].astype(str).str.zfill(5)
 
-    dept_town_map: dict[str, list[str]] = (
-        df.groupby("department_code")["town_name"].unique().apply(lambda towns: sorted(towns.tolist())).to_dict()
-    )
-
-    return dept_town_map
+    # Keep the first town name for each postal code
+    mapping = df.drop_duplicates(subset=["postal_code"]).set_index("postal_code")["town_name"].to_dict()
+    return mapping
 
 
-def suggest_town(department_code: str, value: str, mapping: dict[str, list[str]]) -> list[str]:
+def suggest_postal_code(value: str, mapping: dict[str, str]) -> list[str]:
     """
-    Suggest towns based on partial input and a selected department.
-
-    Examples:
-        >>> suggest_town("75", "saint", mapping)
-        ['Saint-Mandé', 'Saint-Ouen-sur-Seine', 'Saint-Denis']
+    Suggest postal codes based on partial input.
 
     Args:
-        department_code (str): Department code selected by the user.
-        value (str): Partial name of the town.
-        mapping (Dict[str, List[str]]): Department-to-towns mapping.
+        value (str): Partial user input.
+        mapping (dict[str, str]): Postal code → town name mapping.
 
     Returns:
-        List[str]: List of matching towns.
+        list[str]: List of matching postal code + town strings.
     """
-    department_code = str(department_code).zfill(2)
     value = value.strip().lower()
-    towns = mapping.get(department_code, [])
+    return [
+        f"{code} - {town}"
+        for code, town in mapping.items()
+        if value in code or value in town.lower()
+    ]
 
-    return [town for town in towns if value in town.lower()]
+
+def suggest_town(postal_code: str, value: str, mapping: dict[str, str]) -> list[str]:
+    """
+    Suggest towns within a postal code based on partial input.
+
+    Args:
+        postal_code (str): Selected postal code.
+        value (str): Partial town name.
+        mapping (dict[str, str]): Postal code → town name mapping.
+
+    Returns:
+        list[str]: Matching town names.
+    """
+    postal_code = str(postal_code).zfill(5)
+    value = value.strip().lower()
+    town = mapping.get(postal_code, "")
+    return [town] if value in town.lower() else []

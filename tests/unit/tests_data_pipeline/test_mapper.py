@@ -1,4 +1,3 @@
-
 import unittest
 from fpi.utils.mapper import suggest_postal_code, suggest_town
 
@@ -25,9 +24,8 @@ class TestMapperFunctions(unittest.TestCase):
         self.assertTrue(all(item in result for item in expected))
 
     def test_suggest_town_match(self):
-        print("Mapping:", self.mapping)
-        print("Result:", suggest_town("93100", "montr", self.mapping))
-        self.assertEqual(suggest_town("93100", "montr", self.mapping), ["Montreuil"])
+        result = suggest_town("93100", "montr", self.mapping)
+        self.assertEqual(result, ["Montreuil"])
 
     def test_suggest_town_no_match(self):
         result = suggest_town("93100", "aubervilliers", self.mapping)
@@ -39,4 +37,3 @@ class TestMapperFunctions(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
