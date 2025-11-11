@@ -9,59 +9,86 @@ class TestCleanData:
     """
     Integration tests for the `clean_data` function.
 
-    This class directly tests `clean_data()` end-to-end:
-    - CSV discovery in raw_path
+    This class tests `clean_data()` end-to-end:
+    - Discovery of raw_*.csv files in raw_path
     - Column normalization and renaming
     - Keeping only relevant columns
     - Dropping rows with NA and duplicates
-    - Saving cleaned CSVs in cleaned_path/cleanedYYYY with filenames like cleaned_75_2021.csv
+    - Removing decimals (.0 or ,xx)
+    - Saving cleaned CSVs under cleaned_path/cleanedYYYY/
     """
 
     def test_clean_data_creates_cleaned_file(self, tmp_path: Path) -> None:
-        # Setup: create a raw CSV file
+        # Setup: create a raw CSV file in temporary directory
         raw_dir: Path = tmp_path / "data" / "raw"
         raw_dir.mkdir(parents=True)
         input_file: Path = raw_dir / "raw_75_2021.csv"
 
+        # Sample raw data simulating minimal realistic input
         df: pd.DataFrame = pd.DataFrame(
             {
                 "DATE_MUTATION": ["15/03/2021", "20/04/2021", None],
                 "NATURE_MUTATION": ["Vente", "Echange", "Vente"],
-                "VALEUR_FONCIERE": [250000, 300000, 275000],
-                "CODE_POSTAL": ["75001", "75002", "75003"],
+                "VALEUR_FONCIERE": ["250000,00", "300000,50", "275000,00"],  # includes commas and decimals
+                "CODE_POSTAL": [75001.0, 75002.0, 75003.0],  # decimals that should disappear
                 "COMMUNE": ["Paris", "Paris", "Paris"],
-                "EXTRA_COL": ["remove", "remove", "remove"],
+                "CODE_DEPARTEMENT": ["75", "75", "75"],
+                "CODE_COMMUNE": ["101", "102", "103"],
+                "CODE_TYPE_LOCAL": [2.0, 2.0, 1.0],
+                "TYPE_LOCAL": ["Appartement", "Appartement", "Maison"],
+                "SURFACE_REELLE_BATI": [44.0, 52.0, 120.0],
+                "NOMBRE_PIECES_PRINCIPALES": [2.0, 3.0, 5.0],
+                "SURFACE_TERRAIN": [69.0, 0.0, 240.0],
+                "EXTRA_COL": ["remove", "remove", "remove"],  # to be dropped
             }
         )
         df.to_csv(input_file, index=False)
 
-        # Run clean_data directly
+        # Run cleaning
         clean_data(raw_path=tmp_path / "data/raw", cleaned_path=tmp_path / "data/cleaned")
 
-        # Verify cleaned folder exists
+        # Verify output directory structure
         cleaned_dir: Path = tmp_path / "data" / "cleaned" / "cleaned2021"
-        assert cleaned_dir.exists(), "Cleaned folder not created"
+        assert cleaned_dir.exists(), "Cleaned folder was not created"
 
-        # Verify cleaned CSV file exists
-        cleaned_files: list[Path] = list(cleaned_dir.glob("cleaned_??_2021.csv"))
-        assert cleaned_files, "No cleaned CSV was created"
+        # Check that a cleaned CSV exists
+        cleaned_files: list[Path] = list(cleaned_dir.glob("cleaned_75_2021.csv"))
+        assert cleaned_files, "Cleaned CSV file not found"
         output_file: Path = cleaned_files[0]
 
-        # Verify contents
-        cleaned_df: pd.DataFrame = pd.read_csv(output_file)
+        # Load cleaned data
+        cleaned_df: pd.DataFrame = pd.read_csv(output_file, dtype=str)
 
         # Extra columns should be removed
         assert "EXTRA_COL" not in cleaned_df.columns
 
         # Columns should be renamed to English equivalents
-        expected_cols: list[str] = ["transaction_date", "transaction_type", "property_value", "postal_code", "town_name"]
+        expected_cols: list[str] = [
+            "transaction_date",
+            "transaction_type",
+            "property_value",
+            "postal_code",
+            "town_name",
+            "department_code",
+            "town_code",
+            "property_type_code",
+            "property_type",
+            "building_area",
+            "main_rooms",
+            "land_area",
+        ]
         for col in expected_cols:
-            assert col in cleaned_df.columns
+            assert col in cleaned_df.columns, f"Missing expected column: {col}"
 
-        # Rows with NA should be removed (the last row had None date)
-        n_rows: int = cleaned_df.shape[0]
-        assert n_rows == 2
+        # The None date row should have been removed
+        assert len(cleaned_df) == 2, "Rows with missing values were not dropped"
 
-        # Check values
-        assert cleaned_df["property_value"].iloc[0] == 250000
-        assert cleaned_df["transaction_type"].iloc[0] == "Vente"
+        # Check that decimals were removed correctly
+        assert cleaned_df.loc[0, "property_value"] == "250000"
+        assert cleaned_df.loc[1, "property_value"] == "300000"
+        assert cleaned_df.loc[0, "postal_code"] == "75001"
+        assert cleaned_df.loc[0, "building_area"] == "44"
+        assert cleaned_df.loc[1, "main_rooms"] == "3"
+
+        # Check that types are strings (consistent with CSV export)
+        assert cleaned_df.dtypes.eq("object").all(), "All columns should be saved as strings"

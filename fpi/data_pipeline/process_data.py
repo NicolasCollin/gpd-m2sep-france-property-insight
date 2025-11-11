@@ -6,18 +6,42 @@ import pandas as pd
 
 def process_data(cleaned_path: Path | str = "data/cleaned", processed_path: Path | str = "data/processed") -> None:
     """
-    Process cleaned CSV files to extract useful columns and prepare data for analysis.
+    Process all cleaned CSV files to prepare them for analysis.
 
-    Steps:
-    1. Traverse all cleaned CSV files recursively under cleaned_path.
-    2. Extract the year from 'transaction_date' (format DD/MM/YYYY) into a new column 'year'.
-    3. Keep only rows where 'transaction_type' == 'Vente'.
-    4. Drop columns: 'transaction_date', 'transaction_type', 'town_code', and 'property_type_code'.
-    5. Save processed files under processed_path with a similar folder structure (e.g., processed2021/processed_data_2021.csv).
+    This function reads each cleaned CSV file, extracts useful information,
+    and standardizes it into a consistent structure for downstream analysis.
+
+    Steps performed:
+        1. Recursively locate all files matching "cleaned_*.csv" under `cleaned_path`.
+        2. Parse the year from 'transaction_date' (format DD/MM/YYYY) into a new 'year' column.
+        3. Keep only rows where 'transaction_type' equals "Vente".
+        4. Drop unnecessary columns: 'transaction_date', 'transaction_type', 'town_code', and 'property_type_code'.
+        5. Save the processed data into `processed_path`, preserving the year-based folder structure
+           (e.g., processed2021/processed_75_2021.csv).
 
     Args:
-        - cleaned_path (Path | str): Directory containing cleaned CSV files (default: "data/cleaned").
-        - processed_path (Path | str): Directory where processed CSV files will be saved (default: "data/processed").
+        cleaned_path (Path | str): Root directory containing cleaned CSV files.
+        processed_path (Path | str): Output directory where processed CSV files will be stored.
+
+    Output:
+        - For each raw CSV file found, a cleaned version is created and saved under:
+          `processed_path/processedYYYY/processed_<original_filename>.csv`
+
+    Notes:
+        - The function does not return a DataFrame; it writes processed CSVs directly to disk.
+
+    Example:
+        Suppose a cleaned CSV contains the following lines:
+
+        transaction_date,transaction_type,property_value,postal_code,town_name,department_code,town_code,property_type_code,property_type,building_area,main_rooms,land_area
+        12/01/2022,Vente,80000000,75008,PARIS 08,75,108,4,Local industriel. commercial ou assimilé,239,0,988
+        12/01/2022,Vente,80000000,75008,PARIS 08,75,108,2,Appartement,172,4,988
+
+        After running `process_data(cleaned_path, processed_path)`, the processed CSV will look like:
+
+        property_value,postal_code,town_name,department_code,property_type,building_area,main_rooms,land_area,year
+        80000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,239,0,988,2022
+        80000000,75008,PARIS 08,75,Appartement,172,4,988,2022
     """
 
     cleaned_path_obj: Path = Path(cleaned_path)
