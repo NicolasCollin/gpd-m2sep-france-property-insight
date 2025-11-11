@@ -1,5 +1,7 @@
-from behave import when, then
+from behave import then, when
+
 from fpi.interface.prediction.prediction_page import run_prediction
+
 
 # Valid prediction
 @when("I run a prediction with valid property data")
@@ -15,10 +17,12 @@ def step_run_valid_prediction(context):
         land=float(row["land"]),
     )
 
+
 @then('the result should contain "Estimated property price"')
 def step_check_valid_prediction(context):
     result = context.prediction_result.lower()
     assert "estimated property price" in result, f"Unexpected result: {context.prediction_result}"
+
 
 # Invalid prediction
 @when("I run a prediction with invalid property data")
@@ -33,6 +37,7 @@ def step_run_invalid_prediction(context):
         rooms=int(row["rooms"]),
         land=float(row["land"]),
     )
+
 
 @then('the result should contain "error" or "failed"')
 def step_check_invalid_prediction(context):
