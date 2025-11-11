@@ -55,9 +55,6 @@ select = ["E", "F", "I"]
 [tool.mypy]
 ignore_missing_imports = true
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-
 # ignore brotli 1.1.0 issue because necessary for curent gradio version
 [tool.pip_audit]
 ignore = ["GHSA-2qfp-q593-8484"]
