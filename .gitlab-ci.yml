@@ -46,9 +46,6 @@ audit:
   script:
     - '# Ignore known advisory GHSA-2qfp-q593-8484 (brotli<=1.1.0) until a fixed wheel is available in our env'
     - uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484
-  only:
-    - main
-    - test-main
   allow_failure: true
 
 
@@ -66,7 +63,3 @@ deploy:
   extends: .ci-template
   script:
     - uv run python -m fpi.main --help
-  only:
-    - main
-    - test-main
-    - ci-deploy
