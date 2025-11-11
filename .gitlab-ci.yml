@@ -3,7 +3,6 @@ stages:
   - typecheck
   - audit
   - test
-  - validate
   - deploy
 
 
@@ -47,6 +46,9 @@ audit:
   script:
     - '# Ignore known advisory GHSA-2qfp-q593-8484 (brotli<=1.1.0) until a fixed wheel is available in our env'
     - uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484
+  only:
+    - main
+    - test-main
   allow_failure: true
 
 
@@ -57,3 +59,14 @@ test:
   script:
     - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q
     - uv run behave tests/behave/features
+
+# test if uv run main doesnt crash
+deploy:
+  stage: deploy
+  extends: .ci-template
+  script:
+    - uv run python -m fpi.main --help
+  only:
+    - main
+    - test-main
+    - ci-deploy
