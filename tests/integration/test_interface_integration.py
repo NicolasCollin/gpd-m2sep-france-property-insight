@@ -1,8 +1,12 @@
 """
 Integration tests for interface components.
 
-These tests verify that interface components (forms, validation) work correctly with backend.
+These tests verify that interface components, such as forms and input validation,
+work correctly with the backend. They simulate user input scenarios and ensure
+that validation, conversion to model input, and prediction integration behave as expected.
 """
+
+from pathlib import Path
 
 from fpi.interface.prediction.form import validate_inputs
 
@@ -10,132 +14,163 @@ from fpi.interface.prediction.form import validate_inputs
 class TestPredictionFormIntegration:
     """Integration tests for prediction form validation and processing."""
 
-    def test_form_validation_valid_inputs(self):
-        """Test form validation with valid inputs."""
+    def test_form_validation_valid_inputs(self) -> None:
+        """
+        Test form validation with valid inputs.
+
+        Ensures that all fields are correctly validated and no errors are returned
+        when inputs are within expected ranges and formats.
+        """
         # Arrange
-        postal = "75002"
-        dept = "75"
-        town = "102"
-        prop_type = "Apartment"
-        area = 43.0
-        rooms = 2
-        land = 69.0
+        postal: str = "75002"
+        dept: str = "75"
+        town: str = "102"
+        prop_type: str = "Apartment"
+        area: float = 43.0
+        rooms: int = 2
+        land: float = 69.0
 
         # Act
-        error_msg = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+        error_msg: str = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
 
         # Assert
         assert error_msg == "", "Valid inputs should not produce errors"
 
-    def test_form_validation_missing_fields(self):
-        """Test form validation with missing fields."""
+    def test_form_validation_missing_fields(self) -> None:
+        """
+        Test form validation with missing required fields.
+
+        Checks that missing fields generate appropriate error messages.
+        """
         # Arrange
-        postal = ""
-        dept = "75"
-        town = "102"
-        prop_type = "Apartment"
-        area = 43.0
-        rooms = 2
-        land = 69.0
+        postal: str = ""
+        dept: str = "75"
+        town: str = "102"
+        prop_type: str = "Apartment"
+        area: float = 43.0
+        rooms: int = 2
+        land: float = 69.0
 
         # Act
-        error_msg = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+        error_msg: str = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
 
         # Assert
         assert error_msg.startswith("Error :"), "Missing fields should produce error"
         assert "Postal code" in error_msg or "required" in error_msg
 
-    def test_form_validation_invalid_postal_code(self):
-        """Test form validation with invalid postal code format."""
+    def test_form_validation_invalid_postal_code(self) -> None:
+        """
+        Test form validation with invalid postal code format.
+
+        Ensures that postal codes not conforming to 5-digit format are rejected.
+        """
         # Arrange
-        postal = "750"  # Invalid: not 5 digits
-        dept = "75"
-        town = "102"
-        prop_type = "Apartment"
-        area = 43.0
-        rooms = 2
-        land = 69.0
+        postal: str = "750"  # Invalid
+        dept: str = "75"
+        town: str = "102"
+        prop_type: str = "Apartment"
+        area: float = 43.0
+        rooms: int = 2
+        land: float = 69.0
 
         # Act
-        error_msg = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+        error_msg: str = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
 
         # Assert
         assert error_msg.startswith("Error :"), "Invalid postal code should produce error"
         assert "postal code" in error_msg.lower()
 
-    def test_form_validation_invalid_area(self):
-        """Test form validation with invalid area values."""
-        # Arrange - Area too large
-        postal = "75002"
-        dept = "75"
-        town = "102"
-        prop_type = "Apartment"
-        area = 2000.0  # Too large
-        rooms = 2
-        land = 69.0
+    def test_form_validation_invalid_area(self) -> None:
+        """
+        Test form validation with unrealistic property area.
+
+        Ensures that excessively large areas are flagged as invalid.
+        """
+        # Arrange
+        postal: str = "75002"
+        dept: str = "75"
+        town: str = "102"
+        prop_type: str = "Apartment"
+        area: float = 2000.0  # Too large
+        rooms: int = 2
+        land: float = 69.0
 
         # Act
-        error_msg = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+        error_msg: str = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
 
         # Assert
         assert error_msg.startswith("Error :"), "Invalid area should produce error"
         assert "area" in error_msg.lower() or "realistic" in error_msg.lower()
 
-    def test_form_validation_invalid_rooms(self):
-        """Test form validation with invalid number of rooms."""
-        # Arrange - Negative rooms
-        postal = "75002"
-        dept = "75"
-        town = "102"
-        prop_type = "Apartment"
-        area = 43.0
-        rooms = -1  # Invalid
-        land = 69.0
+    def test_form_validation_invalid_rooms(self) -> None:
+        """
+        Test form validation with invalid number of rooms.
+
+        Negative or unrealistic numbers of rooms should produce errors.
+        """
+        # Arrange
+        postal: str = "75002"
+        dept: str = "75"
+        town: str = "102"
+        prop_type: str = "Apartment"
+        area: float = 43.0
+        rooms: int = -1  # Invalid
+        land: float = 69.0
 
         # Act
-        error_msg = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+        error_msg: str = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
 
         # Assert
         assert error_msg.startswith("Error :"), "Invalid rooms should produce error"
         assert "rooms" in error_msg.lower() or "positive" in error_msg.lower()
 
-    def test_form_validation_invalid_land_area(self):
-        """Test form validation with invalid land area."""
-        # Arrange - Land area too large
-        postal = "75002"
-        dept = "75"
-        town = "102"
-        prop_type = "Apartment"
-        area = 43.0
-        rooms = 2
-        land = 200000.0  # Too large
+    def test_form_validation_invalid_land_area(self) -> None:
+        """
+        Test form validation with unrealistic land area.
+
+        Ensures excessively large land areas are rejected.
+        """
+        # Arrange
+        postal: str = "75002"
+        dept: str = "75"
+        town: str = "102"
+        prop_type: str = "Apartment"
+        area: float = 43.0
+        rooms: int = 2
+        land: float = 200000.0  # Too large
 
         # Act
-        error_msg = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+        error_msg: str = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
 
         # Assert
         assert error_msg.startswith("Error :"), "Invalid land area should produce error"
         assert "land" in error_msg.lower() or "realistic" in error_msg.lower()
 
-    def test_prediction_form_to_model_integration(self, temp_data_dir, sample_cleaned_csv_file):
-        """Test that form inputs are correctly processed and passed to prediction."""
-        # This test verifies the integration between form validation and prediction
-        # Arrange - Valid form inputs
-        postal = "75002"
-        dept = "75"
-        town = "102"
-        prop_type = "Apartment"
-        area = 43.0
-        rooms = 2
-        land = 69.0
+    def test_prediction_form_to_model_integration(self, temp_data_dir: Path, sample_cleaned_csv_file: Path) -> None:
+        """
+        Test that valid form inputs are correctly processed and converted to model input.
+
+        Verifies that:
+        - Validation passes for valid inputs.
+        - Inputs are transformed to the correct numeric types.
+        - Property type strings are correctly mapped to numeric codes.
+        """
+        # Arrange
+        postal: str = "75002"
+        dept: str = "75"
+        town: str = "102"
+        prop_type: str = "Apartment"
+        area: float = 43.0
+        rooms: int = 2
+        land: float = 69.0
 
         # Act - Validate inputs
-        error_msg = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+        error_msg: str = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
         assert error_msg == "", "Inputs should be valid"
 
-        # Act - Convert to model input format (as done in prediction_page.py)
-        property_type_code = 1 if prop_type.lower() == "house" else 2
-        input_data = {
+        # Act - Convert to model input
+        property_type_code: int = 1 if prop_type.lower() == "house" else 2
+        input_data: dict[str, int | float] = {
             "building_area": float(area),
             "main_rooms": int(rooms),
             "land_area": float(land),
@@ -145,36 +180,35 @@ class TestPredictionFormIntegration:
             "department_code": int(dept),
         }
 
-        # Assert - Verify conversion
-        assert input_data["postal_code"] == 75002, "Postal code should be converted correctly"
-        assert input_data["property_type_code"] == 2, "Apartment should map to code 2"
-        assert input_data["building_area"] == 43.0, "Area should be float"
-        assert input_data["main_rooms"] == 2, "Rooms should be int"
-        assert input_data["department_code"] == 75, "Department code should be int"
+        # Assert
+        assert input_data["postal_code"] == 75002
+        assert input_data["property_type_code"] == 2
+        assert input_data["building_area"] == 43.0
+        assert input_data["main_rooms"] == 2
+        assert input_data["department_code"] == 75
 
-    def test_run_prediction_with_valid_inputs_mock(self):
-        """Test run_prediction function with valid inputs (mocked model)."""
-        # Note: This tests the run_prediction function logic without requiring a trained model
-        # The actual prediction call would fail without a model, so we test the input processing
+    def test_run_prediction_with_valid_inputs_mock(self) -> None:
+        """
+        Test input processing for run_prediction function with valid inputs.
 
-        # Arrange - Valid inputs
-        postal = "75002"
-        dept = "75"
-        town = "102"
-        prop_type = "Apartment"
-        area = 43.0
-        rooms = 2
-        land = 69.0
+        This test ensures that form data is correctly converted to the numeric format
+        expected by the prediction model, without requiring an actual trained model.
+        """
+        # Arrange
+        postal: str = "75002"
+        dept: str = "75"
+        town: str = "102"
+        prop_type: str = "Apartment"
+        area: float = 43.0
+        rooms: int = 2
+        land: float = 69.0
 
-        # Act - Validate inputs first (as run_prediction does)
-        error_msg = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
-
-        # Assert - Inputs should be valid
+        # Act
+        error_msg: str = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
         assert error_msg == "", "Inputs should pass validation"
 
-        # Act - Convert to model format (as run_prediction does)
-        property_type_code = 1 if prop_type.lower() == "house" else 2
-        input_data = {
+        property_type_code: int = 1 if prop_type.lower() == "house" else 2
+        input_data: dict[str, int | float] = {
             "building_area": float(area),
             "main_rooms": int(rooms),
             "land_area": float(land),
@@ -184,24 +218,27 @@ class TestPredictionFormIntegration:
             "department_code": int(dept),
         }
 
-        # Assert - Data should be in correct format
-        assert all(isinstance(v, (int, float)) for v in input_data.values()), "All values should be numeric"
-        assert input_data["property_type_code"] in [1, 2], "Property type code should be 1 or 2"
+        # Assert
+        assert all(isinstance(v, (int, float)) for v in input_data.values())
+        assert input_data["property_type_code"] in [1, 2]
 
-    def test_run_prediction_with_invalid_inputs(self):
-        """Test run_prediction function with invalid inputs."""
-        # Arrange - Invalid inputs (missing postal code)
-        postal = ""
-        dept = "75"
-        town = "102"
-        prop_type = "Apartment"
-        area = 43.0
-        rooms = 2
-        land = 69.0
+    def test_run_prediction_with_invalid_inputs(self) -> None:
+        """
+        Test run_prediction function with invalid inputs.
 
-        # Act - Validate inputs
-        error_msg = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+        Verifies that missing or malformed inputs are detected and result in error messages.
+        """
+        # Arrange
+        postal: str = ""
+        dept: str = "75"
+        town: str = "102"
+        prop_type: str = "Apartment"
+        area: float = 43.0
+        rooms: int = 2
+        land: float = 69.0
 
-        # Assert - Should return error message
+        # Act
+        error_msg: str = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+
+        # Assert
         assert error_msg.startswith("Error :"), "Invalid inputs should produce error"
-        # run_prediction would return this error message without calling the model
