@@ -5,8 +5,6 @@ import gradio as gr
 
 def validate_inputs(
     postal: str,
-    dept: str,
-    town: str,
     prop_type: str,
     area: float,
     rooms: int,
@@ -20,8 +18,6 @@ def validate_inputs(
 
     Args:
         - postal (str): Postal code (5-digit string).
-        - dept (str): Department code.
-        - town (str): Town code.
         - prop_type (str): Type of property ("House" or "Apartment").
         - area (float): Living area in square meters.
         - rooms (int): Number of main rooms.
@@ -34,8 +30,7 @@ def validate_inputs(
 
     required_fields: dict[str, str | float | int | None] = {
         "Postal code": postal,
-        "Department code": dept,
-        "Town code": town,
+        "Property type": prop_type,
         "Living area": area,
         "Number of rooms": rooms,
         "Land area": land,
@@ -86,18 +81,6 @@ def get_form() -> tuple[list[gr.components.FormComponent], gr.Dropdown]:
             lines=1,
             interactive=True,
         )
-        dept_code_input: gr.Textbox = gr.Textbox(
-            label="Department code",
-            placeholder="Ex: 75 ou 974",
-            lines=1,
-            interactive=True,
-        )
-        town_code_input: gr.Textbox = gr.Textbox(
-            label="Town code",
-            placeholder="Ex: 75101",
-            lines=1,
-            interactive=True,
-        )
 
     # Row 2: property characteristics
     with gr.Row():
@@ -124,8 +107,6 @@ def get_form() -> tuple[list[gr.components.FormComponent], gr.Dropdown]:
 
     inputs_list: list[gr.components.FormComponent] = [
         postal_input,
-        dept_code_input,
-        town_code_input,
         prop_type_input,
         area_input,
         rooms_input,
@@ -135,7 +116,7 @@ def get_form() -> tuple[list[gr.components.FormComponent], gr.Dropdown]:
     return inputs_list, prop_type_input
 
 
-def reset_form() -> tuple[str, str, str, str, float, int, float, str]:
+def reset_form() -> tuple[str, str, float, int, float, str]:
     """
     Return default values for all form components and the initial output message.
 
@@ -143,17 +124,15 @@ def reset_form() -> tuple[str, str, str, str, float, int, float, str]:
     clicks a "Reset" or "Clear" button.
 
     Returns:
-        - tuple[str, str, str, str, float, int, float, str]:
+        - tuple[str, str, float, int, float, str]:
             Default values for all form fields in this order:
-            (postal, dept, town, prop_type, area, rooms, land, result_text)
+            (postal, prop_type, area, rooms, land, result_text)
     """
     postal: str = ""
-    dept: str = ""
-    town: str = ""
     prop_type: str = "House"
     area: float = 0.0
     rooms: int = 0
     land: float = 0.0
     result_text: str = "Estimation : **--- €**"
 
-    return postal, dept, town, prop_type, area, rooms, land, result_text
+    return postal, prop_type, area, rooms, land, result_text

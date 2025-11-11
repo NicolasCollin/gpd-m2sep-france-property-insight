@@ -55,7 +55,7 @@ def get_home_page() -> tuple[gr.Dropdown, gr.Button, gr.Button, gr.Button, gr.Bu
             # Search section
             with gr.Row(elem_id="search-section", scale=1):
                 with gr.Column(elem_id="search-container"):
-                    _ = gr.HTML('<h2 class="search-title">All about a department</h2>')
+                    _ = gr.Markdown("## Find insights for your area", elem_classes="search-title")
 
                     with gr.Row(elem_id="search-input-row"):
                         department_dropdown: gr.Dropdown = gr.Dropdown(
@@ -79,20 +79,20 @@ def get_home_page() -> tuple[gr.Dropdown, gr.Button, gr.Button, gr.Button, gr.Bu
             # Features Section
             with gr.Row(elem_id="features-section"):
                 with gr.Column():
-                    _ = gr.HTML('<h2 class="features-title">Our features</h2>')
+                    _ = gr.Markdown("## Our features", elem_classes="feature-title")
                     with gr.Row():
                         dashboard_card: gr.Button = gr.Button(
-                            "📊 DASHBOARD\nVisualize market trends, price per m², time evolution and detailed analysis by area",
+                            "📊 DASHBOARD\n\nVisualize market trends, price per m², time evolution and detailed analysis by area",
                             elem_id="feature-dashboard",
                             elem_classes="feature-card",
                         )
                         estimation_card: gr.Button = gr.Button(
-                            "🏠 ESTIMATION\nGet accurate property valuation thanks to our artificial intelligence models",
+                            "🏠 ESTIMATION\n\nGet accurate property valuation thanks to our artificial intelligence models",
                             elem_id="feature-estimation",
                             elem_classes="feature-card",
                         )
                         about_card: gr.Button = gr.Button(
-                            "ABOUT US\nDiscover our mission and expertise in French real estate market analysis",
+                            "ℹ️ ABOUT US\n\nDiscover our mission and expertise in French real estate market analysis",
                             elem_id="feature-about",
                             elem_classes="feature-card",
                         )
