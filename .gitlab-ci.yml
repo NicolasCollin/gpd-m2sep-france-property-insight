@@ -1,65 +1,93 @@
 stages:
+  - setup
   - lint
   - typecheck
   - audit
   - test
   - deploy
 
-
-# template for uv installation
-.ci-template:
-  # image: python:3.13-slim
+# Install dependencies once and cache
+setup:
+  stage: setup
+  image: python:3.13-slim
   cache:
     key: "uv-cache"
     paths:
       - .uv-cache
-  variables:
-    UV_CACHE_DIR: .uv-cache
-  before_script:
-  - python -m pip install --upgrade pip
-  - python -m pip install uv
-  - uv sync --frozen --group dev
-
+  script:
+    - python -m pip install --upgrade pip
+    - python -m pip install uv
+    - uv sync --frozen --group dev
+  artifacts:
+    paths:
+      - .uv-cache
+    expire_in: 1h
 
 # pre-commit hooks
 lint:
   stage: lint
-  extends: .ci-template
+  image: python:3.13-slim
+  dependencies:
+    - setup
+  cache:
+    key: "uv-cache"
+    paths:
+      - .uv-cache
   script:
     - uv run pre-commit run --all-files --show-diff-on-failure
   allow_failure: true
 
-
 # mypy static type checker
 typecheck:
   stage: typecheck
-  extends: .ci-template
+  image: python:3.13-slim
+  dependencies:
+    - setup
+  cache:
+    key: "uv-cache"
+    paths:
+      - .uv-cache
   script:
     - uv run mypy fpi
   allow_failure: true
 
-
-# look for vulnerable dependencies
+# audit dependencies
 audit:
   stage: audit
-  extends: .ci-template
+  image: python:3.13-slim
+  dependencies:
+    - setup
+  cache:
+    key: "uv-cache"
+    paths:
+      - .uv-cache
   script:
-    - '# Ignore known advisory GHSA-2qfp-q593-8484 (brotli<=1.1.0) until a fixed wheel is available in our env'
     - uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484
   allow_failure: true
 
-
-# unit tests, doctests, and behave tests
+# unit tests, doctests, behave tests
 test:
   stage: test
-  extends: .ci-template
+  image: python:3.13-slim
+  dependencies:
+    - setup
+  cache:
+    key: "uv-cache"
+    paths:
+      - .uv-cache
   script:
     - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q
     - uv run behave tests/behave/features
 
-# test if uv run main doesnt crash
+# check main doesn't crash
 deploy:
   stage: deploy
-  extends: .ci-template
+  image: python:3.13-slim
+  dependencies:
+    - setup
+  cache:
+    key: "uv-cache"
+    paths:
+      - .uv-cache
   script:
     - uv run python -m fpi.main --help
