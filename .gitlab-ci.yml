@@ -3,8 +3,6 @@ stages:
   - typecheck
   - audit
   - test
-  - validate
-  - deploy
 
 
 # template for uv installation
@@ -48,9 +46,12 @@ audit:
     - '# Ignore known advisory GHSA-2qfp-q593-8484 (brotli<=1.1.0) until a fixed wheel is available in our env'
     - uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484
   allow_failure: true
+  only:
+    - main
+    - test-main
 
 
-# unit tests, doctests, and behave tests
+# unit tests, integration tests, doctests, and behave tests
 test:
   stage: test
   extends: .ci-template
