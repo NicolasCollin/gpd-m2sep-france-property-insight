@@ -97,8 +97,8 @@ def mock_predict_price():
 
 
 def mock_build_random_forest() -> None:
-    folder_path: Path = "data/cleaned/cleaned2024"
-    model_path: Path = "fpi/models/random_forest.joblib"
+    folder_path: str = "data/cleaned/cleaned2024"
+    model_path: str = "fpi/models/random_forest.joblib"
     target_col: str = "property_value"
 
     num_cols: list[str] = PREDICTION_NUMERIC_INPUTS
