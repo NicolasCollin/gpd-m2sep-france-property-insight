@@ -1,15 +1,3 @@
-"""
-Unit tests for fpi.data_pipeline.schemas
-Covers the Pydantic models: PredictionFormSchema and PropertyData.
-
-Checks:
-1. Valid input is parsed correctly
-2. Default values are applied
-3. Validation errors for invalid numeric values
-4. Validation errors for out-of-range codes
-5. Malformed string inputs
-"""
-
 import pytest
 from pydantic import ValidationError
 

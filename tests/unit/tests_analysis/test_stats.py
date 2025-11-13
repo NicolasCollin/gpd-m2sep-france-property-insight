@@ -1,12 +1,3 @@
-"""
-Unit tests for fpi.analysis.stats.summary function.
-
-Covers:
-1. Printing of DataFrame head and shape.
-2. Handling of DataFrames with missing values.
-3. Correct display of missing value counts.
-"""
-
 import pandas as pd
 
 from fpi.analysis.stats import summary

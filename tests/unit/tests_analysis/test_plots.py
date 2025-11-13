@@ -1,17 +1,3 @@
-"""
-Unit tests for the aggregation logic inside `display_trend`.
-
-Covers:
-1. Single department with a single year
-2. Single department across multiple years
-3. Multiple departments across multiple years
-
-Checks:
-- Correct calculation of median property values after grouping.
-- Correct handling of department and year grouping.
-- Aggregation behaves as expected for different input scenarios.
-"""
-
 import pandas as pd
 import pytest
 
@@ -47,9 +33,7 @@ class TestDisplayTrendAggregation:
             )
         ]
         df_all: pd.DataFrame = pd.concat(dfs, ignore_index=True)
-        trend_df: pd.DataFrame = (
-            df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
-        )
+        trend_df: pd.DataFrame = df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
 
         expected_median: float = 1500000.0
         assert trend_df["property_value"].iloc[0] == pytest.approx(expected_median)
@@ -77,9 +61,7 @@ class TestDisplayTrendAggregation:
             )
         ]
         df_all: pd.DataFrame = pd.concat(dfs, ignore_index=True)
-        trend_df: pd.DataFrame = (
-            df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
-        )
+        trend_df: pd.DataFrame = df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
 
         medians = trend_df.set_index("year")["property_value"].to_dict()
         assert medians[2023] == pytest.approx(1000000.0)
@@ -108,9 +90,7 @@ class TestDisplayTrendAggregation:
             )
         ]
         df_all: pd.DataFrame = pd.concat(dfs, ignore_index=True)
-        trend_df: pd.DataFrame = (
-            df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
-        )
+        trend_df: pd.DataFrame = df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
 
         medians = trend_df.set_index(["year", "department_code"])["property_value"].to_dict()
         assert medians[(2023, "75")] == pytest.approx(1000000.0)

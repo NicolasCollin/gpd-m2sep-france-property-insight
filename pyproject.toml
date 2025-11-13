@@ -45,7 +45,7 @@ build-backend = "hatchling.build"
 
 # change line length tolerance
 [tool.ruff]
-line-length = 120
+line-length = 150
 
 # default linting rules + isort
 [tool.ruff.lint]
@@ -80,6 +80,8 @@ apidocsave = "fpi.utils.aliases:apidocsave"
 exp = "fpi.analysis.explore:explore"
 buildridge = "fpi.models.build_linear_model:mock_build_ridge"
 buildlm = "fpi.models.build_linear_model:mock_build_lm"
+buildrf = "fpi.models.build_random_forest:mock_build_random_forest"
 predictlm = "fpi.models.build_linear_model:mock_predict_price"
+predictrf = "fpi.models.predict:mock_predict_price"
 validation = "fpi.data_pipeline.validation:main"
 mapping = "fpi.utils.mapper:get_dept_town_mapping"

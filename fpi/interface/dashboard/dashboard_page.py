@@ -8,13 +8,10 @@ from fpi.data_pipeline.loader import load_all_csv
 def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
     """
     Display key summary statistics and a preview of the dataset.
-
-    Args:
-        df (pd.DataFrame): a DataFrame that contains all the csv data from 2021 to 2024.
-
-    Returns:
-        table_block (gr.Blocks): Gradio block containing summary statistics and data table.
     """
+    # Ensure property_value is numeric even if loaded as string
+    df["property_value"] = pd.to_numeric(df["property_value"].astype(str).str.replace(",", "."), errors="coerce")
+
     with gr.Blocks() as table_block:
         with gr.Row():
             total_properties: int = len(df)
@@ -59,8 +56,8 @@ def get_dashboard_page() -> gr.Blocks:
         Dashboard (gr.Blocks)
     """
 
-    gr.Markdown("# Ile-de-France Real Estate Dashboard", elem_classes="page-title")
-    gr.Markdown("Explore property values interactively with filters for department and property type.")
+    gr.Markdown("# Ile-de-France real estate dashboard", elem_classes="page-title")
+    gr.Markdown("Explore property values interactively with filters for department and property type.", elem_classes="page-subtitle")
 
     dashboard: gr.Blocks = display_dashboard()
 

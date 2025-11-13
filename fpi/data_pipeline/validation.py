@@ -88,9 +88,7 @@ def validate_csv(
     return valid_rows, total_rows, error_count
 
 
-def validate_all_cleaned(
-    root_dir: str | Path = "data/cleaned", save_invalid: bool = True
-) -> list[tuple[Path, int, int]]:
+def validate_all_cleaned(root_dir: str | Path = "data/cleaned", save_invalid: bool = True) -> list[tuple[Path, int, int]]:
     root = Path(root_dir)
     if not root.exists():
         print(f"[warn] Cleaned root does not exist: {root.resolve()}")
