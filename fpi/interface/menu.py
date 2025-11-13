@@ -27,7 +27,7 @@ global_css = """
 .search-title,
 .feature-title,
 .prediction-result {
-    color: inherit !important; 
+    color: inherit !important;
 }
 
 
@@ -57,7 +57,7 @@ global_css = """
     font-weight: bold;
     color: #0170bc;
     display: flex;
-    align-items: center;  
+    align-items: center;
 }
 
 
@@ -117,9 +117,9 @@ global_css = """
 .page-subtitle {
     font-size: 1.25rem;
     font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 400; 
+    font-weight: 400;
     margin-bottom: 1rem;
-    color: #555; 
+    color: #555;
 }
 
 /* ============ HOME PAGE STYLES ============ */
@@ -342,10 +342,10 @@ global_css = """
     margin: 0.5rem;
     font-family: 'Inter', system-ui, sans-serif;
     color: #2c3e50;
-    white-space: pre-line; 
+    white-space: pre-line;
     line-height: 1.4;
-    font-size: 15px;       
-    font-weight: 500;       
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .feature-title {
@@ -397,15 +397,15 @@ footer { display: none !important; }
 
 /* === TABS === */
 .tab-nav button { color: black !important; }
-.tab-nav button.selected { 
-    color: black !important; 
+.tab-nav button.selected {
+    color: black !important;
     border-bottom: 2px solid blue !important;
 }
 
-.page-title *, 
-.page-subtitle *, 
-.search-title *, 
-.feature-title *, 
+.page-title *,
+.page-subtitle *,
+.search-title *,
+.feature-title *,
 .prediction-result * {
     color: inherit !important;
 }
@@ -461,7 +461,6 @@ def app_menu() -> gr.Blocks:
     """
 
     with gr.Blocks(css=global_css, title="France Property Insight", fill_width=True) as menu:
-
         # Header / Navigation bar
         with gr.Row(elem_id="navbar"):
             # Left section: logo
