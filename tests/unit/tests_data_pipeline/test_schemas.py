@@ -25,8 +25,6 @@ class TestPredictionFormSchema:
         """
         data: dict[str, float | str] = {
             "postal": "75001",
-            "dept": "75",
-            "town": "101",
             "prop_type": "House",
             "area": 50.0,
             "rooms": 2,
@@ -35,8 +33,6 @@ class TestPredictionFormSchema:
         form: PredictionFormSchema = PredictionFormSchema(**data)
 
         assert form.postal == "75001"
-        assert form.dept == "75"
-        assert form.town == "101"
         assert form.prop_type == "House"
         assert form.area == 50.0
         assert form.rooms == 2

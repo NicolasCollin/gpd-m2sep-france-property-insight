@@ -1,0 +1,2451 @@
+property_value,postal_code,town_name,department_code,property_type,building_area,main_rooms,land_area,year
+430000,75019,PARIS 19,75,Maison,18,1,28,2023
+4560000,75010,PARIS 10,75,Appartement,40,2,96,2023
+4560000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,98,0,96,2023
+4560000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,8,0,96,2023
+4560000,75010,PARIS 10,75,Dépendance,0,0,96,2023
+4560000,75010,PARIS 10,75,Appartement,25,1,96,2023
+4560000,75010,PARIS 10,75,Appartement,32,2,96,2023
+4560000,75010,PARIS 10,75,Appartement,30,2,96,2023
+4560000,75010,PARIS 10,75,Appartement,18,1,96,2023
+4560000,75010,PARIS 10,75,Appartement,10,1,96,2023
+4560000,75010,PARIS 10,75,Appartement,12,1,96,2023
+27000000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,1281,0,466,2023
+1342222,75019,PARIS 19,75,Appartement,42,2,516,2023
+1342222,75019,PARIS 19,75,Dépendance,0,0,516,2023
+1342222,75019,PARIS 19,75,Appartement,49,2,516,2023
+1342222,75019,PARIS 19,75,Appartement,42,4,516,2023
+1342222,75019,PARIS 19,75,Appartement,34,2,516,2023
+1342222,75019,PARIS 19,75,Appartement,40,2,516,2023
+1342222,75019,PARIS 19,75,Appartement,50,4,516,2023
+1342222,75019,PARIS 19,75,Appartement,48,3,516,2023
+1342222,75019,PARIS 19,75,Appartement,52,3,516,2023
+1342222,75019,PARIS 19,75,Appartement,46,2,516,2023
+1342222,75019,PARIS 19,75,Appartement,47,2,516,2023
+1342222,75019,PARIS 19,75,Local industriel. commercial ou assimilé,93,0,516,2023
+1342222,75019,PARIS 19,75,Local industriel. commercial ou assimilé,64,0,516,2023
+1342222,75019,PARIS 19,75,Appartement,50,2,516,2023
+1342222,75019,PARIS 19,75,Appartement,48,2,516,2023
+1342222,75019,PARIS 19,75,Appartement,27,2,516,2023
+1342222,75019,PARIS 19,75,Appartement,53,2,516,2023
+1342222,75019,PARIS 19,75,Appartement,44,2,516,2023
+1342222,75019,PARIS 19,75,Appartement,66,3,516,2023
+1342222,75019,PARIS 19,75,Local industriel. commercial ou assimilé,72,0,516,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,1696,0,358,2023
+32600000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,0,0,337,2023
+32600000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,18,0,335,2023
+32600000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,288,0,335,2023
+32600000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,420,0,335,2023
+32600000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,410,0,335,2023
+32600000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,15,0,335,2023
+32600000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,187,0,335,2023
+32600000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,40,0,335,2023
+32600000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,43,0,335,2023
+22400000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,328,0,454,2023
+22400000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,333,0,454,2023
+22400000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,330,0,454,2023
+22400000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,168,0,454,2023
+22400000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,0,0,454,2023
+22400000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,489,0,454,2023
+211050,75008,PARIS 08,75,Dépendance,0,0,1719,2023
+211050,75008,PARIS 08,75,Appartement,37,2,1719,2023
+4315000,75019,PARIS 19,75,Appartement,43,2,416,2023
+4315000,75019,PARIS 19,75,Dépendance,0,0,416,2023
+4315000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,53,0,416,2023
+4315000,75019,PARIS 19,75,Appartement,57,3,416,2023
+4315000,75019,PARIS 19,75,Appartement,40,2,416,2023
+4315000,75019,PARIS 19,75,Appartement,20,1,416,2023
+4315000,75019,PARIS 19,75,Appartement,37,2,416,2023
+4315000,75019,PARIS 19,75,Appartement,79,3,416,2023
+4315000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,82,0,416,2023
+4315000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,174,0,416,2023
+1790000,75019,PARIS 19,75,Maison,127,7,139,2023
+11600,75019,PARIS 19,75,Dépendance,0,0,144,2023
+1300000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,25,0,117,2023
+1300000,75020,PARIS 20,75,Dépendance,0,0,117,2023
+1300000,75020,PARIS 20,75,Appartement,90,6,117,2023
+1300000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,30,0,117,2023
+2650000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,120,0,89,2023
+2650000,75020,PARIS 20,75,Appartement,31,1,89,2023
+2650000,75020,PARIS 20,75,Appartement,35,1,89,2023
+2650000,75020,PARIS 20,75,Appartement,33,1,89,2023
+10650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,519,0,199,2023
+55000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,119,0,660,2023
+55000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,193,0,660,2023
+55000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,164,0,660,2023
+55000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,238,0,660,2023
+55000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,211,0,660,2023
+55000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,226,0,660,2023
+55000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,236,0,660,2023
+55000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,146,0,660,2023
+55000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,125,0,660,2023
+55000000,75008,PARIS 08,75,Appartement,43,2,660,2023
+2479000,75020,PARIS 20,75,Appartement,33,2,118,2023
+2479000,75020,PARIS 20,75,Maison,186,5,118,2023
+86000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,4755,0,393,2023
+860000,75019,PARIS 19,75,Maison,70,3,92,2023
+2850000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,54,0,65,2023
+2850000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,9,0,65,2023
+2850000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,87,0,65,2023
+2850000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,50,0,65,2023
+2850000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,40,0,65,2023
+2850000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,53,0,65,2023
+1900000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,3,0,87,2023
+1900000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,454,0,87,2023
+1900000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,58,0,87,2023
+2700000,75018,PARIS 18,75,Appartement,63,3,293,2023
+2700000,75018,PARIS 18,75,Appartement,29,1,293,2023
+2700000,75018,PARIS 18,75,Appartement,60,3,293,2023
+2700000,75018,PARIS 18,75,Appartement,52,2,293,2023
+2700000,75018,PARIS 18,75,Appartement,19,1,293,2023
+2700000,75018,PARIS 18,75,Appartement,17,1,293,2023
+2700000,75018,PARIS 18,75,Appartement,14,1,293,2023
+2700000,75018,PARIS 18,75,Appartement,80,4,293,2023
+2700000,75018,PARIS 18,75,Dépendance,0,0,293,2023
+2700000,75018,PARIS 18,75,Appartement,21,2,293,2023
+2700000,75018,PARIS 18,75,Appartement,12,1,293,2023
+2700000,75018,PARIS 18,75,Appartement,15,1,293,2023
+2700000,75018,PARIS 18,75,Appartement,81,4,293,2023
+2700000,75018,PARIS 18,75,Appartement,64,3,293,2023
+4500000,75019,PARIS 19,75,Maison,298,6,611,2023
+800000,75020,PARIS 20,75,Maison,40,2,70,2023
+4800000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,462,0,162,2023
+723615,75017,PARIS 17,75,Local industriel. commercial ou assimilé,685,0,174,2023
+1900000,75020,PARIS 20,75,Maison,90,5,148,2023
+5000000,75008,PARIS 08,75,Appartement,28,2,126,2023
+5000000,75008,PARIS 08,75,Appartement,13,1,126,2023
+5000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,93,0,126,2023
+5000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,29,0,126,2023
+5000000,75008,PARIS 08,75,Dépendance,0,0,126,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,8,0,167,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,120,0,167,2023
+157200000,75008,PARIS 08,75,Dépendance,0,0,167,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,26,0,167,2023
+157200000,75008,PARIS 08,75,Appartement,36,2,167,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,56,0,167,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,91,0,167,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,19,0,508,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,190,0,508,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,1054,0,508,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,548,0,508,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,20,0,508,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,8,0,324,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,155,0,324,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,125,0,324,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,106,0,324,2023
+157200000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,225,0,324,2023
+16900000,75017,PARIS 17,75,Dépendance,0,0,661,2023
+16900000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,236,0,661,2023
+16900000,75017,PARIS 17,75,Appartement,45,3,661,2023
+16900000,75017,PARIS 17,75,Appartement,9,1,661,2023
+16900000,75017,PARIS 17,75,Appartement,135,4,661,2023
+16900000,75017,PARIS 17,75,Appartement,183,6,661,2023
+16900000,75017,PARIS 17,75,Appartement,132,4,661,2023
+16900000,75017,PARIS 17,75,Appartement,47,2,661,2023
+16900000,75017,PARIS 17,75,Appartement,170,7,661,2023
+16900000,75017,PARIS 17,75,Appartement,105,3,661,2023
+16900000,75017,PARIS 17,75,Appartement,35,2,661,2023
+8150000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,450,0,224,2023
+8150000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,50,0,224,2023
+1950000,75020,PARIS 20,75,Maison,127,5,134,2023
+1950000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,50,0,134,2023
+2171950,75018,PARIS 18,75,Maison,55,4,99,2023
+2171950,75018,PARIS 18,75,Maison,73,4,148,2023
+620000,75019,PARIS 19,75,Maison,90,4,69,2023
+19109000,75001,PARIS 01,75,Dépendance,0,0,237,2023
+19109000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,191,0,237,2023
+19109000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,106,0,237,2023
+19109000,75001,PARIS 01,75,Appartement,35,2,237,2023
+19109000,75001,PARIS 01,75,Appartement,96,3,237,2023
+19109000,75001,PARIS 01,75,Appartement,58,2,237,2023
+19109000,75001,PARIS 01,75,Appartement,43,2,237,2023
+19109000,75001,PARIS 01,75,Appartement,65,3,237,2023
+19109000,75001,PARIS 01,75,Appartement,35,1,237,2023
+19109000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,68,0,237,2023
+19109000,75001,PARIS 01,75,Appartement,16,1,237,2023
+6000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,762,0,129,2023
+6000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,10,0,129,2023
+6000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,15,0,129,2023
+6000000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,1158,0,279,2023
+150250000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,1788,0,895,2023
+150250000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,952,0,895,2023
+150250000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,58,0,895,2023
+24437500,75002,PARIS 02,75,Appartement,152,5,499,2023
+24437500,75002,PARIS 02,75,Local industriel. commercial ou assimilé,270,0,499,2023
+24437500,75002,PARIS 02,75,Dépendance,0,0,499,2023
+24437500,75002,PARIS 02,75,Appartement,187,6,499,2023
+24437500,75002,PARIS 02,75,Local industriel. commercial ou assimilé,61,0,499,2023
+24437500,75002,PARIS 02,75,Local industriel. commercial ou assimilé,331,0,499,2023
+24437500,75002,PARIS 02,75,Local industriel. commercial ou assimilé,345,0,499,2023
+24437500,75002,PARIS 02,75,Local industriel. commercial ou assimilé,164,0,499,2023
+24437500,75002,PARIS 02,75,Appartement,125,5,499,2023
+24437500,75002,PARIS 02,75,Appartement,117,6,499,2023
+24437500,75002,PARIS 02,75,Appartement,25,2,499,2023
+1462500,75002,PARIS 02,75,Appartement,25,2,499,2023
+1462500,75002,PARIS 02,75,Dépendance,0,0,499,2023
+1462500,75002,PARIS 02,75,Appartement,152,5,499,2023
+1462500,75002,PARIS 02,75,Appartement,125,5,499,2023
+1462500,75002,PARIS 02,75,Appartement,117,6,499,2023
+1462500,75002,PARIS 02,75,Local industriel. commercial ou assimilé,331,0,499,2023
+1462500,75002,PARIS 02,75,Local industriel. commercial ou assimilé,345,0,499,2023
+1462500,75002,PARIS 02,75,Local industriel. commercial ou assimilé,164,0,499,2023
+1462500,75002,PARIS 02,75,Local industriel. commercial ou assimilé,270,0,499,2023
+1462500,75002,PARIS 02,75,Appartement,187,6,499,2023
+1462500,75002,PARIS 02,75,Local industriel. commercial ou assimilé,61,0,499,2023
+6410000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,15,0,184,2023
+6410000,75009,PARIS 09,75,Appartement,116,4,184,2023
+6410000,75009,PARIS 09,75,Appartement,109,4,184,2023
+6410000,75009,PARIS 09,75,Appartement,25,2,184,2023
+6410000,75009,PARIS 09,75,Dépendance,0,0,184,2023
+6410000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,69,0,184,2023
+6410000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,100,0,184,2023
+6410000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,45,0,184,2023
+15000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,46,0,345,2023
+15000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,680,0,345,2023
+7000000,75010,PARIS 10,75,Appartement,51,3,230,2023
+7000000,75010,PARIS 10,75,Appartement,12,1,230,2023
+7000000,75010,PARIS 10,75,Appartement,14,1,230,2023
+7000000,75010,PARIS 10,75,Appartement,20,1,230,2023
+7000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,150,0,230,2023
+7000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,48,0,230,2023
+7000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,159,0,230,2023
+7000000,75010,PARIS 10,75,Appartement,52,3,230,2023
+2840000,75018,PARIS 18,75,Maison,60,4,182,2023
+14000000,75010,PARIS 10,75,Dépendance,0,0,577,2023
+14000000,75010,PARIS 10,75,Appartement,73,2,577,2023
+14000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,94,0,577,2023
+14000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,190,0,577,2023
+14000000,75010,PARIS 10,75,Appartement,88,3,577,2023
+14000000,75010,PARIS 10,75,Appartement,73,3,577,2023
+14000000,75010,PARIS 10,75,Appartement,74,3,577,2023
+14000000,75010,PARIS 10,75,Appartement,71,3,577,2023
+14000000,75010,PARIS 10,75,Appartement,10,1,577,2023
+14000000,75010,PARIS 10,75,Appartement,93,4,577,2023
+14000000,75010,PARIS 10,75,Appartement,66,3,577,2023
+14000000,75010,PARIS 10,75,Appartement,93,5,577,2023
+14000000,75010,PARIS 10,75,Appartement,94,5,577,2023
+14000000,75010,PARIS 10,75,Appartement,90,5,577,2023
+14000000,75010,PARIS 10,75,Appartement,65,3,577,2023
+14000000,75010,PARIS 10,75,Appartement,21,1,577,2023
+14000000,75010,PARIS 10,75,Appartement,44,2,577,2023
+14000000,75010,PARIS 10,75,Appartement,147,5,577,2023
+5000000,75009,PARIS 09,75,Dépendance,0,0,174,2023
+5000000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,0,0,174,2023
+5000000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,50,0,174,2023
+5000000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,216,0,90,2023
+5000000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,13,0,90,2023
+9650000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,760,0,271,2023
+9650000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,255,0,271,2023
+4550000,75018,PARIS 18,75,Appartement,62,3,217,2023
+4550000,75018,PARIS 18,75,Appartement,38,3,217,2023
+4550000,75018,PARIS 18,75,Appartement,31,2,217,2023
+4550000,75018,PARIS 18,75,Appartement,35,2,217,2023
+4550000,75018,PARIS 18,75,Appartement,44,3,217,2023
+4550000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,45,0,217,2023
+4550000,75018,PARIS 18,75,Appartement,15,1,217,2023
+900000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,200,0,146,2023
+975000,75019,PARIS 19,75,Maison,75,5,79,2023
+2850000,75002,PARIS 02,75,Appartement,45,2,78,2023
+2850000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,50,0,78,2023
+2850000,75002,PARIS 02,75,Appartement,43,1,78,2023
+2850000,75002,PARIS 02,75,Appartement,39,2,78,2023
+2850000,75002,PARIS 02,75,Appartement,37,2,78,2023
+490550,75019,PARIS 19,75,Dépendance,0,0,188,2023
+490550,75019,PARIS 19,75,Local industriel. commercial ou assimilé,870,0,188,2023
+490550,75019,PARIS 19,75,Appartement,84,3,188,2023
+3450000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,847,0,136,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,365,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,9,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,176,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,310,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,355,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,362,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,277,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,267,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,294,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,271,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,947,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,315,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,263,0,526,2023
+68692400,75002,PARIS 02,75,Local industriel. commercial ou assimilé,157,0,526,2023
+9460000,75003,PARIS 03,75,Dépendance,0,0,159,2023
+9460000,75003,PARIS 03,75,Appartement,24,1,159,2023
+9460000,75003,PARIS 03,75,Appartement,28,2,159,2023
+9460000,75003,PARIS 03,75,Appartement,11,1,159,2023
+9460000,75003,PARIS 03,75,Appartement,15,1,159,2023
+9460000,75003,PARIS 03,75,Appartement,9,1,159,2023
+9460000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,45,0,159,2023
+9460000,75003,PARIS 03,75,Appartement,39,3,159,2023
+9460000,75003,PARIS 03,75,Appartement,34,2,159,2023
+9460000,75003,PARIS 03,75,Appartement,43,2,159,2023
+9460000,75003,PARIS 03,75,Appartement,119,4,159,2023
+9460000,75003,PARIS 03,75,Appartement,30,1,159,2023
+9460000,75003,PARIS 03,75,Appartement,76,4,159,2023
+9460000,75003,PARIS 03,75,Appartement,40,3,159,2023
+9460000,75003,PARIS 03,75,Appartement,65,3,159,2023
+9460000,75003,PARIS 03,75,Appartement,30,2,159,2023
+9460000,75003,PARIS 03,75,Appartement,37,2,159,2023
+9460000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,82,0,159,2023
+2950000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,910,0,130,2023
+890000,75020,PARIS 20,75,Dépendance,0,0,453,2023
+890000,75020,PARIS 20,75,Maison,51,3,453,2023
+45000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,1166,0,418,2023
+45000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,284,0,418,2023
+45000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,0,0,418,2023
+45000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,761,0,418,2023
+1043619,75019,PARIS 19,75,Maison,80,3,74,2023
+3750000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,0,0,418,2023
+3750000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,761,0,418,2023
+3750000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,284,0,418,2023
+3750000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,1166,0,418,2023
+2207500,75020,PARIS 20,75,Maison,127,4,255,2023
+86250000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,284,0,418,2023
+86250000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,0,0,418,2023
+86250000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,761,0,418,2023
+86250000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,1166,0,418,2023
+3800000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,299,0,58,2023
+3800000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,50,0,58,2023
+2550000,75020,PARIS 20,75,Dépendance,0,0,198,2023
+2550000,75020,PARIS 20,75,Maison,186,6,198,2023
+2371480,75001,PARIS 01,75,Local industriel. commercial ou assimilé,1249,0,215,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,449,0,1019,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,221,0,1019,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,89,0,1019,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,1248,0,1019,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,369,0,1019,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,365,0,1019,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,563,0,1019,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,302,0,1019,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,240,0,1019,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,1265,0,1019,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,680,0,1019,2023
+84650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,284,0,1019,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,150,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,34,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,133,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,208,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,199,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,94,0,1296,2023
+36021632,75010,PARIS 10,75,Appartement,62,2,1296,2023
+36021632,75010,PARIS 10,75,Dépendance,0,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,52,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,14,0,1296,2023
+36021632,75010,PARIS 10,75,Appartement,47,3,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,120,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,129,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,92,0,1296,2023
+36021632,75010,PARIS 10,75,Appartement,32,3,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,89,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,60,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,25,0,1296,2023
+36021632,75010,PARIS 10,75,Appartement,24,1,1296,2023
+36021632,75010,PARIS 10,75,Appartement,82,3,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,95,0,1296,2023
+36021632,75010,PARIS 10,75,Appartement,70,2,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,124,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,160,0,1296,2023
+36021632,75010,PARIS 10,75,Appartement,21,1,1296,2023
+36021632,75010,PARIS 10,75,Appartement,54,2,1296,2023
+36021632,75010,PARIS 10,75,Appartement,46,3,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,415,0,1296,2023
+36021632,75010,PARIS 10,75,Appartement,55,2,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,18,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,105,0,1296,2023
+36021632,75010,PARIS 10,75,Local industriel. commercial ou assimilé,580,0,1296,2023
+146100,75003,PARIS 03,75,Dépendance,0,0,234,2023
+5600000,75019,PARIS 19,75,Appartement,37,2,326,2023
+5600000,75019,PARIS 19,75,Appartement,38,2,326,2023
+5600000,75019,PARIS 19,75,Appartement,50,3,326,2023
+5600000,75019,PARIS 19,75,Dépendance,0,0,326,2023
+5600000,75019,PARIS 19,75,Appartement,36,2,326,2023
+5600000,75019,PARIS 19,75,Appartement,53,3,326,2023
+5600000,75019,PARIS 19,75,Appartement,52,3,326,2023
+5600000,75019,PARIS 19,75,Appartement,51,3,326,2023
+5600000,75019,PARIS 19,75,Appartement,39,2,326,2023
+5600000,75019,PARIS 19,75,Appartement,26,1,326,2023
+5600000,75019,PARIS 19,75,Appartement,29,2,326,2023
+5600000,75019,PARIS 19,75,Appartement,40,2,326,2023
+5600000,75019,PARIS 19,75,Appartement,33,2,326,2023
+468050,75020,PARIS 20,75,Maison,128,5,111,2023
+2170000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,8,0,90,2023
+2170000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,325,0,90,2023
+2170000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,36,0,90,2023
+283182,75010,PARIS 10,75,Dépendance,0,0,1804,2023
+283182,75010,PARIS 10,75,Appartement,99,4,1804,2023
+283182,75010,PARIS 10,75,Appartement,26,2,1804,2023
+283182,75010,PARIS 10,75,Appartement,14,1,1804,2023
+283182,75010,PARIS 10,75,Appartement,83,4,1804,2023
+283182,75010,PARIS 10,75,Appartement,87,3,1804,2023
+283182,75010,PARIS 10,75,Appartement,49,3,1804,2023
+283182,75010,PARIS 10,75,Appartement,38,3,1804,2023
+283182,75010,PARIS 10,75,Appartement,13,1,1804,2023
+283182,75010,PARIS 10,75,Appartement,53,3,1804,2023
+283182,75010,PARIS 10,75,Appartement,131,5,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,167,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,95,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,121,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,112,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,330,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,180,0,1804,2023
+283182,75010,PARIS 10,75,Appartement,35,2,1804,2023
+283182,75010,PARIS 10,75,Appartement,61,3,1804,2023
+283182,75010,PARIS 10,75,Appartement,58,3,1804,2023
+283182,75010,PARIS 10,75,Appartement,27,2,1804,2023
+283182,75010,PARIS 10,75,Appartement,101,4,1804,2023
+283182,75010,PARIS 10,75,Appartement,48,2,1804,2023
+283182,75010,PARIS 10,75,Appartement,6,1,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,81,0,1804,2023
+283182,75010,PARIS 10,75,Appartement,38,2,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,389,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,188,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,74,0,1804,2023
+283182,75010,PARIS 10,75,Appartement,97,4,1804,2023
+283182,75010,PARIS 10,75,Appartement,33,2,1804,2023
+283182,75010,PARIS 10,75,Appartement,136,5,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,10,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,107,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,132,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,50,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,265,0,1804,2023
+283182,75010,PARIS 10,75,Appartement,16,1,1804,2023
+283182,75010,PARIS 10,75,Appartement,74,5,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,55,0,1804,2023
+283182,75010,PARIS 10,75,Appartement,163,3,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,116,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,130,0,1804,2023
+283182,75010,PARIS 10,75,Appartement,17,2,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,539,0,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,665,0,1804,2023
+283182,75010,PARIS 10,75,Appartement,38,1,1804,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,598,0,1804,2023
+283182,75010,PARIS 10,75,Appartement,104,4,230,2023
+283182,75010,PARIS 10,75,Dépendance,0,0,230,2023
+283182,75010,PARIS 10,75,Appartement,53,3,230,2023
+283182,75010,PARIS 10,75,Appartement,20,1,230,2023
+283182,75010,PARIS 10,75,Appartement,24,1,230,2023
+283182,75010,PARIS 10,75,Appartement,78,4,230,2023
+283182,75010,PARIS 10,75,Appartement,27,3,230,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,712,0,230,2023
+283182,75010,PARIS 10,75,Local industriel. commercial ou assimilé,1007,0,230,2023
+283182,75010,PARIS 10,75,Appartement,74,3,230,2023
+1465200,75019,PARIS 19,75,Maison,61,3,183,2023
+24000000,75010,PARIS 10,75,Appartement,88,4,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,140,0,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,47,0,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,65,0,909,2023
+24000000,75010,PARIS 10,75,Appartement,37,1,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,285,0,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,100,0,909,2023
+24000000,75010,PARIS 10,75,Appartement,55,3,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,95,0,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,193,0,909,2023
+24000000,75010,PARIS 10,75,Appartement,60,3,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,158,0,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,66,0,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,55,0,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,373,0,909,2023
+24000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,93,0,909,2023
+1250000,75019,PARIS 19,75,Maison,104,5,88,2023
+1250000,75019,PARIS 19,75,Dépendance,0,0,88,2023
+13500000,75003,PARIS 03,75,Appartement,94,4,766,2023
+13500000,75003,PARIS 03,75,Dépendance,0,0,766,2023
+13500000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,98,0,766,2023
+13500000,75003,PARIS 03,75,Appartement,132,5,766,2023
+13500000,75003,PARIS 03,75,Appartement,63,2,766,2023
+13500000,75003,PARIS 03,75,Appartement,45,2,766,2023
+13500000,75003,PARIS 03,75,Appartement,54,2,766,2023
+13500000,75003,PARIS 03,75,Appartement,55,2,766,2023
+13500000,75003,PARIS 03,75,Appartement,135,4,766,2023
+13500000,75003,PARIS 03,75,Appartement,53,3,766,2023
+13500000,75003,PARIS 03,75,Appartement,92,3,766,2023
+13500000,75003,PARIS 03,75,Appartement,47,1,766,2023
+13500000,75003,PARIS 03,75,Appartement,85,4,766,2023
+4000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,324,0,62,2023
+4000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,400,0,62,2023
+3000000,75017,PARIS 17,75,Appartement,25,2,194,2023
+3000000,75017,PARIS 17,75,Appartement,35,3,194,2023
+3000000,75017,PARIS 17,75,Appartement,21,2,194,2023
+3000000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,99,0,194,2023
+3000000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,100,0,194,2023
+3000000,75017,PARIS 17,75,Appartement,12,1,194,2023
+3000000,75017,PARIS 17,75,Appartement,31,2,194,2023
+3000000,75017,PARIS 17,75,Appartement,18,1,194,2023
+3000000,75017,PARIS 17,75,Appartement,14,1,194,2023
+3000000,75017,PARIS 17,75,Appartement,29,2,194,2023
+3000000,75017,PARIS 17,75,Appartement,22,1,194,2023
+3000000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,63,0,194,2023
+3000000,75017,PARIS 17,75,Appartement,24,1,194,2023
+3000000,75017,PARIS 17,75,Dépendance,0,0,194,2023
+4650000,75017,PARIS 17,75,Appartement,24,1,194,2023
+4650000,75017,PARIS 17,75,Appartement,22,1,194,2023
+4650000,75017,PARIS 17,75,Appartement,29,2,194,2023
+4650000,75017,PARIS 17,75,Appartement,31,2,194,2023
+4650000,75017,PARIS 17,75,Appartement,12,1,194,2023
+4650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,100,0,194,2023
+4650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,99,0,194,2023
+4650000,75017,PARIS 17,75,Appartement,21,2,194,2023
+4650000,75017,PARIS 17,75,Appartement,35,3,194,2023
+4650000,75017,PARIS 17,75,Dépendance,0,0,194,2023
+4650000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,63,0,194,2023
+4650000,75017,PARIS 17,75,Appartement,18,1,194,2023
+4650000,75017,PARIS 17,75,Appartement,14,1,194,2023
+4650000,75017,PARIS 17,75,Appartement,25,2,194,2023
+5300000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,164,0,164,2023
+7289000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,2214,0,639,2023
+1800,75003,PARIS 03,75,Dépendance,0,0,115,2023
+21136768,75008,PARIS 08,75,Local industriel. commercial ou assimilé,185,0,426,2023
+21136768,75008,PARIS 08,75,Local industriel. commercial ou assimilé,247,0,426,2023
+21136768,75008,PARIS 08,75,Local industriel. commercial ou assimilé,51,0,426,2023
+21136768,75008,PARIS 08,75,Local industriel. commercial ou assimilé,240,0,426,2023
+21136768,75008,PARIS 08,75,Local industriel. commercial ou assimilé,97,0,426,2023
+21136768,75008,PARIS 08,75,Local industriel. commercial ou assimilé,37,0,426,2023
+21136768,75008,PARIS 08,75,Local industriel. commercial ou assimilé,158,0,426,2023
+21136768,75008,PARIS 08,75,Local industriel. commercial ou assimilé,72,0,426,2023
+21136768,75008,PARIS 08,75,Local industriel. commercial ou assimilé,215,0,426,2023
+21136768,75008,PARIS 08,75,Local industriel. commercial ou assimilé,186,0,426,2023
+21136768,75008,PARIS 08,75,Local industriel. commercial ou assimilé,61,0,426,2023
+4800000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,187,0,312,2023
+4800000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,24,0,312,2023
+4800000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,112,0,312,2023
+4800000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,170,0,312,2023
+4800000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,166,0,312,2023
+4800000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,175,0,312,2023
+4800000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,178,0,312,2023
+2100000,75020,PARIS 20,75,Maison,157,6,126,2023
+106906224,75017,PARIS 17,75,Local industriel. commercial ou assimilé,71,0,1336,2023
+9850000,75003,PARIS 03,75,Appartement,18,1,410,2023
+9850000,75003,PARIS 03,75,Appartement,40,2,410,2023
+9850000,75003,PARIS 03,75,Appartement,55,3,410,2023
+9850000,75003,PARIS 03,75,Appartement,36,2,410,2023
+9850000,75003,PARIS 03,75,Appartement,39,2,410,2023
+9850000,75003,PARIS 03,75,Appartement,43,3,410,2023
+9850000,75003,PARIS 03,75,Appartement,26,2,410,2023
+9850000,75003,PARIS 03,75,Appartement,38,2,410,2023
+9850000,75003,PARIS 03,75,Appartement,42,3,410,2023
+9850000,75003,PARIS 03,75,Appartement,47,3,410,2023
+9850000,75003,PARIS 03,75,Appartement,42,2,410,2023
+9850000,75003,PARIS 03,75,Appartement,73,3,410,2023
+9850000,75003,PARIS 03,75,Appartement,28,2,410,2023
+9850000,75003,PARIS 03,75,Appartement,6,1,410,2023
+9850000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,224,0,410,2023
+9850000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,39,0,410,2023
+9850000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,88,0,410,2023
+9850000,75003,PARIS 03,75,Dépendance,0,0,410,2023
+9850000,75003,PARIS 03,75,Appartement,49,2,410,2023
+750000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,6823,0,1141,2023
+750000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,567,0,1141,2023
+750000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,3003,0,1141,2023
+80000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,2232,0,551,2023
+6660000,75002,PARIS 02,75,Appartement,34,2,131,2023
+6660000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,119,0,131,2023
+6660000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,83,0,131,2023
+6660000,75002,PARIS 02,75,Appartement,55,2,131,2023
+6660000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,44,0,131,2023
+6660000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,79,0,131,2023
+6660000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,84,0,131,2023
+6660000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,85,0,131,2023
+6660000,75002,PARIS 02,75,Appartement,43,2,131,2023
+6660000,75002,PARIS 02,75,Appartement,37,2,131,2023
+6660000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,16,0,131,2023
+48200000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,3246,0,516,2023
+4700000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,342,0,275,2023
+4700000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,176,0,252,2023
+4700000,75019,PARIS 19,75,Maison,98,4,252,2023
+2119000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,40,0,136,2023
+2119000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,41,0,136,2023
+2119000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,20,0,136,2023
+2119000,75002,PARIS 02,75,Appartement,15,1,136,2023
+7200000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,882,0,158,2023
+3300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,50,0,100,2023
+3300000,75003,PARIS 03,75,Appartement,41,2,100,2023
+3300000,75003,PARIS 03,75,Appartement,37,2,100,2023
+3300000,75003,PARIS 03,75,Appartement,38,2,100,2023
+3300000,75003,PARIS 03,75,Appartement,18,1,100,2023
+3300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,120,0,100,2023
+3300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,0,0,100,2023
+3300000,75003,PARIS 03,75,Appartement,14,1,100,2023
+3350000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,166,0,121,2023
+3350000,75018,PARIS 18,75,Appartement,35,2,121,2023
+10500000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,159,0,266,2023
+10500000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,73,0,266,2023
+10500000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,96,0,266,2023
+10500000,75009,PARIS 09,75,Appartement,22,1,266,2023
+10500000,75009,PARIS 09,75,Dépendance,0,0,266,2023
+10500000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,150,0,266,2023
+10500000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,153,0,266,2023
+10500000,75009,PARIS 09,75,Appartement,151,5,266,2023
+10500000,75009,PARIS 09,75,Appartement,120,5,266,2023
+10500000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,140,0,266,2023
+10500000,75009,PARIS 09,75,Appartement,30,2,266,2023
+1192750,75019,PARIS 19,75,Appartement,36,2,385,2023
+1192750,75019,PARIS 19,75,Appartement,40,2,385,2023
+1192750,75019,PARIS 19,75,Appartement,35,2,385,2023
+1192750,75019,PARIS 19,75,Appartement,29,2,385,2023
+1192750,75019,PARIS 19,75,Appartement,37,2,385,2023
+1192750,75019,PARIS 19,75,Appartement,34,2,385,2023
+1192750,75019,PARIS 19,75,Dépendance,0,0,385,2023
+1192750,75019,PARIS 19,75,Local industriel. commercial ou assimilé,19,0,385,2023
+1192750,75019,PARIS 19,75,Appartement,39,2,385,2023
+1192750,75019,PARIS 19,75,Appartement,40,3,385,2023
+1192750,75019,PARIS 19,75,Appartement,31,2,385,2023
+1192750,75019,PARIS 19,75,Appartement,32,2,385,2023
+1192750,75019,PARIS 19,75,Appartement,38,2,385,2023
+1192750,75019,PARIS 19,75,Appartement,30,2,385,2023
+1192750,75019,PARIS 19,75,Appartement,32,1,385,2023
+1192750,75019,PARIS 19,75,Appartement,41,2,385,2023
+1192750,75019,PARIS 19,75,Appartement,66,3,385,2023
+1192750,75019,PARIS 19,75,Local industriel. commercial ou assimilé,218,0,385,2023
+1192750,75019,PARIS 19,75,Local industriel. commercial ou assimilé,188,0,385,2023
+1192750,75019,PARIS 19,75,Appartement,24,1,385,2023
+12300000,75001,PARIS 01,75,Appartement,84,3,545,2023
+12300000,75001,PARIS 01,75,Appartement,86,3,545,2023
+12300000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,136,0,545,2023
+12300000,75001,PARIS 01,75,Appartement,100,4,545,2023
+12300000,75001,PARIS 01,75,Appartement,83,3,545,2023
+12300000,75001,PARIS 01,75,Dépendance,0,0,545,2023
+12300000,75001,PARIS 01,75,Appartement,66,2,545,2023
+12300000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,49,0,545,2023
+12300000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,180,0,545,2023
+12300000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,51,0,545,2023
+12300000,75001,PARIS 01,75,Appartement,50,2,545,2023
+12300000,75001,PARIS 01,75,Appartement,110,3,545,2023
+12300000,75001,PARIS 01,75,Appartement,32,1,545,2023
+12300000,75001,PARIS 01,75,Appartement,34,2,545,2023
+12300000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,156,0,545,2023
+12300000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,313,0,545,2023
+12300000,75001,PARIS 01,75,Appartement,24,1,545,2023
+7226000,75008,PARIS 08,75,Appartement,101,4,243,2023
+7226000,75008,PARIS 08,75,Appartement,35,2,243,2023
+7226000,75008,PARIS 08,75,Appartement,37,2,243,2023
+7226000,75008,PARIS 08,75,Appartement,95,4,243,2023
+7226000,75008,PARIS 08,75,Appartement,116,4,243,2023
+7226000,75008,PARIS 08,75,Appartement,26,2,243,2023
+7226000,75008,PARIS 08,75,Dépendance,0,0,243,2023
+7226000,75008,PARIS 08,75,Appartement,96,4,243,2023
+7226000,75008,PARIS 08,75,Appartement,100,4,243,2023
+7226000,75008,PARIS 08,75,Appartement,34,2,243,2023
+7226000,75008,PARIS 08,75,Appartement,41,2,243,2023
+7226000,75008,PARIS 08,75,Appartement,20,1,243,2023
+7226000,75008,PARIS 08,75,Appartement,16,1,243,2023
+7300000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,676,0,257,2023
+7300000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,24,0,257,2023
+7300000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,107,0,257,2023
+30000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,0,0,637,2023
+2000000,75018,PARIS 18,75,Appartement,35,2,105,2023
+2000000,75018,PARIS 18,75,Appartement,32,2,105,2023
+2000000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,18,0,105,2023
+2000000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,21,0,105,2023
+2000000,75018,PARIS 18,75,Dépendance,0,0,105,2023
+5175678,75019,PARIS 19,75,Local industriel. commercial ou assimilé,603,0,736,2023
+7226000,75008,PARIS 08,75,Dépendance,0,0,243,2023
+7226000,75008,PARIS 08,75,Appartement,101,4,243,2023
+7226000,75008,PARIS 08,75,Appartement,26,2,243,2023
+7226000,75008,PARIS 08,75,Appartement,116,4,243,2023
+7226000,75008,PARIS 08,75,Appartement,35,2,243,2023
+7226000,75008,PARIS 08,75,Appartement,96,4,243,2023
+7226000,75008,PARIS 08,75,Appartement,37,2,243,2023
+7226000,75008,PARIS 08,75,Appartement,95,4,243,2023
+7226000,75008,PARIS 08,75,Appartement,100,4,243,2023
+7226000,75008,PARIS 08,75,Appartement,34,2,243,2023
+7226000,75008,PARIS 08,75,Appartement,41,2,243,2023
+7226000,75008,PARIS 08,75,Appartement,20,1,243,2023
+7226000,75008,PARIS 08,75,Appartement,16,1,243,2023
+8800000,75008,PARIS 08,75,Dépendance,0,0,241,2023
+8800000,75008,PARIS 08,75,Appartement,15,1,241,2023
+8800000,75008,PARIS 08,75,Appartement,56,4,241,2023
+8800000,75008,PARIS 08,75,Appartement,23,1,241,2023
+8800000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,140,0,241,2023
+8800000,75008,PARIS 08,75,Appartement,138,6,241,2023
+8800000,75008,PARIS 08,75,Appartement,140,5,241,2023
+8800000,75008,PARIS 08,75,Appartement,56,3,241,2023
+8257002,75019,PARIS 19,75,Local industriel. commercial ou assimilé,64,0,493,2023
+8257002,75019,PARIS 19,75,Dépendance,0,0,493,2023
+8257002,75019,PARIS 19,75,Appartement,41,2,493,2023
+8257002,75019,PARIS 19,75,Appartement,64,3,493,2023
+8257002,75019,PARIS 19,75,Appartement,36,2,493,2023
+8257002,75019,PARIS 19,75,Appartement,61,3,493,2023
+8257002,75019,PARIS 19,75,Appartement,22,0,493,2023
+8257002,75019,PARIS 19,75,Local industriel. commercial ou assimilé,100,0,493,2023
+8257002,75019,PARIS 19,75,Local industriel. commercial ou assimilé,56,0,493,2023
+8257002,75019,PARIS 19,75,Appartement,22,1,493,2023
+8257002,75019,PARIS 19,75,Appartement,43,2,493,2023
+8257002,75019,PARIS 19,75,Appartement,128,7,493,2023
+8257002,75019,PARIS 19,75,Appartement,34,2,493,2023
+8257002,75019,PARIS 19,75,Appartement,35,2,493,2023
+8257002,75019,PARIS 19,75,Appartement,38,2,493,2023
+8257002,75019,PARIS 19,75,Appartement,37,2,493,2023
+5734742,75019,PARIS 19,75,Appartement,24,1,385,2023
+5734742,75019,PARIS 19,75,Appartement,41,2,385,2023
+5734742,75019,PARIS 19,75,Appartement,38,2,385,2023
+5734742,75019,PARIS 19,75,Appartement,39,2,385,2023
+5734742,75019,PARIS 19,75,Appartement,66,3,385,2023
+5734742,75019,PARIS 19,75,Dépendance,0,0,385,2023
+5734742,75019,PARIS 19,75,Appartement,32,1,385,2023
+5734742,75019,PARIS 19,75,Local industriel. commercial ou assimilé,218,0,385,2023
+5734742,75019,PARIS 19,75,Local industriel. commercial ou assimilé,188,0,385,2023
+5734742,75019,PARIS 19,75,Appartement,36,2,385,2023
+5734742,75019,PARIS 19,75,Appartement,30,2,385,2023
+5734742,75019,PARIS 19,75,Appartement,40,2,385,2023
+5734742,75019,PARIS 19,75,Appartement,35,2,385,2023
+5734742,75019,PARIS 19,75,Appartement,29,2,385,2023
+5734742,75019,PARIS 19,75,Appartement,37,2,385,2023
+5734742,75019,PARIS 19,75,Appartement,34,2,385,2023
+5734742,75019,PARIS 19,75,Appartement,32,2,385,2023
+5734742,75019,PARIS 19,75,Appartement,40,3,385,2023
+5734742,75019,PARIS 19,75,Local industriel. commercial ou assimilé,19,0,385,2023
+5734742,75019,PARIS 19,75,Appartement,31,2,385,2023
+48420000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,269,0,388,2023
+48420000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,1594,0,388,2023
+2450000,75019,PARIS 19,75,Appartement,71,4,177,2023
+2450000,75019,PARIS 19,75,Dépendance,0,0,177,2023
+2450000,75019,PARIS 19,75,Appartement,133,6,177,2023
+15000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,209,0,367,2023
+15000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,80,0,367,2023
+15000000,75002,PARIS 02,75,Dépendance,0,0,367,2023
+15000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,30,0,367,2023
+15000000,75002,PARIS 02,75,Appartement,50,2,367,2023
+15000000,75002,PARIS 02,75,Appartement,41,1,367,2023
+15000000,75002,PARIS 02,75,Appartement,145,5,367,2023
+15000000,75002,PARIS 02,75,Appartement,129,4,367,2023
+15000000,75002,PARIS 02,75,Appartement,45,2,367,2023
+15000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,130,0,367,2023
+15000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,50,0,367,2023
+15000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,41,0,367,2023
+15000000,75002,PARIS 02,75,Appartement,150,4,367,2023
+15000000,75002,PARIS 02,75,Appartement,36,1,367,2023
+15000000,75002,PARIS 02,75,Appartement,39,2,367,2023
+40189140,75009,PARIS 09,75,Local industriel. commercial ou assimilé,0,0,337,2023
+40189140,75009,PARIS 09,75,Local industriel. commercial ou assimilé,18,0,335,2023
+40189140,75009,PARIS 09,75,Local industriel. commercial ou assimilé,288,0,335,2023
+40189140,75009,PARIS 09,75,Local industriel. commercial ou assimilé,420,0,335,2023
+40189140,75009,PARIS 09,75,Local industriel. commercial ou assimilé,410,0,335,2023
+40189140,75009,PARIS 09,75,Local industriel. commercial ou assimilé,15,0,335,2023
+40189140,75009,PARIS 09,75,Local industriel. commercial ou assimilé,187,0,335,2023
+40189140,75009,PARIS 09,75,Local industriel. commercial ou assimilé,43,0,335,2023
+40189140,75009,PARIS 09,75,Local industriel. commercial ou assimilé,40,0,335,2023
+1750000,75020,PARIS 20,75,Maison,154,4,113,2023
+11000000,75008,PARIS 08,75,Dépendance,0,0,216,2023
+11000000,75008,PARIS 08,75,Appartement,20,1,216,2023
+11000000,75008,PARIS 08,75,Appartement,40,2,216,2023
+11000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,420,0,216,2023
+11000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,70,0,216,2023
+11000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,37,0,216,2023
+11000000,75008,PARIS 08,75,Appartement,38,2,216,2023
+11000000,75008,PARIS 08,75,Appartement,39,2,216,2023
+8950000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,1120,0,305,2023
+1875000,75019,PARIS 19,75,Maison,140,5,164,2023
+37329308,75017,PARIS 17,75,Local industriel. commercial ou assimilé,2045,0,684,2023
+1320000,75019,PARIS 19,75,Maison,150,5,101,2023
+546240,75002,PARIS 02,75,Local industriel. commercial ou assimilé,121,0,1050,2023
+546240,75002,PARIS 02,75,Local industriel. commercial ou assimilé,113,0,1050,2023
+546240,75002,PARIS 02,75,Local industriel. commercial ou assimilé,2562,0,1050,2023
+860000,75019,PARIS 19,75,Maison,90,4,68,2023
+20000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,145,0,223,2023
+20000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,0,0,223,2023
+20000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,155,0,223,2023
+20000000,75002,PARIS 02,75,Appartement,20,1,223,2023
+20000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,63,0,223,2023
+20000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,327,0,223,2023
+20000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,56,0,223,2023
+20000000,75002,PARIS 02,75,Dépendance,0,0,223,2023
+20000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,61,0,223,2023
+20000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,150,0,223,2023
+20000000,75002,PARIS 02,75,Appartement,30,2,223,2023
+20000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,42,0,223,2023
+7280000,75004,PARIS 04,75,Appartement,42,2,173,2023
+7280000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,311,0,173,2023
+7280000,75004,PARIS 04,75,Appartement,44,2,173,2023
+7280000,75004,PARIS 04,75,Appartement,66,3,173,2023
+7280000,75004,PARIS 04,75,Appartement,36,2,173,2023
+7280000,75004,PARIS 04,75,Appartement,59,3,173,2023
+7280000,75004,PARIS 04,75,Appartement,46,3,173,2023
+7280000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,50,0,173,2023
+7280000,75004,PARIS 04,75,Appartement,46,2,173,2023
+6180000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,278,0,151,2023
+31500000,75008,PARIS 08,75,Dépendance,0,0,627,2023
+1770000,75018,PARIS 18,75,Maison,82,2,176,2023
+590000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,70,0,121,2023
+3800000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,40,0,104,2023
+3800000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,60,0,104,2023
+3800000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,45,0,104,2023
+8500000,75017,PARIS 17,75,Dépendance,0,0,210,2023
+8500000,75017,PARIS 17,75,Appartement,17,3,210,2023
+8500000,75017,PARIS 17,75,Appartement,59,3,210,2023
+8500000,75017,PARIS 17,75,Appartement,69,4,210,2023
+8500000,75017,PARIS 17,75,Appartement,67,3,210,2023
+8500000,75017,PARIS 17,75,Appartement,60,3,210,2023
+8500000,75017,PARIS 17,75,Appartement,67,4,210,2023
+8500000,75017,PARIS 17,75,Appartement,71,4,210,2023
+8500000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,94,0,210,2023
+8500000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,16,0,210,2023
+8500000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,36,0,210,2023
+1595950,75020,PARIS 20,75,Maison,100,4,116,2023
+1741700,75019,PARIS 19,75,Maison,173,5,78,2023
+11731253,75010,PARIS 10,75,Local industriel. commercial ou assimilé,0,0,900,2023
+11731253,75010,PARIS 10,75,Dépendance,0,0,900,2023
+11731253,75010,PARIS 10,75,Appartement,9,1,900,2023
+11731253,75010,PARIS 10,75,Appartement,24,1,900,2023
+11731253,75010,PARIS 10,75,Appartement,30,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,32,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,28,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,38,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,39,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,20,1,900,2023
+11731253,75010,PARIS 10,75,Local industriel. commercial ou assimilé,1090,0,900,2023
+11731253,75010,PARIS 10,75,Local industriel. commercial ou assimilé,64,0,900,2023
+11731253,75010,PARIS 10,75,Local industriel. commercial ou assimilé,57,0,900,2023
+11731253,75010,PARIS 10,75,Appartement,16,1,900,2023
+11731253,75010,PARIS 10,75,Appartement,34,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,49,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,48,3,900,2023
+11731253,75010,PARIS 10,75,Appartement,27,1,900,2023
+11731253,75010,PARIS 10,75,Appartement,41,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,50,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,33,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,25,1,900,2023
+11731253,75010,PARIS 10,75,Appartement,23,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,25,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,110,4,900,2023
+11731253,75010,PARIS 10,75,Appartement,19,1,900,2023
+11731253,75010,PARIS 10,75,Appartement,45,3,900,2023
+11731253,75010,PARIS 10,75,Appartement,13,1,900,2023
+11731253,75010,PARIS 10,75,Appartement,35,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,73,4,900,2023
+11731253,75010,PARIS 10,75,Appartement,29,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,24,2,900,2023
+11731253,75010,PARIS 10,75,Appartement,46,2,900,2023
+8120000,75017,PARIS 17,75,Appartement,52,3,178,2023
+8120000,75017,PARIS 17,75,Appartement,54,3,178,2023
+8120000,75017,PARIS 17,75,Appartement,56,3,178,2023
+8120000,75017,PARIS 17,75,Appartement,55,3,178,2023
+8120000,75017,PARIS 17,75,Appartement,35,2,178,2023
+8120000,75017,PARIS 17,75,Appartement,29,2,178,2023
+8120000,75017,PARIS 17,75,Appartement,14,1,178,2023
+8120000,75017,PARIS 17,75,Dépendance,0,0,178,2023
+8120000,75017,PARIS 17,75,Appartement,50,2,178,2023
+8120000,75017,PARIS 17,75,Appartement,30,2,178,2023
+8120000,75017,PARIS 17,75,Appartement,51,3,178,2023
+20000000,75010,PARIS 10,75,Appartement,56,3,664,2023
+20000000,75010,PARIS 10,75,Appartement,45,2,664,2023
+20000000,75010,PARIS 10,75,Appartement,46,2,664,2023
+20000000,75010,PARIS 10,75,Appartement,87,4,664,2023
+20000000,75010,PARIS 10,75,Appartement,42,2,664,2023
+20000000,75010,PARIS 10,75,Appartement,65,3,664,2023
+20000000,75010,PARIS 10,75,Appartement,75,3,664,2023
+20000000,75010,PARIS 10,75,Appartement,47,2,664,2023
+20000000,75010,PARIS 10,75,Appartement,74,3,664,2023
+20000000,75010,PARIS 10,75,Appartement,78,3,664,2023
+20000000,75010,PARIS 10,75,Appartement,80,3,664,2023
+20000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,127,0,664,2023
+20000000,75010,PARIS 10,75,Appartement,83,4,664,2023
+20000000,75010,PARIS 10,75,Appartement,85,4,664,2023
+20000000,75010,PARIS 10,75,Appartement,36,2,664,2023
+20000000,75010,PARIS 10,75,Appartement,55,2,664,2023
+20000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,177,0,664,2023
+20000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,173,0,664,2023
+20000000,75010,PARIS 10,75,Appartement,58,2,664,2023
+20000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,140,0,664,2023
+20000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,132,0,664,2023
+20000000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,19,0,664,2023
+20000000,75010,PARIS 10,75,Appartement,60,2,664,2023
+20000000,75010,PARIS 10,75,Appartement,66,2,664,2023
+20000000,75010,PARIS 10,75,Appartement,64,3,664,2023
+20000000,75010,PARIS 10,75,Appartement,44,2,664,2023
+20000000,75010,PARIS 10,75,Appartement,61,2,664,2023
+962210,75020,PARIS 20,75,Maison,100,4,51,2023
+1200000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,270,0,129,2023
+1600000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,228,0,41,2023
+6500000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,404,0,285,2023
+78856,75001,PARIS 01,75,Appartement,34,2,208,2023
+78856,75001,PARIS 01,75,Appartement,62,3,208,2023
+78856,75001,PARIS 01,75,Appartement,20,1,208,2023
+78856,75001,PARIS 01,75,Appartement,34,1,208,2023
+78856,75001,PARIS 01,75,Appartement,49,2,208,2023
+78856,75001,PARIS 01,75,Local industriel. commercial ou assimilé,72,0,208,2023
+78856,75001,PARIS 01,75,Local industriel. commercial ou assimilé,160,0,208,2023
+78856,75001,PARIS 01,75,Dépendance,0,0,208,2023
+78856,75001,PARIS 01,75,Appartement,24,1,208,2023
+78856,75001,PARIS 01,75,Local industriel. commercial ou assimilé,83,0,208,2023
+78856,75001,PARIS 01,75,Appartement,96,4,208,2023
+55962,75003,PARIS 03,75,Local industriel. commercial ou assimilé,79,0,140,2023
+55962,75003,PARIS 03,75,Appartement,35,1,140,2023
+55962,75003,PARIS 03,75,Appartement,39,2,140,2023
+55962,75003,PARIS 03,75,Appartement,95,4,140,2023
+55962,75003,PARIS 03,75,Local industriel. commercial ou assimilé,199,0,140,2023
+38300000,75009,PARIS 09,75,Dépendance,0,0,0,2023
+38300000,75009,PARIS 09,75,Dépendance,0,0,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,10,0,0,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,84,0,0,2023
+38300000,75009,PARIS 09,75,Appartement,63,3,0,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,12,0,0,2023
+38300000,75009,PARIS 09,75,Appartement,145,5,0,2023
+38300000,75009,PARIS 09,75,Appartement,42,1,0,2023
+38300000,75009,PARIS 09,75,Appartement,102,5,0,2023
+38300000,75009,PARIS 09,75,Appartement,64,3,0,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,10,0,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,84,0,1933,2023
+38300000,75009,PARIS 09,75,Appartement,63,3,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,12,0,1933,2023
+38300000,75009,PARIS 09,75,Appartement,145,5,1933,2023
+38300000,75009,PARIS 09,75,Appartement,42,1,1933,2023
+38300000,75009,PARIS 09,75,Appartement,102,5,1933,2023
+38300000,75009,PARIS 09,75,Appartement,64,3,1933,2023
+38300000,75009,PARIS 09,75,Appartement,59,2,1933,2023
+38300000,75009,PARIS 09,75,Appartement,113,5,1933,2023
+38300000,75009,PARIS 09,75,Appartement,128,5,1933,2023
+38300000,75009,PARIS 09,75,Appartement,59,3,1933,2023
+38300000,75009,PARIS 09,75,Appartement,76,3,1933,2023
+38300000,75009,PARIS 09,75,Appartement,73,3,1933,2023
+38300000,75009,PARIS 09,75,Appartement,112,5,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,140,0,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,214,0,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,170,0,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,107,0,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,136,0,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,205,0,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,55,0,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,194,0,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,137,0,1933,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,137,0,0,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,194,0,0,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,55,0,0,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,205,0,0,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,136,0,0,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,107,0,0,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,170,0,0,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,214,0,0,2023
+38300000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,140,0,0,2023
+38300000,75009,PARIS 09,75,Appartement,112,5,0,2023
+38300000,75009,PARIS 09,75,Appartement,73,3,0,2023
+38300000,75009,PARIS 09,75,Appartement,76,3,0,2023
+38300000,75009,PARIS 09,75,Appartement,59,3,0,2023
+38300000,75009,PARIS 09,75,Appartement,128,5,0,2023
+38300000,75009,PARIS 09,75,Appartement,113,5,0,2023
+38300000,75009,PARIS 09,75,Appartement,59,2,0,2023
+14000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,1268,0,231,2023
+20300000,75003,PARIS 03,75,Appartement,21,1,331,2023
+20300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,240,0,331,2023
+20300000,75003,PARIS 03,75,Appartement,128,4,331,2023
+20300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,1534,0,331,2023
+20300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,168,0,331,2023
+20300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,65,0,331,2023
+20300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,147,0,331,2023
+1732000,75018,PARIS 18,75,Maison,92,4,82,2023
+140000,75020,PARIS 20,75,Maison,83,5,96,2023
+6500000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,800,0,820,2023
+3300000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,50,0,78,2023
+3300000,75002,PARIS 02,75,Appartement,45,2,78,2023
+3300000,75002,PARIS 02,75,Appartement,37,2,78,2023
+3300000,75002,PARIS 02,75,Appartement,39,2,78,2023
+3300000,75002,PARIS 02,75,Appartement,43,1,78,2023
+8500000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,1050,0,151,2023
+900000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,685,0,174,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,167,0,429,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,104,0,429,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,30,0,429,2023
+13300000,75003,PARIS 03,75,Appartement,18,2,429,2023
+13300000,75003,PARIS 03,75,Dépendance,0,0,429,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,50,0,429,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,71,0,429,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,61,0,429,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,109,0,429,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,124,0,429,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,108,0,429,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,39,0,429,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,138,0,429,2023
+13300000,75003,PARIS 03,75,Appartement,82,4,429,2023
+13300000,75003,PARIS 03,75,Appartement,17,1,429,2023
+13300000,75003,PARIS 03,75,Appartement,19,2,429,2023
+13300000,75003,PARIS 03,75,Appartement,28,2,429,2023
+13300000,75003,PARIS 03,75,Appartement,13,1,429,2023
+13300000,75003,PARIS 03,75,Appartement,7,1,429,2023
+13300000,75003,PARIS 03,75,Appartement,30,3,429,2023
+13300000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,0,0,429,2023
+900000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,1174,0,271,2023
+1057692,75020,PARIS 20,75,Maison,70,4,105,2023
+6325000,75020,PARIS 20,75,Appartement,37,2,208,2023
+6325000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,42,0,208,2023
+6325000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,40,0,208,2023
+6325000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,37,0,208,2023
+6325000,75020,PARIS 20,75,Appartement,70,3,208,2023
+6325000,75020,PARIS 20,75,Appartement,62,3,208,2023
+6325000,75020,PARIS 20,75,Appartement,60,3,208,2023
+6325000,75020,PARIS 20,75,Dépendance,0,0,208,2023
+6325000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,12,0,208,2023
+6325000,75020,PARIS 20,75,Appartement,20,2,208,2023
+6325000,75020,PARIS 20,75,Appartement,13,1,208,2023
+58500000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,105,0,501,2023
+58500000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,1928,0,501,2023
+3550000,75003,PARIS 03,75,Appartement,18,1,92,2023
+3550000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,88,0,92,2023
+3550000,75003,PARIS 03,75,Appartement,44,2,92,2023
+3550000,75003,PARIS 03,75,Appartement,17,1,92,2023
+3550000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,16,0,92,2023
+3550000,75003,PARIS 03,75,Appartement,39,2,92,2023
+3550000,75003,PARIS 03,75,Appartement,40,2,92,2023
+1023697,75019,PARIS 19,75,Maison,78,4,58,2023
+1600820,75003,PARIS 03,75,Local industriel. commercial ou assimilé,24,0,33,2023
+1600820,75003,PARIS 03,75,Appartement,46,3,33,2023
+16600000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,116,0,555,2023
+16600000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,156,0,555,2023
+16600000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,89,0,555,2023
+16600000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,97,0,555,2023
+16600000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,95,0,555,2023
+16600000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,313,0,555,2023
+16600000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,209,0,555,2023
+2800000,75003,PARIS 03,75,Dépendance,0,0,47,2023
+2800000,75003,PARIS 03,75,Appartement,32,2,47,2023
+2800000,75003,PARIS 03,75,Appartement,33,2,47,2023
+2800000,75003,PARIS 03,75,Appartement,31,2,47,2023
+2800000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,50,0,47,2023
+984000,75020,PARIS 20,75,Maison,80,4,69,2023
+1100000,75019,PARIS 19,75,Maison,204,4,132,2023
+1323000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,236,0,53,2023
+14934786,75018,PARIS 18,75,Local industriel. commercial ou assimilé,112,0,6159,2023
+900000,75020,PARIS 20,75,Appartement,29,3,114,2023
+900000,75020,PARIS 20,75,Appartement,32,3,114,2023
+900000,75020,PARIS 20,75,Appartement,26,2,114,2023
+900000,75020,PARIS 20,75,Appartement,28,3,114,2023
+800000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,624,0,111,2023
+135000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,271,0,400,2023
+135000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,93,0,400,2023
+135000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,220,0,400,2023
+135000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,30,0,400,2023
+135000000,75008,PARIS 08,75,Dépendance,0,0,400,2023
+135000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,280,0,400,2023
+135000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,0,0,400,2023
+135000000,75008,PARIS 08,75,Appartement,31,1,400,2023
+135000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,853,0,400,2023
+135000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,827,0,400,2023
+7500000,75010,PARIS 10,75,Dépendance,0,0,246,2023
+7500000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,89,0,246,2023
+7500000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,19,0,246,2023
+7500000,75010,PARIS 10,75,Appartement,49,3,246,2023
+7500000,75010,PARIS 10,75,Appartement,67,3,246,2023
+7500000,75010,PARIS 10,75,Appartement,65,3,246,2023
+7500000,75010,PARIS 10,75,Appartement,68,3,246,2023
+7500000,75010,PARIS 10,75,Appartement,66,3,246,2023
+7500000,75010,PARIS 10,75,Appartement,61,3,246,2023
+7500000,75010,PARIS 10,75,Appartement,63,3,246,2023
+7500000,75010,PARIS 10,75,Appartement,41,2,246,2023
+917000,75020,PARIS 20,75,Maison,92,4,116,2023
+1822450,75019,PARIS 19,75,Maison,165,5,97,2023
+2727500,75017,PARIS 17,75,Maison,202,9,175,2023
+10400000,75019,PARIS 19,75,Appartement,53,3,788,2023
+10400000,75019,PARIS 19,75,Appartement,40,2,788,2023
+10400000,75019,PARIS 19,75,Appartement,41,2,788,2023
+10400000,75019,PARIS 19,75,Appartement,39,2,788,2023
+10400000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,120,0,788,2023
+10400000,75019,PARIS 19,75,Dépendance,0,0,788,2023
+10400000,75019,PARIS 19,75,Appartement,64,4,788,2023
+10400000,75019,PARIS 19,75,Appartement,51,2,788,2023
+10400000,75019,PARIS 19,75,Appartement,48,2,788,2023
+10400000,75019,PARIS 19,75,Appartement,63,3,788,2023
+10400000,75019,PARIS 19,75,Appartement,50,2,788,2023
+10400000,75019,PARIS 19,75,Appartement,64,3,788,2023
+10400000,75019,PARIS 19,75,Appartement,49,2,788,2023
+10400000,75019,PARIS 19,75,Appartement,30,2,788,2023
+10400000,75019,PARIS 19,75,Appartement,37,2,788,2023
+10400000,75019,PARIS 19,75,Appartement,34,1,788,2023
+10400000,75019,PARIS 19,75,Appartement,60,3,788,2023
+10400000,75019,PARIS 19,75,Appartement,62,3,788,2023
+15952501,75009,PARIS 09,75,Local industriel. commercial ou assimilé,221,0,286,2023
+15952501,75009,PARIS 09,75,Local industriel. commercial ou assimilé,262,0,286,2023
+15952501,75009,PARIS 09,75,Local industriel. commercial ou assimilé,174,0,286,2023
+15952501,75009,PARIS 09,75,Local industriel. commercial ou assimilé,165,0,286,2023
+15952501,75009,PARIS 09,75,Local industriel. commercial ou assimilé,161,0,286,2023
+14000000,75017,PARIS 17,75,Appartement,24,1,289,2023
+14000000,75017,PARIS 17,75,Appartement,76,4,289,2023
+14000000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,59,0,289,2023
+14000000,75017,PARIS 17,75,Appartement,140,4,289,2023
+14000000,75017,PARIS 17,75,Dépendance,0,0,289,2023
+14000000,75017,PARIS 17,75,Appartement,200,7,289,2023
+14000000,75017,PARIS 17,75,Appartement,190,7,289,2023
+14000000,75017,PARIS 17,75,Appartement,148,5,289,2023
+14000000,75017,PARIS 17,75,Appartement,19,2,289,2023
+14000000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,43,0,289,2023
+14000000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,135,0,289,2023
+14000000,75017,PARIS 17,75,Appartement,12,1,289,2023
+14000000,75017,PARIS 17,75,Appartement,199,7,289,2023
+1020000,75019,PARIS 19,75,Maison,92,4,79,2023
+9000000,75018,PARIS 18,75,Appartement,54,2,1224,2023
+9000000,75018,PARIS 18,75,Dépendance,0,0,1224,2023
+9000000,75018,PARIS 18,75,Appartement,48,2,1224,2023
+9000000,75018,PARIS 18,75,Appartement,46,2,1224,2023
+9000000,75018,PARIS 18,75,Appartement,56,2,1224,2023
+9000000,75018,PARIS 18,75,Appartement,39,2,1224,2023
+9000000,75018,PARIS 18,75,Appartement,60,2,1224,2023
+9000000,75018,PARIS 18,75,Appartement,49,2,1224,2023
+9000000,75018,PARIS 18,75,Appartement,27,1,1224,2023
+9000000,75018,PARIS 18,75,Appartement,33,1,1224,2023
+9000000,75018,PARIS 18,75,Appartement,29,1,1224,2023
+9000000,75018,PARIS 18,75,Appartement,31,1,1224,2023
+9000000,75018,PARIS 18,75,Appartement,38,1,1224,2023
+9000000,75018,PARIS 18,75,Appartement,40,1,1224,2023
+9000000,75018,PARIS 18,75,Appartement,51,2,1224,2023
+9000000,75018,PARIS 18,75,Appartement,28,1,1224,2023
+9000000,75018,PARIS 18,75,Appartement,26,1,1224,2023
+9000000,75018,PARIS 18,75,Appartement,32,1,1224,2023
+9000000,75018,PARIS 18,75,Appartement,34,1,1224,2023
+9000000,75018,PARIS 18,75,Appartement,30,1,1224,2023
+9000000,75018,PARIS 18,75,Appartement,50,2,1224,2023
+9000000,75018,PARIS 18,75,Appartement,42,2,1224,2023
+158728992,75017,PARIS 17,75,Local industriel. commercial ou assimilé,8870,0,1316,2023
+158728992,75017,PARIS 17,75,Local industriel. commercial ou assimilé,440,0,354,2023
+1170000,75019,PARIS 19,75,Maison,78,3,65,2023
+2402500,75019,PARIS 19,75,Maison,120,4,126,2023
+4271500,75018,PARIS 18,75,Maison,200,6,145,2023
+4100000,75017,PARIS 17,75,Appartement,39,2,146,2023
+4100000,75017,PARIS 17,75,Appartement,41,3,146,2023
+4100000,75017,PARIS 17,75,Appartement,35,2,146,2023
+4100000,75017,PARIS 17,75,Appartement,14,1,146,2023
+4100000,75017,PARIS 17,75,Appartement,69,3,146,2023
+4100000,75017,PARIS 17,75,Dépendance,0,0,146,2023
+4100000,75017,PARIS 17,75,Appartement,56,3,146,2023
+4100000,75017,PARIS 17,75,Appartement,37,3,146,2023
+2630676,75018,PARIS 18,75,Appartement,46,2,1360,2023
+2630676,75018,PARIS 18,75,Appartement,30,1,1360,2023
+2630676,75018,PARIS 18,75,Appartement,31,1,1360,2023
+2630676,75018,PARIS 18,75,Dépendance,0,0,1360,2023
+2630676,75018,PARIS 18,75,Appartement,32,1,1360,2023
+2630676,75018,PARIS 18,75,Appartement,45,1,1360,2023
+2630676,75018,PARIS 18,75,Appartement,96,3,1360,2023
+2630676,75018,PARIS 18,75,Appartement,30,2,1360,2023
+2630676,75018,PARIS 18,75,Appartement,22,1,1360,2023
+198940,75018,PARIS 18,75,Appartement,30,1,407,2023
+198940,75018,PARIS 18,75,Appartement,31,1,407,2023
+198940,75018,PARIS 18,75,Appartement,22,1,407,2023
+198940,75018,PARIS 18,75,Appartement,47,2,407,2023
+198940,75018,PARIS 18,75,Dépendance,0,0,407,2023
+198940,75018,PARIS 18,75,Appartement,69,4,407,2023
+198940,75018,PARIS 18,75,Appartement,54,2,407,2023
+198940,75018,PARIS 18,75,Appartement,68,3,407,2023
+6146597,75018,PARIS 18,75,Dépendance,0,0,2760,2023
+6146597,75018,PARIS 18,75,Appartement,30,1,2760,2023
+6146597,75018,PARIS 18,75,Appartement,56,2,2760,2023
+6146597,75018,PARIS 18,75,Appartement,55,2,2760,2023
+6146597,75018,PARIS 18,75,Appartement,53,2,2760,2023
+6146597,75018,PARIS 18,75,Appartement,33,1,2760,2023
+6146597,75018,PARIS 18,75,Appartement,82,4,2760,2023
+6146597,75018,PARIS 18,75,Appartement,46,2,2760,2023
+6146597,75018,PARIS 18,75,Appartement,78,4,2760,2023
+6146597,75018,PARIS 18,75,Appartement,32,1,2760,2023
+6146597,75018,PARIS 18,75,Appartement,48,2,2760,2023
+6146597,75018,PARIS 18,75,Appartement,49,2,2760,2023
+6146597,75018,PARIS 18,75,Appartement,69,3,2760,2023
+6146597,75018,PARIS 18,75,Appartement,35,1,2760,2023
+6146597,75018,PARIS 18,75,Appartement,61,2,2760,2023
+6146597,75018,PARIS 18,75,Appartement,73,3,2760,2023
+6146597,75018,PARIS 18,75,Appartement,70,3,2760,2023
+6146597,75018,PARIS 18,75,Appartement,66,3,2760,2023
+6146597,75018,PARIS 18,75,Appartement,31,1,2760,2023
+6146597,75018,PARIS 18,75,Appartement,94,5,2760,2023
+6146597,75018,PARIS 18,75,Appartement,77,3,2760,2023
+6146597,75018,PARIS 18,75,Appartement,87,4,2760,2023
+6146597,75018,PARIS 18,75,Appartement,34,1,2760,2023
+6146597,75018,PARIS 18,75,Appartement,38,1,2760,2023
+6146597,75018,PARIS 18,75,Appartement,62,3,2760,2023
+6146597,75018,PARIS 18,75,Appartement,61,3,2760,2023
+6146597,75018,PARIS 18,75,Appartement,47,2,2760,2023
+6146597,75018,PARIS 18,75,Local industriel. commercial ou assimilé,136,0,2760,2023
+6146597,75018,PARIS 18,75,Appartement,112,5,2760,2023
+6146597,75018,PARIS 18,75,Appartement,54,2,2760,2023
+6146597,75018,PARIS 18,75,Appartement,41,1,2760,2023
+6146597,75018,PARIS 18,75,Appartement,51,2,2760,2023
+6146597,75018,PARIS 18,75,Appartement,50,2,2760,2023
+6146597,75018,PARIS 18,75,Appartement,36,1,2760,2023
+6146597,75018,PARIS 18,75,Appartement,57,2,2760,2023
+6146597,75018,PARIS 18,75,Appartement,83,4,2760,2023
+6146597,75018,PARIS 18,75,Appartement,80,4,2760,2023
+7500000,75020,PARIS 20,75,Appartement,28,2,211,2023
+7500000,75020,PARIS 20,75,Appartement,28,3,211,2023
+7500000,75020,PARIS 20,75,Appartement,33,2,211,2023
+7500000,75020,PARIS 20,75,Appartement,37,2,211,2023
+7500000,75020,PARIS 20,75,Appartement,39,2,211,2023
+7500000,75020,PARIS 20,75,Appartement,28,1,211,2023
+7500000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,85,0,211,2023
+7500000,75020,PARIS 20,75,Appartement,22,1,211,2023
+7500000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,43,0,211,2023
+7500000,75020,PARIS 20,75,Dépendance,0,0,211,2023
+7500000,75020,PARIS 20,75,Appartement,21,1,211,2023
+7500000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,35,0,211,2023
+5000000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,740,0,197,2023
+45500000,75001,PARIS 01,75,Local industriel. commercial ou assimilé,2162,0,355,2023
+3100000,75020,PARIS 20,75,Dépendance,0,0,247,2023
+3100000,75020,PARIS 20,75,Appartement,31,1,247,2023
+3100000,75020,PARIS 20,75,Appartement,40,3,247,2023
+3100000,75020,PARIS 20,75,Appartement,16,1,247,2023
+3100000,75020,PARIS 20,75,Appartement,88,4,247,2023
+3100000,75020,PARIS 20,75,Appartement,26,1,247,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,133,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,127,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,147,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,128,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,79,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,95,0,814,2023
+53500000,75008,PARIS 08,75,Dépendance,0,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,19,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,31,0,814,2023
+53500000,75008,PARIS 08,75,Appartement,33,3,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,140,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,148,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,129,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,130,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,123,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,10,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,114,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,20,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,70,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,105,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,266,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,276,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,149,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,116,0,814,2023
+53500000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,12,0,814,2023
+5820000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,435,0,444,2023
+5820000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,305,0,444,2023
+4300000,75017,PARIS 17,75,Appartement,32,2,288,2023
+4300000,75017,PARIS 17,75,Appartement,13,1,288,2023
+4300000,75017,PARIS 17,75,Appartement,20,1,288,2023
+4300000,75017,PARIS 17,75,Appartement,18,1,288,2023
+4300000,75017,PARIS 17,75,Appartement,60,3,288,2023
+4300000,75017,PARIS 17,75,Appartement,53,3,288,2023
+4300000,75017,PARIS 17,75,Appartement,38,2,288,2023
+4300000,75017,PARIS 17,75,Appartement,54,3,288,2023
+4300000,75017,PARIS 17,75,Dépendance,0,0,288,2023
+4300000,75017,PARIS 17,75,Appartement,10,1,288,2023
+4300000,75017,PARIS 17,75,Appartement,24,1,288,2023
+4300000,75017,PARIS 17,75,Appartement,37,2,288,2023
+4300000,75017,PARIS 17,75,Appartement,45,3,288,2023
+4300000,75017,PARIS 17,75,Appartement,33,2,288,2023
+4300000,75017,PARIS 17,75,Appartement,34,2,288,2023
+40000000,75008,PARIS 08,75,Appartement,390,9,668,2023
+40000000,75008,PARIS 08,75,Appartement,158,8,668,2023
+40000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,452,0,668,2023
+40000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,488,0,668,2023
+40000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,441,0,668,2023
+40000000,75008,PARIS 08,75,Appartement,46,2,668,2023
+40000000,75008,PARIS 08,75,Appartement,32,1,668,2023
+40000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,80,0,668,2023
+40000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,220,0,668,2023
+40000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,30,0,668,2023
+40000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,41,0,668,2023
+40000000,75008,PARIS 08,75,Dépendance,0,0,668,2023
+40000000,75008,PARIS 08,75,Appartement,39,1,668,2023
+40000000,75008,PARIS 08,75,Appartement,90,5,668,2023
+40000000,75008,PARIS 08,75,Appartement,13,1,668,2023
+40000000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,295,0,668,2023
+40000000,75008,PARIS 08,75,Appartement,100,2,668,2023
+2418150,75019,PARIS 19,75,Maison,269,8,273,2023
+4200000,75018,PARIS 18,75,Appartement,44,3,168,2023
+4200000,75018,PARIS 18,75,Appartement,43,2,168,2023
+4200000,75018,PARIS 18,75,Appartement,57,3,168,2023
+4200000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,95,0,168,2023
+4200000,75018,PARIS 18,75,Appartement,43,3,168,2023
+4200000,75018,PARIS 18,75,Appartement,45,3,168,2023
+4200000,75018,PARIS 18,75,Appartement,52,3,168,2023
+4200000,75018,PARIS 18,75,Appartement,24,2,168,2023
+4200000,75018,PARIS 18,75,Dépendance,0,0,168,2023
+900000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,298,0,126,2023
+2600000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,923,0,151,2023
+2600000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,72,0,151,2023
+3375000,75017,PARIS 17,75,Dépendance,0,0,191,2023
+3375000,75017,PARIS 17,75,Appartement,54,2,191,2023
+3375000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,54,0,191,2023
+3375000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,79,0,191,2023
+3375000,75017,PARIS 17,75,Appartement,56,3,191,2023
+3375000,75017,PARIS 17,75,Appartement,74,4,191,2023
+3375000,75017,PARIS 17,75,Appartement,77,4,191,2023
+3375000,75017,PARIS 17,75,Appartement,54,3,191,2023
+3375000,75017,PARIS 17,75,Appartement,77,3,191,2023
+3375000,75017,PARIS 17,75,Appartement,25,1,191,2023
+3375000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,62,0,191,2023
+3375000,75017,PARIS 17,75,Appartement,52,3,191,2023
+3375000,75017,PARIS 17,75,Appartement,35,3,191,2023
+3375000,75017,PARIS 17,75,Appartement,7,1,191,2023
+3375000,75017,PARIS 17,75,Local industriel. commercial ou assimilé,88,0,191,2023
+22000000,75003,PARIS 03,75,Dépendance,0,0,647,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,169,0,647,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,41,0,647,2023
+22000000,75003,PARIS 03,75,Appartement,38,2,647,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,70,0,647,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,20,0,647,2023
+22000000,75003,PARIS 03,75,Appartement,73,4,647,2023
+22000000,75003,PARIS 03,75,Appartement,50,3,647,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,208,0,647,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,220,0,647,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,435,0,647,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,23,0,647,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,24,0,647,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,36,0,647,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,47,0,647,2023
+22000000,75003,PARIS 03,75,Appartement,18,1,201,2023
+22000000,75003,PARIS 03,75,Appartement,80,3,201,2023
+22000000,75003,PARIS 03,75,Appartement,40,2,201,2023
+22000000,75003,PARIS 03,75,Appartement,88,3,201,2023
+22000000,75003,PARIS 03,75,Appartement,20,1,201,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,115,0,201,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,41,0,201,2023
+22000000,75003,PARIS 03,75,Appartement,21,1,201,2023
+22000000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,23,0,201,2023
+5400000,75003,PARIS 03,75,Appartement,16,1,216,2023
+5400000,75003,PARIS 03,75,Appartement,59,3,216,2023
+5400000,75003,PARIS 03,75,Appartement,46,2,216,2023
+5400000,75003,PARIS 03,75,Appartement,77,3,216,2023
+5400000,75003,PARIS 03,75,Appartement,27,2,216,2023
+5400000,75003,PARIS 03,75,Appartement,26,2,216,2023
+5400000,75003,PARIS 03,75,Dépendance,0,0,216,2023
+5400000,75003,PARIS 03,75,Appartement,49,3,216,2023
+5400000,75003,PARIS 03,75,Local industriel. commercial ou assimilé,394,0,216,2023
+43000000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,4000,0,1003,2023
+43000000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,605,0,1003,2023
+43000000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,45,0,1003,2023
+43000000,75009,PARIS 09,75,Local industriel. commercial ou assimilé,40,0,1003,2023
+1200000,75010,PARIS 10,75,Local industriel. commercial ou assimilé,624,0,111,2023
+800000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,105,0,106,2023
+3375000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,1064,0,187,2023
+10600000,75004,PARIS 04,75,Appartement,15,1,214,2023
+10600000,75004,PARIS 04,75,Appartement,17,1,214,2023
+10600000,75004,PARIS 04,75,Appartement,21,2,214,2023
+10600000,75004,PARIS 04,75,Appartement,30,1,214,2023
+10600000,75004,PARIS 04,75,Appartement,22,1,214,2023
+10600000,75004,PARIS 04,75,Appartement,63,3,214,2023
+10600000,75004,PARIS 04,75,Appartement,51,2,214,2023
+10600000,75004,PARIS 04,75,Appartement,36,2,214,2023
+10600000,75004,PARIS 04,75,Appartement,19,1,214,2023
+10600000,75004,PARIS 04,75,Appartement,39,2,214,2023
+10600000,75004,PARIS 04,75,Appartement,53,2,214,2023
+10600000,75004,PARIS 04,75,Appartement,25,1,214,2023
+10600000,75004,PARIS 04,75,Appartement,23,2,214,2023
+10600000,75004,PARIS 04,75,Appartement,38,2,214,2023
+10600000,75004,PARIS 04,75,Appartement,75,2,214,2023
+10600000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,17,0,214,2023
+10600000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,164,0,214,2023
+10600000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,350,0,214,2023
+10600000,75004,PARIS 04,75,Appartement,18,1,214,2023
+92596160,75001,PARIS 01,75,Local industriel. commercial ou assimilé,591,0,527,2023
+92596160,75001,PARIS 01,75,Local industriel. commercial ou assimilé,1926,0,527,2023
+9000000,75017,PARIS 17,75,Dépendance,0,0,561,2023
+9000000,75017,PARIS 17,75,Appartement,35,2,561,2023
+9000000,75017,PARIS 17,75,Appartement,378,5,561,2023
+9000000,75017,PARIS 17,75,Appartement,67,2,561,2023
+9000000,75017,PARIS 17,75,Appartement,277,3,561,2023
+538480,75018,PARIS 18,75,Maison,69,4,49,2023
+1571438,75018,PARIS 18,75,Maison,115,5,80,2023
+7000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,160,0,281,2023
+7000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,341,0,281,2023
+7000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,148,0,281,2023
+7000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,8,0,281,2023
+7000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,106,0,281,2023
+7000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,7,0,281,2023
+4950000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,40,0,642,2023
+4950000,75020,PARIS 20,75,Appartement,29,1,642,2023
+4950000,75020,PARIS 20,75,Appartement,18,2,642,2023
+4950000,75020,PARIS 20,75,Appartement,12,1,642,2023
+4950000,75020,PARIS 20,75,Appartement,21,1,642,2023
+4950000,75020,PARIS 20,75,Appartement,21,2,642,2023
+4950000,75020,PARIS 20,75,Appartement,22,1,642,2023
+4950000,75020,PARIS 20,75,Appartement,24,1,642,2023
+4950000,75020,PARIS 20,75,Appartement,17,1,642,2023
+4950000,75020,PARIS 20,75,Appartement,15,1,642,2023
+4950000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,192,0,642,2023
+4950000,75020,PARIS 20,75,Appartement,104,6,642,2023
+4950000,75020,PARIS 20,75,Appartement,25,2,642,2023
+4950000,75020,PARIS 20,75,Appartement,24,2,642,2023
+4950000,75020,PARIS 20,75,Appartement,32,2,642,2023
+4950000,75020,PARIS 20,75,Appartement,29,2,642,2023
+4950000,75020,PARIS 20,75,Appartement,19,1,642,2023
+4950000,75020,PARIS 20,75,Appartement,42,2,642,2023
+16000000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,550,0,930,2023
+16000000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,638,0,930,2023
+16000000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,579,0,930,2023
+16000000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,110,0,930,2023
+16000000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,392,0,930,2023
+16000000,75019,PARIS 19,75,Local industriel. commercial ou assimilé,113,0,930,2023
+1818886,75001,PARIS 01,75,Local industriel. commercial ou assimilé,401,0,117,2023
+2000000,75020,PARIS 20,75,Local industriel. commercial ou assimilé,540,0,573,2023
+43000,75008,PARIS 08,75,Dépendance,0,0,248,2023
+43000,75008,PARIS 08,75,Local industriel. commercial ou assimilé,567,0,248,2023
+21000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,214,0,256,2023
+21000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,161,0,256,2023
+21000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,164,0,256,2023
+21000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,68,0,256,2023
+21000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,59,0,256,2023
+21000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,148,0,256,2023
+21000000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,296,0,256,2023
+2350000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,521,0,142,2023
+2350000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,24,0,142,2023
+1373870,75020,PARIS 20,75,Maison,85,3,89,2023
+10750000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,441,0,268,2023
+29000000,75004,PARIS 04,75,Dépendance,0,0,611,2023
+29000000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,32,0,611,2023
+29000000,75004,PARIS 04,75,Appartement,45,2,611,2023
+29000000,75004,PARIS 04,75,Appartement,36,2,611,2023
+29000000,75004,PARIS 04,75,Appartement,42,2,611,2023
+29000000,75004,PARIS 04,75,Appartement,18,2,611,2023
+29000000,75004,PARIS 04,75,Appartement,30,1,611,2023
+29000000,75004,PARIS 04,75,Appartement,24,1,611,2023
+29000000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,25,0,611,2023
+29000000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,75,0,611,2023
+29000000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,45,0,611,2023
+29000000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,26,0,611,2023
+29000000,75004,PARIS 04,75,Appartement,12,1,611,2023
+29000000,75004,PARIS 04,75,Appartement,58,3,611,2023
+29000000,75004,PARIS 04,75,Appartement,150,4,611,2023
+29000000,75004,PARIS 04,75,Appartement,35,2,611,2023
+29000000,75004,PARIS 04,75,Appartement,26,3,611,2023
+29000000,75004,PARIS 04,75,Appartement,27,2,611,2023
+29000000,75004,PARIS 04,75,Appartement,32,2,611,2023
+29000000,75004,PARIS 04,75,Appartement,63,2,611,2023
+29000000,75004,PARIS 04,75,Appartement,68,3,611,2023
+29000000,75004,PARIS 04,75,Appartement,64,2,611,2023
+29000000,75004,PARIS 04,75,Appartement,63,3,611,2023
+29000000,75004,PARIS 04,75,Appartement,44,2,611,2023
+29000000,75004,PARIS 04,75,Appartement,64,3,611,2023
+29000000,75004,PARIS 04,75,Appartement,85,3,611,2023
+375000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,1019,0,179,2023
+3100000,75018,PARIS 18,75,Local industriel. commercial ou assimilé,76,0,121,2023
+3100000,75018,PARIS 18,75,Appartement,30,1,121,2023
+3100000,75018,PARIS 18,75,Appartement,26,1,121,2023
+3100000,75018,PARIS 18,75,Appartement,27,1,121,2023
+3100000,75018,PARIS 18,75,Appartement,23,1,121,2023
+3100000,75018,PARIS 18,75,Appartement,45,3,121,2023
+3463000,75004,PARIS 04,75,Appartement,30,2,102,2023
+3463000,75004,PARIS 04,75,Appartement,40,3,102,2023
+3463000,75004,PARIS 04,75,Appartement,25,2,102,2023
+3463000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,71,0,102,2023
+3463000,75004,PARIS 04,75,Appartement,24,2,102,2023
+3463000,75004,PARIS 04,75,Appartement,32,2,102,2023
+3463000,75004,PARIS 04,75,Appartement,22,2,102,2023
+3463000,75004,PARIS 04,75,Local industriel. commercial ou assimilé,75,0,102,2023
+1419300,75018,PARIS 18,75,Maison,260,6,120,2023
+1300000,75020,PARIS 20,75,Dépendance,0,0,263,2023
+6750000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,205,0,166,2023
+6750000,75002,PARIS 02,75,Local industriel. commercial ou assimilé,653,0,166,2023
+2064600,75002,PARIS 02,75,Local industriel. commercial ou assimilé,85,0,131,2023
+2064600,75002,PARIS 02,75,Local industriel. commercial ou assimilé,44,0,131,2023
+2064600,75002,PARIS 02,75,Local industriel. commercial ou assimilé,119,0,131,2023
+2064600,75002,PARIS 02,75,Appartement,43,2,131,2023
+2064600,75002,PARIS 02,75,Local industriel. commercial ou assimilé,16,0,131,2023
+2064600,75002,PARIS 02,75,Appartement,34,2,131,2023
+2064600,75002,PARIS 02,75,Local industriel. commercial ou assimilé,83,0,131,2023
+2064600,75002,PARIS 02,75,Appartement,37,2,131,2023
+2064600,75002,PARIS 02,75,Local industriel. commercial ou assimilé,79,0,131,2023
+2064600,75002,PARIS 02,75,Appartement,55,2,131,2023
+2064600,75002,PARIS 02,75,Local industriel. commercial ou assimilé,84,0,131,2023
+5300000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,700,0,257,2023
+2988200,75013,PARIS 13,75,Local industriel. commercial ou assimilé,50,0,137,2023
+2988200,75013,PARIS 13,75,Dépendance,0,0,137,2023
+2988200,75013,PARIS 13,75,Appartement,32,2,137,2023
+2988200,75013,PARIS 13,75,Local industriel. commercial ou assimilé,245,0,137,2023
+4100000,75016,PARIS 16,75,Maison,283,11,197,2023
+21300000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,1087,0,382,2023
+2200000,75011,PARIS 11,75,Appartement,30,2,109,2023
+2200000,75011,PARIS 11,75,Appartement,65,2,109,2023
+2200000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,81,0,109,2023
+2200000,75011,PARIS 11,75,Appartement,35,2,109,2023
+2280000,75014,PARIS 14,75,Maison,200,4,275,2023
+7000000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,34,0,236,2023
+7000000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,33,0,236,2023
+7000000,75012,PARIS 12,75,Appartement,41,2,236,2023
+7000000,75012,PARIS 12,75,Appartement,46,3,236,2023
+7000000,75012,PARIS 12,75,Appartement,52,3,236,2023
+7000000,75012,PARIS 12,75,Appartement,47,3,236,2023
+7000000,75012,PARIS 12,75,Appartement,42,2,236,2023
+7000000,75012,PARIS 12,75,Dépendance,0,0,236,2023
+7000000,75012,PARIS 12,75,Appartement,40,2,236,2023
+7000000,75012,PARIS 12,75,Appartement,34,2,236,2023
+7000000,75012,PARIS 12,75,Appartement,32,2,236,2023
+7000000,75012,PARIS 12,75,Appartement,30,2,236,2023
+7000000,75012,PARIS 12,75,Appartement,15,1,236,2023
+7000000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,26,0,236,2023
+22765000,75016,PARIS 16,75,Maison,985,11,1394,2023
+2016000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,600,0,107,2023
+2016000,75011,PARIS 11,75,Appartement,25,2,107,2023
+2100000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,423,0,263,2023
+1171200,75016,PARIS 16,75,Maison,68,3,93,2023
+2900000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,301,0,124,2023
+2900000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,0,0,124,2023
+1000000,75015,PARIS 15,75,Maison,65,4,102,2023
+1380000,75013,PARIS 13,75,Maison,72,5,77,2023
+70000000,75016,PARIS 16,75,Appartement,159,3,1530,2023
+70000000,75016,PARIS 16,75,Dépendance,0,0,1530,2023
+70000000,75016,PARIS 16,75,Appartement,72,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,56,1,1530,2023
+70000000,75016,PARIS 16,75,Appartement,71,1,1530,2023
+70000000,75016,PARIS 16,75,Appartement,75,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,64,2,1530,2023
+70000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,64,0,1530,2023
+70000000,75016,PARIS 16,75,Appartement,61,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,284,6,1530,2023
+70000000,75016,PARIS 16,75,Appartement,146,2,1530,2023
+70000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,66,0,1530,2023
+70000000,75016,PARIS 16,75,Appartement,80,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,87,3,1530,2023
+70000000,75016,PARIS 16,75,Appartement,126,3,1530,2023
+70000000,75016,PARIS 16,75,Appartement,273,3,1530,2023
+70000000,75016,PARIS 16,75,Appartement,108,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,68,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,104,4,1530,2023
+70000000,75016,PARIS 16,75,Appartement,115,4,1530,2023
+70000000,75016,PARIS 16,75,Appartement,103,3,1530,2023
+70000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,219,0,1530,2023
+70000000,75016,PARIS 16,75,Appartement,116,3,1530,2023
+70000000,75016,PARIS 16,75,Appartement,57,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,152,4,1530,2023
+70000000,75016,PARIS 16,75,Appartement,67,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,123,3,1530,2023
+70000000,75016,PARIS 16,75,Appartement,125,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,222,6,1530,2023
+70000000,75016,PARIS 16,75,Appartement,74,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,76,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,62,2,1530,2023
+70000000,75016,PARIS 16,75,Appartement,284,5,1530,2023
+14785000,75015,PARIS 15,75,Dépendance,0,0,670,2023
+14785000,75015,PARIS 15,75,Appartement,45,3,670,2023
+14785000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,139,0,670,2023
+14785000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,219,0,670,2023
+14785000,75015,PARIS 15,75,Appartement,47,2,670,2023
+14785000,75015,PARIS 15,75,Appartement,33,2,670,2023
+14785000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,0,0,670,2023
+14785000,75015,PARIS 15,75,Appartement,50,3,670,2023
+14785000,75015,PARIS 15,75,Appartement,30,1,670,2023
+14785000,75015,PARIS 15,75,Appartement,47,3,670,2023
+14785000,75015,PARIS 15,75,Appartement,43,3,670,2023
+14785000,75015,PARIS 15,75,Appartement,72,4,670,2023
+14785000,75015,PARIS 15,75,Appartement,48,3,670,2023
+14785000,75015,PARIS 15,75,Appartement,38,3,670,2023
+14785000,75015,PARIS 15,75,Appartement,41,2,670,2023
+14785000,75015,PARIS 15,75,Appartement,39,3,670,2023
+14785000,75015,PARIS 15,75,Appartement,36,2,670,2023
+14785000,75015,PARIS 15,75,Appartement,39,2,670,2023
+14785000,75015,PARIS 15,75,Appartement,35,2,670,2023
+14785000,75015,PARIS 15,75,Appartement,46,3,670,2023
+14785000,75015,PARIS 15,75,Appartement,48,1,670,2023
+2110000,75012,PARIS 12,75,Maison,180,7,160,2023
+3600,75014,PARIS 14,75,Dépendance,0,0,1980,2023
+3600,75014,PARIS 14,75,Appartement,20,1,1980,2023
+6500000,75016,PARIS 16,75,Maison,350,6,176,2023
+1511100,75013,PARIS 13,75,Maison,104,5,107,2023
+1511100,75013,PARIS 13,75,Dépendance,0,0,107,2023
+20000000,75006,PARIS 06,75,Appartement,82,2,197,2023
+20000000,75006,PARIS 06,75,Appartement,50,3,197,2023
+20000000,75006,PARIS 06,75,Appartement,32,2,197,2023
+20000000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,38,0,197,2023
+20000000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,176,0,197,2023
+20000000,75006,PARIS 06,75,Appartement,49,3,197,2023
+20000000,75006,PARIS 06,75,Dépendance,0,0,197,2023
+20000000,75006,PARIS 06,75,Appartement,34,2,197,2023
+8300000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,409,0,174,2023
+1848648,75016,PARIS 16,75,Local industriel. commercial ou assimilé,9,0,86,2023
+1848648,75016,PARIS 16,75,Maison,161,5,86,2023
+1846000,75013,PARIS 13,75,Maison,145,6,97,2023
+1535000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,32,0,107,2023
+1535000,75014,PARIS 14,75,Maison,70,4,107,2023
+9100000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,719,0,491,2023
+9100000,75011,PARIS 11,75,Appartement,26,2,491,2023
+9100000,75011,PARIS 11,75,Appartement,38,2,491,2023
+9100000,75011,PARIS 11,75,Appartement,29,1,491,2023
+9100000,75011,PARIS 11,75,Appartement,20,2,491,2023
+9100000,75011,PARIS 11,75,Appartement,123,5,491,2023
+9100000,75011,PARIS 11,75,Dépendance,0,0,491,2023
+9100000,75011,PARIS 11,75,Appartement,21,1,491,2023
+9100000,75011,PARIS 11,75,Appartement,18,1,491,2023
+9100000,75011,PARIS 11,75,Appartement,85,3,491,2023
+9100000,75011,PARIS 11,75,Appartement,17,1,491,2023
+9100000,75011,PARIS 11,75,Appartement,28,1,491,2023
+9100000,75011,PARIS 11,75,Appartement,16,1,491,2023
+9100000,75011,PARIS 11,75,Appartement,32,2,491,2023
+3300000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,250,0,223,2023
+1160000,75016,PARIS 16,75,Maison,78,3,81,2023
+6200000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,553,0,146,2023
+6200000,75011,PARIS 11,75,Appartement,30,2,146,2023
+6950000,75015,PARIS 15,75,Appartement,71,3,369,2023
+6950000,75015,PARIS 15,75,Dépendance,0,0,369,2023
+6950000,75015,PARIS 15,75,Appartement,46,3,369,2023
+6950000,75015,PARIS 15,75,Appartement,24,2,369,2023
+6950000,75015,PARIS 15,75,Appartement,29,2,369,2023
+6950000,75015,PARIS 15,75,Appartement,31,2,369,2023
+6950000,75015,PARIS 15,75,Appartement,35,2,369,2023
+6950000,75015,PARIS 15,75,Appartement,71,4,369,2023
+6950000,75015,PARIS 15,75,Appartement,35,3,369,2023
+6950000,75015,PARIS 15,75,Appartement,70,4,369,2023
+6950000,75015,PARIS 15,75,Appartement,73,4,369,2023
+6950000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,50,0,369,2023
+6950000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,43,0,369,2023
+6950000,75015,PARIS 15,75,Appartement,15,1,369,2023
+45098848,75011,PARIS 11,75,Local industriel. commercial ou assimilé,2543,0,359,2023
+6650000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,210,0,98,2023
+6950000,75015,PARIS 15,75,Dépendance,0,0,369,2023
+6950000,75015,PARIS 15,75,Appartement,15,1,369,2023
+6950000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,43,0,369,2023
+6950000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,50,0,369,2023
+6950000,75015,PARIS 15,75,Appartement,35,2,369,2023
+6950000,75015,PARIS 15,75,Appartement,73,4,369,2023
+6950000,75015,PARIS 15,75,Appartement,35,3,369,2023
+6950000,75015,PARIS 15,75,Appartement,46,3,369,2023
+6950000,75015,PARIS 15,75,Appartement,29,2,369,2023
+6950000,75015,PARIS 15,75,Appartement,24,2,369,2023
+6950000,75015,PARIS 15,75,Appartement,70,4,369,2023
+6950000,75015,PARIS 15,75,Appartement,71,4,369,2023
+6950000,75015,PARIS 15,75,Appartement,71,3,369,2023
+6950000,75015,PARIS 15,75,Appartement,31,2,369,2023
+1600000,75015,PARIS 15,75,Appartement,23,1,134,2023
+1600000,75015,PARIS 15,75,Dépendance,0,0,134,2023
+1600000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,84,0,134,2023
+1600000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,25,0,134,2023
+1600000,75015,PARIS 15,75,Appartement,24,2,134,2023
+1600000,75015,PARIS 15,75,Appartement,75,3,134,2023
+10500000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,5560,0,1667,2023
+1290000,75012,PARIS 12,75,Maison,98,6,120,2023
+1390000,75013,PARIS 13,75,Appartement,42,2,210,2023
+1390000,75013,PARIS 13,75,Dépendance,0,0,210,2023
+1390000,75013,PARIS 13,75,Appartement,34,2,210,2023
+1390000,75013,PARIS 13,75,Appartement,40,2,210,2023
+1390000,75013,PARIS 13,75,Appartement,42,3,210,2023
+1390000,75013,PARIS 13,75,Local industriel. commercial ou assimilé,171,0,210,2023
+1390000,75013,PARIS 13,75,Appartement,32,2,210,2023
+36100000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,5460,0,1301,2023
+2075000,75014,PARIS 14,75,Maison,165,7,160,2023
+2075000,75014,PARIS 14,75,Dépendance,0,0,160,2023
+2075000,75014,PARIS 14,75,Maison,9,1,160,2023
+1270000,75011,PARIS 11,75,Appartement,32,2,277,2023
+1270000,75011,PARIS 11,75,Appartement,25,1,277,2023
+1270000,75011,PARIS 11,75,Appartement,82,4,277,2023
+1270000,75011,PARIS 11,75,Appartement,33,2,277,2023
+1270000,75011,PARIS 11,75,Appartement,36,2,277,2023
+1270000,75011,PARIS 11,75,Dépendance,0,0,277,2023
+1270000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,48,0,277,2023
+1270000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,27,0,277,2023
+1270000,75011,PARIS 11,75,Appartement,46,2,277,2023
+1270000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,33,0,277,2023
+1270000,75011,PARIS 11,75,Appartement,46,3,277,2023
+1270000,75011,PARIS 11,75,Appartement,47,3,277,2023
+1270000,75011,PARIS 11,75,Appartement,25,2,277,2023
+1270000,75011,PARIS 11,75,Appartement,27,2,277,2023
+1270000,75011,PARIS 11,75,Appartement,34,2,277,2023
+2713550,75014,PARIS 14,75,Maison,168,5,59,2023
+7991512,75016,PARIS 16,75,Maison,380,9,429,2023
+475000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,37,0,58,2023
+475000,75012,PARIS 12,75,Appartement,50,4,58,2023
+1000000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,243,0,121,2023
+1865800,75011,PARIS 11,75,Local industriel. commercial ou assimilé,198,0,180,2023
+18790000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,2029,0,620,2023
+4850000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,60,0,178,2023
+3450000,75006,PARIS 06,75,Appartement,8,1,90,2023
+3450000,75006,PARIS 06,75,Dépendance,0,0,90,2023
+3450000,75006,PARIS 06,75,Appartement,34,2,90,2023
+3450000,75006,PARIS 06,75,Appartement,42,3,90,2023
+3450000,75006,PARIS 06,75,Appartement,19,2,90,2023
+3450000,75006,PARIS 06,75,Appartement,9,1,90,2023
+3450000,75006,PARIS 06,75,Appartement,43,1,90,2023
+3450000,75006,PARIS 06,75,Appartement,10,1,90,2023
+3450000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,95,0,90,2023
+38467200,75007,PARIS 07,75,Local industriel. commercial ou assimilé,1241,0,321,2023
+970000,75015,PARIS 15,75,Dépendance,0,0,8644,2023
+970000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,70,0,8644,2023
+4900000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,17,0,389,2023
+4900000,75016,PARIS 16,75,Maison,263,9,389,2023
+6855000,75005,PARIS 05,75,Dépendance,0,0,334,2023
+6855000,75005,PARIS 05,75,Appartement,28,2,334,2023
+6855000,75005,PARIS 05,75,Appartement,10,1,334,2023
+6855000,75005,PARIS 05,75,Appartement,30,2,334,2023
+6855000,75005,PARIS 05,75,Appartement,18,1,334,2023
+6855000,75005,PARIS 05,75,Appartement,35,3,334,2023
+6855000,75005,PARIS 05,75,Appartement,30,3,334,2023
+6855000,75005,PARIS 05,75,Appartement,46,2,334,2023
+6855000,75005,PARIS 05,75,Appartement,32,2,334,2023
+6855000,75005,PARIS 05,75,Appartement,36,2,334,2023
+6855000,75005,PARIS 05,75,Appartement,12,1,334,2023
+6855000,75005,PARIS 05,75,Appartement,15,1,334,2023
+6855000,75005,PARIS 05,75,Appartement,23,1,334,2023
+6855000,75005,PARIS 05,75,Local industriel. commercial ou assimilé,31,0,334,2023
+6855000,75005,PARIS 05,75,Local industriel. commercial ou assimilé,57,0,334,2023
+6855000,75005,PARIS 05,75,Local industriel. commercial ou assimilé,22,0,334,2023
+6855000,75005,PARIS 05,75,Appartement,23,2,334,2023
+6900000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,751,0,1167,2023
+6900000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,90,0,1167,2023
+6900000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,41,0,1167,2023
+6900000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,99,0,1167,2023
+6900000,75011,PARIS 11,75,Maison,150,6,1167,2023
+69228856,75016,PARIS 16,75,Maison,1237,17,446,2023
+119661248,75016,PARIS 16,75,Local industriel. commercial ou assimilé,5459,0,1104,2023
+1045725,75013,PARIS 13,75,Maison,54,4,32,2023
+23500000,75007,PARIS 07,75,Appartement,62,3,416,2023
+23500000,75007,PARIS 07,75,Maison,465,11,416,2023
+23500000,75007,PARIS 07,75,Dépendance,0,0,416,2023
+550000,75012,PARIS 12,75,Dépendance,0,0,134,2023
+550000,75012,PARIS 12,75,Appartement,40,2,134,2023
+550000,75012,PARIS 12,75,Appartement,31,2,134,2023
+550000,75012,PARIS 12,75,Appartement,34,2,134,2023
+550000,75012,PARIS 12,75,Appartement,34,3,134,2023
+550000,75012,PARIS 12,75,Appartement,45,3,134,2023
+550000,75012,PARIS 12,75,Appartement,78,3,134,2023
+550000,75012,PARIS 12,75,Appartement,55,3,134,2023
+550000,75012,PARIS 12,75,Appartement,50,3,134,2023
+550000,75012,PARIS 12,75,Appartement,54,2,134,2023
+550000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,93,0,134,2023
+4150000,75016,PARIS 16,75,Maison,250,8,268,2023
+25750000,75006,PARIS 06,75,Dépendance,0,0,275,2023
+25750000,75006,PARIS 06,75,Appartement,14,1,275,2023
+25750000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,29,0,275,2023
+25750000,75006,PARIS 06,75,Appartement,110,4,275,2023
+25750000,75006,PARIS 06,75,Appartement,9,1,275,2023
+25750000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,28,0,275,2023
+25750000,75006,PARIS 06,75,Appartement,49,2,275,2023
+25750000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,50,0,275,2023
+25750000,75006,PARIS 06,75,Appartement,115,5,275,2023
+25750000,75006,PARIS 06,75,Appartement,42,2,275,2023
+25750000,75006,PARIS 06,75,Appartement,49,3,275,2023
+1270000,75014,PARIS 14,75,Maison,62,3,87,2023
+1230000,75013,PARIS 13,75,Appartement,15,1,57,2023
+1230000,75013,PARIS 13,75,Local industriel. commercial ou assimilé,80,0,57,2023
+18100000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,1168,0,747,2023
+7140000,75014,PARIS 14,75,Dépendance,0,0,75,2023
+7140000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,167,0,75,2023
+7140000,75014,PARIS 14,75,Appartement,24,1,75,2023
+7140000,75014,PARIS 14,75,Appartement,84,3,173,2023
+7140000,75014,PARIS 14,75,Dépendance,0,0,173,2023
+7140000,75014,PARIS 14,75,Appartement,34,1,173,2023
+7140000,75014,PARIS 14,75,Appartement,43,2,173,2023
+7140000,75014,PARIS 14,75,Appartement,34,2,173,2023
+7140000,75014,PARIS 14,75,Appartement,39,2,173,2023
+7140000,75014,PARIS 14,75,Appartement,48,2,173,2023
+7140000,75014,PARIS 14,75,Appartement,14,1,173,2023
+7140000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,95,0,173,2023
+1195458,75012,PARIS 12,75,Local industriel. commercial ou assimilé,963,0,264,2023
+1195458,75012,PARIS 12,75,Local industriel. commercial ou assimilé,625,0,264,2023
+28200000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,1111,0,309,2023
+620000,75012,PARIS 12,75,Maison,54,3,32,2023
+6721000,75016,PARIS 16,75,Maison,180,6,153,2023
+9690680,75016,PARIS 16,75,Maison,300,14,226,2023
+19500000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,12,0,254,2023
+19500000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,31,0,254,2023
+19500000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,258,0,254,2023
+19500000,75006,PARIS 06,75,Appartement,18,1,254,2023
+19500000,75006,PARIS 06,75,Dépendance,0,0,254,2023
+19500000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,174,0,254,2023
+19500000,75006,PARIS 06,75,Appartement,8,1,254,2023
+19500000,75006,PARIS 06,75,Appartement,142,6,254,2023
+19500000,75006,PARIS 06,75,Appartement,70,4,254,2023
+19500000,75006,PARIS 06,75,Appartement,102,5,254,2023
+19500000,75006,PARIS 06,75,Appartement,72,4,254,2023
+1330000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,640,0,82,2023
+1330000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,7,0,82,2023
+2400000,75013,PARIS 13,75,Appartement,24,1,103,2023
+2400000,75013,PARIS 13,75,Appartement,16,1,103,2023
+2400000,75013,PARIS 13,75,Appartement,14,1,103,2023
+2400000,75013,PARIS 13,75,Appartement,15,1,103,2023
+2400000,75013,PARIS 13,75,Appartement,21,1,103,2023
+8200000,75013,PARIS 13,75,Dépendance,0,0,480,2023
+8200000,75013,PARIS 13,75,Appartement,37,2,480,2023
+8200000,75013,PARIS 13,75,Appartement,40,1,480,2023
+8200000,75013,PARIS 13,75,Appartement,33,2,480,2023
+8200000,75013,PARIS 13,75,Appartement,32,2,480,2023
+8200000,75013,PARIS 13,75,Appartement,102,5,480,2023
+8200000,75013,PARIS 13,75,Appartement,49,3,480,2023
+8200000,75013,PARIS 13,75,Local industriel. commercial ou assimilé,75,0,480,2023
+8200000,75013,PARIS 13,75,Appartement,63,3,480,2023
+8200000,75013,PARIS 13,75,Appartement,29,2,480,2023
+8200000,75013,PARIS 13,75,Appartement,45,2,480,2023
+8200000,75013,PARIS 13,75,Appartement,55,3,480,2023
+8200000,75013,PARIS 13,75,Appartement,50,3,480,2023
+8200000,75013,PARIS 13,75,Appartement,64,3,480,2023
+8200000,75013,PARIS 13,75,Appartement,68,4,480,2023
+8200000,75013,PARIS 13,75,Appartement,22,1,480,2023
+8200000,75013,PARIS 13,75,Appartement,12,1,480,2023
+8200000,75013,PARIS 13,75,Local industriel. commercial ou assimilé,38,0,480,2023
+8200000,75013,PARIS 13,75,Local industriel. commercial ou assimilé,44,0,480,2023
+2675000,75016,PARIS 16,75,Dépendance,0,0,147,2023
+2675000,75016,PARIS 16,75,Appartement,129,5,147,2023
+2675000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,50,0,147,2023
+2675000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,18,0,147,2023
+17500000,75006,PARIS 06,75,Dépendance,0,0,347,2023
+15000,75006,PARIS 06,75,Dépendance,0,0,478,2023
+15000,75006,PARIS 06,75,Appartement,31,2,478,2023
+10500000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,200,0,414,2023
+10500000,75016,PARIS 16,75,Maison,300,4,414,2023
+1800000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,18,0,271,2023
+1800000,75014,PARIS 14,75,Dépendance,0,0,271,2023
+1800000,75014,PARIS 14,75,Appartement,14,1,271,2023
+1800000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,15,0,271,2023
+1800000,75014,PARIS 14,75,Appartement,65,3,271,2023
+1800000,75014,PARIS 14,75,Appartement,35,2,271,2023
+1800000,75014,PARIS 14,75,Appartement,23,1,271,2023
+1800000,75014,PARIS 14,75,Appartement,62,3,271,2023
+1800000,75014,PARIS 14,75,Appartement,54,3,271,2023
+1800000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,139,0,271,2023
+1800000,75014,PARIS 14,75,Appartement,45,2,271,2023
+1800000,75014,PARIS 14,75,Appartement,66,3,271,2023
+1800000,75014,PARIS 14,75,Appartement,40,2,271,2023
+1800000,75014,PARIS 14,75,Appartement,52,3,271,2023
+7700000,75015,PARIS 15,75,Dépendance,0,0,250,2023
+7700000,75015,PARIS 15,75,Appartement,46,3,250,2023
+7700000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,30,0,250,2023
+7700000,75015,PARIS 15,75,Appartement,45,2,250,2023
+7700000,75015,PARIS 15,75,Appartement,39,2,250,2023
+7700000,75015,PARIS 15,75,Appartement,29,2,250,2023
+7700000,75015,PARIS 15,75,Appartement,51,3,250,2023
+7700000,75015,PARIS 15,75,Appartement,42,2,250,2023
+7700000,75015,PARIS 15,75,Appartement,36,3,250,2023
+7700000,75015,PARIS 15,75,Appartement,53,3,250,2023
+7700000,75015,PARIS 15,75,Appartement,41,3,250,2023
+7700000,75015,PARIS 15,75,Appartement,44,3,250,2023
+7700000,75015,PARIS 15,75,Appartement,34,2,250,2023
+7700000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,37,0,250,2023
+7700000,75015,PARIS 15,75,Appartement,15,1,250,2023
+5876000,75016,PARIS 16,75,Maison,250,8,264,2023
+3600000,75016,PARIS 16,75,Appartement,39,2,188,2023
+3600000,75016,PARIS 16,75,Appartement,156,6,188,2023
+3600000,75016,PARIS 16,75,Dépendance,0,0,188,2023
+5120000,75013,PARIS 13,75,Appartement,33,2,159,2023
+5120000,75013,PARIS 13,75,Local industriel. commercial ou assimilé,26,0,159,2023
+5120000,75013,PARIS 13,75,Local industriel. commercial ou assimilé,53,0,159,2023
+5120000,75013,PARIS 13,75,Appartement,55,3,159,2023
+5120000,75013,PARIS 13,75,Appartement,15,1,159,2023
+5120000,75013,PARIS 13,75,Dépendance,0,0,159,2023
+5120000,75013,PARIS 13,75,Appartement,48,3,159,2023
+5120000,75013,PARIS 13,75,Appartement,53,3,159,2023
+5120000,75013,PARIS 13,75,Appartement,51,3,159,2023
+5120000,75013,PARIS 13,75,Appartement,56,3,159,2023
+5120000,75013,PARIS 13,75,Appartement,60,3,159,2023
+5120000,75013,PARIS 13,75,Appartement,47,3,159,2023
+5120000,75013,PARIS 13,75,Appartement,31,2,159,2023
+5120000,75013,PARIS 13,75,Appartement,30,2,159,2023
+10226000,75011,PARIS 11,75,Dépendance,0,0,359,2023
+10226000,75011,PARIS 11,75,Appartement,49,3,359,2023
+10226000,75011,PARIS 11,75,Appartement,39,2,359,2023
+10226000,75011,PARIS 11,75,Appartement,36,2,359,2023
+10226000,75011,PARIS 11,75,Appartement,54,3,359,2023
+10226000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,82,0,359,2023
+10226000,75011,PARIS 11,75,Appartement,11,1,359,2023
+10226000,75011,PARIS 11,75,Appartement,59,3,359,2023
+10226000,75011,PARIS 11,75,Appartement,36,3,359,2023
+10226000,75011,PARIS 11,75,Appartement,45,3,359,2023
+2150000,75016,PARIS 16,75,Dépendance,0,0,74,2023
+8650000,75016,PARIS 16,75,Maison,293,10,285,2023
+14750000,75006,PARIS 06,75,Appartement,40,2,275,2023
+14750000,75006,PARIS 06,75,Appartement,75,4,275,2023
+14750000,75006,PARIS 06,75,Appartement,48,4,275,2023
+14750000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,35,0,275,2023
+14750000,75006,PARIS 06,75,Appartement,10,1,275,2023
+14750000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,43,0,275,2023
+14750000,75006,PARIS 06,75,Appartement,48,3,275,2023
+14750000,75006,PARIS 06,75,Dépendance,0,0,275,2023
+14750000,75006,PARIS 06,75,Appartement,8,1,275,2023
+1300000,75016,PARIS 16,75,Maison,67,3,67,2023
+1305500,75013,PARIS 13,75,Maison,65,5,50,2023
+3850000,75014,PARIS 14,75,Dépendance,0,0,224,2023
+3850000,75014,PARIS 14,75,Appartement,252,9,224,2023
+3850000,75014,PARIS 14,75,Appartement,35,1,224,2023
+3720000,75016,PARIS 16,75,Dépendance,0,0,115,2023
+3720000,75016,PARIS 16,75,Appartement,30,3,115,2023
+3720000,75016,PARIS 16,75,Appartement,11,1,115,2023
+3720000,75016,PARIS 16,75,Appartement,10,1,115,2023
+3720000,75016,PARIS 16,75,Appartement,49,4,115,2023
+3720000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,10,0,115,2023
+3720000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,14,0,115,2023
+3720000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,30,0,115,2023
+3720000,75016,PARIS 16,75,Appartement,31,2,115,2023
+3720000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,90,0,115,2023
+3720000,75016,PARIS 16,75,Appartement,38,3,115,2023
+3720000,75016,PARIS 16,75,Appartement,49,3,115,2023
+1987900,75015,PARIS 15,75,Maison,175,6,81,2023
+1710000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,52,0,34,2023
+3300000,75016,PARIS 16,75,Maison,284,9,252,2023
+23350000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,1072,0,272,2023
+1977000,75016,PARIS 16,75,Maison,138,5,94,2023
+14700000,75016,PARIS 16,75,Appartement,99,4,369,2023
+14700000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,182,0,369,2023
+14700000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,74,0,369,2023
+14700000,75016,PARIS 16,75,Appartement,30,1,369,2023
+14700000,75016,PARIS 16,75,Appartement,115,3,369,2023
+14700000,75016,PARIS 16,75,Appartement,115,4,369,2023
+14700000,75016,PARIS 16,75,Appartement,103,4,369,2023
+14700000,75016,PARIS 16,75,Appartement,22,1,369,2023
+14700000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,55,0,369,2023
+1660500,75013,PARIS 13,75,Maison,152,6,87,2023
+2680000,75013,PARIS 13,75,Dépendance,0,0,194,2023
+2680000,75013,PARIS 13,75,Appartement,59,3,194,2023
+2680000,75013,PARIS 13,75,Appartement,57,3,194,2023
+2680000,75013,PARIS 13,75,Appartement,71,3,194,2023
+2680000,75013,PARIS 13,75,Appartement,86,3,194,2023
+7820204,75016,PARIS 16,75,Maison,240,6,270,2023
+1290000,75014,PARIS 14,75,Dépendance,0,0,104,2023
+1290000,75014,PARIS 14,75,Appartement,7,1,104,2023
+1290000,75014,PARIS 14,75,Appartement,34,3,104,2023
+1290000,75014,PARIS 14,75,Appartement,23,2,104,2023
+1290000,75014,PARIS 14,75,Appartement,19,1,104,2023
+1441300,75013,PARIS 13,75,Maison,119,5,137,2023
+1441300,75013,PARIS 13,75,Local industriel. commercial ou assimilé,21,0,137,2023
+1570000,75015,PARIS 15,75,Maison,75,3,132,2023
+1570000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,83,0,132,2023
+1050000,75014,PARIS 14,75,Maison,52,2,56,2023
+1790000,75014,PARIS 14,75,Appartement,25,2,146,2023
+1790000,75014,PARIS 14,75,Dépendance,0,0,146,2023
+1790000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,57,0,146,2023
+1790000,75014,PARIS 14,75,Appartement,29,2,146,2023
+1790000,75014,PARIS 14,75,Appartement,21,1,146,2023
+1790000,75014,PARIS 14,75,Appartement,50,3,146,2023
+1790000,75014,PARIS 14,75,Appartement,30,2,146,2023
+1790000,75014,PARIS 14,75,Appartement,22,1,146,2023
+28400000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,164,0,1745,2023
+28400000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,9095,0,1745,2023
+6500000,75006,PARIS 06,75,Appartement,243,7,89,2023
+1407500,75014,PARIS 14,75,Maison,130,7,67,2023
+5000000,75005,PARIS 05,75,Dépendance,0,0,162,2023
+5000000,75005,PARIS 05,75,Local industriel. commercial ou assimilé,50,0,162,2023
+5000000,75005,PARIS 05,75,Local industriel. commercial ou assimilé,48,0,162,2023
+5000000,75005,PARIS 05,75,Appartement,48,3,162,2023
+5000000,75005,PARIS 05,75,Appartement,64,3,162,2023
+5000000,75005,PARIS 05,75,Appartement,34,2,162,2023
+5000000,75005,PARIS 05,75,Appartement,49,3,162,2023
+5000000,75005,PARIS 05,75,Appartement,47,3,162,2023
+5000000,75005,PARIS 05,75,Appartement,46,3,162,2023
+5000000,75005,PARIS 05,75,Appartement,12,1,162,2023
+5000000,75005,PARIS 05,75,Appartement,11,1,162,2023
+5000000,75005,PARIS 05,75,Appartement,8,1,162,2023
+5000000,75005,PARIS 05,75,Appartement,19,1,162,2023
+5000000,75005,PARIS 05,75,Appartement,10,1,162,2023
+8250,75016,PARIS 16,75,Appartement,25,1,345,2023
+1839420,75013,PARIS 13,75,Maison,69,4,51,2023
+9000000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,625,0,264,2023
+9000000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,963,0,264,2023
+1000000,75013,PARIS 13,75,Local industriel. commercial ou assimilé,210,0,86,2023
+785000,75015,PARIS 15,75,Maison,39,2,108,2023
+5507000,75014,PARIS 14,75,Appartement,50,3,195,2023
+5507000,75014,PARIS 14,75,Appartement,9,1,195,2023
+5507000,75014,PARIS 14,75,Appartement,83,4,195,2023
+5507000,75014,PARIS 14,75,Appartement,48,3,195,2023
+5507000,75014,PARIS 14,75,Dépendance,0,0,195,2023
+5507000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,71,0,195,2023
+5507000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,50,0,195,2023
+5507000,75014,PARIS 14,75,Appartement,12,1,195,2023
+5507000,75014,PARIS 14,75,Appartement,25,2,195,2023
+5507000,75014,PARIS 14,75,Appartement,68,4,195,2023
+5507000,75014,PARIS 14,75,Appartement,51,3,195,2023
+5507000,75014,PARIS 14,75,Appartement,51,1,195,2023
+5507000,75014,PARIS 14,75,Appartement,51,2,195,2023
+5507000,75014,PARIS 14,75,Appartement,67,4,195,2023
+5507000,75014,PARIS 14,75,Appartement,15,1,195,2023
+5507000,75014,PARIS 14,75,Appartement,26,1,195,2023
+5507000,75014,PARIS 14,75,Appartement,27,2,195,2023
+4696500,75014,PARIS 14,75,Appartement,50,1,136,2023
+4696500,75014,PARIS 14,75,Appartement,41,2,136,2023
+4696500,75014,PARIS 14,75,Appartement,41,1,136,2023
+4696500,75014,PARIS 14,75,Dépendance,0,0,136,2023
+4696500,75014,PARIS 14,75,Local industriel. commercial ou assimilé,85,0,136,2023
+4696500,75014,PARIS 14,75,Appartement,35,2,136,2023
+4696500,75014,PARIS 14,75,Appartement,13,1,136,2023
+4696500,75014,PARIS 14,75,Appartement,39,2,136,2023
+4696500,75014,PARIS 14,75,Appartement,50,3,136,2023
+4696500,75014,PARIS 14,75,Appartement,28,2,136,2023
+60000000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,2579,0,774,2023
+7610400,75016,PARIS 16,75,Maison,255,8,467,2023
+11775189,75014,PARIS 14,75,Maison,496,6,239,2023
+1101000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,115,0,115,2023
+55412172,75014,PARIS 14,75,Appartement,63,3,1063,2023
+55412172,75014,PARIS 14,75,Local industriel. commercial ou assimilé,4565,0,1063,2023
+40000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,1790,0,850,2023
+40000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,1790,0,716,2023
+433605,75013,PARIS 13,75,Maison,86,6,278,2023
+18680000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,1000,0,2702,2023
+18680000,75012,PARIS 12,75,Maison,75,2,2702,2023
+18680000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,800,0,2702,2023
+18680000,75012,PARIS 12,75,Appartement,18,1,2702,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,90,0,514,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,302,0,514,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,93,0,514,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,52,0,514,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,16,0,514,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,125,0,514,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,129,0,514,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,120,0,514,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,304,0,514,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,131,0,514,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,80,0,514,2023
+21665360,75012,PARIS 12,75,Local industriel. commercial ou assimilé,242,0,514,2023
+15174950,75007,PARIS 07,75,Maison,430,13,181,2023
+784088,75012,PARIS 12,75,Appartement,52,2,458,2023
+784088,75012,PARIS 12,75,Appartement,177,6,458,2023
+784088,75012,PARIS 12,75,Dépendance,0,0,458,2023
+784088,75012,PARIS 12,75,Appartement,90,3,458,2023
+784088,75012,PARIS 12,75,Appartement,15,1,458,2023
+784088,75012,PARIS 12,75,Local industriel. commercial ou assimilé,83,0,458,2023
+784088,75012,PARIS 12,75,Local industriel. commercial ou assimilé,106,0,458,2023
+784088,75012,PARIS 12,75,Local industriel. commercial ou assimilé,48,0,458,2023
+784088,75012,PARIS 12,75,Appartement,20,1,458,2023
+784088,75012,PARIS 12,75,Local industriel. commercial ou assimilé,410,0,458,2023
+3478400,75016,PARIS 16,75,Maison,274,7,182,2023
+1300000,75012,PARIS 12,75,Appartement,31,2,26,2023
+1300000,75012,PARIS 12,75,Appartement,28,2,26,2023
+1300000,75012,PARIS 12,75,Appartement,30,2,26,2023
+16800000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,1610,0,381,2023
+5950000,75006,PARIS 06,75,Maison,195,7,104,2023
+3500000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,841,0,272,2023
+2200000,75014,PARIS 14,75,Maison,225,7,116,2023
+9500000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,960,0,1758,2023
+16000000,75016,PARIS 16,75,Dépendance,0,0,750,2023
+16000000,75016,PARIS 16,75,Appartement,29,2,750,2023
+16000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,282,0,750,2023
+16000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,37,0,750,2023
+16000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,14,0,750,2023
+16000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,123,0,750,2023
+16000000,75016,PARIS 16,75,Appartement,42,3,750,2023
+16000000,75016,PARIS 16,75,Appartement,60,4,750,2023
+16000000,75016,PARIS 16,75,Appartement,34,2,750,2023
+16000000,75016,PARIS 16,75,Appartement,33,2,750,2023
+16000000,75016,PARIS 16,75,Appartement,37,2,750,2023
+16000000,75016,PARIS 16,75,Appartement,38,2,750,2023
+16000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,28,0,750,2023
+16000000,75016,PARIS 16,75,Appartement,19,1,750,2023
+16000000,75016,PARIS 16,75,Appartement,9,1,750,2023
+16000000,75016,PARIS 16,75,Appartement,62,3,750,2023
+16000000,75016,PARIS 16,75,Appartement,26,1,750,2023
+16000000,75016,PARIS 16,75,Appartement,35,1,750,2023
+16000000,75016,PARIS 16,75,Appartement,72,3,750,2023
+16000000,75016,PARIS 16,75,Appartement,56,3,750,2023
+16000000,75016,PARIS 16,75,Appartement,66,3,750,2023
+16000000,75016,PARIS 16,75,Appartement,70,3,750,2023
+16000000,75016,PARIS 16,75,Appartement,25,1,750,2023
+16000000,75016,PARIS 16,75,Appartement,13,1,750,2023
+16000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,6,0,750,2023
+16000000,75016,PARIS 16,75,Appartement,57,2,750,2023
+16000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,63,0,750,2023
+16000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,25,0,750,2023
+16000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,7,0,750,2023
+16000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,30,0,750,2023
+16000000,75016,PARIS 16,75,Appartement,18,1,750,2023
+16000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,48,0,750,2023
+16000000,75016,PARIS 16,75,Appartement,63,4,750,2023
+16000000,75016,PARIS 16,75,Appartement,12,2,750,2023
+2175000,75015,PARIS 15,75,Maison,157,5,98,2023
+1000,75016,PARIS 16,75,Dépendance,0,0,339,2023
+16250000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,69,0,300,2023
+16250000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,184,0,300,2023
+16250000,75006,PARIS 06,75,Appartement,190,6,300,2023
+16250000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,64,0,300,2023
+16250000,75006,PARIS 06,75,Appartement,8,1,300,2023
+16250000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,198,0,300,2023
+16250000,75006,PARIS 06,75,Dépendance,0,0,300,2023
+16250000,75006,PARIS 06,75,Appartement,10,1,300,2023
+16250000,75006,PARIS 06,75,Appartement,11,1,300,2023
+16250000,75006,PARIS 06,75,Appartement,50,3,300,2023
+16250000,75006,PARIS 06,75,Appartement,77,2,300,2023
+1750000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,40,0,64,2023
+1750000,75014,PARIS 14,75,Appartement,40,3,64,2023
+1750000,75014,PARIS 14,75,Appartement,50,2,64,2023
+1750000,75014,PARIS 14,75,Appartement,40,2,64,2023
+915000,75014,PARIS 14,75,Dépendance,0,0,113,2023
+915000,75014,PARIS 14,75,Maison,79,4,113,2023
+25000000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,1727,0,389,2023
+1650000,75012,PARIS 12,75,Appartement,30,2,128,2023
+1650000,75012,PARIS 12,75,Appartement,20,1,128,2023
+1650000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,100,0,128,2023
+1650000,75012,PARIS 12,75,Appartement,33,2,128,2023
+1120000,75013,PARIS 13,75,Maison,49,3,126,2023
+18600000,75006,PARIS 06,75,Appartement,128,5,353,2023
+18600000,75006,PARIS 06,75,Appartement,98,5,353,2023
+18600000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,32,0,353,2023
+18600000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,36,0,353,2023
+18600000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,28,0,353,2023
+18600000,75006,PARIS 06,75,Appartement,98,4,353,2023
+18600000,75006,PARIS 06,75,Appartement,60,2,353,2023
+18600000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,103,0,353,2023
+18600000,75006,PARIS 06,75,Appartement,28,1,353,2023
+18600000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,136,0,353,2023
+18600000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,95,0,353,2023
+18600000,75006,PARIS 06,75,Dépendance,0,0,353,2023
+18600000,75006,PARIS 06,75,Appartement,26,1,353,2023
+18600000,75006,PARIS 06,75,Appartement,28,2,353,2023
+18600000,75006,PARIS 06,75,Appartement,45,2,353,2023
+18600000,75006,PARIS 06,75,Appartement,61,3,353,2023
+18600000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,75,0,353,2023
+18600000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,24,0,353,2023
+18600000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,145,0,353,2023
+9493250,75006,PARIS 06,75,Maison,369,8,226,2023
+9493250,75006,PARIS 06,75,Local industriel. commercial ou assimilé,9,0,226,2023
+2680000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,195,0,82,2023
+26260000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,1377,0,1968,2023
+26260000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,129,0,1968,2023
+26260000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,76,0,1968,2023
+26260000,75015,PARIS 15,75,Dépendance,0,0,1968,2023
+26260000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,71,0,1968,2023
+26260000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,93,0,1968,2023
+26260000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,374,0,1968,2023
+26260000,75015,PARIS 15,75,Appartement,50,3,1968,2023
+26260000,75015,PARIS 15,75,Appartement,60,3,1968,2023
+26260000,75015,PARIS 15,75,Appartement,92,5,1968,2023
+26260000,75015,PARIS 15,75,Appartement,62,3,1968,2023
+26260000,75015,PARIS 15,75,Appartement,70,4,1968,2023
+18000,75016,PARIS 16,75,Appartement,10,1,1160,2023
+18000,75016,PARIS 16,75,Dépendance,0,0,1160,2023
+1819000,75013,PARIS 13,75,Maison,120,4,98,2023
+3150000,75014,PARIS 14,75,Maison,180,6,204,2023
+18000000,75007,PARIS 07,75,Dépendance,0,0,322,2023
+18000000,75007,PARIS 07,75,Appartement,38,2,322,2023
+18000000,75007,PARIS 07,75,Appartement,112,5,322,2023
+18000000,75007,PARIS 07,75,Appartement,118,5,322,2023
+18000000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,183,0,322,2023
+18000000,75007,PARIS 07,75,Appartement,14,1,322,2023
+18000000,75007,PARIS 07,75,Appartement,101,4,322,2023
+18000000,75007,PARIS 07,75,Appartement,118,6,322,2023
+18000000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,200,0,322,2023
+18000000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,168,0,322,2023
+18000000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,142,0,322,2023
+385000,75013,PARIS 13,75,Maison,89,4,78,2023
+2713300,75015,PARIS 15,75,Maison,180,6,90,2023
+1,75013,PARIS 13,75,Appartement,62,3,78,2023
+1,75016,PARIS 16,75,Dépendance,0,0,1101,2023
+1,75016,PARIS 16,75,Appartement,45,2,1101,2023
+3120000,75006,PARIS 06,75,Appartement,25,1,78,2023
+3120000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,116,0,78,2023
+3120000,75006,PARIS 06,75,Appartement,45,3,78,2023
+3120000,75006,PARIS 06,75,Appartement,42,3,78,2023
+3120000,75006,PARIS 06,75,Appartement,50,2,78,2023
+3120000,75006,PARIS 06,75,Dépendance,0,0,78,2023
+3120000,75006,PARIS 06,75,Appartement,45,2,78,2023
+3120000,75006,PARIS 06,75,Appartement,65,3,78,2023
+3120000,75006,PARIS 06,75,Appartement,21,2,78,2023
+3000000,75015,PARIS 15,75,Maison,100,4,462,2023
+3000000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,28,0,462,2023
+3000000,75015,PARIS 15,75,Appartement,20,1,462,2023
+3000000,75015,PARIS 15,75,Appartement,22,1,462,2023
+3000000,75015,PARIS 15,75,Appartement,68,4,462,2023
+3000000,75015,PARIS 15,75,Appartement,67,4,462,2023
+3000000,75015,PARIS 15,75,Dépendance,0,0,462,2023
+8972,75013,PARIS 13,75,Dépendance,0,0,1151,2023
+8972,75013,PARIS 13,75,Appartement,45,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,36,1,1151,2023
+8972,75013,PARIS 13,75,Appartement,44,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,51,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,31,2,1151,2023
+8972,75013,PARIS 13,75,Local industriel. commercial ou assimilé,25,0,1151,2023
+8972,75013,PARIS 13,75,Appartement,21,1,1151,2023
+8972,75013,PARIS 13,75,Appartement,33,1,1151,2023
+8972,75013,PARIS 13,75,Appartement,27,1,1151,2023
+8972,75013,PARIS 13,75,Appartement,42,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,26,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,26,1,1151,2023
+8972,75013,PARIS 13,75,Appartement,46,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,25,1,1151,2023
+8972,75013,PARIS 13,75,Appartement,41,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,40,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,43,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,35,1,1151,2023
+8972,75013,PARIS 13,75,Local industriel. commercial ou assimilé,112,0,1151,2023
+8972,75013,PARIS 13,75,Appartement,52,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,31,1,1151,2023
+8972,75013,PARIS 13,75,Appartement,34,1,1151,2023
+8972,75013,PARIS 13,75,Appartement,14,1,1151,2023
+8972,75013,PARIS 13,75,Appartement,48,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,49,2,1151,2023
+8972,75013,PARIS 13,75,Appartement,50,2,1151,2023
+120000000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,4494,0,1624,2023
+1310000,75014,PARIS 14,75,Maison,76,5,123,2023
+1706800,75013,PARIS 13,75,Maison,122,6,152,2023
+6098000,75016,PARIS 16,75,Maison,147,7,296,2023
+750000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,338,0,128,2023
+750000,75014,PARIS 14,75,Appartement,22,1,128,2023
+10120000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,17,0,737,2023
+10120000,75011,PARIS 11,75,Dépendance,0,0,737,2023
+10120000,75011,PARIS 11,75,Appartement,25,2,737,2023
+10120000,75011,PARIS 11,75,Appartement,24,1,737,2023
+10120000,75011,PARIS 11,75,Appartement,43,2,737,2023
+10120000,75011,PARIS 11,75,Appartement,57,3,737,2023
+10120000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,23,0,737,2023
+10120000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,321,0,737,2023
+10120000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,39,0,737,2023
+10120000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,26,0,737,2023
+10120000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,209,0,737,2023
+10120000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,18,0,737,2023
+10120000,75011,PARIS 11,75,Appartement,50,3,737,2023
+10120000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,330,0,737,2023
+10120000,75011,PARIS 11,75,Appartement,29,2,737,2023
+10120000,75011,PARIS 11,75,Appartement,21,2,737,2023
+10120000,75011,PARIS 11,75,Appartement,22,1,737,2023
+10120000,75011,PARIS 11,75,Appartement,28,1,737,2023
+10120000,75011,PARIS 11,75,Appartement,42,2,737,2023
+10120000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,53,0,737,2023
+1915000,75011,PARIS 11,75,Maison,139,7,69,2023
+44000000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,2564,0,496,2023
+4759500,75016,PARIS 16,75,Appartement,32,1,272,2023
+4759500,75016,PARIS 16,75,Appartement,225,7,272,2023
+5100000,75016,PARIS 16,75,Dépendance,0,0,275,2023
+5100000,75016,PARIS 16,75,Appartement,205,5,275,2023
+5100000,75016,PARIS 16,75,Appartement,56,3,275,2023
+1059900,75013,PARIS 13,75,Dépendance,0,0,68,2023
+1059900,75013,PARIS 13,75,Maison,52,4,68,2023
+14250000,75006,PARIS 06,75,Dépendance,0,0,317,2023
+14250000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,143,0,317,2023
+14250000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,35,0,317,2023
+14250000,75006,PARIS 06,75,Appartement,18,1,317,2023
+14250000,75006,PARIS 06,75,Appartement,96,5,317,2023
+14250000,75006,PARIS 06,75,Appartement,90,4,317,2023
+14250000,75006,PARIS 06,75,Appartement,91,3,317,2023
+14250000,75006,PARIS 06,75,Appartement,90,3,317,2023
+14250000,75006,PARIS 06,75,Appartement,32,2,317,2023
+14250000,75006,PARIS 06,75,Appartement,15,1,317,2023
+14250000,75006,PARIS 06,75,Appartement,12,1,317,2023
+14250000,75006,PARIS 06,75,Appartement,6,1,317,2023
+14250000,75006,PARIS 06,75,Appartement,33,2,317,2023
+14250000,75006,PARIS 06,75,Appartement,13,1,317,2023
+14250000,75006,PARIS 06,75,Appartement,37,2,317,2023
+14250000,75006,PARIS 06,75,Appartement,55,3,317,2023
+14250000,75006,PARIS 06,75,Appartement,56,3,317,2023
+14250000,75006,PARIS 06,75,Appartement,47,2,317,2023
+2473500,75012,PARIS 12,75,Dépendance,0,0,269,2023
+2473500,75012,PARIS 12,75,Maison,140,6,269,2023
+2473500,75012,PARIS 12,75,Local industriel. commercial ou assimilé,72,0,269,2023
+12000000,75016,PARIS 16,75,Appartement,29,1,346,2023
+12000000,75016,PARIS 16,75,Appartement,45,1,346,2023
+12000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,83,0,346,2023
+12000000,75016,PARIS 16,75,Dépendance,0,0,346,2023
+12000000,75016,PARIS 16,75,Appartement,108,2,346,2023
+12000000,75016,PARIS 16,75,Appartement,102,3,346,2023
+12000000,75016,PARIS 16,75,Appartement,54,1,346,2023
+12000000,75016,PARIS 16,75,Appartement,125,5,346,2023
+12000000,75016,PARIS 16,75,Appartement,103,4,346,2023
+12000000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,40,0,346,2023
+12000000,75016,PARIS 16,75,Appartement,146,4,346,2023
+12000000,75016,PARIS 16,75,Appartement,145,4,346,2023
+1750000,75015,PARIS 15,75,Local industriel. commercial ou assimilé,912,0,300,2023
+2400000,75011,PARIS 11,75,Appartement,19,1,57,2023
+2400000,75011,PARIS 11,75,Dépendance,0,0,57,2023
+2400000,75011,PARIS 11,75,Appartement,21,1,57,2023
+2400000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,15,0,57,2023
+3100000,75014,PARIS 14,75,Appartement,47,3,167,2023
+3100000,75014,PARIS 14,75,Appartement,49,3,167,2023
+3100000,75014,PARIS 14,75,Appartement,34,2,167,2023
+3100000,75014,PARIS 14,75,Appartement,16,1,167,2023
+3100000,75014,PARIS 14,75,Appartement,42,2,167,2023
+3100000,75014,PARIS 14,75,Appartement,29,1,167,2023
+3100000,75014,PARIS 14,75,Appartement,18,1,167,2023
+3100000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,60,0,167,2023
+8000000,75012,PARIS 12,75,Dépendance,0,0,619,2023
+62600000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,4040,0,781,2023
+62600000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,1627,0,781,2023
+62600000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,0,0,781,2023
+2200000,75014,PARIS 14,75,Maison,95,6,281,2023
+2075645,75014,PARIS 14,75,Dépendance,0,0,201,2023
+2075645,75014,PARIS 14,75,Maison,180,4,201,2023
+19000000,75014,PARIS 14,75,Dépendance,0,0,1246,2023
+19000000,75014,PARIS 14,75,Appartement,56,3,1246,2023
+19000000,75014,PARIS 14,75,Appartement,41,2,1246,2023
+19000000,75014,PARIS 14,75,Appartement,76,4,1246,2023
+19000000,75014,PARIS 14,75,Appartement,59,3,1246,2023
+19000000,75014,PARIS 14,75,Appartement,72,4,1246,2023
+19000000,75014,PARIS 14,75,Appartement,71,4,1246,2023
+19000000,75014,PARIS 14,75,Appartement,62,3,1246,2023
+19000000,75014,PARIS 14,75,Appartement,56,2,1246,2023
+19000000,75014,PARIS 14,75,Appartement,46,2,1246,2023
+19000000,75014,PARIS 14,75,Appartement,66,3,1246,2023
+19000000,75014,PARIS 14,75,Appartement,79,3,1246,2023
+19000000,75014,PARIS 14,75,Appartement,74,3,1246,2023
+19000000,75014,PARIS 14,75,Appartement,60,3,1246,2023
+19000000,75014,PARIS 14,75,Appartement,29,1,1246,2023
+5630000,75011,PARIS 11,75,Appartement,31,1,484,2023
+5630000,75011,PARIS 11,75,Appartement,45,2,484,2023
+5630000,75011,PARIS 11,75,Appartement,47,2,484,2023
+5630000,75011,PARIS 11,75,Appartement,88,3,484,2023
+5630000,75011,PARIS 11,75,Appartement,43,2,484,2023
+5630000,75011,PARIS 11,75,Appartement,30,1,484,2023
+5630000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,134,0,484,2023
+15200000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,1108,0,205,2023
+3050000,75011,PARIS 11,75,Appartement,75,3,196,2023
+3050000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,350,0,196,2023
+36500000,75016,PARIS 16,75,Appartement,218,6,919,2023
+36500000,75016,PARIS 16,75,Appartement,231,6,919,2023
+36500000,75016,PARIS 16,75,Dépendance,0,0,919,2023
+36500000,75016,PARIS 16,75,Appartement,134,3,919,2023
+36500000,75016,PARIS 16,75,Appartement,186,5,919,2023
+36500000,75016,PARIS 16,75,Appartement,145,5,919,2023
+36500000,75016,PARIS 16,75,Appartement,151,5,919,2023
+36500000,75016,PARIS 16,75,Appartement,157,4,919,2023
+36500000,75016,PARIS 16,75,Appartement,265,5,919,2023
+36500000,75016,PARIS 16,75,Appartement,156,5,919,2023
+36500000,75016,PARIS 16,75,Appartement,136,3,919,2023
+36500000,75016,PARIS 16,75,Appartement,228,6,919,2023
+36500000,75016,PARIS 16,75,Appartement,278,5,919,2023
+36500000,75016,PARIS 16,75,Appartement,147,6,919,2023
+36500000,75016,PARIS 16,75,Appartement,50,2,919,2023
+36500000,75016,PARIS 16,75,Appartement,17,2,919,2023
+36500000,75016,PARIS 16,75,Appartement,138,4,919,2023
+36500000,75016,PARIS 16,75,Appartement,157,5,919,2023
+36500000,75016,PARIS 16,75,Appartement,134,5,919,2023
+36500000,75016,PARIS 16,75,Appartement,137,4,919,2023
+36500000,75016,PARIS 16,75,Appartement,78,4,919,2023
+36500000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,11,0,919,2023
+36500000,75016,PARIS 16,75,Appartement,107,4,919,2023
+6850000,75011,PARIS 11,75,Appartement,14,1,217,2023
+6850000,75011,PARIS 11,75,Appartement,16,1,217,2023
+6850000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,24,0,217,2023
+6850000,75011,PARIS 11,75,Appartement,19,1,217,2023
+6850000,75011,PARIS 11,75,Appartement,33,2,217,2023
+6850000,75011,PARIS 11,75,Appartement,29,2,217,2023
+6850000,75011,PARIS 11,75,Appartement,48,3,217,2023
+6850000,75011,PARIS 11,75,Appartement,83,4,217,2023
+6850000,75011,PARIS 11,75,Appartement,67,4,217,2023
+6850000,75011,PARIS 11,75,Dépendance,0,0,217,2023
+6850000,75011,PARIS 11,75,Appartement,34,2,217,2023
+6850000,75011,PARIS 11,75,Appartement,7,1,217,2023
+6850000,75011,PARIS 11,75,Appartement,9,1,217,2023
+6850000,75011,PARIS 11,75,Appartement,11,1,217,2023
+6850000,75011,PARIS 11,75,Appartement,15,1,217,2023
+6850000,75011,PARIS 11,75,Appartement,30,2,217,2023
+6850000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,35,0,217,2023
+6850000,75011,PARIS 11,75,Appartement,20,1,217,2023
+9426000,75011,PARIS 11,75,Dépendance,0,0,610,2023
+9426000,75011,PARIS 11,75,Appartement,113,5,610,2023
+9426000,75011,PARIS 11,75,Appartement,80,3,610,2023
+9426000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,24,0,610,2023
+9426000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,73,0,610,2023
+9426000,75011,PARIS 11,75,Appartement,36,2,610,2023
+9426000,75011,PARIS 11,75,Appartement,70,3,610,2023
+9426000,75011,PARIS 11,75,Appartement,101,5,610,2023
+4500000,75016,PARIS 16,75,Dépendance,0,0,166,2023
+4500000,75016,PARIS 16,75,Maison,265,9,166,2023
+13000000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,10,0,303,2023
+13000000,75006,PARIS 06,75,Appartement,8,1,303,2023
+7000000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,1327,0,349,2023
+4800000,75015,PARIS 15,75,Appartement,33,2,164,2023
+4800000,75015,PARIS 15,75,Appartement,29,2,164,2023
+4800000,75015,PARIS 15,75,Appartement,43,3,164,2023
+4800000,75015,PARIS 15,75,Appartement,30,2,164,2023
+4800000,75015,PARIS 15,75,Appartement,34,2,164,2023
+4800000,75015,PARIS 15,75,Appartement,16,1,164,2023
+4800000,75015,PARIS 15,75,Appartement,17,2,164,2023
+4800000,75015,PARIS 15,75,Appartement,21,2,164,2023
+4800000,75015,PARIS 15,75,Appartement,11,1,164,2023
+4800000,75015,PARIS 15,75,Dépendance,0,0,164,2023
+4800000,75015,PARIS 15,75,Appartement,54,3,164,2023
+4800000,75015,PARIS 15,75,Appartement,39,3,164,2023
+63000000,75012,PARIS 12,75,Appartement,80,4,3604,2023
+63000000,75012,PARIS 12,75,Appartement,37,1,3604,2023
+63000000,75012,PARIS 12,75,Appartement,58,2,3604,2023
+63000000,75012,PARIS 12,75,Dépendance,0,0,3604,2023
+63000000,75012,PARIS 12,75,Appartement,35,1,3604,2023
+63000000,75012,PARIS 12,75,Appartement,85,4,3604,2023
+63000000,75012,PARIS 12,75,Appartement,120,6,3604,2023
+63000000,75012,PARIS 12,75,Appartement,23,1,3604,2023
+63000000,75012,PARIS 12,75,Appartement,68,3,3604,2023
+63000000,75012,PARIS 12,75,Appartement,15,1,3604,2023
+63000000,75012,PARIS 12,75,Appartement,25,1,3604,2023
+63000000,75012,PARIS 12,75,Appartement,63,3,3604,2023
+63000000,75012,PARIS 12,75,Appartement,22,1,3604,2023
+63000000,75012,PARIS 12,75,Appartement,93,4,3604,2023
+63000000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,17,0,3604,2023
+63000000,75012,PARIS 12,75,Appartement,48,2,3604,2023
+63000000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,58,0,3604,2023
+63000000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,275,0,3604,2023
+63000000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,744,0,3604,2023
+10350000,75011,PARIS 11,75,Appartement,106,4,523,2023
+10350000,75011,PARIS 11,75,Local industriel. commercial ou assimilé,530,0,523,2023
+4618000,75012,PARIS 12,75,Local industriel. commercial ou assimilé,400,0,83,2023
+91000000,75013,PARIS 13,75,Appartement,70,3,5508,2023
+91000000,75013,PARIS 13,75,Dépendance,0,0,5508,2023
+91000000,75013,PARIS 13,75,Appartement,57,2,5508,2023
+91000000,75013,PARIS 13,75,Appartement,116,5,5508,2023
+91000000,75013,PARIS 13,75,Appartement,100,4,5508,2023
+91000000,75013,PARIS 13,75,Appartement,85,4,5508,2023
+91000000,75013,PARIS 13,75,Appartement,14,1,5508,2023
+91000000,75013,PARIS 13,75,Appartement,50,2,5508,2023
+91000000,75013,PARIS 13,75,Appartement,86,4,5508,2023
+91000000,75013,PARIS 13,75,Appartement,52,2,5508,2023
+91000000,75013,PARIS 13,75,Appartement,17,1,5508,2023
+91000000,75013,PARIS 13,75,Appartement,13,1,5508,2023
+91000000,75013,PARIS 13,75,Appartement,49,2,5508,2023
+91000000,75013,PARIS 13,75,Appartement,13,2,5508,2023
+91000000,75013,PARIS 13,75,Local industriel. commercial ou assimilé,574,0,5508,2023
+91000000,75013,PARIS 13,75,Appartement,75,3,5508,2023
+91000000,75013,PARIS 13,75,Local industriel. commercial ou assimilé,138,0,5508,2023
+91000000,75013,PARIS 13,75,Appartement,116,4,5508,2023
+91000000,75013,PARIS 13,75,Appartement,58,2,5508,2023
+8450000,75007,PARIS 07,75,Dépendance,0,0,172,2023
+8450000,75007,PARIS 07,75,Appartement,101,5,172,2023
+8450000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,0,0,172,2023
+8450000,75007,PARIS 07,75,Appartement,27,1,172,2023
+8450000,75007,PARIS 07,75,Appartement,17,1,172,2023
+8450000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,60,0,172,2023
+8450000,75007,PARIS 07,75,Local industriel. commercial ou assimilé,39,0,172,2023
+4080000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,43,0,91,2023
+4080000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,42,0,91,2023
+4080000,75006,PARIS 06,75,Appartement,70,4,91,2023
+4080000,75006,PARIS 06,75,Appartement,40,2,91,2023
+4080000,75006,PARIS 06,75,Dépendance,0,0,91,2023
+46500000,75016,PARIS 16,75,Maison,3160,20,1475,2023
+46500000,75016,PARIS 16,75,Local industriel. commercial ou assimilé,0,0,1475,2023
+4379000,75016,PARIS 16,75,Maison,280,6,106,2023
+3403100,75011,PARIS 11,75,Appartement,126,4,65,2023
+3403100,75011,PARIS 11,75,Dépendance,0,0,65,2023
+3403100,75011,PARIS 11,75,Appartement,142,6,65,2023
+2670000,75013,PARIS 13,75,Appartement,180,5,223,2023
+2670000,75013,PARIS 13,75,Local industriel. commercial ou assimilé,47,0,223,2023
+2670000,75013,PARIS 13,75,Dépendance,0,0,223,2023
+1763000,75012,PARIS 12,75,Appartement,30,2,26,2023
+1763000,75012,PARIS 12,75,Appartement,28,2,26,2023
+1763000,75012,PARIS 12,75,Appartement,31,2,26,2023
+24000000,75016,PARIS 16,75,Dépendance,0,0,802,2023
+24000000,75016,PARIS 16,75,Appartement,237,7,802,2023
+24000000,75016,PARIS 16,75,Appartement,349,8,802,2023
+24000000,75016,PARIS 16,75,Appartement,236,8,802,2023
+24000000,75016,PARIS 16,75,Appartement,236,3,802,2023
+24000000,75016,PARIS 16,75,Appartement,130,3,802,2023
+24000000,75016,PARIS 16,75,Appartement,242,5,802,2023
+24000000,75016,PARIS 16,75,Appartement,129,3,802,2023
+24000000,75016,PARIS 16,75,Appartement,360,7,802,2023
+24000000,75016,PARIS 16,75,Appartement,124,3,802,2023
+5400000,75014,PARIS 14,75,Appartement,45,2,191,2023
+5400000,75014,PARIS 14,75,Appartement,36,2,191,2023
+5400000,75014,PARIS 14,75,Appartement,43,2,191,2023
+5400000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,40,0,191,2023
+5400000,75014,PARIS 14,75,Local industriel. commercial ou assimilé,77,0,191,2023
+5400000,75014,PARIS 14,75,Appartement,20,1,191,2023
+5400000,75014,PARIS 14,75,Dépendance,0,0,191,2023
+5400000,75014,PARIS 14,75,Appartement,35,2,191,2023
+5400000,75014,PARIS 14,75,Appartement,65,3,191,2023
+5400000,75014,PARIS 14,75,Appartement,65,2,191,2023
+5400000,75014,PARIS 14,75,Appartement,102,4,191,2023
+5400000,75014,PARIS 14,75,Appartement,23,2,191,2023
+5400000,75014,PARIS 14,75,Appartement,21,1,191,2023
+1153200,75016,PARIS 16,75,Dépendance,0,0,115,2023
+1153200,75016,PARIS 16,75,Local industriel. commercial ou assimilé,10,0,115,2023
+1153200,75016,PARIS 16,75,Local industriel. commercial ou assimilé,14,0,115,2023
+1153200,75016,PARIS 16,75,Appartement,11,1,115,2023
+1153200,75016,PARIS 16,75,Appartement,30,3,115,2023
+1153200,75016,PARIS 16,75,Appartement,49,4,115,2023
+1153200,75016,PARIS 16,75,Appartement,49,3,115,2023
+1153200,75016,PARIS 16,75,Appartement,10,1,115,2023
+1153200,75016,PARIS 16,75,Appartement,38,3,115,2023
+1153200,75016,PARIS 16,75,Local industriel. commercial ou assimilé,90,0,115,2023
+1153200,75016,PARIS 16,75,Appartement,31,2,115,2023
+1153200,75016,PARIS 16,75,Local industriel. commercial ou assimilé,30,0,115,2023
+47000000,75006,PARIS 06,75,Dépendance,0,0,747,2023
+47000000,75006,PARIS 06,75,Appartement,92,4,747,2023
+47000000,75006,PARIS 06,75,Appartement,47,2,747,2023
+47000000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,375,0,747,2023
+47000000,75006,PARIS 06,75,Appartement,37,2,747,2023
+47000000,75006,PARIS 06,75,Appartement,72,3,747,2023
+47000000,75006,PARIS 06,75,Appartement,8,1,747,2023
+47000000,75006,PARIS 06,75,Appartement,91,4,747,2023
+47000000,75006,PARIS 06,75,Appartement,20,2,747,2023
+47000000,75006,PARIS 06,75,Appartement,36,3,747,2023
+47000000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,610,0,747,2023
+47000000,75006,PARIS 06,75,Appartement,85,4,747,2023
+47000000,75006,PARIS 06,75,Appartement,82,3,747,2023
+47000000,75006,PARIS 06,75,Appartement,65,4,747,2023
+47000000,75006,PARIS 06,75,Appartement,39,3,625,2023
+47000000,75006,PARIS 06,75,Appartement,154,5,625,2023
+47000000,75006,PARIS 06,75,Appartement,239,6,625,2023
+47000000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,571,0,625,2023
+47000000,75006,PARIS 06,75,Appartement,25,2,625,2023
+47000000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,299,0,625,2023
+47000000,75006,PARIS 06,75,Appartement,37,2,625,2023
+47000000,75006,PARIS 06,75,Appartement,37,1,625,2023
+47000000,75006,PARIS 06,75,Appartement,78,3,625,2023
+47000000,75006,PARIS 06,75,Appartement,24,2,625,2023
+47000000,75006,PARIS 06,75,Appartement,220,8,625,2023
+47000000,75006,PARIS 06,75,Local industriel. commercial ou assimilé,239,0,625,2023
+47000000,75006,PARIS 06,75,Appartement,239,8,625,2023
+47000000,75006,PARIS 06,75,Dépendance,0,0,625,2023
+47000000,75006,PARIS 06,75,Appartement,51,3,625,2023

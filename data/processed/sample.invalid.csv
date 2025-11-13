@@ -1,2 +1,0 @@
-property_value,postal_code,department_code,town_code,property_type_code,building_area,main_rooms,land_area,error_columns
-200000,75002,75,102,1,-10,2,0,['building_area']

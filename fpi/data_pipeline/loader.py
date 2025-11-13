@@ -26,10 +26,6 @@ def load_all_csv(data_root: str = "data/cleaned") -> pd.DataFrame:
         "building_area",
         "main_rooms",
         "land_area",
-        "postal_code",
-        "department_code",
-        "town_code",
-        "property_type_code",
     ]
 
     for file in all_files:

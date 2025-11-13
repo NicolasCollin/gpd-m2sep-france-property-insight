@@ -25,14 +25,12 @@ class TestRunPrediction:
             mock_predict.return_value: float = 250000.0
 
             postal: str = "75005"
-            dept: str = "75"
-            town: str = "75101"
             prop_type: str = "House"
             area: float = 120.0
             rooms: int = 4
             land: float = 50.0
 
-            result: str = run_prediction(postal, dept, town, prop_type, area, rooms, land)
+            result: str = run_prediction(postal, prop_type, area, rooms, land)
 
         assert result.startswith("Estimated property price")
         assert "250,000" in result
@@ -42,14 +40,12 @@ class TestRunPrediction:
         Should return a validation error when postal code is invalid.
         """
         postal: str = "7500"  # invalid postal
-        dept: str = "75"
-        town: str = "75101"
         prop_type: str = "House"
         area: float = 100.0
         rooms: int = 3
         land: float = 50.0
 
-        result: str = run_prediction(postal, dept, town, prop_type, area, rooms, land)
+        result: str = run_prediction(postal, prop_type, area, rooms, land)
 
         assert "postal code" in result.lower()
 
@@ -61,14 +57,12 @@ class TestRunPrediction:
             mock_predict.side_effect: Exception = Exception("Model file not found")
 
             postal: str = "75001"
-            dept: str = "75"
-            town: str = "75101"
             prop_type: str = "Apartment"
             area: float = 80.0
             rooms: int = 2
             land: float = 20.0
 
-            result: str = run_prediction(postal, dept, town, prop_type, area, rooms, land)
+            result: str = run_prediction(postal, prop_type, area, rooms, land)
 
         assert result.startswith("Prediction failed")
         assert "Model file not found" in result
@@ -80,7 +74,7 @@ class TestRunPrediction:
         with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
             mock_predict.return_value: float = 1.0
 
-            result: str = run_prediction("75005", "75", "75101", "House", 100.0, 3, 50.0)
+            result: str = run_prediction("75005", "House", 100.0, 3, 50.0)
 
         assert "1" in result
 
@@ -91,23 +85,21 @@ class TestRunPrediction:
         with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
             mock_predict.return_value: float = 2.0
 
-            result: str = run_prediction("75005", "75", "75101", "Apartment", 100.0, 3, 50.0)
+            result: str = run_prediction("75005", "Apartment", 100.0, 3, 50.0)
 
         assert "2" in result
 
     def test_missing_required_fields(self) -> None:
         """
-        Should return an error when required fields (postal, dept, town) are missing.
+        Should return an error when required fields (postal) are missing.
         """
         postal: str = ""
-        dept: str = ""
-        town: str = ""
         prop_type: str = "House"
         area: float = 100.0
         rooms: int = 3
         land: float = 50.0
 
-        result: str = run_prediction(postal, dept, town, prop_type, area, rooms, land)
+        result: str = run_prediction(postal, prop_type, area, rooms, land)
 
         assert "postal code" in result.lower() or "required" in result.lower()
 

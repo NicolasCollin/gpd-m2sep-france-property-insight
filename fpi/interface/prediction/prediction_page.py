@@ -4,13 +4,11 @@ from fpi.interface.prediction.form import get_form, reset_form, validate_inputs
 from fpi.models.predict import predict_price
 
 
-def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: float, rooms: int, land: float) -> str:
+def run_prediction(postal: str, prop_type: str, area: float, rooms: int, land: float) -> str:
     """
     Call backs for the "Estimate" button. It prepares the data and calls the model prediction function.
     Args:
         postal: Postal code (string).
-        dept: Department code (string).
-        town: Town code (string).
         prop_type: Property type ("House" / "Apartment").
         area: Living area in square
         rooms: Number of rooms (integer).
@@ -19,7 +17,7 @@ def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: floa
         A string with the predicted price or an error message.
     """
 
-    error_msg: str = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+    error_msg: str = validate_inputs(postal, prop_type, area, rooms, land)
     if error_msg:
         return error_msg
 
@@ -32,8 +30,6 @@ def run_prediction(postal: str, dept: str, town: str, prop_type: str, area: floa
         "land_area": float(land),
         "postal_code": int(postal),
         "property_type_code": property_type_code,
-        "town_code": int(town),
-        "department_code": int(dept),
     }
 
     model_path: str = "fpi/models/random_forest.joblib"
@@ -60,7 +56,7 @@ def get_prediction_page() -> tuple[gr.components.Button, gr.components.Button, g
 
     with gr.Column():
         gr.Markdown("## Estimate the property value", elem_classes="page-title")
-        gr.Markdown("Enter the characteristics of the property to get an estimated price.")
+        gr.Markdown("Enter the characteristics of the property to get an estimated price.", elem_classes="page-subtitle")
 
         with gr.Column(elem_classes="glass-box"):
             # form inputs

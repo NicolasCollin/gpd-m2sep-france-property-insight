@@ -34,7 +34,7 @@ from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 
-from fpi.utils.constants import DEFAULT_TEST_SIZE, RANDOM_STATE
+from fpi.utils.constants import DEFAULT_TEST_SIZE, PREDICTION_CATEGORIC_INPUTS, PREDICTION_NUMERIC_INPUTS, RANDOM_STATE
 
 
 def load_csv_folder(folder_path: str) -> pd.DataFrame:
@@ -63,6 +63,12 @@ def process_data_for_lm(df: pd.DataFrame) -> pd.DataFrame:
 
     Returns:
         - pd.DataFrame: Cleaned DataFrame with numeric columns and log-transformed target.
+
+    Example:
+    >>> df = pd.DataFrame({'property_value': ['100,0','200,0'], 'building_area':[50, 60], 'main_rooms':[2,3], 'land_area':[10,20]})
+    >>> df_processed = process_data_for_lm(df)
+    >>> df_processed['log_value'].round(2).tolist()
+    [4.61, 5.3]
     """
 
     # Convert comma decimal to dot and cast to float
@@ -265,8 +271,8 @@ def mock_build_lm() -> None:
     """
     folder_path: str = "data/cleaned/cleaned2024"
     model_path: str = "fpi/models/linear_model.joblib"
-    numeric_features: list[str] = ["building_area", "main_rooms", "land_area"]
-    categorical_features: list[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
+    numeric_features: list[str] = PREDICTION_NUMERIC_INPUTS
+    categorical_features: list[str] = PREDICTION_CATEGORIC_INPUTS
     target_col: str = "log_value"
 
     build_lm(
@@ -286,8 +292,8 @@ def mock_build_ridge() -> None:
     """
     folder_path: str = "data/cleaned/cleaned2024"
     model_path: str = "fpi/models/ridge_model.joblib"
-    numeric_features: list[str] = ["building_area", "main_rooms", "land_area"]
-    categorical_features: list[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
+    numeric_features: list[str] = PREDICTION_NUMERIC_INPUTS
+    categorical_features: list[str] = PREDICTION_CATEGORIC_INPUTS
     target_col: str = "log_value"
     alpha: float = 10.0
 

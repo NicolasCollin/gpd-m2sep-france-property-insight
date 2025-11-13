@@ -17,7 +17,19 @@ global_css = """
     padding: 0 !important;
     position: relative;
     min-height: 100vh;
+    color-scheme: light only !important;
 }
+
+=/* ----- Dark / Light mode adaptation ----- */
+
+.page-title,
+.page-subtitle,
+.search-title,
+.feature-title,
+.prediction-result {
+    color: inherit !important;
+}
+
 
 /* --- HEADER --- */
 #navbar {
@@ -37,13 +49,17 @@ global_css = """
     margin-right: 10px;
     border: none;
     box-shadow: none;
+    vertical-align: middle;
 }
 
 #logo-title {
     font-size: 20px;
     font-weight: bold;
     color: #0170bc;
+    display: flex;
+    align-items: center;
 }
+
 
 /* Navigation links */
 #nav-links {
@@ -56,7 +72,7 @@ global_css = """
 }
 
 /* ---- NAVBAR BUTTONS ---- */
-#nav-links button {
+#nav-links .nav-links-button {
     padding: 12px 25px !important;
     font-size: 14px !important;
     color: #000 !important;
@@ -74,7 +90,7 @@ global_css = """
 }
 
 
-#nav-links button:hover {
+#nav-links .nav-links-button:hover {
     background: linear-gradient(292deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%) !important;
     color: white !important;
     border-color: transparent !important;
@@ -90,10 +106,20 @@ global_css = """
     padding: 2rem !important;
 }
 
-h2.page-title {
+.page-title {
     font-size: 2.5rem;
-    color: #333;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
     margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #555;
 }
 
 /* ============ HOME PAGE STYLES ============ */
@@ -162,7 +188,7 @@ h2.page-title {
     transform: translateX(-50%);
     opacity: 0;
     font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(0deg, #ffe047 0%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -208,12 +234,14 @@ h2.page-title {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    color: white !important;
 }
 
 .stat-label {
     font-size: 1rem;
     opacity: 0.8;
     font-weight: 300;
+    color: white !important;
 }
 
 /* ----- Search section ----- */
@@ -233,7 +261,7 @@ h2.page-title {
 
 .search-title {
     font-size: 2rem;
-    color: #2c3e50;
+    color: #000;
     margin-bottom: 2rem;
     font-weight: 600;
 }
@@ -296,7 +324,7 @@ h2.page-title {
     width: 100%;
 }
 
-/* Feature cards */
+/* ==== Feature cards ==== */
 .feature-card {
     background: white;
     padding: 2.5rem 2rem;
@@ -315,27 +343,24 @@ h2.page-title {
     font-family: 'Inter', system-ui, sans-serif;
     color: #2c3e50;
     white-space: pre-line;
-    line-height: 1.8;
-    font-size: 1rem;
-    font-weight: 400;
+    line-height: 1.4;
+    font-size: 15px;
+    font-weight: 500;
 }
+
+.feature-title {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
 
 .feature-card:hover {
     transform: translateY(-5px) !important;
     box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     color: white !important;
-}
-
-/* Title and icon */
-.feature-card::first-line {
-    font-size: 1.8rem !important;
-    font-weight: 700 !important;
-    font-family: 'Inter', system-ui, sans-serif !important;
-    margin-bottom: 1rem !important;
-    line-height: 1.2 !important;
-    /* Forcer l'affichage */
-    display: block !important;
 }
 
 /* Responsive design */
@@ -358,19 +383,34 @@ h2.page-title {
     }
 }
 
-@media (prefers-color-scheme: light) {
-  h {
-    color: black !important;
-    background-color: white !important;
-  }
+/*=========== PREDICTION PAGE ===========*/
+.prediction-result {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: #333;
 }
 
-@media (prefers-color-scheme: dark) {
-  h2, page-title {
+/* === PAGE DASHBOARD === */
+footer { display: none !important; }
+
+/* === TABS === */
+.tab-nav button { color: black !important; }
+.tab-nav button.selected {
     color: black !important;
-    background-color: white !important;
-  }
+    border-bottom: 2px solid blue !important;
 }
+
+.page-title *,
+.page-subtitle *,
+.search-title *,
+.feature-title *,
+.prediction-result * {
+    color: inherit !important;
+}
+
+
 """
 
 
@@ -430,26 +470,26 @@ def app_menu() -> gr.Blocks:
                     value="docs/fpi-logo.png",
                     type="pil",
                     show_label=False,
-                    elem_id="logo",
+                    elem_id="logo-image",
                     container=False,
                     interactive=False,
                     show_download_button=False,
                     show_fullscreen_button=False,
                     show_share_button=False,
-                    height=100,
+                    height=90,
                 )
 
             # Right section: navigation links
             with gr.Column(scale=9):
                 with gr.Row(elem_id="nav-links"):
-                    nav_home: gr.Button = gr.Button("Home", elem_id="nav-home")
-                    nav_dashboard: gr.Button = gr.Button("Dashboard", elem_id="nav-dashboard")
-                    nav_estimate: gr.Button = gr.Button("Estimation", elem_id="nav-estimate")
+                    nav_home: gr.Button = gr.Button("Home", elem_classes="nav-links-button")
+                    nav_dashboard: gr.Button = gr.Button("Dashboard", elem_classes="nav-links-button")
+                    nav_estimate: gr.Button = gr.Button("Estimation", elem_classes="nav-links-button")
                     nav_api_docs: gr.Button = gr.Button(
-                        "API Docs", elem_id="nav-api-docs", link="https://france-property-insight-docs.onrender.com/fpi.html"
+                        "API Docs", link="https://france-property-insight-docs.onrender.com/fpi.html", elem_classes="nav-links-button"
                     )
                     nav_gitlab: gr.Button = gr.Button(
-                        "GitLab", elem_id="nav-gitlab", link="https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight"
+                        "GitLab", link="https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight", elem_classes="nav-links-button"
                     )
 
         # Home page
@@ -485,7 +525,7 @@ def app_menu() -> gr.Blocks:
         # Homepage cards navigation
         dashboard_card.click(fn=show_page, inputs=gr.State("dashboard"), outputs=all_pages)
         estimation_card.click(fn=show_page, inputs=gr.State("prediction"), outputs=all_pages)
-        about_card.click(fn=lambda: gr.Info("Page À propos - En développement"), inputs=None, outputs=None)
+        about_card.click(fn=lambda: gr.Info("Coming soon"), inputs=None, outputs=None)
 
         # Search + Dashboard logic
         def navigate_to_dashboard(department: str | None) -> list[Any]:

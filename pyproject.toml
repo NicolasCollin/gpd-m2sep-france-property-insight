@@ -55,9 +55,6 @@ select = ["E", "F", "I"]
 [tool.mypy]
 ignore_missing_imports = true
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-
 # ignore brotli 1.1.0 issue because necessary for curent gradio version
 [tool.pip_audit]
 ignore = ["GHSA-2qfp-q593-8484"]
@@ -75,6 +72,7 @@ typecheck = "fpi.utils.aliases:typecheck"
 audit = "fpi.utils.aliases:audit"
 # unit tests, doctests, behave tests, local CI check
 test = "fpi.utils.aliases:test"
+behav = "fpi.utils.aliases:run_behave"
 ci = "fpi.utils.aliases:ci"
 # API documentation
 apidoc = "fpi.utils.aliases:apidoc"
@@ -83,5 +81,9 @@ apidocsave = "fpi.utils.aliases:apidocsave"
 exp = "fpi.analysis.explore:explore"
 buildridge = "fpi.models.build_linear_model:mock_build_ridge"
 buildlm = "fpi.models.build_linear_model:mock_build_lm"
+buildrf = "fpi.models.build_random_forest:mock_build_random_forest"
 predictlm = "fpi.models.build_linear_model:mock_predict_price"
+predictrf = "fpi.models.predict:mock_predict_price"
 validation = "fpi.data_pipeline.validation:main"
+clean = "fpi.data_pipeline.clean_data:clean_data"
+process = "fpi.data_pipeline.process_data:process_data"
