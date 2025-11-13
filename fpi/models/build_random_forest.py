@@ -9,6 +9,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
 
+from fpi.utils.constants import PREDICTION_CATEGORIC_INPUTS, PREDICTION_NUMERIC_INPUTS
+
 
 def load_data_from_folder(folder_path: str, pattern: str = "*_2024.csv") -> pd.DataFrame:
     files = sorted(Path(folder_path).rglob(pattern))
@@ -94,27 +96,27 @@ def mock_predict_price():
     print(f"Predicted price: €{predicted_price:,.0f}")
 
 
-def main():
-    folder_path = "data/cleaned/cleaned2024"
-    model_path = "fpi/models/random_forest.joblib"
-    target_col = "property_value"
+def mock_build_random_forest():
+    folder_path: Path = "data/cleaned/cleaned2024"
+    model_path: Path = "fpi/models/random_forest.joblib"
+    target_col: str = "property_value"
 
-    cat_cols = ["postal_code", "department_code", "town_code", "property_type_code"]
-    num_cols = ["building_area", "main_rooms", "land_area"]
-    feature_cols = cat_cols + num_cols
+    num_cols: list[str] = PREDICTION_NUMERIC_INPUTS
+    cat_cols: list[str] = PREDICTION_CATEGORIC_INPUTS
+    feature_cols: list[str] = cat_cols + num_cols
 
-    df = load_data_from_folder(folder_path)
+    df: pd.DataFrame = load_data_from_folder(folder_path)
     df = prepare_target(df, target_col)
     X_train, X_test, y_train, y_test = split_features_target(df, target_col, feature_cols)
 
-    preprocessor = build_preprocessor(cat_cols, num_cols)
-    model = build_random_forest(preprocessor)
-
+    preprocessor: ColumnTransformer = build_preprocessor(cat_cols, num_cols)
+    model: Pipeline = build_random_forest(preprocessor)
     model = train_model(model, X_train, y_train)
+
     evaluate_model(model, X_test, y_test)
     save_model(model, model_path)
 
 
 if __name__ == "__main__":
-    main()
+    mock_build_random_forest()
     mock_predict_price()

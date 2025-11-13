@@ -23,6 +23,18 @@ VARS_TO_KEEP: list[str] = [
     "land_area",
 ]
 
+# variables that our models and predictions run on
+PREDICTION_NUMERIC_INPUTS: list[str] = [
+    "building_area",
+    "main_rooms",
+    "land_area",
+]
+
+PREDICTION_CATEGORIC_INPUTS: list[str] = [
+    "postal_code",
+    "property_type_code",
+]
+
 # Numeric columns for preprocessing and modeling
 NUMERIC_VARS: list[str] = [
     "property_value",
