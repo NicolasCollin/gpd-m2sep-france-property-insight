@@ -9,8 +9,6 @@ def run_prediction(postal: str, prop_type: str, area: float, rooms: int, land: f
     Call backs for the "Estimate" button. It prepares the data and calls the model prediction function.
     Args:
         postal: Postal code (string).
-        dept: Department code (string).
-        town: Town code (string).
         prop_type: Property type ("House" / "Apartment").
         area: Living area in square
         rooms: Number of rooms (integer).

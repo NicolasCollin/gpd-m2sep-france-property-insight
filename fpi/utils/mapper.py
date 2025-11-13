@@ -1,5 +1,5 @@
-import pandas as pd
 from fpi.data_pipeline.loader import load_all_csv
+
 
 def build_postal_town_mapping(df_root: str = "data/cleaned") -> dict[str, str]:
     """
@@ -36,11 +36,7 @@ def suggest_postal_code(value: str, mapping: dict[str, str]) -> list[str]:
         list[str]: List of matching postal code + town strings.
     """
     value = value.strip().lower()
-    return [
-        f"{code} - {town}"
-        for code, town in mapping.items()
-        if value in code or value in town.lower()
-    ]
+    return [f"{code} - {town}" for code, town in mapping.items() if value in code or value in town.lower()]
 
 
 def suggest_town(postal_code: str, value: str, mapping: dict[str, str]) -> list[str]:

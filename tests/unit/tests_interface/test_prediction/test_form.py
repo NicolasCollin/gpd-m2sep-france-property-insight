@@ -18,39 +18,37 @@ class TestValidateInputs:
     def test_all_valid_inputs(self) -> None:
         """Returns empty string when all inputs are valid."""
         postal: str = "75001"
-        dept: str = "75"
-        town: str = "75101"
         prop_type: str = "House"
         area: float = 100.0
         rooms: int = 3
         land: float = 50.0
 
-        result: str = validate_inputs(postal, dept, town, prop_type, area, rooms, land)
+        result: str = validate_inputs(postal, prop_type, area, rooms, land)
         assert result == ""
 
     def test_missing_required_field(self) -> None:
         """Returns error when a required field is missing."""
-        result: str = validate_inputs("", "75", "75101", "House", 100.0, 3, 50.0)
+        result: str = validate_inputs("", "House", 100.0, 3, 50.0)
         assert "Postal code" in result
 
     def test_invalid_area(self) -> None:
         """Returns error when area is zero or unrealistic."""
-        result: str = validate_inputs("75001", "75", "75101", "House", 0.0, 3, 50.0)
+        result: str = validate_inputs("75001", "House", 0.0, 3, 50.0)
         assert "Living area" in result
 
     def test_invalid_rooms(self) -> None:
         """Returns error when rooms are zero or unrealistic."""
-        result: str = validate_inputs("75001", "75", "75101", "House", 100.0, 0, 50.0)
+        result: str = validate_inputs("75001", "House", 100.0, 0, 50.0)
         assert "Number of rooms" in result
 
     def test_invalid_land(self) -> None:
         """Returns error when land area is negative or too large."""
-        result: str = validate_inputs("75001", "75", "75101", "House", 100.0, 3, -1.0)
+        result: str = validate_inputs("75001", "House", 100.0, 3, -1.0)
         assert "Land area" in result
 
     def test_invalid_postal_code_format(self) -> None:
         """Returns error when postal code is not 5 digits."""
-        result: str = validate_inputs("7500", "75", "75101", "House", 100.0, 3, 50.0)
+        result: str = validate_inputs("7500", "House", 100.0, 3, 50.0)
         assert "postal code" in result.lower()
 
 
@@ -77,7 +75,7 @@ class TestGetForm:
         """Inputs list has exactly 7 components."""
         with gr.Blocks():
             inputs_list, _ = get_form()
-        assert len(inputs_list) == 7
+        assert len(inputs_list) == 5
 
     def test_dropdown_default_value_and_choices(self) -> None:
         """Dropdown has default value 'House' and expected choices."""
@@ -104,18 +102,16 @@ class TestResetForm:
 
     def test_returns_tuple_with_correct_length(self) -> None:
         """reset_form returns a tuple of 8 elements."""
-        result: tuple[str, str, str, str, float, int, float, str] = reset_form()
+        result: tuple[str, str, float, int, float, str] = reset_form()
         assert isinstance(result, tuple)
-        assert len(result) == 8
+        assert len(result) == 6
 
     def test_default_values_are_correct(self) -> None:
         """Tuple contains default form values and markdown reset text."""
-        result: tuple[str, str, str, str, float, int, float, str] = reset_form()
-        postal, dept, town, prop_type, area, rooms, land, output = result
+        result: tuple[str, str, float, int, float, str] = reset_form()
+        postal, prop_type, area, rooms, land, output = result
 
         assert postal == ""
-        assert dept == ""
-        assert town == ""
         assert prop_type == "House"
         assert area == 0.0
         assert rooms == 0
@@ -124,7 +120,7 @@ class TestResetForm:
 
     def test_output_is_final_string(self) -> None:
         """Last element in tuple should be a string used for markdown output."""
-        result: tuple[str, str, str, str, float, int, float, str] = reset_form()
+        result: tuple[str, str, float, int, float, str] = reset_form()
         output: str = result[-1]
         assert isinstance(output, str)
         assert "€" in output

@@ -1,8 +1,9 @@
 import unittest
+
 from fpi.utils.mapper import suggest_postal_code, suggest_town
 
-class TestMapperFunctions(unittest.TestCase):
 
+class TestMapperFunctions(unittest.TestCase):
     def setUp(self):
         # Simulated mapping for testing
         self.mapping = {
@@ -34,6 +35,7 @@ class TestMapperFunctions(unittest.TestCase):
     def test_suggest_town_invalid_code(self):
         result = suggest_town("99999", "paris", self.mapping)
         self.assertEqual(result, [])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -8,8 +8,6 @@ class PredictionFormSchema(BaseModel):
 
     Attributes:
         postal (str): Postal code (5-digit string).
-        dept (str): Department code.
-        town (str): Town code.
         prop_type (str): Property type, default "House".
         area (float): Living area in m².
         rooms (int): Number of rooms.
@@ -18,8 +16,6 @@ class PredictionFormSchema(BaseModel):
     """
 
     postal: str
-    dept: str
-    town: str
     prop_type: str = "House"
     area: float
     rooms: int

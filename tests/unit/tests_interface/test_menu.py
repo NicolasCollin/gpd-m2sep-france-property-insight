@@ -35,17 +35,11 @@ class TestAppMenu:
         assert len(top_columns) > 0
 
     def test_menu_contains_navigation_buttons(self) -> None:
-        """Check that all expected navigation buttons exist and have correct elem_ids."""
+        """Check that all expected navigation buttons exist and have correct labels."""
 
         def find_buttons(children: list) -> list[gr.Button]:
             """
-            Recursively find all buttons in a nested layout.
-
-            Args:
-                children (list): list of Gradio components to search
-
-            Returns:
-                list[gr.Button]: all Button components found
+            Recursively find all Button components in a nested Gradio layout.
             """
             buttons: list[gr.Button] = []
             for child in children:
@@ -56,11 +50,12 @@ class TestAppMenu:
             return buttons
 
         buttons: list[gr.Button] = find_buttons(self.menu.children)
-        expected_ids: list[str] = ["nav-home", "nav-dashboard", "nav-estimate", "nav-api-docs", "nav-gitlab"]
-        found_ids: list[str] = [b.elem_id for b in buttons]
+        found_labels: list[str] = [b.value for b in buttons if b.value]
 
-        for eid in expected_ids:
-            assert eid in found_ids, f"Navigation button '{eid}' not found in menu"
+        expected_labels: list[str] = ["Home", "Dashboard", "Estimation", "API Docs", "GitLab"]
+
+        for label in expected_labels:
+            assert label in found_labels, f"Navigation button '{label}' not found in menu"
 
     def test_app_can_build_without_error(self) -> None:
         """Ensure app_menu can be created inside a Gradio Blocks context without raising exceptions."""

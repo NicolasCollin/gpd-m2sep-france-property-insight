@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def compute_price_per_sqm(df: pd.DataFrame, method: str = "median") -> float:
     """
     Compute the median or mean price per square meter from a pre-filtered DataFrame.

@@ -9,8 +9,6 @@ def step_run_valid_prediction(context):
     row = context.table[0]
     context.prediction_result = run_prediction(
         postal=row["postal"],
-        dept=row["dept"],
-        town=row["town"],
         prop_type=row["prop_type"],
         area=float(row["area"]),
         rooms=int(row["rooms"]),
@@ -30,8 +28,6 @@ def step_run_invalid_prediction(context):
     row = context.table[0]
     context.prediction_result = run_prediction(
         postal=row["postal"],
-        dept=row["dept"],
-        town=row["town"],
         prop_type=row["prop_type"],
         area=float(row["area"]),
         rooms=int(row["rooms"]),

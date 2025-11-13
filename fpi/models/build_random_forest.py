@@ -96,7 +96,7 @@ def mock_predict_price():
     print(f"Predicted price: €{predicted_price:,.0f}")
 
 
-def mock_build_random_forest():
+def mock_build_random_forest() -> None:
     folder_path: Path = "data/cleaned/cleaned2024"
     model_path: Path = "fpi/models/random_forest.joblib"
     target_col: str = "property_value"
