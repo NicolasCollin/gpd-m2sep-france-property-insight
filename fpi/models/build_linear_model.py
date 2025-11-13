@@ -34,7 +34,7 @@ from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 
-from fpi.utils.constants import DEFAULT_TEST_SIZE, RANDOM_STATE
+from fpi.utils.constants import DEFAULT_TEST_SIZE, PREDICTION_CATEGORIC_INPUTS, PREDICTION_NUMERIC_INPUTS, RANDOM_STATE
 
 
 def load_csv_folder(folder_path: str) -> pd.DataFrame:
@@ -271,8 +271,8 @@ def mock_build_lm() -> None:
     """
     folder_path: str = "data/cleaned/cleaned2024"
     model_path: str = "fpi/models/linear_model.joblib"
-    numeric_features: list[str] = ["building_area", "main_rooms", "land_area"]
-    categorical_features: list[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
+    numeric_features: list[str] = PREDICTION_NUMERIC_INPUTS
+    categorical_features: list[str] = PREDICTION_CATEGORIC_INPUTS
     target_col: str = "log_value"
 
     build_lm(
@@ -292,8 +292,8 @@ def mock_build_ridge() -> None:
     """
     folder_path: str = "data/cleaned/cleaned2024"
     model_path: str = "fpi/models/ridge_model.joblib"
-    numeric_features: list[str] = ["building_area", "main_rooms", "land_area"]
-    categorical_features: list[str] = ["postal_code", "property_type_code", "town_code", "department_code"]
+    numeric_features: list[str] = PREDICTION_NUMERIC_INPUTS
+    categorical_features: list[str] = PREDICTION_CATEGORIC_INPUTS
     target_col: str = "log_value"
     alpha: float = 10.0
 
