@@ -158,7 +158,7 @@ def create_volume_evolution_plot(df: pd.DataFrame) -> go.Figure:
         return fig
     
     df_clean = df.copy()
-    df_clean['transaction_date'] = pd.to_datetime(df_clean['transaction_date'], errors='coerce')
+    df_clean['transaction_date'] = pd.to_datetime(df_clean['transaction_date'], errors='coerce', dayfirst=True)
     df_clean = df_clean.dropna(subset=['transaction_date'])
     
     # Group by year-month
