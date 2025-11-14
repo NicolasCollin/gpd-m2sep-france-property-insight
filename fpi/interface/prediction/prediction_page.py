@@ -13,14 +13,12 @@ def api_run_prediction(postal, prop_type, area, rooms, land) -> str:
     if error_msg:
         return error_msg
 
-    property_type_code = 1 if prop_type.lower() == "house" else 2
-
     data = {
-        "building_area": float(area),
-        "main_rooms": int(rooms),
-        "land_area": float(land),
-        "postal_code": int(postal),
-        "property_type_code": property_type_code,
+        "postal": str(postal),
+        "prop_type": str(prop_type),
+        "area": float(area),
+        "rooms": int(rooms),
+        "land": float(land),
     }
 
     try:
