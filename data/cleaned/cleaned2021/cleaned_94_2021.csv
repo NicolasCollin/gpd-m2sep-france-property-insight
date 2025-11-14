@@ -551,7 +551,6 @@ transaction_date,transaction_type,property_value,postal_code,town_name,departmen
 27/01/2021,Vente,760000,94310,ORLY,94,54,4,Local industriel. commercial ou assimilé,640,0,2447
 12/02/2021,Vente,450000,94310,ORLY,94,54,1,Maison,93,4,300
 02/02/2021,Vente,225000,94110,ARCUEIL,94,3,1,Maison,46,2,177
-09/02/2021,Vente,0,94550,CHEVILLY-LARUE,94,21,4,Local industriel. commercial ou assimilé,0,0,37
 18/01/2021,Vente,900000,94250,GENTILLY,94,37,2,Appartement,47,3,158
 18/01/2021,Vente,900000,94250,GENTILLY,94,37,2,Appartement,59,4,158
 21/01/2021,Vente,260000,94400,VITRY-SUR-SEINE,94,81,1,Maison,100,4,217
@@ -4677,8 +4676,6 @@ transaction_date,transaction_type,property_value,postal_code,town_name,departmen
 01/10/2021,Vente,236000,94190,VILLENEUVE-SAINT-GEORGES,94,78,1,Maison,56,4,273
 05/10/2021,Vente,227000,94520,PERIGNY,94,56,1,Maison,41,3,38
 29/09/2021,Vente,380000,94350,VILLIERS-SUR-MARNE,94,79,1,Maison,67,3,377
-07/10/2021,Vente,0,94550,CHEVILLY-LARUE,94,21,2,Appartement,80,4,179
-07/10/2021,Vente,0,94550,CHEVILLY-LARUE,94,21,4,Local industriel. commercial ou assimilé,7094,0,179
 04/10/2021,Vente,562250,94170,LE PERREUX-SUR-MARNE,94,58,1,Maison,90,4,153
 04/10/2021,Vente,562250,94170,LE PERREUX-SUR-MARNE,94,58,3,Dépendance,0,0,153
 15/10/2021,Vente,735000,94120,FONTENAY-SOUS-BOIS,94,33,3,Dépendance,0,0,36
