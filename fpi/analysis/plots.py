@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
@@ -80,9 +81,7 @@ def display_trend(
 
     if "department_name" not in df_all.columns:
         df_all["department_code"] = df_all["department_code"].astype(str)
-        df_all["department_name"] = df_all["department_code"].map(
-            lambda code: DEPT_NAMES.get(code, f"Department {code}")
-        )
+        df_all["department_name"] = df_all["department_code"].map(lambda code: DEPT_NAMES.get(code, f"Department {code}"))
 
     if dept_filter:
         df_all = df_all[df_all["department_code"].astype(str) == str(dept_filter)]
@@ -93,10 +92,7 @@ def display_trend(
     agg_func = "mean" if agg == "mean" else "median"
     label_metric = "Mean" if agg_func == "mean" else "Median"
 
-    trend_df = (
-        df_all.groupby(["department_code", "department_name", "year"], as_index=False)["property_value"]
-        .agg(agg_func)
-    )
+    trend_df = df_all.groupby(["department_code", "department_name", "year"], as_index=False)["property_value"].agg(agg_func)
     if trend_df.empty:
         print("Aggregation produced no data.")
         return
@@ -133,9 +129,7 @@ def display_trend(
     plt.xlabel("Year")
     plt.ylabel(f"{label_metric} Property Value (€)")
 
-    plt.gca().yaxis.set_major_formatter(
-        mticker.FuncFormatter(lambda x, _: convert_value_for_display(x))
-    )
+    plt.gca().yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: convert_value_for_display(x)))
 
     plt.legend(title="Department", bbox_to_anchor=(1.05, 1), loc="upper left")
     plt.tight_layout()
