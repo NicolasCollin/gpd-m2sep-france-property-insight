@@ -1,4 +1,6 @@
 import pandas as pd
+from fpi.utils.display_case import format_display_name
+
 
 def analyze_variable_quality(df: pd.DataFrame, column: str) -> dict:
     """
@@ -22,7 +24,7 @@ def analyze_variable_quality(df: pd.DataFrame, column: str) -> dict:
     """
     if column not in df.columns:
         raise ValueError(f"Column '{column}' not found in DataFrame.")
-
+        
     series = df[column]
     total = len(series)
     missing = series.isna().sum()
@@ -49,3 +51,14 @@ def analyze_variable_quality(df: pd.DataFrame, column: str) -> dict:
         summary["outliers_count"] = None
 
     return summary
+    
+def analyze_all_variables(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Analyze the qualitative characteristics of ALL columns in the DataFrame.
+
+    Returns a DataFrame with one row per variable.
+    """
+    results = []
+    for col in df.columns:
+        results.append(analyze_variable_quality(df, col))
+    return pd.DataFrame(results)
