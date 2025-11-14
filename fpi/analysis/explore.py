@@ -38,7 +38,3 @@ def explore() -> None:
         display_trend("data/cleaned", dept_filter=dept, agg="median")
 
     print("\n Trend plots successfully generated.")
-
-
-if __name__ == "__main__":
-    explore()
