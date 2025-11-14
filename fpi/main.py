@@ -6,7 +6,7 @@ import uvicorn
 # main.py
 from fastapi import FastAPI
 
-from fpi.api import app as api_app
+from fpi.utils.api import app as api_app
 from fpi.interface.menu import app_menu
 
 
