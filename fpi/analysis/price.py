@@ -17,7 +17,7 @@ def compute_price_per_sqm(df: pd.DataFrame, method: str = "median") -> float:
 
     df_valid = df[df["property_value"].notna() & df["land_area"].notna() & (df["land_area"] > 0)]
     if df_valid.empty:
-        raise ValueError("No valid data to compute price per square meter.")
+        raise ValueError("No valid data to compute price per square meter")
 
     price_per_sqm = df_valid["property_value"] / df_valid["land_area"]
 
