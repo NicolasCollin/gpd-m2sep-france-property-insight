@@ -1,3 +1,5 @@
+from unittest.mock import MagicMock, patch
+
 import pandas as pd
 import pytest
 
@@ -44,3 +46,57 @@ def df_dvf() -> pd.DataFrame:
     }
 
     return pd.DataFrame(data)
+
+
+@pytest.fixture
+def example_input() -> dict[str, float]:
+    """Standard example input dictionary for property prediction."""
+    return {
+        "building_area": 13.0,
+        "main_rooms": 1,
+        "land_area": 20.0,
+        "postal_code": 75020,
+        "property_type_code": 2,
+        "town_code": 120,
+        "department_code": 75,
+    }
+
+
+@pytest.fixture
+def example_input_int() -> dict[str, int]:
+    """Same input but with integer values instead of floats."""
+    return {
+        "building_area": 13,
+        "main_rooms": 1,
+        "land_area": 20,
+        "postal_code": 75020,
+        "property_type_code": 2,
+        "town_code": 120,
+        "department_code": 75,
+    }
+
+
+@pytest.fixture
+def incomplete_input() -> dict[str, float]:
+    """Input with one required feature missing."""
+    return {
+        "building_area": 13.0,
+        "land_area": 20.0,
+        "postal_code": 75020,
+        "property_type_code": 2,
+        "town_code": 120,
+        "department_code": 75,
+    }
+
+
+@pytest.fixture
+def mock_model() -> MagicMock:
+    """Reusable MagicMock model."""
+    return MagicMock()
+
+
+@pytest.fixture
+def patched_model(mock_model: MagicMock):
+    """Patches joblib.load to return the mock model for the duration of the test."""
+    with patch("fpi.models.predict.joblib.load", return_value=mock_model):
+        yield mock_model
