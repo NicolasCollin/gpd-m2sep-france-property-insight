@@ -4,20 +4,78 @@ import pytest
 from fpi.analysis.price import compute_price_per_sqm
 
 
-def test_valid_median():
-    df = pd.DataFrame({"property_value": [300000, 500000, 700000], "land_area": [60, 100, 140]})
-    result = compute_price_per_sqm(df, method="median")
-    assert round(result, 2) == 5000.00  # Median of [5000, 5000, 5000]
+@pytest.fixture
+def sample_df() -> pd.DataFrame:
+    """
+    Provides a sample DataFrame for testing compute_price_per_sqm.
+
+    Returns:
+        pd.DataFrame: Contains columns 'property_value' and 'land_area'.
+    """
+    return pd.DataFrame({"property_value": [100000.0, 200000.0, 300000.0, None], "land_area": [50.0, 100.0, 150.0, 60.0]})
 
 
-def test_valid_mean():
-    df = pd.DataFrame({"property_value": [300000, 500000, 700000], "land_area": [60, 100, 140]})
-    expected = (300000 / 60 + 500000 / 100 + 700000 / 140) / 3
-    result = compute_price_per_sqm(df, method="mean")
-    assert round(result, 2) == round(expected, 2)
+@pytest.fixture
+def empty_df() -> pd.DataFrame:
+    """
+    Provides an empty DataFrame to test edge cases.
+
+    Returns:
+        pd.DataFrame: Empty DataFrame with required columns.
+    """
+    return pd.DataFrame({"property_value": [], "land_area": []})
 
 
-def test_missing_columns():
-    df = pd.DataFrame({"property_value": [300000, 500000]})
-    with pytest.raises(ValueError, match="must contain 'property_value' and 'land_area'"):
-        compute_price_per_sqm(df)
+class TestComputePricePerSqm:
+    """
+    Unit tests for the `compute_price_per_sqm` function.
+
+    Scenarios tested:
+        1. Median computation with valid data.
+        2. Mean computation with valid data.
+        3. Missing or NaN values are ignored in calculation.
+        4. Empty or invalid DataFrame raises a ValueError.
+        5. DataFrames missing required columns raise a ValueError.
+        6. Land area <= 0 is ignored in calculation.
+    """
+
+    def test_median_computation(self, sample_df: pd.DataFrame) -> None:
+        """Compute median price per square meter."""
+        result: float = compute_price_per_sqm(sample_df, method="median")
+        expected = pd.Series([100000 / 50, 200000 / 100, 300000 / 150]).median()
+        assert result == expected
+
+    def test_mean_computation(self, sample_df: pd.DataFrame) -> None:
+        """Compute mean price per square meter."""
+        result: float = compute_price_per_sqm(sample_df, method="mean")
+        expected = pd.Series([100000 / 50, 200000 / 100, 300000 / 150]).mean()
+        assert result == expected
+
+    def test_ignore_nan_values(self) -> None:
+        """Rows with NaN values should be ignored in computation."""
+        df = pd.DataFrame({"property_value": [100000.0, None, 300000.0], "land_area": [50.0, 100.0, None]})
+        result: float = compute_price_per_sqm(df, method="median")
+        expected = pd.Series([100000 / 50]).median()
+        assert result == expected
+
+    def test_empty_dataframe_raises(self, empty_df: pd.DataFrame) -> None:
+        """An empty DataFrame should raise a ValueError."""
+        with pytest.raises(ValueError, match="No valid data"):
+            compute_price_per_sqm(empty_df)
+
+    def test_missing_columns_raise(self) -> None:
+        """DataFrames missing required columns should raise ValueError."""
+        df = pd.DataFrame({"property_value": [100000.0]})
+        with pytest.raises(ValueError, match="must contain 'property_value' and 'land_area'"):
+            compute_price_per_sqm(df)
+
+        df = pd.DataFrame({"land_area": [50.0]})
+        with pytest.raises(ValueError, match="must contain 'property_value' and 'land_area'"):
+            compute_price_per_sqm(df)
+
+    def test_ignore_zero_or_negative_land(self) -> None:
+        """Rows with land_area <= 0 should be ignored."""
+        df = pd.DataFrame({"property_value": [100000.0, 200000.0], "land_area": [50.0, 0.0]})
+        result: float = compute_price_per_sqm(df, method="median")
+        expected = pd.Series([100000 / 50]).median()
+        assert result == expected
