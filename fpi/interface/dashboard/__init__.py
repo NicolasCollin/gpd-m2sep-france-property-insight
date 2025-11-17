@@ -8,8 +8,10 @@ Provides functions to render the dashboard page with tables and visualizations.
 """
 
 # Import submodules
-from .dashboard.dashboard_page import get_dashboard_page
+from .dashboard_page import get_dashboard_page
 
 __all__: list[str] = [
+    "get_dashboard_table",
+    "display_dashboard",
     "get_dashboard_page",
 ]

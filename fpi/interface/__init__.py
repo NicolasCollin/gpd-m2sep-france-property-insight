@@ -49,6 +49,8 @@ __all__: list[str] = [
     "app_menu",
     "show_page",
     # Dashboard
+    "get_dashboard_table",
+    "display_dashboard",
     "get_dashboard_page",
     # Home
     "get_home_page",

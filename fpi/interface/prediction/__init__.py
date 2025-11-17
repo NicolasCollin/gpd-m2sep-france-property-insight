@@ -17,8 +17,8 @@ Prediction page layout and callbacks for the price estimation model.
 
 """
 
-from .prediction.form import get_form, reset_form, validate_inputs
-from .prediction.prediction_page import get_prediction_page, run_prediction
+from .form import get_form, reset_form, validate_inputs
+from .prediction_page import get_prediction_page, run_prediction
 
 __all__: list[str] = [
     # Prediction
