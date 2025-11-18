@@ -18,10 +18,10 @@ def compute_price_per_sqm(df: pd.DataFrame, method: str = "median") -> float:
         ...     'land_area': [50, 100, 150]
         ... })
         >>> compute_price_per_sqm(df1)
-        np.float(2000.0)
+        2000.0
 
         >>> compute_price_per_sqm(df1, method='mean')
-        np.float(2000.0)
+        2000.0
 
         >>> df2 = pd.DataFrame({
         ...     'property_value': [100000, 200000, 300000, None, 400000],
@@ -31,11 +31,11 @@ def compute_price_per_sqm(df: pd.DataFrame, method: str = "median") -> float:
         2000.0
 
         >>> df3 = pd.DataFrame({
-        ...     'property_value': [150000, 250000, 350000],
+        ...     'property_value': [100, 200, 300],
         ...     'land_area': [50, 100, 150]
         ... })
         >>> compute_price_per_sqm(df3, method='mean')
-        2000.0
+        2.0
     """
     if "property_value" not in df.columns or "land_area" not in df.columns:
         raise ValueError("DataFrame must contain 'property_value' and 'land_area' columns.")
@@ -44,8 +44,8 @@ def compute_price_per_sqm(df: pd.DataFrame, method: str = "median") -> float:
     if df_valid.empty:
         raise ValueError("No valid data to compute price per square meter")
 
-    price_per_sqm = df_valid["property_value"] / df_valid["land_area"]
+    price_per_sqm: pd.Dataframe = df_valid["property_value"] / df_valid["land_area"]
 
     if method == "mean":
-        return price_per_sqm.mean()
-    return price_per_sqm.median()
+        return float(price_per_sqm.mean())
+    return float(price_per_sqm.median())

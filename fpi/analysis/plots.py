@@ -31,8 +31,9 @@ def convert_value_for_display(value: float) -> str:
         >>> convert_value_for_display(1500)
         '1,5 K'
 
+        # 999,999 rounds to 1000.0 K
         >>> convert_value_for_display(999999)
-        '1000,0 K'  # Note: 999,999 rounds to 1000.0 K
+        '1000,0 K'
 
         >>> convert_value_for_display(2500000)
         '2,5 M'
