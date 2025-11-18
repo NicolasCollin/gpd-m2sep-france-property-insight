@@ -10,6 +10,9 @@ def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
     """
     Display key summary statistics and a preview of the dataset.
 
+    Args:
+        df (pd.DataFrame): Pandas dataframe to visualize.
+
     Returns:
         gr.Blocks: table section of the dashboard ready to be rendered.
     """

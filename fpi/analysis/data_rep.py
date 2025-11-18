@@ -1,7 +1,8 @@
 import pandas as pd
 
-from fpi.analysis.report import analyze_dataset_quality, load_raw
+from fpi.analysis.report import analyze_dataset_quality
 from fpi.analysis.stats import summary
+from fpi.data_pipeline.loader import load_all_csv
 
 
 def report_data() -> None:
@@ -13,7 +14,7 @@ def report_data() -> None:
     """
 
     # Step 1 — Load raw dataset
-    df: pd.DataFrame = load_raw()
+    df: pd.DataFrame = load_all_csv("data/raw")
 
     # Step 2 — Summary (general)
     summary(df)

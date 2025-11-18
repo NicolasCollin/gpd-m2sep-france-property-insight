@@ -1,5 +1,6 @@
 import gradio as gr
 import pandas as pd
+import plotly.graph_objects as go
 
 from fpi.analysis.market_analysis import (
     calculate_financing_simulation,
@@ -92,7 +93,7 @@ def get_market_explorer_tab(df: pd.DataFrame) -> None:
             total_loan_cost = gr.Number(label="Total loan cost (€)", interactive=False)
             debt_ratio = gr.Number(label="Debt ratio (%)", interactive=False)
 
-    def update_market_analysis(location: str):
+    def update_market_analysis(location: str) -> list[float | int | go.Figure]:
         """
         Update all market analysis components when location changes.
 
@@ -102,10 +103,10 @@ def get_market_explorer_tab(df: pd.DataFrame) -> None:
         Returns:
             Dictionary with updated components
         """
-        filtered_df = filter_data_by_location(df, location)
-        metrics = calculate_market_metrics(filtered_df)
-        sales_by_type_plot = create_sales_by_property_type_plot(filtered_df)
-        volume_evolution_plot = create_volume_evolution_plot(filtered_df)
+        filtered_df: pd.DataFrame = filter_data_by_location(df, location)
+        metrics: dict[str, float] = calculate_market_metrics(filtered_df)
+        sales_by_type_plot: go.Figure = create_sales_by_property_type_plot(filtered_df)
+        volume_evolution_plot: go.Figure = create_volume_evolution_plot(filtered_df)
 
         return [
             metrics["avg_price_per_m2"],

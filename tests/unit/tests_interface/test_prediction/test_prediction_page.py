@@ -1,4 +1,4 @@
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import gradio as gr
 import pytest
@@ -29,41 +29,25 @@ def input_scenarios(request: pytest.FixtureRequest) -> tuple[str, dict[str, str 
 
 
 class TestRunPrediction:
-    """
-    Unit tests for the `run_prediction` function.
+    """Unit tests for run_prediction with mocked backend."""
 
-    Scenarios tested:
-        - Valid inputs produce a formatted price string.
-        - Invalid or missing postal codes are detected.
-        - Property type strings ("House", "Apartment") map to correct codes.
-    """
+    def test_run_prediction_scenarios(self, input_scenarios):
+        name, inputs, expected_price, expected_substr = input_scenarios
 
-    def test_run_prediction_scenarios(self, input_scenarios: tuple[str, dict[str, str | float | int], int | None, str]) -> None:
-        """
-        Tests multiple input scenarios in a single parametrized test using the input_scenarios fixture.
+        if expected_price is not None:
+            # Mock requests.post to simulate backend response
+            mock_response = Mock()
+            mock_response.json.return_value = {"predicted_price": expected_price}
+            mock_response.raise_for_status = Mock()
 
-        Args:
-            input_scenarios (tuple): Tuple containing:
-                - scenario name (str)
-                - input dictionary (Dict[str, str | float | int])
-                - expected property_type_code (Optional[int])
-                - expected substring in result (str)
-        """
-        name: str
-        inputs: dict[str, str | float | int]
-        expected_code: int | None
-        expected_substr: str
-
-        name, inputs, expected_code, expected_substr = input_scenarios
-
-        if expected_code is not None:
-            with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
-                mock_predict.return_value = expected_code
-                result: str = run_prediction(**inputs)
+            with patch("fpi.interface.prediction.prediction_page.requests.post", return_value=mock_response):
+                result = run_prediction(**inputs)
         else:
-            result: str = run_prediction(**inputs)
+            # No mock needed; validation should return an error before HTTP call
+            result = run_prediction(**inputs)
 
         assert isinstance(result, str)
+        assert expected_substr in result
 
 
 class TestGetPredictionPage:

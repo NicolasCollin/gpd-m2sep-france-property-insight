@@ -46,6 +46,16 @@ from .dashboard import (
     plot_price_evolution_by_department,
     plot_sales_count_by_department,
 )
+from .market_analysis import (
+    calculate_financing_simulation,
+    calculate_market_metrics,
+    compare_departments,
+    create_sales_by_property_type_plot,
+    create_volume_evolution_plot,
+    filter_data_by_location,
+    get_location_choices,
+    get_sales_by_type_data,
+)
 from .plots import display_trend
 from .price import compute_price_per_sqm
 from .stats import (
@@ -58,6 +68,15 @@ __all__: list[str] = [
     # Dashboard plotting
     "plot_sales_count_by_department",
     "plot_price_evolution_by_department",
+    # Market analysis
+    "get_location_choices",
+    "filter_data_by_location",
+    "calculate_market_metrics",
+    "create_sales_by_property_type_plot",
+    "create_volume_evolution_plot",
+    "get_sales_by_type_data",
+    "calculate_financing_simulation",
+    "compare_departments",
     # Trend plots
     "display_trend",
     # Statistics

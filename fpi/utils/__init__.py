@@ -31,19 +31,11 @@ Holds all standard constants used across the project:
 Functions for formatting variable names into user-friendly display strings.
 - Converts `snake_case` or `camelCase` to readable capitalized text
 
-### `mapper`
-Utilities for building mappings from postal codes to town names and
-providing auto-suggestions for postal codes and towns in forms.
-
 ## Functions definitions
 """
 
 from .display_case import format_display_name
-from .mapper import build_postal_town_mapping, suggest_postal_code, suggest_town
 
 __all__: list[str] = [
     "format_display_name",
-    "build_postal_town_mapping",
-    "suggest_postal_code",
-    "suggest_town",
 ]

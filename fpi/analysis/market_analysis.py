@@ -299,7 +299,6 @@ def compare_departments(df: pd.DataFrame, selected_departments: list[str]) -> pd
                 - "Median price (€)"
                 - "Transactions"
     """
-    from .market_analysis import calculate_market_metrics, filter_data_by_location
 
     results: list[dict[str, str | float | int]] = []
 
