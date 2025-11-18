@@ -4,10 +4,23 @@ import pytest
 
 class TestDisplayTrendAggregation:
     """
-    Unit tests for the trend aggregation logic.
+    Unit tests for trend aggregation logic on DVF data.
 
-    Each test scenario constructs small DataFrames simulating DVF data,
-    performs grouping and median aggregation, and asserts expected values.
+    Each test scenario constructs small DataFrames simulating DVF property data,
+    performs grouping by department and year, and computes median property values.
+
+    Scenarios covered:
+        1. Single department in a single year:
+           - Two property values for the same department-year.
+           - Median aggregation should equal the mean of the two values.
+
+        2. Single department across multiple years:
+           - Property values for two different years.
+           - Median aggregation per year should match the property value for that year.
+
+        3. Multiple departments across multiple years:
+           - Two departments, each with property values over two years.
+           - Median aggregation should produce correct department-year medians.
     """
 
     def test_single_department_single_year(self) -> None:

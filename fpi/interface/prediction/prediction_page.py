@@ -1,7 +1,33 @@
 import gradio as gr
+import requests
 
 from fpi.interface.prediction.form import get_form, reset_form, validate_inputs
 from fpi.models.predict import predict_price
+
+API_URL = "http://localhost:7860/api/predict"
+
+
+# run predict_price with fastapi
+def api_run_prediction(postal, prop_type, area, rooms, land) -> str:
+    error_msg = validate_inputs(postal, prop_type, area, rooms, land)
+    if error_msg:
+        return error_msg
+
+    data = {
+        "postal": str(postal),
+        "prop_type": str(prop_type),
+        "area": float(area),
+        "rooms": int(rooms),
+        "land": float(land),
+    }
+
+    try:
+        response = requests.post(API_URL, json=data)
+        response.raise_for_status()
+        price = response.json()["predicted_price"]
+        return f"Estimated property price: €{price:,.0f}"
+    except Exception as e:
+        return f"Prediction failed: {e}"
 
 
 def run_prediction(postal: str, prop_type: str, area: float, rooms: int, land: float) -> str:
@@ -76,7 +102,8 @@ def get_prediction_page() -> tuple[gr.components.Button, gr.components.Button, g
 
     # link callbacks
     predict_btn.click(
-        fn=run_prediction,
+        fn=api_run_prediction,
+        # fn=run_prediction,
         inputs=inputs_list,
         outputs=result_output,
     )

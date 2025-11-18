@@ -50,6 +50,10 @@ class PropertyData(BaseModel):
     building_area: float = Field(..., ge=0)
     main_rooms: float = Field(..., ge=0)
     land_area: float = Field(..., ge=0)
+    transaction_date: str = Field(default="")
+    transaction_type: str = Field(default="")
+    property_type: str = Field(default="")
+    town_name: str = Field(default="")
 
     @staticmethod
     def _to_float_eu(v: float | int | str | None) -> float:
