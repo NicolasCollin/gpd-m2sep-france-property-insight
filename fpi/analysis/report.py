@@ -1,43 +1,46 @@
 import pandas as pd
 
-def count_missing_values(df: pd.DataFrame) -> dict:
+def count_missing_values(df: pd.DataFrame) -> list[tuple[str, int]]:
     """
     Count missing values (NaN) per column.
+    Returns a list of (column, NA_count).
     """
-    return df.isna().sum().to_dict()
+    return list(df.isna().sum().items())
 
 
-def count_type_local(df: pd.DataFrame) -> dict | None:
+def count_type_local(df: pd.DataFrame) -> list[tuple[str, int]] | None:
     """
-    Count occurrences of each type_local value.
-    Returns None if the column does not exist.
+    Count occurrences of each Type_local value.
+    Returns a list of (value, count) or None if the column does not exist.
     """
-    if "type_local" not in df.columns:
+    if "Type_local" not in df.columns:
         return None
-    return df["type_local"].value_counts(dropna=False).to_dict()
+    return list(df["Type_local"].value_counts(dropna=False).items())
 
 
-def detect_outliers(df: pd.DataFrame) -> dict:
+def detect_outliers(df: pd.DataFrame) -> list[tuple[str, int]]:
     """
     Detect outliers in numeric columns using the IQR method.
+    Returns a list of (column, outlier_count).
     """
     numeric_cols = df.select_dtypes(include=["number"]).columns
-    outliers = {}
+    outliers = []
 
     for col in numeric_cols:
         series = df[col].dropna()
         if series.empty:
-            outliers[col] = 0
+            outliers.append((col, 0))
             continue
 
-        q1: float = float(series.quantile(0.25))
-        q3: float = float(series.quantile(0.75))
-        iqr: float = q3 - q1
+        q1 = series.quantile(0.25)
+        q3 = series.quantile(0.75)
+        iqr = q3 - q1
 
-        lower: float = q1 - 1.5 * iqr
-        upper: float = q3 + 1.5 * iqr
+        lower = q1 - 1.5 * iqr
+        upper = q3 + 1.5 * iqr
 
-        outliers[col] = int(((series < lower) | (series > upper)).sum())
+        outlier_count = int(((series < lower) | (series > upper)).sum())
+        outliers.append((col, outlier_count))
 
     return outliers
 
@@ -46,6 +49,7 @@ def analyze_dataset_quality(df: pd.DataFrame) -> dict:
     """
     Global qualitative analysis of a dataset.
     Combines missing values, type_local counts, and outliers.
+    Each entry is a list instead of a dict.
     """
     return {
         "missing_values": count_missing_values(df),
