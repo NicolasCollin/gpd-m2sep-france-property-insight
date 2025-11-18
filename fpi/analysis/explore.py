@@ -19,7 +19,7 @@ def explore() -> None:
     df: pd.DataFrame = load_all_csv()
 
     # Step 2 — Summary
-    
+
     summary(df)
 
     # Step 3 — Descriptive statistics

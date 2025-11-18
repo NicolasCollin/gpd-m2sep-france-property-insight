@@ -1,45 +1,44 @@
 import gradio as gr
+import requests
 
 from fpi.interface.prediction.form import get_form, reset_form, validate_inputs
-from fpi.models.predict import predict_price
 
 
-def run_prediction(postal: str, prop_type: str, area: float, rooms: int, land: float) -> str:
+def run_prediction(postal, prop_type, area, rooms, land) -> str:
     """
     Call backs for the "Estimate" button. It prepares the data and calls the model prediction function.
+
+    Notes: Actually calls a FastAPI route which calls the backend function.
+
     Args:
         postal: Postal code (string).
         prop_type: Property type ("House" / "Apartment").
         area: Living area in square
         rooms: Number of rooms (integer).
         land: Land area (float).
+
     Returns:
         A string with the predicted price or an error message.
     """
-
-    error_msg: str = validate_inputs(postal, prop_type, area, rooms, land)
+    error_msg = validate_inputs(postal, prop_type, area, rooms, land)
     if error_msg:
         return error_msg
 
-    # house or apartment
-    property_type_code: int = 1 if prop_type.lower() == "house" else 2
-
-    input_data: dict[str, float | int] = {
-        "building_area": float(area),
-        "main_rooms": int(rooms),
-        "land_area": float(land),
-        "postal_code": int(postal),
-        "property_type_code": property_type_code,
+    data = {
+        "postal": str(postal),
+        "prop_type": str(prop_type),
+        "area": float(area),
+        "rooms": int(rooms),
+        "land": float(land),
     }
 
-    model_path: str = "fpi/models/random_forest.joblib"
-
     try:
-        predicted_price: float = predict_price(model_path=model_path, input_data=input_data)
-        return f"Estimated property price: €{predicted_price:,.0f}"
+        response = requests.post("http://localhost:7860/api/predict", json=data)
+        response.raise_for_status()
+        price = response.json()["predicted_price"]
+        return f"Estimated property price: €{price:,.0f}"
     except Exception as e:
-        error_str: str = str(e)
-        return f"Prediction failed: {error_str}"
+        return f"Prediction failed: {e}"
 
 
 def get_prediction_page() -> tuple[gr.components.Button, gr.components.Button, gr.components.Markdown, list[gr.components.FormComponent]]:

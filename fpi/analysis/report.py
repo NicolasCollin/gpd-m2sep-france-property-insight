@@ -30,12 +30,12 @@ def detect_outliers(df: pd.DataFrame) -> dict:
             outliers[col] = 0
             continue
 
-        q1 = series.quantile(0.25)
-        q3 = series.quantile(0.75)
-        iqr = q3 - q1
+        q1: float = float(series.quantile(0.25))
+        q3: float = float(series.quantile(0.75))
+        iqr: float = q3 - q1
 
-        lower = q1 - 1.5 * iqr
-        upper = q3 + 1.5 * iqr
+        lower: float = q1 - 1.5 * iqr
+        upper: float = q3 + 1.5 * iqr
 
         outliers[col] = int(((series < lower) | (series > upper)).sum())
 

@@ -38,11 +38,9 @@ def mock_predict_price() -> None:
     example_input: dict[str, float | int] = {
         "building_area": 13.0,
         "main_rooms": 1,
-        "land_area": 20.0,
-        "postal_code": 75020,
-        "property_type_code": 2,
-        "town_code": 120,
-        "department_code": 75,
+        "land_area": 200.0,
+        "postal_code": 75013,
+        "property_type_code": 1,
     }
 
     # Update to the Random Forest model path

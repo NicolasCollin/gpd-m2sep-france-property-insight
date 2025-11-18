@@ -1,4 +1,4 @@
-"""Shared fixtures for integration tests."""
+"""Shared fixtures for smoke tests."""
 
 import shutil
 import sys

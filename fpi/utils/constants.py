@@ -3,11 +3,6 @@ Constants used across the property prediction pipeline.
 Includes variables to keep, numeric columns, and ML config.
 """
 
-from pathlib import Path
-
-PROCESSED_DATA: Path = Path("data/processed")
-CLEANED_DATA: Path = Path("data/cleaned")
-
 # Columns to keep in cleaned CSV / processed data
 VARS_TO_KEEP: list[str] = [
     "transaction_date",

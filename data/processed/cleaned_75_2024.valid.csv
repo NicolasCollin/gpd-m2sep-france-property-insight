@@ -1,4 +1,0 @@
-transaction_date,transaction_type,property_value,postal_code,town_name,department_code,town_code,property_type_code,property_type,building_area,main_rooms,land_area
-05/01/2024,Vente,1350000.0,75020,PARIS 20,75,120,4,Local industriel. commercial ou assimilé,135.0,0.0,124.0
-19/01/2024,Vente,2865000.0,75002,PARIS 02,75,102,2,Appartement,43.0,2.0,69.0
-19/01/2024,Vente,2865000.0,75002,PARIS 02,75,102,2,Appartement,44.0,2.0,69.0
