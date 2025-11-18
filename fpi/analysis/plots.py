@@ -17,6 +17,28 @@ def convert_value_for_display(value: float) -> str:
     """
     Convert a numeric value into a readable format using French decimal style
     and compact suffixes (K, M, Md).
+
+    Args:
+        - value (float): number to display
+
+    Returns:
+        - formatted string
+
+    Examples:
+        >>> convert_value_for_display(0)
+        '0,0'
+
+        >>> convert_value_for_display(1500)
+        '1,5 K'
+
+        >>> convert_value_for_display(999999)
+        '1000,0 K'  # Note: 999,999 rounds to 1000.0 K
+
+        >>> convert_value_for_display(2500000)
+        '2,5 M'
+
+        >>> convert_value_for_display(-2500000)
+        '-2,5 M'
     """
     thresholds = [
         (1_000_000_000, " Md"),
@@ -40,16 +62,14 @@ def display_trend(
     Load all cleaned real estate data, compute yearly aggregated values
     (median or mean), and generate a trend line plot.
 
-    Parameters
-    ----------
-    cleaned_path : Path or str
-        Root directory containing cleaned CSV files.
-    dept_filter : str or None
-        Department code to plot exclusively. If None, all departments are shown.
-    agg : str
-        Aggregation method: "median" (default) or "mean".
-    output_dir : Path or str
-        Folder where the resulting plot is saved.
+    Args:
+        cleaned_path(Path | str): Root directory containing cleaned CSV files.
+        dept_filter (str | None): Department code to plot exclusively. If None, all departments are shown.
+        agg (str): Aggregation method, currently handling "median" (default) or "mean".
+        output_dir(Path | str) : Folder where the resulting plot is saved.
+
+    Outputs:
+        Save trend plots to output_dir folder
     """
     df_all: pd.DataFrame = load_all_csv(str(cleaned_path))
 
@@ -89,22 +109,22 @@ def display_trend(
             print(f"No data found for department {dept_filter}.")
             return
 
-    agg_func = "mean" if agg == "mean" else "median"
-    label_metric = "Mean" if agg_func == "mean" else "Median"
+    agg_func: str = "mean" if agg == "mean" else "median"
+    label_metric: str = "Mean" if agg_func == "mean" else "Median"
 
-    trend_df = df_all.groupby(["department_code", "department_name", "year"], as_index=False)["property_value"].agg(agg_func)
+    trend_df: pd.DataFrame = df_all.groupby(["department_code", "department_name", "year"], as_index=False)["property_value"].agg(agg_func)
     if trend_df.empty:
         print("Aggregation produced no data.")
         return
 
-    output_dir_path = Path(output_dir)
+    output_dir_path: Path = Path(output_dir)
     output_dir_path.mkdir(parents=True, exist_ok=True)
 
     sns.set_theme(style="whitegrid")
     plt.figure(figsize=(10, 6))
 
     if dept_filter:
-        dept_name = trend_df["department_name"].iloc[0]
+        dept_name: str = trend_df["department_name"].iloc[0]
         sns.lineplot(
             data=trend_df,
             x="year",

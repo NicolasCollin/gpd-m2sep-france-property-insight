@@ -9,6 +9,9 @@ from fpi.interface.dashboard.market_explorer import get_market_explorer_tab
 def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
     """
     Display key summary statistics and a preview of the dataset.
+
+    Returns:
+        gr.Blocks: table section of the dashboard ready to be rendered.
     """
     # Ensure property_value is numeric even if loaded as string
     df["property_value"] = pd.to_numeric(df["property_value"].astype(str).str.replace(",", "."), errors="coerce")

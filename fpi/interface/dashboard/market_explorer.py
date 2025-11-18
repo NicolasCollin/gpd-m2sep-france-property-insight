@@ -1,5 +1,3 @@
-from typing import Any, List
-
 import gradio as gr
 import pandas as pd
 
@@ -69,7 +67,7 @@ def get_market_explorer_tab(df: pd.DataFrame) -> None:
         with gr.Column(scale=2):
             comparison_table = gr.DataFrame(label="Comparison of market indicators", interactive=False)
 
-    def update_comparison(selected_departments: List[str]) -> pd.DataFrame:
+    def update_comparison(selected_departments: list[str]) -> pd.DataFrame:
         if not selected_departments:
             return pd.DataFrame(columns=["Department", "Avg price/m² (€)", "Median price (€)", "Transactions"])
         return compare_departments(df, selected_departments)
@@ -94,7 +92,7 @@ def get_market_explorer_tab(df: pd.DataFrame) -> None:
             total_loan_cost = gr.Number(label="Total loan cost (€)", interactive=False)
             debt_ratio = gr.Number(label="Debt ratio (%)", interactive=False)
 
-    def update_market_analysis(location: str) -> List[Any]:
+    def update_market_analysis(location: str):
         """
         Update all market analysis components when location changes.
 

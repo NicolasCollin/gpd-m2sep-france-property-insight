@@ -396,7 +396,7 @@ global_css = """
 """
 
 
-def show_page(page_id: str) -> list[Any]:
+def show_page(page_id: str) -> list[gr.Update]:
     """
     Control which main page is visible based on a page identifier.
 

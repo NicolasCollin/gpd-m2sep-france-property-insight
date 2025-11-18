@@ -11,6 +11,31 @@ def compute_price_per_sqm(df: pd.DataFrame, method: str = "median") -> float:
 
     Returns:
         float: The aggregated price per square meter.
+
+    Examples:
+        >>> df1 = pd.DataFrame({
+        ...     'property_value': [100000, 200000, 300000],
+        ...     'land_area': [50, 100, 150]
+        ... })
+        >>> compute_price_per_sqm(df1)
+        2000.0
+
+        >>> compute_price_per_sqm(df1, method='mean')
+        2000.0
+
+        >>> df2 = pd.DataFrame({
+        ...     'property_value': [100000, 200000, 300000, None, 400000],
+        ...     'land_area': [50, 100, 150, 200, 0]
+        ... })
+        >>> compute_price_per_sqm(df2)
+        2000.0
+
+        >>> df3 = pd.DataFrame({
+        ...     'property_value': [150000, 250000, 350000],
+        ...     'land_area': [50, 100, 150]
+        ... })
+        >>> compute_price_per_sqm(df3, method='mean')
+        2000.0
     """
     if "property_value" not in df.columns or "land_area" not in df.columns:
         raise ValueError("DataFrame must contain 'property_value' and 'land_area' columns.")

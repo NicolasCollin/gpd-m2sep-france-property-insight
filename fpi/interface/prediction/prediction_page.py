@@ -4,8 +4,6 @@ import requests
 from fpi.interface.prediction.form import get_form, reset_form, validate_inputs
 from fpi.models.predict import predict_price
 
-API_URL = "http://localhost:7860/api/predict"
-
 
 # run predict_price with fastapi
 def api_run_prediction(postal, prop_type, area, rooms, land) -> str:
@@ -22,7 +20,7 @@ def api_run_prediction(postal, prop_type, area, rooms, land) -> str:
     }
 
     try:
-        response = requests.post(API_URL, json=data)
+        response = requests.post("http://localhost:7860/api/predict", json=data)
         response.raise_for_status()
         price = response.json()["predicted_price"]
         return f"Estimated property price: €{price:,.0f}"
@@ -33,12 +31,14 @@ def api_run_prediction(postal, prop_type, area, rooms, land) -> str:
 def run_prediction(postal: str, prop_type: str, area: float, rooms: int, land: float) -> str:
     """
     Call backs for the "Estimate" button. It prepares the data and calls the model prediction function.
+
     Args:
         postal: Postal code (string).
         prop_type: Property type ("House" / "Apartment").
         area: Living area in square
         rooms: Number of rooms (integer).
         land: Land area (float).
+
     Returns:
         A string with the predicted price or an error message.
     """

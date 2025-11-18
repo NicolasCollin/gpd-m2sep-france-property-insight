@@ -22,7 +22,3 @@ def report_data() -> None:
     print("\n=== QUALITATIVE REPORT ===")
     quality = analyze_dataset_quality(df)
     print(quality)
-
-
-if __name__ == "__main__":
-    report_data()
