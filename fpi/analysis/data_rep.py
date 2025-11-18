@@ -1,6 +1,7 @@
 import pandas as pd
-from fpi.analysis.stats import summary  
+
 from fpi.analysis.report import analyze_dataset_quality, load_raw
+from fpi.analysis.stats import summary
 
 
 def report_data() -> None:
@@ -20,7 +21,8 @@ def report_data() -> None:
     # Step 3 — Qualitative analysis
     print("\n=== QUALITATIVE REPORT ===")
     quality = analyze_dataset_quality(df)
-    print(quality)  
+    print(quality)
+
 
 if __name__ == "__main__":
     report_data()

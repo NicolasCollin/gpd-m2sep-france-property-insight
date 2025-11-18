@@ -4,7 +4,6 @@ import pandas as pd
 
 from fpi.analysis.plots import display_trend
 from fpi.analysis.stats import compute_descriptive_statistics, summary
-from fpi.analysis.quali import analyze_all_variables
 from fpi.data_pipeline.loader import load_all_csv
 
 
@@ -20,16 +19,13 @@ def explore() -> None:
     df: pd.DataFrame = load_all_csv()
 
     # Step 2 — Summary
-    
+
     summary(df)
 
     # Step 3 — Descriptive statistics
     compute_descriptive_statistics(df)
     ##property value qualitative analysis
 
-    print("\n Qualitative analysis of all variables:")
-    quality_report = analyze_all_variables(df)
-    print(quality_report)
     # Step 4 — Plots
     output_dir = Path("docs/plots")
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -44,7 +40,3 @@ def explore() -> None:
         display_trend("data/cleaned", dept_filter=dept, agg="median")
 
     print("\n Trend plots successfully generated.")
-
-
-if __name__ == "__main__":
-    explore()

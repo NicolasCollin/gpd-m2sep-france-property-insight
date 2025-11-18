@@ -64,11 +64,7 @@ def analyze_dataset_quality(df: pd.DataFrame) -> dict:
 
     # --- 2. type_local distribution (ONLY if the column exists) ---
     if "type_local" in df.columns:
-        report["type_local_counts"] = (
-            df["type_local"]
-            .value_counts(dropna=False)
-            .to_dict()
-        )
+        report["type_local_counts"] = df["type_local"].value_counts(dropna=False).to_dict()
     else:
         report["type_local_counts"] = None
 
