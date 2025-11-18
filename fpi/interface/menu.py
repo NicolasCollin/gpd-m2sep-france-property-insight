@@ -10,7 +10,7 @@ from fpi.interface.prediction.prediction_page import get_prediction_page
 update_fn: Callable = gr.update
 
 global_css = """
-/* --- Global --- */
+/* ===== GLOBAL ===== */
 .gradio-container {
     background: #ffffff !important;
     max-width: 100% !important;
@@ -20,7 +20,7 @@ global_css = """
     color-scheme: light only !important;
 }
 
-=/* ----- Dark / Light mode adaptation ----- */
+=/* ===== DARK/LIGHT MODE ===== */
 
 .page-title,
 .page-subtitle,
@@ -31,7 +31,7 @@ global_css = """
 }
 
 
-/* --- HEADER --- */
+/* ===== HEADER ===== */
 #navbar {
     display: flex;
     justify-content: space-between;
@@ -61,7 +61,7 @@ global_css = """
 }
 
 
-/* Navigation links */
+/* ===== NAVIGATION LINKS ====== */
 #nav-links {
     display: flex;
     gap: 1rem;
@@ -71,7 +71,7 @@ global_css = """
     flex-wrap: nowrap;
 }
 
-/* ---- NAVBAR BUTTONS ---- */
+/* ===== NAVBAR BUTTONS ===== */
 #nav-links .nav-links-button {
     padding: 12px 25px !important;
     font-size: 14px !important;
@@ -89,7 +89,6 @@ global_css = """
     outline: none;
 }
 
-
 #nav-links .nav-links-button:hover {
     background: linear-gradient(292deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%) !important;
     color: white !important;
@@ -98,7 +97,7 @@ global_css = """
     transform: translateY(-3px) !important;
 }
 
-/* --- PAGE CONTENT --- */
+/* ===== PAGE CONTENT ===== */
 .page-content {
     background: none;
     max-width: 1280px;
@@ -122,7 +121,7 @@ global_css = """
     color: #555;
 }
 
-/* ============ HOME PAGE STYLES ============ */
+/* ===== HOME PAGE STYLES ===== */
 #home-container {
     width: 100%;
     max-width: 1200px;
@@ -130,7 +129,7 @@ global_css = """
     padding: 0 1rem;
 }
 
-/* Hero Section */
+/* ===== HERO SECTION (section after header) ===== */
 #hero-section {
     background: #020024;
     background: linear-gradient(292deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
@@ -141,8 +140,6 @@ global_css = """
     text-align: center;
 }
 
-
-/* Hero text animation */
 .hero-text-container {
     text-align: center;
     margin-bottom: 3rem;
@@ -196,7 +193,6 @@ global_css = """
     white-space: nowrap;
 }
 
-/* Animation timing */
 .text-rotating .word:nth-child(2) { animation-delay: 2s; }
 .text-rotating .word:nth-child(3) { animation-delay: 4s; }
 .text-rotating .word:nth-child(4) { animation-delay: 6s; }
@@ -217,7 +213,6 @@ global_css = """
         transform: translateX(-50%) translateY(-20px);
     }
 }
-
 
 .hero-stats {
     display: flex;
@@ -244,7 +239,7 @@ global_css = """
     color: white !important;
 }
 
-/* ----- Search section ----- */
+/* ===== SEARCH LOCATION SECTION ===== */
 #search-section {
     background: white;
     border-radius: 15px;
@@ -308,7 +303,7 @@ global_css = """
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
 }
 
-/* Features section */
+/* ==== OUR FEATURES SECTION (for 3 cards/buttons in our features section) ==== */
 #features-section {
     margin: 4rem 0;
     text-align: center;
@@ -324,7 +319,6 @@ global_css = """
     width: 100%;
 }
 
-/* ==== Feature cards ==== */
 .feature-card {
     background: white;
     padding: 2.5rem 2rem;
@@ -355,7 +349,6 @@ global_css = """
     font-weight: 600;
 }
 
-
 .feature-card:hover {
     transform: translateY(-5px) !important;
     box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
@@ -363,7 +356,6 @@ global_css = """
     color: white !important;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem;
@@ -383,7 +375,7 @@ global_css = """
     }
 }
 
-/*=========== PREDICTION PAGE ===========*/
+/*===== PREDICTION PAGE =====*/
 .prediction-result {
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 1.5rem;
@@ -392,16 +384,17 @@ global_css = """
     color: #333;
 }
 
-/* === PAGE DASHBOARD === */
+/* ===== PAGE DASHBOARD ===== */
 footer { display: none !important; }
 
-/* === TABS === */
+/* ===== TABS ===== */
 .tab-nav button { color: black !important; }
 .tab-nav button.selected {
     color: black !important;
     border-bottom: 2px solid blue !important;
 }
 
+/* ===== PAGE TITLES ===== */
 .page-title *,
 .page-subtitle *,
 .search-title *,
