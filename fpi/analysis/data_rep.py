@@ -1,26 +1,23 @@
-import pandas as pd
-from fpi.analysis.stats import summary  
-from fpi.analysis.report import analyze_dataset_quality, load_raw
+from fpi.data_pipeline.loader import load_all_csv
+from fpi.analysis.report import (
+    count_missing_values,
+    count_type_local,
+    detect_outliers,
+    analyze_dataset_quality,
+)
 
+def report_data () -> None:
 
-def report_data() -> None:
-    """
-    Full exploratory pipeline:
-    1. Load all raw CSV files available in the data directory
-    2. Display summary statistics
-    3. Compute qualitative statistics (missing values, types, outliers)
-    """
+   df = load_all_csv("data/raw")
 
-    # Step 1 — Load raw dataset
-    df: pd.DataFrame = load_raw()
+   print("=== Effectifs de NA par colonne ===")
+   print(count_missing_values(df))
 
-    # Step 2 — Summary (general)
-    summary(df)
+   print("\n=== Effectifs par type_local ===")
+   print(count_type_local(df))
 
-    # Step 3 — Qualitative analysis
-    print("\n=== QUALITATIVE REPORT ===")
-    quality = analyze_dataset_quality(df)
-    print(quality)  
+   print("\n=== Outliers par colonne numérique ===")
+   print(detect_outliers(df))
 
-if __name__ == "__main__":
-    report_data()
+   print("\n=== Rapport global ===")
+   print(analyze_dataset_quality(df))

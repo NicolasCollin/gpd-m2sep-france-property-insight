@@ -61,10 +61,12 @@ ignore = ["GHSA-2qfp-q593-8484"]
 
 # uv run shortcuts
 [project.scripts]
+
 # run the app
 main = "fpi.main:main"
 fpi = "fpi.main:main"
 fpidocker = "fpi.utils.aliases:fpidocker"
+
 # code quality
 precommit = "fpi.utils.aliases:precommit"
 lint = "fpi.utils.aliases:precommit"
@@ -79,7 +81,7 @@ apidoc = "fpi.utils.aliases:apidoc"
 apidocsave = "fpi.utils.aliases:apidocsave"
 # dev shortcuts
 exp = "fpi.analysis.explore:explore"
-rep="fpi.analysis.data_rep:report_data"
+rep = "fpi.analysis.data_rep:report_data"
 buildridge = "fpi.models.build_linear_model:mock_build_ridge"
 buildlm = "fpi.models.build_linear_model:mock_build_lm"
 buildrf = "fpi.models.build_random_forest:mock_build_random_forest"
@@ -88,3 +90,5 @@ predictrf = "fpi.models.predict:mock_predict_price"
 validation = "fpi.data_pipeline.validation:main"
 clean = "fpi.data_pipeline.clean_data:clean_data"
 process = "fpi.data_pipeline.process_data:process_data"
+
+
