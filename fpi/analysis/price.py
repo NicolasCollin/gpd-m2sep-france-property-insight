@@ -18,10 +18,10 @@ def compute_price_per_sqm(df: pd.DataFrame, method: str = "median") -> float:
         ...     'land_area': [50, 100, 150]
         ... })
         >>> compute_price_per_sqm(df1)
-        2000.0
+        np.float(2000.0)
 
         >>> compute_price_per_sqm(df1, method='mean')
-        2000.0
+        np.float(2000.0)
 
         >>> df2 = pd.DataFrame({
         ...     'property_value': [100000, 200000, 300000, None, 400000],

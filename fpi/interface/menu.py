@@ -1,5 +1,4 @@
 from collections.abc import Callable
-from typing import Any
 
 import gradio as gr
 
@@ -396,7 +395,7 @@ global_css = """
 """
 
 
-def show_page(page_id: str) -> list[gr.Update]:
+def show_page(page_id: str) -> list[gr.update]:
     """
     Control which main page is visible based on a page identifier.
 
@@ -487,7 +486,7 @@ def app_menu() -> gr.Blocks:
             predict_btn: gr.Button
             reset_btn: gr.Button
             result_output: gr.Markdown
-            inputs_list: list[Any]
+            inputs_list: list[gr.Component]
             predict_btn, reset_btn, result_output, inputs_list = get_prediction_page()
 
         # Navigation logic
@@ -510,7 +509,7 @@ def app_menu() -> gr.Blocks:
         about_card.click(fn=lambda: gr.Info("Coming soon"), inputs=None, outputs=None)
 
         # Search + Dashboard logic
-        def navigate_to_dashboard(department: str | None) -> list[Any]:
+        def navigate_to_dashboard(department: str | None) -> list[gr.update]:
             """
             Redirect the user to the dashboard page after selecting a department.
 
