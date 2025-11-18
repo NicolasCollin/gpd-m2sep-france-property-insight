@@ -54,26 +54,6 @@ class TestPredictionFormIntegration:
         assert error_msg.startswith("Error :"), "Missing fields should produce error"
         assert "Postal code" in error_msg or "required" in error_msg
 
-    def test_form_validation_invalid_postal_code(self) -> None:
-        """
-        Test form validation with invalid postal code format.
-
-        Ensures that postal codes not conforming to 5-digit format are rejected.
-        """
-        # Arrange
-        postal: str = "750"  # Invalid
-        prop_type: str = "Apartment"
-        area: float = 43.0
-        rooms: int = 2
-        land: float = 69.0
-
-        # Act
-        error_msg: str = validate_inputs(postal, prop_type, area, rooms, land)
-
-        # Assert
-        assert error_msg.startswith("Error :"), "Invalid postal code should produce error"
-        assert "postal code" in error_msg.lower()
-
     def test_form_validation_invalid_area(self) -> None:
         """
         Test form validation with unrealistic property area.

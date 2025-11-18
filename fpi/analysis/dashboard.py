@@ -43,19 +43,12 @@ def plot_price_evolution_by_department(df: pd.DataFrame) -> gr.Plot:
     """
     df_copy: pd.DataFrame = df.copy()
 
-    # Convert property_value to float
     df_copy["property_value"] = df_copy["property_value"].astype(str).str.replace(",", ".").astype(float)
-
-    # Convert transaction_date to datetime
     df_copy["transaction_date"] = pd.to_datetime(df_copy["transaction_date"], dayfirst=True)
-
-    # Extract year
     df_copy["year"] = df_copy["transaction_date"].dt.year
 
-    # Group by year and department
     df_grouped: pd.DataFrame = df_copy.groupby(["year", "department_code"]).property_value.mean().reset_index()
 
-    # Plot
     fig: px.line = px.line(
         df_grouped,
         x="year",

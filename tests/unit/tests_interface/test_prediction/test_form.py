@@ -1,4 +1,5 @@
 import gradio as gr
+import pandas as pd
 
 from fpi.interface.prediction.form import get_form, reset_form, validate_inputs
 
@@ -46,11 +47,6 @@ class TestValidateInputs:
         result: str = validate_inputs("75001", "House", 100.0, 3, -1.0)
         assert "Land area" in result
 
-    def test_invalid_postal_code_format(self) -> None:
-        """Returns error when postal code is not 5 digits."""
-        result: str = validate_inputs("7500", "House", 100.0, 3, 50.0)
-        assert "postal code" in result.lower()
-
 
 class TestGetForm:
     """
@@ -62,30 +58,31 @@ class TestGetForm:
         - Dropdown component has the correct default value and choices.
     """
 
+    def setup(self) -> None:
+        """A mock data for all tests"""
+        self.df_mock = pd.DataFrame(
+            {
+                "postal_code": [75001, 75002],
+                "town_name": ["PARIS 01", "PARIS 02"],
+                "property_type": ["Maison", "Apartement", "Dépendance", "Local industriel. commercial ou assimilé"],
+            }
+        )
+
     def test_returns_components_and_dropdown(self) -> None:
-        """get_form returns a list of FormComponents and a Dropdown."""
+        """get_form returns a list of FormComponents and 2 Dropdown."""
         with gr.Blocks():
-            inputs_list, prop_type_input = get_form()
+            inputs_list, postal_input, prop_type_input = get_form()
 
         assert isinstance(inputs_list, list)
         assert all(isinstance(c, gr.components.FormComponent) for c in inputs_list)
+        assert isinstance(postal_input, gr.Dropdown)
         assert isinstance(prop_type_input, gr.Dropdown)
 
     def test_form_contains_expected_number_of_inputs(self) -> None:
-        """Inputs list has exactly 7 components."""
+        """Inputs list has exactly 5 components."""
         with gr.Blocks():
-            inputs_list, _ = get_form()
+            inputs_list, _, _ = get_form()
         assert len(inputs_list) == 5
-
-    def test_dropdown_default_value_and_choices(self) -> None:
-        """Dropdown has default value 'House' and expected choices."""
-        with gr.Blocks():
-            _, prop_type_input = get_form()
-        assert prop_type_input.value == "House"
-
-        # handle tuple choices (label, value)
-        choices_labels: list[str] = [choice[0] if isinstance(choice, tuple) else choice for choice in prop_type_input.choices]
-        assert choices_labels == ["House", "Apartment"]
 
 
 class TestResetForm:
@@ -112,7 +109,7 @@ class TestResetForm:
         postal, prop_type, area, rooms, land, output = result
 
         assert postal == ""
-        assert prop_type == "House"
+        assert prop_type == "Maison"
         assert area == 0.0
         assert rooms == 0
         assert land == 0.0

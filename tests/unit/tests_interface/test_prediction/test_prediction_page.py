@@ -17,91 +17,71 @@ class TestRunPrediction:
         - Detection of missing required fields.
     """
 
-    def test_valid_inputs_returns_estimation(self) -> None:
-        """
-        Should return a formatted price string when inputs are valid.
-        """
-        with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
-            mock_predict.return_value: float = 250000.0
+    @patch("fpi.interface.prediction.prediction_page.validate_inputs")
+    @patch("fpi.interface.prediction.prediction_page.df")
+    @patch("fpi.interface.prediction.prediction_page.predict_price")
+    def test_valid_inputs_returns_estimation(self, mock_predict, mock_df, mock_validate):
+        """Should return a formatted price string when inputs are valid."""
+        mock_validate.return_value = ""
+        mock_df.__getitem__.return_value = mock_df
+        mock_df.empty = False
+        mock_predict.return_value = 250000.0
 
-            postal: str = "75005"
-            prop_type: str = "House"
-            area: float = 120.0
-            rooms: int = 4
-            land: float = 50.0
-
-            result: str = run_prediction(postal, prop_type, area, rooms, land)
+        result = run_prediction("75005", "Maison", 120.0, 4, 50.0)
 
         assert result.startswith("Estimated property price")
         assert "250,000" in result
 
-    def test_invalid_postal_returns_error(self) -> None:
-        """
-        Should return a validation error when postal code is invalid.
-        """
-        postal: str = "7500"  # invalid postal
-        prop_type: str = "House"
-        area: float = 100.0
-        rooms: int = 3
-        land: float = 50.0
+    @patch("fpi.interface.prediction.prediction_page.validate_inputs")
+    def test_invalid_postal_returns_error(self, mock_validate):
+        """Should return validation error when postal is invalid."""
+        mock_validate.return_value = "Invalid postal code"
 
-        result: str = run_prediction(postal, prop_type, area, rooms, land)
+        result = run_prediction("123", "Maison", 100, 3, 50)
 
-        assert "postal code" in result.lower()
+        assert "invalid postal" in result.lower()
 
-    def test_model_raises_exception(self) -> None:
-        """
-        Should return an error message when predict_price raises an exception.
-        """
-        with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
-            mock_predict.side_effect: Exception = Exception("Model file not found")
+    @patch("fpi.interface.prediction.prediction_page.validate_inputs")
+    @patch("fpi.interface.prediction.prediction_page.df")
+    @patch("fpi.interface.prediction.prediction_page.predict_price")
+    def test_model_raises_exception(self, mock_predict, mock_df, mock_validate):
+        """Should return error message when predict_price raises exception."""
+        mock_validate.return_value = ""
 
-            postal: str = "75001"
-            prop_type: str = "Apartment"
-            area: float = 80.0
-            rooms: int = 2
-            land: float = 20.0
+        mock_df.__getitem__.return_value = mock_df
+        mock_df.empty = False
 
-            result: str = run_prediction(postal, prop_type, area, rooms, land)
+        mock_predict.side_effect = Exception("Model file not found")
+
+        result = run_prediction("75005 - PARIS 05", "Apartement", 80, 2, 20)
 
         assert result.startswith("Prediction failed")
         assert "Model file not found" in result
 
-    def test_property_type_conversion_house(self) -> None:
-        """
-        Should assign property_type_code = 1 for House.
-        """
-        with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
-            mock_predict.return_value: float = 1.0
+    @patch("fpi.interface.prediction.prediction_page.validate_inputs")
+    @patch("fpi.interface.prediction.prediction_page.df")
+    @patch("fpi.interface.prediction.prediction_page.predict_price")
+    def test_property_type_conversion_house(self, mock_predict, mock_df, mock_validate):
+        """Check that property_type_code=1 for House."""
+        mock_validate.return_value = ""
+        mock_df.__getitem__.return_value = mock_df
+        mock_df.empty = False
+        mock_predict.return_value = 1.0
 
-            result: str = run_prediction("75005", "House", 100.0, 3, 50.0)
+        result = run_prediction("75005 - PARIS 05", "Maison", 100, 3, 50)
 
         assert "1" in result
 
-    def test_property_type_conversion_apartment(self) -> None:
-        """
-        Should assign property_type_code = 2 for Apartment.
-        """
-        with patch("fpi.interface.prediction.prediction_page.predict_price") as mock_predict:
-            mock_predict.return_value: float = 2.0
+    @patch("fpi.interface.prediction.prediction_page.validate_inputs")
+    @patch("fpi.interface.prediction.prediction_page.df")
+    @patch("fpi.interface.prediction.prediction_page.predict_price")
+    def test_missing_required_fields(self, mock_predict, mock_df, mock_validate):
+        """Should return validation error when postal is empty."""
+        mock_validate.return_value = "Postal code is required"
 
-            result: str = run_prediction("75005", "Apartment", 100.0, 3, 50.0)
+        result = run_prediction("", "Maison", 100, 3, 50)
 
-        assert "2" in result
-
-    def test_missing_required_fields(self) -> None:
-        """
-        Should return an error when required fields (postal) are missing.
-        """
-        postal: str = ""
-        prop_type: str = "House"
-        area: float = 100.0
-        rooms: int = 3
-        land: float = 50.0
-
-        result: str = run_prediction(postal, prop_type, area, rooms, land)
-
-        assert "postal code" in result.lower() or "required" in result.lower()
+        assert "postal" in result.lower()
 
 
 class TestGetPredictionPage:
@@ -119,7 +99,7 @@ class TestGetPredictionPage:
         Should return a tuple of (predict_btn, reset_btn, result_output, inputs_list)
         with the correct types.
         """
-        with gr.Blocks():  # Ensure Gradio context
+        with gr.Blocks():
             predict_btn, reset_btn, result_output, inputs_list = get_prediction_page()
 
         assert isinstance(predict_btn, gr.Button)

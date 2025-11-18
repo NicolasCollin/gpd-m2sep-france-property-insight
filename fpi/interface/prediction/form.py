@@ -1,6 +1,10 @@
-import re
-
 import gradio as gr
+import pandas as pd
+
+from fpi.analysis.market_analysis import get_location_choices
+from fpi.data_pipeline.loader import load_all_csv
+
+df = load_all_csv()
 
 
 def validate_inputs(
@@ -36,12 +40,10 @@ def validate_inputs(
         "Land area": land,
     }
 
-    # Check for missing fields
     for name, value in required_fields.items():
         if value is None or (isinstance(value, str) and not value.strip()):
             return f"Error : field '{name}' is required."
 
-    # Validate numeric fields
     try:
         if area <= 0 or area > 1000:
             return "Error : Living area must be positive and realistic (max 1000 m²)."
@@ -52,14 +54,21 @@ def validate_inputs(
     except (ValueError, TypeError):
         return "Error : Please enter valid numbers for areas and rooms."
 
-    # Validate postal code format
-    if not re.fullmatch(r"^\d{5}$", postal.strip()):
-        return "Error : postal code must be a 5-digit number."
-
     return ""
 
 
-def get_form() -> tuple[list[gr.components.FormComponent], gr.Dropdown]:
+def get_property_types(df: pd.DataFrame) -> list[str]:
+    """
+    Get property types
+    Arg:
+        df: pd.DataFrame
+    Return:
+        list[str]: a list of property types
+    """
+    return df["property_type"].dropna().unique().tolist()
+
+
+def get_form() -> tuple[list[gr.components.FormComponent], gr.Dropdown, gr.Dropdown]:
     """
     Build and return the Gradio input form for property price estimation.
 
@@ -73,22 +82,24 @@ def get_form() -> tuple[list[gr.components.FormComponent], gr.Dropdown]:
             2. The property type dropdown (for convenience, often needed separately).
     """
 
-    # Row 1: location identifiers
+    postal_choices = get_location_choices(df)
+    type_choices = get_property_types(df)
+
     with gr.Row():
-        postal_input: gr.Textbox = gr.Textbox(
+        postal_input = gr.Dropdown(
             label="Postal code",
-            placeholder="Ex: 75001",
-            lines=1,
+            choices=postal_choices,
+            value=postal_choices[0] if postal_choices else None,
+            interactive=True,
+        )
+        prop_type_input = gr.Dropdown(
+            label="Property type",
+            choices=type_choices,
+            value=type_choices[0] if type_choices else None,
             interactive=True,
         )
 
-    # Row 2: property characteristics
     with gr.Row():
-        prop_type_input: gr.Dropdown = gr.Dropdown(
-            label="Property type",
-            choices=["House", "Apartment"],
-            value="House",
-        )
         area_input: gr.Number = gr.Number(
             label="Living area (m²)",
             minimum=1,
@@ -113,7 +124,7 @@ def get_form() -> tuple[list[gr.components.FormComponent], gr.Dropdown]:
         land_input,
     ]
 
-    return inputs_list, prop_type_input
+    return inputs_list, postal_input, prop_type_input
 
 
 def reset_form() -> tuple[str, str, float, int, float, str]:
@@ -129,7 +140,7 @@ def reset_form() -> tuple[str, str, float, int, float, str]:
             (postal, prop_type, area, rooms, land, result_text)
     """
     postal: str = ""
-    prop_type: str = "House"
+    prop_type: str = "Maison"
     area: float = 0.0
     rooms: int = 0
     land: float = 0.0
