@@ -293,10 +293,6 @@ global_css = """
         flex-direction: column;
     }
 
-    #department-search {
-        min-width: 200px;
-    }
-
     .features-grid {
         grid-template-columns: 1fr;
     }
@@ -309,6 +305,7 @@ global_css = """
     font-weight: 600;
     margin-top: 1rem;
     color: #333;
+    min-height: 150px;
 }
 
 /* ===== PAGE DASHBOARD ===== */
@@ -369,7 +366,7 @@ def app_menu() -> gr.Blocks:
     This function defines:
     - A fixed navigation bar with buttons (Home, Dashboard, Estimation, API Docs, GitLab)
     - Three distinct pages:
-        1. Home page (overview, cards, department search)
+        1. Home page (overview, cards)
         2. Dashboard page (visual data analysis)
         3. Prediction page (property price estimation form)
     - Navigation logic between these pages through Gradio event triggers.

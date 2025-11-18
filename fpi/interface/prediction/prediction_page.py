@@ -68,7 +68,7 @@ def get_prediction_page() -> tuple[gr.components.Button, gr.components.Button, g
         gr.Markdown("## Estimate the property value", elem_classes="page-title")
         gr.Markdown("Enter the characteristics of the property to get an estimated price.", elem_classes="page-subtitle")
 
-        with gr.Column(elem_classes="glass-box"):
+        with gr.Column():
             inputs_list: list[gr.components.FormComponent]
             postal_input: gr.components.Component
             prop_type_input: gr.components.Component

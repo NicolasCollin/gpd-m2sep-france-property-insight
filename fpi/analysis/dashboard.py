@@ -46,6 +46,7 @@ def plot_price_evolution_by_department(df: pd.DataFrame) -> gr.Plot:
     df_copy["property_value"] = df_copy["property_value"].astype(str).str.replace(",", ".").astype(float)
     df_copy["transaction_date"] = pd.to_datetime(df_copy["transaction_date"], dayfirst=True)
     df_copy["year"] = df_copy["transaction_date"].dt.year
+    df_copy["year"] = df_copy["year"].astype(str)
 
     df_grouped: pd.DataFrame = df_copy.groupby(["year", "department_code"]).property_value.mean().reset_index()
 
