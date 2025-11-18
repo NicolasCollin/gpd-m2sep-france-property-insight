@@ -64,6 +64,7 @@ ignore = ["GHSA-2qfp-q593-8484"]
 # uv run shortcuts
 [project.scripts]
 # run the app
+oldmain = "fpi.main:old_main"
 main = "fpi.main:main"
 fpi = "fpi.main:main"
 fpidocker = "fpi.utils.aliases:fpidocker"

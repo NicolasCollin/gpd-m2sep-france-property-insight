@@ -17,17 +17,7 @@ global_css = """
     padding: 0 !important;
     position: relative;
     min-height: 100vh;
-    color-scheme: light only !important;
-}
-
-=/* ===== DARK/LIGHT MODE ===== */
-
-.page-title,
-.page-subtitle,
-.search-title,
-.feature-title,
-.prediction-result {
-    color: inherit !important;
+    color-scheme: light;
 }
 
 
@@ -385,7 +375,6 @@ global_css = """
 }
 
 /* ===== PAGE DASHBOARD ===== */
-footer { display: none !important; }
 
 /* ===== TABS ===== */
 .tab-nav button { color: black !important; }
