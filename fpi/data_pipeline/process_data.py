@@ -94,6 +94,6 @@ def process_data(cleaned_path: Path | str = "data/cleaned", processed_path: Path
         df.to_csv(output_file, index=False)
 
         print(f"Processed file saved: {output_file}")
-        print(f"Rows before filtering: {n_before}, after processing: {n_after}")
+        print(f"Rows before processing: {n_before}, after processing: {n_after}")
 
     print(f"\nAll files have been processed and saved to {processed_path_obj}")

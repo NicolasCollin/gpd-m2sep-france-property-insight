@@ -3,6 +3,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from fpi.data_pipeline.schemas import PropertyData
+
 
 def clean_data(raw_path: Path | str = "data/raw", cleaned_path: Path | str = "data/cleaned") -> None:
     """
@@ -98,6 +100,16 @@ def clean_data(raw_path: Path | str = "data/raw", cleaned_path: Path | str = "da
             else:
                 # Remove ".0" endings in numeric-like columns
                 df[col] = df[col].astype(str).str.replace(r"\.0$", "", regex=True).str.strip()
+
+        # Validate each row using Pydantic schema PropertyData
+        def is_valid_row(row):
+            try:
+                PropertyData(**row.to_dict())
+                return True
+            except Exception:
+                return False
+
+        df = df[df.apply(is_valid_row, axis=1)].reset_index(drop=True)
 
         # Extract year from filename
         match = re.search(r"(\d{4})\.csv$", file_path.name)

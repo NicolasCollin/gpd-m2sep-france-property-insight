@@ -19,10 +19,12 @@ def explore() -> None:
     df: pd.DataFrame = load_all_csv()
 
     # Step 2 — Summary
+
     summary(df)
 
     # Step 3 — Descriptive statistics
     compute_descriptive_statistics(df)
+    ##property value qualitative analysis
 
     # Step 4 — Plots
     output_dir = Path("docs/plots")
@@ -38,7 +40,3 @@ def explore() -> None:
         display_trend("data/cleaned", dept_filter=dept, agg="median")
 
     print("\n Trend plots successfully generated.")
-
-
-if __name__ == "__main__":
-    explore()

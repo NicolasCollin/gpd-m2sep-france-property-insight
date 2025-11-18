@@ -13,6 +13,7 @@ dependencies = [
     "plotly==6.4.0",
     "pyarrow==22.0.0",
     "pydantic==2.11.10",
+    "requests==2.32.5",
     "scikit-learn==1.7.2",
     "seaborn==0.13.2",
     "sqlalchemy==2.0.44",
@@ -29,6 +30,7 @@ dev = [
     "pre-commit==4.3.0",
     "pytest==8.4.2",
     "ruff==0.14.0",
+    "types-requests==2.32.4.20250913",
 ]
 
 [project.urls]
@@ -62,6 +64,7 @@ ignore = ["GHSA-2qfp-q593-8484"]
 # uv run shortcuts
 [project.scripts]
 # run the app
+oldmain = "fpi.main:old_main"
 main = "fpi.main:main"
 fpi = "fpi.main:main"
 fpidocker = "fpi.utils.aliases:fpidocker"
@@ -79,6 +82,7 @@ apidoc = "fpi.utils.aliases:apidoc"
 apidocsave = "fpi.utils.aliases:apidocsave"
 # dev shortcuts
 exp = "fpi.analysis.explore:explore"
+rep="fpi.analysis.data_rep:report_data"
 buildridge = "fpi.models.build_linear_model:mock_build_ridge"
 buildlm = "fpi.models.build_linear_model:mock_build_lm"
 buildrf = "fpi.models.build_random_forest:mock_build_random_forest"
