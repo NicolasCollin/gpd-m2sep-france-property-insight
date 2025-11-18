@@ -44,7 +44,7 @@ def compute_price_per_sqm(df: pd.DataFrame, method: str = "median") -> float:
     if df_valid.empty:
         raise ValueError("No valid data to compute price per square meter")
 
-    price_per_sqm: pd.Dataframe = df_valid["property_value"] / df_valid["land_area"]
+    price_per_sqm: pd.Series = df_valid["property_value"] / df_valid["land_area"]
 
     if method == "mean":
         return float(price_per_sqm.mean())

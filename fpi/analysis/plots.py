@@ -113,7 +113,7 @@ def display_trend(
     agg_func: str = "mean" if agg == "mean" else "median"
     label_metric: str = "Mean" if agg_func == "mean" else "Median"
 
-    trend_df: pd.DataFrame = df_all.groupby(["department_code", "department_name", "year"], as_index=False)["property_value"].agg(agg_func)
+    trend_df: pd.Series = df_all.groupby(["department_code", "department_name", "year"], as_index=False)["property_value"].agg(agg_func)
     if trend_df.empty:
         print("Aggregation produced no data.")
         return

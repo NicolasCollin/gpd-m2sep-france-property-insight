@@ -66,7 +66,7 @@ def analyze_dataset_quality(df: pd.DataFrame) -> dict:
     if "type_local" in df.columns:
         report["type_local_counts"] = df["type_local"].value_counts(dropna=False).to_dict()
     else:
-        report["type_local_counts"] = None
+        report["type_local_counts"] = {"None": "None"}
 
     # --- 3. Outliers on numeric columns ---
     numeric_cols = df.select_dtypes(include=["number"]).columns
