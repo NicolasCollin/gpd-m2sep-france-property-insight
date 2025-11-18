@@ -79,6 +79,7 @@ apidoc = "fpi.utils.aliases:apidoc"
 apidocsave = "fpi.utils.aliases:apidocsave"
 # dev shortcuts
 exp = "fpi.analysis.explore:explore"
+rep="fpi.analysis.data_rep:report_data"
 buildridge = "fpi.models.build_linear_model:mock_build_ridge"
 buildlm = "fpi.models.build_linear_model:mock_build_lm"
 buildrf = "fpi.models.build_random_forest:mock_build_random_forest"
