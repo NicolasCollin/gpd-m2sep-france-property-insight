@@ -11,6 +11,7 @@ class TestPredictionFormSchema:
     Checks:
     1. Valid form input creates a model instance.
     2. Default values (like `output`) are applied.
+    3. Invalid numeric fields raise ValidationError.
     """
 
     def test_valid_input(self) -> None:
@@ -39,6 +40,22 @@ class TestPredictionFormSchema:
         assert form.land == 100.0
         assert form.output == ""
 
+    def test_invalid_numeric_field(self) -> None:
+        """
+        Scenario: Non-numeric field is passed for a numeric parameter.
+
+        Expectation:
+        - Should raise ValidationError.
+        """
+        with pytest.raises(ValidationError):
+            PredictionFormSchema(
+                postal="75001",
+                prop_type="House",
+                area="abc",
+                rooms=2,
+                land=50,
+            )
+
 
 class TestPropertyData:
     """
@@ -49,6 +66,7 @@ class TestPropertyData:
     2. property_value must be >0.
     3. property_type_code must be within the valid range 1–4.
     4. Malformed strings for numeric fields raise ValidationError.
+    5. Internal coercion helpers (_to_float_eu, parse_float_fields, parse_int_fields) behave correctly.
     """
 
     def test_valid_input(self) -> None:
@@ -147,3 +165,47 @@ class TestPropertyData:
 
         with pytest.raises(ValidationError):
             PropertyData(**data)
+
+    def test_to_float_eu_valid(self) -> None:
+        """_to_float_eu correctly parses various numeric formats."""
+        assert PropertyData._to_float_eu("10,5") == 10.5
+        assert PropertyData._to_float_eu("20.75") == 20.75
+        assert PropertyData._to_float_eu(15) == 15.0
+
+    def test_to_float_eu_invalid(self) -> None:
+        """_to_float_eu should raise ValueError for invalid data."""
+        with pytest.raises(ValueError):
+            PropertyData._to_float_eu("abc")
+        with pytest.raises(ValueError):
+            PropertyData._to_float_eu(None)
+
+    def test_parse_float_fields_valid(self) -> None:
+        """parse_float_fields converts strings with commas to floats."""
+        assert PropertyData.parse_float_fields("30,2") == 30.2
+
+    def test_parse_float_fields_invalid(self) -> None:
+        """parse_float_fields must raise ValueError for malformed numbers."""
+        with pytest.raises(ValueError):
+            PropertyData.parse_float_fields("xx,yy")
+
+    def test_parse_int_fields_valid(self) -> None:
+        """parse_int_fields converts strings and floats to ints."""
+        assert PropertyData.parse_int_fields("75") == 75
+        assert PropertyData.parse_int_fields("75.0") == 75
+
+    def test_parse_int_fields_invalid(self) -> None:
+        """parse_int_fields raises ValueError for invalid integers."""
+        with pytest.raises(ValueError):
+            PropertyData.parse_int_fields("7a")
+
+    def test_property_type_in_known_range_valid(self) -> None:
+        """Allowed values for property_type_code should pass."""
+        assert PropertyData.property_type_in_known_range(1) == 1
+        assert PropertyData.property_type_in_known_range(4) == 4
+
+    def test_property_type_in_known_range_invalid(self) -> None:
+        """Out-of-range property_type_code values must raise ValueError."""
+        with pytest.raises(ValueError):
+            PropertyData.property_type_in_known_range(0)
+        with pytest.raises(ValueError):
+            PropertyData.property_type_in_known_range(5)
