@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def count_missing_values(df: pd.DataFrame) -> list[tuple[str, int]]:
     """
     Count missing values (NaN) per column.

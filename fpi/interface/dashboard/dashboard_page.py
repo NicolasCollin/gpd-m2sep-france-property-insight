@@ -22,12 +22,12 @@ def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
     with gr.Blocks() as table_block:
         with gr.Row():
             total_properties: int = len(df)
-            avg_price: str = f"{df['property_value'].mean():,.0f} €"
+            median_price: str = f"{df['property_value'].median():,.0f} €"
             min_price: str = f"{df['property_value'].min():,.0f} €"
             max_price: str = f"{df['property_value'].max():,.0f} €"
 
             gr.Number(value=total_properties, label="Total properties in dataset", interactive=False)
-            gr.Textbox(value=avg_price, label="Average property price", interactive=False)
+            gr.Textbox(value=median_price, label="Median property price", interactive=False)
             gr.Textbox(value=min_price, label="Minimum property price", interactive=False)
             gr.Textbox(value=max_price, label="Maximum property price", interactive=False)
 

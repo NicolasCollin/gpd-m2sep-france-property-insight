@@ -1,6 +1,8 @@
 import glob
 import os
+
 import pandas as pd
+
 
 def load_all_csv(data_root: str = "data/cleaned") -> pd.DataFrame:
     """
@@ -26,10 +28,7 @@ def load_all_csv(data_root: str = "data/cleaned") -> pd.DataFrame:
             break
 
     if not all_files:
-        raise FileNotFoundError(
-            f"No CSV files found in {data_root}. "
-            "Tried patterns: cleaned*/cleaned_*_*.csv, raw*/raw_*_*.csv, *.csv"
-        )
+        raise FileNotFoundError(f"No CSV files found in {data_root}. " "Tried patterns: cleaned*/cleaned_*_*.csv, raw*/raw_*_*.csv, *.csv")
 
     df_list: list[pd.DataFrame] = []
     numeric_cols: list[str] = ["property_value", "building_area", "main_rooms", "land_area"]

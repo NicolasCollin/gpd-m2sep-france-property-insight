@@ -93,5 +93,3 @@ predictrf = "fpi.models.predict:mock_predict_price"
 validation = "fpi.data_pipeline.validation:main"
 clean = "fpi.data_pipeline.clean_data:clean_data"
 process = "fpi.data_pipeline.process_data:process_data"
-
-

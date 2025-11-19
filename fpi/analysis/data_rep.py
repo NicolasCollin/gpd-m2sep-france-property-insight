@@ -1,13 +1,29 @@
 import pandas as pd
+
 from fpi.analysis.report import (
+    analyze_dataset_quality,
     count_missing_values,
     count_type_local,
     detect_outliers,
-    analyze_dataset_quality,
 )
 from fpi.data_pipeline.loader import load_all_csv
 
+
 def report_data() -> None:
+    """
+    Generate and print a diagnostic report about the raw dataset on its qualitative variables.
+
+    This function loads all CSV files from the 'data/raw' directory, then
+    prints several summaries to the console in order to help understand
+    data quality issues and the distribution of key variables.
+
+    The report includes:
+        1. Missing values per column (top 20).
+        2. Frequency counts of the 'Type_local' variable.
+        3. Number of outliers detected per numerical column (top 20),
+           using the detection logic defined in `detect_outliers`.
+        4. A global data quality summary produced by `analyze_dataset_quality`.
+    """
     df = load_all_csv("data/raw")
 
     # Missing values

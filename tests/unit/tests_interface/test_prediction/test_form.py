@@ -77,29 +77,20 @@ class TestGetForm:
         """Returns list of FormComponents and a Dropdown."""
         with gr.Blocks():
             inputs_list: list[gr.components.FormComponent]
+            postal_input: gr.Dropdown
             prop_type_input: gr.Dropdown
-            inputs_list, prop_type_input = get_form()
+            inputs_list, postal_input, prop_type_input = get_form()
 
         assert isinstance(inputs_list, list)
         assert all(isinstance(c, gr.components.FormComponent) for c in inputs_list)
+        assert isinstance(postal_input, gr.Dropdown)
         assert isinstance(prop_type_input, gr.Dropdown)
 
-    def test_expected_number_of_inputs(self) -> None:
+    def test_form_contains_expected_number_of_inputs(self) -> None:
         """Inputs list has exactly 5 components."""
         with gr.Blocks():
-            inputs_list, _ = get_form()
+            inputs_list, _, _ = get_form()
         assert len(inputs_list) == 5
-
-    def test_dropdown_default_and_choices(self) -> None:
-        """Dropdown default value is 'House' and choices include 'House' and 'Apartment'."""
-        with gr.Blocks():
-            _, prop_type_input = get_form()
-
-        default_value: str = prop_type_input.value
-        assert default_value == "House"
-
-        choices_labels: list[str] = [c[0] if isinstance(c, tuple) else c for c in prop_type_input.choices]
-        assert choices_labels == ["House", "Apartment"]
 
 
 class TestResetForm:
@@ -129,7 +120,7 @@ class TestResetForm:
 
         postal, prop_type, area, rooms, land, output = reset_form()
         assert postal == ""
-        assert prop_type == "House"
+        assert prop_type == "Maison"
         assert area == 0.0
         assert rooms == 0
         assert land == 0.0

@@ -1,21 +1,26 @@
 import pandas as pd
 import pytest
+
 from fpi.analysis.report import (
+    analyze_dataset_quality,
     count_missing_values,
     count_type_local,
     detect_outliers,
-    analyze_dataset_quality,
 )
+
 
 @pytest.fixture
 def sample_df():
     """Provide a sample DataFrame for testing."""
-    return pd.DataFrame({
-        "Type_local": ["Maison", "Appartement", "Maison", None, "Local"],
-        "Valeur_fonciere": [100000, 200000, 150000, 3000000, None],
-        "Surface": [50, 60, None, 200, 55],
-        "Commune": ["Paris", "Lyon", None, "Marseille", "Lille"]
-    })
+    return pd.DataFrame(
+        {
+            "Type_local": ["Maison", "Appartement", "Maison", None, "Local"],
+            "Valeur_fonciere": [100000, 200000, 150000, 3000000, None],
+            "Surface": [50, 60, None, 200, 55],
+            "Commune": ["Paris", "Lyon", None, "Marseille", "Lille"],
+        }
+    )
+
 
 class TestDataQuality:
     def test_count_missing_values(self, sample_df):

@@ -1,14 +1,12 @@
 import gradio as gr
 
 
-def get_home_page() -> tuple[gr.Dropdown, gr.Button, gr.Button, gr.Button, gr.Button]:
+def get_home_page() -> tuple[gr.Button, gr.Button, gr.Button]:
     """
     Return Gradio components for the Home Page.
 
     Returns:
         tuple containing:
-            - department_dropdown (gr.Dropdown)
-            - search_button (gr.Button)
             - dashboard_card (gr.Button)
             - estimation_card (gr.Button)
             - about_card (gr.Button)
@@ -52,31 +50,6 @@ def get_home_page() -> tuple[gr.Dropdown, gr.Button, gr.Button, gr.Button, gr.Bu
                         </div>
                         """)
 
-            # Search section
-            with gr.Row(elem_id="search-section", scale=1):
-                with gr.Column(elem_id="search-container"):
-                    _ = gr.Markdown("## Find insights for your area", elem_classes="search-title")
-
-                    with gr.Row(elem_id="search-input-row"):
-                        department_dropdown: gr.Dropdown = gr.Dropdown(
-                            label="Search a department (ex: 75, Paris)",
-                            choices=[
-                                "75 - Paris",
-                                "77 - Seine-et-Marne",
-                                "78 - Yvelines",
-                                "91 - Essonne",
-                                "92 - Hauts-de-Seine",
-                                "93 - Seine-Saint-Denis",
-                                "94 - Val-de-Marne",
-                                "95 - Val-d'Oise",
-                            ],
-                            filterable=True,
-                            interactive=True,
-                            elem_id="department-search",
-                        )
-                        search_button: gr.Button = gr.Button("Analyze →", elem_id="search-button")
-
-            # Features Section
             with gr.Row(elem_id="features-section"):
                 with gr.Column():
                     _ = gr.Markdown("## Our features", elem_classes="feature-title")
@@ -97,4 +70,4 @@ def get_home_page() -> tuple[gr.Dropdown, gr.Button, gr.Button, gr.Button, gr.Bu
                             elem_classes="feature-card",
                         )
 
-    return department_dropdown, search_button, dashboard_card, estimation_card, about_card
+    return dashboard_card, estimation_card, about_card
