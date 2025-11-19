@@ -58,8 +58,6 @@ def filter_data_by_location(df: pd.DataFrame, location: str) -> pd.DataFrame:
         pd.DataFrame: The filtered DataFrame containing only rows associated with
         the requested location.
     """
-    if not location or df.empty:
-        return df
 
     # Case 1: "postal_code - town_name"
     if " - " in location and "postal_code" in df.columns:
@@ -70,7 +68,6 @@ def filter_data_by_location(df: pd.DataFrame, location: str) -> pd.DataFrame:
     if "department_code" in df.columns:
         dept_code: str = location.strip()  # leave as string
         return df[df["department_code"].astype(str) == dept_code]
-
     return df
 
 
@@ -219,8 +216,8 @@ def create_sales_by_date_plot(df: pd.DataFrame) -> go.Figure:
     Return:
         go.Figure: a plotly figure object representing sales volume evolution
     """
+    fig: go.Figure = go.Figure()
     if df.empty or "transaction_date" not in df.columns:
-        fig: go.Figure = go.Figure()
         fig.update_layout(xaxis_title="Date", yaxis_title="Number of sales", height=400)
         return fig
 
@@ -237,7 +234,6 @@ def create_sales_by_date_plot(df: pd.DataFrame) -> go.Figure:
         fig = px.area(monthly_volume, x="year_month", y="volume", labels={"year_month": "Date", "volume": "Number of sales"})
         fig.update_traces(fillcolor="rgba(44, 160, 44, 0.3)", line_color="aquamarine")
     else:
-        fig: go.Figure = go.Figure()
         fig.update_layout(xaxis_title="Date", yaxis_title="Number of sales")
 
     fig.update_layout(height=400, showlegend=False)
@@ -320,11 +316,9 @@ def compare_departments(df: pd.DataFrame, selected_departments: list[str]) -> pd
                 - "Transactions"
     """
 
-    results: list[dict[str, str | float | int]] = []
-
     for dep in selected_departments:
         filtered: pd.DataFrame = filter_data_by_location(df, dep)
-        metrics: dict[str, float] = calculate_market_metrics(filtered)
+        metrics = calculate_market_metrics(filtered)
 
         median_prices = metrics.get("median_price_per_m2_by_type", {})
 
@@ -352,6 +346,7 @@ def compare_departments(df: pd.DataFrame, selected_departments: list[str]) -> pd
 
         row["Median price per m² (Representative)"] = representative
 
+        results = []
         results.append(row)
 
     return pd.DataFrame(results)

@@ -26,7 +26,7 @@ def update_market_analysis(df: pd.DataFrame, location: str) -> list[object]:
     """
 
     filtered_df: pd.DataFrame = filter_data_by_location(df, location)
-    metrics: dict[str, object] = calculate_market_metrics(filtered_df)
+    metrics = calculate_market_metrics(filtered_df)
 
     median_prices: object = metrics.get("median_price_per_m2_by_type", {})
     median_prices_text: str = ""

@@ -28,7 +28,7 @@ def run_prediction(postal: str, prop_type: str, area: float, rooms: int, land: f
     if error_msg:
         return error_msg
 
-    postal: int = int(postal.split(" - ")[0])
+    postal = str(postal.split(" - ")[0])
     data = {
         "postal": str(postal),
         "prop_type": str(prop_type),

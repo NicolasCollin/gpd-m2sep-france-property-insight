@@ -4,19 +4,22 @@ import pandas as pd
 def count_missing_values(df: pd.DataFrame) -> list[tuple[str, int]]:
     """
     Count missing values (NaN) per column.
-    Returns a list of (column, NA_count).
+    Returns a list of (column_name, NA_count) as (str, int).
     """
-    return list(df.isna().sum().items())
+    missing_counts = df.isna().sum()
+    return [(str(column_name), int(count)) for column_name, count in missing_counts.items()]
 
 
 def count_type_local(df: pd.DataFrame) -> list[tuple[str, int]] | None:
     """
     Count occurrences of each Type_local value.
-    Returns a list of (value, count) or None if the column does not exist.
+    Returns a list of (type_local_value, count) or None if the column does not exist.
     """
     if "Type_local" not in df.columns:
         return None
-    return list(df["Type_local"].value_counts(dropna=False).items())
+
+    counts = df["Type_local"].value_counts(dropna=False)
+    return [(str(type_local_value), int(count)) for type_local_value, count in counts.items()]
 
 
 def detect_outliers(df: pd.DataFrame) -> list[tuple[str, int]]:
