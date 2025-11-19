@@ -3,9 +3,9 @@ import webbrowser
 
 import gradio as gr
 import uvicorn
-from fastapi import FastAPI
 
-from fpi.interface.menu import gradio_app_menu
+from fpi.interface.menu import app_menu as gradio_app_menu
+from fpi.routes.api_predict import app as fastapi_app
 
 
 def launch_app(host: str, port: int) -> None:
@@ -16,8 +16,6 @@ def launch_app(host: str, port: int) -> None:
         host (str): Host to bind the server to.
         port (int): Port to bind the server to.
     """
-    fastapi_app = FastAPI(title="FPI Unified App")
-
     # Mount backend API
     fastapi_app.mount("/api", fastapi_app)
 

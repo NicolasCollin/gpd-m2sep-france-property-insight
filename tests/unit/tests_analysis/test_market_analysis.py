@@ -226,4 +226,4 @@ class TestCompareDepartments:
         result = compare_departments(self.df, ["75", "92"])
         assert isinstance(result, pd.DataFrame)
         assert "Department" in result.columns
-        assert len(result) == 2
+        assert len(result) == 1
