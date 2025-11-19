@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 
-from fpi.data_pipeline.schemas import PredictionFormSchema
+from fpi.data_pipeline.schemas import PredictionFormSchema, PredictionResponse
 from fpi.models.predict import predict_price
 
 app = FastAPI(title="FPI Backend API")
@@ -36,12 +35,6 @@ def map_property_type_to_code(prop_type: str) -> int:
     if normalized in {"land", "terrain"}:
         return 4
     return 1
-
-
-class PredictionResponse(BaseModel):
-    """Response model returned by the /predict endpoint."""
-
-    predicted_price: float
 
 
 @app.post("/predict", response_model=PredictionResponse)

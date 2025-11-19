@@ -5,8 +5,7 @@ import gradio as gr
 import uvicorn
 from fastapi import FastAPI
 
-from fpi.interface.menu import app_menu
-from fpi.utils.api import app as api_app
+from fpi.interface.menu import gradio_app_menu
 
 
 def launch_app(host: str, port: int) -> None:
@@ -20,10 +19,10 @@ def launch_app(host: str, port: int) -> None:
     fastapi_app = FastAPI(title="FPI Unified App")
 
     # Mount backend API
-    fastapi_app.mount("/api", api_app)
+    fastapi_app.mount("/api", fastapi_app)
 
     # Create Gradio app
-    gradio_app = app_menu()
+    gradio_app = gradio_app_menu()
 
     # Mount Gradio UI at root
     gr.mount_gradio_app(fastapi_app, gradio_app, path="/")

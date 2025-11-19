@@ -23,7 +23,18 @@ def sample_df():
 
 
 class TestDataQuality:
+    """
+    Unit tests for data quality analysis functions in `report.py`.
+
+    Scenarios tested:
+        - `count_missing_values`: correctly counts NaN values per column.
+        - `count_type_local`: counts occurrences of each Type_local value, including handling None.
+        - `detect_outliers`: identifies numeric columns and counts outliers.
+        - `analyze_dataset_quality`: aggregates missing values, type_local counts, and outliers.
+    """
+
     def test_count_missing_values(self, sample_df):
+        """Verify missing values are correctly counted per column."""
         result = count_missing_values(sample_df)
         assert isinstance(result, list)
         assert ("Type_local", 1) in result
@@ -31,6 +42,7 @@ class TestDataQuality:
         assert ("Commune", 1) in result
 
     def test_count_type_local(self, sample_df):
+        """Check counts of each Type_local value, including handling None values."""
         result = count_type_local(sample_df)
         assert isinstance(result, list)
         values = dict(result)
@@ -40,6 +52,7 @@ class TestDataQuality:
         assert values.get(None) is None
 
     def test_detect_outliers(self, sample_df):
+        """Ensure numeric columns are checked and outlier counts are returned."""
         result = detect_outliers(sample_df)
         assert isinstance(result, list)
         values = dict(result)
@@ -47,6 +60,7 @@ class TestDataQuality:
         assert "Surface" in values
 
     def test_analyze_dataset_quality(self, sample_df):
+        """Verify that the global dataset quality report aggregates all metrics correctly."""
         report = analyze_dataset_quality(sample_df)
         assert "missing_values" in report
         assert "type_local_counts" in report

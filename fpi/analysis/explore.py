@@ -19,12 +19,10 @@ def explore() -> None:
     df: pd.DataFrame = load_all_csv()
 
     # Step 2 — Summary
-
     summary(df)
 
     # Step 3 — Descriptive statistics
     compute_descriptive_statistics(df)
-    ##property value qualitative analysis
 
     # Step 4 — Plots
     output_dir = Path("docs/plots")

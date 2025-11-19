@@ -7,14 +7,13 @@ from fpi.interface.prediction.form import get_form, reset_form, validate_inputs
 from fpi.models.predict import predict_price
 
 df = load_all_csv()
-PROPERTY_TYPE_MAP = {"Maison": 1, "Apartement": 2, "Dépendance": 3, "Local industriel. commercial ou assimilé": 4}
 
 
 def run_prediction(postal: str, prop_type: str, area: float, rooms: int, land: float) -> str:
     """
     Call the FastAPI backend to compute a property price prediction.
 
-    Parameters:
+    Args:
         postal (str): Postal code provided by the user.
         prop_type (str): Property type ("House", "Apartment", etc.).
         area (float): Living area in square meters.
@@ -46,15 +45,18 @@ def run_prediction(postal: str, prop_type: str, area: float, rooms: int, land: f
         return f"Prediction failed: {e}"
 
 
-def old_run_prediction(postal: str, prop_type: str, area: float, rooms: int, land: float) -> str:
+# need to rewrite this with fastapi route
+def alt_run_prediction(postal: str, prop_type: str, area: float, rooms: int, land: float) -> str:
     """
     Call backs for the "Estimate" button. It prepares the data and calls the model prediction function.
+
     Args:
         postal: Postal code (string).
         prop_type: Property type ("House" / "Apartment").
         area: Living area in square
         rooms: Number of rooms (integer).
         land: Land area (float).
+
     Returns:
         A string with the predicted price or an error message.
     """
@@ -69,7 +71,8 @@ def old_run_prediction(postal: str, prop_type: str, area: float, rooms: int, lan
     if filtered_df.empty:
         return "No data available for this postal code and property type."
 
-    property_type_code = PROPERTY_TYPE_MAP.get(prop_type, 0)
+    property_type_map = {"Maison": 1, "Apartement": 2, "Dépendance": 3, "Local industriel. commercial ou assimilé": 4}
+    property_type_code = property_type_map.get(prop_type, 0)
 
     input_data: dict[str, float | int] = {
         "building_area": float(area),
@@ -147,7 +150,19 @@ def get_prediction_page() -> (
             total_loan_cost = gr.Number(label="Total loan cost (€)", interactive=False)
             debt_ratio = gr.Number(label="Debt ratio (%)", interactive=False)
 
-    def run_financing_simulation(price, contribution, duration, rate):
+    def run_financing_simulation(price, contribution, duration, rate) -> tuple[float, float, float]:
+        """
+        Runs calculate_financing_simulation and extract its results.
+
+        Args:
+            property_price (float): Total property cost in euros.
+            personal_contribution (float): Amount contributed upfront.
+            loan_duration (int): Duration of the loan in years.
+            interest_rate (float): Annual interest rate (%).
+        Returns:
+            tuple containing:
+                monthly payment, total cost, debt ratio
+        """
         return calculate_financing_simulation(price, contribution, duration, rate)
 
     simulate_button.click(

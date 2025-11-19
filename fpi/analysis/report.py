@@ -3,8 +3,20 @@ import pandas as pd
 
 def count_missing_values(df: pd.DataFrame) -> list[tuple[str, int]]:
     """
-    Count missing values (NaN) per column.
-    Returns a list of (column_name, NA_count) as (str, int).
+    Count missing values (NaN) in each column of the DataFrame.
+
+    Args:
+        df (pd.DataFrame): The DataFrame to analyze.
+
+    Returns:
+        list[tuple[str, int]]: A list of tuples, each containing:
+            - column_name (str): Name of the column.
+            - NA_count (int): Number of missing values in that column.
+
+    Examples:
+        >>> df = pd.DataFrame({"a": [1, None], "b": [None, None]})
+        >>> count_missing_values(df)
+        [('a', 1), ('b', 2)]
     """
     missing_counts = df.isna().sum()
     return [(str(column_name), int(count)) for column_name, count in missing_counts.items()]
@@ -12,8 +24,24 @@ def count_missing_values(df: pd.DataFrame) -> list[tuple[str, int]]:
 
 def count_type_local(df: pd.DataFrame) -> list[tuple[str, int]] | None:
     """
-    Count occurrences of each Type_local value.
-    Returns a list of (type_local_value, count) or None if the column does not exist.
+    Count occurrences of each value in the "Type_local" column.
+
+    Args:
+        df (pd.DataFrame): The DataFrame to analyze. Must contain a "Type_local" column.
+
+    Returns:
+        list[tuple[str, int]] | None:
+            - A list of tuples with each unique value in "Type_local" and its count:
+                (type_local_value, count)
+            - Returns None if the "Type_local" column does not exist.
+
+    Examples:
+        >>> df = pd.DataFrame({"Type_local": ["Maison", "Maison", "Appartement"]})
+        >>> count_type_local(df)
+        [('Maison', 2), ('Appartement', 1)]
+        >>> df2 = pd.DataFrame({"Other_col": [1, 2]})
+        >>> count_type_local(df2) is None
+        True
     """
     if "Type_local" not in df.columns:
         return None
@@ -24,8 +52,22 @@ def count_type_local(df: pd.DataFrame) -> list[tuple[str, int]] | None:
 
 def detect_outliers(df: pd.DataFrame) -> list[tuple[str, int]]:
     """
-    Detect outliers in numeric columns using the IQR method.
-    Returns a list of (column, outlier_count).
+    Detect outliers in numeric columns using the Interquartile Range (IQR) method.
+
+    An outlier is defined as a value below Q1 - 1.5*IQR or above Q3 + 1.5*IQR.
+
+    Args:
+        df (pd.DataFrame): The DataFrame to analyze.
+
+    Returns:
+        list[tuple[str, int]]: A list of tuples, each containing:
+            - column (str): Name of the numeric column.
+            - outlier_count (int): Number of outlier values detected in the column.
+
+    Examples:
+        >>> df = pd.DataFrame({"x": [1, 2, 3, 100], "y": [5, 6, 7, 8]})
+        >>> detect_outliers(df)
+        [('x', 1), ('y', 0)]
     """
     numeric_cols = df.select_dtypes(include=["number"]).columns
     outliers = []
@@ -49,11 +91,32 @@ def detect_outliers(df: pd.DataFrame) -> list[tuple[str, int]]:
     return outliers
 
 
-def analyze_dataset_quality(df: pd.DataFrame) -> dict:
+def analyze_dataset_quality(df: pd.DataFrame) -> dict[str, list[tuple[str, int]] | None]:
     """
-    Global qualitative analysis of a dataset.
-    Combines missing values, type_local counts, and outliers.
-    Each entry is a list instead of a dict.
+    Perform a global qualitative analysis of the dataset.
+
+    Combines results from missing value counts, Type_local counts, and outlier detection
+    into a single dictionary.
+
+    Args:
+        df (pd.DataFrame): The DataFrame to analyze.
+
+    Returns:
+        dict[str, list[tuple[str, int]] | None]: A dictionary with the following keys:
+            - "missing_values": List of (column_name, NA_count) for all columns.
+            - "type_local_counts": List of (Type_local value, count) or None if column missing.
+            - "outliers": List of (column_name, outlier_count) for numeric columns.
+
+    Examples:
+        >>> df = pd.DataFrame({
+        ...     "Type_local": ["Maison", "Appartement", None],
+        ...     "price": [100, 200, 300]
+        ... })
+        >>> result = analyze_dataset_quality(df)
+        >>> result['missing_values']
+        [('Type_local', 1), ('price', 0)]
+        >>> result['type_local_counts']
+        [('Maison', 1), ('Appartement', 1), ('nan', 1)]
     """
     return {
         "missing_values": count_missing_values(df),

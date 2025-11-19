@@ -2,27 +2,6 @@ import pandas as pd
 from pydantic import BaseModel, Field, field_validator
 
 
-class PredictionFormSchema(BaseModel):
-    """
-    Schema for storing user inputs from the property prediction form.
-
-    Attributes:
-        postal (str): Postal code (5-digit string).
-        prop_type (str): Property type, default "House".
-        area (float): Living area in m².
-        rooms (int): Number of rooms.
-        land (float): Land area in m².
-        output (str): Prediction output, default empty string.
-    """
-
-    postal: str
-    prop_type: str = "House"
-    area: float
-    rooms: int
-    land: float
-    output: str = ""
-
-
 class PropertyData(BaseModel):
     """
     Structured representation of a single cleaned DVF row.
@@ -100,3 +79,30 @@ class PropertyData(BaseModel):
         if v not in {1, 2, 3, 4}:
             raise ValueError("property_type_code must be one of {1,2,3,4}")
         return v
+
+
+class PredictionFormSchema(BaseModel):
+    """
+    Schema for storing user inputs from the property prediction form.
+
+    Attributes:
+        postal (str): Postal code (5-digit string).
+        prop_type (str): Property type, default "House".
+        area (float): Living area in m².
+        rooms (int): Number of rooms.
+        land (float): Land area in m².
+        output (str): Prediction output, default empty string.
+    """
+
+    postal: str
+    prop_type: str = "House"
+    area: float
+    rooms: int
+    land: float
+    output: str = ""
+
+
+class PredictionResponse(BaseModel):
+    """Response model returned by the /predict endpoint."""
+
+    predicted_price: float

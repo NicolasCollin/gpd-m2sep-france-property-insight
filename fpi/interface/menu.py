@@ -308,8 +308,6 @@ global_css = """
 .prediction-result * {
     color: inherit !important;
 }
-
-
 """
 
 theme = gr.themes.Ocean(
