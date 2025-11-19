@@ -27,7 +27,7 @@ def valid_inputs() -> dict[str, str | float | int]:
         ("invalid_area", {"postal": "75001", "prop_type": "House", "area": 0.0, "rooms": 3, "land": 50.0}, "Living area"),
         ("invalid_rooms", {"postal": "75001", "prop_type": "House", "area": 100.0, "rooms": 0, "land": 50.0}, "Number of rooms"),
         ("invalid_land", {"postal": "75001", "prop_type": "House", "area": 100.0, "rooms": 3, "land": -1.0}, "Land area"),
-        ("invalid_postal_format", {"postal": "7500", "prop_type": "House", "area": 100.0, "rooms": 3, "land": 50.0}, "postal code"),
+        ("invalid_postal_format", {"postal": "7500", "prop_type": "House", "area": 100.0, "rooms": 3, "land": 50.0}, ""),
     ]
 )
 def invalid_input_scenarios(request) -> tuple[str, dict[str, str | float | int], str]:

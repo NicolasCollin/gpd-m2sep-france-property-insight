@@ -63,16 +63,13 @@ def filter_data_by_location(df: pd.DataFrame, location: str) -> pd.DataFrame:
 
     # Case 1: "postal_code - town_name"
     if " - " in location and "postal_code" in df.columns:
-        postal_code: str = location.split(" - ")[0].strip()
+        postal_code = location.split(" - ")[0].strip()
         return df[df["postal_code"].astype(str) == postal_code]
 
     # Case 2: department code
     if "department_code" in df.columns:
-        try:
-            dept_code: int = int(location.strip())
-            return df[df["department_code"].astype(str) == dept_code]
-        except ValueError:
-            return df
+        dept_code: str = location.strip()  # leave as string
+        return df[df["department_code"].astype(str) == dept_code]
 
     return df
 

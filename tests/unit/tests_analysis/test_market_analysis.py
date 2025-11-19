@@ -26,21 +26,32 @@ class TestGetLocationChoices:
 class TestFilterDataByLocation:
     """Tests for filter_data_by_location()"""
 
-    df = pd.DataFrame({"postal_code": ["75001", "75002", "92000"], "department_code": ["75", "75", "92"], "value": [100, 200, 300]})
+    @staticmethod
+    def _df():
+        return pd.DataFrame(
+            {
+                "postal_code": ["75001", "75002", "92000"],
+                "department_code": ["75", "75", "92"],
+                "value": [100, 200, 300],
+            }
+        )
 
     def test_filter_by_postal_code(self):
-        filtered = market_analysis.filter_data_by_location(self.df, "75001 - PARIS 01")
+        df = self._df()
+        filtered = market_analysis.filter_data_by_location(df, "75001 - PARIS 01")
         assert len(filtered) == 1
         assert filtered["postal_code"].iloc[0] == "75001"
 
     def test_filter_by_department_code(self):
-        filtered = market_analysis.filter_data_by_location(self.df, "75")
+        df = self._df()
+        filtered = market_analysis.filter_data_by_location(df, "75")
         assert len(filtered) == 2
         assert all(filtered["department_code"] == "75")
 
     def test_empty_location_returns_df(self):
-        filtered = market_analysis.filter_data_by_location(self.df, "")
-        assert len(filtered) == len(self.df)
+        df = self._df()
+        filtered = market_analysis.filter_data_by_location(df, "")
+        assert len(filtered) == len(df)
 
 
 class TestCalculateMedianPricePerM2ByType:
