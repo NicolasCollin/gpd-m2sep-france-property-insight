@@ -9,8 +9,22 @@ app = FastAPI(title="FPI Backend API")
 
 def map_property_type_to_code(prop_type: str) -> int:
     """
-    Map human-readable property type to the numeric code expected by the model.
-    Defaults to 1 (House) if the value is unknown.
+    Convert a human-readable property type string into the numeric code
+    expected by the machine learning model.
+
+    Mapping:
+        - House / Maison      -> 1
+        - Apartment / Flat    -> 2
+        - Other / Autre       -> 3
+        - Land / Terrain      -> 4
+
+    Any unknown value defaults to 1.
+
+    Args:
+        prop_type (str): The user-provided property type string.
+
+    Returns:
+        int: The corresponding numeric code.
     """
     normalized = prop_type.strip().lower()
     if normalized in {"house", "maison"}:
@@ -25,23 +39,39 @@ def map_property_type_to_code(prop_type: str) -> int:
 
 
 class PredictionResponse(BaseModel):
+    """Response model returned by the /predict endpoint."""
+
     predicted_price: float
 
 
 @app.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionFormSchema) -> PredictionResponse:
     """
-    FastAPI endpoint used by the frontend to get a price prediction.
+    Predict the sale price of a property using a trained model.
 
-    It receives the same fields as the Gradio form (postal, prop_type, area, rooms, land),
-    converts them into the feature dictionary expected by the model, and returns the
-    predicted price.
+    This endpoint:
+    1. Receives user inputs from the frontend (postal, property type, area, rooms, land).
+    2. Converts them into the feature dictionary required by the model.
+    3. Calls the model prediction function.
+    4. Returns a structured response.
+
+    Error handling:
+    - ValueError -> 400 Bad Request
+    - FileNotFoundError -> 500 Internal Server Error (model missing)
+    - Other unexpected exceptions -> 500
+
+    Args:
+        request (PredictionFormSchema): Validated Pydantic schema with user inputs.
+
+    Returns:
+        PredictionResponse: The predicted property price.
     """
-    try:
-        model_path = "fpi/models/random_forest.joblib"
 
-        # Map form schema to model features
-        input_data = {
+    try:
+        model_path: str = "fpi/models/random_forest.joblib"
+
+        # Prepare model input features
+        input_data: dict[str, float | int] = {
             "postal_code": int(request.postal),
             "property_type_code": map_property_type_to_code(request.prop_type),
             "building_area": float(request.area),
@@ -49,7 +79,15 @@ def predict(request: PredictionFormSchema) -> PredictionResponse:
             "land_area": float(request.land),
         }
 
-        result = predict_price(model_path=model_path, input_data=input_data)
-        return PredictionResponse(predicted_price=float(result))
+        prediction_result: float = float(predict_price(model_path=model_path, input_data=input_data))
+
+        return PredictionResponse(predicted_price=prediction_result)
+
+    except ValueError as ve:
+        raise HTTPException(status_code=400, detail=f"Invalid input value: {ve}")
+
+    except FileNotFoundError:
+        raise HTTPException(status_code=500, detail="Model file not found.")
+
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Unexpected error: {e}")
