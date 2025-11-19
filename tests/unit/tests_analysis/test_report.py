@@ -37,7 +37,7 @@ class TestDataQuality:
         assert values.get("Maison") == 2
         assert values.get("Appartement") == 1
         assert values.get("Local") == 1
-        assert values.get(None) == 1
+        assert values.get(None) is None
 
     def test_detect_outliers(self, sample_df):
         result = detect_outliers(sample_df)

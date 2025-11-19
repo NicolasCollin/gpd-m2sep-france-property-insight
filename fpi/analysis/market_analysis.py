@@ -59,6 +59,9 @@ def filter_data_by_location(df: pd.DataFrame, location: str) -> pd.DataFrame:
         the requested location.
     """
 
+    # Case 0: empty location
+    if location == "":
+        return df
     # Case 1: "postal_code - town_name"
     if " - " in location and "postal_code" in df.columns:
         postal_code = location.split(" - ")[0].strip()
