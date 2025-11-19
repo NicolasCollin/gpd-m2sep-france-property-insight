@@ -1,0 +1,3 @@
+"""
+submodule for FastAPI routes
+"""
