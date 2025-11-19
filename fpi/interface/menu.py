@@ -11,7 +11,7 @@ update_fn: Callable = gr.update
 global_css = """
 /* ===== GLOBAL ===== */
 .gradio-container {
-    background: #ffffff !important;
+    /*background: #ffffff !important;*/
     max-width: 100% !important;
     padding: 0 !important;
     position: relative;
@@ -25,6 +25,7 @@ global_css = """
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 20px;
     padding: 1rem 2rem;
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -40,15 +41,6 @@ global_css = """
     box-shadow: none;
     vertical-align: middle;
 }
-
-#logo-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #0170bc;
-    display: flex;
-    align-items: center;
-}
-
 
 /* ===== NAVIGATION LINKS ====== */
 #nav-links {
@@ -228,70 +220,6 @@ global_css = """
     color: white !important;
 }
 
-/* ===== SEARCH LOCATION SECTION ===== */
-#search-section {
-    background: white;
-    border-radius: 15px;
-    padding: 3rem 2rem;
-    margin: 2rem 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: 1px solid #e0e0e0;
-}
-
-#search-container {
-    width: 100%;
-    text-align: center;
-}
-
-.search-title {
-    font-size: 2rem;
-    color: #000;
-    margin-bottom: 2rem;
-    font-weight: 600;
-}
-
-#search-input-row {
-    justify-content: center;
-    align-items: stretch;
-    gap: 1rem;
-}
-
-#department-search {
-    min-width: 400px;
-}
-
-#department-search .gr-dropdown {
-    border-radius: 12px !important;
-    border: 2px solid #e8e8e8 !important;
-    padding: 1rem 1.5rem !important;
-    font-size: 1.1rem !important;
-    height: auto !important;
-    background: #f8f9fa !important;
-}
-
-#department-search .gr-dropdown:focus {
-    border-color: #667eea !important;
-    background: white !important;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
-}
-
-#search-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 12px !important;
-    padding: 1rem 2rem !important;
-    font-size: 1.1rem !important;
-    font-weight: 600 !important;
-    height: auto !important;
-    transition: all 0.3s ease !important;
-}
-
-#search-button:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
-}
-
 /* ==== OUR FEATURES SECTION (for 3 cards/buttons in our features section) ==== */
 #features-section {
     margin: 4rem 0;
@@ -355,10 +283,6 @@ global_css = """
         flex-direction: column;
     }
 
-    #department-search {
-        min-width: 200px;
-    }
-
     .features-grid {
         grid-template-columns: 1fr;
     }
@@ -371,16 +295,10 @@ global_css = """
     font-weight: 600;
     margin-top: 1rem;
     color: #333;
+    min-height: 150px;
 }
 
 /* ===== PAGE DASHBOARD ===== */
-
-/* ===== TABS ===== */
-.tab-nav button { color: black !important; }
-.tab-nav button.selected {
-    color: black !important;
-    border-bottom: 2px solid blue !important;
-}
 
 /* ===== PAGE TITLES ===== */
 .page-title *,
@@ -390,9 +308,13 @@ global_css = """
 .prediction-result * {
     color: inherit !important;
 }
-
-
 """
+
+theme = gr.themes.Ocean(
+    primary_hue="indigo",
+    secondary_hue="emerald",
+    neutral_hue="neutral",
+)
 
 
 def show_page(page_id: str) -> list[object]:
@@ -431,7 +353,7 @@ def app_menu() -> gr.Blocks:
     This function defines:
     - A fixed navigation bar with buttons (Home, Dashboard, Estimation, API Docs, GitLab)
     - Three distinct pages:
-        1. Home page (overview, cards, department search)
+        1. Home page (overview, cards)
         2. Dashboard page (visual data analysis)
         3. Prediction page (property price estimation form)
     - Navigation logic between these pages through Gradio event triggers.
@@ -441,10 +363,8 @@ def app_menu() -> gr.Blocks:
             The complete Gradio Blocks interface representing the full application.
     """
 
-    with gr.Blocks(css=global_css, title="France Property Insight", fill_width=True) as menu:
-        # Header / Navigation bar
+    with gr.Blocks(css=global_css, theme=theme, title="France Property Insight", fill_width=True) as menu:
         with gr.Row(elem_id="navbar"):
-            # Left section: logo
             with gr.Column(scale=1):
                 gr.Image(
                     format="png",
@@ -460,7 +380,6 @@ def app_menu() -> gr.Blocks:
                     height=90,
                 )
 
-            # Right section: navigation links
             with gr.Column(scale=9):
                 with gr.Row(elem_id="nav-links"):
                     nav_home: gr.Button = gr.Button("Home", elem_classes="nav-links-button")
@@ -475,7 +394,7 @@ def app_menu() -> gr.Blocks:
 
         # Home page
         with gr.Column(visible=True, elem_classes="page-content") as home:
-            department_dropdown, search_button, dashboard_card, estimation_card, about_card = get_home_page()
+            dashboard_card, estimation_card, about_card = get_home_page()
 
         # Dashboard page
         with gr.Column(visible=False, elem_classes="page-content") as dashboard:
@@ -497,41 +416,13 @@ def app_menu() -> gr.Blocks:
         nav_dashboard.click(fn=show_page, inputs=gr.State("dashboard"), outputs=all_pages)
         nav_estimate.click(fn=show_page, inputs=gr.State("prediction"), outputs=all_pages)
 
-        # External links
         nav_api_docs.click(lambda: gr.HTML("<script>window.open('https://france-property-insight-docs.onrender.com/fpi.html', '_blank')</script>"))
         nav_gitlab.click(
             lambda: gr.HTML("<script>window.open('https://gitlab-mi.univ-reims.fr/phan0005/gpd-m2sep-france-property-insight', '_blank')</script>")
         )
 
-        # Homepage cards navigation
         dashboard_card.click(fn=show_page, inputs=gr.State("dashboard"), outputs=all_pages)
         estimation_card.click(fn=show_page, inputs=gr.State("prediction"), outputs=all_pages)
         about_card.click(fn=lambda: gr.Info("Coming soon"), inputs=None, outputs=None)
-
-        # Search + Dashboard logic
-        def navigate_to_dashboard(department: str | None) -> list[object]:
-            """
-            Redirect the user to the dashboard page after selecting a department.
-
-            Args:
-                department (str | None): The selected department name or code.
-
-            Returns:
-                list[gr.Update]: Visibility updates for each page (home, dashboard, prediction).
-            """
-            if department:
-                print(f"Navigating to dashboard with: {department}")
-                return [
-                    gr.update(visible=False),
-                    gr.update(visible=True),
-                    gr.update(visible=False),
-                ]
-            return [
-                gr.update(visible=True),
-                gr.update(visible=False),
-                gr.update(visible=False),
-            ]
-
-        search_button.click(fn=navigate_to_dashboard, inputs=department_dropdown, outputs=all_pages)
 
     return menu

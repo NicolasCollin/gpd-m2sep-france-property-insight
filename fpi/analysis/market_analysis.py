@@ -20,29 +20,21 @@ def get_location_choices(df: pd.DataFrame) -> list[str]:
             - "department_code" (int)
             Additional columns are ignored.
 
-    Returns:
-        list[str]: A sorted list of unique location choices that can be used in
-        selection widgets. Format:
-            - "postal_code - town_name"
-            - "department_code"
     """
     choices: list[str] = []
+    if not df.empty:
+        if "postal_code" in df.columns and "town_name" in df.columns:
+            towns = df[["postal_code", "town_name"]].drop_duplicates()
+            choices.extend([f"{row['postal_code']} - {row['town_name']}" for _, row in towns.iterrows()])
 
-    # Postal code + city
-    if {"postal_code", "town_name"}.issubset(df.columns):
-        towns: pd.DataFrame = df[["postal_code", "town_name"]].drop_duplicates()
-        for _, row in towns.iterrows():
-            postal_code: str = str(row["postal_code"])
-            town_name: str = str(row["town_name"])
-            choices.append(f"{postal_code} - {town_name}")
-
-    # Department codes
-    if "department_code" in df.columns:
-        departments: pd.DataFrame = df[["department_code"]].drop_duplicates()
-        for _, row in departments.iterrows():
-            dep_code: str = str(row["department_code"])
-            if dep_code not in choices:
-                choices.append(dep_code)
+        if "department_code" in df.columns:
+            departments = df[["department_code"]].drop_duplicates()
+            dept_choices = [
+                str(row["department_code"])
+                for _, row in departments.iterrows()
+                if str(row["department_code"]) not in [c.split(" - ")[0] for c in choices]
+            ]
+            choices.extend(dept_choices)
 
     return sorted(choices)
 
@@ -66,26 +58,71 @@ def filter_data_by_location(df: pd.DataFrame, location: str) -> pd.DataFrame:
         pd.DataFrame: The filtered DataFrame containing only rows associated with
         the requested location.
     """
-    if not location:
-        return df
 
+    # Case 0: empty location
+    if location == "":
+        return df
     # Case 1: "postal_code - town_name"
     if " - " in location and "postal_code" in df.columns:
-        postal_code: str = location.split(" - ")[0].strip()
+        postal_code = location.split(" - ")[0].strip()
         return df[df["postal_code"].astype(str) == postal_code]
 
     # Case 2: department code
     if "department_code" in df.columns:
-        try:
-            dept_code: int = int(location.strip())
-            return df[df["department_code"] == dept_code]
-        except ValueError:
-            return df
-
+        dept_code: str = location.strip()  # leave as string
+        return df[df["department_code"].astype(str) == dept_code]
     return df
 
 
-def calculate_market_metrics(df: pd.DataFrame) -> dict[str, float]:
+def calculate_median_price_per_m2_by_type(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Calculate median price per m² grouped by property type.
+
+    Arg:
+        df: pd.DataFrame
+
+    Return:
+        pd.DataFrame: a dataframe of median price per m² by property type
+
+    """
+    if df.empty or not {"property_value", "building_area", "land_area", "property_type"}.issubset(df.columns):
+        return pd.DataFrame({"property_type": ["No data"], "median_price_per_m2": ["No available"]})
+
+    df_clean = df.copy()
+    df_clean["property_value"] = pd.to_numeric(df_clean["property_value"], errors="coerce")
+    df_clean["building_area"] = pd.to_numeric(df_clean["building_area"], errors="coerce")
+    df_clean["land_area"] = pd.to_numeric(df_clean["land_area"], errors="coerce")
+    df_clean = df_clean[
+        (df_clean["building_area"] > 0)
+        & (df_clean["property_value"] > 0)
+        & (df_clean["land_area"] > 0)
+        & (df_clean["property_value"].notna())
+        & (df_clean["building_area"].notna())
+        & (df_clean["land_area"].notna())
+    ]
+
+    if df_clean.empty:
+        return pd.DataFrame({"property_type": ["No data"], "median_price_per_m2": ["No available"]})
+
+    df_clean["price_m2"] = df_clean["property_value"] / (df_clean["building_area"] + df_clean["land_area"])
+    median_by_type = df_clean.groupby("property_type")["price_m2"].median().reset_index()
+    median_by_type.rename(columns={"price_m2": "median_price_per_m2"}, inplace=True)
+
+    expected_types = ["Appartement", "Maison", "Local industriel. commercial ou assimilé"]
+    results = []
+
+    for t in expected_types:
+        mask = median_by_type["property_type"] == t
+        if mask.any():
+            val = median_by_type.loc[mask, "median_price_per_m2"].iloc[0]
+            results.append({"property_type": t, "median_price_per_m2": round(val, 0)})
+        else:
+            results.append({"property_type": t, "median_price_per_m2": "No available"})
+
+    return pd.DataFrame(results)
+
+
+def calculate_market_metrics(df: pd.DataFrame) -> dict[str, int | float | dict]:
     """
     Compute key market indicators for a given subset of real-estate transactions.
 
@@ -123,23 +160,16 @@ def calculate_market_metrics(df: pd.DataFrame) -> dict[str, float]:
     if "building_area" in df_clean.columns:
         df_clean["building_area"] = pd.to_numeric(df_clean["building_area"], errors="coerce")
 
-    # Compute price per m²
-    if {"property_value", "building_area"}.issubset(df_clean.columns):
-        df_clean = df_clean[(df_clean["property_value"] > 0) & (df_clean["building_area"] > 0)]
+    total_transactions = len(df_clean)
+    valid_surfaces = df_clean[df_clean["building_area"] > 0]["building_area"] if "building_area" in df_clean.columns else pd.Series([])
+    avg_surface = round(valid_surfaces.mean(), 1) if not valid_surfaces.empty else 0
+    median_by_type_df = calculate_median_price_per_m2_by_type(df_clean)
+    median_by_type_dict = {}
 
-        total_value: float = float(df_clean["property_value"].sum())
-        total_area: float = float(df_clean["building_area"].sum())
-        avg_price_m2: float = total_value / total_area if total_area > 0 else 0.0
+    for _, row in median_by_type_df.iterrows():
+        median_by_type_dict[row["property_type"]] = row["median_price_per_m2"]
 
-        median_price: float = float(df_clean["property_value"].median())
-    else:
-        avg_price_m2 = 0.0
-        median_price = 0.0
-
-    total_transactions: int = len(df_clean)
-    avg_surface: float = float(df_clean["building_area"].mean()) if "building_area" in df_clean.columns else 0.0
-
-    return {"avg_price_per_m2": avg_price_m2, "total_transactions": total_transactions, "median_price": median_price, "avg_surface": avg_surface}
+    return {"total_transactions": total_transactions, "avg_surface": avg_surface, "median_price_per_m2_by_type": median_by_type_dict}
 
 
 def create_sales_by_property_type_plot(df: pd.DataFrame) -> go.Figure:
@@ -151,38 +181,34 @@ def create_sales_by_property_type_plot(df: pd.DataFrame) -> go.Figure:
         df (pd.DataFrame):
             Filtered transaction data. Must contain "property_type".
 
-    Returns:
-        go.Figure: A Plotly figure representing sale counts.
+    Return:
+        go.Figure: a plotly figure object representing sales by property type
     """
-    if df.empty:
-        fig: go.Figure = go.Figure()
-        fig.update_layout(title="Sales by property type", xaxis_title="Property type", yaxis_title="Number of sales")
+    if df.empty or "property_type" not in df.columns:
+        fig = go.Figure()
+        fig.update_layout(xaxis_title="Property type", yaxis_title="Number of sales", height=400)
         return fig
 
-    if "property_type" in df.columns:
-        sales_by_type: pd.DataFrame = df["property_type"].value_counts().reset_index()
-        sales_by_type.columns = ["property_type", "count"]
-    else:
-        sales_by_type = pd.DataFrame({"property_type": [], "count": []})
+    sales_by_type: pd.DataFrame = df["property_type"].value_counts().reset_index()
+    sales_by_type.columns = ["property_type", "count"]
 
     if not sales_by_type.empty:
         fig = px.bar(
             sales_by_type,
             x="property_type",
             y="count",
-            title="Sales by property type",
             labels={"property_type": "Property type", "count": "Number of sales"},
         )
-        fig.update_traces(marker_color="#ff7f0e")
+        fig.update_traces(marker_color="darkturquoise")
     else:
         fig = go.Figure()
-        fig.update_layout(title="Sales by property type", xaxis_title="Property type", yaxis_title="Number of sales")
+        fig.update_layout(xaxis_title="Property type", yaxis_title="Number of sales")
 
     fig.update_layout(height=400, showlegend=False)
     return fig
 
 
-def create_volume_evolution_plot(df: pd.DataFrame) -> go.Figure:
+def create_sales_by_date_plot(df: pd.DataFrame) -> go.Figure:
     """
     Build a time series chart showing monthly transaction volume.
 
@@ -190,12 +216,12 @@ def create_volume_evolution_plot(df: pd.DataFrame) -> go.Figure:
         df (pd.DataFrame):
             Must include a "transaction_date" column compatible with datetime.
 
-    Returns:
-        go.Figure: A Plotly figure showing evolution of sales volume.
+    Return:
+        go.Figure: a plotly figure object representing sales volume evolution
     """
+    fig: go.Figure = go.Figure()
     if df.empty or "transaction_date" not in df.columns:
-        fig: go.Figure = go.Figure()
-        fig.update_layout(title="Sales volume evolution", xaxis_title="Date", yaxis_title="Number of sales")
+        fig.update_layout(xaxis_title="Date", yaxis_title="Number of sales", height=400)
         return fig
 
     df_clean: pd.DataFrame = df.copy()
@@ -207,18 +233,11 @@ def create_volume_evolution_plot(df: pd.DataFrame) -> go.Figure:
     monthly_volume: pd.DataFrame = df_clean.groupby("year_month").size().reset_index(name="volume")
     monthly_volume["year_month"] = monthly_volume["year_month"].astype(str)
 
-    if not monthly_volume.empty:
-        fig = px.area(
-            monthly_volume,
-            x="year_month",
-            y="volume",
-            title="Sales volume evolution",
-            labels={"year_month": "Date", "volume": "Number of sales"},
-        )
-        fig.update_traces(fillcolor="rgba(44, 160, 44, 0.3)", line_color="#2ca02c")
+    if len(monthly_volume) > 0:
+        fig = px.area(monthly_volume, x="year_month", y="volume", labels={"year_month": "Date", "volume": "Number of sales"})
+        fig.update_traces(fillcolor="rgba(44, 160, 44, 0.3)", line_color="aquamarine")
     else:
-        fig = go.Figure()
-        fig.update_layout(title="Sales volume evolution", xaxis_title="Date", yaxis_title="Number of sales")
+        fig.update_layout(xaxis_title="Date", yaxis_title="Number of sales")
 
     fig.update_layout(height=400, showlegend=False)
     return fig
@@ -300,19 +319,37 @@ def compare_departments(df: pd.DataFrame, selected_departments: list[str]) -> pd
                 - "Transactions"
     """
 
-    results: list[dict[str, str | float | int]] = []
-
     for dep in selected_departments:
         filtered: pd.DataFrame = filter_data_by_location(df, dep)
-        metrics: dict[str, float] = calculate_market_metrics(filtered)
+        metrics = calculate_market_metrics(filtered)
 
-        results.append(
-            {
-                "Department": dep,
-                "Avg price/m² (€)": round(metrics["avg_price_per_m2"], 0),
-                "Median price (€)": round(metrics["median_price"], 0),
-                "Transactions": metrics["total_transactions"],
-            }
-        )
+        median_prices = metrics.get("median_price_per_m2_by_type", {})
+
+        row = {
+            "Department": dep,
+            "Transactions": metrics.get("total_transactions", "No available"),
+        }
+
+        if isinstance(median_prices, dict) and median_prices:
+            for prop_type, value in median_prices.items():
+                row[f"Median price per m² – {prop_type}"] = value
+        else:
+            row["Median price per m² – Overall"] = "No available"
+
+        representative = "No available"
+        if isinstance(median_prices, dict) and median_prices:
+            if median_prices.get("Appartement") not in (None, "No available"):
+                representative = median_prices["Appartement"]
+
+            elif median_prices.get("Maison") not in (None, "No available"):
+                representative = median_prices["Maison"]
+
+            else:
+                representative = next(iter(median_prices.values()), "No available")
+
+        row["Median price per m² (Representative)"] = representative
+
+        results = []
+        results.append(row)
 
     return pd.DataFrame(results)

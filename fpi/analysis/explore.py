@@ -9,22 +9,20 @@ from fpi.data_pipeline.loader import load_all_csv
 
 def explore() -> None:
     """
-    Full exploratory pipeline:
+    Exploratory pipeline on the numeric values:
     1. Load all cleaned CSV files available in the data directory
     2. Display summary statistics
     3. Compute descriptive statistics
-    4. Generate trend plots (regional + department-level)
+    4. Generate sales trend plots (regional + department-level)
     """
     # Step 1 — Load data
     df: pd.DataFrame = load_all_csv()
 
     # Step 2 — Summary
-
     summary(df)
 
     # Step 3 — Descriptive statistics
     compute_descriptive_statistics(df)
-    ##property value qualitative analysis
 
     # Step 4 — Plots
     output_dir = Path("docs/plots")

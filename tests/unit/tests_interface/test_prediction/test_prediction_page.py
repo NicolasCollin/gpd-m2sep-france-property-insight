@@ -13,14 +13,12 @@ class TestGetPredictionPage:
         3. Result Markdown has correct placeholder text.
     """
 
-    def test_returns_expected_components(self) -> None:
-        """Checks that returned components have the expected types."""
+    def test_returns_expected_tuple(self) -> None:
+        """
+        Should return a tuple of (predict_btn, reset_btn, result_output, inputs_list)
+        with the correct types.
+        """
         with gr.Blocks():
-            predict_btn: gr.Button
-            reset_btn: gr.Button
-            result_output: gr.Markdown
-            inputs_list: list[gr.components.FormComponent]
-
             predict_btn, reset_btn, result_output, inputs_list = get_prediction_page()
 
         assert isinstance(predict_btn, gr.Button)

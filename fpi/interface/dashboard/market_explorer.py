@@ -3,132 +3,140 @@ import pandas as pd
 import plotly.graph_objects as go
 
 from fpi.analysis.market_analysis import (
-    calculate_financing_simulation,
     calculate_market_metrics,
     compare_departments,
+    create_sales_by_date_plot,
     create_sales_by_property_type_plot,
-    create_volume_evolution_plot,
     filter_data_by_location,
     get_location_choices,
 )
 
 
-def get_market_explorer_tab(df: pd.DataFrame) -> None:
+def update_market_analysis(df: pd.DataFrame, location: str) -> list[object]:
     """
-    Create the market explorer tab with real data analysis.
+    Update all market analysis components when location changes.
 
     Args:
-        df: Complete property dataframe
+        df: DataFrame with real-estate data
+        location: Location string (department or town)
+
+    Returns:
+        A list of indicators and graphs:
+        [total_transactions, median_prices_text, plot1, plot2]
     """
-    # Location selection
+
+    filtered_df: pd.DataFrame = filter_data_by_location(df, location)
+    metrics = calculate_market_metrics(filtered_df)
+
+    median_prices: object = metrics.get("median_price_per_m2_by_type", {})
+    median_prices_text: str = ""
+
+    if isinstance(median_prices, dict):
+        for prop_type, price in median_prices.items():
+            median_prices_text += f"{prop_type}: {price} €/m²\n"
+    else:
+        median_prices_text = "No available"
+
+    sales_by_type_fig: go.Figure = create_sales_by_property_type_plot(filtered_df)
+    sales_by_date_fig: go.Figure = create_sales_by_date_plot(filtered_df)
+
+    return [
+        metrics["total_transactions"],
+        median_prices_text.strip(),
+        sales_by_type_fig,
+        sales_by_date_fig,
+    ]
+
+
+def get_market_explorer_tab(df: pd.DataFrame) -> dict[str, object]:
+    """
+    Create the market explorer tab.
+
+    Args:
+        df: fpi data
+
+    Returns:
+        Dictionary containing all UI components.
+    """
+
     with gr.Row():
         with gr.Column(scale=1):
-            gr.Markdown("### Select location")
-            location_dropdown = gr.Dropdown(
-                choices=get_location_choices(df),
-                value=get_location_choices(df)[0] if get_location_choices(df) else None,
+            gr.Markdown("## Select a location")
+            location_choices: list[str] = get_location_choices(df)
+            default_location: str | None = location_choices[0] if location_choices else None
+
+            location_dropdown: gr.Dropdown = gr.Dropdown(
+                choices=location_choices,
+                value=default_location,
                 label="Department",
                 interactive=True,
                 elem_id="location-dropdown",
             )
 
-    # BLOCK 1 : Key market metrics
-    gr.Markdown("## Market Indicators")
+    gr.Markdown("## Market indicators")
 
     with gr.Row():
         with gr.Column(scale=1):
-            avg_price_m2 = gr.Number(label="Average price per m² (€)", interactive=False)
+            total_transactions: gr.Number = gr.Number(
+                label="Total transactions",
+                interactive=False,
+            )
         with gr.Column(scale=1):
-            total_transactions = gr.Number(label="Total transactions", interactive=False)
-        with gr.Column(scale=1):
-            median_price = gr.Number(label="Median price (€)", interactive=False)
+            median_price_info: gr.Textbox = gr.Textbox(
+                label="Median price per m² by type",
+                interactive=False,
+                lines=3,
+            )
 
-    # BLOCK 2 : Two side-by-side charts
-    gr.Markdown("## Price and volume analysis")
+    gr.Markdown("## Sales analysis")
 
     with gr.Row():
         with gr.Column(scale=1):
-            sales_by_type_plot = gr.Plot(label="Sales by property type")
+            sales_by_type_plot: gr.Plot = gr.Plot(label="Sales by property type")
         with gr.Column(scale=1):
-            volume_evolution_plot = gr.Plot(label="Sales volume evolution")
+            sales_by_date_plot: gr.Plot = gr.Plot(label="Sales by date")
 
-    # BLOCK 3 : Compare multiple departments
     gr.Markdown("## Compare multiple departments")
 
     with gr.Row():
         with gr.Column(scale=1):
-            compare_dropdown = gr.Dropdown(
+            compare_dropdown: gr.Dropdown = gr.Dropdown(
                 label="Select one or more departments to compare",
-                choices=get_location_choices(df),
+                choices=location_choices,
                 multiselect=True,
-                value=[get_location_choices(df)[0]] if get_location_choices(df) else [],
+                value=[default_location] if default_location else [],
                 interactive=True,
             )
-            compare_button = gr.Button("Compare", variant="primary")
+
+            compare_button: gr.Button = gr.Button("Compare", variant="primary")
+
         with gr.Column(scale=2):
-            comparison_table = gr.DataFrame(label="Comparison of market indicators", interactive=False)
+            comparison_table: gr.DataFrame = gr.DataFrame(
+                label="Comparison of market indicators",
+                interactive=False,
+            )
 
     def update_comparison(selected_departments: list[str]) -> pd.DataFrame:
         if not selected_departments:
-            return pd.DataFrame(columns=["Department", "Avg price/m² (€)", "Median price (€)", "Transactions"])
+            return pd.DataFrame(columns=["Department", "Median price per m² (€)", "Transactions"])
         return compare_departments(df, selected_departments)
 
-    compare_button.click(fn=update_comparison, inputs=compare_dropdown, outputs=comparison_table)
+    compare_button.click(
+        fn=update_comparison,
+        inputs=compare_dropdown,
+        outputs=comparison_table,
+    )
 
-    # BLOCK 4 : Financing simulation
-    gr.Markdown("## Financing simulation")
-
-    with gr.Row():
-        with gr.Column(scale=1):
-            gr.Markdown("### Loan parameters")
-            property_price = gr.Number(label="Property price (€)", interactive=True, minimum=0)
-            personal_contribution = gr.Number(label="Personal contribution (€)", interactive=True, minimum=0)
-            loan_duration = gr.Slider(label="Loan duration (years)", minimum=5, maximum=30, value=20, step=1)
-            interest_rate = gr.Slider(label="Interest rate (%)", minimum=1.0, maximum=6.0, value=3.5, step=0.1)
-            simulate_button = gr.Button("Calculate", variant="primary")
-
-        with gr.Column(scale=1):
-            gr.Markdown("### Simulation results")
-            monthly_payment = gr.Number(label="Monthly payment (€)", interactive=False)
-            total_loan_cost = gr.Number(label="Total loan cost (€)", interactive=False)
-            debt_ratio = gr.Number(label="Debt ratio (%)", interactive=False)
-
-    def update_market_analysis(location: str) -> list[float | int | go.Figure]:
-        """
-        Update all market analysis components when location changes.
-
-        Args:
-            location: Selected location string
-
-        Returns:
-            Dictionary with updated components
-        """
-        filtered_df: pd.DataFrame = filter_data_by_location(df, location)
-        metrics: dict[str, float] = calculate_market_metrics(filtered_df)
-        sales_by_type_plot: go.Figure = create_sales_by_property_type_plot(filtered_df)
-        volume_evolution_plot: go.Figure = create_volume_evolution_plot(filtered_df)
-
-        return [
-            metrics["avg_price_per_m2"],
-            metrics["total_transactions"],
-            metrics["median_price"],
-            sales_by_type_plot,
-            volume_evolution_plot,
-        ]
-
-    # Update analysis when location changes
     location_dropdown.change(
-        fn=update_market_analysis,
+        fn=lambda loc: update_market_analysis(df, loc),
         inputs=location_dropdown,
-        outputs=[avg_price_m2, total_transactions, median_price, sales_by_type_plot, volume_evolution_plot],
+        outputs=[total_transactions, median_price_info, sales_by_type_plot, sales_by_date_plot],
     )
 
-    # Financing simulation
-    simulate_button.click(
-        fn=calculate_financing_simulation,
-        inputs=[property_price, personal_contribution, loan_duration, interest_rate],
-        outputs=[monthly_payment, total_loan_cost, debt_ratio],
-    )
-    # Initial update
-    if get_location_choices(df):
-        update_market_analysis(get_location_choices(df)[0])
+    return {
+        "location_dropdown": location_dropdown,
+        "total_transactions": total_transactions,
+        "median_price_info": median_price_info,
+        "sales_by_type_plot": sales_by_type_plot,
+        "sales_by_date_plot": sales_by_date_plot,
+    }

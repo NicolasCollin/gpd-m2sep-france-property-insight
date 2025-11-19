@@ -28,7 +28,15 @@ def empty_df() -> pd.DataFrame:
 
 class TestComputePricePerSqm:
     """
-    Unit tests for compute_price_per_sqm using land_area.
+    Unit tests for `compute_price_per_sqm` using `land_area`.
+
+    Scenarios tested:
+        - Correct median computation for valid numeric data.
+        - Correct mean computation for valid numeric data.
+        - Rows with NaN values are ignored in calculations.
+        - Empty DataFrame raises ValueError.
+        - Missing required columns raise ValueError.
+        - Rows with zero or negative land_area are ignored.
     """
 
     def test_median_computation(self, sample_df: pd.DataFrame) -> None:
