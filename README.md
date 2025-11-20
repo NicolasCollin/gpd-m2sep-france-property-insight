@@ -90,7 +90,7 @@ More infos (origin, localization, methods, variable glossary...) in docs/metadat
 - **data/**
   - **raw/** raw data
   - **cleaned/** validated by Pydantic schemas & cleaned (duplicates, missing values, renaming...)
-  - **processed/** ready for analysis, visualization, modeling
+  - **processed/** ready for analysis, visualization, or modeling
 
 - **docs/**
   - **references/** references from teacher and past projects
@@ -100,11 +100,13 @@ More infos (origin, localization, methods, variable glossary...) in docs/metadat
   - **data_pipelines/** data import, format conversion, validation, cleaning, filtering
   - **interface/**
   - **models/**
+  - **routes/** FastAPI routes to separate frontend from backend
   - **utils/**
   - main.py
 
 - **tests/**
   - **behave/** behave tests
+  - **smoke/** high level sanity tests to check if the app can run without crashing
   - **unit/** unit tests
 
 - .gitignore: Prevents unwanted files from being tracked by git.
@@ -128,14 +130,19 @@ The branch staging is a safety layer to test deployment before officially releas
 
 ## Current state
 
-CURRENT STATE: Sprint 2  
+CURRENT STATE: Sprint 3
 This project will go through 5 sprints of 2 weeks.
 
 ### Changelog
 
-**Sprint 2**
+**Sprint 3**
 
-Major changes:
+- Extended dashboard
+- Prediction form simplification
+- Financing simulation
+- FastAPI layer implementation
+
+**Sprint 2**
 
 - Prediction form for a property value
 - Dashboard: property value overview, direct access to datatable
