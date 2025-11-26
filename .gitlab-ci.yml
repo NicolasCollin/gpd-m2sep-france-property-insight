@@ -44,13 +44,13 @@ typecheck:
 audit:
   stage: audit
   extends: .ci-template
-  script:
-    - '# Ignore known advisory GHSA-2qfp-q593-8484 (brotli<=1.1.0) until a fixed wheel is available in our env'
-    - uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484
   allow_failure: true
   only:
     - main
     - test-main
+  script:
+    - '# Ignore known advisory GHSA-2qfp-q593-8484 (brotli<=1.1.0) until a fixed wheel is available in our env'
+    - uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484
 
 
 # unit tests, integration tests, doctests, and behave tests
@@ -66,6 +66,8 @@ test:
 deploy_raspberry:
   stage: deploy
   only:
+    - raspb
+    - test-main
     - main
   tags:
     - raspberry
@@ -77,4 +79,4 @@ deploy_raspberry:
     - sudo systemctl restart fpi.service
     - echo "Current public FPI link:"
     - cat /home/nicolascollin/fpi_url.txt || echo "No link found (missing fpi_url.txt)"
-    - echo "Deployment completed successfully ✔️ – new version is now live."
+    - echo "Deployment completed successfully, new version is now live."
