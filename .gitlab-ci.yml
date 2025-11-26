@@ -70,11 +70,11 @@ deploy_raspberry:
   tags:
     - raspberry
   script:
-    - echo "Déploiement sur la Raspberry..."
+    - echo "Deploying to Raspberry Pi..."
     - cd /home/nicolascollin/apps/fpi
     - git pull origin main
     - uv sync || true
     - sudo systemctl restart fpi.service
-    - echo "Lien public actuel de FPI :"
-    - cat /home/nicolascollin/fpi_url.txt || echo "Aucun lien trouvé (fpi_url.txt manquant)"
-    - echo "Déploiement terminé avec succès ✔️ – nouvelle version désormais en ligne."
+    - echo "Current public FPI link:"
+    - cat /home/nicolascollin/fpi_url.txt || echo "No link found (missing fpi_url.txt)"
+    - echo "Deployment completed successfully ✔️ – new version is now live."
