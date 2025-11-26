@@ -5,10 +5,8 @@ stages:
   - test
   - deploy
 
-
 # template for uv installation
 .ci-template:
-  # image: python:3.13-slim
   cache:
     key: "uv-cache"
     paths:
@@ -16,11 +14,23 @@ stages:
   variables:
     UV_CACHE_DIR: .uv-cache
   before_script:
-  - apt-get update && apt-get install -y git
-  - python -m pip install --upgrade pip
-  - python -m pip install uv
-  - uv sync --frozen --group dev
-
+    # 1) Install git and python3-venv only when running as root (e.g. Docker runners)
+    - |
+      set -e
+      if command -v apt-get >/dev/null 2>&1 && [ "$(id -u)" -eq 0 ]; then
+        apt-get update
+        apt-get install -y git python3-venv
+      fi
+    # 2) Create an isolated virtual environment for CI (works on Raspberry + Docker + other runners)
+    - |
+      set -e
+      python3 -m venv .ci-venv
+      . .ci-venv/bin/activate
+      python -m pip install --upgrade pip
+      python -m pip install uv
+    # 3) Activate the venv for the rest of the job and sync dependencies with uv
+    - . .ci-venv/bin/activate
+    - uv sync --frozen --group dev
 
 # pre-commit hooks
 lint:
@@ -30,7 +40,6 @@ lint:
     - uv run pre-commit run --all-files --show-diff-on-failure
   allow_failure: true
 
-
 # mypy static type checker
 typecheck:
   stage: typecheck
@@ -38,7 +47,6 @@ typecheck:
   script:
     - uv run mypy fpi
   allow_failure: true
-
 
 # look for vulnerable dependencies
 audit:
@@ -52,7 +60,6 @@ audit:
     - '# Ignore known advisory GHSA-2qfp-q593-8484 (brotli<=1.1.0) until a fixed wheel is available in our env'
     - uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484
 
-
 # unit tests, integration tests, doctests, and behave tests
 test:
   stage: test
@@ -60,7 +67,6 @@ test:
   script:
     - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q
     - uv run behave tests/behave/features
-
 
 # deploy on Raspberry Pi and restart FPI with new code
 deploy_raspberry:
