@@ -3,6 +3,7 @@ stages:
   - typecheck
   - audit
   - test
+  - deploy
 
 
 # template for uv installation
@@ -58,3 +59,21 @@ test:
   script:
     - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q
     - uv run behave tests/behave/features
+
+
+# deploy on Raspberry Pi and restart FPI with new code
+deploy_raspberry:
+  stage: deploy
+  only:
+    - main
+  tags:
+    - raspberry
+  script:
+    - echo "Déploiement sur la Raspberry..."
+    - cd /home/nicolascollin/apps/fpi
+    - git pull origin main
+    - uv sync || true
+    - sudo systemctl restart fpi.service
+    - echo "Lien public actuel de FPI :"
+    - cat /home/nicolascollin/fpi_url.txt || echo "Aucun lien trouvé (fpi_url.txt manquant)"
+    - echo "Déploiement terminé avec succès ✔️ – nouvelle version désormais en ligne."
