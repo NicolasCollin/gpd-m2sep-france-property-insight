@@ -76,8 +76,6 @@ test:
 deploy_raspberry:
   stage: deploy
   only:
-    - raspb
-    - test-main
     - main
   tags:
     - raspberry
