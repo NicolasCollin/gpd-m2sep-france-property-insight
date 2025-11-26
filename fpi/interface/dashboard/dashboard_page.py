@@ -46,13 +46,16 @@ def display_dashboard() -> gr.Blocks:
     df: pd.DataFrame = load_all_csv()
     with gr.Blocks() as dashboard:
         with gr.Tab("Overview"):
-            _ = get_dashboard_table(df)
+            gr.Markdown("## Market & Area Insights")
             _ = plot_sales_count_by_department(df)
             _ = plot_price_evolution_by_department(df)
 
         with gr.Tab("Explore the market"):
             gr.Markdown("## Explore the real estate market in Ile-de-France")
             get_market_explorer_tab(df)
+
+        with gr.Tab("Data"):
+            _ = get_dashboard_table(df)
 
     return dashboard
 
