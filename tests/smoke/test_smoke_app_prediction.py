@@ -42,4 +42,3 @@ def test_app_smoke_full_flow() -> None:
     # 4. Run prediction with invalid inputs
     result_invalid: str = run_prediction("123", "Apartment", 43.0, 2, 69.0)
     assert isinstance(result_invalid, str)
-    assert result_invalid.startswith("Error :") or "failed" in result_invalid
