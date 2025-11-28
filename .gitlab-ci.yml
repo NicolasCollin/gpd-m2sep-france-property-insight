@@ -3,11 +3,10 @@ stages:
   - typecheck
   - audit
   - test
+  - deploy
 
-
-# template for uv installation
+# Template to install uv
 .ci-template:
-  # image: python:3.13-slim
   cache:
     key: "uv-cache"
     paths:
@@ -15,10 +14,23 @@ stages:
   variables:
     UV_CACHE_DIR: .uv-cache
   before_script:
-  - python -m pip install --upgrade pip
-  - python -m pip install uv
-  - uv sync --frozen --group dev
-
+    # 1) Install git and python3-venv only when running as root (e.g., Docker runners)
+    - |
+      set -e
+      if command -v apt-get >/dev/null 2>&1 && [ "$(id -u)" -eq 0 ]; then
+        apt-get update
+        apt-get install -y git python3-venv
+      fi
+    # 2) Create an isolated venv for CI (works for Raspberry Pi, Docker, and other runners)
+    - |
+      set -e
+      python3 -m venv .ci-venv
+      . .ci-venv/bin/activate
+      python -m pip install --upgrade pip
+      python -m pip install uv
+    # 3) Activate the venv for the rest of the job and sync dependencies with uv
+    - . .ci-venv/bin/activate
+    - uv sync --frozen --group dev
 
 # pre-commit hooks
 lint:
@@ -28,7 +40,6 @@ lint:
     - uv run pre-commit run --all-files --show-diff-on-failure
   allow_failure: true
 
-
 # mypy static type checker
 typecheck:
   stage: typecheck
@@ -37,24 +48,67 @@ typecheck:
     - uv run mypy fpi
   allow_failure: true
 
-
-# look for vulnerable dependencies
+# Look for vulnerable dependencies
 audit:
   stage: audit
   extends: .ci-template
-  script:
-    - '# Ignore known advisory GHSA-2qfp-q593-8484 (brotli<=1.1.0) until a fixed wheel is available in our env'
-    - uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484
   allow_failure: true
   only:
     - main
     - test-main
+  script:
+    - '# Ignore known advisory GHSA-2qfp-q593-8484 (brotli<=1.1.0) until a fixed wheel is available in our env'
+    - uv run pip-audit . --ignore-vuln GHSA-2qfp-q593-8484
 
-
-# unit tests, integration tests, doctests, and behave tests
+# Unit tests, integration tests, doctests, and behave tests
 test:
   stage: test
   extends: .ci-template
   script:
+    # Force Gradio to use a controlled temporary directory
+    - export GRADIO_TEMP_DIR="$CI_PROJECT_DIR/.gradio-tmp"
+    - mkdir -p "$GRADIO_TEMP_DIR"
+    # Then run tests via uv
     - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q
     - uv run behave tests/behave/features
+
+# Deploy to the Raspberry Pi and restart FPI with the new code
+deploy_raspberry:
+  stage: deploy
+  only:
+    - main
+  tags:
+    - raspberry
+  script:
+    - echo "Deploying to Raspberry Pi..."
+    - cd /home/nicolascollin/apps/fpi
+    # Always align the local code with origin/main
+    - git fetch origin main
+    - git reset --hard origin/main
+    # On the Raspberry Pi, do NOT depend on uv from the CI: we use the one installed for fpi.service
+    # Run uv sync only if it exists in PATH; otherwise skip it
+    - |
+      if command -v uv >/dev/null 2>&1; then
+        echo "uv found, running 'uv sync'..."
+        uv sync || echo "uv sync failed but continuing."
+      else
+        echo "uv not found in PATH, skipping 'uv sync'."
+      fi
+    # Restart the FPI systemd service (see sudoers configuration on the Raspberry Pi)
+    - sudo systemctl restart fpi.service
+    - echo "Current public FPI link (from Raspberry):"
+    - cat /home/nicolascollin/fpi_url.txt || echo "No link found (missing fpi_url.txt)"
+    # Copy the public URL into a CI artifact
+    - cd "$CI_PROJECT_DIR"
+    - |
+      if [ -f /home/nicolascollin/fpi_url.txt ]; then
+        cp /home/nicolascollin/fpi_url.txt fpi_public_url.txt
+      else
+        echo "No link found (missing /home/nicolascollin/fpi_url.txt on Raspberry)" > fpi_public_url.txt
+      fi
+    - echo "Deployment completed successfully, new version is now live."
+  artifacts:
+    paths:
+      - fpi_public_url.txt
+    when: always
+    expire_in: 1 week
