@@ -30,49 +30,51 @@ def plot_price_segments(df: pd.DataFrame) -> gr.Plot:
     return gr.Plot(value=fig)
 
 def plot_property_type_proportions(df: pd.DataFrame) -> gr.Plot:
-    df_valid = df[df["department_code"].notna() & df["property_type_code"].notna()]
 
-    # Compute proportions with value_counts(normalize=True)
+    if "property_type" not in df.columns:
+        raise ValueError("La colonne 'property_type' est introuvable dans le dataframe.")
+
+    df_valid = df[
+        df["department_code"].notna() &
+        df["property_type"].notna()
+    ]
+
     table = (
         df_valid
-        .value_counts(["department_code", "property_type_code"], normalize=True)
-        .reset_index(name="proportion")
+        .groupby(["department_code", "property_type"])
+        .size()
+        .reset_index(name="count")
+    )
+
+
+    table["proportion"] = (
+        table["count"] / table.groupby("department_code")["count"].transform("sum")
     )
 
     fig = px.bar(
         table,
-        x="proportion",
-        y="department_code",
-        color="property_type_code",
-        orientation="h",
-        title="Proportion of Property Types per Department",
-        labels={"department_code": "Department", "proportion": "Proportion"},
+        x="department_code",
+        y="proportion",
+        color="property_type",
+        title="Répartition des types de biens par département",
+        labels={
+            "department_code": "Département",
+            "proportion": "Proportion",
+            "property_type": "Type de bien"
+        },
+        text="count"
     )
-    fig.update_layout(height=450)
+
+    fig.update_layout(
+        height=450,
+        barmode="stack",
+        legend_title="Types de biens",
+        xaxis=dict(type="category")
+    )
 
     return gr.Plot(value=fig)
 
 
-
-def plot_price_landscape(df: pd.DataFrame) -> gr.Plot:
-    df_valid = df[
-        df["property_value"].notna() &
-        df["building_area"].notna() &
-        (df["building_area"] > 10)
-    ]
-
-    fig = px.scatter(
-        df_valid.sample(min(5000, len(df_valid))),
-        x="building_area",
-        y="property_value",
-        color="property_value",
-        opacity=0.45,
-        title="Landscape of Price vs Surface (Sample)",
-        labels={"building_area": "Living area (m²)", "property_value": "Price (€)"},
-    )
-
-    fig.update_layout(height=450)
-    return gr.Plot(value=fig)
 
 
 def get_overview_tab() -> gr.Blocks:
@@ -92,8 +94,5 @@ def get_overview_tab() -> gr.Blocks:
 
         gr.Markdown("### Property Type Composition per Department")
         plot_property_type_proportions(df)
-
-        gr.Markdown("### Price Landscape (Surface vs Price)")
-        plot_price_landscape(df)
 
     return overview
