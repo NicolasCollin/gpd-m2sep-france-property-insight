@@ -7,6 +7,7 @@ from fpi.analysis.dashboard import (
 )
 from fpi.data_pipeline.loader import load_all_csv
 from fpi.interface.dashboard.market_explorer import get_market_explorer_tab
+from fpi.interface.dashboard.overview_graphs import get_overview_tab
 from fpi.analysis.pretty_map import generate_idf_map
 
 def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
@@ -87,6 +88,7 @@ def display_dashboard() -> gr.Blocks:
             _ = get_dashboard_table(df)
             _ = plot_sales_count_by_department(df)
             _ = plot_price_evolution_by_department(df)
+            get_overview_tab()
 
     
         with gr.Tab("Explore the market"):

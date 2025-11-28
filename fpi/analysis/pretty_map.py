@@ -20,8 +20,8 @@ from fpi.data_pipeline.loader import load_all_csv
 
 
 GEO_URL = (
-    "https://raw.githubusercontent.com/gregoiredavid/france-geojson/"
-    "master/regions/ile-de-france/communes-ile-de-france.geojson"
+    "https://github.com/gregoiredavid/france-geojson/tree/"
+    "master/regions/ile-de-france/departements-ile-de-france.geojson"
 )
 
 GEO_PATH = Path("data/geo/ile_de_france_communes.geojson")
@@ -103,7 +103,7 @@ def create_choropleth(agg_df: pd.DataFrame, geojson: dict):
         agg_df,
         geojson=geojson,
         locations="town_code",
-        featureidkey="properties.code",  # check if matches GeoJSON structure
+        featureidkey="postal_code",  # check if matches GeoJSON structure
         color="mean_value",
         hover_name="town_code",
         hover_data={"mean_value": True, "count": True},
