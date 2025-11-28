@@ -1,73 +1,119 @@
 import gradio as gr
 import pandas as pd
 
-from fpi.analysis.dashboard import plot_price_evolution_by_department, plot_sales_count_by_department
+from fpi.analysis.dashboard import (
+    plot_price_evolution_by_department,
+    plot_sales_count_by_department
+)
 from fpi.data_pipeline.loader import load_all_csv
 from fpi.interface.dashboard.market_explorer import get_market_explorer_tab
-
+from fpi.analysis.pretty_map import generate_idf_map
 
 def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
     """
     Display key summary statistics and a preview of the dataset.
 
     Args:
-        df (pd.DataFrame): Pandas dataframe to visualize.
+        df: Loaded DVF dataset.
 
     Returns:
-        gr.Blocks: table section of the dashboard ready to be rendered.
+        A Gradio Blocks section containing summary numbers and a sample table.
     """
-    # Ensure property_value is numeric even if loaded as string
-    df["property_value"] = pd.to_numeric(df["property_value"].astype(str).str.replace(",", "."), errors="coerce")
+
+    df["property_value"] = pd.to_numeric(
+        df["property_value"].astype(str).str.replace(",", "."),
+        errors="coerce"
+    )
 
     with gr.Blocks() as table_block:
         with gr.Row():
-            total_properties: int = len(df)
-            median_price: str = f"{df['property_value'].median():,.0f} €"
-            min_price: str = f"{df['property_value'].min():,.0f} €"
-            max_price: str = f"{df['property_value'].max():,.0f} €"
+            total_properties = len(df)
+            median_price = f"{df['property_value'].median():,.0f} €"
+            min_price = f"{df['property_value'].min():,.0f} €"
+            max_price = f"{df['property_value'].max():,.0f} €"
 
-            gr.Number(value=total_properties, label="Total properties in dataset", interactive=False)
-            gr.Textbox(value=median_price, label="Median property price", interactive=False)
-            gr.Textbox(value=min_price, label="Minimum property price", interactive=False)
-            gr.Textbox(value=max_price, label="Maximum property price", interactive=False)
+            gr.Number(value=total_properties, label="Total properties", interactive=False)
+            gr.Textbox(value=median_price, label="Median price", interactive=False)
+            gr.Textbox(value=min_price, label="Min price", interactive=False)
+            gr.Textbox(value=max_price, label="Max price", interactive=False)
 
         gr.DataFrame(value=df.head(50), label="Sample of dataset")
 
     return table_block
 
+def get_map_tab(df: pd.DataFrame) -> gr.Blocks:
+    """
+    Build the map tab for the dashboard.
+
+    This tab displays an interactive Plotly choropleth map of
+    property values in Île-de-France.
+
+    Args:
+        df: DVF dataset.
+
+    Returns:
+        A Gradio Blocks section containing the map.
+    """
+    with gr.Blocks() as map_tab:
+
+        gr.Markdown(" Real estate map — Île-de-France")
+        gr.Markdown(
+            "Interactive map showing mean property values per commune.<br>"
+            "The map uses the official GeoJSON shapes from the `gregoiredavid` repository.",
+            elem_classes="info-text"
+        )
+
+        # generate_idf_map() returns a Plotly figure
+        map_fig = generate_idf_map()
+
+        gr.Plot(map_fig, label="Property values map")
+
+    return map_tab
+
 
 def display_dashboard() -> gr.Blocks:
     """
-    Display all dashboard components (tables + graphs) in a single container.
+    Display all dashboard components (tables, plots, maps) in a unified layout.
 
     Returns:
-        gr.Blocks: Complete Gradio dashboard layout ready to be rendered.
+        The complete Gradio dashboard in a Blocks object.
     """
-    df: pd.DataFrame = load_all_csv()
+    df = load_all_csv()
+
     with gr.Blocks() as dashboard:
+
+        
         with gr.Tab("Overview"):
             _ = get_dashboard_table(df)
             _ = plot_sales_count_by_department(df)
             _ = plot_price_evolution_by_department(df)
 
+    
         with gr.Tab("Explore the market"):
-            gr.Markdown("## Explore the real estate market in Ile-de-France")
+            gr.Markdown(" Explore the real estate market")
             get_market_explorer_tab(df)
+
+        
+        with gr.Tab("Map"):
+            _ = get_map_tab(df)
 
     return dashboard
 
 
+
 def get_dashboard_page() -> gr.Blocks:
     """
-    Interactive dashboard for Ile-de-France real estate data.
+    Render the full real-estate dashboard with overview, filters, and maps.
 
     Returns:
-        Dashboard (gr.Blocks)
+        Gradio Blocks page.
     """
+    gr.Markdown(" Ile-de-France real estate dashboard", elem_classes="page-title")
+    gr.Markdown(
+        "Interactive data exploration with filters, charts, and geospatial visualization.",
+        elem_classes="page-subtitle"
+    )
 
-    gr.Markdown("# Ile-de-France real estate dashboard", elem_classes="page-title")
-    gr.Markdown("Explore property values interactively with filters for department and property type.", elem_classes="page-subtitle")
-
-    dashboard: gr.Blocks = display_dashboard()
+    dashboard = display_dashboard()
 
     return dashboard
