@@ -1,12 +1,16 @@
 import pandas as pd
+import plotly.graph_objects as go
 
 from fpi.analysis.market_analysis import (
     calculate_financing_simulation,
     calculate_market_metrics,
     calculate_median_price_per_m2_by_type,
-    compare_departments,
+    compare_departments_by_criteria,
+    create_department_cards,
+    create_department_trend_plots,
     create_sales_by_date_plot,
     create_sales_by_property_type_plot,
+    filter_data_by_criteria,
     filter_data_by_location,
     get_location_choices,
     get_sales_by_type_data,
@@ -81,6 +85,72 @@ class TestFilterDataByLocation:
         df = self._df()
         filtered = filter_data_by_location(df, "")
         assert len(filtered) == len(df)
+
+
+class TestFilterDataByCriteria:
+    """
+    Tests for `filter_data_by_criteria()`.
+
+    Scenarios tested:
+        - Filtering by minimum rooms
+        - Filtering by minimum surface
+        - Filtering by maximum surface
+        - Filtering by property type
+        - Combining multiple criteria
+        - No filter returns the original DataFrame
+    """
+
+    @staticmethod
+    def _df() -> pd.DataFrame:
+        return pd.DataFrame(
+            {
+                "postal_code": ["75001", "75002", "92000"],
+                "department_code": ["75", "75", "92"],
+                "value": [100, 200, 300],
+                "property_type": ["Maison", "Appartement", "Maison"],
+                "main_rooms": [2, 5, 8],
+                "building_area": [50, 70, 100],
+            }
+        )
+
+    def test_min_rooms(self):
+        df = self._df()
+        filtered = filter_data_by_criteria(df, min_rooms=5)
+        assert isinstance(filtered, pd.DataFrame)
+        assert all(filtered["main_rooms"] >= 5)
+        assert len(filtered) == 2
+
+    def test_min_surface(self):
+        df = self._df()
+        filtered = filter_data_by_criteria(df, min_surface=70)
+        assert all(filtered["building_area"] >= 70)
+        assert len(filtered) == 2
+
+    def test_max_surface(self):
+        df = self._df()
+        filtered = filter_data_by_criteria(df, max_surface=70)
+        assert all(filtered["building_area"] <= 70)
+        assert len(filtered) == 2
+
+    def test_property_type(self):
+        df = self._df()
+        filtered = filter_data_by_criteria(df, property_type="Maison")
+        assert all(filtered["property_type"] == "Maison")
+        assert len(filtered) == 2
+
+    def test_combined_filters(self):
+        df = self._df()
+        filtered = filter_data_by_criteria(df, min_rooms=5, min_surface=70, property_type="Maison")
+        assert len(filtered) == 1
+        row = filtered.iloc[0]
+        assert row["main_rooms"] >= 5
+        assert row["building_area"] >= 70
+        assert row["property_type"] == "Maison"
+
+    def test_no_filter_returns_all(self):
+        df = self._df()
+        filtered = filter_data_by_criteria(df)
+        pd.testing.assert_frame_equal(filtered, df)
 
 
 class TestCalculateMedianPricePerM2ByType:
@@ -190,40 +260,128 @@ class TestCalculateFinancingSimulation:
     """
 
     def test_basic_calculation(self):
-        monthly, total, debt_ratio = calculate_financing_simulation(200000, 40000, 20, 3.5)
+        monthly, total, debt_ratio = calculate_financing_simulation(200000, 40000, 4000, 20, 3.5)
         assert monthly > 0
         assert total > 0
         assert debt_ratio > 0
 
     def test_zero_loan(self):
-        monthly, total, debt_ratio = calculate_financing_simulation(100000, 100000, 10, 2)
+        monthly, total, debt_ratio = calculate_financing_simulation(100000, 100000, 5000, 10, 2)
         assert monthly == 0
         assert total == 0
         assert debt_ratio == 0
 
 
-class TestCompareDepartments:
+class TestCompareDepartmentsByCriteria:
     """
-    Tests for `compare_departments()`.
+    Tests for compare_departments_by_criteria()
 
     Scenarios tested:
-        - Returns a DataFrame with a "Department" column.
-        - Correct number of rows for multiple selected departments.
-        - Handles multiple property types per department.
+        - Returns a DataFrame with department comparisons.
+        - Correctly filters data by selected departments and criteria.
+        - Includes expected columns: Department, Transactions, and median price per m² for property types.
+
     """
 
-    df = pd.DataFrame(
-        {
-            "department_code": ["75", "75", "92"],
-            "property_type": ["Maison", "Appartement", "Maison"],
-            "property_value": [300000, 200000, 400000],
-            "building_area": [60, 40, 80],
-            "land_area": [10, 0, 20],
-        }
-    )
+    @staticmethod
+    def _df() -> pd.DataFrame:
+        return pd.DataFrame(
+            {
+                "department_code": ["75", "75", "92", "92"],
+                "main_rooms": [2, 5, 3, 4],
+                "building_area": [50, 70, 60, 80],
+                "property_type": ["Maison", "Appartement", "Maison", "Appartement"],
+                "value": [100, 200, 150, 250],
+            }
+        )
 
-    def test_comparison_dataframe(self):
-        result = compare_departments(self.df, ["75", "92"])
+    def test_return_type_and_columns(self):
+        df = self._df()
+        result = compare_departments_by_criteria(df, selected_departments=["75", "92"], property_type="Maison")
         assert isinstance(result, pd.DataFrame)
         assert "Department" in result.columns
-        assert len(result) == 1
+        assert "Transactions" in result.columns
+        assert "Median price per m² – Maison" in result.columns
+
+    def test_filtering_effect(self):
+        df = self._df()
+        result = compare_departments_by_criteria(df, selected_departments=["75"], min_rooms=3)
+        assert all(result["Transactions"] >= 0)
+        assert list(result["Department"]) == ["75"]
+
+
+class TestCreateDepartmentCards:
+    """
+    Tests for create_department_cards()
+
+    Scenarios tested:
+        - Returns a list of department cards for specified departments and criteria.
+        - Ensures that the cards contain relevant information based on the input DataFrame.
+
+    """
+
+    @staticmethod
+    def _df() -> pd.DataFrame:
+        return pd.DataFrame(
+            {
+                "department_code": ["75", "75", "92"],
+                "main_rooms": [2, 5, 3],
+                "building_area": [50, 70, 60],
+                "property_type": ["Maison", "Appartement", "Maison"],
+                "value": [100, 200, 150],
+            }
+        )
+
+    def test_return_type_and_content(self):
+        df = self._df()
+        cards = create_department_cards(df, departments=["75"], property_type="Maison", min_rooms=2, min_surface=50, max_surface=100)
+        assert isinstance(cards, list)
+        assert all(isinstance(c, str) for c in cards)
+        assert "75" in cards[0]
+
+
+class TestCreateDepartmentTrendPlots:
+    """
+    Tests for `create_department_trend_plots()`.
+
+    Scenarios tested:
+        - Returns a list of plotly.graph_objects.Figure, one per requested department.
+        - Handles empty or fully filtered-out data by producing an empty figure (no traces).
+        - Supports comparing multiple departments.
+
+    """
+
+    @staticmethod
+    def _df() -> pd.DataFrame:
+        return pd.DataFrame(
+            {
+                "department_code": ["75", "75", "92"],
+                "main_rooms": [2, 5, 3],
+                "building_area": [50, 70, 60],
+                "property_type": ["Maison", "Appartement", "Maison"],
+                "value": [100, 200, 150],
+                "date": ["2023-01-01", "2023-01-02", "2023-01-03"],
+            }
+        )
+
+    def test_return_type_and_length(self):
+        df = self._df()
+        plots = create_department_trend_plots(df, departments=["75", "92"], property_type="Maison", min_rooms=2, min_surface=50, max_surface=100)
+        assert isinstance(plots, list)
+        assert all(isinstance(p, go.Figure) for p in plots)
+        assert len(plots) == 2
+
+    def test_empty_data_handling(self):
+        df = pd.DataFrame(
+            {
+                "department_code": ["75"],
+                "main_rooms": [1],
+                "building_area": [10],
+                "property_type": ["Appartement"],
+                "value": [50],
+                "date": ["2023-01-01"],
+            }
+        )
+        plots = create_department_trend_plots(df, departments=["92"], property_type="Maison", min_rooms=5, min_surface=100, max_surface=200)
+        assert isinstance(plots[0], go.Figure)
+        assert plots[0].data == ()

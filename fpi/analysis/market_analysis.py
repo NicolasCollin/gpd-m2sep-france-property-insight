@@ -74,6 +74,68 @@ def filter_data_by_location(df: pd.DataFrame, location: str) -> pd.DataFrame:
     return df
 
 
+def filter_data_by_criteria(
+    df: pd.DataFrame,
+    min_rooms: int | None = None,
+    min_surface: float | None = None,
+    max_surface: float | None = None,
+    property_type: str | None = None,
+) -> pd.DataFrame:
+    """
+    Filter a real-estate dataset using optional user-defined criteria.
+
+    Supported filters:
+        - Minimum number of rooms
+        - Minimum surface area
+        - Maximum surface area
+        - Property type (e.g., "Appartement", "Maison")
+
+    Each criterion is applied only if it is provided (not None and valid).
+
+    Args:
+        df (pd.DataFrame):
+            The full real-estate dataset.
+        min_rooms (int | None):
+            Minimum required number of rooms. Rows with fewer rooms are excluded.
+        min_surface (float | None):
+            Minimum required building area in m².
+        max_surface (float | None):
+            Maximum allowed building area in m².
+        property_type (str | None):
+            Property type to keep. If None or "All", no filter is applied on type.
+
+    Returns:
+        pd.DataFrame:
+            A DataFrame containing only rows that match the provided filter criteria.
+    """
+
+    df_filtered: pd.DataFrame = df.copy()
+
+    # Coerce numeric columns
+    if "main_rooms" in df_filtered.columns:
+        df_filtered["main_rooms"] = pd.to_numeric(df_filtered["main_rooms"], errors="coerce")
+    if "building_area" in df_filtered.columns:
+        df_filtered["building_area"] = pd.to_numeric(df_filtered["building_area"], errors="coerce")
+
+    # Filter by rooms
+    if min_rooms is not None and min_rooms > 0:
+        df_filtered = df_filtered[df_filtered["main_rooms"] >= min_rooms]
+
+    # Filter by surface minimum
+    if min_surface is not None and min_surface > 0:
+        df_filtered = df_filtered[df_filtered["building_area"] >= min_surface]
+
+    # Filter by surface maximum
+    if max_surface is not None and max_surface > 0:
+        df_filtered = df_filtered[df_filtered["building_area"] <= max_surface]
+
+    # Filter by property type
+    if property_type and property_type != "All":
+        df_filtered = df_filtered[df_filtered["property_type"] == property_type]
+
+    return df_filtered
+
+
 def calculate_median_price_per_m2_by_type(df: pd.DataFrame) -> pd.DataFrame:
     """
     Calculate median price per m² grouped by property type.
@@ -88,7 +150,7 @@ def calculate_median_price_per_m2_by_type(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty or not {"property_value", "building_area", "land_area", "property_type"}.issubset(df.columns):
         return pd.DataFrame({"property_type": ["No data"], "median_price_per_m2": ["No available"]})
 
-    df_clean = df.copy()
+    df_clean: pd.DataFrame = df.copy()
     df_clean["property_value"] = pd.to_numeric(df_clean["property_value"], errors="coerce")
     df_clean["building_area"] = pd.to_numeric(df_clean["building_area"], errors="coerce")
     df_clean["land_area"] = pd.to_numeric(df_clean["land_area"], errors="coerce")
@@ -264,7 +326,7 @@ def get_sales_by_type_data(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def calculate_financing_simulation(
-    property_price: float, personal_contribution: float, loan_duration: int, interest_rate: float
+    property_price: float, personal_contribution: float, income: float, loan_duration: int, interest_rate: float
 ) -> tuple[float, float, float]:
     """
     Estimate the financial cost of a mortgage based on standard amortization formulas.
@@ -272,6 +334,7 @@ def calculate_financing_simulation(
     Args:
         property_price (float): Total property cost in euros.
         personal_contribution (float): Amount contributed upfront.
+        income (float): Personal salary per month.
         loan_duration (int): Duration of the loan in years.
         interest_rate (float): Annual interest rate (%).
 
@@ -279,7 +342,7 @@ def calculate_financing_simulation(
         tuple[float, float, float]:
             - monthly_payment
             - total_cost
-            - debt_ratio (assuming 3000€/month income)
+            - debt_ratio
     """
     loan_amount: float = property_price - personal_contribution
 
@@ -295,61 +358,192 @@ def calculate_financing_simulation(
         monthly_payment = loan_amount / months
 
     total_cost: float = monthly_payment * months
-    debt_ratio: float = (monthly_payment / 3000) * 100 if monthly_payment > 0 else 0.0
+    debt_ratio: float = (monthly_payment / income) * 100 if monthly_payment > 0 else 0.0
 
     return round(monthly_payment, 2), round(total_cost, 2), round(debt_ratio, 2)
 
 
-def compare_departments(df: pd.DataFrame, selected_departments: list[str]) -> pd.DataFrame:
+def compare_departments_by_criteria(
+    df: pd.DataFrame,
+    selected_departments: list[str],
+    property_type: str | None = None,
+    min_rooms: int | None = None,
+    min_surface: float | None = None,
+    max_surface: float | None = None,
+) -> pd.DataFrame:
     """
-    Compare market indicators across multiple departments.
+    Compare key metrics (number of transactions and median price per m²)
+    for a list of departments after applying the given filters.
 
     Args:
-        df (pd.DataFrame):
-            Full property dataset.
-        selected_departments (list[str]):
-            list of department selections (e.g., ["75", "92"]).
+        df (pd.DataFrame): Transaction dataset.
+        selected_departments (list[str]): Department codes to compare.
+        property_type (str | None): Property type to filter by ("Maison", "Appartement")
+            or None/"All" for all types.
+        min_rooms (int | None): Minimum number of rooms.
+        min_surface (float | None): Minimum surface in m².
+        max_surface (float | None): Maximum surface in m².
 
     Returns:
-        pd.DataFrame:
-            Columns:
-                - "Department"
-                - "Avg price/m² (€)"
-                - "Median price (€)"
-                - "Transactions"
+        pd.DataFrame: Summary with one row per department containing :
+            - "Department"
+            - "Transactions"
+            - "Median price per m² – [Type]" columns for available property types.
     """
 
+    results: list[dict] = []
+
     for dep in selected_departments:
-        filtered: pd.DataFrame = filter_data_by_location(df, dep)
-        metrics = calculate_market_metrics(filtered)
+        filtered_loc: pd.DataFrame = filter_data_by_location(df, dep)
+        filtered_dep: pd.DataFrame = filter_data_by_criteria(
+            filtered_loc, property_type=property_type, min_rooms=min_rooms, min_surface=min_surface, max_surface=max_surface
+        )
 
-        median_prices = metrics.get("median_price_per_m2_by_type", {})
+        metrics: dict = calculate_market_metrics(filtered_dep)
+        median_prices: dict = metrics.get("median_price_per_m2_by_type", {})
 
-        row = {
+        row: dict[str, str | float | int] = {
             "Department": dep,
-            "Transactions": metrics.get("total_transactions", "No available"),
+            "Transactions": metrics.get("total_transactions", 0),
         }
 
-        if isinstance(median_prices, dict) and median_prices:
-            for prop_type, value in median_prices.items():
-                row[f"Median price per m² – {prop_type}"] = value
+        if property_type and property_type != "All":
+            row[f"Median price per m² – {property_type}"] = median_prices.get(property_type, "No available")
         else:
-            row["Median price per m² – Overall"] = "No available"
+            for t, val in median_prices.items():
+                row[f"Median price per m² – {t}"] = val
 
-        representative = "No available"
-        if isinstance(median_prices, dict) and median_prices:
-            if median_prices.get("Appartement") not in (None, "No available"):
-                representative = median_prices["Appartement"]
-
-            elif median_prices.get("Maison") not in (None, "No available"):
-                representative = median_prices["Maison"]
-
-            else:
-                representative = next(iter(median_prices.values()), "No available")
-
-        row["Median price per m² (Representative)"] = representative
-
-        results = []
         results.append(row)
 
     return pd.DataFrame(results)
+
+
+def create_department_cards(
+    df: pd.DataFrame, departments: list[str], property_type: str, min_rooms: int, min_surface: float, max_surface: float
+) -> list[str]:
+    """
+    Generate an HTML string containing styled cards to compare key metrics
+    across multiple departments based on filter criteria.
+
+    Args:
+        df (pd.DataFrame): Real-estate dataset.
+        departments (list[str]): List of department codes to include.
+        property_type (str): Property type to filter by.
+        min_rooms (int): Minimum number of rooms.
+        min_surface (float): Minimum surface area in m².
+        max_surface (float): Maximum surface area in m².
+
+    Returns:
+        list[str]: HTML string with comparison cards displayed in a flex container.
+
+    """
+
+    cards: list[str] = []
+    comparison_df: pd.DataFrame = compare_departments_by_criteria(
+        df, selected_departments=departments, property_type=property_type, min_rooms=min_rooms, min_surface=min_surface, max_surface=max_surface
+    )
+
+    for _, row in comparison_df.iterrows():
+        card_style = (
+            "border: 1px solid #e0e0e0; "
+            "border-radius: 10px; "
+            "padding: 15px; "
+            "box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05); "
+            "background-color: #f9f9f9; "
+            "width: 100%;"
+        )
+
+        card_content = f'<div class="comparison-card" style="{card_style}">'
+        title_style = "font-size: 1.2em; color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 5px; margin-top: 0; margin-bottom: 10px;"
+
+        card_content += f'<h3 style="{title_style}">{row["Department"]}</h3>'
+        card_content += '<ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">'
+
+        li_style = "margin-bottom: 6px; line-height: 1.4;"
+
+        card_content += f'<li style="{li_style}"><b>Type :</b> {property_type if property_type != "All" else "All"}</li>'
+        card_content += f'<li style="{li_style}"><b>Min rooms :</b> {min_rooms}</li>'
+        card_content += f'<li style="{li_style}"><b>Surface range :</b> {min_surface} – {max_surface} m²</li>'
+        card_content += f'<li style="{li_style}"><b>Transactions :</b> {row["Transactions"]}</li>'
+
+        price_style = "font-weight: bold; color: #343a40; margin-left: 5px;"
+
+        if property_type != "All":
+            key = f"Median price per m² – {property_type}"
+            price_value = row.get(key, "No available")
+            card_content += f'<li style="{li_style}">Median price/m² ({property_type}) : <span style="{price_style}">{price_value} €/m²</span></li>'
+        else:
+            for col in row.index:
+                if col.startswith("Median price per m² – "):
+                    prop = col.split("–")[1].strip()
+                    card_content += f'<li style="{li_style}">{prop} price/m²: <span style="{price_style}">{row[col]} €/m²</span></li>'
+
+        card_content += "</ul>"
+        card_content += "</div>"
+        cards.append(card_content)
+
+    return cards
+
+
+def create_department_trend_plots(
+    df: pd.DataFrame, departments: list[str], property_type: str, min_rooms: int, min_surface: float, max_surface: float
+) -> list[go.Figure]:
+    """
+    Create sales trend plots (sales by date) for each selected department,
+    applying the provided filters.
+
+    Args:
+        df (pd.DataFrame): Property dataset.
+        departments (list[str]): Department codes to include.
+        property_type (str): Property type to filter by (or "All").
+        min_rooms (int): Minimum number of rooms (or None).
+        min_surface (float): Minimum surface area in m² (or None).
+        max_surface (float): Maximum surface area in m² (or None).
+
+    Returns:
+        list[go.Figure]: One Plotly figure per department showing sales over time.
+    """
+    plots: list[go.Figure] = []
+
+    LINE_COLOR = "#007bff"
+    FILL_COLOR = "rgba(0, 123, 255, 0.15)"
+
+    for dep in departments:
+        filtered_loc: pd.DataFrame = filter_data_by_location(df, dep)
+        filtered: pd.DataFrame = filter_data_by_criteria(
+            filtered_loc, property_type=property_type, min_rooms=min_rooms, min_surface=min_surface, max_surface=max_surface
+        )
+
+        if filtered.empty:
+            fig_empty = go.Figure()
+            fig_empty.update_layout(title=f"Sales trend – Department {dep} (No data)", plot_bgcolor="#f5f5f5")
+            plots.append(fig_empty)
+            continue
+
+        fig: go.Figure = create_sales_by_date_plot(filtered)
+
+        fig.update_layout(
+            title=f"Sales trend – Department {dep}",
+            title_font_size=14,
+            title_x=0.5,
+            plot_bgcolor="#fcfcfc",
+            xaxis_title=None,
+            yaxis_title="Volume of Sales",
+            hovermode="x unified",
+            margin=dict(l=20, r=20, t=50, b=20),
+            xaxis=dict(showgrid=True, gridcolor="lightgrey"),
+            yaxis=dict(showgrid=True, gridcolor="lightgrey"),
+        )
+
+        for trace in fig.data:
+            trace.update(
+                line_shape="spline",
+                line=dict(width=3, color=LINE_COLOR),
+                fillcolor=FILL_COLOR,
+                mode="lines",
+                hovertemplate="%{y} sales<br>%{x}<extra></extra>",
+            )
+
+        plots.append(fig)
+
+    return plots
