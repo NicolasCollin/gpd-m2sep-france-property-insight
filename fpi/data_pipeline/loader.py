@@ -20,7 +20,7 @@ def load_all_csv(data_root: str = "data/cleaned") -> pd.DataFrame:
         pd.DataFrame: Combined data from all cleaned CSV files.
     """
 
-    migrate_all_cleaned()
+    migrate_all_cleaned(cleaned_root=data_root)
 
     all_files: list[str] = glob.glob(os.path.join(data_root, "*202*", "*_*_*.csv"))
     if not all_files:
