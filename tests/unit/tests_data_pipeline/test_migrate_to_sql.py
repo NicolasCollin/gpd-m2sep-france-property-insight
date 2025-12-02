@@ -63,6 +63,7 @@ def migrate_csv(
 def migrate_all_cleaned(
     engine: Optional[Engine] = None,
     cleaned_root: str = "data/cleaned",
+    db_path: str = DB_PATH,
 ) -> None:
     """
     Load all cleaned CSV files into the SQLite database.
@@ -88,15 +89,15 @@ def migrate_all_cleaned(
     FileNotFoundError
         If the cleaned data directory does not exist or contains no CSV files.
     """
-    db_path = Path(DB_PATH)
-    if db_path.exists():
-        db_path.unlink()
+    db_file = Path(db_path)
+    if db_file.exists():
+        db_file.unlink()
 
     root = Path(cleaned_root)
     if not root.exists():
         raise FileNotFoundError(f"Cleaned data directory not found: {root}")
 
-    eng = engine or get_engine()
+    eng = engine or get_engine(db_path=db_path)
     csv_files = list(root.rglob("*.csv"))
     if not csv_files:
         raise FileNotFoundError(f"No CSV files found under {root}")

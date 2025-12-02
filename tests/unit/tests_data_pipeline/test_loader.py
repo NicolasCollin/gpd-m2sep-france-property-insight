@@ -73,7 +73,8 @@ class TestLoadAllCsv:
         Args:
             tmp_csv_dir (Path): Fixture path to temporary data files.
         """
-        df: pd.DataFrame = load_all_csv(data_root=str(tmp_csv_dir))
+        db_path = tmp_csv_dir / "test.db"
+        df: pd.DataFrame = load_all_csv(data_root=str(tmp_csv_dir), db_path=str(db_path))
         df = df.sort_values(by=["town_code"]).reset_index(drop=True)
 
         assert not df.empty
@@ -99,7 +100,8 @@ class TestLoadAllCsv:
         Args:
             tmp_csv_dir (Path): Fixture path to temporary data files.
         """
-        df: pd.DataFrame = load_all_csv(data_root=str(tmp_csv_dir))
+        db_path = tmp_csv_dir / "test.db"
+        df: pd.DataFrame = load_all_csv(data_root=str(tmp_csv_dir), db_path=str(db_path))
         df = df.sort_values(by=["town_code"]).reset_index(drop=True)
 
         numeric_cols: list[str] = ["property_value", "building_area", "main_rooms", "land_area"]
@@ -116,7 +118,8 @@ class TestLoadAllCsv:
         Args:
             tmp_csv_dir (Path): Fixture path to temporary data files.
         """
-        df: pd.DataFrame = load_all_csv(data_root=str(tmp_csv_dir))
+        db_path = tmp_csv_dir / "test.db"
+        df: pd.DataFrame = load_all_csv(data_root=str(tmp_csv_dir), db_path=str(db_path))
         df = df.sort_values(by=["town_code"]).reset_index(drop=True)
 
         int_cols: list[str] = ["department_code", "postal_code", "town_code", "property_type_code"]
