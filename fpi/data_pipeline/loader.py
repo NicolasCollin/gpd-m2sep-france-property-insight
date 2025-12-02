@@ -1,7 +1,11 @@
 import glob
 import os
+from pathlib import Path
 
 import pandas as pd
+from sqlalchemy.engine import Engine
+
+from fpi.data_pipeline.migrate_to_sql import get_engine, migrate_all_cleaned
 
 
 def load_all_csv(data_root: str = "data/cleaned") -> pd.DataFrame:
@@ -15,6 +19,8 @@ def load_all_csv(data_root: str = "data/cleaned") -> pd.DataFrame:
     Returns:
         pd.DataFrame: Combined data from all cleaned CSV files.
     """
+
+    migrate_all_cleaned()
 
     all_files: list[str] = glob.glob(os.path.join(data_root, "*202*", "*_*_*.csv"))
     if not all_files:
@@ -32,9 +38,12 @@ def load_all_csv(data_root: str = "data/cleaned") -> pd.DataFrame:
         "property_type_code",
     ]
 
+    engine: Engine = get_engine()
+
     for file in all_files:
+        table_name: str = Path(file).stem
         try:
-            df_file: pd.DataFrame = pd.read_csv(file, decimal=",")
+            df_file: pd.DataFrame = pd.read_sql_table(table_name, con=engine)
             for col in numeric_cols:
                 if col in df_file.columns:
                     df_file[col] = pd.to_numeric(df_file[col], errors="coerce")
