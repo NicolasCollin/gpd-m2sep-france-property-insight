@@ -1,11 +1,15 @@
 from pathlib import Path
 from typing import Optional, Union
 
+# from typing has to be removed in modern python
 import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 
 DB_PATH: str = "data/sql/app.db"
+
+# if you only use DB_PATH once as a default value for a function just define it in its declaration
+# dbpath: str = "data/sql/app.db"
 
 
 def get_engine(db_path: str = DB_PATH) -> Engine:
@@ -23,18 +27,22 @@ def get_engine(db_path: str = DB_PATH) -> Engine:
     Engine
         A SQLAlchemy Engine instance connected to the SQLite database.
     """
+    # missing type annotation
     db_file = Path(db_path)
     db_file.parent.mkdir(parents=True, exist_ok=True)
     url = f"sqlite:///{db_file}"
+    # t'as fait le type annotation q'une seule fois mdr
     engine: Engine = create_engine(url)
     return engine
 
 
 def migrate_csv(
+    # use | instead of Union or Optional, good type hinting
     csv_path: Union[str, Path],
     engine: Optional[Engine] = None,
     table_name: Optional[str] = None,
 ) -> None:
+    # our docstrings state Args instead of parameters, check how others are written for harmonization
     """
     Load a CSV file into a SQLite database table.
 
