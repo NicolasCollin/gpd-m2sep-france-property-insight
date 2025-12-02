@@ -1,23 +1,20 @@
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Union
 
 import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 
-DATA_DIR: Path = Path("data")
-CLEANED_DIR: Path = DATA_DIR / "cleaned"
-SQL_DIR: Path = DATA_DIR / "sql"
-DB_PATH: Path = SQL_DIR / "app.db"
+DB_PATH: str = "data/sql/app.db"
 
 
-def get_engine(db_path: Path = DB_PATH) -> Engine:
+def get_engine(db_path: str = DB_PATH) -> Engine:
     """
     Create a SQLAlchemy engine for a SQLite database.
 
     Parameters
     ----------
-    db_path : Path, optional
+    db_path : str, optional
         Path to the SQLite database file. If not provided, the default
         application database path is used.
 
@@ -26,14 +23,15 @@ def get_engine(db_path: Path = DB_PATH) -> Engine:
     Engine
         A SQLAlchemy Engine instance connected to the SQLite database.
     """
-    db_path.parent.mkdir(parents=True, exist_ok=True)
-    url = f"sqlite:///{db_path}"
+    db_file = Path(db_path)
+    db_file.parent.mkdir(parents=True, exist_ok=True)
+    url = f"sqlite:///{db_file}"
     engine: Engine = create_engine(url)
     return engine
 
 
 def migrate_csv(
-    csv_path: Path,
+    csv_path: Union[str, Path],
     engine: Optional[Engine] = None,
     table_name: Optional[str] = None,
 ) -> None:
@@ -42,7 +40,7 @@ def migrate_csv(
 
     Parameters
     ----------
-    csv_path : Path
+    csv_path : Union[str, Path]
         Path to the CSV file to load.
     engine : Engine, optional
         Existing SQLAlchemy engine. If not provided, a new engine is created.
@@ -54,13 +52,17 @@ def migrate_csv(
     -------
     None
     """
+    path = Path(csv_path)
     eng = engine or get_engine()
-    name = table_name or csv_path.stem
-    df = pd.read_csv(csv_path)
+    name = table_name or path.stem
+    df = pd.read_csv(path, decimal=",")
     df.to_sql(name, con=eng, if_exists="replace", index=False)
 
 
-def migrate_all_cleaned(engine: Optional[Engine] = None) -> None:
+def migrate_all_cleaned(
+    engine: Optional[Engine] = None,
+    cleaned_root: str = "data/cleaned",
+) -> None:
     """
     Load all cleaned CSV files into the SQLite database.
 
@@ -72,6 +74,8 @@ def migrate_all_cleaned(engine: Optional[Engine] = None) -> None:
     ----------
     engine : Engine, optional
         Existing SQLAlchemy engine. If not provided, a new engine is used.
+    cleaned_root : str, optional
+        Root directory containing cleaned CSV files.
 
     Returns
     -------
@@ -82,13 +86,14 @@ def migrate_all_cleaned(engine: Optional[Engine] = None) -> None:
     FileNotFoundError
         If the cleaned data directory does not exist or contains no CSV files.
     """
-    if not CLEANED_DIR.exists():
-        raise FileNotFoundError(f"Cleaned data directory not found: {CLEANED_DIR}")
+    root = Path(cleaned_root)
+    if not root.exists():
+        raise FileNotFoundError(f"Cleaned data directory not found: {root}")
 
     eng = engine or get_engine()
-    csv_files = list(CLEANED_DIR.rglob("*.csv"))
+    csv_files = list(root.rglob("*.csv"))
     if not csv_files:
-        raise FileNotFoundError(f"No CSV files found under {CLEANED_DIR}")
+        raise FileNotFoundError(f"No CSV files found under {root}")
 
     for csv_path in csv_files:
         migrate_csv(csv_path=csv_path, engine=eng)

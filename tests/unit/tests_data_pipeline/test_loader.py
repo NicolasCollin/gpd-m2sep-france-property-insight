@@ -11,7 +11,7 @@ class TestLoadAllCsv:
     Unit tests for the `load_all_csv` function.
 
     Scenarios tested:
-        1. Multiple CSV files in nested directories are concatenated correctly.
+        1. Multiple cleaned files in nested directories are concatenated correctly.
         2. French decimal format in numeric columns is correctly converted to float.
         3. Department codes and other numeric columns are correctly parsed as integers.
         4. No rows or columns are lost during loading.
@@ -20,13 +20,13 @@ class TestLoadAllCsv:
     @pytest.fixture
     def tmp_csv_dir(self, tmp_path: Path) -> Path:
         """
-        Create a temporary folder containing multiple cleaned CSV files.
+        Create a temporary folder containing multiple cleaned data files.
 
         Args:
             tmp_path (Path): pytest temporary path fixture.
 
         Returns:
-            Path: Root directory containing sample CSV files.
+            Path: Root directory containing sample data files.
         """
         df1: pd.DataFrame = pd.DataFrame(
             {
@@ -68,17 +68,16 @@ class TestLoadAllCsv:
 
     def test_multiple_csv_files_loaded(self, tmp_csv_dir: Path) -> None:
         """
-        Scenario: Multiple cleaned CSV files from different subdirectories are loaded.
+        Scenario: Multiple cleaned data files from different subdirectories are loaded.
 
         Args:
-            tmp_csv_dir (Path): Fixture path to temporary CSV files.
+            tmp_csv_dir (Path): Fixture path to temporary data files.
         """
         df: pd.DataFrame = load_all_csv(data_root=str(tmp_csv_dir))
         df = df.sort_values(by=["town_code"]).reset_index(drop=True)
 
-        # Basic checks
         assert not df.empty
-        assert df.shape[0] == 3  # 2 rows + 1 row
+        assert df.shape[0] == 3
         expected_columns: list[str] = [
             "transaction_date",
             "property_value",
@@ -98,7 +97,7 @@ class TestLoadAllCsv:
         Scenario: Numeric columns with French decimal format are converted to float.
 
         Args:
-            tmp_csv_dir (Path): Fixture path to temporary CSV files.
+            tmp_csv_dir (Path): Fixture path to temporary data files.
         """
         df: pd.DataFrame = load_all_csv(data_root=str(tmp_csv_dir))
         df = df.sort_values(by=["town_code"]).reset_index(drop=True)
@@ -107,7 +106,6 @@ class TestLoadAllCsv:
         for col in numeric_cols:
             assert pd.api.types.is_numeric_dtype(df[col])
 
-        # Check converted property values
         expected_values: set[float] = {1000000.0, 1500000.0, 2000000.0}
         assert set(df["property_value"].tolist()) == expected_values
 
@@ -116,7 +114,7 @@ class TestLoadAllCsv:
         Scenario: Department codes and other integer columns are correctly parsed.
 
         Args:
-            tmp_csv_dir (Path): Fixture path to temporary CSV files.
+            tmp_csv_dir (Path): Fixture path to temporary data files.
         """
         df: pd.DataFrame = load_all_csv(data_root=str(tmp_csv_dir))
         df = df.sort_values(by=["town_code"]).reset_index(drop=True)
@@ -125,9 +123,7 @@ class TestLoadAllCsv:
         for col in int_cols:
             assert pd.api.types.is_integer_dtype(df[col])
 
-        # Spot check that department codes are all '75'
         assert set(df["department_code"]) == {75}
 
-        # Check that all expected town codes are present
         expected_town_codes: set[int] = {101, 102, 103}
         assert set(df["town_code"]) == expected_town_codes
