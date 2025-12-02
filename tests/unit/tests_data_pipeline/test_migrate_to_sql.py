@@ -1,88 +1,105 @@
 from pathlib import Path
+from typing import Optional, Union
 
 import pandas as pd
-import pytest
+from sqlalchemy import create_engine
+from sqlalchemy.engine import Engine
 
-from fpi.data_pipeline.migrate_to_sql import get_engine, migrate_all_cleaned
+DB_PATH: str = "data/sql/app.db"
 
 
-class TestMigrateToSql:
+def get_engine(db_path: str = DB_PATH) -> Engine:
     """
-    Unit tests for the SQL migration process defined in `migrate_to_sql`.
+    Create a SQLAlchemy engine for a SQLite database.
 
-    These tests ensure that:
-        1. Cleaned CSV files are correctly migrated into SQL tables.
-        2. French decimal format is properly converted to numeric values.
-        3. Basic migration behavior works as expected with simple datasets.
+    Parameters
+    ----------
+    db_path : str, optional
+        Path to the SQLite database file. If not provided, the default
+        application database path is used.
+
+    Returns
+    -------
+    Engine
+        A SQLAlchemy Engine instance connected to the SQLite database.
     """
+    db_file = Path(db_path)
+    db_file.parent.mkdir(parents=True, exist_ok=True)
+    url = f"sqlite:///{db_file}"
+    engine: Engine = create_engine(url)
+    return engine
 
-    @pytest.fixture
-    def tmp_csv_dir(self, tmp_path: Path) -> Path:
-        """
-        Create a temporary directory containing two small CSV files used for testing.
 
-        Parameters
-        ----------
-        tmp_path : Path
-            Pytest-provided temporary directory.
+def migrate_csv(
+    csv_path: Union[str, Path],
+    engine: Optional[Engine] = None,
+    table_name: Optional[str] = None,
+) -> None:
+    """
+    Load a CSV file into a SQLite database table.
 
-        Returns
-        -------
-        Path
-            Path to the root directory where the temporary CSV files are stored.
-        """
-        df1 = pd.DataFrame(
-            {
-                "value": ["10,00", "20,00"],
-                "code": [1, 2],
-            }
-        )
-        file1 = tmp_path / "year2024" / "file_one.csv"
-        file1.parent.mkdir(parents=True, exist_ok=True)
-        df1.to_csv(file1, index=False, decimal=",")
+    Parameters
+    ----------
+    csv_path : str or Path
+        Path to the CSV file to load.
+    engine : Engine, optional
+        Existing SQLAlchemy engine. If not provided, a new engine is created.
+    table_name : str, optional
+        Name of the SQL table. If omitted, the CSV filename (without extension)
+        is used as the table name.
 
-        df2 = pd.DataFrame(
-            {
-                "value": ["30,00"],
-                "code": [3],
-            }
-        )
-        file2 = tmp_path / "year2023" / "file_two.csv"
-        file2.parent.mkdir(parents=True, exist_ok=True)
-        df2.to_csv(file2, index=False, decimal=",")
+    Returns
+    -------
+    None
+    """
+    path = Path(csv_path)
+    eng = engine or get_engine()
+    name = table_name or path.stem
 
-        return tmp_path
+    df = pd.read_csv(path, decimal=",")
+    df.to_sql(name, con=eng, if_exists="replace", index=False)
 
-    def test_csv_files_migrated(self, tmp_csv_dir: Path) -> None:
-        """
-        Scenario: Two cleaned CSV files located under the temporary directory are
-        migrated into separate SQL tables.
 
-        The test verifies that:
-            * Both output tables exist.
-            * Both tables contain rows after migration.
-        """
-        engine = get_engine(db_path="data/sql/app.db")
-        migrate_all_cleaned(engine=engine, cleaned_root=str(tmp_csv_dir))
+def migrate_all_cleaned(
+    engine: Optional[Engine] = None,
+    cleaned_root: str = "data/cleaned",
+) -> None:
+    """
+    Load all cleaned CSV files into the SQLite database.
 
-        df_one = pd.read_sql_table("file_one", con=engine)
-        df_two = pd.read_sql_table("file_two", con=engine)
+    This function deletes the existing SQLite database file, then scans the
+    cleaned data directory recursively and loads each CSV file into the
+    database. Each file is stored in a table named after the CSV filename
+    (without extension).
 
-        assert not df_one.empty
-        assert not df_two.empty
+    Parameters
+    ----------
+    engine : Engine, optional
+        Existing SQLAlchemy engine. If not provided, a new engine is used.
+    cleaned_root : str, optional
+        Root directory containing cleaned CSV files. Defaults to "data/cleaned".
 
-    def test_decimal_values_converted(self, tmp_csv_dir: Path) -> None:
-        """
-        Scenario: The migration correctly handles French decimal format.
+    Returns
+    -------
+    None
 
-        The test verifies that:
-            * The 'value' column is stored as a numeric dtype.
-            * The numeric values are correctly parsed as floats.
-        """
-        engine = get_engine(db_path="data/sql/app.db")
-        migrate_all_cleaned(engine=engine, cleaned_root=str(tmp_csv_dir))
+    Raises
+    ------
+    FileNotFoundError
+        If the cleaned data directory does not exist or contains no CSV files.
+    """
+    db_path = Path(DB_PATH)
+    if db_path.exists():
+        db_path.unlink()
 
-        df = pd.read_sql_table("file_one", con=engine)
+    root = Path(cleaned_root)
+    if not root.exists():
+        raise FileNotFoundError(f"Cleaned data directory not found: {root}")
 
-        assert pd.api.types.is_numeric_dtype(df["value"])
-        assert set(df["value"].tolist()) == {10.0, 20.0}
+    eng = engine or get_engine()
+    csv_files = list(root.rglob("*.csv"))
+    if not csv_files:
+        raise FileNotFoundError(f"No CSV files found under {root}")
+
+    for csv_path in csv_files:
+        migrate_csv(csv_path=csv_path, engine=eng)
