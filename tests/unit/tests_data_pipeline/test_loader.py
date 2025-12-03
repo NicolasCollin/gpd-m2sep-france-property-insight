@@ -2,8 +2,10 @@ from pathlib import Path
 
 import pandas as pd
 import pytest
+from sqlalchemy.engine import Engine
 
 from fpi.data_pipeline.loader import load_all_csv
+from fpi.data_pipeline.migrate_to_sql import get_engine
 
 
 class TestLoadAllCsv:
@@ -93,6 +95,11 @@ class TestLoadAllCsv:
         ]
         assert list(df.columns) == expected_columns
 
+        engine = get_engine()
+        with engine.connect() as conn:
+            conn.exec_driver_sql("DROP TABLE IF EXISTS cleaned_XX_XXXX")
+            conn.exec_driver_sql("DROP TABLE IF EXISTS cleaned_YY_YYYY")
+
     def test_numeric_columns_converted(self, tmp_csv_dir: Path) -> None:
         """
         Scenario: Numeric columns with French decimal format are converted to float.
@@ -110,6 +117,11 @@ class TestLoadAllCsv:
         # Check converted property values
         expected_values: set[float] = {1000000.0, 1500000.0, 2000000.0}
         assert set(df["property_value"].tolist()) == expected_values
+
+        engine = get_engine()
+        with engine.connect() as conn:
+            conn.exec_driver_sql("DROP TABLE IF EXISTS cleaned_XX_XXXX")
+            conn.exec_driver_sql("DROP TABLE IF EXISTS cleaned_YY_YYYY")
 
     def test_department_codes_as_integers(self, tmp_csv_dir: Path) -> None:
         """
@@ -131,3 +143,8 @@ class TestLoadAllCsv:
         # Check that all expected town codes are present
         expected_town_codes: set[int] = {101, 102, 103}
         assert set(df["town_code"]) == expected_town_codes
+
+        engine: Engine = get_engine()
+        with engine.connect() as conn:
+            conn.exec_driver_sql("DROP TABLE IF EXISTS cleaned_XX_XXXX")
+            conn.exec_driver_sql("DROP TABLE IF EXISTS cleaned_YY_YYYY")
