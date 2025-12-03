@@ -16,7 +16,7 @@ def get_engine(db_path: str = "data/sql/app.db") -> Engine:
 
     Returns (Engine): A SQLAlchemy Engine instance connected to the SQLite database.
     """
-    db_file: pd.DataFrame = Path(db_path)
+    db_file: Path = Path(db_path)
     db_file.parent.mkdir(parents=True, exist_ok=True)
     url: str = f"sqlite:///{db_file}"
     engine: Engine = create_engine(url)
