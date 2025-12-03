@@ -138,19 +138,20 @@ def get_prediction_page() -> (
     with gr.Row():
         with gr.Column(scale=1):
             gr.Markdown("### Loan parameters")
-            property_price = gr.Number(label="Property price (€)", interactive=True, value=200000, minimum=0)
-            personal_contribution = gr.Number(label="Personal contribution (€)", interactive=True, value=40000, minimum=0)
-            loan_duration = gr.Slider(label="Loan duration (years)", minimum=5, maximum=30, value=20, step=1)
-            interest_rate = gr.Slider(label="Interest rate (%)", minimum=1.0, maximum=6.0, value=3.5, step=0.1)
-            simulate_button = gr.Button("Calculate", variant="primary")
+            property_price: gr.Number = gr.Number(label="Property price (€)", interactive=True, minimum=0)
+            personal_contribution: gr.Number = gr.Number(label="Personal contribution (€)", interactive=True, minimum=0)
+            income: gr.Number = gr.Number(label="Income per month (€)", interactive=True, minimum=0)
+            loan_duration: gr.Slider = gr.Slider(label="Loan duration (years)", minimum=5, maximum=30, value=20, step=1)
+            interest_rate: gr.Slider = gr.Slider(label="Interest rate (%)", minimum=1.0, maximum=6.0, value=3.5, step=0.1)
+            simulate_button: gr.Button = gr.Button("Calculate", variant="primary")
 
         with gr.Column(scale=1):
             gr.Markdown("### Simulation results")
-            monthly_payment = gr.Number(label="Monthly payment (€)", interactive=False)
-            total_loan_cost = gr.Number(label="Total loan cost (€)", interactive=False)
-            debt_ratio = gr.Number(label="Debt ratio (%)", interactive=False)
+            monthly_payment: gr.Number = gr.Number(label="Monthly payment (€)", interactive=False)
+            total_loan_cost: gr.Number = gr.Number(label="Total loan cost (€)", interactive=False)
+            debt_ratio: gr.Number = gr.Number(label="Debt ratio (%)", interactive=False)
 
-    def run_financing_simulation(price, contribution, duration, rate) -> tuple[float, float, float]:
+    def run_financing_simulation(price, contribution, income, duration, rate) -> tuple[float, float, float]:
         """
         Runs calculate_financing_simulation and extract its results.
 
@@ -163,11 +164,11 @@ def get_prediction_page() -> (
             tuple containing:
                 monthly payment, total cost, debt ratio
         """
-        return calculate_financing_simulation(price, contribution, duration, rate)
+        return calculate_financing_simulation(price, contribution, income, duration, rate)
 
     simulate_button.click(
         fn=run_financing_simulation,
-        inputs=[property_price, personal_contribution, loan_duration, interest_rate],
+        inputs=[property_price, personal_contribution, income, loan_duration, interest_rate],
         outputs=[monthly_payment, total_loan_cost, debt_ratio],
     )
 
