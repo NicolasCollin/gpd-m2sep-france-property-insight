@@ -86,13 +86,7 @@ def test_property_type_pie_counts(sample_df):
 
     values = fig["data"][0]["values"]
 
-    expected_counts = (
-        sample_df["property_type"]
-        .dropna()
-        .value_counts()
-        .sort_index()
-        .tolist()
-    )
+    expected_counts = sample_df["property_type"].dropna().value_counts().sort_index().tolist()
 
     assert sorted(values) == sorted(expected_counts)
 
@@ -103,10 +97,7 @@ def test_overview_tab_returns_blocks(monkeypatch, sample_df):
     def mock_loader():
         return sample_df
 
-    monkeypatch.setattr(
-        "fpi.interface.dashboard.overview_graphs.load_all_csv",
-        mock_loader
-    )
+    monkeypatch.setattr("fpi.interface.dashboard.overview_graphs.load_all_csv", mock_loader)
 
     tab = get_overview_tab()
     assert isinstance(tab, gr.Blocks)
