@@ -2,7 +2,7 @@
 Generate an interactive choropleth map for real-estate data in Île-de-France.
 
 This script:
-1. Downloads the Île-de-France GeoJSON 
+1. Downloads the Île-de-France GeoJSON
 2. calls load_all_csv function from fpi.data_pipeline.loader
 3. Aggregates real-estate data by town (mean property value)
 4. Merges the aggregated data with the GeoJSON
@@ -13,9 +13,12 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-import requests
+
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
+import requests
+
 from fpi.data_pipeline.loader import load_all_csv
 
 
@@ -25,7 +28,6 @@ GEO_URL = (
 )
 
 GEO_PATH = Path("data/geo/ile_de_france_communes.geojson")
-
 
 
 def download_geojson(path: Path = GEO_PATH, url: str = GEO_URL) -> Path:
@@ -80,11 +82,7 @@ def aggregate_property_values(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         DataFrame with aggregated mean values per town_code.
     """
-    grouped = (
-        df.groupby("town_code", as_index=False)
-        .agg(mean_value=("property_value", "mean"),
-             count=("property_value", "size"))
-    )
+    grouped = df.groupby("town_code", as_index=False).agg(mean_value=("property_value", "mean"), count=("property_value", "size"))
     return grouped
 
 
@@ -128,8 +126,7 @@ def save_map(fig, path: str = "idf_map.html") -> None:
     print(f"Map saved at {path}")
 
 
-
-def generate_idf_map() -> None:
+def generate_idf_map() -> go.Figure:
     """
     Full pipeline:
     1. Download & load GeoJSON
