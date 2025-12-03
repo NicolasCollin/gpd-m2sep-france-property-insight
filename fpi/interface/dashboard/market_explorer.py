@@ -7,7 +7,7 @@ from fpi.analysis.market_analysis import (
     create_sales_by_date_plot,
     create_sales_by_property_type_plot,
     filter_data_by_location,
-    get_location_choices, 
+    get_location_choices,
 )
 
 

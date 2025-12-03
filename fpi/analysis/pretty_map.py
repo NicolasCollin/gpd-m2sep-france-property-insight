@@ -21,11 +21,7 @@ import requests
 
 from fpi.data_pipeline.loader import load_all_csv
 
-
-GEO_URL = (
-    "https://github.com/gregoiredavid/france-geojson/tree/"
-    "master/regions/ile-de-france/departements-ile-de-france.geojson"
-)
+GEO_URL = "https://github.com/gregoiredavid/france-geojson/tree/" "master/regions/ile-de-france/departements-ile-de-france.geojson"
 
 GEO_PATH = Path("data/geo/ile_de_france_communes.geojson")
 
