@@ -49,7 +49,6 @@ from .dashboard import (
 from .market_analysis import (
     calculate_financing_simulation,
     calculate_market_metrics,
-    compare_departments,
     create_sales_by_property_type_plot,
     filter_data_by_location,
     get_location_choices,
@@ -74,7 +73,6 @@ __all__: list[str] = [
     "create_sales_by_property_type_plot",
     "get_sales_by_type_data",
     "calculate_financing_simulation",
-    "compare_departments",
     # Trend plots
     "display_trend",
     # Statistics

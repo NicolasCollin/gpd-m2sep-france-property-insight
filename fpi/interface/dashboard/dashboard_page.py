@@ -1,14 +1,11 @@
 import gradio as gr
 import pandas as pd
 
-from fpi.analysis.dashboard import (
-    plot_price_evolution_by_department,
-    plot_sales_count_by_department
-)
+from fpi.analysis.dashboard import plot_price_evolution_by_department, plot_sales_count_by_department
+from fpi.analysis.pretty_map import generate_idf_map
 from fpi.data_pipeline.loader import load_all_csv
 from fpi.interface.dashboard.market_explorer import get_market_explorer_tab
-from fpi.interface.dashboard.overview_graphs import get_overview_tab
-from fpi.analysis.pretty_map import generate_idf_map
+
 
 def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
     """
@@ -21,10 +18,7 @@ def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
         A Gradio Blocks section containing summary numbers and a sample table.
     """
 
-    df["property_value"] = pd.to_numeric(
-        df["property_value"].astype(str).str.replace(",", "."),
-        errors="coerce"
-    )
+    df["property_value"] = pd.to_numeric(df["property_value"].astype(str).str.replace(",", "."), errors="coerce")
 
     with gr.Blocks() as table_block:
         with gr.Row():
@@ -42,6 +36,7 @@ def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
 
     return table_block
 
+
 def get_map_tab(df: pd.DataFrame) -> gr.Blocks:
     """
     Build the map tab for the dashboard.
@@ -56,12 +51,11 @@ def get_map_tab(df: pd.DataFrame) -> gr.Blocks:
         A Gradio Blocks section containing the map.
     """
     with gr.Blocks() as map_tab:
-
         gr.Markdown(" Real estate map — Île-de-France")
         gr.Markdown(
             "Interactive map showing mean property values per commune.<br>"
             "The map uses the official GeoJSON shapes from the `gregoiredavid` repository.",
-            elem_classes="info-text"
+            elem_classes="info-text",
         )
 
         # generate_idf_map() returns a Plotly figure
@@ -82,25 +76,20 @@ def display_dashboard() -> gr.Blocks:
     df = load_all_csv()
 
     with gr.Blocks() as dashboard:
-
-        
         with gr.Tab("Overview"):
-            _ = get_dashboard_table(df)
+            gr.Markdown("## Market & Area Insights")
             _ = plot_sales_count_by_department(df)
             _ = plot_price_evolution_by_department(df)
-            get_overview_tab()
 
     
         with gr.Tab("Explore the market"):
-            gr.Markdown(" Explore the real estate market")
-            get_market_explorer_tab(df)
+            gr.Markdown("## Explore the real estate market")
+            _ = get_market_explorer_tab(df)
 
-        
         with gr.Tab("Map"):
             _ = get_map_tab(df)
 
     return dashboard
-
 
 
 def get_dashboard_page() -> gr.Blocks:
@@ -111,10 +100,7 @@ def get_dashboard_page() -> gr.Blocks:
         Gradio Blocks page.
     """
     gr.Markdown(" Ile-de-France real estate dashboard", elem_classes="page-title")
-    gr.Markdown(
-        "Interactive data exploration with filters, charts, and geospatial visualization.",
-        elem_classes="page-subtitle"
-    )
+    gr.Markdown("Interactive data exploration with filters, charts, and geospatial visualization.", elem_classes="page-subtitle")
 
     dashboard = display_dashboard()
 

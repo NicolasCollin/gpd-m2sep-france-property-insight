@@ -308,6 +308,20 @@ global_css = """
 .prediction-result * {
     color: inherit !important;
 }
+/*Tab explore the market : compare */
+.compare-row {
+    align-items: center !important;
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}
+
+.compare-row > .gradio-column:first-child .gr-markdown,
+.compare-row > .gradio-column:first-child .markdown {
+    height: auto;
+    min-height: 100px;
+}
 """
 
 theme = gr.themes.Ocean(
