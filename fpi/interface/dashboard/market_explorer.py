@@ -4,7 +4,6 @@ import plotly.graph_objects as go
 
 from fpi.analysis.market_analysis import (
     calculate_market_metrics,
-    compare_departments,
     create_sales_by_date_plot,
     create_sales_by_property_type_plot,
     filter_data_by_location,
