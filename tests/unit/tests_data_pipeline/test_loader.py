@@ -2,6 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 import pytest
+from sqlalchemy.engine import Engine
 
 from fpi.data_pipeline.loader import load_all_csv
 from fpi.data_pipeline.migrate_to_sql import get_engine
@@ -143,7 +144,7 @@ class TestLoadAllCsv:
         expected_town_codes: set[int] = {101, 102, 103}
         assert set(df["town_code"]) == expected_town_codes
 
-        engine = get_engine()
+        engine: Engine = get_engine()
         with engine.connect() as conn:
             conn.exec_driver_sql("DROP TABLE IF EXISTS cleaned_XX_XXXX")
             conn.exec_driver_sql("DROP TABLE IF EXISTS cleaned_YY_YYYY")
