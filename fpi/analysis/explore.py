@@ -25,7 +25,7 @@ def explore() -> None:
     compute_descriptive_statistics(df)
 
     # Step 4 — Plots
-    output_dir = Path("docs/plots")
+    output_dir: Path = Path("docs/plots")
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print("\n Generating regional and department trend plots...")
