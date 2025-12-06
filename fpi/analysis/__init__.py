@@ -54,7 +54,7 @@ from .market_analysis import (
     get_location_choices,
     get_sales_by_type_data,
 )
-from .plots import display_trend
+from .plots import convert_value_for_display, display_trend
 from .price import compute_price_per_sqm
 from .stats import (
     compute_descriptive_statistics,
@@ -74,6 +74,7 @@ __all__: list[str] = [
     "get_sales_by_type_data",
     "calculate_financing_simulation",
     # Trend plots
+    "convert_value_for_display",
     "display_trend",
     # Statistics
     "summary",

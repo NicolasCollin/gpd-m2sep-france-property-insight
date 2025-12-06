@@ -51,7 +51,7 @@ class TestSummaryFunction:
         - Missing values section is printed.
         - Counts of missing values per column are displayed.
         """
-        df = pd.DataFrame({"A": [1, None, 3], "B": ["x", "y", None]})
+        df: pd.DataFrame = pd.DataFrame({"A": [1, None, 3], "B": ["x", "y", None]})
 
         summary(df)
 
