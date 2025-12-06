@@ -18,10 +18,24 @@ class TestMigrateToSql:
     """
 
     @pytest.fixture
+    def temp_engine(self, tmp_path: Path) -> Engine:
+        """
+        Create a temporary SQLite engine stored in the pytest-provided directory.
+
+        Args:
+            tmp_path (Path): Temporary directory provided by pytest.
+
+        Returns (Engine):
+            SQLAlchemy engine connected to a temporary test database.
+        """
+        db_file: Path = tmp_path / "test.db"
+        engine: Engine = get_engine(db_path=str(db_file))
+        return engine
+
+    @pytest.fixture
     def tmp_csv_dir(self, tmp_path: Path) -> Path:
         """
         Create a temporary directory containing two small CSV files used for testing.
-
 
         Args:
             tmp_path (Path): Pytest-provided temporary directory.
@@ -51,7 +65,7 @@ class TestMigrateToSql:
 
         return tmp_path
 
-    def test_csv_files_migrated(self, tmp_csv_dir: Path) -> None:
+    def test_csv_files_migrated(self, tmp_csv_dir: Path, temp_engine: Engine) -> None:
         """
         Scenario: Two cleaned CSV files located under the temporary directory are
         migrated into separate SQL tables.
@@ -60,21 +74,15 @@ class TestMigrateToSql:
             * Both output tables exist.
             * Both tables contain rows after migration.
         """
-        engine: Engine = get_engine(db_path="data/sql/app.db")
-        migrate_all_cleaned(engine=engine, cleaned_root=str(tmp_csv_dir))
+        migrate_all_cleaned(engine=temp_engine, cleaned_root=str(tmp_csv_dir))
 
-        df_one: pd.DataFrame = pd.read_sql_table("file_one", con=engine)
-        df_two: pd.DataFrame = pd.read_sql_table("file_two", con=engine)
+        df_one: pd.DataFrame = pd.read_sql_table("file_one", con=temp_engine)
+        df_two: pd.DataFrame = pd.read_sql_table("file_two", con=temp_engine)
 
         assert not df_one.empty
         assert not df_two.empty
 
-        # Cleanup unwanted tables created during migration
-        with engine.connect() as conn:
-            conn.exec_driver_sql("DROP TABLE IF EXISTS file_one")
-            conn.exec_driver_sql("DROP TABLE IF EXISTS file_two")
-
-    def test_decimal_values_converted(self, tmp_csv_dir: Path) -> None:
+    def test_decimal_values_converted(self, tmp_csv_dir: Path, temp_engine: Engine) -> None:
         """
         Scenario: The migration correctly handles French decimal format.
 
@@ -82,15 +90,9 @@ class TestMigrateToSql:
             * The 'value' column is stored as a numeric dtype.
             * The numeric values are correctly parsed as floats.
         """
-        engine: Engine = get_engine(db_path="data/sql/app.db")
-        migrate_all_cleaned(engine=engine, cleaned_root=str(tmp_csv_dir))
+        migrate_all_cleaned(engine=temp_engine, cleaned_root=str(tmp_csv_dir))
 
-        df: pd.DataFrame = pd.read_sql_table("file_one", con=engine)
+        df: pd.DataFrame = pd.read_sql_table("file_one", con=temp_engine)
 
         assert pd.api.types.is_numeric_dtype(df["value"])
         assert set(df["value"].tolist()) == {10.0, 20.0}
-
-        # Cleanup unwanted tables created during migration
-        with engine.connect() as conn:
-            conn.exec_driver_sql("DROP TABLE IF EXISTS file_one")
-            conn.exec_driver_sql("DROP TABLE IF EXISTS file_two")
