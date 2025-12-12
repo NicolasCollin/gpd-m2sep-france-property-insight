@@ -1,40 +1,60 @@
+
 import gradio as gr
 import pandas as pd
 import plotly.express as px
 
 from fpi.data_pipeline.loader import load_all_csv
+from fpi.utils.display_case import format_display_name
 
 
 def plot_price_segments(df: pd.DataFrame) -> gr.Plot:
     """
-    Build a bar chart showing the number of transactions per price segment.
+    Plot a bar chart showing the distribution of properties
+    across predefined price segments.
 
-    The segments are:
-        - Entry (< 200k)
-        - Mid (200–400k)
-        - Upper (400–700k)
-        - Luxury (> 700k)
+    Segments:
+        - Entry: < 200k
+        - Mid: 200–400k
+        - Upper: 400–700k
+        - Luxury: > 700k
 
-    Args:
-        df (pd.DataFrame): Loaded DVF-style DataFrame with column 'property_value'.
+    Parameters
+    ----------
+    df : pd.DataFrame
+        DataFrame containing at least `property_value`.
 
-    Returns:
-        gr.Plot: Gradio plot containing the bar chart.
+    Returns
+    -------
+    gr.Plot
+        A Gradio plot containing the price segment bar chart.
     """
-    df_valid: pd.DataFrame = df[df["property_value"].notna() & (df["property_value"] > 0)]
+    # Filter valid rows
+    df_valid = df[df["property_value"].notna() & (df["property_value"] > 0)]
+    if df_valid.empty:
+        return gr.Plot()
 
-    max_val: float = float(df_valid["property_value"].max())
+    # Price segment definition
+    bins = [0, 200_000, 400_000, 700_000, df_valid["property_value"].max()]
+    labels = ["Entry (<200k)", "Mid (200–400k)", "Upper (400–700k)", "Luxury (>700k)"]
 
-    bins: list[float] = [0, 200_000, 400_000, 700_000, max_val]
-    labels: list[str] = ["Entry (<200k)", "Mid (200–400k)", "Upper (400–700k)", "Luxury (>700k)"]
+    # Assign segments
+    df_valid["price_segment"] = pd.cut(
+        df_valid["property_value"], bins=bins, labels=labels, ordered=True
+    )
 
-    df_valid["price_segment"] = pd.cut(df_valid["property_value"], bins=bins, labels=labels, ordered=True)
-
-    seg: pd.DataFrame = df_valid["price_segment"].value_counts(sort=False).reset_index()
+    seg = df_valid["price_segment"].value_counts(sort=False).reset_index()
     seg.columns = ["Segment", "Count"]
 
+    # Color gradient: blue → red (sequential)
     fig = px.bar(
-        seg, x="Segment", y="Count", title="Property Count by Price Segment", color="Segment", text_auto=True, category_orders={"Segment": labels}
+        seg,
+        x="Segment",
+        y="Count",
+        color="Segment",
+        color_discrete_sequence=px.colors.sequential.Redor,
+        title="Price Segment Distribution",
+        text_auto=True,
+        category_orders={"Segment": labels},
     )
     fig.update_layout(height=420)
 
@@ -43,45 +63,74 @@ def plot_price_segments(df: pd.DataFrame) -> gr.Plot:
 
 def plot_property_type_pie(df: pd.DataFrame) -> gr.Plot:
     """
-    Build a pie chart showing the distribution of property types across all transactions.
+    Plot a donut-style pie chart showing the distribution
+    of property types.
 
-    Args:
-        df (pd.DataFrame): Loaded DVF DataFrame with 'property_type'.
+    Parameters
+    ----------
+    df : pd.DataFrame
+        DataFrame containing a `property_type` column.
 
-    Returns:
-        gr.Plot: Gradio pie chart.
+    Returns
+    -------
+    gr.Plot
+        A Gradio plot containing the pie chart.
     """
     if "property_type" not in df.columns:
-        raise ValueError("Column 'property_type' not found in DataFrame.")
+        raise ValueError("Column 'property_type' not found.")
 
-    df_valid: pd.DataFrame = df[df["property_type"].notna()]
+    # Filter valid rows
+    df_valid = df[df["property_type"].notna()]
+    if df_valid.empty:
+        return gr.Plot()
 
-    table: pd.DataFrame = df_valid["property_type"].value_counts().reset_index()
+    table = df_valid["property_type"].value_counts().reset_index()
     table.columns = ["property_type", "count"]
 
-    fig = px.pie(table, names="property_type", values="count", title="Distribution of Property Types (Île-de-France)", hole=0.40)
-    fig.update_traces(textinfo="percent+label")
+    # Format display names
+    table["label"] = table["property_type"].apply(format_display_name)
+
+    fig = px.pie(
+        table,
+        names="label",
+        values="count",
+        title="Property Types (Île-de-France)",
+        hole=0.40,
+    )
+    fig.update_traces(textinfo="percent")
 
     return gr.Plot(value=fig)
 
 
+
+
 def get_overview_tab() -> gr.Blocks:
     """
-    Build the Overview dashboard section for the Gradio interface.
+    Build the full Gradio 'Overview' tab combining statistical graphs:
+        - Price segments bar chart
+        - Property type pie chart
+        
 
-    Returns:
-        gr.Blocks: The overview tab.
+    Returns
+    -------
+    gr.Blocks
+        A composed Gradio layout ready to be integrated into the main app.
     """
-    df: pd.DataFrame = load_all_csv()
+    df = load_all_csv()
     df["property_value"] = pd.to_numeric(df["property_value"], errors="coerce")
+    df["land_area"] = pd.to_numeric(df.get("land_area"), errors="coerce")
 
     with gr.Blocks() as overview:
-        gr.Markdown("## Market Overview — Île-de-France")
 
-        gr.Markdown("### Price Segments")
-        plot_price_segments(df)
+        gr.Markdown("##  Market Overview — Île-de-France")
 
-        gr.Markdown("### Property Type Composition")
-        plot_property_type_pie(df)
+        # --- PRICE SEGMENTS ---
+        gr.Markdown("###  Price Segments")
+        gr.Row(plot_price_segments(df))
+
+        # --- PROPERTY TYPES ---
+        gr.Markdown("###  Property Types")
+        gr.Row(plot_property_type_pie(df))
+
 
     return overview
