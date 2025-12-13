@@ -41,26 +41,26 @@ class TestComputePricePerSqm:
 
     def test_median_computation(self, sample_df: pd.DataFrame) -> None:
         """Compute median price per square meter."""
-        result = compute_price_per_sqm(sample_df, method="median")
-        expected = pd.Series([100000 / 500, 200000 / 1000, 300000 / 1500]).median()
+        result: float = compute_price_per_sqm(sample_df, method="median")
+        expected: float = pd.Series([100000 / 500, 200000 / 1000, 300000 / 1500]).median()
         assert result == expected
 
     def test_mean_computation(self, sample_df: pd.DataFrame) -> None:
         """Compute mean price per square meter."""
-        result = compute_price_per_sqm(sample_df, method="mean")
-        expected = pd.Series([100000 / 500, 200000 / 1000, 300000 / 1500]).mean()
+        result: float = compute_price_per_sqm(sample_df, method="mean")
+        expected: float = pd.Series([100000 / 500, 200000 / 1000, 300000 / 1500]).mean()
         assert result == expected
 
     def test_ignore_nan_values(self) -> None:
         """Rows with NaN values should be ignored."""
-        df = pd.DataFrame(
+        df: pd.DataFrame = pd.DataFrame(
             {
                 "property_value": [100000.0, None, 300000.0],
                 "land_area": [500.0, 600.0, None],
             }
         )
-        result = compute_price_per_sqm(df, method="median")
-        expected = pd.Series([100000 / 500]).median()
+        result: float = compute_price_per_sqm(df, method="median")
+        expected: float = pd.Series([100000 / 500]).median()
         assert result == expected
 
     def test_empty_dataframe_raises(self, empty_df: pd.DataFrame) -> None:
@@ -70,7 +70,7 @@ class TestComputePricePerSqm:
 
     def test_missing_columns_raise(self) -> None:
         """Missing required columns should raise ValueError."""
-        df = pd.DataFrame({"property_value": [100000.0]})
+        df: pd.DataFrame = pd.DataFrame({"property_value": [100000.0]})
         with pytest.raises(ValueError, match="must contain 'property_value' and 'land_area'"):
             compute_price_per_sqm(df)
 
@@ -80,12 +80,12 @@ class TestComputePricePerSqm:
 
     def test_ignore_zero_or_negative_land_area(self) -> None:
         """Rows with land_area <= 0 should be ignored."""
-        df = pd.DataFrame(
+        df: pd.DataFrame = pd.DataFrame(
             {
                 "property_value": [100000.0, 200000.0],
                 "land_area": [500.0, 0.0],
             }
         )
-        result = compute_price_per_sqm(df, method="median")
-        expected = pd.Series([100000 / 500]).median()
+        result: float = compute_price_per_sqm(df, method="median")
+        expected: float = pd.Series([100000 / 500]).median()
         assert result == expected

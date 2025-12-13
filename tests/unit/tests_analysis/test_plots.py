@@ -1,112 +1,54 @@
-import pandas as pd
-import pytest
+from fpi.analysis import convert_value_for_display
 
 
-class TestDisplayTrendAggregation:
+class TestConvertValueForDisplay:
     """
-    Unit tests for trend aggregation logic on DVF data.
+    Additional unit tests for convert_value_for_display.
 
-    Each test scenario constructs small DataFrames simulating DVF property data,
-    performs grouping by department and year, and computes median property values.
-
-    Scenarios covered:
-        1. Single department in a single year:
-           - Two property values for the same department-year.
-           - Median aggregation should equal the mean of the two values.
-
-        2. Single department across multiple years:
-           - Property values for two different years.
-           - Median aggregation per year should match the property value for that year.
-
-        3. Multiple departments across multiple years:
-           - Two departments, each with property values over two years.
-           - Median aggregation should produce correct department-year medians.
+    These tests complement doctests by covering:
+    - threshold boundaries (999 vs. 1000, 999_999 vs. 1_000_000)
+    - negative values around thresholds
+    - rounding behaviour consistency
+    - decimal inputs
+    - extremely large inputs
     """
 
-    def test_single_department_single_year(self) -> None:
-        """
-        Scenario: One department in a single year.
+    def test_below_smallest_threshold(self) -> None:
+        """Values below 1000 should be formatted without suffix."""
+        assert convert_value_for_display(999) == "999,0"
+        assert convert_value_for_display(-999) == "-999,0"
 
-        Steps:
-        1. Create a DataFrame with two property values for the same department and year.
-        2. Group by department_code, department_name, and year, then calculate median.
-        3. Assert that the median is correctly computed.
+    def test_at_thousand_threshold(self) -> None:
+        """1000 and equivalents should correctly use K suffix."""
+        assert convert_value_for_display(1000) == "1,0 K"
+        assert convert_value_for_display(-1000) == "-1,0 K"
 
-        Expected behavior:
-        - Median property value equals the mean of the two values.
-        """
-        dfs = [
-            pd.DataFrame(
-                {
-                    "department_code": ["75", "75"],
-                    "department_name": ["Paris", "Paris"],
-                    "year": [2024, 2024],
-                    "property_value": [1000000.0, 2000000.0],
-                }
-            )
-        ]
-        df_all: pd.DataFrame = pd.concat(dfs, ignore_index=True)
-        trend_df: pd.DataFrame = df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
+    def test_just_below_million_threshold(self) -> None:
+        """999_999 should round to '1000,0 K' (important rounding case)."""
+        assert convert_value_for_display(999_999) == "1000,0 K"
+        assert convert_value_for_display(-999_999) == "-1000,0 K"
 
-        expected_median: float = 1500000.0
-        assert trend_df["property_value"].iloc[0] == pytest.approx(expected_median)
+    def test_at_million_threshold(self) -> None:
+        """1_000_000 must use M suffix."""
+        assert convert_value_for_display(1_000_000) == "1,0 M"
+        assert convert_value_for_display(-1_000_000) == "-1,0 M"
 
-    def test_single_department_multiple_years(self) -> None:
-        """
-        Scenario: One department across multiple years.
+    def test_at_billion_threshold(self) -> None:
+        """1_000_000_000 must use Md suffix."""
+        assert convert_value_for_display(1_000_000_000) == "1,0 Md"
 
-        Steps:
-        1. Create a DataFrame with property values for two different years.
-        2. Group by department_code, department_name, and year, then calculate median.
-        3. Assert medians per year.
+    def test_decimal_value_formatting(self) -> None:
+        """Ensure decimal floats are scaled and formatted correctly."""
+        assert convert_value_for_display(1530.75) == "1,5 K"
 
-        Expected behavior:
-        - Each year’s median matches the property value for that year.
-        """
-        dfs = [
-            pd.DataFrame(
-                {
-                    "department_code": ["75", "75"],
-                    "department_name": ["Paris", "Paris"],
-                    "year": [2023, 2024],
-                    "property_value": [1000000.0, 2000000.0],
-                }
-            )
-        ]
-        df_all: pd.DataFrame = pd.concat(dfs, ignore_index=True)
-        trend_df: pd.DataFrame = df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
+    def test_rounding_behavior(self) -> None:
+        """0.05 should round to '0,1' with European decimal comma."""
+        assert convert_value_for_display(0.05) == "0,1"
 
-        medians = trend_df.set_index("year")["property_value"].to_dict()
-        assert medians[2023] == pytest.approx(1000000.0)
-        assert medians[2024] == pytest.approx(2000000.0)
+    def test_zero_value(self) -> None:
+        """Zero formatting is stable."""
+        assert convert_value_for_display(0) == "0,0"
 
-    def test_multiple_departments_multiple_years(self) -> None:
-        """
-        Scenario: Multiple departments across multiple years.
-
-        Steps:
-        1. Create a DataFrame with property values for two departments over two years.
-        2. Group by department_code, department_name, and year, then calculate median.
-        3. Assert medians for each department-year pair.
-
-        Expected behavior:
-        - Each department-year median is correctly calculated.
-        """
-        dfs = [
-            pd.DataFrame(
-                {
-                    "department_code": ["75", "75", "92", "92"],
-                    "department_name": ["Paris", "Paris", "Hauts-de-Seine", "Hauts-de-Seine"],
-                    "year": [2023, 2024, 2023, 2024],
-                    "property_value": [1000000, 2000000, 4000000, 3000000],
-                }
-            )
-        ]
-        df_all: pd.DataFrame = pd.concat(dfs, ignore_index=True)
-        trend_df: pd.DataFrame = df_all.groupby(["department_code", "department_name", "year"])["property_value"].median().reset_index()
-
-        medians = trend_df.set_index(["year", "department_code"])["property_value"].to_dict()
-        assert medians[(2023, "75")] == pytest.approx(1000000.0)
-        assert medians[(2024, "75")] == pytest.approx(2000000.0)
-        assert medians[(2023, "92")] == pytest.approx(4000000.0)
-        assert medians[(2024, "92")] == pytest.approx(3000000.0)
+    def test_extreme_value_large(self) -> None:
+        """Large values must still be formatted correctly."""
+        assert convert_value_for_display(123_456_789_500_000_000) == "123456789,5 Md"
