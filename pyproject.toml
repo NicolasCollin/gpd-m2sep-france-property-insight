@@ -4,6 +4,9 @@ version = "1.0"
 description = "France Property Insight: Predicitve and analytic app for Master 2 SEP"
 requires-python = ">=3.13"
 dependencies = [
+    "folium>=0.20.0",
+    "geopandas>=1.1.1",
+    "geopy>=2.4.1",
     "gradio==5.49.1",
     "joblib==1.5.2",
     "matplotlib==3.10.7",
