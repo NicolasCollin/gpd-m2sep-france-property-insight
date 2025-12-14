@@ -2,9 +2,9 @@ import gradio as gr
 import pandas as pd
 
 from fpi.analysis.dashboard import plot_price_evolution_by_department, plot_sales_count_by_department
-from fpi.analysis.pretty_map import generate_idf_map
 from fpi.data_pipeline.loader import load_all_csv
 from fpi.interface.dashboard.market_explorer import get_market_explorer_tab
+from fpi.map_config.map import create_map_with_search
 
 
 def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
@@ -37,35 +37,6 @@ def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
     return table_block
 
 
-def get_map_tab(df: pd.DataFrame) -> gr.Blocks:
-    """
-    Build the map tab for the dashboard.
-
-    This tab displays an interactive Plotly choropleth map of
-    property values in Île-de-France.
-
-    Args:
-        df: DVF dataset.
-
-    Returns:
-        A Gradio Blocks section containing the map.
-    """
-    with gr.Blocks() as map_tab:
-        gr.Markdown(" Real estate map — Île-de-France")
-        gr.Markdown(
-            "Interactive map showing mean property values per commune.<br>"
-            "The map uses the official GeoJSON shapes from the `gregoiredavid` repository.",
-            elem_classes="info-text",
-        )
-
-        # generate_idf_map() returns a Plotly figure
-        map_fig = generate_idf_map()
-
-        gr.Plot(map_fig, label="Property values map")
-
-    return map_tab
-
-
 def display_dashboard() -> gr.Blocks:
     """
     Display all dashboard components (tables, plots, maps) in a unified layout.
@@ -73,7 +44,7 @@ def display_dashboard() -> gr.Blocks:
     Returns:
         The complete Gradio dashboard in a Blocks object.
     """
-    df = load_all_csv()
+    df: pd.DataFrame = load_all_csv()
 
     with gr.Blocks() as dashboard:
         with gr.Tab("Overview"):
@@ -86,8 +57,8 @@ def display_dashboard() -> gr.Blocks:
             gr.Markdown("## Explore the real estate market")
             _ = get_market_explorer_tab(df)
 
-        with gr.Tab("Map"):
-            _ = get_map_tab(df)
+        with gr.Tab("🗺️ Interactive Map"):
+            _ = create_map_with_search(df)
 
     return dashboard
 
@@ -99,9 +70,9 @@ def get_dashboard_page() -> gr.Blocks:
     Returns:
         Gradio Blocks page.
     """
-    gr.Markdown(" Ile-de-France real estate dashboard", elem_classes="page-title")
-    gr.Markdown("Interactive data exploration with filters, charts, and geospatial visualization.", elem_classes="page-subtitle")
+    gr.Markdown("# Ile-de-France real estate dashboard")
+    gr.Markdown("Interactive data exploration with filters, charts, and geospatial visualization.")
 
-    dashboard = display_dashboard()
+    dashboard: gr.Blocks = display_dashboard()
 
     return dashboard
