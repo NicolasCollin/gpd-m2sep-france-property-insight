@@ -7,6 +7,7 @@ from fpi.interface.dashboard.overview_graphs import (
     plot_property_type_pie,
 )
 
+
 class TestOverviewGraphs:
     """
     Tests for functions in overview_graphs.

@@ -1,4 +1,3 @@
-
 import gradio as gr
 import pandas as pd
 import plotly.express as px
@@ -38,9 +37,7 @@ def plot_price_segments(df: pd.DataFrame) -> gr.Plot:
     labels = ["Entry (<200k)", "Mid (200–400k)", "Upper (400–700k)", "Luxury (>700k)"]
 
     # Assign segments
-    df_valid["price_segment"] = pd.cut(
-        df_valid["property_value"], bins=bins, labels=labels, ordered=True
-    )
+    df_valid["price_segment"] = pd.cut(df_valid["property_value"], bins=bins, labels=labels, ordered=True)
 
     seg = df_valid["price_segment"].value_counts(sort=False).reset_index()
     seg.columns = ["Segment", "Count"]
@@ -88,11 +85,11 @@ def plot_property_type_pie(df: pd.DataFrame) -> gr.Plot:
     table.columns = ["property_type", "count"]
 
     # Format display names
-    table["label"] = table["property_type"].apply(format_display_name)
+    table["Property type"] = table["property_type"].apply(format_display_name)
 
     fig = px.pie(
         table,
-        names="label",
+        names="Property type",
         values="count",
         title="Property Types (Île-de-France)",
         hole=0.40,
@@ -102,14 +99,12 @@ def plot_property_type_pie(df: pd.DataFrame) -> gr.Plot:
     return gr.Plot(value=fig)
 
 
-
-
 def get_overview_tab() -> gr.Blocks:
     """
     Build the full Gradio 'Overview' tab combining statistical graphs:
         - Price segments bar chart
         - Property type pie chart
-        
+
 
     Returns
     -------
@@ -121,7 +116,6 @@ def get_overview_tab() -> gr.Blocks:
     df["land_area"] = pd.to_numeric(df.get("land_area"), errors="coerce")
 
     with gr.Blocks() as overview:
-
         gr.Markdown("##  Market Overview — Île-de-France")
 
         # --- PRICE SEGMENTS ---
@@ -131,6 +125,5 @@ def get_overview_tab() -> gr.Blocks:
         # --- PROPERTY TYPES ---
         gr.Markdown("###  Property Types")
         gr.Row(plot_property_type_pie(df))
-
 
     return overview
