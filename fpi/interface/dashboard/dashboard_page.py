@@ -4,6 +4,7 @@ import pandas as pd
 from fpi.analysis.dashboard import plot_price_evolution_by_department, plot_sales_count_by_department
 from fpi.data_pipeline.loader import load_all_csv
 from fpi.interface.dashboard.market_explorer import get_market_explorer_tab
+from fpi.interface.dashboard.overview_graphs import get_overview_tab
 
 
 def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
@@ -48,9 +49,10 @@ def display_dashboard() -> gr.Blocks:
     with gr.Blocks() as dashboard:
         with gr.Tab("Overview"):
             gr.Markdown("## Market & Area Insights")
-            _ = plot_sales_count_by_department(df)
-            _ = plot_price_evolution_by_department(df)
             _ = get_dashboard_table(df)
+            _ = plot_price_evolution_by_department(df)
+            _ = plot_sales_count_by_department(df)
+            _ = get_overview_tab()
 
         with gr.Tab("Explore the market"):
             gr.Markdown("## Explore the real estate market")
