@@ -28,8 +28,8 @@ def plot_price_segments(df: pd.DataFrame) -> gr.Plot:
     if df_valid.empty:
         return gr.Plot()
 
-    bins: list(float) = [0, 200_000, 400_000, 700_000, df_valid["property_value"].max()]
-    labels: list(str) = ["Entry (<200k)", "Mid (200–400k)", "Upper (400–700k)", "Luxury (>700k)"]
+    bins: list[float] = [0.0, 200_000.0, 400_000.0, 700_000.0, float(df_valid["property_value"].max())]
+    labels: list[str] = ["Entry (<200k)", "Mid (200–400k)", "Upper (400–700k)", "Luxury (>700k)"]
 
     df_valid["price_segment"] = pd.cut(df_valid["property_value"], bins=bins, labels=labels, ordered=True)
 
@@ -56,15 +56,11 @@ def plot_property_type_pie(df: pd.DataFrame) -> gr.Plot:
     Plot a donut-style pie chart showing the distribution
     of property types.
 
-    Parameters
-    ----------
-    df : pd.DataFrame
-        DataFrame containing a `property_type` column.
+    Args:
+        df (pd.DataFrame): DataFrame containing a `property_type` column.
 
-    Returns
-    -------
-    gr.Plot
-        A Gradio plot containing the pie chart.
+    Returns:
+        gr.Plot: A Gradio plot containing the pie chart.
     """
     if "property_type" not in df.columns:
         raise ValueError("Column 'property_type' not found.")
@@ -97,22 +93,25 @@ def get_overview_tab() -> gr.Blocks:
         - Property type pie chart
 
 
-    Returns
-    -------
-    gr.Blocks
-        A composed Gradio layout ready to be integrated into the main app.
+    Returns:
+        gr.Blocks: A composed Gradio layout ready to be integrated into the main app.
     """
     df = load_all_csv()
     df["property_value"] = pd.to_numeric(df["property_value"], errors="coerce")
-    df["land_area"] = pd.to_numeric(df.get("land_area"), errors="coerce")
+    if "land_area" in df.columns:
+        df["land_area"] = pd.to_numeric(df["land_area"], errors="coerce")
+    else:
+        df["land_area"] = pd.Series(dtype="float64")
+    # df["land_area"] = pd.to_numeric(df.get("land_area"), errors="coerce")
 
     with gr.Blocks() as overview:
         gr.Markdown("##  Market Overview — Île-de-France")
 
         gr.Markdown("###  Price Segments")
-        gr.Row(plot_price_segments(df))
+        with gr.Row():
+            plot_price_segments(df)
 
         gr.Markdown("###  Property Types")
-        gr.Row(plot_property_type_pie(df))
-
+        with gr.Row():
+            plot_property_type_pie(df)
     return overview
