@@ -5,6 +5,7 @@ from fpi.analysis.dashboard import plot_price_evolution_by_department, plot_sale
 from fpi.data_pipeline.loader import load_all_csv
 from fpi.interface.dashboard.market_explorer import get_market_explorer_tab
 from fpi.interface.dashboard.overview_graphs import get_overview_tab
+from fpi.map_config.map import create_map_with_search
 
 
 def get_dashboard_table(df: pd.DataFrame) -> gr.Blocks:
@@ -58,6 +59,9 @@ def display_dashboard() -> gr.Blocks:
             gr.Markdown("## Explore the real estate market")
             _ = get_market_explorer_tab(df)
 
+        with gr.Tab("🗺️ Interactive Map"):
+            _ = create_map_with_search(df)
+
     return dashboard
 
 
@@ -68,8 +72,8 @@ def get_dashboard_page() -> gr.Blocks:
     Returns:
         Gradio Blocks page.
     """
-    gr.Markdown(" Ile-de-France real estate dashboard", elem_classes="page-title")
-    gr.Markdown("Interactive data exploration with filters, charts, and geospatial visualization.", elem_classes="page-subtitle")
+    gr.Markdown("# Ile-de-France real estate dashboard")
+    gr.Markdown("Interactive data exploration with filters, charts, and geospatial visualization.")
 
     dashboard: gr.Blocks = display_dashboard()
 
