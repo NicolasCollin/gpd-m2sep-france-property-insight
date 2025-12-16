@@ -49,9 +49,9 @@ def display_dashboard() -> gr.Blocks:
     with gr.Blocks() as dashboard:
         with gr.Tab("Overview"):
             gr.Markdown("## Market & Area Insights")
-            _ = plot_sales_count_by_department(df)
-            _ = plot_price_evolution_by_department(df)
             _ = get_dashboard_table(df)
+            _ = plot_price_evolution_by_department(df)
+            _ = plot_sales_count_by_department(df)
             _ = get_overview_tab()
 
         with gr.Tab("Explore the market"):
