@@ -45,7 +45,7 @@ def build_random_forest(preprocessor: ColumnTransformer) -> Pipeline:
             ("prep", preprocessor),
             (
                 "model",
-                RandomForestRegressor(n_estimators=100, max_depth=12, min_samples_leaf=2, random_state=42, n_jobs=-1),
+                RandomForestRegressor(n_estimators=150, max_depth=42, min_samples_leaf=2, random_state=42, n_jobs=-1),
             ),
         ]
     )
