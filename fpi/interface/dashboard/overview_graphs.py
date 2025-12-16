@@ -17,32 +17,25 @@ def plot_price_segments(df: pd.DataFrame) -> gr.Plot:
         - Upper: 400–700k
         - Luxury: > 700k
 
-    Parameters
-    ----------
-    df : pd.DataFrame
-        DataFrame containing at least `property_value`.
+    Args:
+        df (pd.DataFrame): DataFrame containing at least `property_value`.
 
-    Returns
-    -------
-    gr.Plot
-        A Gradio plot containing the price segment bar chart.
+    Returns:
+        (gr.Plot): A Gradio plot containing the price segment bar chart.
     """
     # Filter valid rows
-    df_valid = df[df["property_value"].notna() & (df["property_value"] > 0)]
+    df_valid: pd.DataFrame = df[df["property_value"].notna() & (df["property_value"] > 0)]
     if df_valid.empty:
         return gr.Plot()
 
-    
-    bins = [0, 200_000, 400_000, 700_000, df_valid["property_value"].max()]
-    labels = ["Entry (<200k)", "Mid (200–400k)", "Upper (400–700k)", "Luxury (>700k)"]
+    bins: list(float) = [0, 200_000, 400_000, 700_000, df_valid["property_value"].max()]
+    labels: list(str) = ["Entry (<200k)", "Mid (200–400k)", "Upper (400–700k)", "Luxury (>700k)"]
 
-  
     df_valid["price_segment"] = pd.cut(df_valid["property_value"], bins=bins, labels=labels, ordered=True)
 
     seg = df_valid["price_segment"].value_counts(sort=False).reset_index()
     seg.columns = ["Segment", "Count"]
 
-    
     fig = px.bar(
         seg,
         x="Segment",
@@ -76,7 +69,6 @@ def plot_property_type_pie(df: pd.DataFrame) -> gr.Plot:
     if "property_type" not in df.columns:
         raise ValueError("Column 'property_type' not found.")
 
-   
     df_valid = df[df["property_type"].notna()]
     if df_valid.empty:
         return gr.Plot()
@@ -84,7 +76,6 @@ def plot_property_type_pie(df: pd.DataFrame) -> gr.Plot:
     table = df_valid["property_type"].value_counts().reset_index()
     table.columns = ["property_type", "count"]
 
-    
     table["Property type"] = table["property_type"].apply(format_display_name)
 
     fig = px.pie(
@@ -118,11 +109,9 @@ def get_overview_tab() -> gr.Blocks:
     with gr.Blocks() as overview:
         gr.Markdown("##  Market Overview — Île-de-France")
 
-        
         gr.Markdown("###  Price Segments")
         gr.Row(plot_price_segments(df))
 
-       
         gr.Markdown("###  Property Types")
         gr.Row(plot_property_type_pie(df))
 
