@@ -71,7 +71,7 @@ test:
     - uv run behave tests/behave/features
 
 # Deploy to the Raspberry Pi and restart FPI with the new code
-# Then regenerate a fresh temporary Cloudflare URL (48h tunnel) and expose it as a CI artifact.
+# Then restart the 48h Cloudflare tunnel and expose the public URL as CI logs + artifact.
 deploy_raspberry:
   stage: deploy
   only:
@@ -91,23 +91,22 @@ deploy_raspberry:
         echo "uv not found in PATH, skipping 'uv sync'."
       fi
     - sudo systemctl restart fpi.service
-    - echo "Refreshing public FPI link (Cloudflare quick tunnel)..."
+
+    - echo "Restarting public FPI tunnel (Cloudflare quick tunnel, 48h)..."
+    - sudo systemctl restart fpi-tunnel.service
+
+    - echo "Waiting for /home/nicolascollin/fpi_url.txt to be populated..."
     - |
-      if [ -x /usr/local/bin/fpi-start.sh ]; then
-        /usr/local/bin/fpi-start.sh
-      else
-        echo "ERROR: /usr/local/bin/fpi-start.sh not found or not executable" >&2
-        exit 1
-      fi
+      for i in $(seq 1 90); do
+        if [ -s /home/nicolascollin/fpi_url.txt ]; then
+          break
+        fi
+        sleep 1
+      done
+
     - echo "Current public FPI link (from Raspberry):"
-    - cat /home/nicolascollin/fpi_url.txt || echo "No link found (missing fpi_url.txt)"
-    - cd "$CI_PROJECT_DIR"
-    - |
-      if [ -f /home/nicolascollin/fpi_url.txt ]; then
-        cp /home/nicolascollin/fpi_url.txt fpi_public_url.txt
-      else
-        echo "No link found (missing /home/nicolascollin/fpi_url.txt on Raspberry)" > fpi_public_url.txt
-      fi
+    - cat /home/nicolascollin/fpi_url.txt | tee "$CI_PROJECT_DIR/fpi_public_url.txt"
+
     - echo "Deployment completed successfully, new version is now live."
   artifacts:
     paths:
