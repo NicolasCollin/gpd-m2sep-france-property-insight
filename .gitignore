@@ -16,6 +16,7 @@ docs/site
 dvf.db
 dvf.csv
 .vscode/
+secret/
 
 #MacOS
 .DS_Store

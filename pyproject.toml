@@ -4,6 +4,9 @@ version = "1.0"
 description = "France Property Insight: Predicitve and analytic app for Master 2 SEP"
 requires-python = ">=3.13"
 dependencies = [
+    "folium>=0.20.0",
+    "geopandas>=1.1.1",
+    "geopy>=2.4.1",
     "gradio==5.49.1",
     "joblib==1.5.2",
     "matplotlib==3.10.7",
@@ -93,3 +96,4 @@ predictrf = "fpi.models.predict:mock_predict_price"
 validation = "fpi.data_pipeline.validation:main"
 clean = "fpi.data_pipeline.clean_data:clean_data"
 process = "fpi.data_pipeline.process_data:process_data"
+load = "fpi.data_pipeline.loader:load_all_csv"

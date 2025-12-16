@@ -65,14 +65,13 @@ test:
   stage: test
   extends: .ci-template
   script:
-    # Force Gradio to use a controlled temporary directory
     - export GRADIO_TEMP_DIR="$CI_PROJECT_DIR/.gradio-tmp"
     - mkdir -p "$GRADIO_TEMP_DIR"
-    # Then run tests via uv
     - uv run pytest --doctest-modules --maxfail=3 --disable-warnings -q
     - uv run behave tests/behave/features
 
 # Deploy to the Raspberry Pi and restart FPI with the new code
+# Then restart the 48h Cloudflare tunnel and expose the public URL as CI logs + artifact.
 deploy_raspberry:
   stage: deploy
   only:
@@ -82,11 +81,8 @@ deploy_raspberry:
   script:
     - echo "Deploying to Raspberry Pi..."
     - cd /home/nicolascollin/apps/fpi
-    # Always align the local code with origin/main
     - git fetch origin main
     - git reset --hard origin/main
-    # On the Raspberry Pi, do NOT depend on uv from the CI: we use the one installed for fpi.service
-    # Run uv sync only if it exists in PATH; otherwise skip it
     - |
       if command -v uv >/dev/null 2>&1; then
         echo "uv found, running 'uv sync'..."
@@ -94,18 +90,23 @@ deploy_raspberry:
       else
         echo "uv not found in PATH, skipping 'uv sync'."
       fi
-    # Restart the FPI systemd service (see sudoers configuration on the Raspberry Pi)
     - sudo systemctl restart fpi.service
-    - echo "Current public FPI link (from Raspberry):"
-    - cat /home/nicolascollin/fpi_url.txt || echo "No link found (missing fpi_url.txt)"
-    # Copy the public URL into a CI artifact
-    - cd "$CI_PROJECT_DIR"
+
+    - echo "Restarting public FPI tunnel (Cloudflare quick tunnel, 48h)..."
+    - sudo systemctl restart fpi-tunnel.service
+
+    - echo "Waiting for /home/nicolascollin/fpi_url.txt to be populated..."
     - |
-      if [ -f /home/nicolascollin/fpi_url.txt ]; then
-        cp /home/nicolascollin/fpi_url.txt fpi_public_url.txt
-      else
-        echo "No link found (missing /home/nicolascollin/fpi_url.txt on Raspberry)" > fpi_public_url.txt
-      fi
+      for i in $(seq 1 90); do
+        if [ -s /home/nicolascollin/fpi_url.txt ]; then
+          break
+        fi
+        sleep 1
+      done
+
+    - echo "Current public FPI link (from Raspberry):"
+    - cat /home/nicolascollin/fpi_url.txt | tee "$CI_PROJECT_DIR/fpi_public_url.txt"
+
     - echo "Deployment completed successfully, new version is now live."
   artifacts:
     paths:
