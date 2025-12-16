@@ -51,6 +51,22 @@ def validate_inputs(
             return "Error : Number of rooms must be positive and realistic (max 50)."
         if land < 0 or land > 100000:
             return "Error : Land area must be positive and realistic (max 10 hectares)."
+
+        if area <= 0 or area > 1000:
+            return "Error : Living area must be positive and realistic (max 1000 m²)."
+
+        if rooms <= 0 or rooms > 50:
+            return "Error : Number of rooms must be positive and realistic (max 50)."
+
+        if land < 0 or land > 100000:
+            return "Error : Land area must be positive and realistic (max 10 hectares)."
+
+        if rooms > area / 5:
+            return "Error : Number of rooms is unrealistically high for the living area."
+
+        if prop_type == "House" and land > 0 and land < area * 0.2:
+            return "Error : Land area is unrealistically small compared to living area."
+
     except (ValueError, TypeError):
         return "Error : Please enter valid numbers for areas and rooms."
 
