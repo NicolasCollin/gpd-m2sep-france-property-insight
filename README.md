@@ -130,10 +130,21 @@ The branch staging is a safety layer to test deployment before officially releas
 
 ## Current state
 
-CURRENT STATE: Sprint 3
-This project will go through 5 sprints of 2 weeks.
+CURRENT STATE: Sprint 5
+This project has gone through 5 sprints of 2 weeks.
 
 ### Changelog
+
+**Sprint 5**
+
+- Interactive map
+- Online support through independant raspberry server
+- Overview tab brushup: additional graphs, redesign, display issues fix
+
+**Sprint 4**
+
+- Database migration from csv to SQLite
+- Advanded filtering options for data visualization
 
 **Sprint 3**
 
